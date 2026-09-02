@@ -93,16 +93,23 @@ copy-pasted across reports — no shared JS file) doing four things:
    collapse state are excluded from this sweep** via an explicit class
    check:
    ```js
-   } else if (el.classList && (el.classList.contains('report-footer') || el.classList.contains('ad-slot'))) {
+   } else if (el.classList && (el.classList.contains('report-footer') || el.classList.contains('ad-slot') || el.classList.contains('related-report'))) {
    ```
    Currently excluded: `.report-footer`, `.ad-slot` (see the `add-ads`
-   skill). `.breadcrumb` and `.related-report` don't need to be in this
-   list — they're placed either before the first `<h2>` (breadcrumb) or
-   right after the last `.ad-slot` / before `.report-footer` (related-report),
-   both positions where `current` is already `null` when `buildSections`
-   reaches them. If you ever add a new always-visible element in the
-   *middle* of the content flow (not at one of those natural boundaries),
-   add its class to this exclusion check — otherwise collapsing that
+   skill), `.related-report`. `.breadcrumb` doesn't need to be in this list
+   — it's always placed before the first `<h2>`, where `current` is `null`
+   from the start. `.related-report` **does** need to be in the list: it was
+   originally assumed safe because it sits right after the bottom `.ad-slot`
+   (which resets `current` to `null`), but `BTCI.html` was authored with no
+   ad slots at all, so `.related-report` landed directly after the last
+   section's content with nothing resetting `current` first — it silently
+   got swept into that section and vanished on collapse. Caught by the
+   jsdom smoke test's `relatedReportOutsideSection` check, not by eye. Moral:
+   don't assume a "safe by position" element stays safe once a sibling
+   assumption (like "there's always an ad-slot before this") stops holding.
+   If you ever add a new always-visible element in the *middle* of the
+   content flow (not at one of those natural boundaries), add its class to
+   this exclusion check — otherwise collapsing that
    section hides it.
 4. **Chart tooltips + legend toggle** — a generic engine, not hand-tuned
    per chart. It reads each chart's own axis gridlines/tick labels to

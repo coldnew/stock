@@ -15,10 +15,10 @@
 <meta name="description" content="分析 OVL（Overlay Shares Large Cap Equity ETF）的賣權價差疊加策略，對照備兌看漲基金，評估其上漲參與度、熊市下檔放大效應與新月配機制的未知風險">
 <meta name="keywords" content="OVL, put spread, 賣權價差, 備兌看漲, covered call, 熊市, 下檔捕獲率, Overlay Shares">
 <meta name="generator" content="Kami">
-<link rel="canonical" href="https://coldnew.github.io/stock/reports/ovl-analysis.html">
+<link rel="canonical" href="https://coldnew.github.io/stock/reports/OVL.html">
 <meta name="robots" content="index, follow">
 <meta property="og:type" content="article">
-<meta property="og:url" content="https://coldnew.github.io/stock/reports/ovl-analysis.html">
+<meta property="og:url" content="https://coldnew.github.io/stock/reports/OVL.html">
 <meta property="og:title" content="OVL 分析報告 · 賣權價差疊加策略">
 <meta property="og:description" content="分析 OVL（Overlay Shares Large Cap Equity ETF）的賣權價差疊加策略，對照備兌看漲基金，評估其上漲參與度、熊市下檔放大效應與新月配機制的未知風險">
 <meta name="twitter:card" content="summary">
@@ -44,7 +44,7 @@
   "datePublished": "2026-09-02",
   "dateModified": "2026-09-02",
   "inLanguage": "zh-TW",
-  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://coldnew.github.io/stock/reports/ovl-analysis.html" }
+  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://coldnew.github.io/stock/reports/OVL.html" }
 }
 </script>
 <style>
@@ -465,7 +465,8 @@
     border: 0.5pt solid var(--border); border-radius: 6pt;
     background: var(--ivory); font-size: 10.5pt;
   }
-  .related-report a { color: var(--brand); font-weight: 500; text-decoration: none; }
+  .related-report .related-label { color: var(--stone); margin-bottom: 4pt; }
+  .related-report a { display: block; color: var(--brand); font-weight: 500; text-decoration: none; margin-top: 3pt; }
   .related-report a:hover { text-decoration: underline; }
 
   .ad-slot {
@@ -542,6 +543,17 @@
   <script async="async" data-cfasync="false" src="https://overestimatecapricornspittle.com/7cab59a03a06045c82ea9849963afe4f/invoke.js"></script>
   <div id="container-7cab59a03a06045c82ea9849963afe4f"></div>
 </div>
+
+<!-- ========== BASIC INTRO ========== -->
+<h2>基本介紹：這是什麼樣的基金？</h2>
+<p>OVL（Overlay Shares Large Cap Equity ETF）是由 Liquid Strategies LLC 於 2019 年 9 月 30 日在美國掛牌的主動管理型 ETF，核心持股為 VOO（追蹤 S&amp;P 500 指數），另外疊加賣權價差（put spread）策略收取權利金。簡單說：買 OVL 幾乎等於買了一籃子大型美股，額外再疊加一層選擇權策略賺取現金流；2026 年起從季配轉為月配，年化殖利率拉高到 10% 以上。費用率 0.79%，資產規模約 4.28 億美元。</p>
+
+<div class="callout">
+  <strong>為什麼台灣投資人會關注這類基金：ROC（資本返還）的稅務優勢。</strong>美國對非美籍稅務居民課徵的一般股利預扣稅率通常是 30%（台灣與美國沒有租稅協定，無法比照有協定國家享有較低稅率）；但若配息中有一部分被基金歸類為 ROC（Return of Capital，資本返還），該部分性質上是「歸還投資人自己已投入的本金」而非「當年度所得」，通常不適用 30% 股利預扣稅，而是用來調降投資人的成本基礎（cost basis），遞延到未來實際出售時才反映為資本利得。本系列鎖定的這類備兌看漲（covered call）／賣權價差（put spread）收益型基金，配息中 ROC 占比經常偏高（實際比例逐年公告、且各基金不同），是台灣投資人願意研究這類產品的重要原因之一。但兩點提醒：第一，ROC 比例並非保證值，須以基金每年發布的 19a-1 公告與年度 1099-DIV／1042-S 稅務文件為準；第二，美國預扣稅的免除不等於在台灣完全免稅——這類海外有價證券的配息與資本利得，仍可能被計入台灣個人「基本所得額」（海外所得，超過免稅額度需計入基本稅額申報）。以上僅為一般性稅務背景資訊，不構成個人稅務建議，實際申報請諮詢熟悉台美跨境投資稅務的會計師或稅務顧問。
+</div>
+
+<h3>配息時間表</h3>
+<p>配息頻率：2026 年起為每月配息，除息日固定落在每個月最後一週（第 25 到 29 天之間），例如 1 月 28 日、2 月 25 日、3 月 27 日、4 月 28 日，兩次除息平均間隔約 30 天；2019 至 2025 年為季配，除息日集中在每年 3、4、6、7、10、12 月，平均間隔約 91 天。目前（月配後）最新年化殖利率約 10.3%；月配時期的實際單次配息金額尚未累積足夠公開月數，配息殖利率隨時間的完整變化請見後續「配息機制的重大轉變」章節圖表。確切除息／發放日請以發行商 lsfunds.com 公告為準，本表僅供了解配息節奏參考。</p>
 
 <!-- ========== ANALYSIS LOGIC ========== -->
 <h2>分析邏輯</h2>
@@ -1104,7 +1116,11 @@
 <!-- ========== AD: SOCIAL BAR (page-wide, one instance) ========== -->
 <script src="https://overestimatecapricornspittle.com/af/6f/5a/af6f5a439305df56e706f9e61f2225a1.js"></script>
 
-<div class="related-report">延伸閱讀：<a href="qqqi-bear-case.html">QQQI 熊市韌性推估 · 跨資產類比分析 →</a></div>
+<div class="related-report">
+  <div class="related-label">延伸閱讀</div>
+  <a href="QQQI.html">QQQI 熊市韌性推估 · 跨資產類比分析 →</a>
+  <a href="BTCI.html">BTCI 對比 BTC · 加密貨幣收益策略分析 →</a>
+</div>
 
 <!-- ========== FOOTER ========== -->
 <div class="report-footer">
@@ -1140,17 +1156,24 @@
 
   /* ---------- theme ---------- */
   var THEME_KEY = 'report-theme';
+  function systemPrefersDark() {
+    return !!(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches);
+  }
   function setTheme(t) {
-    if (t === 'dark') root.setAttribute('data-theme', 'dark');
-    else root.removeAttribute('data-theme');
+    root.setAttribute('data-theme', t);
     themeBtn.textContent = t === 'dark' ? '☀' : '☾';
     try { localStorage.setItem(THEME_KEY, t); } catch (e) {}
   }
   var savedTheme = null;
   try { savedTheme = localStorage.getItem(THEME_KEY); } catch (e) {}
-  setTheme(savedTheme || (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'));
+  if (savedTheme === 'dark' || savedTheme === 'light') {
+    setTheme(savedTheme);
+  } else {
+    themeBtn.textContent = systemPrefersDark() ? '☀' : '☾';
+  }
   themeBtn.addEventListener('click', function () {
-    setTheme(root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark');
+    var current = root.getAttribute('data-theme') || (systemPrefersDark() ? 'dark' : 'light');
+    setTheme(current === 'dark' ? 'light' : 'dark');
   });
 
   /* ---------- back to top ---------- */
@@ -1182,7 +1205,7 @@
         el.parentNode.insertBefore(wrap, el.nextSibling);
         current = wrap;
         sections.push({ h2: el, wrap: wrap, id: id });
-      } else if (el.classList && (el.classList.contains('report-footer') || el.classList.contains('ad-slot'))) {
+      } else if (el.classList && (el.classList.contains('report-footer') || el.classList.contains('ad-slot') || el.classList.contains('related-report'))) {
         current = null;
       } else if (current) {
         current.appendChild(el);

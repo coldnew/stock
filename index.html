@@ -8,7 +8,7 @@
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%231B365D'/%3E%3Cpolyline points='6,22 12,14 17,18 26,7' fill='none' stroke='%23f5f4ed' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
 <title>股票分析報告 · Yen-Chin Lee</title>
 <meta name="author" content="Yen-Chin, Lee">
-<meta name="description" content="備兌看漲（covered call）與賣權價差（put spread）收益型 ETF 的熊市韌性分析報告：OVL、QQQI 等基金的下檔捕獲率、配息穩定性與風險實證研究。">
+<meta name="description" content="備兌看漲（covered call）與賣權價差（put spread）收益型 ETF／加密貨幣收益策略的熊市韌性分析報告：OVL、QQQI、BTCI 等基金的下檔捕獲率、配息穩定性與風險實證研究。">
 <meta name="keywords" content="OVL, QQQI, BTCI, GPIQ, 備兌看漲, covered call, 賣權價差, put spread, 熊市, ETF 分析">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://coldnew.github.io/stock/">
@@ -16,10 +16,10 @@
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://coldnew.github.io/stock/">
 <meta property="og:title" content="股票分析報告 · Yen-Chin Lee">
-<meta property="og:description" content="備兌看漲（covered call）與賣權價差（put spread）收益型 ETF 的熊市韌性分析報告：OVL、QQQI 等基金的下檔捕獲率、配息穩定性與風險實證研究。">
+<meta property="og:description" content="備兌看漲（covered call）與賣權價差（put spread）收益型 ETF／加密貨幣收益策略的熊市韌性分析報告：OVL、QQQI、BTCI 等基金的下檔捕獲率、配息穩定性與風險實證研究。">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="股票分析報告 · Yen-Chin Lee">
-<meta name="twitter:description" content="備兌看漲（covered call）與賣權價差（put spread）收益型 ETF 的熊市韌性分析報告：OVL、QQQI 等基金的下檔捕獲率、配息穩定性與風險實證研究。">
+<meta name="twitter:description" content="備兌看漲（covered call）與賣權價差（put spread）收益型 ETF／加密貨幣收益策略的熊市韌性分析報告：OVL、QQQI、BTCI 等基金的下檔捕獲率、配息穩定性與風險實證研究。">
 <!-- Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-2SXWWHGFPN"></script>
 <script>
@@ -33,7 +33,7 @@
   "@context": "https://schema.org",
   "@type": "CollectionPage",
   "name": "股票分析報告",
-  "description": "備兌看漲（covered call）與賣權價差（put spread）收益型 ETF 的熊市韌性分析報告：OVL、QQQI 等基金的下檔捕獲率、配息穩定性與風險實證研究。",
+  "description": "備兌看漲（covered call）與賣權價差（put spread）收益型 ETF／加密貨幣收益策略的熊市韌性分析報告：OVL、QQQI、BTCI 等基金的下檔捕獲率、配息穩定性與風險實證研究。",
   "url": "https://coldnew.github.io/stock/",
   "inLanguage": "zh-TW",
   "author": { "@type": "Person", "name": "Yen-Chin, Lee" },
@@ -41,12 +41,17 @@
     {
       "@type": "Article",
       "headline": "OVL 分析報告 · 賣權價差疊加策略",
-      "url": "https://coldnew.github.io/stock/reports/ovl-analysis.html"
+      "url": "https://coldnew.github.io/stock/reports/OVL.html"
     },
     {
       "@type": "Article",
       "headline": "QQQI 熊市韌性推估 · 跨資產類比分析",
-      "url": "https://coldnew.github.io/stock/reports/qqqi-bear-case.html"
+      "url": "https://coldnew.github.io/stock/reports/QQQI.html"
+    },
+    {
+      "@type": "Article",
+      "headline": "BTCI 對比 BTC · 加密貨幣收益策略分析",
+      "url": "https://coldnew.github.io/stock/reports/BTCI.html"
     }
   ]
 }
@@ -148,6 +153,11 @@
   .report-card p { font-size: 13.5px; color: var(--stone); line-height: 1.55; }
   .report-card .read-more { display: inline-block; margin-top: 10px; font-size: 13px; color: var(--brand); font-weight: 500; }
   footer { margin-top: 48px; padding-top: 16px; border-top: 0.5px dotted var(--border); font-size: 12px; color: var(--stone); }
+  .note {
+    margin-top: 16px; padding: 12px 16px;
+    border-left: 2px solid var(--brand); border-radius: 4px;
+    background: var(--ivory); font-size: 13px; color: var(--olive); line-height: 1.6;
+  }
 </style>
 </head>
 <body>
@@ -156,20 +166,28 @@
   <div class="eyebrow">投資研究報告</div>
   <h1>股票分析報告</h1>
   <p>備兌看漲（covered call）與賣權價差（put spread）收益型 ETF 的熊市韌性與風險實證研究。</p>
+  <div class="note">本站報告以台灣投資人為主要對象。這類高配息基金受到關注的原因之一，是配息中常包含較高比例的 ROC（Return of Capital，資本返還）——通常不適用美國對非美籍稅務居民課徵的 30% 股利預扣稅，而是調降投資成本基礎、遞延到日後出售時反映為資本利得。但美國預扣稅的免除不等於在台灣完全免稅，仍須留意海外所得與基本稅額的申報規定；各報告內文對此有更完整的說明與提醒，僅供一般性參考，不構成個人稅務或投資建議。</div>
 </header>
 
 <main class="report-list">
-  <a class="report-card" href="reports/ovl-analysis.html">
+  <a class="report-card" href="reports/OVL.html">
     <span class="tag">跨資產策略分析</span>
     <h2>OVL 分析報告 · 賣權價差疊加策略</h2>
     <p>分析 OVL（Overlay Shares Large Cap Equity ETF）的賣權價差疊加策略，對照備兌看漲基金，評估其上漲參與度、熊市下檔放大效應與新月配機制的未知風險。</p>
     <span class="read-more">閱讀完整報告 →</span>
   </a>
 
-  <a class="report-card" href="reports/qqqi-bear-case.html">
+  <a class="report-card" href="reports/QQQI.html">
     <span class="tag">跨資產類比分析</span>
     <h2>QQQI 熊市韌性推估 · 跨資產類比分析</h2>
     <p>以 BTCI 在 2025-2026 比特幣實證熊市中的表現，推估 QQQI 在納斯達克100 真正熊市中的下檔風險。</p>
+    <span class="read-more">閱讀完整報告 →</span>
+  </a>
+
+  <a class="report-card" href="reports/BTCI.html">
+    <span class="tag">加密貨幣收益策略分析</span>
+    <h2>BTCI 對比 BTC · 加密貨幣收益策略分析</h2>
+    <p>BTCI（NEOS Bitcoin High Income ETF）的備兌看漲策略，實證對比直接持有比特幣現貨：2025-2026 熊市下檔捕獲、NAV 侵蝕與配息穩定性完整分析。</p>
     <span class="read-more">閱讀完整報告 →</span>
   </a>
 </main>
@@ -191,17 +209,24 @@
   themeBtn.title = '切換深色/淺色模式';
   document.body.appendChild(themeBtn);
 
+  function systemPrefersDark() {
+    return !!(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches);
+  }
   function setTheme(t) {
-    if (t === 'dark') root.setAttribute('data-theme', 'dark');
-    else root.removeAttribute('data-theme');
+    root.setAttribute('data-theme', t);
     themeBtn.textContent = t === 'dark' ? '☀' : '☾';
     try { localStorage.setItem(THEME_KEY, t); } catch (e) {}
   }
   var savedTheme = null;
   try { savedTheme = localStorage.getItem(THEME_KEY); } catch (e) {}
-  setTheme(savedTheme || (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'));
+  if (savedTheme === 'dark' || savedTheme === 'light') {
+    setTheme(savedTheme);
+  } else {
+    themeBtn.textContent = systemPrefersDark() ? '☀' : '☾';
+  }
   themeBtn.addEventListener('click', function () {
-    setTheme(root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark');
+    var current = root.getAttribute('data-theme') || (systemPrefersDark() ? 'dark' : 'light');
+    setTheme(current === 'dark' ? 'light' : 'dark');
   });
 })();
 </script>

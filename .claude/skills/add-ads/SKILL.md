@@ -100,8 +100,8 @@ provides. Insert the snippet as-is (don't reformat/minify third-party ad
 script).
 
 Adsterra gives out several different code shapes — they don't all fit the
-same slot the same way. Established precedent (see `reports/ovl-analysis.html`
-and `reports/qqqi-bear-case.html`, both live):
+same slot the same way. Established precedent (see `reports/OVL.html`
+and `reports/QQQI.html`, both live):
 
 - **Banner** (`invoke.js` + a `<div id="container-...">`) is tied to one
   specific container id. Only place it in **one** slot (top, for visibility)

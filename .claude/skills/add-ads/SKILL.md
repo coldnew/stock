@@ -46,9 +46,12 @@ assuming the ad codes will work as-is.
 Each report already has three `.ad-slot` placeholders, inserted as **top-level
 children of `<body>`** (not nested inside any section):
 
-1. Top — right after the `.metrics` bar, before the first `<h2>`.
+1. Top — after the opening "近期股價走勢" candlestick-chart section (the
+   *first* `<h2>` — see `report-conventions`), before the second `<h2>`
+   ("基本介紹"). Not literally "before the first `<h2>`" any more; that
+   was true before the candlestick chart existed.
 2. Mid-content — before the `<h2>` roughly halfway through the report.
-3. Bottom — right before `.report-footer`.
+3. Bottom — right before `.related-report` and `.report-footer`.
 
 Placement as top-level `<body>` children (not inside a `.section-body`) is
 required: the shared interactive script groups everything between one `<h2>`
@@ -166,9 +169,11 @@ If a new report is generated later and doesn't have ad slots yet:
 2. Insert three `.ad-slot` placeholders at the positions described above
    (top-level `<body>` children, at section boundaries).
 3. If the report has the shared interactive script (`buildSections`
-   function), confirm its footer-exclusion check also excludes `ad-slot`:
+   function), confirm its footer-exclusion check also excludes `ad-slot`
+   (and `related-report` — see `report-conventions` for why that one's
+   in the list too, it isn't optional):
    ```js
-   } else if (el.classList && (el.classList.contains('report-footer') || el.classList.contains('ad-slot'))) {
+   } else if (el.classList && (el.classList.contains('report-footer') || el.classList.contains('ad-slot') || el.classList.contains('related-report'))) {
    ```
    If the report has no interactive script at all, the exclusion isn't
    needed — plain static HTML has no collapse behavior to worry about.

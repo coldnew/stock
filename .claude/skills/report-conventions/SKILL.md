@@ -71,7 +71,7 @@ draft of this repo without scaling it.
 ## The interactive layer
 
 Every report has one inline `<script>` before `</body>` (identical logic
-copy-pasted across reports — no shared JS file) doing four things:
+copy-pasted across reports — no shared JS file) doing five things:
 
 1. **Theme toggle** — top-right circular button. First visit follows
    `prefers-color-scheme`; once clicked, the choice is saved to
@@ -193,7 +193,8 @@ Every report (`reports/*.html`) and `index.html` carries:
   overflow-x: auto; white-space: nowrap; } }` so wide financial tables
   scroll instead of breaking mobile layout
 - `.breadcrumb` (top, links to `../index.html`) and `.related-report`
-  (bottom, links to the *other* report) for internal linking
+  (bottom, links to *every other* report — a full mesh across
+  OVL/QQQI/BTCI/GPIQ, not a single pick) for internal linking
 
 `sitemap.xml` and `robots.txt` live at the repo root, not per-report.
 

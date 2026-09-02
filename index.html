@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link rel="preconnect" href="https://www.googletagmanager.com">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%231B365D'/%3E%3Cpolyline points='6,22 12,14 17,18 26,7' fill='none' stroke='%23f5f4ed' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<title>股票分析報告 · Yen-Chin Lee</title>
+<meta name="author" content="Yen-Chin, Lee">
+<meta name="description" content="備兌看漲（covered call）與賣權價差（put spread）收益型 ETF 的熊市韌性分析報告：OVL、QQQI 等基金的下檔捕獲率、配息穩定性與風險實證研究。">
+<meta name="keywords" content="OVL, QQQI, BTCI, GPIQ, 備兌看漲, covered call, 賣權價差, put spread, 熊市, ETF 分析">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://coldnew.github.io/stock/">
+<link rel="sitemap" href="https://coldnew.github.io/stock/sitemap.xml">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://coldnew.github.io/stock/">
+<meta property="og:title" content="股票分析報告 · Yen-Chin Lee">
+<meta property="og:description" content="備兌看漲（covered call）與賣權價差（put spread）收益型 ETF 的熊市韌性分析報告：OVL、QQQI 等基金的下檔捕獲率、配息穩定性與風險實證研究。">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="股票分析報告 · Yen-Chin Lee">
+<meta name="twitter:description" content="備兌看漲（covered call）與賣權價差（put spread）收益型 ETF 的熊市韌性分析報告：OVL、QQQI 等基金的下檔捕獲率、配息穩定性與風險實證研究。">
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2SXWWHGFPN"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-2SXWWHGFPN');
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": "股票分析報告",
+  "description": "備兌看漲（covered call）與賣權價差（put spread）收益型 ETF 的熊市韌性分析報告：OVL、QQQI 等基金的下檔捕獲率、配息穩定性與風險實證研究。",
+  "url": "https://coldnew.github.io/stock/",
+  "inLanguage": "zh-TW",
+  "author": { "@type": "Person", "name": "Yen-Chin, Lee" },
+  "hasPart": [
+    {
+      "@type": "Article",
+      "headline": "OVL 分析報告 · 賣權價差疊加策略",
+      "url": "https://coldnew.github.io/stock/reports/ovl-analysis.html"
+    },
+    {
+      "@type": "Article",
+      "headline": "QQQI 熊市韌性推估 · 跨資產類比分析",
+      "url": "https://coldnew.github.io/stock/reports/qqqi-bear-case.html"
+    }
+  ]
+}
+</script>
+<style>
+  @font-face {
+    font-family: "TsangerJinKai02";
+    src: url("https://cdn.jsdelivr.net/gh/tw93/Kami@main/assets/fonts/TsangerJinKai02-W04.ttf") format("truetype");
+    font-weight: 400; font-style: normal; font-display: swap;
+  }
+  @font-face {
+    font-family: "TsangerJinKai02";
+    src: url("https://cdn.jsdelivr.net/gh/tw93/Kami@main/assets/fonts/TsangerJinKai02-W05.ttf") format("truetype");
+    font-weight: 500; font-style: normal; font-display: swap;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --parchment: #f5f4ed;
+    --ivory:     #faf9f5;
+    --near-black:#141413;
+    --olive:     #504e49;
+    --stone:     #6b6a64;
+    --brand:     #1B365D;
+    --border:    #e8e6dc;
+    --serif: "TsangerJinKai02", "Source Han Serif TC", "Noto Serif CJK TC", "Songti TC", "PMingLiU", Georgia, serif;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --parchment: #1c1c1a;
+      --ivory:     #232320;
+      --near-black:#f0efe9;
+      --olive:     #b9b6a9;
+      --stone:     #939083;
+      --border:    #38372f;
+      --brand:     #7ea2d8;
+    }
+  }
+  :root[data-theme="dark"] {
+    --parchment: #1c1c1a;
+    --ivory:     #232320;
+    --near-black:#f0efe9;
+    --olive:     #b9b6a9;
+    --stone:     #939083;
+    --border:    #38372f;
+    --brand:     #7ea2d8;
+  }
+  html, body { background: var(--parchment); }
+  body {
+    color: var(--near-black);
+    font-family: var(--serif);
+    line-height: 1.6;
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 48px 20px 64px;
+    transition: background-color .2s ease, color .2s ease;
+  }
+  .theme-toggle {
+    position: fixed;
+    top: 14px; right: 14px;
+    z-index: 40;
+    width: 34px; height: 34px;
+    border-radius: 50%;
+    border: 0.5px solid var(--border);
+    background: var(--ivory);
+    color: var(--near-black);
+    font-size: 14px;
+    display: flex; align-items: center; justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 1px 3px rgba(20,20,19,.08), 0 1px 2px rgba(20,20,19,.06);
+  }
+  .theme-toggle:hover { border-color: var(--brand); }
+  header { margin-bottom: 36px; }
+  .eyebrow {
+    display: inline-flex; align-items: center; gap: 7px;
+    font-size: 12px; color: var(--brand); letter-spacing: 1.5px;
+    text-transform: uppercase; font-weight: 500; margin-bottom: 10px;
+  }
+  .eyebrow::before { content: ""; width: 10px; height: 1.5px; background: var(--brand); }
+  h1 { font-size: 28px; font-weight: 500; margin-bottom: 8px; }
+  header p { color: var(--olive); font-size: 15px; }
+  .report-list { display: flex; flex-direction: column; gap: 16px; }
+  .report-card {
+    display: block;
+    padding: 20px 22px;
+    border: 0.5px solid var(--border);
+    border-radius: 8px;
+    background: var(--ivory);
+    text-decoration: none;
+    color: inherit;
+    transition: border-color .15s ease, transform .15s ease;
+  }
+  .report-card:hover { border-color: var(--brand); transform: translateY(-1px); }
+  .report-card .tag {
+    display: inline-block; font-size: 11px; color: var(--brand);
+    background: rgba(27,54,93,.08); padding: 2px 8px; border-radius: 3px;
+    margin-bottom: 8px; font-weight: 500;
+  }
+  .report-card h2 { font-size: 18px; font-weight: 500; margin-bottom: 6px; }
+  .report-card p { font-size: 13.5px; color: var(--stone); line-height: 1.55; }
+  .report-card .read-more { display: inline-block; margin-top: 10px; font-size: 13px; color: var(--brand); font-weight: 500; }
+  footer { margin-top: 48px; padding-top: 16px; border-top: 0.5px dotted var(--border); font-size: 12px; color: var(--stone); }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="eyebrow">投資研究報告</div>
+  <h1>股票分析報告</h1>
+  <p>備兌看漲（covered call）與賣權價差（put spread）收益型 ETF 的熊市韌性與風險實證研究。</p>
+</header>
+
+<main class="report-list">
+  <a class="report-card" href="reports/ovl-analysis.html">
+    <span class="tag">跨資產策略分析</span>
+    <h2>OVL 分析報告 · 賣權價差疊加策略</h2>
+    <p>分析 OVL（Overlay Shares Large Cap Equity ETF）的賣權價差疊加策略，對照備兌看漲基金，評估其上漲參與度、熊市下檔放大效應與新月配機制的未知風險。</p>
+    <span class="read-more">閱讀完整報告 →</span>
+  </a>
+
+  <a class="report-card" href="reports/qqqi-bear-case.html">
+    <span class="tag">跨資產類比分析</span>
+    <h2>QQQI 熊市韌性推估 · 跨資產類比分析</h2>
+    <p>以 BTCI 在 2025-2026 比特幣實證熊市中的表現，推估 QQQI 在納斯達克100 真正熊市中的下檔風險。</p>
+    <span class="read-more">閱讀完整報告 →</span>
+  </a>
+</main>
+
+<footer>
+  Yen-Chin, Lee · 跨資產策略分析，不構成投資建議
+</footer>
+
+<script>
+(function () {
+  'use strict';
+  var root = document.documentElement;
+  var THEME_KEY = 'report-theme';
+
+  var themeBtn = document.createElement('button');
+  themeBtn.type = 'button';
+  themeBtn.className = 'theme-toggle';
+  themeBtn.setAttribute('aria-label', '切換深色/淺色模式');
+  themeBtn.title = '切換深色/淺色模式';
+  document.body.appendChild(themeBtn);
+
+  function setTheme(t) {
+    if (t === 'dark') root.setAttribute('data-theme', 'dark');
+    else root.removeAttribute('data-theme');
+    themeBtn.textContent = t === 'dark' ? '☀' : '☾';
+    try { localStorage.setItem(THEME_KEY, t); } catch (e) {}
+  }
+  var savedTheme = null;
+  try { savedTheme = localStorage.getItem(THEME_KEY); } catch (e) {}
+  setTheme(savedTheme || (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'));
+  themeBtn.addEventListener('click', function () {
+    setTheme(root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark');
+  });
+})();
+</script>
+</body>
+</html>

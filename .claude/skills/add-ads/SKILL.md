@@ -100,12 +100,15 @@ provides. Insert the snippet as-is (don't reformat/minify third-party ad
 script).
 
 Adsterra gives out several different code shapes — they don't all fit the
-same slot the same way. Established precedent (see `reports/OVL.html`
-and `reports/QQQI.html`, both live):
+same slot the same way. Established precedent (see `index.html` and every
+file under `reports/`, all live — ads run on all five pages of this site,
+not just the reports):
 
 - **Banner** (`invoke.js` + a `<div id="container-...">`) is tied to one
-  specific container id. Only place it in **one** slot (top, for visibility)
-  — duplicating the same id across multiple `.ad-slot`s is invalid HTML and
+  specific container id. The same id is reused verbatim across pages (each
+  page is a separate document, so that's fine) but only place it in **one**
+  slot **within a given page** (top, for visibility) — duplicating the same
+  id across multiple `.ad-slot`s on the *same* page is invalid HTML and
   the script will only render into the first match.
 - **Smart link** is a plain URL, safe to reuse verbatim in multiple slots
   (no shared DOM id to collide). Render it as a small styled `<a>` — see

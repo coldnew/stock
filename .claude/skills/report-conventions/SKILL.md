@@ -183,9 +183,11 @@ Every report (`reports/*.html`) and `index.html` carries:
    reference the new one too (currently each report links to exactly one
    other report; decide whether that should become a list as the report
    count grows).
-5. Decide on ad placement — see the `add-ads` skill. Don't add ads by
-   default without asking; the user has opted in per-report so far, not
-   as a blanket policy.
+5. Add the same top/mid/bottom `.ad-slot` pattern — see the `add-ads`
+   skill. As of the site covering OVL/QQQI/BTCI/GPIQ plus `index.html`,
+   the user has confirmed ads belong on every page by default; a new
+   report should get them without needing to ask again, using the same
+   codes already live elsewhere in the site.
 6. Add a `.report-card` entry to `index.html`'s `<main class="report-list">`.
 7. Add a `<url>` entry to `sitemap.xml` (`<loc>`, `<lastmod>` = today,
    reasonable `<changefreq>`/`<priority>` — see existing entries).

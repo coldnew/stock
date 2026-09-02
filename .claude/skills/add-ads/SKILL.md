@@ -78,7 +78,7 @@ block is ever regenerated.
   min-height: 40pt;
 }
 .ad-slot-label {
-  font-size: 7.5pt;
+  font-size: 9pt;
   letter-spacing: 1pt;
   text-transform: uppercase;
   color: var(--stone);
@@ -87,7 +87,10 @@ block is ever regenerated.
 ```
 
 This already themes correctly in dark mode since it uses the existing
-`--border`/`--ivory`/`--stone` custom properties.
+`--border`/`--ivory`/`--stone` custom properties. The font-size above is
+already at the repo's current scale (base body text is 12pt, not the
+original Kami template's 10pt — see the `report-conventions` skill for why)
+— don't re-derive it from the original 7.5pt default.
 
 ## Filling in a real ad code
 
@@ -125,7 +128,7 @@ and `reports/qqqi-bear-case.html`, both live):
   border-radius: 3pt;
   color: var(--brand);
   text-decoration: none;
-  font-size: 9.5pt;
+  font-size: 11.5pt;
   font-weight: 500;
   transition: background-color .15s ease, color .15s ease;
 }

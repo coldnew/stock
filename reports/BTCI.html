@@ -453,6 +453,7 @@
 
   svg .legend-hit { cursor: pointer; }
   svg .legend-off { opacity: .3; }
+  svg .candle { cursor: crosshair; }
 
   @media (max-width: 640px) {
     table, .kami-table { display: block; overflow-x: auto; white-space: nowrap; }
@@ -535,6 +536,238 @@
     <div class="metric-label">觀測期最大回撤</div>
   </div>
 </div>
+
+<!-- ========== CANDLESTICK CHART ========== -->
+<h2>近期股價走勢（近 50 個交易日）</h2>
+<figure>
+<svg viewBox="0 0 900 380" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;">
+<rect width="100%" height="100%" fill="#f5f4ed"/>
+<line x1="60" y1="319.8" x2="876" y2="319.8" stroke="#e8e7e1" stroke-width="0.8"/>
+<text x="52" y="323.3" fill="#6b6a64" font-size="10" text-anchor="end">$26</text>
+<line x1="60" y1="246.3" x2="876" y2="246.3" stroke="#e8e7e1" stroke-width="0.8"/>
+<text x="52" y="249.8" fill="#6b6a64" font-size="10" text-anchor="end">$28</text>
+<line x1="60" y1="172.8" x2="876" y2="172.8" stroke="#e8e7e1" stroke-width="0.8"/>
+<text x="52" y="176.3" fill="#6b6a64" font-size="10" text-anchor="end">$30</text>
+<line x1="60" y1="99.4" x2="876" y2="99.4" stroke="#e8e7e1" stroke-width="0.8"/>
+<text x="52" y="102.9" fill="#6b6a64" font-size="10" text-anchor="end">$32</text>
+<line x1="60" y1="320" x2="876" y2="320" stroke="#141413" stroke-width="0.8"/>
+<g class="candle" data-date="2026-06-23" data-o="28.32" data-h="28.66" data-l="28.25" data-c="28.42">
+<line x1="60.0" y1="222.1" x2="60.0" y2="237.1" stroke="#1B365D" stroke-width="1.1"/>
+<rect x="55.0" y="230.9" width="10.0" height="3.7" fill="#1B365D" rx="0.6"/>
+</g>
+<g class="candle" data-date="2026-06-24" data-o="28.23" data-h="28.31" data-l="26.96" data-c="27.25">
+<line x1="76.7" y1="234.9" x2="76.7" y2="284.5" stroke="#6b6a64" stroke-width="1.1"/>
+<rect x="71.7" y="237.9" width="10.0" height="36.0" fill="#6b6a64" rx="0.6"/>
+</g>
+<g class="candle" data-date="2026-06-25" data-o="27.84" data-h="27.89" data-l="26.52" data-c="27.01">
+<line x1="93.3" y1="250.4" x2="93.3" y2="300.7" stroke="#6b6a64" stroke-width="1.1"/>
+<rect x="88.3" y="252.2" width="10.0" height="30.5" fill="#6b6a64" rx="0.6"/>
+</g>
+<g class="candle" data-date="2026-06-26" data-o="26.86" data-h="27.61" data-l="26.83" data-c="27.27">
+<line x1="110.0" y1="260.6" x2="110.0" y2="289.3" stroke="#1B365D" stroke-width="1.1"/>
+<rect x="105.0" y="273.1" width="10.0" height="15.1" fill="#1B365D" rx="0.6"/>
+</g>
+<g class="candle" data-date="2026-06-29" data-o="27.29" data-h="27.64" data-l="26.89" data-c="27.56">
+<line x1="126.6" y1="259.5" x2="126.6" y2="287.1" stroke="#1B365D" stroke-width="1.1"/>
+<rect x="121.6" y="262.5" width="10.0" height="9.9" fill="#1B365D" rx="0.6"/>
+</g>
+<g class="candle" data-date="2026-06-30" data-o="26.71" data-h="26.98" data-l="26.52" data-c="26.86">
+<line x1="143.3" y1="283.8" x2="143.3" y2="300.7" stroke="#1B365D" stroke-width="1.1"/>
+<rect x="138.3" y="288.2" width="10.0" height="5.5" fill="#1B365D" rx="0.6"/>
+</g>
+<g class="candle" data-date="2026-07-01" data-o="26.71" data-h="27.44" data-l="26.71" data-c="27.25">
+<line x1="159.9" y1="266.9" x2="159.9" y2="293.7" stroke="#1B365D" stroke-width="1.1"/>
+<rect x="154.9" y="273.9" width="10.0" height="19.8" fill="#1B365D" rx="0.6"/>
+</g>
+<g class="candle" data-date="2026-07-02" data-o="27.93" data-h="28.10" data-l="27.71" data-c="27.90">
+<line x1="176.6" y1="242.6" x2="176.6" y2="257.0" stroke="#6b6a64" stroke-width="1.1"/>
+<rect x="171.6" y="248.9" width="10.0" height="1.2" fill="#6b6a64" rx="0.6"/>
+</g>
+<g class="candle" data-date="2026-07-06" data-o="27.92" data-h="28.76" data-l="27.79" data-c="28.68">
+<line x1="193.2" y1="218.4" x2="193.2" y2="254.0" stroke="#1B365D" stroke-width="1.1"/>
+<rect x="188.2" y="221.3" width="10.0" height="27.9" fill="#1B365D" rx="0.6"/>
+</g>
+<g class="candle" data-date="2026-07-07" data-o="28.42" data-h="28.89" data-l="28.30" data-c="28.73">
+<line x1="209.9" y1="213.6" x2="209.9" y2="235.3" stroke="#1B365D" stroke-width="1.1"/>
+<rect x="204.9" y="219.5" width="10.0" height="11.4" fill="#1B365D" rx="0.6"/>
+</g>
+<g class="candle" data-date="2026-07-08" data-o="28.09" data-h="28.24" data-l="27.91" data-c="28.20">
+<line x1="226.5" y1="237.5" x2="226.5" y2="249.6" stroke="#1B365D" stroke-width="1.1"/>
+<rect x="221.5" y="239.0" width="10.0" height="4.0" fill="#1B365D" rx="0.6"/>
+</g>
+<g class="candle" data-date="2026-07-09" data-o="28.36" data-h="28.65" data-l="28.29" data-c="28.57">
+<line x1="243.2" y1="222.4" x2="243.2" y2="235.7" stroke="#1B365D" stroke-width="1.1"/>
+<rect x="238.2" y="225.4" width="10.0" height="7.7" fill="#1B365D" rx="0.6"/>
+</g>
+<g class="candle" data-date="2026-07-10" data-o="28.87" data-h="29.13" data-l="28.76" data-c="28.86">
+<line x1="259.8" y1="204.8" x2="259.8" y2="218.4" stroke="#6b6a64" stroke-width="1.1"/>
+<rect x="254.8" y="214.4" width="10.0" height="1.2" fill="#6b6a64" rx="0.6"/>
+</g>
+<g class="candle" data-date="2026-07-13" data-o="28.34" data-h="28.48" data-l="28.06" data-c="28.26">
+<line x1="276.5" y1="228.7" x2="276.5" y2="244.1" stroke="#6b6a64" stroke-width="1.1"/>
+<rect x="271.5" y="233.8" width="10.0" height="2.9" fill="#6b6a64" rx="0.6"/>
+</g>
+<g class="candle" data-date="2026-07-14" data-o="28.83" data-h="29.22" data-l="28.72" data-c="29.13">
+<line x1="293.1" y1="201.5" x2="293.1" y2="219.9" stroke="#1B365D" stroke-width="1.1"/>
+<rect x="288.1" y="204.8" width="10.0" height="11.0" fill="#1B365D" rx="0.6"/>
+</g>
+<g class="candle" data-date="2026-07-15" data-o="29.35" data-h="29.45" data-l="29.16" data-c="29.23">
+<line x1="309.8" y1="193.0" x2="309.8" y2="203.7" stroke="#6b6a64" stroke-width="1.1"/>
+<rect x="304.8" y="196.7" width="10.0" height="4.4" fill="#6b6a64" rx="0.6"/>
+</g>
+<g class="candle" data-date="2026-07-16" data-o="28.95" data-h="29.21" data-l="28.91" data-c="29.03">
+<line x1="326.4" y1="201.9" x2="326.4" y2="212.9" stroke="#1B365D" stroke-width="1.1"/>
+<rect x="321.5" y="208.5" width="10.0" height="2.9" fill="#1B365D" rx="0.6"/>
+</g>
+<g class="candle" data-date="2026-07-17" data-o="28.55" data-h="29.04" data-l="28.36" data-c="28.95">
+<line x1="343.1" y1="208.1" x2="343.1" y2="233.1" stroke="#1B365D" stroke-width="1.1"/>
+<rect x="338.1" y="211.4" width="10.0" height="14.7" fill="#1B365D" rx="0.6"/>
+</g>
+<g class="candle" data-date="2026-07-20" data-o="29.12" data-h="29.55" data-l="28.99" data-c="29.53">
+<line x1="359.8" y1="189.4" x2="359.8" y2="209.9" stroke="#1B365D" stroke-width="1.1"/>
+<rect x="354.8" y="190.1" width="10.0" height="15.1" fill="#1B365D" rx="0.6"/>
+</g>
+<g class="candle" data-date="2026-07-21" data-o="29.80" data-h="29.96" data-l="29.65" data-c="29.78">
+<line x1="376.4" y1="174.3" x2="376.4" y2="185.7" stroke="#6b6a64" stroke-width="1.1"/>
+<rect x="371.4" y="180.2" width="10.0" height="1.2" fill="#6b6a64" rx="0.6"/>
+</g>
+<g class="candle" data-date="2026-07-22" data-o="28.87" data-h="29.09" data-l="28.84" data-c="28.92">
+<line x1="393.1" y1="206.3" x2="393.1" y2="215.5" stroke="#1B365D" stroke-width="1.1"/>
+<rect x="388.1" y="212.5" width="10.0" height="1.8" fill="#1B365D" rx="0.6"/>
+</g>
+<g class="candle" data-date="2026-07-23" data-o="28.64" data-h="28.71" data-l="28.53" data-c="28.56">
+<line x1="409.7" y1="220.2" x2="409.7" y2="226.8" stroke="#6b6a64" stroke-width="1.1"/>
+<rect x="404.7" y="222.8" width="10.0" height="2.9" fill="#6b6a64" rx="0.6"/>
+</g>
+<g class="candle" data-date="2026-07-24" data-o="28.39" data-h="28.47" data-l="28.19" data-c="28.39">
+<line x1="426.4" y1="229.0" x2="426.4" y2="239.3" stroke="#1B365D" stroke-width="1.1"/>
+<rect x="421.4" y="232.0" width="10.0" height="1.2" fill="#1B365D" rx="0.6"/>
+</g>
+<g class="candle" data-date="2026-07-27" data-o="28.74" data-h="28.95" data-l="28.47" data-c="28.67">
+<line x1="443.0" y1="211.4" x2="443.0" y2="229.0" stroke="#6b6a64" stroke-width="1.1"/>
+<rect x="438.0" y="219.1" width="10.0" height="2.6" fill="#6b6a64" rx="0.6"/>
+</g>
+<g class="candle" data-date="2026-07-28" data-o="28.16" data-h="28.37" data-l="27.91" data-c="28.26">
+<line x1="459.7" y1="232.7" x2="459.7" y2="249.6" stroke="#1B365D" stroke-width="1.1"/>
+<rect x="454.7" y="236.8" width="10.0" height="3.7" fill="#1B365D" rx="0.6"/>
+</g>
+<g class="candle" data-date="2026-07-29" data-o="28.45" data-h="28.59" data-l="28.15" data-c="28.22">
+<line x1="476.3" y1="224.6" x2="476.3" y2="240.8" stroke="#6b6a64" stroke-width="1.1"/>
+<rect x="471.3" y="229.8" width="10.0" height="8.5" fill="#6b6a64" rx="0.6"/>
+</g>
+<g class="candle" data-date="2026-07-30" data-o="28.66" data-h="28.78" data-l="28.57" data-c="28.67">
+<line x1="493.0" y1="217.7" x2="493.0" y2="225.4" stroke="#1B365D" stroke-width="1.1"/>
+<rect x="488.0" y="221.7" width="10.0" height="1.2" fill="#1B365D" rx="0.6"/>
+</g>
+<g class="candle" data-date="2026-07-31" data-o="28.31" data-h="28.32" data-l="27.78" data-c="27.98">
+<line x1="509.6" y1="234.6" x2="509.6" y2="254.4" stroke="#6b6a64" stroke-width="1.1"/>
+<rect x="504.6" y="234.9" width="10.0" height="12.1" fill="#6b6a64" rx="0.6"/>
+</g>
+<g class="candle" data-date="2026-08-03" data-o="27.81" data-h="28.41" data-l="27.81" data-c="28.36">
+<line x1="526.3" y1="231.3" x2="526.3" y2="253.3" stroke="#1B365D" stroke-width="1.1"/>
+<rect x="521.3" y="233.1" width="10.0" height="20.2" fill="#1B365D" rx="0.6"/>
+</g>
+<g class="candle" data-date="2026-08-04" data-o="28.30" data-h="28.59" data-l="28.25" data-c="28.59">
+<line x1="542.9" y1="224.6" x2="542.9" y2="237.1" stroke="#1B365D" stroke-width="1.1"/>
+<rect x="537.9" y="224.6" width="10.0" height="10.7" fill="#1B365D" rx="0.6"/>
+</g>
+<g class="candle" data-date="2026-08-05" data-o="28.47" data-h="28.76" data-l="28.33" data-c="28.71">
+<line x1="559.6" y1="218.4" x2="559.6" y2="234.2" stroke="#1B365D" stroke-width="1.1"/>
+<rect x="554.6" y="220.2" width="10.0" height="8.8" fill="#1B365D" rx="0.6"/>
+</g>
+<g class="candle" data-date="2026-08-06" data-o="28.51" data-h="28.78" data-l="28.47" data-c="28.61">
+<line x1="576.2" y1="217.7" x2="576.2" y2="229.0" stroke="#1B365D" stroke-width="1.1"/>
+<rect x="571.2" y="223.9" width="10.0" height="3.7" fill="#1B365D" rx="0.6"/>
+</g>
+<g class="candle" data-date="2026-08-07" data-o="28.90" data-h="28.94" data-l="28.62" data-c="28.82">
+<line x1="592.9" y1="211.8" x2="592.9" y2="223.5" stroke="#6b6a64" stroke-width="1.1"/>
+<rect x="587.9" y="213.2" width="10.0" height="2.9" fill="#6b6a64" rx="0.6"/>
+</g>
+<g class="candle" data-date="2026-08-10" data-o="28.79" data-h="28.83" data-l="28.34" data-c="28.46">
+<line x1="609.6" y1="215.8" x2="609.6" y2="233.8" stroke="#6b6a64" stroke-width="1.1"/>
+<rect x="604.6" y="217.3" width="10.0" height="12.1" fill="#6b6a64" rx="0.6"/>
+</g>
+<g class="candle" data-date="2026-08-11" data-o="28.48" data-h="28.52" data-l="28.13" data-c="28.26">
+<line x1="626.2" y1="227.2" x2="626.2" y2="241.5" stroke="#6b6a64" stroke-width="1.1"/>
+<rect x="621.2" y="228.7" width="10.0" height="8.1" fill="#6b6a64" rx="0.6"/>
+</g>
+<g class="candle" data-date="2026-08-12" data-o="28.42" data-h="28.44" data-l="28.16" data-c="28.18">
+<line x1="642.9" y1="230.1" x2="642.9" y2="240.4" stroke="#6b6a64" stroke-width="1.1"/>
+<rect x="637.9" y="230.9" width="10.0" height="8.8" fill="#6b6a64" rx="0.6"/>
+</g>
+<g class="candle" data-date="2026-08-13" data-o="28.25" data-h="28.45" data-l="28.00" data-c="28.21">
+<line x1="659.5" y1="229.8" x2="659.5" y2="246.3" stroke="#6b6a64" stroke-width="1.1"/>
+<rect x="654.5" y="237.1" width="10.0" height="1.5" fill="#6b6a64" rx="0.6"/>
+</g>
+<g class="candle" data-date="2026-08-14" data-o="28.00" data-h="28.17" data-l="27.89" data-c="28.07">
+<line x1="676.2" y1="240.1" x2="676.2" y2="250.4" stroke="#1B365D" stroke-width="1.1"/>
+<rect x="671.2" y="243.7" width="10.0" height="2.6" fill="#1B365D" rx="0.6"/>
+</g>
+<g class="candle" data-date="2026-08-17" data-o="28.23" data-h="28.72" data-l="28.23" data-c="28.61">
+<line x1="692.8" y1="219.9" x2="692.8" y2="237.9" stroke="#1B365D" stroke-width="1.1"/>
+<rect x="687.8" y="223.9" width="10.0" height="14.0" fill="#1B365D" rx="0.6"/>
+</g>
+<g class="candle" data-date="2026-08-18" data-o="28.50" data-h="28.86" data-l="28.49" data-c="28.73">
+<line x1="709.5" y1="214.7" x2="709.5" y2="228.3" stroke="#1B365D" stroke-width="1.1"/>
+<rect x="704.5" y="219.5" width="10.0" height="8.5" fill="#1B365D" rx="0.6"/>
+</g>
+<g class="candle" data-date="2026-08-19" data-o="28.26" data-h="29.84" data-l="28.16" data-c="29.47">
+<line x1="726.1" y1="178.7" x2="726.1" y2="240.4" stroke="#1B365D" stroke-width="1.1"/>
+<rect x="721.1" y="192.3" width="10.0" height="44.5" fill="#1B365D" rx="0.6"/>
+</g>
+<g class="candle" data-date="2026-08-20" data-o="30.50" data-h="30.85" data-l="30.26" data-c="30.78">
+<line x1="742.8" y1="141.6" x2="742.8" y2="163.3" stroke="#1B365D" stroke-width="1.1"/>
+<rect x="737.8" y="144.2" width="10.0" height="10.3" fill="#1B365D" rx="0.6"/>
+</g>
+<g class="candle" data-date="2026-08-21" data-o="32.00" data-h="32.24" data-l="31.78" data-c="32.00">
+<line x1="759.4" y1="90.5" x2="759.4" y2="107.4" stroke="#1B365D" stroke-width="1.1"/>
+<rect x="754.4" y="99.4" width="10.0" height="1.2" fill="#1B365D" rx="0.6"/>
+</g>
+<g class="candle" data-date="2026-08-24" data-o="32.59" data-h="32.84" data-l="32.22" data-c="32.52">
+<line x1="776.1" y1="68.5" x2="776.1" y2="91.3" stroke="#6b6a64" stroke-width="1.1"/>
+<rect x="771.1" y="77.7" width="10.0" height="2.6" fill="#6b6a64" rx="0.6"/>
+</g>
+<g class="candle" data-date="2026-08-25" data-o="32.51" data-h="32.72" data-l="32.32" data-c="32.53">
+<line x1="792.7" y1="72.9" x2="792.7" y2="87.6" stroke="#1B365D" stroke-width="1.1"/>
+<rect x="787.7" y="79.9" width="10.0" height="1.2" fill="#1B365D" rx="0.6"/>
+</g>
+<g class="candle" data-date="2026-08-26" data-o="32.35" data-h="32.50" data-l="32.21" data-c="32.43">
+<line x1="809.4" y1="81.0" x2="809.4" y2="91.6" stroke="#1B365D" stroke-width="1.1"/>
+<rect x="804.4" y="83.6" width="10.0" height="2.9" fill="#1B365D" rx="0.6"/>
+</g>
+<g class="candle" data-date="2026-08-27" data-o="32.65" data-h="33.09" data-l="32.57" data-c="32.82">
+<line x1="826.0" y1="59.3" x2="826.0" y2="78.4" stroke="#1B365D" stroke-width="1.1"/>
+<rect x="821.0" y="69.2" width="10.0" height="6.2" fill="#1B365D" rx="0.6"/>
+</g>
+<g class="candle" data-date="2026-08-28" data-o="32.60" data-h="32.84" data-l="32.06" data-c="32.26">
+<line x1="842.7" y1="68.5" x2="842.7" y2="97.2" stroke="#6b6a64" stroke-width="1.1"/>
+<rect x="837.7" y="77.3" width="10.0" height="12.5" fill="#6b6a64" rx="0.6"/>
+</g>
+<g class="candle" data-date="2026-08-31" data-o="32.33" data-h="32.67" data-l="32.28" data-c="32.59">
+<line x1="859.3" y1="74.7" x2="859.3" y2="89.1" stroke="#1B365D" stroke-width="1.1"/>
+<rect x="854.4" y="77.7" width="10.0" height="9.6" fill="#1B365D" rx="0.6"/>
+</g>
+<g class="candle" data-date="2026-09-01" data-o="32.59" data-h="32.59" data-l="31.65" data-c="32.00">
+<line x1="876.0" y1="77.7" x2="876.0" y2="112.2" stroke="#6b6a64" stroke-width="1.1"/>
+<rect x="871.0" y="77.7" width="10.0" height="21.7" fill="#6b6a64" rx="0.6"/>
+</g>
+<text x="60.0" y="338" fill="#141413" font-size="9.5" text-anchor="middle">6/23</text>
+<text x="176.6" y="338" fill="#141413" font-size="9.5" text-anchor="middle">7/2</text>
+<text x="293.1" y="338" fill="#141413" font-size="9.5" text-anchor="middle">7/14</text>
+<text x="409.7" y="338" fill="#141413" font-size="9.5" text-anchor="middle">7/23</text>
+<text x="526.3" y="338" fill="#141413" font-size="9.5" text-anchor="middle">8/3</text>
+<text x="642.9" y="338" fill="#141413" font-size="9.5" text-anchor="middle">8/12</text>
+<text x="759.4" y="338" fill="#141413" font-size="9.5" text-anchor="middle">8/21</text>
+<text x="876.0" y="338" fill="#141413" font-size="9.5" text-anchor="middle">9/1</text>
+<text x="16" y="180" fill="#6b6a64" font-size="9" letter-spacing="1" transform="rotate(-90 16 180)" text-anchor="middle">價格（美元）</text>
+<line x1="60" y1="352" x2="876" y2="352" stroke="#e8e7e1" stroke-width="0.8"/>
+<rect x="60" y="358" width="10" height="10" fill="#1B365D" rx="1.5"/>
+<text x="76" y="367" fill="#504e49" font-size="10">上漲日（收盤 ≥ 開盤）</text>
+<rect x="210" y="358" width="10" height="10" fill="#6b6a64" rx="1.5"/>
+<text x="226" y="367" fill="#504e49" font-size="10">下跌日（收盤 &lt; 開盤）</text>
+</svg>
+  <figcaption>近三個月股價區間約 $26.9～$33.1，其中 8 月 19 日至 21 日出現明顯跳空上漲（$28.16 → $32.00），與報告中「谷底 $26.86 反彈至 $32.00，漲幅 19.1%」的敘述一致。滑鼠移到任一根 K 棒可查看當日開高低收。</figcaption>
+</figure>
 
 <!-- ========== AD SLOT (Adsterra) ========== -->
 <div class="ad-slot" aria-label="Advertisement">
@@ -1186,6 +1419,29 @@
 
     if (yCal.length >= 2 && polylines.length) setupLineTooltip(svg, children, polylines, yCal);
     if (rects.length) setupBarTooltip(rects, children);
+    setupCandlestickTooltip(svg);
+  }
+
+  function setupCandlestickTooltip(svg) {
+    var candles = svg.querySelectorAll('g.candle');
+    if (!candles.length) return;
+    Array.prototype.forEach.call(candles, function (g) {
+      g.addEventListener('mouseenter', function () {
+        g.style.filter = 'brightness(1.2)';
+        var date = g.getAttribute('data-date');
+        var o = g.getAttribute('data-o'), h = g.getAttribute('data-h'),
+            l = g.getAttribute('data-l'), c = g.getAttribute('data-c');
+        tooltip.innerHTML = '<div class="tt-x">' + date + '</div>' +
+          '<div class="tt-row">開 $' + o + '　高 $' + h + '</div>' +
+          '<div class="tt-row">低 $' + l + '　收 $' + c + '</div>';
+        tooltip.classList.add('visible');
+      });
+      g.addEventListener('mousemove', positionTooltip);
+      g.addEventListener('mouseleave', function () {
+        g.style.filter = '';
+        tooltip.classList.remove('visible');
+      });
+    });
   }
 
   function valueFromY(y, yCal) {

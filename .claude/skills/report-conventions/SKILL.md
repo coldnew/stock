@@ -136,10 +136,19 @@ copy-pasted across reports — no shared JS file) doing four things:
    engines never collide on the same chart. `setupCandlestickTooltip()`
    queries `svg.querySelectorAll('g.candle')` (a deep query, unlike the
    direct-children scan) and reads the `data-*` attributes straight into
-   the tooltip — no pixel-to-value inversion needed, unlike #4. Up days
-   use `--brand` (navy), down days use `--negative` (grey) — the same two
-   tokens already used for `.price-change.up`/`.down`, not a new red/green
-   convention. When adding a new report, fetch real recent daily OHLC for
+   the tooltip — no pixel-to-value inversion needed, unlike #4. Up/down
+   colors were tried once as `--brand`/`--negative` (navy/grey, matching
+   `.price-change`) and rejected — too subtle for a candlestick chart,
+   which needs strong two-color contrast to read at a glance. Now fixed
+   hex `#C23B32` (red) = up, `#3A7A4E` (green) = down — and since these
+   reports are explicitly for Taiwanese investors, that's the **Taiwan/
+   Asia convention** (red = 漲/up, green = 跌/down), the opposite of the
+   US/Western green-up/red-down. Don't swap it to Western convention
+   without checking with the user first — it was a deliberate audience
+   call, not a default. Both colors are fixed hex values directly in the
+   SVG (not CSS vars), matching how every other chart in these reports
+   already ignores dark-mode theming — see the design-system section
+   above for why. When adding a new report, fetch real recent daily OHLC for
    its ticker (don't fabricate it) and regenerate with the same approach;
    the price data should also cross-check against the report's own header
    price/date for the most recent bar.

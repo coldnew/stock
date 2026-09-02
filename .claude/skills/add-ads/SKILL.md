@@ -112,11 +112,21 @@ and `reports/qqqi-bear-case.html`, both live):
   `.ad-smartlink` CSS below — rather than dropping a bare script; it's just
   a link. Vary the visible label slightly per placement if it reads oddly
   repeated verbatim.
-- **Popunder** and **social bar** scripts are page-wide and self-inject (no
-  container div, no slot needed) — include **one copy of each**, anywhere
-  in `<body>` that isn't inside a `.section-body` (e.g. right after the last
-  `.ad-slot`, before `.report-footer`). Do not put these inside a `.ad-slot`
-  div or repeat them per slot.
+- **Social bar** scripts are page-wide and self-inject (no container div,
+  no slot needed) — include **one copy**, anywhere in `<body>` that isn't
+  inside a `.section-body` (e.g. right after the last `.ad-slot`, before
+  `.report-footer`). Do not put it inside a `.ad-slot` div or repeat it per
+  slot.
+- **Popunder was tried here and removed.** It was added once (see git
+  history), but its script hijacks the *first click on any link on the
+  page* — not just the ad — to pop a new ad tab, then lets the original
+  click's destination load normally. That's standard Popunder behavior,
+  confirmed by fetching and reading the actual script (look for
+  `mousedown`/`click`/`isLink`/`opener` in it), not a bug — but it reads as
+  the *site itself* misbehaving on click, which is exactly the trust cost
+  flagged above. Don't re-add Popunder to these reports without the user
+  explicitly asking again, and if they do, tell them plainly what it does
+  before adding it — don't let them find out from a confused reader.
 - **Native banner** (if used later) generally works like Banner — one
   container id, one placement.
 

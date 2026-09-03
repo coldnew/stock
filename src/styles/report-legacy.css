@@ -155,8 +155,12 @@
     border-left: 2pt solid var(--brand);
     background: var(--ivory);
   }
-  .report-shell { display: grid; grid-template-columns: 172px minmax(0, 1fr); gap: 30pt; align-items: start; }
+  .report-shell { display: grid; grid-template-columns: minmax(0, 172px) minmax(0, 1fr); gap: 30pt; align-items: start; }
   .report-shell.without-sidebar { display: block; }
+  .report-content { min-width: 0; overflow-wrap: anywhere; }
+  .report-content figure { max-width: 100%; overflow-x: auto; }
+  .report-content img, .report-content svg { max-width: 100%; height: auto; }
+  .report-content table { max-width: 100%; }
   .report-sidebar { position: sticky; top: 18pt; max-height: calc(100vh - 36pt); overflow-y: auto; padding-right: 12pt; border-right: 0.5pt solid var(--border); font-size: 10.5pt; }
   .sidebar-heading { margin-bottom: 10pt; color: var(--near-black); font-size: 13pt; font-weight: 500; letter-spacing: 1pt; }
   .sidebar-heading span { display: block; margin-top: 1pt; color: var(--stone); font-size: 9pt; font-weight: 400; letter-spacing: 0.5pt; }

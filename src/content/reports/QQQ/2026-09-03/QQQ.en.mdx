@@ -5,9 +5,10 @@ dataAsOf: 2026-09-03
 reportType: other
 translationKey: qqq-2026-09-03
 isLatest: true
-status: draft
+status: published
 tags:
   - QQQ
+  - Nasdaq-100
 locale: en
 title: "QQQ ETF Research Report: Nasdaq-100 Benchmark, Fees, and Concentration"
 description: "An evidence-based review of QQQ covering Nasdaq-100 exposure, fees, concentration, benchmark construction, liquidity, and long-term trade-offs."
@@ -18,26 +19,44 @@ import Disclosure from '../../../../components/report/Disclosure.astro';
 
 ## Executive Summary
 
-Write the English thesis here.
+Invesco QQQ is an exchange-traded fund designed to track the Nasdaq-100 Index, an index of large non-financial companies listed on the Nasdaq exchange. It is a liquid and widely used way to obtain concentrated exposure to companies associated with technology, communications, consumer platforms, and other growth-oriented industries. It should not be described as the whole U.S. stock market or as a diversified substitute for a broad-market index.
+
+The investment case is clear: QQQ offers transparent access to a rules-based benchmark with a long history of participation in large-cap growth. The trade-off is equally clear: the fund's result is heavily influenced by the largest constituents, growth-stock valuation, interest rates, and the index's eligibility and rebalancing rules. A strong historical return does not remove concentration risk; it can increase it when successful constituents become a larger share of the portfolio.
 
 <AdSlot placement="mid" />
 
-## Strategy Overview
+## Benchmark and Portfolio Structure
 
-Explain the product, evidence, and limitations here.
+The Nasdaq-100 excludes financial companies and uses a modified capitalization-weighted methodology. This creates a different exposure from the S&P 500 and from an equal-weighted technology portfolio. The index can include companies outside traditional technology, but its economic behavior is often shaped by a relatively small group of mega-cap growth businesses. Investors should inspect current holdings and weights rather than rely on the fund's historical label.
 
-<Disclosure title="Data limitations">
-State which figures are observed, which are estimates, and which scenarios remain untested.
-</Disclosure>
+QQQ's structure provides intraday liquidity, creation and redemption by authorized participants, and a published portfolio. Those features can make implementation convenient, but liquidity does not guarantee a stable price during market stress. The ETF can trade at a premium or discount to net asset value, while the underlying holdings may also become more volatile or less liquid.
+
+## Evidence and Valuation Framework
+
+The most useful comparison is not QQQ's price alone but its total return, drawdown, volatility, expense ratio, tracking difference, and concentration relative to a chosen alternative. A fair comparison should use the same dates, reinvested distributions, and currency. Investors should also distinguish index performance from valuation expansion: a company can grow earnings while its multiple contracts, or its price can rise faster than fundamentals.
+
+QQQ is most defensible when the investor deliberately wants large-cap growth and accepts that the portfolio may lag value, small-cap, international, or broad-market exposures for extended periods. It is less defensible when the investor believes that a familiar benchmark eliminates the need to evaluate valuation and concentration.
 
 ## Key Risks
 
-Describe material risks and what data would invalidate the thesis.
+- The largest constituents can dominate returns, so company-specific disappointments may have index-level effects.
+- Growth-stock valuations are sensitive to interest rates, earnings expectations, and changes in risk appetite.
+- Excluding financial companies and emphasizing Nasdaq-listed large caps creates structural exposure differences from broad-market funds.
+- Index rebalancing, eligibility rules, turnover, fees, and tracking difference affect realized returns.
+- Past outperformance can encourage performance chasing and cause investors to underestimate long periods of relative underperformance.
 
 ## Analyst Conclusion
 
-Summarize the evidence and the decision-relevant trade-off without making a personalized recommendation.
+QQQ is a transparent growth and benchmark allocation, not a neutral representation of every U.S. listed company. Its primary benefit is efficient access to a rules-based group of large non-financial Nasdaq companies. Its primary cost is concentration in a style, exchange segment, and set of mega-cap constituents whose valuations can move together.
+
+The appropriate decision depends on the role QQQ plays in the broader portfolio. A benchmark allocation should be compared with the investor's existing exposure to the same companies, the desired geographic and sector diversification, and the tolerance for drawdowns. Revisit the thesis when holdings, methodology, fees, or the valuation regime changes.
 
 ## Sources
 
-Add at least two dated primary sources before publication.
+- [Invesco QQQ official fund page](https://www.invesco.com/qqq-etf/en/about.html), for the fund objective, benchmark description, holdings, and disclosures.
+- [Invesco QQQ product details](https://www.invesco.com/us/financial-products/etfs/product-detail?productId=ETF-QQQ), for current fund information and documents.
+- [Nasdaq-100 Index methodology](https://indexes.nasdaqomx.com/docs/FS_NDX.pdf), for the benchmark's construction and weighting framework.
+
+<Disclosure>
+  This report is for educational and informational purposes only. It is not investment, tax, or legal advice. Holdings, weights, fees, methodology, and market valuations change; verify current official documents before making a decision.
+</Disclosure>

@@ -308,6 +308,49 @@ squeezing or overflowing on narrow viewports — this is also shared CSS,
 keep it identical across every report even though only SPYI/QDVO currently
 use a 5th card.
 
+## AI-generated content labelling (EU icons) — mandatory, not optional
+
+Every report on this site is AI-drafted and human-reviewed, and EU
+transparency rules (AI Act Art. 50, "EU Icons for labelling AI-generated
+content") expect exactly this kind of published text to carry a visible
+label. The convention here: the **Basic icon** (black circle / white "AI")
+plus a custom plain-language text label — never the "Fully AI-Generated"
+variant (that claims no human editorial control, which is false here:
+a natural person holds editorial responsibility) and never "Partially
+AI-Modified" (that means human originals edited by AI — backwards for
+this workflow). Three pieces, all required in every report:
+
+1. **Header `.ai-badge`** — last child of `.ticker-block` (i.e. right
+   before the `</div>` that closes it, ahead of `<div class="price-block">`),
+   containing *both* the black and the white inline SVG plus
+   `<span>AI 協助撰寫 · 人工審閱</span>`. Both SVGs carry
+   `aria-hidden="true"`; the visible text is the accessible label. The
+   two copies toggle by theme (`.ai-icon-dark` hidden by default,
+   `[data-theme="dark"]` + a `prefers-color-scheme` fallback flip them) —
+   copy that CSS block verbatim with the badge.
+2. **Footer second layer** — an `AI 標示說明` link to the EU policy page
+   appended in `.footer-links` after the disclaimer link
+   (`target="_blank" rel="noopener"`). This is the "interactive second
+   layer" the EU guidance encourages.
+3. **No-JS safety** — the badge and footer link are static markup, so the
+   disclosure survives with scripts disabled, on print/PDF export, and
+   when content is reshared. Never implement the label as JS-injected
+   markup in reports (the index page's per-card mini-badges are the
+   deliberate exception — see below — because 23 cards share one script).
+
+`index.html` differs slightly: one static `.ai-note` disclosure under the
+header (icon + text + EU link) covers first exposure, and a small shared
+snippet clones an `.ai-mini` badge (same official artwork, verified
+path-identical to the static copies) into every `.report-card h2`. If you
+touch either the note or that snippet, re-verify artwork equality
+programmatically — a hand-simplified letter path once shipped here and
+rendered the "A" as a solid blob.
+
+The official SVG/ZIP source is the Commission page linked from the
+footer; the inlined copies use hardcoded `fill="#000000"` /
+`fill="#ffffff"` / `fill="#1d1d1b"` (not CSS vars) so the artwork stays
+exact in both themes — same reasoning as the chart-color rule above.
+
 ## Checklist: adding a brand-new report
 
 1. Author the report HTML using an existing report as the template — copy
@@ -344,3 +387,12 @@ use a 5th card.
    that: the script runs with no console errors, section count matches
    `<h2>` count, `.ad-slot`/`.breadcrumb`/`.related-report` aren't nested
    inside any `.section-body`, and there's exactly one `<h1>`.
+10. Add the EU AI-content label: header `.ai-badge` (both black + white
+    inline SVGs + text), its toggle CSS, and the footer `AI 標示說明`
+    link — see the AI-labelling section. Then add the new card to
+    `index.html` (the per-card mini-badge is injected automatically by
+    the shared snippet, nothing per-card to do).
+11. Confirm timezone handling is intact: `.price-date` must read
+    `YYYY-MM-DD 收盤（美東時間）` and the shared script must still
+    contain the `localizePriceDate()` block (it appends the viewer's
+    local equivalent automatically — no per-report work needed).

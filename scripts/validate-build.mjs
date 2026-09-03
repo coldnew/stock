@@ -17,7 +17,7 @@ for (const path of ['dist/index.html', 'dist/en/index.html']) {
   let html;
   try { html = await readFile(path, 'utf8'); } catch { failures.push(`${path}: homepage missing`); continue; }
   const adSlots = (html.match(/class="ad-slot"/g) ?? []).length;
-  if (adSlots !== 2) failures.push(`${path}: expected 2 homepage ad slots, found ${adSlots}`);
+  if (adSlots !== 3) failures.push(`${path}: expected 3 homepage ad slots, found ${adSlots}`);
   if (!html.includes('G-2SXWWHGFPN')) failures.push(`${path}: missing GA4 measurement ID`);
 }
 for (const report of reports) {

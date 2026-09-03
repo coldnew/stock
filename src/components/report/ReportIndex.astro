@@ -12,85 +12,81 @@ const { reports, allReports = reports, locale } = Astro.props as {
   locale: 'zh-TW' | 'en';
 };
 const isEnglish = locale === 'en';
+const dateLabel = (date: Date) => date.toISOString().slice(0, 10);
+const reportUrl = (report: CollectionEntry<'reports'>) => {
+  const base = `/stock/${isEnglish ? 'en/' : ''}reports/${report.data.ticker.toLowerCase()}`;
+  return report.data.isLatest ? `${base}/` : `${base}/${dateLabel(report.data.publishedAt)}/`;
+};
+const deskLabel = (report: CollectionEntry<'reports'>) => {
+  if (report.data.tags.includes('Q2 2026')) return isEnglish ? 'Quarterly review' : '季度財報';
+  if (report.data.tags.includes('income-etf')) return isEnglish ? 'Income strategy' : '收益策略';
+  if (report.data.tags.includes('equity')) return isEnglish ? 'Company research' : '個股研究';
+  if (report.data.tags.includes('crypto')) return isEnglish ? 'Digital assets' : '數位資產';
+  return isEnglish ? 'Market research' : '市場研究';
+};
+const lead = allReports[0];
+const feed = allReports.slice(1, 11);
+const coverage = reports.slice(0, 12);
 const editionsByTicker = new Map<string, CollectionEntry<'reports'>[]>();
 allReports.forEach((report) => {
   const editions = editionsByTicker.get(report.data.ticker) ?? [];
   editions.push(report);
   editionsByTicker.set(report.data.ticker, editions);
 });
-const archivedTickers = [...editionsByTicker.entries()]
-  .filter(([, editions]) => editions.length > 1)
-  .sort(([a], [b]) => a.localeCompare(b));
-const dateLabel = (date: Date) => date.toISOString().slice(0, 10);
-const groups = isEnglish
-  ? [
-      { tickers: ['OVL', 'QQQI', 'BTCI', 'GPIQ', 'SPYI', 'JEPI', 'JEPQ', 'QDVO'], title: 'Income ETFs', subtitle: 'Option income, distribution composition, and downside behavior.', tag: 'Income strategy analysis' },
-      { tickers: ['DGRO', 'IQQ', 'SGOV', 'QQQH', 'CHPY'], title: 'Core allocations and cash tools', subtitle: 'Dividend growth, passive benchmarks, hedged income, and Treasury-bill exposure.', tag: 'Portfolio construction analysis' },
-      { tickers: ['MAGS'], title: 'Thematic ETFs', subtitle: 'Concentrated exposure and the trade-off between convenience and volatility.', tag: 'Thematic ETF analysis' },
-      { tickers: ['DRAM', 'TQQQ', 'QQQ'], title: 'Industry themes and benchmarks', subtitle: 'Semiconductor industry exposure, leveraged products, and the Nasdaq-100 benchmark.', tag: 'Market structure analysis' },
-      { tickers: ['TSLA', 'ARCC', 'SPCX', 'NVDA', 'GOOG', 'AAPL', 'MSFT', 'AMD'], title: 'Individual equities', subtitle: 'Company-level research on valuation, earnings, and execution risk.', tag: 'Fundamental equity analysis' },
-    ]
-  : [
-      { tickers: ['OVL', 'QQQI', 'BTCI', 'GPIQ', 'SPYI', 'JEPI', 'JEPQ', 'QDVO', 'GPIX', 'IWMI'], title: '收益型 ETF', subtitle: '備兌看漲、賣權價差與領口策略：配息組成、下檔捕獲率與 NAV 侵蝕的實證研究。', tag: '收益策略分析' },
-      { tickers: ['DGRO', 'IQQ', 'SGOV', 'QQQH', 'CHPY'], title: '核心配置與現金工具', subtitle: '不賣選擇權的部位：股息成長核心、被動指數與國庫券現金錨。', tag: '核心配置分析' },
-      { tickers: ['MAGS'], title: '主題 ETF', subtitle: '單一主題的集中曝險：一鍵打包的時間節省 vs 七檔全押的波動。', tag: '主題 ETF 分析' },
-      { tickers: ['DRAM', 'TQQQ', 'QQQ'], title: '產業主題與市場基準', subtitle: '記憶體產業、槓桿產品與納斯達克100基準的結構與風險分析。', tag: '市場結構分析' },
-      { tickers: ['TSLA', 'ARCC', 'SPCX', 'NVDA', 'GOOG', 'AAPL', 'MSFT', 'AMD'], title: '個股基本面', subtitle: '單一公司深度研究：估值、獲利結構與波動風險。', tag: '個股基本面分析' },
-    ];
+const archivedTickers = [...editionsByTicker.entries()].filter(([, editions]) => editions.length > 1).sort(([a], [b]) => a.localeCompare(b));
 ---
 <!doctype html>
 <html lang={locale}>
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
-    <title>{isEnglish ? 'Stock Research Reports' : '股票分析報告'}</title>
-    <meta name="description" content={isEnglish ? 'Evidence-based research on income ETFs, option strategies, and selected equities.' : '收益型 ETF、選擇權策略與個股的實證分析報告。'} />
+    <title>{isEnglish ? 'Daily Investment Research' : '每日投資研究'}</title>
+    <meta name="description" content={isEnglish ? 'Daily, evidence-based investment research on companies, ETFs, and market events.' : '每日更新的公司、ETF 與市場事件實證研究。'} />
     <link rel="canonical" href={`https://coldnew.github.io/stock/${isEnglish ? 'en/' : ''}`} />
     <Analytics />
   </head>
   <body>
     <header class="index-header">
-      <p class="eyebrow">{isEnglish ? 'Investment Research' : '投資研究'}</p>
-      <h1>{isEnglish ? 'Stock Research Reports' : '股票分析報告'}</h1>
-      <p>{isEnglish ? 'Evidence-based research on income strategies, core allocations, and selected companies, written for an international audience.' : '收益策略、核心配置與個股的實證研究，涵蓋配息結構、下檔風險與市場資料。'}</p>
-      {(!isEnglish) && <p class="index-note">本站報告以台灣投資人為主要對象。收益型基金的配息可能包含 ROC（Return of Capital，資本返還）；美國預扣稅與台灣申報規則仍須分開判斷，詳情請以各報告的第一手資料與專業意見為準。</p>}
+      <nav class="site-nav"><a class="site-mark" href={`/stock/${isEnglish ? 'en/' : ''}`}>RESEARCH DESK</a><span>{isEnglish ? 'Daily investment notes' : '每日投資筆記'}</span></nav>
+      <p class="eyebrow">{isEnglish ? 'Daily investment research' : '每日投資研究'}</p>
+      <h1>{isEnglish ? 'A calmer way to read the market.' : '用更冷靜的方式閱讀市場。'}</h1>
+      <p class="index-intro">{isEnglish ? 'A daily post on what changed, what matters, and what would make the thesis change.' : '每天只回答三件事：發生了什麼、什麼真正重要，以及什麼情況會讓投資論點改變。'}</p>
+      {!isEnglish && <p class="index-note">本站報告以台灣投資人為主要對象。收益型基金的配息可能包含 ROC（資本返還）；稅務與投資決策請以第一手資料及專業意見為準。</p>}
       <AiDisclosure locale={locale} />
     </header>
     <AdSlot placement="top" />
-    <main class="report-list">
-      {groups.map((group) => {
-        const groupReports = group.tickers.flatMap((ticker) => reports.filter((report) => report.data.ticker === ticker));
-        if (!groupReports.length) return null;
-        return <>
-          <h2 class="group-title">{group.title}</h2>
-          <p class="group-sub">{group.subtitle}</p>
-          {groupReports.map((report) => <a class="report-card" href={`/stock/${isEnglish ? 'en/' : ''}reports/${report.data.ticker.toLowerCase()}/`}>
-            <span class="tag">{group.tag}</span>
-            <h2>{report.data.title}</h2>
-            <p>{report.data.description}</p>
-            <span class="read-more">{isEnglish ? 'Read full report' : '閱讀完整報告'} →</span>
-          </a>)}
-        </>;
-      })}
+    <main>
+      {lead && <article class="lead-post">
+        <div class="post-kicker"><span>{isEnglish ? 'Latest edition' : '最新一篇'}</span><span>{dateLabel(lead.data.publishedAt)}</span></div>
+        <div class="post-meta"><span class="ticker">{lead.data.ticker}</span><span>{deskLabel(lead)}</span></div>
+        <h2><a href={reportUrl(lead)}>{lead.data.title}</a></h2>
+        <p>{lead.data.description}</p>
+        <a class="read-link" href={reportUrl(lead)}>{isEnglish ? 'Read the full post' : '閱讀完整文章'} <span aria-hidden="true">→</span></a>
+      </article>}
+
+      <section class="daily-feed" aria-labelledby="feed-title">
+        <div class="section-heading"><p class="eyebrow">{isEnglish ? 'From the desk' : '編輯室文章'}</p><h2 id="feed-title">{isEnglish ? 'The daily feed' : '每日報導'}</h2></div>
+        <div class="post-list">
+          {feed.map((report) => <article class="post-row">
+            <div class="post-row-meta"><strong>{report.data.ticker}</strong><time datetime={dateLabel(report.data.publishedAt)}>{dateLabel(report.data.publishedAt)}</time><span>{deskLabel(report)}</span></div>
+            <div><h3><a href={reportUrl(report)}>{report.data.title}</a></h3><p>{report.data.description}</p><a class="read-link" href={reportUrl(report)}>{isEnglish ? 'Continue reading' : '繼續閱讀'} →</a></div>
+          </article>)}
+        </div>
+      </section>
+      <AdSlot placement="mid" />
+
+      <section class="coverage" aria-labelledby="coverage-title">
+        <div class="section-heading"><p class="eyebrow">{isEnglish ? 'Follow the names' : '追蹤清單'}</p><h2 id="coverage-title">{isEnglish ? 'Current coverage' : '目前追蹤'}</h2></div>
+        <div class="coverage-grid">{coverage.map((report) => <a class="coverage-item" href={reportUrl(report)}><span class="ticker">{report.data.ticker}</span><span>{report.data.title}</span><span aria-hidden="true">↗</span></a>)}</div>
+      </section>
     </main>
     <section class="archive-guide" aria-labelledby="archive-title">
-      <h2 id="archive-title">{isEnglish ? 'Browse report history' : '回看歷史報告'}</h2>
-      <p>{archivedTickers.length
-        ? (isEnglish ? 'Compare dated editions to see how market data, risks, and conclusions changed over time.' : '依日期比較不同版本，了解市場資料、風險與分析結論如何隨時間變化。')
-        : (isEnglish ? 'New dated editions will appear here when a report is updated. Each snapshot remains available for comparison.' : '報告更新後，新的日期版本會在這裡出現；每個快照都會保留，方便日後比較。')}</p>
-      {archivedTickers.length > 0 && <div class="archive-list">
-        {archivedTickers.map(([ticker, editions]) => {
-          const latestEdition = editions.find((edition) => edition.data.isLatest) ?? editions[0];
-          return <details>
-            <summary><span>{ticker} · {latestEdition.data.title}</span><span class="archive-count">{editions.length} {isEnglish ? 'editions' : '個版本'}</span></summary>
-            <ul>
-              {[...editions].sort((a, b) => b.data.publishedAt.valueOf() - a.data.publishedAt.valueOf()).map((edition) => <li>
-                <a href={`/stock/${isEnglish ? 'en/' : ''}reports/${ticker.toLowerCase()}/${dateLabel(edition.data.publishedAt)}/`}>{dateLabel(edition.data.publishedAt)} · {edition.data.title}</a>
-              </li>)}
-            </ul>
-          </details>;
-        })}
-      </div>}
+      <h2 id="archive-title">{isEnglish ? 'Browse the archive' : '回看歷史文章'}</h2>
+      <p>{isEnglish ? 'Dated editions stay available so you can compare how facts, risks, and conclusions changed.' : '保留日期版本，方便比較事實、風險與結論如何隨時間變化。'}</p>
+      {archivedTickers.length > 0 && <div class="archive-list">{archivedTickers.map(([ticker, editions]) => <details>
+        <summary><span>{ticker} · {editions[0].data.title}</span><span class="archive-count">{editions.length} {isEnglish ? 'editions' : '個版本'}</span></summary>
+        <ul>{[...editions].sort((a, b) => b.data.publishedAt.valueOf() - a.data.publishedAt.valueOf()).map((edition) => <li><a href={reportUrl(edition)}>{dateLabel(edition.data.publishedAt)} · {edition.data.title}</a></li>)}</ul>
+      </details>)}</div>}
     </section>
     <AdSlot placement="bottom" />
     <AdSlot placement="smartlink" />

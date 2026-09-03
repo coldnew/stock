@@ -9,7 +9,7 @@ const rows = snapshot?.rows ?? [];
 const sampleIndexes = rows.length > 7 ? [0, 5, 10, 15, 20, 25, rows.length - 1] : rows.map((_, index) => index);
 const sampled = sampleIndexes.map((index) => rows[index]).filter(Boolean);
 const dates = sampled.map(([date]) => date);
-const values = sampled.map(([, close]) => close);
+const values = sampled.map(([, , , , close]) => close);
 ---
 {snapshot && values.length > 1 ? <>
   <ClosePriceChart client:load ticker={ticker} locale={locale} dates={dates} values={values} />

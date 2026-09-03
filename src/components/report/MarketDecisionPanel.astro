@@ -5,7 +5,7 @@ interface Props { ticker: string; locale: 'en' | 'zh-TW'; reportType: string; }
 const { ticker, locale, reportType } = Astro.props as Props;
 const snapshot = marketSnapshots[ticker.toUpperCase()];
 const rows = snapshot?.rows ?? [];
-const closes = rows.map(([, close]) => close);
+const closes = rows.map(([, , , , close]) => close);
 const latest = closes.at(-1);
 const first = closes[0];
 const high = closes.length ? Math.max(...closes) : undefined;

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!-- ==================================================================
      EQUITY REPORT TEMPLATE · parchment design system
-     JEPQ（JPMorgan Nasdaq Equity Premium Income ETF）分析報告
+     MAGS（Roundhill Magnificent Seven ETF）分析報告
      ================================================================== -->
 <html lang="zh-TW">
 <head>
@@ -10,20 +10,20 @@
 <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
 <link rel="preconnect" href="https://www.googletagmanager.com">
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%231B365D'/%3E%3Cpolyline points='6,22 12,14 17,18 26,7' fill='none' stroke='%23f5f4ed' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
-<title>JEPQ 分析報告 · JEPI 的納指100 姊妹基金</title>
+<title>MAGS 分析報告 · 一鍵打包七巨頭的等權重主題基金</title>
 <meta name="author" content="Yen-Chin, Lee">
-<meta name="description" content="分析 JEPQ（JPMorgan Nasdaq Equity Premium Income ETF）：JEPI 同源的納指100 版本，420.7 億美元規模、ELN 收益策略，並比較其 beta 與同系列 QQQI、GPIQ 的差異">
-<meta name="keywords" content="JEPQ, JPMorgan, ELN, 股權連結票據, covered call, 納指100, 熊市, ROC">
+<meta name="description" content="分析 MAGS（Roundhill Magnificent Seven ETF）：七巨頭等權重季再平衡、經 swaps 曝險的主動管理主題基金，beta 1.38，一鍵打包七巨頭的代價與便利">
+<meta name="keywords" content="MAGS, Roundhill, Magnificent Seven, 七巨頭, 等權重, 主題基金, ETF">
 <meta name="generator" content="Kami">
-<link rel="canonical" href="https://coldnew.github.io/stock/reports/JEPQ.html">
+<link rel="canonical" href="https://coldnew.github.io/stock/reports/MAGS.html">
 <meta name="robots" content="index, follow">
 <meta property="og:type" content="article">
-<meta property="og:url" content="https://coldnew.github.io/stock/reports/JEPQ.html">
-<meta property="og:title" content="JEPQ 分析報告 · JEPI 的納指100 姊妹基金">
-<meta property="og:description" content="分析 JEPQ（JPMorgan Nasdaq Equity Premium Income ETF）：JEPI 同源的納指100 版本，420.7 億美元規模、ELN 收益策略，並比較其 beta 與同系列 QQQI、GPIQ 的差異">
+<meta property="og:url" content="https://coldnew.github.io/stock/reports/MAGS.html">
+<meta property="og:title" content="MAGS 分析報告 · 一鍵打包七巨頭的等權重主題基金">
+<meta property="og:description" content="分析 MAGS（Roundhill Magnificent Seven ETF）：七巨頭等權重季再平衡、經 swaps 曝險的主動管理主題基金，beta 1.38，一鍵打包七巨頭的代價與便利">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="JEPQ 分析報告 · JEPI 的納指100 姊妹基金">
-<meta name="twitter:description" content="分析 JEPQ（JPMorgan Nasdaq Equity Premium Income ETF）：JEPI 同源的納指100 版本，420.7 億美元規模、ELN 收益策略，並比較其 beta 與同系列 QQQI、GPIQ 的差異">
+<meta name="twitter:title" content="MAGS 分析報告 · 一鍵打包七巨頭的等權重主題基金">
+<meta name="twitter:description" content="分析 MAGS（Roundhill Magnificent Seven ETF）：七巨頭等權重季再平衡、經 swaps 曝險的主動管理主題基金，beta 1.38，一鍵打包七巨頭的代價與便利">
 <link rel="sitemap" href="https://coldnew.github.io/stock/sitemap.xml">
 <!-- Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-2SXWWHGFPN"></script>
@@ -37,14 +37,14 @@
 {
   "@context": "https://schema.org",
   "@type": "Article",
-  "headline": "JEPQ 分析報告 · JEPI 的納指100 姊妹基金",
-  "description": "分析 JEPQ（JPMorgan Nasdaq Equity Premium Income ETF）：JEPI 同源的納指100 版本，420.7 億美元規模、ELN 收益策略，並比較其 beta 與同系列 QQQI、GPIQ 的差異",
+  "headline": "MAGS 分析報告 · 一鍵打包七巨頭的等權重主題基金",
+  "description": "分析 MAGS（Roundhill Magnificent Seven ETF）：七巨頭等權重季再平衡、經 swaps 曝險的主動管理主題基金，beta 1.38，一鍵打包七巨頭的代價與便利",
   "author": { "@type": "Person", "name": "Yen-Chin, Lee" },
   "publisher": { "@type": "Person", "name": "Yen-Chin, Lee" },
   "datePublished": "2026-09-03",
   "dateModified": "2026-09-03",
   "inLanguage": "zh-TW",
-  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://coldnew.github.io/stock/reports/JEPQ.html" }
+  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://coldnew.github.io/stock/reports/MAGS.html" }
 }
 </script>
 <style>
@@ -72,7 +72,7 @@
     background: #f5f4ed;
 
     @bottom-center {
-      content: counter(page) "  ·  JEPQ 分析報告";
+      content: counter(page) "  ·  MAGS 分析報告";
       font-family: "TsangerJinKai02", "Source Han Serif TC",
                    "Noto Serif CJK TC", "Songti TC", Georgia, serif;
       font-size: 11pt;
@@ -500,13 +500,13 @@
 <!-- ========== HEADER ========== -->
 <div class="report-header">
   <div class="ticker-block">
-    <div class="ticker-eyebrow">納指100 收益策略 · ETF 分析報告</div>
-    <h1 class="ticker-name">JEPQ 分析報告 <span style="font-size: 14pt; color: var(--stone);">JEPQ</span></h1>
-    <div class="ticker-sub">JPMorgan Nasdaq Equity Premium Income ETF · 主動管理 + 股權連結票據（ELN）收益基金 · NASDAQ<br>JEPI 的納指100 姊妹基金，比較其 beta 與同系列 QQQI、GPIQ 的差異</div>
+    <div class="ticker-eyebrow">Mag 7 主題 · ETF 分析報告</div>
+    <h1 class="ticker-name">MAGS 分析報告 <span style="font-size: 14pt; color: var(--stone);">MAGS</span></h1>
+    <div class="ticker-sub">Roundhill Magnificent Seven ETF · 七巨頭等權重季再平衡 · Cboe BZX／一鍵打包七巨頭</div>
   </div>
   <div class="price-block">
-    <div class="price-current">$59.15</div>
-    <div class="price-change up">+0.25%</div>
+    <div class="price-current">$68.76</div>
+    <div class="price-change up">+0.78%</div>
     <div class="price-date">2026-09-02 收盤</div>
   </div>
 </div>
@@ -514,19 +514,19 @@
 <!-- ========== METRICS ========== -->
 <div class="metrics">
   <div class="metric">
-    <div class="metric-value">0.35%</div>
+    <div class="metric-value">0.30%</div>
     <div class="metric-label">費用率</div>
   </div>
   <div class="metric">
-    <div class="metric-value">11.03%</div>
+    <div class="metric-value">1.42%</div>
     <div class="metric-label">尾隨殖利率（現價）</div>
   </div>
   <div class="metric">
-    <div class="metric-value">0.84</div>
-    <div class="metric-label">beta（vs 納指100）</div>
+    <div class="metric-value">1.38</div>
+    <div class="metric-label">beta（vs S&amp;P 500）</div>
   </div>
   <div class="metric">
-    <div class="metric-value">420.7億</div>
+    <div class="metric-value">41.9億</div>
     <div class="metric-label">資產規模（美元）</div>
   </div>
 </div>
@@ -540,10 +540,12 @@
 
 <!-- ========== BASIC INTRO ========== -->
 <h2>基本介紹：這是什麼樣的基金？</h2>
-<p>JEPQ（JPMorgan Nasdaq Equity Premium Income ETF）是由 J.P. Morgan Asset Management 於 2022 年 5 月 3 日在 NASDAQ 掛牌的主動管理型 ETF，是 JEPI 的納指100 版本——策略架構相同：主動選股（持有 111 檔個股，聚焦大型科技股）加上股權連結票據（ELN）創造額外收益，只是把標的從 S&amp;P 500 換成納斯達克100。資產規模達 420.7 億美元，是本系列規模第二大的基金，僅次於 JEPI。費率 0.35%，每月配息，目前尾隨殖利率約 11.03%，高於 JEPI（8.01%），反映納指100 本身較高的波動率帶來更豐厚的權利金收入。</p>
+<p>MAGS（Roundhill Magnificent Seven ETF）是 Roundhill Investments 於 2023 年 4 月 11 日在 Cboe BZX 掛牌的主動管理型 ETF，也是市場上首檔以「七巨頭」（Magnificent Seven）為主題的 ETF。它的機制很直接：透過 swaps 與 forwards 等衍生性工具取得對 Alphabet、Amazon、Apple、Meta、Microsoft、NVIDIA、Tesla 七檔股票的曝險，並在每季進行等權重再平衡——依 2026 年 6 月 30 日的 factsheet，七檔各占約 14.3%。費率 0.30%，資產規模約 41.9 億美元，52 週區間 $55.09～$71.16，過去一年總報酬 16.69%、成立以來年化報酬達 36.19%。</p>
+<p>第一次看 MAGS 持股明細的投資人常會嚇一跳：怎麼有一半左右是美國國庫券？這必須先說清楚——那些美債是 swap 架構下的抵押品，不是經理人保守到拿一半去買債券。MAGS 並不直接持有七檔股票，而是用 swaps 換取七巨頭的報酬，現金部位就停泊在國庫券裡做抵押、順便生息。這不影響你拿到七巨頭的漲跌，但理解這層結構，才能理解後面談到的追蹤與對手方風險。</p>
+<p>MAGS 的配息來自成分股所發放的股息：TTM 累計配息 $0.98，尾隨殖利率約 1.42%，配息／獲利比 46.18%（stockanalysis.com）——遠低於 100%，代表配息由盈餘支撐，不是拿本金回填的資本返還。基金採年配，至今僅配過三次：2025 年 12 月 30 日除息 $0.97618、2024 年 12 月 30 日除息 $0.43968、2023 年 12 月 27 日除息 $0.14593，配息金額隨成分股股息成長而墊高。</p>
 
 <div class="callout">
-  <strong>為什麼台灣投資人會關注這類基金：ROC（資本返還）的稅務優勢。</strong>美國對非美籍稅務居民課徵的一般股利預扣稅率通常是 30%（台灣與美國沒有租稅協定）；但若配息中有一部分被基金歸類為 ROC（Return of Capital，資本返還），該部分性質上是「歸還投資人自己已投入的本金」而非「當年度所得」，通常不適用 30% 股利預扣稅，而是調降投資人的成本基礎（cost basis），遞延到未來實際出售時才反映為資本利得。這類收益型基金的配息中 ROC 占比經常偏高（實際比例逐年公告、且各基金不同），是本系列報告鎖定這類產品的重要原因之一。但兩點提醒：第一，ROC 比例並非保證值，須以基金每年發布的 19a-1 公告與年度 1099-DIV／1042-S 稅務文件為準；第二，美國預扣稅的免除不等於在台灣完全免稅——這類海外有價證券的配息與資本利得，仍可能被計入台灣個人「基本所得額」（海外所得，超過免稅額度需計入基本稅額申報）。以上僅為一般性稅務背景資訊，不構成個人稅務建議，實際申報請諮詢熟悉台美跨境投資稅務的會計師或稅務顧問。
+  <strong>等權重 vs 市值加權（QQQ），差別比想像中大。</strong>Tesla 在 MAGS 裡固定占約 14%，但在市值加權的 QQQ 類指數中只占個位數——等權重把每一檔弱勢巨頭的影響力都放大了。七檔即全部，沒有第八檔可以分散，這種集中度是雙面刃：七巨頭齊漲時人人有獎，任何一檔掉隊時也無處可躲。
 </div>
 
 <h3>配息時間表</h3>
@@ -557,260 +559,243 @@
   </thead>
   <tbody>
     <tr>
+      <td>2025-12-30</td>
       <td>2025-12-31</td>
-      <td>2026-01-05</td>
-      <td>$0.5761</td>
+      <td>$0.97618</td>
     </tr>
     <tr>
-      <td>2026-02-02</td>
-      <td>2026-02-04</td>
-      <td>$0.4657</td>
+      <td>2024-12-30</td>
+      <td>2024-12-31</td>
+      <td>$0.43968</td>
     </tr>
     <tr>
-      <td>2026-03-02</td>
-      <td>2026-03-04</td>
-      <td>$0.5090</td>
-    </tr>
-    <tr>
-      <td>2026-04-01</td>
-      <td>2026-04-06</td>
-      <td>$0.5586</td>
-    </tr>
-    <tr>
-      <td>2026-05-01</td>
-      <td>2026-05-05</td>
-      <td>$0.5910</td>
-    </tr>
-    <tr>
-      <td>2026-06-01</td>
-      <td>2026-06-03</td>
-      <td>$0.5644</td>
-    </tr>
-    <tr>
-      <td>2026-07-01</td>
-      <td>2026-07-06</td>
-      <td>$0.6366</td>
-    </tr>
-    <tr>
-      <td>2026-08-03</td>
-      <td>2026-08-05</td>
-      <td>$0.7050</td>
+      <td>2023-12-27</td>
+      <td>2023-12-29</td>
+      <td>$0.14593</td>
     </tr>
   </tbody>
 </table>
-<p>配息頻率：每月配息，除息日固定落在每月第一個交易日附近。近 8 個月配息呈現上升趨勢（從 $0.47 到 $0.71），過去一年累計配發約 $6.52，對應目前殖利率 11.03%。確切除息／發放日請以發行商 J.P. Morgan Asset Management 官網公告為準。</p>
+<p>配息頻率：年配一次，年底除息；以 Roundhill 官網為準。</p>
 
 <!-- ========== CANDLESTICK CHART ========== -->
 <h2>近期股價走勢（近 50 個交易日）</h2>
 <figure>
 <svg viewBox="0 0 900 380" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;">
 <rect width="100%" height="100%" fill="#f5f4ed"/>
-<line x1="60" y1="304.7" x2="876" y2="304.7" stroke="#e8e7e1" stroke-width="0.8"/>
-<text x="52" y="308.2" fill="#6b6a64" font-size="10" text-anchor="end">$56</text>
-<line x1="60" y1="216.4" x2="876" y2="216.4" stroke="#e8e7e1" stroke-width="0.8"/>
-<text x="52" y="219.9" fill="#6b6a64" font-size="10" text-anchor="end">$58</text>
-<line x1="60" y1="128.1" x2="876" y2="128.1" stroke="#e8e7e1" stroke-width="0.8"/>
-<text x="52" y="131.6" fill="#6b6a64" font-size="10" text-anchor="end">$60</text>
+<line x1="60" y1="290.0" x2="876" y2="290.0" stroke="#e8e7e1" stroke-width="0.8"/>
+<text x="52" y="293.5" fill="#6b6a64" font-size="10" text-anchor="end">$60</text>
+<line x1="60" y1="248.3" x2="876" y2="248.3" stroke="#e8e7e1" stroke-width="0.8"/>
+<text x="52" y="251.8" fill="#6b6a64" font-size="10" text-anchor="end">$62</text>
+<line x1="60" y1="206.7" x2="876" y2="206.7" stroke="#e8e7e1" stroke-width="0.8"/>
+<text x="52" y="210.2" fill="#6b6a64" font-size="10" text-anchor="end">$64</text>
+<line x1="60" y1="165.0" x2="876" y2="165.0" stroke="#e8e7e1" stroke-width="0.8"/>
+<text x="52" y="168.5" fill="#6b6a64" font-size="10" text-anchor="end">$66</text>
+<line x1="60" y1="123.3" x2="876" y2="123.3" stroke="#e8e7e1" stroke-width="0.8"/>
+<text x="52" y="126.8" fill="#6b6a64" font-size="10" text-anchor="end">$68</text>
+<line x1="60" y1="81.7" x2="876" y2="81.7" stroke="#e8e7e1" stroke-width="0.8"/>
+<text x="52" y="85.2" fill="#6b6a64" font-size="10" text-anchor="end">$70</text>
+<line x1="60" y1="40.0" x2="876" y2="40.0" stroke="#e8e7e1" stroke-width="0.8"/>
+<text x="52" y="43.5" fill="#6b6a64" font-size="10" text-anchor="end">$72</text>
 <line x1="60" y1="320" x2="876" y2="320" stroke="#141413" stroke-width="0.8"/>
-<g class="candle" data-date="2026-06-24" data-o="59.98" data-h="60.32" data-l="59.21" data-c="59.69">
-<line x1="60.0" y1="114.0" x2="60.0" y2="163.0" stroke="#3A7A4E" stroke-width="1.1"/>
-<rect x="55.0" y="129.0" width="10.0" height="12.8" fill="#3A7A4E" rx="0.6"/>
+<g class="candle" data-date="2026-06-24" data-o="63.21" data-h="63.98" data-l="62.58" data-c="62.68">
+<line x1="60.0" y1="207.1" x2="60.0" y2="236.3" stroke="#3A7A4E" stroke-width="1.1"/>
+<rect x="55.0" y="223.1" width="10.0" height="11.0" fill="#3A7A4E" rx="0.6"/>
 </g>
-<g class="candle" data-date="2026-06-25" data-o="60.81" data-h="60.87" data-l="59.36" data-c="60.13">
-<line x1="76.7" y1="89.8" x2="76.7" y2="156.4" stroke="#3A7A4E" stroke-width="1.1"/>
-<rect x="71.7" y="92.4" width="10.0" height="30.0" fill="#3A7A4E" rx="0.6"/>
+<g class="candle" data-date="2026-06-25" data-o="62.15" data-h="62.19" data-l="60.89" data-c="61.07">
+<line x1="76.7" y1="244.4" x2="76.7" y2="271.5" stroke="#3A7A4E" stroke-width="1.1"/>
+<rect x="71.7" y="245.2" width="10.0" height="22.5" fill="#3A7A4E" rx="0.6"/>
 </g>
-<g class="candle" data-date="2026-06-26" data-o="59.50" data-h="60.07" data-l="59.15" data-c="59.42">
-<line x1="93.3" y1="125.1" x2="93.3" y2="165.7" stroke="#3A7A4E" stroke-width="1.1"/>
-<rect x="88.3" y="150.2" width="10.0" height="3.5" fill="#3A7A4E" rx="0.6"/>
+<g class="candle" data-date="2026-06-26" data-o="60.80" data-h="62.26" data-l="60.72" data-c="61.60">
+<line x1="93.3" y1="242.9" x2="93.3" y2="275.0" stroke="#C23B32" stroke-width="1.1"/>
+<rect x="88.3" y="256.7" width="10.0" height="16.7" fill="#C23B32" rx="0.6"/>
 </g>
-<g class="candle" data-date="2026-06-29" data-o="60.09" data-h="60.72" data-l="59.33" data-c="60.70">
-<line x1="110.0" y1="96.4" x2="110.0" y2="157.7" stroke="#C23B32" stroke-width="1.1"/>
-<rect x="105.0" y="97.3" width="10.0" height="26.9" fill="#C23B32" rx="0.6"/>
+<g class="candle" data-date="2026-06-29" data-o="62.50" data-h="63.62" data-l="62.44" data-c="63.52">
+<line x1="110.0" y1="214.6" x2="110.0" y2="239.2" stroke="#C23B32" stroke-width="1.1"/>
+<rect x="105.0" y="216.7" width="10.0" height="21.3" fill="#C23B32" rx="0.6"/>
 </g>
-<g class="candle" data-date="2026-06-30" data-o="60.73" data-h="61.56" data-l="60.66" data-c="61.46">
-<line x1="126.6" y1="59.3" x2="126.6" y2="99.0" stroke="#C23B32" stroke-width="1.1"/>
-<rect x="121.6" y="63.7" width="10.0" height="32.2" fill="#C23B32" rx="0.6"/>
+<g class="candle" data-date="2026-06-30" data-o="63.44" data-h="64.46" data-l="63.33" data-c="64.30">
+<line x1="126.6" y1="197.1" x2="126.6" y2="220.6" stroke="#C23B32" stroke-width="1.1"/>
+<rect x="121.6" y="200.4" width="10.0" height="17.9" fill="#C23B32" rx="0.6"/>
 </g>
-<g class="candle" data-date="2026-07-01" data-o="60.44" data-h="60.60" data-l="60.18" data-c="60.20">
-<line x1="143.3" y1="101.7" x2="143.3" y2="120.2" stroke="#3A7A4E" stroke-width="1.1"/>
-<rect x="138.3" y="108.7" width="10.0" height="10.6" fill="#3A7A4E" rx="0.6"/>
+<g class="candle" data-date="2026-07-01" data-o="65.32" data-h="66.37" data-l="64.71" data-c="65.84">
+<line x1="143.3" y1="157.3" x2="143.3" y2="191.9" stroke="#C23B32" stroke-width="1.1"/>
+<rect x="138.3" y="168.3" width="10.0" height="10.8" fill="#C23B32" rx="0.6"/>
 </g>
-<g class="candle" data-date="2026-07-02" data-o="60.25" data-h="60.58" data-l="59.00" data-c="59.39">
-<line x1="159.9" y1="102.6" x2="159.9" y2="172.3" stroke="#3A7A4E" stroke-width="1.1"/>
-<rect x="154.9" y="117.1" width="10.0" height="37.9" fill="#3A7A4E" rx="0.6"/>
+<g class="candle" data-date="2026-07-02" data-o="65.70" data-h="66.10" data-l="64.76" data-c="65.10">
+<line x1="159.9" y1="162.9" x2="159.9" y2="190.8" stroke="#3A7A4E" stroke-width="1.1"/>
+<rect x="154.9" y="171.2" width="10.0" height="12.5" fill="#3A7A4E" rx="0.6"/>
 </g>
-<g class="candle" data-date="2026-07-06" data-o="59.98" data-h="60.38" data-l="59.85" data-c="60.16">
-<line x1="176.6" y1="111.4" x2="176.6" y2="134.8" stroke="#C23B32" stroke-width="1.1"/>
-<rect x="171.6" y="121.1" width="10.0" height="7.9" fill="#C23B32" rx="0.6"/>
+<g class="candle" data-date="2026-07-06" data-o="65.36" data-h="66.42" data-l="64.88" data-c="66.28">
+<line x1="176.6" y1="156.2" x2="176.6" y2="188.3" stroke="#C23B32" stroke-width="1.1"/>
+<rect x="171.6" y="159.2" width="10.0" height="19.2" fill="#C23B32" rx="0.6"/>
 </g>
-<g class="candle" data-date="2026-07-07" data-o="59.60" data-h="59.75" data-l="58.92" data-c="59.32">
-<line x1="193.2" y1="139.2" x2="193.2" y2="175.8" stroke="#3A7A4E" stroke-width="1.1"/>
-<rect x="188.2" y="145.8" width="10.0" height="12.4" fill="#3A7A4E" rx="0.6"/>
+<g class="candle" data-date="2026-07-07" data-o="66.56" data-h="66.74" data-l="66.05" data-c="66.24">
+<line x1="193.2" y1="149.6" x2="193.2" y2="164.0" stroke="#3A7A4E" stroke-width="1.1"/>
+<rect x="188.2" y="153.3" width="10.0" height="6.7" fill="#3A7A4E" rx="0.6"/>
 </g>
-<g class="candle" data-date="2026-07-08" data-o="59.01" data-h="59.52" data-l="58.65" data-c="59.45">
-<line x1="209.9" y1="149.3" x2="209.9" y2="187.7" stroke="#C23B32" stroke-width="1.1"/>
-<rect x="204.9" y="152.4" width="10.0" height="19.4" fill="#C23B32" rx="0.6"/>
+<g class="candle" data-date="2026-07-08" data-o="65.85" data-h="66.02" data-l="65.20" data-c="65.79">
+<line x1="209.9" y1="164.6" x2="209.9" y2="181.7" stroke="#3A7A4E" stroke-width="1.1"/>
+<rect x="204.9" y="168.1" width="10.0" height="1.2" fill="#3A7A4E" rx="0.6"/>
 </g>
-<g class="candle" data-date="2026-07-09" data-o="59.98" data-h="60.30" data-l="59.72" data-c="60.24">
-<line x1="226.5" y1="114.9" x2="226.5" y2="140.5" stroke="#C23B32" stroke-width="1.1"/>
-<rect x="221.5" y="117.6" width="10.0" height="11.5" fill="#C23B32" rx="0.6"/>
+<g class="candle" data-date="2026-07-09" data-o="64.98" data-h="66.81" data-l="64.66" data-c="66.76">
+<line x1="226.5" y1="148.1" x2="226.5" y2="192.9" stroke="#C23B32" stroke-width="1.1"/>
+<rect x="221.5" y="149.2" width="10.0" height="37.1" fill="#C23B32" rx="0.6"/>
 </g>
-<g class="candle" data-date="2026-07-10" data-o="60.14" data-h="60.55" data-l="59.90" data-c="60.51">
-<line x1="243.2" y1="103.9" x2="243.2" y2="132.6" stroke="#C23B32" stroke-width="1.1"/>
-<rect x="238.2" y="105.6" width="10.0" height="16.3" fill="#C23B32" rx="0.6"/>
+<g class="candle" data-date="2026-07-10" data-o="67.40" data-h="67.78" data-l="66.90" data-c="67.68">
+<line x1="243.2" y1="127.9" x2="243.2" y2="146.2" stroke="#C23B32" stroke-width="1.1"/>
+<rect x="238.2" y="130.0" width="10.0" height="5.8" fill="#C23B32" rx="0.6"/>
 </g>
-<g class="candle" data-date="2026-07-13" data-o="59.99" data-h="60.05" data-l="59.47" data-c="59.59">
-<line x1="259.8" y1="125.9" x2="259.8" y2="151.5" stroke="#3A7A4E" stroke-width="1.1"/>
-<rect x="254.8" y="128.6" width="10.0" height="17.7" fill="#3A7A4E" rx="0.6"/>
+<g class="candle" data-date="2026-07-13" data-o="67.40" data-h="67.84" data-l="66.86" data-c="66.99">
+<line x1="259.8" y1="126.7" x2="259.8" y2="147.1" stroke="#3A7A4E" stroke-width="1.1"/>
+<rect x="254.8" y="135.8" width="10.0" height="8.5" fill="#3A7A4E" rx="0.6"/>
 </g>
-<g class="candle" data-date="2026-07-14" data-o="60.18" data-h="60.33" data-l="59.78" data-c="60.19">
-<line x1="276.5" y1="113.6" x2="276.5" y2="137.9" stroke="#C23B32" stroke-width="1.1"/>
-<rect x="271.5" y="119.8" width="10.0" height="1.2" fill="#C23B32" rx="0.6"/>
+<g class="candle" data-date="2026-07-14" data-o="66.79" data-h="67.56" data-l="66.50" data-c="67.44">
+<line x1="276.5" y1="132.5" x2="276.5" y2="154.6" stroke="#C23B32" stroke-width="1.1"/>
+<rect x="271.5" y="135.0" width="10.0" height="13.5" fill="#C23B32" rx="0.6"/>
 </g>
-<g class="candle" data-date="2026-07-15" data-o="60.47" data-h="60.49" data-l="59.53" data-c="60.12">
-<line x1="293.1" y1="106.5" x2="293.1" y2="148.9" stroke="#3A7A4E" stroke-width="1.1"/>
-<rect x="288.1" y="107.4" width="10.0" height="15.4" fill="#3A7A4E" rx="0.6"/>
+<g class="candle" data-date="2026-07-15" data-o="67.76" data-h="69.02" data-l="67.76" data-c="69.02">
+<line x1="293.1" y1="102.1" x2="293.1" y2="128.3" stroke="#C23B32" stroke-width="1.1"/>
+<rect x="288.1" y="102.1" width="10.0" height="26.2" fill="#C23B32" rx="0.6"/>
 </g>
-<g class="candle" data-date="2026-07-16" data-o="59.78" data-h="59.82" data-l="58.99" data-c="59.26">
-<line x1="309.8" y1="136.1" x2="309.8" y2="172.7" stroke="#3A7A4E" stroke-width="1.1"/>
-<rect x="304.8" y="137.9" width="10.0" height="22.9" fill="#3A7A4E" rx="0.6"/>
+<g class="candle" data-date="2026-07-16" data-o="68.90" data-h="69.09" data-l="67.75" data-c="68.12">
+<line x1="309.8" y1="100.6" x2="309.8" y2="128.5" stroke="#3A7A4E" stroke-width="1.1"/>
+<rect x="304.8" y="104.6" width="10.0" height="16.3" fill="#3A7A4E" rx="0.6"/>
 </g>
-<g class="candle" data-date="2026-07-17" data-o="58.16" data-h="59.04" data-l="57.78" data-c="58.51">
-<line x1="326.4" y1="170.5" x2="326.4" y2="226.1" stroke="#C23B32" stroke-width="1.1"/>
-<rect x="321.5" y="193.9" width="10.0" height="15.4" fill="#C23B32" rx="0.6"/>
+<g class="candle" data-date="2026-07-17" data-o="66.61" data-h="67.27" data-l="66.33" data-c="66.91">
+<line x1="326.4" y1="138.5" x2="326.4" y2="158.1" stroke="#C23B32" stroke-width="1.1"/>
+<rect x="321.4" y="146.0" width="10.0" height="6.2" fill="#C23B32" rx="0.6"/>
 </g>
-<g class="candle" data-date="2026-07-20" data-o="59.04" data-h="59.32" data-l="58.55" data-c="58.59">
-<line x1="343.1" y1="158.2" x2="343.1" y2="192.1" stroke="#3A7A4E" stroke-width="1.1"/>
-<rect x="338.1" y="170.5" width="10.0" height="19.9" fill="#3A7A4E" rx="0.6"/>
+<g class="candle" data-date="2026-07-20" data-o="67.20" data-h="67.43" data-l="66.81" data-c="66.93">
+<line x1="343.1" y1="135.2" x2="343.1" y2="148.1" stroke="#3A7A4E" stroke-width="1.1"/>
+<rect x="338.1" y="140.0" width="10.0" height="5.6" fill="#3A7A4E" rx="0.6"/>
 </g>
-<g class="candle" data-date="2026-07-21" data-o="59.39" data-h="59.72" data-l="59.14" data-c="59.65">
-<line x1="359.8" y1="140.5" x2="359.8" y2="166.1" stroke="#C23B32" stroke-width="1.1"/>
-<rect x="354.8" y="143.6" width="10.0" height="11.5" fill="#C23B32" rx="0.6"/>
+<g class="candle" data-date="2026-07-21" data-o="67.00" data-h="67.22" data-l="66.78" data-c="66.95">
+<line x1="359.8" y1="139.6" x2="359.8" y2="148.7" stroke="#3A7A4E" stroke-width="1.1"/>
+<rect x="354.8" y="144.2" width="10.0" height="1.2" fill="#3A7A4E" rx="0.6"/>
 </g>
-<g class="candle" data-date="2026-07-22" data-o="59.34" data-h="59.72" data-l="59.30" data-c="59.46">
-<line x1="376.4" y1="140.5" x2="376.4" y2="159.0" stroke="#C23B32" stroke-width="1.1"/>
-<rect x="371.4" y="152.0" width="10.0" height="5.3" fill="#C23B32" rx="0.6"/>
+<g class="candle" data-date="2026-07-22" data-o="66.95" data-h="67.05" data-l="66.20" data-c="66.30">
+<line x1="376.4" y1="143.1" x2="376.4" y2="160.8" stroke="#3A7A4E" stroke-width="1.1"/>
+<rect x="371.4" y="145.2" width="10.0" height="13.5" fill="#3A7A4E" rx="0.6"/>
 </g>
-<g class="candle" data-date="2026-07-23" data-o="58.74" data-h="59.03" data-l="58.20" data-c="58.53">
-<line x1="393.1" y1="171.0" x2="393.1" y2="207.6" stroke="#3A7A4E" stroke-width="1.1"/>
-<rect x="388.1" y="183.8" width="10.0" height="9.3" fill="#3A7A4E" rx="0.6"/>
+<g class="candle" data-date="2026-07-23" data-o="64.20" data-h="64.24" data-l="62.78" data-c="63.23">
+<line x1="393.1" y1="201.7" x2="393.1" y2="232.1" stroke="#3A7A4E" stroke-width="1.1"/>
+<rect x="388.1" y="202.5" width="10.0" height="20.2" fill="#3A7A4E" rx="0.6"/>
 </g>
-<g class="candle" data-date="2026-07-24" data-o="58.46" data-h="58.60" data-l="57.79" data-c="57.96">
-<line x1="409.7" y1="189.9" x2="409.7" y2="225.7" stroke="#3A7A4E" stroke-width="1.1"/>
-<rect x="404.7" y="196.1" width="10.0" height="22.1" fill="#3A7A4E" rx="0.6"/>
+<g class="candle" data-date="2026-07-24" data-o="63.47" data-h="63.72" data-l="63.10" data-c="63.15">
+<line x1="409.7" y1="212.5" x2="409.7" y2="225.4" stroke="#3A7A4E" stroke-width="1.1"/>
+<rect x="404.7" y="217.7" width="10.0" height="6.7" fill="#3A7A4E" rx="0.6"/>
 </g>
-<g class="candle" data-date="2026-07-27" data-o="58.66" data-h="58.66" data-l="57.22" data-c="57.74">
-<line x1="426.4" y1="187.3" x2="426.4" y2="250.8" stroke="#3A7A4E" stroke-width="1.1"/>
-<rect x="421.4" y="187.3" width="10.0" height="40.6" fill="#3A7A4E" rx="0.6"/>
+<g class="candle" data-date="2026-07-27" data-o="63.95" data-h="64.09" data-l="62.96" data-c="63.01">
+<line x1="426.4" y1="204.8" x2="426.4" y2="228.3" stroke="#3A7A4E" stroke-width="1.1"/>
+<rect x="421.4" y="207.7" width="10.0" height="19.6" fill="#3A7A4E" rx="0.6"/>
 </g>
-<g class="candle" data-date="2026-07-28" data-o="57.32" data-h="57.48" data-l="56.57" data-c="57.20">
-<line x1="443.0" y1="239.4" x2="443.0" y2="279.5" stroke="#3A7A4E" stroke-width="1.1"/>
-<rect x="438.0" y="246.4" width="10.0" height="5.3" fill="#3A7A4E" rx="0.6"/>
+<g class="candle" data-date="2026-07-28" data-o="63.26" data-h="63.70" data-l="62.75" data-c="63.44">
+<line x1="443.0" y1="212.9" x2="443.0" y2="232.7" stroke="#C23B32" stroke-width="1.1"/>
+<rect x="438.0" y="218.3" width="10.0" height="3.8" fill="#C23B32" rx="0.6"/>
 </g>
-<g class="candle" data-date="2026-07-29" data-o="57.23" data-h="57.55" data-l="56.09" data-c="56.14">
-<line x1="459.7" y1="236.3" x2="459.7" y2="300.7" stroke="#3A7A4E" stroke-width="1.1"/>
-<rect x="454.7" y="250.4" width="10.0" height="48.1" fill="#3A7A4E" rx="0.6"/>
+<g class="candle" data-date="2026-07-29" data-o="63.26" data-h="64.08" data-l="62.43" data-c="62.56">
+<line x1="459.7" y1="205.0" x2="459.7" y2="239.4" stroke="#3A7A4E" stroke-width="1.1"/>
+<rect x="454.7" y="222.1" width="10.0" height="14.6" fill="#3A7A4E" rx="0.6"/>
 </g>
-<g class="candle" data-date="2026-07-30" data-o="57.24" data-h="58.03" data-l="57.14" data-c="57.92">
-<line x1="476.3" y1="215.1" x2="476.3" y2="254.4" stroke="#C23B32" stroke-width="1.1"/>
-<rect x="471.3" y="219.9" width="10.0" height="30.0" fill="#C23B32" rx="0.6"/>
+<g class="candle" data-date="2026-07-30" data-o="63.03" data-h="64.10" data-l="62.87" data-c="63.92">
+<line x1="476.3" y1="204.6" x2="476.3" y2="230.2" stroke="#C23B32" stroke-width="1.1"/>
+<rect x="471.3" y="208.3" width="10.0" height="18.5" fill="#C23B32" rx="0.6"/>
 </g>
-<g class="candle" data-date="2026-07-31" data-o="58.59" data-h="58.81" data-l="57.62" data-c="58.25">
-<line x1="493.0" y1="180.7" x2="493.0" y2="233.2" stroke="#3A7A4E" stroke-width="1.1"/>
-<rect x="488.0" y="190.4" width="10.0" height="15.0" fill="#3A7A4E" rx="0.6"/>
+<g class="candle" data-date="2026-07-31" data-o="64.60" data-h="66.16" data-l="64.34" data-c="65.96">
+<line x1="493.0" y1="161.7" x2="493.0" y2="199.6" stroke="#C23B32" stroke-width="1.1"/>
+<rect x="488.0" y="165.8" width="10.0" height="28.3" fill="#C23B32" rx="0.6"/>
 </g>
-<g class="candle" data-date="2026-08-03" data-o="57.56" data-h="58.45" data-l="57.36" data-c="58.34">
-<line x1="509.6" y1="196.5" x2="509.6" y2="244.6" stroke="#C23B32" stroke-width="1.1"/>
-<rect x="504.6" y="201.4" width="10.0" height="34.4" fill="#C23B32" rx="0.6"/>
+<g class="candle" data-date="2026-08-03" data-o="66.74" data-h="68.73" data-l="66.66" data-c="68.38">
+<line x1="509.6" y1="108.1" x2="509.6" y2="151.3" stroke="#C23B32" stroke-width="1.1"/>
+<rect x="504.6" y="115.4" width="10.0" height="34.2" fill="#C23B32" rx="0.6"/>
 </g>
-<g class="candle" data-date="2026-08-04" data-o="58.80" data-h="59.67" data-l="58.80" data-c="59.56">
-<line x1="526.3" y1="142.7" x2="526.3" y2="181.1" stroke="#C23B32" stroke-width="1.1"/>
-<rect x="521.3" y="147.6" width="10.0" height="33.5" fill="#C23B32" rx="0.6"/>
+<g class="candle" data-date="2026-08-04" data-o="67.74" data-h="69.21" data-l="67.74" data-c="68.96">
+<line x1="526.3" y1="98.1" x2="526.3" y2="128.8" stroke="#C23B32" stroke-width="1.1"/>
+<rect x="521.3" y="103.3" width="10.0" height="25.4" fill="#C23B32" rx="0.6"/>
 </g>
-<g class="candle" data-date="2026-08-05" data-o="59.80" data-h="59.80" data-l="59.35" data-c="59.38">
-<line x1="542.9" y1="137.0" x2="542.9" y2="156.8" stroke="#3A7A4E" stroke-width="1.1"/>
-<rect x="537.9" y="137.0" width="10.0" height="18.5" fill="#3A7A4E" rx="0.6"/>
+<g class="candle" data-date="2026-08-05" data-o="69.61" data-h="69.61" data-l="68.09" data-c="68.42">
+<line x1="542.9" y1="89.8" x2="542.9" y2="121.5" stroke="#3A7A4E" stroke-width="1.1"/>
+<rect x="537.9" y="89.8" width="10.0" height="24.8" fill="#3A7A4E" rx="0.6"/>
 </g>
-<g class="candle" data-date="2026-08-06" data-o="59.07" data-h="59.52" data-l="58.87" data-c="59.34">
-<line x1="559.6" y1="149.3" x2="559.6" y2="178.0" stroke="#C23B32" stroke-width="1.1"/>
-<rect x="554.6" y="157.3" width="10.0" height="11.9" fill="#C23B32" rx="0.6"/>
+<g class="candle" data-date="2026-08-06" data-o="68.49" data-h="69.13" data-l="68.29" data-c="68.58">
+<line x1="559.6" y1="99.8" x2="559.6" y2="117.3" stroke="#C23B32" stroke-width="1.1"/>
+<rect x="554.6" y="111.3" width="10.0" height="1.9" fill="#C23B32" rx="0.6"/>
 </g>
-<g class="candle" data-date="2026-08-07" data-o="59.60" data-h="59.76" data-l="59.34" data-c="59.74">
-<line x1="576.2" y1="138.7" x2="576.2" y2="157.3" stroke="#C23B32" stroke-width="1.1"/>
-<rect x="571.2" y="139.6" width="10.0" height="6.2" fill="#C23B32" rx="0.6"/>
+<g class="candle" data-date="2026-08-07" data-o="68.57" data-h="69.52" data-l="68.53" data-c="69.14">
+<line x1="576.2" y1="91.7" x2="576.2" y2="112.3" stroke="#C23B32" stroke-width="1.1"/>
+<rect x="571.2" y="99.6" width="10.0" height="11.9" fill="#C23B32" rx="0.6"/>
 </g>
-<g class="candle" data-date="2026-08-10" data-o="59.71" data-h="59.87" data-l="59.62" data-c="59.68">
-<line x1="592.9" y1="133.9" x2="592.9" y2="144.9" stroke="#3A7A4E" stroke-width="1.1"/>
-<rect x="587.9" y="140.9" width="10.0" height="1.3" fill="#3A7A4E" rx="0.6"/>
+<g class="candle" data-date="2026-08-10" data-o="69.01" data-h="69.49" data-l="68.79" data-c="69.04">
+<line x1="592.9" y1="92.3" x2="592.9" y2="106.9" stroke="#C23B32" stroke-width="1.1"/>
+<rect x="587.9" y="101.7" width="10.0" height="1.2" fill="#C23B32" rx="0.6"/>
 </g>
-<g class="candle" data-date="2026-08-11" data-o="59.82" data-h="59.84" data-l="59.51" data-c="59.65">
-<line x1="609.6" y1="135.2" x2="609.6" y2="149.8" stroke="#3A7A4E" stroke-width="1.1"/>
-<rect x="604.6" y="136.1" width="10.0" height="7.5" fill="#3A7A4E" rx="0.6"/>
+<g class="candle" data-date="2026-08-11" data-o="69.18" data-h="69.29" data-l="68.33" data-c="68.44">
+<line x1="609.6" y1="96.5" x2="609.6" y2="116.5" stroke="#3A7A4E" stroke-width="1.1"/>
+<rect x="604.6" y="98.7" width="10.0" height="15.4" fill="#3A7A4E" rx="0.6"/>
 </g>
-<g class="candle" data-date="2026-08-12" data-o="60.04" data-h="60.10" data-l="59.93" data-c="60.00">
-<line x1="626.2" y1="123.7" x2="626.2" y2="131.2" stroke="#3A7A4E" stroke-width="1.1"/>
-<rect x="621.2" y="126.4" width="10.0" height="1.8" fill="#3A7A4E" rx="0.6"/>
+<g class="candle" data-date="2026-08-12" data-o="68.64" data-h="68.70" data-l="67.58" data-c="67.71">
+<line x1="626.2" y1="108.7" x2="626.2" y2="132.1" stroke="#3A7A4E" stroke-width="1.1"/>
+<rect x="621.2" y="110.0" width="10.0" height="19.4" fill="#3A7A4E" rx="0.6"/>
 </g>
-<g class="candle" data-date="2026-08-13" data-o="60.10" data-h="60.48" data-l="60.05" data-c="60.42">
-<line x1="642.9" y1="107.0" x2="642.9" y2="125.9" stroke="#C23B32" stroke-width="1.1"/>
-<rect x="637.9" y="109.6" width="10.0" height="14.1" fill="#C23B32" rx="0.6"/>
+<g class="candle" data-date="2026-08-13" data-o="67.87" data-h="68.56" data-l="67.82" data-c="68.49">
+<line x1="642.9" y1="111.7" x2="642.9" y2="127.1" stroke="#C23B32" stroke-width="1.1"/>
+<rect x="637.9" y="113.1" width="10.0" height="12.9" fill="#C23B32" rx="0.6"/>
 </g>
-<g class="candle" data-date="2026-08-14" data-o="60.47" data-h="60.60" data-l="60.37" data-c="60.53">
-<line x1="659.5" y1="101.7" x2="659.5" y2="111.8" stroke="#C23B32" stroke-width="1.1"/>
-<rect x="654.5" y="104.8" width="10.0" height="2.6" fill="#C23B32" rx="0.6"/>
+<g class="candle" data-date="2026-08-14" data-o="68.50" data-h="68.92" data-l="68.25" data-c="68.26">
+<line x1="659.5" y1="104.2" x2="659.5" y2="118.1" stroke="#3A7A4E" stroke-width="1.1"/>
+<rect x="654.5" y="112.9" width="10.0" height="5.0" fill="#3A7A4E" rx="0.6"/>
 </g>
-<g class="candle" data-date="2026-08-17" data-o="60.62" data-h="60.74" data-l="60.53" data-c="60.56">
-<line x1="676.2" y1="95.5" x2="676.2" y2="104.8" stroke="#3A7A4E" stroke-width="1.1"/>
-<rect x="671.2" y="100.8" width="10.0" height="2.6" fill="#3A7A4E" rx="0.6"/>
+<g class="candle" data-date="2026-08-17" data-o="68.30" data-h="68.39" data-l="67.19" data-c="67.35">
+<line x1="676.2" y1="115.2" x2="676.2" y2="140.2" stroke="#3A7A4E" stroke-width="1.1"/>
+<rect x="671.2" y="117.1" width="10.0" height="19.8" fill="#3A7A4E" rx="0.6"/>
 </g>
-<g class="candle" data-date="2026-08-18" data-o="60.08" data-h="60.15" data-l="59.83" data-c="59.93">
-<line x1="692.8" y1="121.5" x2="692.8" y2="135.7" stroke="#3A7A4E" stroke-width="1.1"/>
-<rect x="687.8" y="124.6" width="10.0" height="6.6" fill="#3A7A4E" rx="0.6"/>
+<g class="candle" data-date="2026-08-18" data-o="66.84" data-h="67.16" data-l="66.55" data-c="66.74">
+<line x1="692.8" y1="140.8" x2="692.8" y2="153.5" stroke="#3A7A4E" stroke-width="1.1"/>
+<rect x="687.8" y="147.5" width="10.0" height="2.1" fill="#3A7A4E" rx="0.6"/>
 </g>
-<g class="candle" data-date="2026-08-19" data-o="60.06" data-h="60.16" data-l="59.66" data-c="59.87">
-<line x1="709.5" y1="121.1" x2="709.5" y2="143.2" stroke="#3A7A4E" stroke-width="1.1"/>
-<rect x="704.5" y="125.5" width="10.0" height="8.4" fill="#3A7A4E" rx="0.6"/>
+<g class="candle" data-date="2026-08-19" data-o="66.92" data-h="67.95" data-l="66.70" data-c="67.66">
+<line x1="709.5" y1="124.4" x2="709.5" y2="150.4" stroke="#C23B32" stroke-width="1.1"/>
+<rect x="704.5" y="130.4" width="10.0" height="15.4" fill="#C23B32" rx="0.6"/>
 </g>
-<g class="candle" data-date="2026-08-20" data-o="59.66" data-h="59.86" data-l="59.50" data-c="59.66">
-<line x1="726.1" y1="134.3" x2="726.1" y2="150.2" stroke="#C23B32" stroke-width="1.1"/>
-<rect x="721.1" y="143.2" width="10.0" height="1.2" fill="#C23B32" rx="0.6"/>
+<g class="candle" data-date="2026-08-20" data-o="67.26" data-h="67.50" data-l="66.79" data-c="66.89">
+<line x1="726.1" y1="133.8" x2="726.1" y2="148.5" stroke="#3A7A4E" stroke-width="1.1"/>
+<rect x="721.1" y="138.7" width="10.0" height="7.7" fill="#3A7A4E" rx="0.6"/>
 </g>
-<g class="candle" data-date="2026-08-21" data-o="59.97" data-h="59.99" data-l="59.55" data-c="59.84">
-<line x1="742.8" y1="128.6" x2="742.8" y2="148.0" stroke="#3A7A4E" stroke-width="1.1"/>
-<rect x="737.8" y="129.5" width="10.0" height="5.7" fill="#3A7A4E" rx="0.6"/>
+<g class="candle" data-date="2026-08-21" data-o="67.10" data-h="67.62" data-l="66.84" data-c="67.28">
+<line x1="742.8" y1="131.2" x2="742.8" y2="147.5" stroke="#C23B32" stroke-width="1.1"/>
+<rect x="737.8" y="138.3" width="10.0" height="3.8" fill="#C23B32" rx="0.6"/>
 </g>
-<g class="candle" data-date="2026-08-24" data-o="59.62" data-h="59.66" data-l="59.16" data-c="59.42">
-<line x1="759.4" y1="143.2" x2="759.4" y2="165.2" stroke="#3A7A4E" stroke-width="1.1"/>
-<rect x="754.4" y="144.9" width="10.0" height="8.8" fill="#3A7A4E" rx="0.6"/>
+<g class="candle" data-date="2026-08-24" data-o="67.23" data-h="67.65" data-l="66.93" data-c="67.20">
+<line x1="759.4" y1="130.6" x2="759.4" y2="145.6" stroke="#3A7A4E" stroke-width="1.1"/>
+<rect x="754.4" y="139.4" width="10.0" height="1.2" fill="#3A7A4E" rx="0.6"/>
 </g>
-<g class="candle" data-date="2026-08-25" data-o="59.77" data-h="59.90" data-l="59.53" data-c="59.75">
-<line x1="776.1" y1="132.6" x2="776.1" y2="148.9" stroke="#3A7A4E" stroke-width="1.1"/>
-<rect x="771.1" y="138.3" width="10.0" height="1.2" fill="#3A7A4E" rx="0.6"/>
+<g class="candle" data-date="2026-08-25" data-o="67.41" data-h="67.80" data-l="67.24" data-c="67.61">
+<line x1="776.1" y1="127.5" x2="776.1" y2="139.2" stroke="#C23B32" stroke-width="1.1"/>
+<rect x="771.1" y="131.5" width="10.0" height="4.2" fill="#C23B32" rx="0.6"/>
 </g>
-<g class="candle" data-date="2026-08-26" data-o="59.62" data-h="59.89" data-l="59.60" data-c="59.79">
-<line x1="792.7" y1="133.0" x2="792.7" y2="145.8" stroke="#C23B32" stroke-width="1.1"/>
-<rect x="787.7" y="137.4" width="10.0" height="7.5" fill="#C23B32" rx="0.6"/>
+<g class="candle" data-date="2026-08-26" data-o="67.72" data-h="67.81" data-l="67.28" data-c="67.57">
+<line x1="792.7" y1="127.3" x2="792.7" y2="138.3" stroke="#3A7A4E" stroke-width="1.1"/>
+<rect x="787.7" y="129.2" width="10.0" height="3.1" fill="#3A7A4E" rx="0.6"/>
 </g>
-<g class="candle" data-date="2026-08-27" data-o="60.13" data-h="60.33" data-l="59.96" data-c="60.31">
-<line x1="809.4" y1="113.6" x2="809.4" y2="129.9" stroke="#C23B32" stroke-width="1.1"/>
-<rect x="804.4" y="114.5" width="10.0" height="7.9" fill="#C23B32" rx="0.6"/>
+<g class="candle" data-date="2026-08-27" data-o="68.00" data-h="68.70" data-l="67.59" data-c="68.60">
+<line x1="809.4" y1="108.7" x2="809.4" y2="131.9" stroke="#C23B32" stroke-width="1.1"/>
+<rect x="804.4" y="110.8" width="10.0" height="12.5" fill="#C23B32" rx="0.6"/>
 </g>
-<g class="candle" data-date="2026-08-28" data-o="60.27" data-h="60.51" data-l="60.07" data-c="60.15">
-<line x1="826.0" y1="105.6" x2="826.0" y2="125.1" stroke="#3A7A4E" stroke-width="1.1"/>
-<rect x="821.0" y="116.2" width="10.0" height="5.3" fill="#3A7A4E" rx="0.6"/>
+<g class="candle" data-date="2026-08-28" data-o="68.66" data-h="69.80" data-l="68.66" data-c="69.07">
+<line x1="826.0" y1="85.8" x2="826.0" y2="109.6" stroke="#C23B32" stroke-width="1.1"/>
+<rect x="821.0" y="101.0" width="10.0" height="8.5" fill="#C23B32" rx="0.6"/>
 </g>
-<g class="candle" data-date="2026-08-31" data-o="60.15" data-h="60.25" data-l="60.00" data-c="60.22">
-<line x1="842.7" y1="117.1" x2="842.7" y2="128.1" stroke="#C23B32" stroke-width="1.1"/>
-<rect x="837.7" y="118.4" width="10.0" height="3.1" fill="#C23B32" rx="0.6"/>
+<g class="candle" data-date="2026-08-31" data-o="68.67" data-h="68.91" data-l="68.41" data-c="68.74">
+<line x1="842.7" y1="104.4" x2="842.7" y2="114.8" stroke="#C23B32" stroke-width="1.1"/>
+<rect x="837.7" y="107.9" width="10.0" height="1.5" fill="#C23B32" rx="0.6"/>
 </g>
-<g class="candle" data-date="2026-09-01" data-o="59.00" data-h="59.29" data-l="58.80" data-c="59.00">
-<line x1="859.3" y1="159.5" x2="859.3" y2="181.1" stroke="#C23B32" stroke-width="1.1"/>
-<rect x="854.4" y="172.3" width="10.0" height="1.2" fill="#C23B32" rx="0.6"/>
+<g class="candle" data-date="2026-09-01" data-o="67.68" data-h="68.61" data-l="67.37" data-c="68.23">
+<line x1="859.3" y1="110.6" x2="859.3" y2="136.5" stroke="#C23B32" stroke-width="1.1"/>
+<rect x="854.3" y="118.5" width="10.0" height="11.5" fill="#C23B32" rx="0.6"/>
 </g>
-<g class="candle" data-date="2026-09-02" data-o="59.02" data-h="59.19" data-l="58.85" data-c="59.15">
-<line x1="876.0" y1="163.9" x2="876.0" y2="178.9" stroke="#C23B32" stroke-width="1.1"/>
-<rect x="871.0" y="165.7" width="10.0" height="5.7" fill="#C23B32" rx="0.6"/>
+<g class="candle" data-date="2026-09-02" data-o="68.12" data-h="68.99" data-l="67.92" data-c="68.76">
+<line x1="876.0" y1="102.7" x2="876.0" y2="125.0" stroke="#C23B32" stroke-width="1.1"/>
+<rect x="871.0" y="107.5" width="10.0" height="13.3" fill="#C23B32" rx="0.6"/>
 </g>
 <text x="60.0" y="338" fill="#141413" font-size="9.5" text-anchor="middle">6/24</text>
 <text x="176.6" y="338" fill="#141413" font-size="9.5" text-anchor="middle">7/6</text>
@@ -827,18 +812,15 @@
 <rect x="210" y="358" width="10" height="10" fill="#3A7A4E" rx="1.5"/>
 <text x="226" y="367" fill="#504e49" font-size="10">下跌日（收盤 &lt; 開盤）</text>
 </svg>
-  <figcaption>近三個月股價區間約 $56.1～$61.6，9 月 2 日收盤 $59.15。滑鼠移到任一根 K 棒可查看當日開高低收。</figcaption>
+  <figcaption>近三個月約 $61～$70，9 月 2 日收盤 $68.76；7 月底一度回測 $62 後隨 Mag 7 反彈。滑鼠移到任一根 K 棒可查看當日開高低收。</figcaption>
 </figure>
 
 <!-- ========== ANALYSIS LOGIC ========== -->
-<h2>分析邏輯：與 JEPI 同源，但波動更高</h2>
-<p>JEPQ 與 JEPI 出自同一發行商、同一套「主動選股 + ELN」策略框架，唯一差別是標的資產：納斯達克100 vs S&amp;P 500。JEPQ 對納指100 的 beta 為 <span class="hl">0.84</span>，明顯高於 JEPI 對 S&amp;P 500 的 beta（0.54）——這符合預期，因為納指100 本身的成分股（大型科技股）波動率遠高於 S&amp;P 500，即使採用相同的策略框架，曝險比例也會反映在數字上。</p>
-
-<p>但把 JEPQ 放到本系列已分析的其他納指100 收益基金中比較，會發現一個有意思的現象：JEPQ 的 beta（0.84）其實低於 QQQI（下跌日 0.866）與 GPIQ（0.896），是本系列目前納指100 相關基金中 beta 最低的一檔。這可能與 JPMorgan 主動選股、分散在 111 檔個股（而非單純追蹤指數再疊加期權）的結構有關，但由於 JEPQ 缺乏官方公開的下跌日／上漲日 beta 拆分，無法確認這個較低的整體 beta 在下跌與上漲時是否對稱，這點與 JEPI 面臨相同的資料揭露限制。</p>
-
-<div class="callout">
-  JEPQ 2022 年 5 月成立，晚於當年美股熊市的高點（那斯達克100 於 2021 年底見頂），因此並未完整經歷 2022 年熊市的下跌段，無法像 JEPI 一樣提供完整年度的熊市實證數據。近一年總報酬 20.15%、自成立以來平均年化報酬 16.25%，數字亮眼，但這段期間的納指100 整體處於多頭與修正交錯的格局，尚未經歷過真正的深度熊市考驗。
-</div>
+<h2>分析邏輯：一鍵打包的代價與便利</h2>
+<p>買 MAGS 就是用每年 0.30% 的費用，把「持有七巨頭並維持等權重」這件事外包出去。自己組七檔股票當然零管理費，但要自行處理配比漂移後的再平衡、七次下單與股息再投入的麻煩；MAGS 每季自動把七檔打回等權重，代價就是一年 0.30%。對只想「七巨頭漲我就該賺到」的投資人來說，這筆費用買的是省事；對會自己動手的人來說，這就是一筆可以省下的成本。</p>
+<p>等權重的雙面性值得單獨想一分鐘：市值加權里，漲最多的巨頭自動變大、拖累者自動變小；等權重每季把弱勢股加回 14.3%，等於逆勢加碼落後者。當 Tesla 這類波動大的成分股反彈時，等權重放大了反彈；但當它一路弱勢時，等權重也放大了拖累。2026 年正是這種結構的壓力測試——半導體領漲、Mag 7 相對弱勢，甚至出現七巨頭市值蒸發 $2.3 兆的報導與 AI 資本支出的雜音，MAGS 的 beta 高達 1.38，意味著它比大盤波動更大，順風更快、逆風也更痛。</p>
+<p>Swap 架構點到為止：MAGS 的報酬來自與交易對手簽的 swaps，而不是直接持股，因此存在追蹤誤差與對手方風險。實務上這類 ETF 通常以超額抵押的國庫券與每日結算控制風險，成立兩年多來的年化 36.19% 也顯示追蹤大致貼合；但它終究不是「直接持有七檔股票」，這層差異在極端市況下才會現形，平時可以記著、不必過度擔心。</p>
+<p>和本站個股報告的搭配讀法：MAGS 是懶人包，個股報告是顯微鏡。七檔中本站已有 TSLA、NVDA、SPCX、ARCC 四檔個股報告，GOOG、AAPL、MSFT 三檔新報告同步規劃中；Amazon 與 Meta 目前尚無獨立個股報告，想深究這兩檔營運面的讀者需另找資料。先用 MAGS 理解「一籃子七巨頭」的整體風險報酬，再用個股報告逐檔檢視「到底是哪一檔在拖累（或carry）這一籃子」。</p>
 
 <!-- ========== AD SLOT (Adsterra) ========== -->
 <div class="ad-slot" aria-label="Advertisement">
@@ -856,88 +838,96 @@
 </div>
 
 <!-- ========== FUND STRUCTURE ========== -->
-<h2>基金結構對照：JEPQ vs 本系列其他納指100 收益基金</h2>
+<h2>基金結構對照：MAGS vs 相關基金</h2>
 <table class="financial compact striped">
   <thead>
     <tr>
       <th>指標</th>
-      <th>JEPQ</th>
+      <th>MAGS</th>
+      <th>IQQ</th>
       <th>QQQI</th>
-      <th>GPIQ</th>
+      <th>DGRO</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <td>成立日</td>
-      <td>2022-05</td>
+      <td>2023-04</td>
+      <td>2026-07</td>
       <td>2024-01</td>
-      <td>2023-10</td>
+      <td>2014-06</td>
     </tr>
     <tr>
       <td>策略機制</td>
-      <td>個股組合 + ELN</td>
+      <td>七巨頭等權重 swaps</td>
+      <td>被動追蹤納指100</td>
       <td>持股 + 賣出看漲期權</td>
-      <td>持股 + 賣出看漲期權</td>
+      <td>股息成長指數</td>
     </tr>
     <tr>
       <td>費率</td>
-      <td>0.35%</td>
+      <td>0.30%</td>
+      <td>0.10%</td>
       <td>0.68%</td>
-      <td>0.29%</td>
+      <td>0.08%</td>
     </tr>
     <tr>
-      <td>資產規模（AUM）</td>
-      <td>約 420.7 億美元</td>
+      <td>資產規模</td>
+      <td>約 41.9 億美元</td>
+      <td>約 3.79 億美元</td>
       <td>—</td>
-      <td>約 55.8 億美元</td>
+      <td>約 434.1 億美元</td>
     </tr>
     <tr>
-      <td>beta（vs 納指100）</td>
-      <td>0.84</td>
-      <td>0.866 / 0.848</td>
-      <td>0.896</td>
+      <td>beta（vs 大盤）</td>
+      <td>1.38</td>
+      <td>—</td>
+      <td>0.866</td>
+      <td>0.77</td>
     </tr>
     <tr>
       <td>尾隨殖利率（現價）</td>
-      <td>11.03%</td>
+      <td>1.42%</td>
+      <td>尚未配息</td>
       <td>≈13.8%</td>
-      <td>10.14%</td>
+      <td>1.87%</td>
     </tr>
     <tr>
-      <td>近一年總報酬</td>
-      <td>20.15%</td>
-      <td>—</td>
-      <td>—</td>
+      <td>配息頻率</td>
+      <td>年配</td>
+      <td>無</td>
+      <td>月配</td>
+      <td>季配</td>
     </tr>
   </tbody>
 </table>
-<p>JEPQ 的規模（420.7 億美元）是本系列納指100 相關基金中最大的一檔，也是唯一採用「個股組合 + ELN」而非直接對指數持倉賣出看漲期權的基金。費率（0.35%）介於 GPIQ（0.29%）與 QQQI（0.68%）之間。與姊妹基金 JEPI 相比，JEPQ 的殖利率（11.03%）更高，反映納指100 波動率帶來的更豐厚權利金收入，但代價是 beta 也相對較高（0.84 vs 0.54）。</p>
+<p>這張表把 MAGS 的定位說得很清楚：它是四檔裡 beta 最高（1.38）、波動最大的一檔——IQQ 用 0.10% 被動貼著納指 100 走，QQQI 用備兌看漲換取約 13.8% 的月配收益、beta 反而壓到 0.866，DGRO 則是 434.1 億美元規模、殖利率 1.87% 的股息成長核心配置。MAGS 不賣期權、不談下檔緩衝，1.42% 的殖利率只是成分股息的自然結果；要收益有 QQQI，要穩健核心有 DGRO，要便宜貼指數有 IQQ——選 MAGS 的唯一理由，就是看好七巨頭本身，並且接受它比大盤更劇烈的擺動。</p>
 
 <!-- ========== RISKS ========== -->
 <h2>風險提示</h2>
 <div class="risk-grid">
   <div class="risk-item">
-    <div class="risk-label">尚未經歷完整熊市考驗</div>
-    <div class="risk-desc">2022 年 5 月成立，錯過了當年那斯達克100 從高點下跌的主要段落，成立以來的漂亮數字建立在相對溫和的市場環境之上，不應直接套用 JEPI 在 2022 年的下檔緩衝實證。</div>
+    <div class="risk-label">七檔即全部的極端集中</div>
+    <div class="risk-desc">七檔股票就是全部持股，沒有第八檔分散風險；任一巨頭爆雷都會直接反映在淨值上，這是主題基金與生俱來的代價。</div>
   </div>
   <div class="risk-item">
-    <div class="risk-label">beta 高於姊妹基金 JEPI</div>
-    <div class="risk-desc">0.84 的 beta 明顯高於 JEPI 的 0.54，反映納指100 本身較高的波動率。若未來納指100 出現深度熊市，JEPQ 的下檔參與度可能高於 JEPI 在 2022 年展現的緩衝程度。</div>
+    <div class="risk-label">等權重放大弱勢股</div>
+    <div class="risk-desc">每季再平衡把落後者加回約 14.3%，等於逆勢加碼弱勢巨頭；當某檔長期掉隊時，等權重會持續放大它的拖累。</div>
   </div>
   <div class="risk-item">
-    <div class="risk-label">ELN 對手方風險</div>
-    <div class="risk-desc">股權連結票據（ELN）本質上是與投資銀行簽訂的場外衍生性商品合約，報酬取決於發行銀行的履約能力，存在對手方信用風險，這與直接持有股票或透過交易所掛牌期權的曝險方式不同。</div>
+    <div class="risk-label">swap 架構追蹤與對手方</div>
+    <div class="risk-desc">曝險來自 swaps 與 forwards 而非直接持股，存在追蹤誤差與交易對手風險；平時影響甚微，極端市況下才可能現形。</div>
   </div>
   <div class="risk-item">
-    <div class="risk-label">高派息隱含資本返還</div>
-    <div class="risk-desc">月度分配中可能包含相當比例的資本返還（ROC）而非真實已實現收益；ROC 比例並非保證值，且逐年變動，須以官方 19a-1 公告為準。</div>
+    <div class="risk-label">Mag 7 估值與 AI 支出雜音</div>
+    <div class="risk-desc">2026 年 Mag 7 相對弱勢，市場質疑 AI 資本支出回報；beta 1.38 意味著逆風時 MAGS 跌得比大盤更重。</div>
   </div>
 </div>
 
 <!-- ========== ANALYST SUMMARY ========== -->
 <div class="analyst-box">
   <div class="analyst-label">分析師總結</div>
-  JEPQ 是 JEPI 的納指100 版本，420.7 億美元的規模與較低的費率（0.35%）使其成為本系列納指100 收益基金中規模最大、流動性最寬裕的選擇。其 beta（0.84）低於 QQQI、GPIQ，理論上意味著更保守的曝險輪廓，但由於 JEPQ 2022 年 5 月才成立、錯過了當年熊市的主要下跌段，且官方未拆分下跌日／上漲日 beta，這個「相對低 beta」的優勢目前缺乏像 JEPI 2022 年那樣的完整熊市實證支撐，只能視為一個尚待驗證的假設，而非確定的結論。如果目的是在納指100 曝險之外賺取比 JEPI 更高的現金流、且願意承擔相對應的更高波動，JEPQ 是本系列中規模最大、資料最完整（除了 beta 拆分）的選擇之一；但真正的下檔防禦力，仍要等下一次納指100 深度熊市才能驗證。
+  MAGS 把一件事做到極致：用一年 0.30%、每季自動再平衡的代價，讓你無腦擁有等權重的七巨頭。配息／獲利比 46.18% 說明它的配息來自成分股息的真金白銀，年化 36.19% 的成立以來報酬證明這個懶人包確實跟上了巨頭行情；但 beta 1.38、七檔即全部的集中度，以及等權重對弱勢股的加碼機制，決定了它在 2026 年這種 Mag 7 相對弱勢的年份會比大盤更難受。它適合「堅定看好七巨頭、懶得自己組、抱得住波動」的人；想要配息、想要緩衝、或只想便宜貼指數的人，本站的 QQQI、DGRO、IQQ 報告裡各有更合適的答案。
 </div>
 
 <!-- ========== AD SLOT (Adsterra) ========== -->
@@ -967,7 +957,7 @@
   <a href="SPYI.html">SPYI 分析報告 · S&amp;P 500 指數選擇權價差收益基金 →</a>
   <a href="TSLA.html">TSLA 分析報告 · Robotaxi 量產前夜的估值與風險 →</a>
   <a href="JEPI.html">JEPI 分析報告 · 唯一撐過完整熊市的收益基金 →</a>
-  <a href="QDVO.html">QDVO 分析報告 · 資本增值優先的成長股收益基金 →</a>
+  <a href="JEPQ.html">JEPQ 分析報告 · JEPI 的納指100 姊妹基金 →</a>
   <a href="GPIX.html">GPIX 分析報告 · S&amp;P 500 備兌看漲收益基金 →</a>
   <a href="IWMI.html">IWMI 分析報告 · 羅素2000 小型股收益基金 →</a>
   <a href="SGOV.html">SGOV 分析報告 · 0-3個月國庫券現金停泊工具 →</a>
@@ -978,15 +968,15 @@
   <a href="ARCC.html">ARCC 分析報告 · 私人信貸龍頭 BDC →</a>
   <a href="SPCX.html">SPCX 分析報告 · SpaceX 上市首季的估值與波動 →</a>
   <a href="NVDA.html">NVDA 分析報告 · AI 軍火商的估值與風險 →</a>
+  <a href="QDVO.html">QDVO 分析報告 · 資本增值優先的成長股收益基金 →</a>
   <a href="GOOG.html">GOOG 分析報告 · 反壟斷過關的 AI 全棧巨頭 →</a>
   <a href="AAPL.html">AAPL 分析報告 · 交棒期的 AI 追趕與估值之問 →</a>
   <a href="MSFT.html">MSFT 分析報告 · 財報爆發後的雲端巨頭 →</a>
-  <a href="MAGS.html">MAGS 分析報告 · 一鍵打包七巨頭的等權重主題基金 →</a>
 </div>
 
 <!-- ========== FOOTER ========== -->
 <div class="report-footer">
-  <span>備兌看漲收益策略分析，不構成投資建議 · 資料來源：Yahoo Finance, stockanalysis.com, J.P. Morgan Asset Management</span>
+  <span>Mag 7 主題基金分析，不構成投資建議 · 資料來源：Yahoo Finance, stockanalysis.com, Roundhill Investments</span>
   <span>Yen-Chin, Lee · 2026-09-03</span>
 </div>
 

@@ -21,7 +21,7 @@ export default function ClosePriceChart({ ticker, dates, values, locale = 'en' }
   return (
     <div className="candlekit-chart" role="img" aria-label={title}>
       <div className="candlekit-chart-canvas">
-        <ChartView data={bars} seriesType="line" theme="light" showVolume drawing={{ storageKey: `report-drawings:${ticker}` }} measurement indicators={indicators}>
+        <ChartView data={bars} seriesType="line" theme="light" showVolume={false} drawing={{ storageKey: `report-drawings:${ticker}` }} measurement indicators={indicators}>
           <DrawingToolbar />
           <IndicatorPicker label="Indicators" />
         </ChartView>

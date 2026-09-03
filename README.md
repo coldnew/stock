@@ -20,7 +20,7 @@ English reports start as `draft`. After completing the sources and review, publi
 
 ### Advertising
 
-The shared `AdSlot` component preserves the approved Adsterra placements, while `Analytics` centralizes the existing GA4 measurement ID for traffic and language reporting. Keep ads outside article sections and do not add intrusive popunder behavior. Advertising revenue requires the deployed site to remain on the approved domain, and the content must preserve clear disclosures and a usable reading experience.
+The shared `AdSlot` component centralizes the approved Adsterra native, banner, and smartlink placements. `MonetizationScripts` loads the social-bar and popunder scripts once per page. Keep ads outside article sections, label sponsored links, and verify Adsterra policy and user-consent requirements for every target market.
 
 ### Framework layout
 
@@ -31,4 +31,4 @@ The shared `AdSlot` component preserves the approved Adsterra placements, while 
 
 ### Deployment
 
-The GitHub Actions workflow validates the MDX collection, builds `dist`, copies the legal HTML pages, generates redirects for legacy report URLs, and deploys the result to GitHub Pages. Enable GitHub Pages with `GitHub Actions` as the source in the repository settings before expecting a new deployment. The Adsterra scripts only have a chance to generate revenue after the site is deployed on the approved domain.
+The GitHub Actions workflow validates the MDX collection, builds `dist`, copies the legal HTML pages, generates redirects for legacy report URLs, and deploys the result to GitHub Pages. Enable GitHub Pages with `GitHub Actions` as the source in the repository settings before expecting a new deployment. Adsterra revenue depends on the approved publisher account, domain, traffic quality, and available demand in each visitor market.

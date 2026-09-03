@@ -459,6 +459,10 @@
     background: var(--ivory);
     min-height: 40pt;
   }
+  .ad-slot[data-placement="mid"] { min-height: 230pt; }
+  .ad-slot[data-placement="bottom"] { min-height: 54pt; }
+  .ad-smartlink-slot { margin: 10pt 0; text-align: center; }
+  .ad-smartlink { color: var(--stone); font: 9.5pt/1.5 sans-serif; }
   .ad-slot-label {
     font-size: 9pt;
     letter-spacing: 1pt;

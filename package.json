@@ -4,6 +4,7 @@
   "type": "module",
   "scripts": {
     "dev": "astro dev",
+    "prebuild": "node --experimental-strip-types scripts/export-market-json.mjs",
     "build": "astro build",
     "postbuild": "node scripts/copy-legacy.mjs",
     "check": "astro check",

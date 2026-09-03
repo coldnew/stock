@@ -1,17 +1,24 @@
 ---
-import ClosePriceChart from './ClosePriceChart';
+import CandlestickChart from './CandlestickChart';
 import { marketSnapshots } from '../../data/market';
 
 interface Props { ticker: string; locale: 'en' | 'zh-TW'; }
 const { ticker, locale } = Astro.props as Props;
 const snapshot = marketSnapshots[ticker.toUpperCase()];
 const rows = snapshot?.rows ?? [];
-const sampleIndexes = rows.length > 7 ? [0, 5, 10, 15, 20, 25, rows.length - 1] : rows.map((_, index) => index);
-const sampled = sampleIndexes.map((index) => rows[index]).filter(Boolean);
-const dates = sampled.map(([date]) => date);
-const values = sampled.map(([, , , , close]) => close);
+const dataUrl = `/stock/data/market/${ticker.toUpperCase()}.json`;
+const firstClose = rows[0]?.[4] ?? 0;
+const lastClose = rows.at(-1)?.[4] ?? 0;
+const change = firstClose ? ((lastClose / firstClose) - 1) * 100 : 0;
+const high = rows.length ? Math.max(...rows.map((row) => row[2])) : 0;
+const low = rows.length ? Math.min(...rows.map((row) => row[3])) : 0;
 ---
-{snapshot && values.length > 1 ? <>
-  <ClosePriceChart client:load ticker={ticker} locale={locale} dates={dates} values={values} />
-  <p class="chart-source">{locale === 'en' ? 'Source: Yahoo Finance chart data; latest completed session: ' : '資料來源：Yahoo Finance 行情資料；最近完成交易日：'}{rows.at(-1)?.[0]}.</p>
+{snapshot && rows.length > 1 ? <>
+  <CandlestickChart client:load locale={locale} dataUrl={dataUrl} />
+  <div class="chart-summary" aria-label={locale === 'en' ? 'Chart summary' : '圖表摘要'}>
+    <span>{locale === 'en' ? '30-session return' : '30 交易日報酬'} <strong class={change >= 0 ? 'positive' : 'negative'}>{change >= 0 ? '+' : ''}{change.toFixed(2)}%</strong></span>
+    <span>{locale === 'en' ? 'Range' : '區間'} <strong>{low.toFixed(2)}–{high.toFixed(2)}</strong></span>
+    <span>{locale === 'en' ? 'Latest close' : '最新收盤'} <strong>{lastClose.toFixed(2)}</strong></span>
+  </div>
+  <p class="chart-source">{locale === 'en' ? 'Source: Yahoo Finance OHLC chart data; ' : '資料來源：Yahoo Finance OHLC 行情資料；'}{rows.length} {locale === 'en' ? 'completed sessions through ' : '個完成交易日，截止 '} {rows.at(-1)?.[0]}.</p>
 </> : <p class="chart-source">{locale === 'en' ? 'Market chart unavailable for this report type.' : '此報告類型目前沒有可用的市場圖表。'}</p>}

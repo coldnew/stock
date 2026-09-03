@@ -5,11 +5,22 @@ import Analytics from './Analytics.astro';
 import AiDisclosure from './AiDisclosure.astro';
 import '../../styles/index.css';
 
-const { reports, locale } = Astro.props as {
+const { reports, allReports = reports, locale } = Astro.props as {
   reports: CollectionEntry<'reports'>[];
+  allReports?: CollectionEntry<'reports'>[];
   locale: 'zh-TW' | 'en';
 };
 const isEnglish = locale === 'en';
+const editionsByTicker = new Map<string, CollectionEntry<'reports'>[]>();
+allReports.forEach((report) => {
+  const editions = editionsByTicker.get(report.data.ticker) ?? [];
+  editions.push(report);
+  editionsByTicker.set(report.data.ticker, editions);
+});
+const archivedTickers = [...editionsByTicker.entries()]
+  .filter(([, editions]) => editions.length > 1)
+  .sort(([a], [b]) => a.localeCompare(b));
+const dateLabel = (date: Date) => date.toISOString().slice(0, 10);
 const groups = isEnglish
   ? [
       { tickers: ['OVL', 'QQQI', 'BTCI', 'GPIQ', 'SPYI', 'JEPI', 'JEPQ', 'QDVO'], title: 'Income ETFs', subtitle: 'Option income, distribution composition, and downside behavior.', tag: 'Income strategy analysis' },
@@ -59,6 +70,25 @@ const groups = isEnglish
         </>;
       })}
     </main>
+    <section class="archive-guide" aria-labelledby="archive-title">
+      <h2 id="archive-title">{isEnglish ? 'Browse report history' : '回看歷史報告'}</h2>
+      <p>{archivedTickers.length
+        ? (isEnglish ? 'Compare dated editions to see how market data, risks, and conclusions changed over time.' : '依日期比較不同版本，了解市場資料、風險與分析結論如何隨時間變化。')
+        : (isEnglish ? 'New dated editions will appear here when a report is updated. Each snapshot remains available for comparison.' : '報告更新後，新的日期版本會在這裡出現；每個快照都會保留，方便日後比較。')}</p>
+      {archivedTickers.length > 0 && <div class="archive-list">
+        {archivedTickers.map(([ticker, editions]) => {
+          const latestEdition = editions.find((edition) => edition.data.isLatest) ?? editions[0];
+          return <details>
+            <summary><span>{ticker} · {latestEdition.data.title}</span><span class="archive-count">{editions.length} {isEnglish ? 'editions' : '個版本'}</span></summary>
+            <ul>
+              {[...editions].sort((a, b) => b.data.publishedAt.valueOf() - a.data.publishedAt.valueOf()).map((edition) => <li>
+                <a href={`/stock/${isEnglish ? 'en/' : ''}reports/${ticker.toLowerCase()}/${dateLabel(edition.data.publishedAt)}/`}>{dateLabel(edition.data.publishedAt)} · {edition.data.title}</a>
+              </li>)}
+            </ul>
+          </details>;
+        })}
+      </div>}
+    </section>
     <footer class="index-footer"><span>{isEnglish ? 'For educational purposes only. Not financial advice.' : '僅供教育與資訊參考，不構成投資建議。'}</span><span class="footer-links"><a href="/stock/about.html">{isEnglish ? 'About' : '關於本站'}</a><a href="/stock/privacy.html">{isEnglish ? 'Privacy' : '隱私權政策'}</a><a href="/stock/disclaimer.html">{isEnglish ? 'Disclaimer' : '免責聲明'}</a></span></footer>
     <script is:inline src="/stock/report-interactions.js"></script>
   </body>

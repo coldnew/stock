@@ -57,6 +57,17 @@ body {
 .report-card h2 { margin: 0 0 6px; font-size: 18px; font-weight: 500; }
 .report-card p { margin: 0; color: var(--stone); font-size: 13.5px; line-height: 1.55; }
 .report-card .read-more { display: inline-block; margin-top: 10px; color: var(--brand); font-size: 13px; font-weight: 500; }
+.archive-guide { margin-top: 44px; padding-top: 18px; border-top: .5px dotted var(--border); }
+.archive-guide h2 { margin: 0 0 4px; color: var(--brand); font-size: 18px; font-weight: 500; }
+.archive-guide > p { margin: 0 0 14px; color: var(--stone); font-size: 13px; }
+.archive-list { display: flex; flex-direction: column; gap: 8px; }
+.archive-list details { border-bottom: .5px solid var(--border); }
+.archive-list summary { display: flex; justify-content: space-between; gap: 16px; padding: 10px 0; cursor: pointer; color: var(--near-black); font-size: 14px; list-style-position: inside; }
+.archive-list summary::marker { color: var(--brand); }
+.archive-count { flex: 0 0 auto; color: var(--stone); font-size: 12px; }
+.archive-list ul { margin: 0 0 10px; padding-left: 24px; }
+.archive-list li { padding: 3px 0; color: var(--stone); font-size: 13px; }
+.archive-list a { color: var(--brand); }
 .index-footer { margin-top: 48px; padding-top: 16px; border-top: .5px dotted var(--border); color: var(--stone); font-size: 12px; }
 .index-footer a { margin-right: 12px; color: var(--stone); text-decoration: none; }
 .index-footer a:hover { color: var(--brand); }

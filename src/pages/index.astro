@@ -1,6 +1,7 @@
 ---
-import { getLatestReports } from '../data/reports';
+import { getLatestReports, getReports } from '../data/reports';
 import ReportIndex from '../components/report/ReportIndex.astro';
 const reports = await getLatestReports('zh-TW');
+const allReports = (await getReports('zh-TW')).filter((report) => report.data.status === 'published');
 ---
-<ReportIndex reports={reports} locale="zh-TW" />
+<ReportIndex reports={reports} allReports={allReports} locale="zh-TW" />

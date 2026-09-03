@@ -243,6 +243,54 @@ reporting) is still accurate background — use judgment on whether that
 specific security's distributions are ROC-heavy enough to be worth
 mentioning, rather than pasting the callout by default.
 
+### Strong ROC evidence (disclosed payout ratio) — metric badge + appendix
+
+When a fund's own disclosed payout ratio is extreme enough to be direct
+evidence of heavy ROC (currently: SPYI at 308.78%, QDVO at 300.52% — both
+well over 100%, i.e. distributing several times realized gains), don't just
+bury that inside the "基本介紹" callout prose. Surface it as its own **5th
+metric card** in the header metrics bar (normally exactly 4:
+費用率/殖利率/beta/AUM), value "幾乎全為 ROC" wrapped in
+`<a href="#roc-note">`, label "配息組成（推估）". This is the concrete
+"one field says the return is almost entirely ROC" pattern the user asked
+for after seeing QDVO's callout — don't add this 5th card for funds whose
+ROC evidence is only the generic tax-mechanism background, not a specific
+disclosed number.
+
+The full explanation (the standard "為什麼台灣投資人會關注...稅務優勢" text)
+then moves out of the inline callout into its own **appendix `<h2>` section**
+near the end of the report (after the analyst-box, before the closing
+ad-slot), so it doesn't repeat the same wall of text inline. The inline
+callout in "基本介紹" shrinks to 2-3 sentences citing the specific number,
+ending with a link to the appendix (`<a href="#roc-note">附錄：ROC 稅務說明
+→</a>`).
+
+The appendix heading needs `data-anchor="roc-note"` — a real attribute,
+not a convention-only comment. The shared interactive script's
+`buildSections()` unconditionally does `el.id = 'section-' + counter` for
+every `<h2>` in document order, which would stomp any hand-set `id` you put
+directly on that heading. The script was extended with one line to check
+first: `el.getAttribute('data-anchor') || ('section-' + counter)` — so
+`data-anchor` on an `<h2>` gives it a stable, human-readable id that
+survives regardless of how many other `<h2>`s exist or get added later,
+while every other heading keeps the old positional `section-N` id
+unchanged. This line needs to be identical across all reports (like the
+rest of the shared script) even in reports that don't currently use
+`data-anchor` — check `grep -n "getAttribute('data-anchor')" reports/*.html`
+matches on all of them before treating the shared script as in sync.
+Anchoring to the `<h2>` itself (not some inner span) matters: only the
+`.section-body` gets `display:none` on collapse, never the heading, so a
+link to the heading's id always scrolls correctly even if a reader has
+collapsed that section — a link into the middle of the section body
+wouldn't have that guarantee.
+
+Because a 5th metric card makes the row less predictable in width, the
+`.metrics`/`.metric` CSS carries `flex-wrap: wrap` and `flex: 1 1 110pt`
+(rather than a bare `flex: 1`) so it degrades to wrapping instead of
+squeezing or overflowing on narrow viewports — this is also shared CSS,
+keep it identical across every report even though only SPYI/QDVO currently
+use a 5th card.
+
 ## Checklist: adding a brand-new report
 
 1. Author the report HTML using an existing report as the template — copy

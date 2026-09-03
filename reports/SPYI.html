@@ -192,6 +192,7 @@
   /* ========== METRICS ========== */
   .metrics {
     display: flex;
+    flex-wrap: wrap;
     gap: 14pt;
     margin-bottom: 16pt;
     padding: 6pt 0;
@@ -199,7 +200,7 @@
     border-bottom: 0.3pt dotted var(--border);
   }
   .metric {
-    flex: 1;
+    flex: 1 1 110pt;
     display: flex;
     align-items: baseline;
     gap: 4pt;
@@ -213,6 +214,7 @@
     font-variant-numeric: tabular-nums;
     white-space: nowrap;
   }
+  .metric-value a { color: inherit; text-decoration: underline dotted; text-underline-offset: 3pt; }
   .metric-label {
     font-size: 11pt;
     color: var(--olive);
@@ -527,6 +529,10 @@
     <div class="metric-value">117.2億</div>
     <div class="metric-label">資產規模（美元）</div>
   </div>
+  <div class="metric">
+    <div class="metric-value"><a href="#roc-note">幾乎全為 ROC</a></div>
+    <div class="metric-label">配息組成（推估）</div>
+  </div>
 </div>
 
 <!-- ========== AD SLOT (Adsterra) ========== -->
@@ -541,7 +547,7 @@
 <p>SPYI（NEOS S&amp;P 500 High Income ETF）是由 NEOS Investments 於 2022 年 8 月 30 日在 Cboe BZX 掛牌的主動管理型 ETF，是本系列報告中歷史最長、規模最大的一檔——資產規模達 117.2 億美元，遠超過 GPIQ（55.8 億美元）與 QQQI。與 QQQI／GPIQ／BTCI 採用的「持有標的 + 賣出價外看漲期權」單腳備兌看漲不同，SPYI 官方揭露的策略是「運用 SPX 指數選擇權建立價差（call spread）部位」，屬於更精細的指數選擇權組合策略，而非直接對基金持股賣出看漲期權。費率 0.68%，每月配息，目前尾隨殖利率約 11.82%。</p>
 
 <div class="callout">
-  <strong>為什麼台灣投資人會關注這類基金：ROC（資本返還）的稅務優勢。</strong>美國對非美籍稅務居民課徵的一般股利預扣稅率通常是 30%（台灣與美國沒有租稅協定）；但若配息中有一部分被基金歸類為 ROC（Return of Capital，資本返還），該部分性質上是「歸還投資人自己已投入的本金」而非「當年度所得」，通常不適用 30% 股利預扣稅，而是調降投資人的成本基礎（cost basis），遞延到未來實際出售時才反映為資本利得。SPYI 揭露的配息／獲利比（payout ratio）高達 <span class="hl">308.78%</span>——代表過去一年實際發放的配息金額是帳面已實現獲利的三倍以上，這是本系列報告目前看到最直接、最極端的 ROC 訊號，強烈暗示配息中有相當大比例並非來自已實現收益，而是資本返還。但三點提醒：第一，ROC 比例並非保證值，須以基金每年發布的 19a-1 公告與年度 1099-DIV／1042-S 稅務文件為準；第二，美國預扣稅的免除不等於在台灣完全免稅——這類海外有價證券的配息與資本利得，仍可能被計入台灣個人「基本所得額」（海外所得，超過免稅額度需計入基本稅額申報）；第三，配息／獲利比超過 100% 本身就是資本侵蝕的警訊，稅務效率不能掩蓋「拿回自己的本金」與「賺到額外報酬」是兩件不同的事。以上僅為一般性稅務背景資訊，不構成個人稅務建議，實際申報請諮詢熟悉台美跨境投資稅務的會計師或稅務顧問。
+  <strong>為什麼台灣投資人會關注這類基金：ROC（資本返還）的稅務優勢。</strong>SPYI 揭露的配息／獲利比（payout ratio）高達 <span class="hl">308.78%</span>——過去一年實際發放的配息是帳面已實現獲利的三倍以上，是本系列報告目前看到最直接、最極端的 ROC 訊號，意味著配息中相當大比例很可能不是已實現收益，而是「歸還投資人自己的本金」，通常可免除美國對非美籍稅務居民課徵的 30% 股利預扣稅。完整說明、稅務提醒與本金侵蝕警訊請見 <a href="#roc-note">附錄：ROC 稅務說明 →</a>。
 </div>
 
 <h3>配息時間表</h3>
@@ -939,6 +945,10 @@
   SPYI 是本系列規模最大、歷史最長的收益型基金，自成立以來的年化報酬（14.83%）與近一年總報酬（17.48%）數字亮眼，費率（0.68%）也優於 QQQI、BTCI。但兩個關鍵限制值得留意：第一，308.78% 的配息／獲利比是本系列目前見過最明確的 ROC／本金侵蝕訊號，對台灣投資人而言美國預扣稅節省是真實優勢，但這不代表基金本身在創造額外報酬，本金侵蝕與稅務效率是兩個獨立的問題；第二，SPYI 採用的 SPX 指數選擇權價差策略與本系列其他基金的單腳備兌看漲不同，官方揭露的數據深度也較淺（缺乏下跌日／上漲日 beta 拆分），使得跨基金比較的可信度打了折扣。如果目的是在標普 500 曝險之外額外賺取現金流、且能接受配息中可能有相當比例是本金返還，SPYI 目前的規模與流動性是本系列中最寬裕的一檔；但若目的是尋求熊市下檔保護的明確實證，SPYI 提供的公開資訊尚不足以支持任何具體結論，務必待其經歷一次完整熊市週期後再重新評估。
 </div>
 
+<!-- ========== APPENDIX: ROC TAX NOTE ========== -->
+<h2 data-anchor="roc-note">附錄：ROC（資本返還）稅務說明</h2>
+<p><strong>為什麼台灣投資人會關注這類基金：ROC（資本返還）的稅務優勢。</strong>美國對非美籍稅務居民課徵的一般股利預扣稅率通常是 30%（台灣與美國沒有租稅協定）；但若配息中有一部分被基金歸類為 ROC（Return of Capital，資本返還），該部分性質上是「歸還投資人自己已投入的本金」而非「當年度所得」，通常不適用 30% 股利預扣稅，而是調降投資人的成本基礎（cost basis），遞延到未來實際出售時才反映為資本利得。SPYI 揭露的配息／獲利比（payout ratio）高達 <span class="hl">308.78%</span>——代表過去一年實際發放的配息金額是帳面已實現獲利的三倍以上，這是本系列報告目前看到最直接、最極端的 ROC 訊號，強烈暗示配息中有相當大比例並非來自已實現收益，而是資本返還。但三點提醒：第一，ROC 比例並非保證值，須以基金每年發布的 19a-1 公告與年度 1099-DIV／1042-S 稅務文件為準；第二，美國預扣稅的免除不等於在台灣完全免稅——這類海外有價證券的配息與資本利得，仍可能被計入台灣個人「基本所得額」（海外所得，超過免稅額度需計入基本稅額申報）；第三，配息／獲利比超過 100% 本身就是資本侵蝕的警訊，稅務效率不能掩蓋「拿回自己的本金」與「賺到額外報酬」是兩件不同的事。以上僅為一般性稅務背景資訊，不構成個人稅務建議，實際申報請諮詢熟悉台美跨境投資稅務的會計師或稅務顧問。</p>
+
 <!-- ========== AD SLOT (Adsterra) ========== -->
 <div class="ad-slot" aria-label="Advertisement">
   <div class="ad-slot-label">Advertisement</div>
@@ -1048,7 +1058,7 @@
     kids.forEach(function (el) {
       if (el.tagName === 'H2') {
         counter++;
-        var id = 'section-' + counter;
+        var id = el.getAttribute('data-anchor') || ('section-' + counter);
         el.id = id;
         el.classList.add('collapsible');
         el.setAttribute('role', 'button');

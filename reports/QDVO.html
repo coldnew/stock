@@ -192,6 +192,7 @@
   /* ========== METRICS ========== */
   .metrics {
     display: flex;
+    flex-wrap: wrap;
     gap: 14pt;
     margin-bottom: 16pt;
     padding: 6pt 0;
@@ -199,7 +200,7 @@
     border-bottom: 0.3pt dotted var(--border);
   }
   .metric {
-    flex: 1;
+    flex: 1 1 110pt;
     display: flex;
     align-items: baseline;
     gap: 4pt;
@@ -213,6 +214,7 @@
     font-variant-numeric: tabular-nums;
     white-space: nowrap;
   }
+  .metric-value a { color: inherit; text-decoration: underline dotted; text-underline-offset: 3pt; }
   .metric-label {
     font-size: 11pt;
     color: var(--olive);
@@ -527,6 +529,10 @@
     <div class="metric-value">7.44億</div>
     <div class="metric-label">資產規模（美元）</div>
   </div>
+  <div class="metric">
+    <div class="metric-value"><a href="#roc-note">幾乎全為 ROC</a></div>
+    <div class="metric-label">配息組成（推估）</div>
+  </div>
 </div>
 
 <!-- ========== AD SLOT (Adsterra) ========== -->
@@ -541,7 +547,7 @@
 <p>QDVO（Amplify CWP Growth & Income ETF）是 Amplify ETFs 於 2024 年 8 月 22 日在 NYSE Arca 掛牌的主動管理型 ETF，由次顧問 Capital Wealth Planning（CWP）操盤。與本系列其他收益基金最大的不同在於：QDVO 精選約 50 檔個股（前三大持股為 NVIDIA 10.26%、Alphabet 8.62%、Apple 8.29%），並「戰術性」地針對個股或大盤指數賣出看漲期權，而非像 QQQI／GPIQ／SPYI 那樣對整個指數部位做系統性、固定比例的備兌看漲覆蓋。發行商官方說明僅表示會「在個股基礎上戰術性地寫出備兌看漲，也可能針對大盤指數戰術性地寫出」，並未揭露確切的覆蓋比例或選擇權部位占淨值的百分比。基金明確將「資本增值」列為主要目標，「較高的當期收益」列為次要目標——這個目標排序本身就與本系列其他以收益為核心訴求的基金不同。費率 0.56%，每月配息，目前尾隨殖利率約 10.72%。</p>
 
 <div class="callout">
-  <strong>為什麼台灣投資人會關注這類基金：ROC（資本返還）的稅務優勢。</strong>美國對非美籍稅務居民課徵的一般股利預扣稅率通常是 30%（台灣與美國沒有租稅協定）；但若配息中有一部分被基金歸類為 ROC（Return of Capital，資本返還），該部分性質上是「歸還投資人自己已投入的本金」而非「當年度所得」，通常不適用 30% 股利預扣稅，而是調降投資人的成本基礎（cost basis），遞延到未來實際出售時才反映為資本利得。QDVO 的配息／獲利比高達 300.52%——與 SPYI（308.78%）相近，是本系列目前 ROC 訊號最明確的基金之一，意味著配息中相當大比例很可能來自 ROC 而非已實現收益。但兩點提醒：第一，ROC 比例並非保證值，須以基金每年發布的 19a-1 公告與年度 1099-DIV／1042-S 稅務文件為準；第二，美國預扣稅的免除不等於在台灣完全免稅——這類海外有價證券的配息與資本利得，仍可能被計入台灣個人「基本所得額」（海外所得，超過免稅額度需計入基本稅額申報）。以上僅為一般性稅務背景資訊，不構成個人稅務建議，實際申報請諮詢熟悉台美跨境投資稅務的會計師或稅務顧問。
+  <strong>為什麼台灣投資人會關注這類基金：ROC（資本返還）的稅務優勢。</strong>QDVO 的配息／獲利比高達 300.52%——與 SPYI（308.78%）相近，是本系列目前 ROC 訊號最明確的基金之一，意味著配息中相當大比例很可能不是已實現收益，而是「歸還投資人自己的本金」，通常可免除美國對非美籍稅務居民課徵的 30% 股利預扣稅。完整說明與稅務提醒請見 <a href="#roc-note">附錄：ROC 稅務說明 →</a>。
 </div>
 
 <h3>配息時間表</h3>
@@ -950,6 +956,10 @@
   QDVO 在本系列中扮演一個明確不同的角色：它不是「用配息換取下檔緩衝」的收益優先型基金，而是「資本增值優先、收益其次」的個股精選成長型基金，只是恰好也採用了備兌看漲策略。beta 1.04 這個數字本身就是最誠實的訊號——它幾乎不提供本系列其他基金所訴求的下檔保護，換來的是近一年 16.30% 的亮眼報酬與相對其他基金更高的上漲參與空間。配息／獲利比 300.52% 顯示配息中 ROC 占比可能不低，稅務上仍具吸引力，但如果投資人選擇這檔基金的初衷是「像 JEPI 那樣在熊市中有實證的緩衝」，QDVO 目前的資料完全無法支持這個期待——它從成立以來就沒有真正被下跌市場測試過，而且策略設計本身就更偏向承擔波動、而非迴避波動。
 </div>
 
+<!-- ========== APPENDIX: ROC TAX NOTE ========== -->
+<h2 data-anchor="roc-note">附錄：ROC（資本返還）稅務說明</h2>
+<p><strong>為什麼台灣投資人會關注這類基金：ROC（資本返還）的稅務優勢。</strong>美國對非美籍稅務居民課徵的一般股利預扣稅率通常是 30%（台灣與美國沒有租稅協定）；但若配息中有一部分被基金歸類為 ROC（Return of Capital，資本返還），該部分性質上是「歸還投資人自己已投入的本金」而非「當年度所得」，通常不適用 30% 股利預扣稅，而是調降投資人的成本基礎（cost basis），遞延到未來實際出售時才反映為資本利得。QDVO 的配息／獲利比高達 300.52%——與 SPYI（308.78%）相近，是本系列目前 ROC 訊號最明確的基金之一，意味著配息中相當大比例很可能來自 ROC 而非已實現收益。但兩點提醒：第一，ROC 比例並非保證值，須以基金每年發布的 19a-1 公告與年度 1099-DIV／1042-S 稅務文件為準；第二，美國預扣稅的免除不等於在台灣完全免稅——這類海外有價證券的配息與資本利得，仍可能被計入台灣個人「基本所得額」（海外所得，超過免稅額度需計入基本稅額申報）。以上僅為一般性稅務背景資訊，不構成個人稅務建議，實際申報請諮詢熟悉台美跨境投資稅務的會計師或稅務顧問。</p>
+
 <!-- ========== AD SLOT (Adsterra) ========== -->
 <div class="ad-slot" aria-label="Advertisement">
   <div class="ad-slot-label">Advertisement</div>
@@ -1059,7 +1069,7 @@
     kids.forEach(function (el) {
       if (el.tagName === 'H2') {
         counter++;
-        var id = 'section-' + counter;
+        var id = el.getAttribute('data-anchor') || ('section-' + counter);
         el.id = id;
         el.classList.add('collapsible');
         el.setAttribute('role', 'button');

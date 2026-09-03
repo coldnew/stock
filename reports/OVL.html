@@ -192,6 +192,7 @@
   /* ========== METRICS ========== */
   .metrics {
     display: flex;
+    flex-wrap: wrap;
     gap: 14pt;
     margin-bottom: 16pt;
     padding: 6pt 0;
@@ -199,7 +200,7 @@
     border-bottom: 0.3pt dotted var(--border);
   }
   .metric {
-    flex: 1;
+    flex: 1 1 110pt;
     display: flex;
     align-items: baseline;
     gap: 4pt;
@@ -213,6 +214,7 @@
     font-variant-numeric: tabular-nums;
     white-space: nowrap;
   }
+  .metric-value a { color: inherit; text-decoration: underline dotted; text-underline-offset: 3pt; }
   .metric-label {
     font-size: 11pt;
     color: var(--olive);
@@ -1465,7 +1467,7 @@
     kids.forEach(function (el) {
       if (el.tagName === 'H2') {
         counter++;
-        var id = 'section-' + counter;
+        var id = el.getAttribute('data-anchor') || ('section-' + counter);
         el.id = id;
         el.classList.add('collapsible');
         el.setAttribute('role', 'button');

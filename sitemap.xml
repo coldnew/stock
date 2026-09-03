@@ -79,6 +79,36 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://coldnew.github.io/stock/reports/DGRO.html</loc>
+    <lastmod>2026-09-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://coldnew.github.io/stock/reports/IQQ.html</loc>
+    <lastmod>2026-09-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://coldnew.github.io/stock/reports/QQQH.html</loc>
+    <lastmod>2026-09-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://coldnew.github.io/stock/reports/CHPY.html</loc>
+    <lastmod>2026-09-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://coldnew.github.io/stock/reports/ARCC.html</loc>
+    <lastmod>2026-09-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://coldnew.github.io/stock/about.html</loc>
     <lastmod>2026-09-03</lastmod>
     <changefreq>yearly</changefreq>

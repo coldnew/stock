@@ -104,8 +104,9 @@ script).
 
 Adsterra gives out several different code shapes — they don't all fit the
 same slot the same way. Established precedent (see `index.html` and every
-file under `reports/`, all live — ads run on all five pages of this site,
-not just the reports):
+file under `reports/`, all live — ads run on every page of this site,
+index plus every report; check `ls reports/` for the current count rather
+than trusting a hardcoded number anywhere in this skill):
 
 - **Banner, container-id variant** (`invoke.js` + a `<div id="container-...">`)
   is tied to one specific container id. The same id is reused verbatim
@@ -126,7 +127,7 @@ not just the reports):
   can safely be reused verbatim in multiple slots on the same page** — each
   instance renders independently at its own position. This is why one
   `atOptions` code from the user was enough to fill both the mid and
-  bottom slots on all five pages, not just one.
+  bottom slots on every page, not just one.
 - **Smart link** (a bare URL you render as a styled `<a>`) was the original
   mid/bottom ad, replaced site-wide by the `atOptions` banner above because
   a plain text link gets very low click-through compared to an actual

@@ -61,6 +61,24 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://coldnew.github.io/stock/reports/GPIX.html</loc>
+    <lastmod>2026-09-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://coldnew.github.io/stock/reports/IWMI.html</loc>
+    <lastmod>2026-09-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://coldnew.github.io/stock/reports/SGOV.html</loc>
+    <lastmod>2026-09-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://coldnew.github.io/stock/about.html</loc>
     <lastmod>2026-09-03</lastmod>
     <changefreq>yearly</changefreq>

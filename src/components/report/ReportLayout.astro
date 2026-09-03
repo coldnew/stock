@@ -88,7 +88,7 @@ const tslaChart = ticker === 'TSLA'
     </div>
 {!archive && <MarketTrend ticker={ticker} locale={locale} />}
 {!archive && <MarketDecisionPanel ticker={ticker} locale={locale} reportType={entry.data.reportType} />}
-{tslaChart && <CandlestickChart client:load locale={locale === 'zh-TW' ? 'zh-TW' : 'en'} dates={tslaChart.dates} data={tslaChart.data as [number, number, number, number][]} />}
+{tslaChart && archive && <CandlestickChart client:load locale={locale === 'zh-TW' ? 'zh-TW' : 'en'} dates={tslaChart.dates} data={tslaChart.data as [number, number, number, number][]} />}
 {!archive && locale === 'en' && <ProfessionalFramework ticker={ticker} />}
     <AdSlot placement="top" />
     <div class:list={["report-shell", history.length === 0 && "without-sidebar"]}>

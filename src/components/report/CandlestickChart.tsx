@@ -7,10 +7,11 @@ type Props = {
   dates?: string[];
   data?: [number, number, number, number][];
   dataUrl?: string;
+  levels?: { price: number; label: string; color?: string }[];
   locale?: 'en' | 'zh-TW';
 };
 
-export default function CandlestickChart({ dates = [], data = [], dataUrl, locale = 'en' }: Props) {
+export default function CandlestickChart({ dates = [], data = [], dataUrl, levels = [], locale = 'en' }: Props) {
   const [remoteData, setRemoteData] = useState<{ dates: string[]; data: [number, number, number, number][] } | null>(null);
   const [loadError, setLoadError] = useState(false);
   const indicators = useMemo(() => new IndicatorController(createBuiltinRegistry()), []);
@@ -45,12 +46,14 @@ export default function CandlestickChart({ dates = [], data = [], dataUrl, local
   return (
     <div className="candlekit-chart" role="img" aria-label={locale === 'zh-TW' ? '近期交易日 K 棒圖' : 'Recent trading-session candlestick chart'}>
       <div className="candlekit-chart-canvas">
-          <ChartView data={bars} seriesType="candlestick" theme={{ mode: 'light', background: '#f5f4ed', text: '#6b6a64', grid: '#e8e7e1', axis: '#dedcd2', crosshair: '#1B365D', crosshairLabelBg: '#1B365D', up: '#C23B32', down: '#3A7A4E', line: '#1B365D', volumeUp: '#C23B3266', volumeDown: '#3A7A4E66', fontFamily: 'inherit', fontSize: 12 }} showVolume={false} drawing={{ storageKey: `report-drawings:${chartDates[0]}` }} measurement indicators={indicators}>
+          <ChartView data={bars} seriesType="candlestick" theme={{ mode: 'light', background: '#f5f4ed', text: '#6b6a64', grid: '#e8e7e1', axis: '#dedcd2', crosshair: '#1B365D', crosshairLabelBg: '#1B365D', up: '#C23B32', down: '#3A7A4E', line: '#1B365D', volumeUp: '#C23B3266', volumeDown: '#3A7A4E66', fontFamily: 'inherit', fontSize: 12 }} showVolume={false} drawing={{ storageKey: `report-drawings:${chartDates[0]}` }} measurement indicators={indicators} onReady={({ controller }) => {
+            levels.forEach(({ price, label, color = '#9B5C2E' }) => controller.getSeries().createPriceLine({ price, color, lineWidth: 1, lineStyle: 2, axisLabelVisible: true, title: label }));
+          }}>
           <DrawingToolbar />
           <IndicatorPicker label="Indicators" />
         </ChartView>
       </div>
-      <p className="lightweight-candlestick-caption">{locale === 'zh-TW' ? '紅色為收盤不低於開盤，綠色為收盤低於開盤；滑鼠移至 K 棒可查看 OHLC。' : 'Red means close at or above open; green means close below open. Hover a candle to inspect OHLC.'}</p>
+      <p className="lightweight-candlestick-caption">{locale === 'zh-TW' ? '紅色為收盤不低於開盤，綠色為收盤低於開盤；滑鼠移至 K 棒可查看 OHLC。' : 'Red means close at or above open; green means close below open. Hover a candle to inspect OHLC.'}{levels.length > 0 && ` 技術位階：${levels.map(({ label, price }) => `${label} ${price}`).join(' · ')}`}</p>
       <small className="chart-attribution">Charts by CandleKit · MIT</small>
     </div>
   );

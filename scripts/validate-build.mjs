@@ -31,7 +31,7 @@ for (const report of reports) {
   if (!html.includes('rel="canonical"') && !html.includes('rel="alternate"')) failures.push(`${path}: missing SEO links`);
   if (report.locale === 'en' && !html.includes('hreflang="zh-TW"')) failures.push(`${path}: missing Chinese hreflang`);
 }
-for (const path of ['dist/reports/JEPQ.html', 'dist/about.html', 'dist/privacy.html', 'dist/disclaimer.html']) {
+for (const path of ['dist/reports/JEPQ.html', 'dist/reports/jepq.html', 'dist/about.html', 'dist/privacy.html', 'dist/disclaimer.html']) {
   try { await readFile(path); } catch { failures.push(`${path}: legacy compatibility file missing`); }
 }
 if (failures.length) {

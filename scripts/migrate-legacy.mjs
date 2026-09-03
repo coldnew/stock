@@ -9,7 +9,12 @@ const typeByTicker = {
   MSFT: 'equity', NVDA: 'equity', QQQH: 'income-etf', SGOV: 'income-etf', SPCX: 'equity', TSLA: 'equity',
 };
 const cleanMetricText = (value) => value.replace(/<[^>]+>/g, '').replace(/&amp;/g, '&').replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/\s+/g, ' ').trim();
-const files = (await readdir(reportDir)).filter((file) => file.endsWith('.html')).sort();
+let files = [];
+try {
+  files = (await readdir(reportDir)).filter((file) => file.endsWith('.html')).sort();
+} catch (error) {
+  if (error.code !== 'ENOENT') throw error;
+}
 
 for (const file of files) {
   const ticker = file.replace(/\.html$/, '').toUpperCase();

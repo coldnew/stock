@@ -1,6 +1,6 @@
 ## Stock research reports
 
-This repository publishes static investment research pages with Astro and MDX. Existing root HTML pages remain available while reports are migrated into the content framework.
+This repository publishes static investment research pages with Astro and MDX. Report pages are generated from the dated content collection; legacy report URLs redirect to the generated latest pages.
 
 ### Authoring a report
 
@@ -24,11 +24,11 @@ The shared `AdSlot` component preserves the approved Adsterra placements, while 
 
 ### Framework layout
 
-- `src/content/reports/`: dated Chinese and English MDX content
+- `src/content/reports/`: dated Chinese and English MDX content, including historical snapshots
 - `src/components/report/`: shared report UI and monetization components
 - `src/pages/`: static routes, language routes, sitemap, and robots.txt
 - `scripts/new-report.mjs`: repeatable report scaffolding
 
 ### Deployment
 
-The GitHub Actions workflow validates the MDX collection, builds `dist`, copies the existing legacy HTML pages for URL compatibility, and deploys the result to GitHub Pages. Enable GitHub Pages with `GitHub Actions` as the source in the repository settings before expecting a new deployment. The Adsterra scripts only have a chance to generate revenue after the site is deployed on the approved domain.
+The GitHub Actions workflow validates the MDX collection, builds `dist`, copies the legal HTML pages, generates redirects for legacy report URLs, and deploys the result to GitHub Pages. Enable GitHub Pages with `GitHub Actions` as the source in the repository settings before expecting a new deployment. The Adsterra scripts only have a chance to generate revenue after the site is deployed on the approved domain.

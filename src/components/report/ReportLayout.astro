@@ -10,9 +10,15 @@ const { entry, archive = false } = Astro.props;
 const { Content } = await render(entry);
 const { ticker, locale, title, description, publishedAt, updatedAt, dataAsOf, translationKey, status } = entry.data;
 const reports = await getReports(locale);
+const publishedReports = reports.filter((item) => item.data.status === 'published');
+const history = publishedReports
+  .filter((item) => item.data.ticker === ticker && !item.data.isLatest)
+  .sort((a, b) => b.data.publishedAt.valueOf() - a.data.publishedAt.valueOf());
+const latest = publishedReports.find((item) => item.data.ticker === ticker && item.data.isLatest);
 const base = Astro.site?.toString().replace(/\/$/, '') ?? 'https://coldnew.github.io/stock';
 const iso = (date: Date) => date.toISOString().slice(0, 10);
 const datePath = `/reports/${ticker.toLowerCase()}/${iso(publishedAt)}/`;
+const latestPath = `${locale === 'en' ? '/en' : ''}/reports/${ticker.toLowerCase()}/`;
 const path = archive
   ? `${locale === 'en' ? '/en' : ''}${datePath}`
   : locale === 'en' ? `/en/reports/${ticker.toLowerCase()}/` : `/reports/${ticker.toLowerCase()}/`;
@@ -67,6 +73,14 @@ const alternatePath = archive
     <AdSlot placement="top" />
     <main class="report-content"><Content /></main>
     <AdSlot placement="bottom" />
+    {archive && latest && <p class="archive-banner"><a href={`${base}${latestPath}`}>{locale === 'en' ? 'View the current edition' : '查看最新版報告'} →</a></p>}
+    {history.length > 0 && <section class="report-history" aria-labelledby="report-history-title">
+      <h2 id="report-history-title">{locale === 'en' ? 'Report history' : '歷史版本'}</h2>
+      <p>{locale === 'en' ? 'Earlier dated editions are preserved as snapshots for comparison.' : '過往日期版本會保留為快照，方便比較資料與結論如何變化。'}</p>
+      <ul>
+        {history.map((item) => <li><a href={`${locale === 'en' ? '/stock/en' : '/stock'}/reports/${ticker.toLowerCase()}/${iso(item.data.publishedAt)}/`}>{iso(item.data.publishedAt)} · {item.data.title}</a></li>)}
+      </ul>
+    </section>}
     <nav class="related-report">
       <h2>{locale === 'en' ? 'Related reports' : '延伸閱讀'}</h2>
       {reports.filter((item) => item.id !== entry.id).slice(0, 8).map((item) => <a href={`${locale === 'en' ? '/stock/en' : '/stock'}/reports/${item.data.ticker.toLowerCase()}/`}>{item.data.title}</a>)}

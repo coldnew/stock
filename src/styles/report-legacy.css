@@ -149,6 +149,20 @@
   }
   .disclosure summary { cursor: pointer; color: var(--brand); font-weight: 500; }
   .disclosure-body { padding-top: 6pt; }
+  .archive-banner {
+    margin: 16pt 0 0;
+    padding: 8pt 12pt;
+    border-left: 2pt solid var(--brand);
+    background: var(--ivory);
+  }
+  .report-history {
+    margin-top: 24pt;
+    padding-top: 10pt;
+    border-top: 0.3pt dotted var(--border);
+  }
+  .report-history h2 { margin-top: 0; }
+  .report-history p { color: var(--stone); font-size: 11pt; }
+  .report-history ul { margin-bottom: 0; }
 
   /* ========== METRICS ========== */
   .metrics {

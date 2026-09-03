@@ -14,6 +14,9 @@ status: published
 ---
 
 import AdSlot from '../../../../components/report/AdSlot.astro';
+import Metrics from '../../../../components/report/Metrics.astro';
+
+<Metrics items={[{ label: "費用率", value: "0.98%" }, { label: "現價年化殖利率（月配，估算）", value: "23.6%" }, { label: "下跌日 beta（vs BTC）", value: "0.83" }, { label: "觀測期最大回撤", value: "-48.4%" }]} />
 
 <h2>近期股價走勢（近 50 個交易日）</h2>
 <figure>

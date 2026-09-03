@@ -4,10 +4,11 @@ import { join } from 'node:path';
 
 const reportDir = 'reports';
 const typeByTicker = {
-  AAPL: 'equity', ARCC: 'equity', BTCI: 'crypto', CHPY: 'equity', DGRO: 'equity',
-  GOOG: 'equity', GPIX: 'equity', IQQ: 'equity', IWMI: 'equity', MAGS: 'equity',
-  MSFT: 'equity', NVDA: 'equity', QQQH: 'equity', SGOV: 'equity', SPCX: 'equity', TSLA: 'equity',
+  AAPL: 'equity', ARCC: 'equity', BTCI: 'crypto', CHPY: 'income-etf', DGRO: 'income-etf',
+  GOOG: 'equity', GPIX: 'income-etf', IQQ: 'income-etf', IWMI: 'income-etf', MAGS: 'income-etf',
+  MSFT: 'equity', NVDA: 'equity', QQQH: 'income-etf', SGOV: 'income-etf', SPCX: 'equity', TSLA: 'equity',
 };
+const cleanMetricText = (value) => value.replace(/<[^>]+>/g, '').replace(/&amp;/g, '&').replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/\s+/g, ' ').trim();
 const files = (await readdir(reportDir)).filter((file) => file.endsWith('.html')).sort();
 
 for (const file of files) {
@@ -43,17 +44,36 @@ for (const file of files) {
     body = body.slice(0, midpoint.index) + ad + body.slice(midpoint.index);
   }
 
+  const metricsBlock = html.match(/<!-- ========== METRICS[\s\S]*?<\/div>\s*<!-- ========== AD SLOT/i)?.[0] ?? '';
+  const metrics = [...metricsBlock.matchAll(/metric-value[^>]*>([\s\S]*?)<\/div>[\s\S]*?metric-label[^>]*>([\s\S]*?)<\/div>/gi)]
+    .map((match) => ({ value: cleanMetricText(match[1]), label: cleanMetricText(match[2]) }))
+    .filter((item) => item.value && item.label);
+  const metricsImport = "import Metrics from '../../../../components/report/Metrics.astro';";
+  const addMetrics = (content) => {
+    if (!metrics.length || content.includes(metricsImport)) return content;
+    const items = metrics.map((item) => `{ label: ${JSON.stringify(item.label)}, value: ${JSON.stringify(item.value)} }`).join(', ');
+    return content.replace("import AdSlot from '../../../../components/report/AdSlot.astro';\n\n", `import AdSlot from '../../../../components/report/AdSlot.astro';\n${metricsImport}\n\n<Metrics items={[${items}]} />\n\n`);
+  };
+
   const target = join('src', 'content', 'reports', ticker, date, `${ticker}.zh-TW.mdx`);
   try {
-    await readFile(target, 'utf8');
-    console.log(`skipped existing ${target}`);
+    const existing = await readFile(target, 'utf8');
+    const enriched = addMetrics(existing);
+    if (enriched !== existing) {
+      await writeFile(target, enriched);
+      console.log(`enriched ${target} with legacy metrics`);
+    } else {
+      console.log(`skipped existing ${target}`);
+    }
     continue;
   } catch (error) {
     if (error.code !== 'ENOENT') throw error;
   }
   await mkdir(join('src', 'content', 'reports', ticker, date), { recursive: true });
   const frontmatter = `---\nticker: ${ticker}\nlocale: zh-TW\ntitle: "${title.replaceAll('"', '\\"')}"\ndescription: "${description.replaceAll('"', '\\"')}"\npublishedAt: ${date}\ndataAsOf: ${date}\nreportType: ${typeByTicker[ticker] ?? 'income-etf'}\ntranslationKey: ${ticker.toLowerCase()}-${date}\ntags:\n  - ${ticker}\nisLatest: true\nstatus: published\n---\n\n`;
-  const imports = "import AdSlot from '../../../../components/report/AdSlot.astro';\n\n";
-  await writeFile(target, frontmatter + imports + body.trim() + '\n');
+  const imports = "import AdSlot from '../../../../components/report/AdSlot.astro';\n";
+  const items = metrics.map((item) => `{ label: ${JSON.stringify(item.label)}, value: ${JSON.stringify(item.value)} }`).join(', ');
+  const metricsMarkup = metrics.length ? `${metricsImport}\n\n<Metrics items={[${items}]} />\n\n` : '';
+  await writeFile(target, frontmatter + imports + metricsMarkup + body.trim() + '\n');
   console.log(`migrated ${file} -> ${target}`);
 }

@@ -5,7 +5,7 @@ title: "IWMI 分析報告 · 羅素2000 小型股收益基金"
 description: "分析 IWMI（NEOS Russell 2000 High Income ETF）：羅素2000 持股搭配 RUT 指數買權策略的小型股收益基金，尾隨殖利率 13.96% 為本系列最高，beta 0.92，月配息，配息幾乎全為 ROC"
 publishedAt: 2026-09-03
 dataAsOf: 2026-09-03
-reportType: equity
+reportType: income-etf
 translationKey: iwmi-2026-09-03
 tags:
   - IWMI
@@ -14,6 +14,9 @@ status: published
 ---
 
 import AdSlot from '../../../../components/report/AdSlot.astro';
+import Metrics from '../../../../components/report/Metrics.astro';
+
+<Metrics items={[{ label: "費用率", value: "0.68%" }, { label: "尾隨殖利率（現價）", value: "13.96%" }, { label: "beta（vs S&P 500）", value: "0.92" }, { label: "資產規模（美元）", value: "12.2億" }, { label: "配息組成（推估）", value: "幾乎全為 ROC" }]} />
 
 <h2>基本介紹：這是什麼樣的基金？</h2>
 <p>IWMI（NEOS Russell 2000 High Income ETF）是 NEOS 於 2024 年 6 月 25 日成立的主動管理型 ETF，採 fund-of-funds 結構：核心部位持有 Vanguard Russell 2000 ETF（VTWO）約 100.29%，再疊加賣出羅素 2000 指數（RUT）買權部位（例如 2026 年 9 月 18 日到期的 C2995／C3045 等履約價選擇權），以收取的權利金支應月配息。管理費 0.68%（總費用率 0.76%，費用減免後上限 0.68% 至 2027 年 5 月 1 日），每月配息。以 neosfunds.com 截至 2026 年 7 月 31 日揭露為準，官方 distribution rate 為 14.38%，過去 12 個月 trailing 為 13.73%，而 30 天 SEC yield 僅 0.52%——這個巨大落差正是理解本基金配息本質的關鍵。</p>

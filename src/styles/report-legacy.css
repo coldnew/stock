@@ -139,6 +139,16 @@
     color: var(--stone);
     margin-top: 2pt;
   }
+  .local-market-date { color: var(--stone); }
+  .disclosure {
+    margin: 10pt 0;
+    padding: 8pt 12pt;
+    border-left: 2pt solid var(--brand);
+    border-radius: 3pt;
+    background: var(--ivory);
+  }
+  .disclosure summary { cursor: pointer; color: var(--brand); font-weight: 500; }
+  .disclosure-body { padding-top: 6pt; }
 
   /* ========== METRICS ========== */
   .metrics {

@@ -3,5 +3,5 @@ interface Metric { label: string; value: string; }
 const { items = [] } = Astro.props as { items: Metric[] };
 ---
 <div class="metrics">
-  {items.map((item) => <div class="metric"><strong>{item.value}</strong><span>{item.label}</span></div>)}
+  {items.map((item) => <div class="metric"><div class="metric-value">{item.value}</div><div class="metric-label">{item.label}</div></div>)}
 </div>

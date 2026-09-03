@@ -14,6 +14,9 @@ status: published
 ---
 
 import AdSlot from '../../../../components/report/AdSlot.astro';
+import Metrics from '../../../../components/report/Metrics.astro';
+
+<Metrics items={[{ label: "費用率", value: "0.79%" }, { label: "下跌日 beta（vs SPY）", value: "1.10" }, { label: "上漲日 beta（vs SPY）", value: "1.02" }, { label: "最新年化殖利率（月配）", value: "10.3%" }]} />
 
 <h2>近期股價走勢（近 50 個交易日）</h2>
 <figure>

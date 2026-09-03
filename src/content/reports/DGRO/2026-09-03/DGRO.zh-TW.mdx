@@ -5,7 +5,7 @@ title: "DGRO 分析報告 · 股息成長型核心配置"
 description: "分析 DGRO（iShares Core Dividend Growth ETF）：追蹤 Morningstar US Dividend Growth 指數，beta 0.77，殖利率 1.87% 全系列最低但配息來自盈餘且長期成長，過去一年總報酬 20.78% 的股息成長核心配置"
 publishedAt: 2026-09-03
 dataAsOf: 2026-09-03
-reportType: equity
+reportType: income-etf
 translationKey: dgro-2026-09-03
 tags:
   - DGRO
@@ -14,6 +14,9 @@ status: published
 ---
 
 import AdSlot from '../../../../components/report/AdSlot.astro';
+import Metrics from '../../../../components/report/Metrics.astro';
+
+<Metrics items={[{ label: "費用率", value: "0.08%" }, { label: "尾隨殖利率（現價）", value: "1.87%" }, { label: "beta（vs S&P 500）", value: "0.77" }, { label: "資產規模（美元）", value: "434.1億" }]} />
 
 <h2>基本介紹：這是什麼樣的基金？</h2>
 <p>DGRO（iShares Core Dividend Growth ETF）是 BlackRock 旗下 iShares 於 2014 年 6 月 10 日成立的被動型 ETF，在 NYSE Arca 掛牌，追蹤 Morningstar US Dividend Growth Index。基金持有約 398 檔成分股，以「連續股息成長紀錄」與「派息率（payout ratio）是否可持續」作為核心篩選條件，並依股息金額加權——能持續提高配息、且不是靠過度分配硬撐的企業才能留下來。前三大持股為 Microsoft（MSFT）3.47%、JPMorgan Chase（JPM）3.14%、Johnson &amp; Johnson（JNJ）3.13%，科技、金融、醫療並重，而非集中押注單一產業。費用率僅 0.08%，採季配息，過去十二個月（TTM）累計配息約 $1.48，配息／獲利比僅 39.97%——配息完全由企業盈餘支撐，屬於典型的盈餘型配息，而非資本返還。</p>

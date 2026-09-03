@@ -5,7 +5,7 @@ title: "SGOV 分析報告 · 0-3個月國庫券現金停泊工具"
 description: "分析 SGOV（iShares 0-3 Month Treasury Bond ETF）：被動追蹤 0-3 個月美國國庫券指數，beta 0.00、費率 0.09%、尾隨殖利率 3.70%，本系列唯一的現金停泊工具"
 publishedAt: 2026-09-03
 dataAsOf: 2026-09-03
-reportType: equity
+reportType: income-etf
 translationKey: sgov-2026-09-03
 tags:
   - SGOV
@@ -14,6 +14,9 @@ status: published
 ---
 
 import AdSlot from '../../../../components/report/AdSlot.astro';
+import Metrics from '../../../../components/report/Metrics.astro';
+
+<Metrics items={[{ label: "費用率", value: "0.09%" }, { label: "尾隨殖利率（現價）", value: "3.70%" }, { label: "beta（vs S&P 500）", value: "0.00" }, { label: "資產規模（美元）", value: "1057億" }]} />
 
 <h2>基本介紹：這是什麼樣的基金？</h2>
 <p>SGOV（iShares 0-3 Month Treasury Bond ETF）是 BlackRock 旗下 iShares 於 2020 年 5 月 26 日成立的被動型 ETF，追蹤 ICE 0-3 Month US Treasury Securities Index，直接持有 0-3 個月到期的美國國庫券。目前持有約 24 檔國庫券，持股高度分散（前三大如 2026 年 10 月 20 日到期約 10.18% 等），無單一券種集中風險。加權平均到期僅約 0.11 年、有效存續期同為 0.11 年，利率敏感度趨近於零。費率 0.09% 為全系列最低，每月配息，過去十二個月累計配息約 $3.71、對應現價殖利率 3.70%，30 天 SEC yield 約 3.54–3.57%。</p>

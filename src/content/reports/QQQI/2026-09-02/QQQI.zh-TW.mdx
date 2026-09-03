@@ -14,6 +14,9 @@ status: published
 ---
 
 import AdSlot from '../../../../components/report/AdSlot.astro';
+import Metrics from '../../../../components/report/Metrics.astro';
+
+<Metrics items={[{ label: "年化派息率", value: "13.8%" }, { label: "BTCI 下檔捕獲率", value: "91%" }, { label: "已觀測最大回撤", value: "-20.0%" }, { label: "下跌日 beta", value: "0.87" }]} />
 
 <h2>近期股價走勢（近 50 個交易日）</h2>
 <figure>

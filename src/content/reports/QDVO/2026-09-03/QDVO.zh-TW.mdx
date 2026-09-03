@@ -14,6 +14,9 @@ status: published
 ---
 
 import AdSlot from '../../../../components/report/AdSlot.astro';
+import Metrics from '../../../../components/report/Metrics.astro';
+
+<Metrics items={[{ label: "費用率", value: "0.56%" }, { label: "尾隨殖利率（現價）", value: "10.72%" }, { label: "beta（vs S&P 500）", value: "1.04" }, { label: "資產規模（美元）", value: "7.44億" }, { label: "配息組成（推估）", value: "幾乎全為 ROC" }]} />
 
 <h2>基本介紹：這是什麼樣的基金？</h2>
 <p>QDVO（Amplify CWP Growth & Income ETF）是 Amplify ETFs 於 2024 年 8 月 22 日在 NYSE Arca 掛牌的主動管理型 ETF，由次顧問 Capital Wealth Planning（CWP）操盤。與本系列其他收益基金最大的不同在於：QDVO 精選約 50 檔個股（前三大持股為 NVIDIA 10.26%、Alphabet 8.62%、Apple 8.29%），並「戰術性」地針對個股或大盤指數賣出看漲期權，而非像 QQQI／GPIQ／SPYI 那樣對整個指數部位做系統性、固定比例的備兌看漲覆蓋。發行商官方說明僅表示會「在個股基礎上戰術性地寫出備兌看漲，也可能針對大盤指數戰術性地寫出」，並未揭露確切的覆蓋比例或選擇權部位占淨值的百分比。基金明確將「資本增值」列為主要目標，「較高的當期收益」列為次要目標——這個目標排序本身就與本系列其他以收益為核心訴求的基金不同。費率 0.56%，每月配息，目前尾隨殖利率約 10.72%。</p>

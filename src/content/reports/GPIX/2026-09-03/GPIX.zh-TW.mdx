@@ -5,7 +5,7 @@ title: "GPIX 分析報告 · S&P 500 備兌看漲收益基金"
 description: "分析 GPIX（Goldman Sachs S&P 500 Premium Income ETF）：S&P 500 持股疊加動態備兌看漲期權，月配息、費率 0.29%，NASDAQ 掛牌 GPIQ 的 S&P 500 姊妹基金"
 publishedAt: 2026-09-03
 dataAsOf: 2026-09-03
-reportType: equity
+reportType: income-etf
 translationKey: gpix-2026-09-03
 tags:
   - GPIX
@@ -14,6 +14,9 @@ status: published
 ---
 
 import AdSlot from '../../../../components/report/AdSlot.astro';
+import Metrics from '../../../../components/report/Metrics.astro';
+
+<Metrics items={[{ label: "費用率", value: "0.29%" }, { label: "尾隨殖利率（現價）", value: "8.12%" }, { label: "beta（vs S&P 500）", value: "0.85" }, { label: "資產規模（美元）", value: "56.1億" }, { label: "配息組成（推估）", value: "幾乎全為 ROC" }]} />
 
 <h2>基本介紹：這是什麼樣的基金？</h2>
 <p>GPIX（Goldman Sachs S&P 500 Premium Income ETF）是 Goldman Sachs 於 2023 年 10 月 24 日成立的主動管理型 ETF（成立時名為 S&P 500 Core Premium Income ETF，2025 年 4 月 30 日更名拿掉 Core），在 NASDAQ 掛牌。策略是持有約 494 檔 S&P 500 成分股（前三大為 NVIDIA 7.61%、Apple 7.03%、Microsoft 4.74%），再疊加一層賣出短天期指數看漲期權的動態 premium overlay，用權利金創造可分配收益。費率 0.29%（管理費 0.35% 經費用減免降至 0.29%），每月配息，過去十二個月累計配息約 $4.52，對應現價尾隨殖利率約 8.12%。</p>

@@ -5,7 +5,7 @@ title: "QQQH 分析報告 · 避險領口策略的納指100收益基金"
 description: "分析 QQQH（NEOS Nasdaq-100 Hedged Equity Income ETF）：納指100持股搭配賣權價差領口策略，配息／獲利比 302.48% 且 30 天 SEC 殖利率為負，ROC 訊號為全系列最明確的避險收益基金之一"
 publishedAt: 2026-09-03
 dataAsOf: 2026-09-03
-reportType: equity
+reportType: income-etf
 translationKey: qqqh-2026-09-03
 tags:
   - QQQH
@@ -14,6 +14,9 @@ status: published
 ---
 
 import AdSlot from '../../../../components/report/AdSlot.astro';
+import Metrics from '../../../../components/report/Metrics.astro';
+
+<Metrics items={[{ label: "費用率", value: "0.68%" }, { label: "尾隨殖利率（現價）", value: "9.04%" }, { label: "beta（未揭露）", value: "—" }, { label: "資產規模（美元）", value: "3.78億" }, { label: "配息組成（推估）", value: "幾乎全為 ROC" }]} />
 
 <h2>基本介紹：這是什麼樣的基金？</h2>
 <p>QQQH（NEOS Nasdaq-100 Hedged Equity Income ETF）是 NEOS 於 2019 年 12 月 19 日在 NASDAQ 掛牌的主動管理型 ETF，也是 NEOS 旗下資歷最老的基金——與 JEPI 並列為本系列唯二經歷過 2022 年完整熊市考驗的收益基金（QQQH 自 2019 年底成立，更完整走過 2020 年 3 月熔斷）。策略上持有納指100成分股（目前約 108 檔，前三大持股為 NVIDIA 8.65%、Apple 7.11%、Microsoft 5.66%），並疊加一層 NDX 賣權價差領口（put spread collar）：一邊買入賣權價差為下檔鋪墊，一邊賣出買權收取權利金發配息。費率 0.68%，每月配息，過去十二個月累計配發約 $4.90；官方揭露的 distribution rate 為 9.22%、12 個月殖利率 9.38%，但 30 天 SEC yield 僅 -0.04%（neosfunds.com，2026 年 7 月 31 日）。</p>

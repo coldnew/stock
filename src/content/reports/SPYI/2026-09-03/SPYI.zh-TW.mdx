@@ -14,6 +14,9 @@ status: published
 ---
 
 import AdSlot from '../../../../components/report/AdSlot.astro';
+import Metrics from '../../../../components/report/Metrics.astro';
+
+<Metrics items={[{ label: "費用率", value: "0.68%" }, { label: "尾隨殖利率（現價）", value: "11.82%" }, { label: "beta（vs S&P 500）", value: "0.71" }, { label: "資產規模（美元）", value: "117.2億" }, { label: "配息組成（推估）", value: "幾乎全為 ROC" }]} />
 
 <h2>基本介紹：這是什麼樣的基金？</h2>
 <p>SPYI（NEOS S&amp;P 500 High Income ETF）是由 NEOS Investments 於 2022 年 8 月 30 日在 Cboe BZX 掛牌的主動管理型 ETF，是本系列報告中歷史最長、規模最大的一檔——資產規模達 117.2 億美元，遠超過 GPIQ（55.8 億美元）與 QQQI。與 QQQI／GPIQ／BTCI 採用的「持有標的 + 賣出價外看漲期權」單腳備兌看漲不同，SPYI 官方揭露的策略是「運用 SPX 指數選擇權建立價差（call spread）部位」，屬於更精細的指數選擇權組合策略，而非直接對基金持股賣出看漲期權。費率 0.68%，每月配息，目前尾隨殖利率約 11.82%。</p>

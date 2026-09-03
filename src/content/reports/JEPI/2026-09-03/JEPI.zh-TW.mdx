@@ -14,6 +14,9 @@ status: published
 ---
 
 import AdSlot from '../../../../components/report/AdSlot.astro';
+import Metrics from '../../../../components/report/Metrics.astro';
+
+<Metrics items={[{ label: "費用率", value: "0.35%" }, { label: "尾隨殖利率（現價）", value: "8.01%" }, { label: "beta（vs S&P 500）", value: "0.54" }, { label: "資產規模（美元）", value: "463.4億" }]} />
 
 <h2>基本介紹：這是什麼樣的基金？</h2>
 <p>JEPI（JPMorgan Equity Premium Income ETF）是由 J.P. Morgan Asset Management 於 2020 年 5 月 20 日在 NYSE Arca 掛牌的主動管理型 ETF，是本系列規模最大的一檔——資產規模達 463.4 億美元。JEPI 的策略與 QQQI／GPIQ／BTCI 的「持有標的 + 賣出看漲期權」不同：它實際持有 136 檔個股（非被動追蹤指數，而是主動選股），另外運用股權連結票據（ELN, Equity-Linked Notes）——一種與投資銀行約定、報酬連結股票指數表現的場外衍生性商品——來創造額外的權利金收入。費率 0.35%，每月配息，目前尾隨殖利率約 8.01%。</p>

@@ -5,7 +5,6 @@ import Analytics from './Analytics.astro';
 import AiDisclosure from './AiDisclosure.astro';
 import { getReports } from '../../data/reports';
 import '../../styles/report-legacy.css';
-import '../../styles/report.css';
 
 const { entry, archive = false } = Astro.props;
 const { Content } = await render(entry);
@@ -52,14 +51,19 @@ const alternatePath = archive
   <body>
     <nav class="breadcrumb"><a href={locale === 'en' ? '/stock/en/' : '/stock/'}>← {locale === 'en' ? 'All reports' : '報告總覽'}</a></nav>
     <nav class="locale-switch" aria-label={locale === 'en' ? 'Language' : '語言'}><a href={`${base}${alternatePath}`}>{locale === 'en' ? '繁體中文' : 'English'}</a></nav>
-    <header class="report-header">
-      <p class="eyebrow">{ticker} · {locale === 'en' ? 'Investment Research' : '投資研究報告'}</p>
-      <h1>{title}</h1>
-      <p class="report-meta" data-market-date={iso(dataAsOf)}>
-        {locale === 'en' ? 'Market close date (US Eastern)' : '收盤日期（美東時間）'} {iso(dataAsOf)}
-      </p>
-      <AiDisclosure locale={locale} />
-    </header>
+    <div class="report-header">
+      <div class="ticker-block">
+        <div class="ticker-eyebrow">{locale === 'en' ? 'Investment research report' : '投資研究報告'}</div>
+        <h1 class="ticker-name">{title} <span>{ticker}</span></h1>
+        <div class="ticker-sub">{description}</div>
+        <AiDisclosure locale={locale} />
+      </div>
+      <div class="price-block">
+        <div class="price-date" data-market-date={iso(dataAsOf)}>
+          {locale === 'en' ? 'Market close date (US Eastern)' : '收盤日期（美東時間）'}<br />{iso(dataAsOf)}
+        </div>
+      </div>
+    </div>
     <AdSlot placement="top" />
     <main class="report-content"><Content /></main>
     <AdSlot placement="bottom" />

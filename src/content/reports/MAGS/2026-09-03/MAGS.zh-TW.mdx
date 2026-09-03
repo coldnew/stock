@@ -5,7 +5,7 @@ title: "MAGS 分析報告 · 一鍵打包七巨頭的等權重主題基金"
 description: "分析 MAGS（Roundhill Magnificent Seven ETF）：七巨頭等權重季再平衡、經 swaps 曝險的主動管理主題基金，beta 1.38，一鍵打包七巨頭的代價與便利"
 publishedAt: 2026-09-03
 dataAsOf: 2026-09-03
-reportType: equity
+reportType: income-etf
 translationKey: mags-2026-09-03
 tags:
   - MAGS
@@ -14,6 +14,9 @@ status: published
 ---
 
 import AdSlot from '../../../../components/report/AdSlot.astro';
+import Metrics from '../../../../components/report/Metrics.astro';
+
+<Metrics items={[{ label: "費用率", value: "0.30%" }, { label: "尾隨殖利率（現價）", value: "1.42%" }, { label: "beta（vs S&P 500）", value: "1.38" }, { label: "資產規模（美元）", value: "41.9億" }]} />
 
 <h2>基本介紹：這是什麼樣的基金？</h2>
 <p>MAGS（Roundhill Magnificent Seven ETF）是 Roundhill Investments 於 2023 年 4 月 11 日在 Cboe BZX 掛牌的主動管理型 ETF，也是市場上首檔以「七巨頭」（Magnificent Seven）為主題的 ETF。它的機制很直接：透過 swaps 與 forwards 等衍生性工具取得對 Alphabet、Amazon、Apple、Meta、Microsoft、NVIDIA、Tesla 七檔股票的曝險，並在每季進行等權重再平衡——依 2026 年 6 月 30 日的 factsheet，七檔各占約 14.3%。費率 0.30%，資產規模約 41.9 億美元，52 週區間 $55.09～$71.16，過去一年總報酬 16.69%、成立以來年化報酬達 36.19%。</p>

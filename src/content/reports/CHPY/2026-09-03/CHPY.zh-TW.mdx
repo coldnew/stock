@@ -5,7 +5,7 @@ title: "CHPY 分析報告 · 半導體週配息收益基金"
 description: "分析 CHPY（YieldMax Semiconductor Portfolio Option Income ETF）：15-30 檔半導體持股搭配選擇權收益策略，尾隨殖利率 41.14% 為全系列最高，配息／獲利比 1,973.66% 幾乎全為 ROC 的週配息基金"
 publishedAt: 2026-09-03
 dataAsOf: 2026-09-03
-reportType: equity
+reportType: income-etf
 translationKey: chpy-2026-09-03
 tags:
   - CHPY
@@ -14,6 +14,9 @@ status: published
 ---
 
 import AdSlot from '../../../../components/report/AdSlot.astro';
+import Metrics from '../../../../components/report/Metrics.astro';
+
+<Metrics items={[{ label: "費用率", value: "1.03%" }, { label: "尾隨殖利率（現價）", value: "41.14%" }, { label: "beta（未揭露）", value: "—" }, { label: "資產規模（美元）", value: "11.5億" }, { label: "配息組成（推估）", value: "幾乎全為 ROC" }]} />
 
 <h2>基本介紹：這是什麼樣的基金？</h2>
 <p>CHPY（YieldMax Semiconductor Portfolio Option Income ETF）是 YieldMax 於 2025 年 4 月 2 日成立的主動管理型 ETF，聚焦 15–30 檔美國上市半導體股（前五大持股為 NVDA 6.61%、AVGO 5.54%、LRCX 5.33%、MRVL 5.26%、AMD 5.20%，前十大合計約佔五成），再疊加一層複雜的期權策略以創造選擇權收益。費率 1.03%，為本系列目前最高；自 2025 年 10 月起改為週配息，是本系列唯一按週發放的基金。過去十二個月累計配息約 $26.68，對應現價尾隨殖利率 41.14%——但同一組數字下，配息／獲利比高達 1,973.66%（stockanalysis.com），意味著每配出 1 元，背後對應的盈餘不到 0.06 元。</p>

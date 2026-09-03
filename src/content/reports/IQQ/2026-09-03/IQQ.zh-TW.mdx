@@ -5,7 +5,7 @@ title: "IQQ 分析報告 · 挑戰 QQQ 的低費率納指100"
 description: "分析 IQQ（iShares Nasdaq 100 ETF）：BlackRock 2026 年 7 月成立、被動追蹤納斯達克100 的低費率 ETF，淨費率 0.10% 約為 QQQ 一半，上市以來 39 個交易日的素體基準"
 publishedAt: 2026-09-03
 dataAsOf: 2026-09-03
-reportType: equity
+reportType: income-etf
 translationKey: iqq-2026-09-03
 tags:
   - IQQ
@@ -14,6 +14,9 @@ status: published
 ---
 
 import AdSlot from '../../../../components/report/AdSlot.astro';
+import Metrics from '../../../../components/report/Metrics.astro';
+
+<Metrics items={[{ label: "費用率（淨費率）", value: "0.10%" }, { label: "成分股檔數", value: "106" }, { label: "beta（歷史不足）", value: "—" }, { label: "資產規模（美元）", value: "3.79億" }]} />
 
 <h2>基本介紹：這是什麼樣的基金？</h2>
 <p>IQQ（iShares Nasdaq 100 ETF）是 BlackRock 旗下 iShares 於 2026 年 7 月 8 日成立、7 月 9 日首日交易，在 NASDAQ 掛牌的被動指數型 ETF，追蹤標的為納斯達克100 指數（Nasdaq-100），成分股共 106 檔，前三大持股為 NVIDIA 8.74%、Apple 7.32%、Microsoft 5.94%。基金總費率 0.12%，目前以費用減免降至淨費率 0.10%（減免期間至 2027 年 7 月 31 日）。成立至今尚無配息紀錄（stockanalysis.com 配息欄位顯示為 n/a），是一檔純粹靠淨值成長反映報酬的指數基金。</p>

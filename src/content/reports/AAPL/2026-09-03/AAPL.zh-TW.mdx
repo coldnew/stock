@@ -14,6 +14,9 @@ status: published
 ---
 
 import AdSlot from '../../../../components/report/AdSlot.astro';
+import Metrics from '../../../../components/report/Metrics.astro';
+
+<Metrics items={[{ label: "市值（美元）", value: "4.74兆" }, { label: "本益比（TTM）", value: "37.28" }, { label: "殖利率（年配 $1.08）", value: "0.33%" }, { label: "beta（vs S&P 500）", value: "1.09" }]} />
 
 <h2>近期股價走勢（近 50 個交易日）</h2>
 <figure>

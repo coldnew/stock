@@ -14,6 +14,9 @@ status: published
 ---
 
 import AdSlot from '../../../../components/report/AdSlot.astro';
+import Metrics from '../../../../components/report/Metrics.astro';
+
+<Metrics items={[{ label: "費用率", value: "0.35%" }, { label: "尾隨殖利率（現價）", value: "11.03%" }, { label: "beta（vs 納指100）", value: "0.84" }, { label: "資產規模（美元）", value: "420.7億" }]} />
 
 <h2>基本介紹：這是什麼樣的基金？</h2>
 <p>JEPQ（JPMorgan Nasdaq Equity Premium Income ETF）是由 J.P. Morgan Asset Management 於 2022 年 5 月 3 日在 NASDAQ 掛牌的主動管理型 ETF，是 JEPI 的納指100 版本——策略架構相同：主動選股（持有 111 檔個股，聚焦大型科技股）加上股權連結票據（ELN）創造額外收益，只是把標的從 S&amp;P 500 換成納斯達克100。資產規模達 420.7 億美元，是本系列規模第二大的基金，僅次於 JEPI。費率 0.35%，每月配息，目前尾隨殖利率約 11.03%，高於 JEPI（8.01%），反映納指100 本身較高的波動率帶來更豐厚的權利金收入。</p>

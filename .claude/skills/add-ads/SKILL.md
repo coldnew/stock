@@ -107,17 +107,34 @@ same slot the same way. Established precedent (see `index.html` and every
 file under `reports/`, all live — ads run on all five pages of this site,
 not just the reports):
 
-- **Banner** (`invoke.js` + a `<div id="container-...">`) is tied to one
-  specific container id. The same id is reused verbatim across pages (each
-  page is a separate document, so that's fine) but only place it in **one**
-  slot **within a given page** (top, for visibility) — duplicating the same
-  id across multiple `.ad-slot`s on the *same* page is invalid HTML and
-  the script will only render into the first match.
-- **Smart link** is a plain URL, safe to reuse verbatim in multiple slots
-  (no shared DOM id to collide). Render it as a small styled `<a>` — see
-  `.ad-smartlink` CSS below — rather than dropping a bare script; it's just
-  a link. Vary the visible label slightly per placement if it reads oddly
-  repeated verbatim.
+- **Banner, container-id variant** (`invoke.js` + a `<div id="container-...">`)
+  is tied to one specific container id. The same id is reused verbatim
+  across pages (each page is a separate document, so that's fine) but only
+  place it in **one** slot **within a given page** (top, for visibility) —
+  duplicating the same id across multiple `.ad-slot`s on the *same* page is
+  invalid HTML and the script will only render into the first match. This
+  is the one currently used in the **top** slot on every page.
+- **Banner, `atOptions` variant** (`atOptions = {'key':..., 'format':'iframe',
+  'height':.., 'width':.., 'params':{}}` followed by a separate
+  `<script src=".../invoke.js">`, no container div at all) is what's
+  currently used in the **mid and bottom** slots on every page — it
+  replaced a smart-link text ad there (see below for why). Confirmed by
+  fetching and reading the actual script: it uses `appendChild` (not
+  `document.write`), inserting its iframe relative to its own script tag's
+  position via DOM APIs — no shared/external id involved. That means,
+  unlike the container-id variant above, **the exact same code (same key)
+  can safely be reused verbatim in multiple slots on the same page** — each
+  instance renders independently at its own position. This is why one
+  `atOptions` code from the user was enough to fill both the mid and
+  bottom slots on all five pages, not just one.
+- **Smart link** (a bare URL you render as a styled `<a>`) was the original
+  mid/bottom ad, replaced site-wide by the `atOptions` banner above because
+  a plain text link gets very low click-through compared to an actual
+  banner creative — the user's own call after seeing it live. Don't
+  reintroduce it as the default; only use it again if a future ad slot
+  genuinely has no banner code available yet. `.ad-smartlink` CSS is left
+  in the stylesheet unused rather than ripped out, in case it's needed
+  again.
 - **Social bar** scripts are page-wide and self-inject (no container div,
   no slot needed) — include **one copy**, anywhere in `<body>` that isn't
   inside a `.section-body` (e.g. right after the last `.ad-slot`, before
@@ -135,6 +152,24 @@ not just the reports):
   before adding it — don't let them find out from a confused reader.
 - **Native banner** (if used later) generally works like Banner — one
   container id, one placement.
+
+```html
+<script>
+atOptions = {
+  'key' : 'AD_UNIT_KEY',
+  'format' : 'iframe',
+  'height' : 300,
+  'width' : 160,
+  'params' : {}
+};
+</script>
+<script src="https://overestimatecapricornspittle.com/AD_UNIT_KEY/invoke.js"></script>
+```
+
+(`AD_UNIT_KEY` appears twice — in `atOptions.key` and in the script `src` —
+both must match and come from the same ad unit. Size is whatever the user's
+ad unit was created as; the live one is a 160×300 skyscraper, which is fine
+centered inside `.ad-slot`'s `text-align: center`.)
 
 ```css
 .ad-smartlink {

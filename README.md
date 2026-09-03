@@ -1,6 +1,12 @@
 ## Stock research reports
 
-This repository publishes static investment research pages with Astro and MDX. Report pages are generated from the dated content collection; legacy report URLs redirect to the generated latest pages.
+This repository publishes daily investment research pages with Astro and MDX. Report pages are generated from the dated content collection; legacy report URLs redirect to the generated latest pages.
+
+### Research module and skills
+
+`modules/ai-berkshire/` is the vendored research module for the daily reports. It contains the canonical investment skills in `skills/`, shared financial and market-data tools in `tools/`, audit tests in `tests/`, and supporting research data and reports. Keep those sources in this repository so report generation does not depend on a separate checkout or machine-global skill installation.
+
+The repository-local report workflow is documented in `.agents/skills/stock-report-author/SKILL.md`. When a report is created or revised, use the module's source skills and tools as appropriate, include a dated current-session candlestick, and provide both technical and fundamental entry-point analysis before publishing.
 
 ### Authoring a report
 
@@ -28,6 +34,9 @@ The shared `AdSlot` component centralizes the approved Adsterra native, banner, 
 - `src/components/report/`: shared report UI and monetization components
 - `src/pages/`: static routes, language routes, sitemap, and robots.txt
 - `scripts/new-report.mjs`: repeatable report scaffolding
+- `modules/ai-berkshire/skills/`: canonical investment research skill sources
+- `modules/ai-berkshire/tools/`: financial validation, market-data, valuation, and audit tools
+- `modules/ai-berkshire/tests/`: regression tests for research tooling
 
 ### Deployment
 

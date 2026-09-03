@@ -212,7 +212,8 @@ Every report (`reports/*.html`) and `index.html` carries:
 
 ## The ROC tax callout — conditional, not universal
 
-Every income-fund report (OVL/QQQI/BTCI/GPIQ/SPYI) has a `.callout` in its
+Every income-fund report (OVL/QQQI/BTCI/GPIQ/SPYI/JEPI/JEPQ — check
+`ls reports/` for the current roster) has a `.callout` in its
 "基本介紹" section explaining ROC (Return of Capital) as a US withholding-
 tax angle for Taiwanese investors, plus a "配息時間表" distribution-date
 table. **This only applies to securities that actually pay distributions.**

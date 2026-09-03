@@ -447,8 +447,8 @@
   .back-to-top.visible { opacity: 1; pointer-events: auto; transform: translateY(0); }
 
   .report-toc {
-    position: fixed; top: 50%; right: 2vw; transform: translateY(-50%);
-    width: 190px; max-height: 70vh; overflow-y: auto;
+    position: fixed; top: 50%; right: 16px; transform: translateY(-50%);
+    width: 170px; max-height: 70vh; overflow-y: auto;
     font-size: 10pt; line-height: 1.5; z-index: 30;
     background: var(--parchment); padding: 8pt 6pt; border-radius: 6pt;
   }
@@ -459,7 +459,7 @@
   }
   .report-toc a:hover { color: var(--near-black); }
   .report-toc a.active { color: var(--brand); border-left-color: var(--brand); font-weight: 500; }
-  @media (max-width: 1300px) { .report-toc { display: none; } }
+  @media (max-width: 1180px) { .report-toc { display: none; } }
 
   h2.collapsible { cursor: pointer; user-select: none; display: flex; align-items: center; gap: 6pt; }
   h2.collapsible::before {

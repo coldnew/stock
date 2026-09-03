@@ -81,11 +81,24 @@ copy-pasted across reports — no shared JS file) doing five things:
    report — keep reusing `report-theme` in any new page, don't invent a
    per-page key.
 2. **Sticky TOC + scrollspy** — auto-built from every `<h2>` in the page,
-   fixed on the **right** side (`right: 2vw`, vertically centered), hidden
-   under 1300px viewport width. Highlights the section in view via
-   `IntersectionObserver` (guarded with `if (window.IntersectionObserver)`
-   so its absence can't take down the rest of the script — this guard is
-   load-bearing, don't remove it). Plus a back-to-top button, bottom-right.
+   fixed on the **right** side (`right: 16px`, width `170px`, vertically
+   centered), hidden under 1180px viewport width. Highlights the section in
+   view via `IntersectionObserver` (guarded with
+   `if (window.IntersectionObserver)` so its absence can't take down the
+   rest of the script — this guard is load-bearing, don't remove it). Plus a
+   back-to-top button, bottom-right.
+
+   The hide breakpoint must be derived from the actual geometry, not picked
+   round: body content is capped at 210mm (~793.7px) and centered via
+   `margin: 0 auto`, so the free margin on each side at viewport width `v` is
+   `(v - 793.7) / 2`; the TOC needs that margin to be at least its own width
+   plus its right offset plus a small buffer. The original breakpoint
+   (1300px, with `right: 2vw` and `width: 190px`) was picked without doing
+   this math and hid the TOC on very common viewport widths — 1280px in
+   particular (the default logical resolution of a MacBook Air), where the
+   TOC would actually have fit — which is why the user hit a real "TOC just
+   isn't there" bug. Recompute the minimum safe breakpoint whenever the TOC's
+   width/offset changes.
 3. **Collapsible sections** — `buildSections()` walks `body`'s direct
    children; every `<h2>` becomes a click-to-collapse toggle, and every
    sibling up to the next `<h2>` gets swept into that heading's

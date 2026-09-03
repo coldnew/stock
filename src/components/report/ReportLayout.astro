@@ -73,7 +73,7 @@ const alternatePath = archive
       </div>
     </div>
     <AdSlot placement="top" />
-    <div class="report-shell">
+    <div class:list={["report-shell", history.length === 0 && "without-sidebar"]}>
       {history.length > 0 && <aside class="report-sidebar" aria-label={locale === 'en' ? 'Report editions' : '報告版本'}>
         <div class="sidebar-heading">{ticker} <span>{locale === 'en' ? 'Editions' : '報告版本'}</span></div>
         <a class:list={["sidebar-current", !archive && "is-active"]} href={`${sitePrefix}/reports/${ticker.toLowerCase()}/`}>

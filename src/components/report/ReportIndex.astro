@@ -26,7 +26,16 @@ const deskLabel = (report: CollectionEntry<'reports'>) => {
 };
 const lead = allReports[0];
 const feed = allReports.slice(1, 11);
-const coverage = reports.slice(0, 12);
+const priorityTickers = ['TSLA', 'GOOG', 'AAPL', 'MSFT', 'NVDA', 'AMD'];
+const coverage = [...reports]
+  .sort((a, b) => {
+    const priority = (ticker: string) => {
+      const index = priorityTickers.indexOf(ticker);
+      return index === -1 ? priorityTickers.length : index;
+    };
+    return priority(a.data.ticker) - priority(b.data.ticker) || b.data.publishedAt.valueOf() - a.data.publishedAt.valueOf();
+  })
+  .slice(0, 12);
 const editionsByTicker = new Map<string, CollectionEntry<'reports'>[]>();
 allReports.forEach((report) => {
   const editions = editionsByTicker.get(report.data.ticker) ?? [];
@@ -56,8 +65,12 @@ const archivedTickers = [...editionsByTicker.entries()].filter(([, editions]) =>
     </header>
     <AdSlot placement="top" />
     <main>
+      <section class="coverage" aria-labelledby="coverage-title">
+        <div class="section-heading"><p class="eyebrow">{isEnglish ? 'Follow the names' : '追蹤清單'}</p><h2 id="coverage-title">{isEnglish ? 'Current coverage' : '目前追蹤'}</h2></div>
+        <div class="coverage-grid">{coverage.map((report) => <a class="coverage-item" href={reportUrl(report)}><span class="ticker">{report.data.ticker}</span><span>{report.data.title}</span><span aria-hidden="true">↗</span></a>)}</div>
+      </section>
       {lead && <article class="lead-post">
-        <div class="post-kicker"><span>{isEnglish ? 'Latest edition' : '最新一篇'}</span><span>{dateLabel(lead.data.publishedAt)}</span></div>
+        <div class="post-kicker"><span>{dateLabel(lead.data.publishedAt)}</span></div>
         <div class="post-meta"><span class="ticker">{lead.data.ticker}</span><span>{deskLabel(lead)}</span></div>
         <h2><a href={reportUrl(lead)}>{lead.data.title}</a></h2>
         <p>{lead.data.description}</p>
@@ -75,10 +88,6 @@ const archivedTickers = [...editionsByTicker.entries()].filter(([, editions]) =>
       </section>
       <AdSlot placement="mid" />
 
-      <section class="coverage" aria-labelledby="coverage-title">
-        <div class="section-heading"><p class="eyebrow">{isEnglish ? 'Follow the names' : '追蹤清單'}</p><h2 id="coverage-title">{isEnglish ? 'Current coverage' : '目前追蹤'}</h2></div>
-        <div class="coverage-grid">{coverage.map((report) => <a class="coverage-item" href={reportUrl(report)}><span class="ticker">{report.data.ticker}</span><span>{report.data.title}</span><span aria-hidden="true">↗</span></a>)}</div>
-      </section>
     </main>
     <section class="archive-guide" aria-labelledby="archive-title">
       <h2 id="archive-title">{isEnglish ? 'Browse the archive' : '回看歷史文章'}</h2>

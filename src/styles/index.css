@@ -26,6 +26,7 @@ body { max-width: 780px; margin: 0 auto; padding: 26px 22px 64px; color: var(--n
 .read-link { display: inline-block; margin-top: 13px; color: var(--brand); font-size: 13px; font-weight: 500; text-decoration: none; }
 .read-link:hover { text-decoration: underline; }
 .daily-feed, .coverage { margin-top: 48px; }
+.coverage { margin-bottom: 48px; }
 .section-heading { display: flex; align-items: baseline; justify-content: space-between; gap: 20px; border-bottom: 1px solid var(--near-black); }
 .section-heading .eyebrow { margin: 0 0 7px; }
 .section-heading h2 { margin: 0 0 7px; font-size: 24px; font-weight: 500; }
@@ -37,7 +38,8 @@ body { max-width: 780px; margin: 0 auto; padding: 26px 22px 64px; color: var(--n
 .post-row p { margin: 0; color: var(--stone); font-size: 14px; line-height: 1.55; }
 .post-row .read-link { margin-top: 8px; }
 .coverage-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 28px; }
-.coverage-item { display: grid; grid-template-columns: 52px 1fr 16px; gap: 10px; align-items: baseline; padding: 14px 0; border-bottom: 1px solid var(--border); color: inherit; font-size: 14px; text-decoration: none; }
+.coverage-item { display: grid; grid-template-columns: 52px minmax(0, 1fr) 16px; gap: 10px; align-items: baseline; min-width: 0; padding: 14px 0; border-bottom: 1px solid var(--border); color: inherit; font-size: 14px; text-decoration: none; }
+.coverage-item > span:nth-child(2) { min-width: 0; overflow-wrap: anywhere; }
 .coverage-item > span:last-child { color: var(--brand); text-align: right; }
 .coverage-item:hover { color: var(--brand); }
 .archive-guide { margin-top: 52px; padding: 24px 0 0; border-top: 1px solid var(--near-black); }

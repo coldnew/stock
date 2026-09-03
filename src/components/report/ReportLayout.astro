@@ -1,0 +1,73 @@
+---
+import { render } from 'astro:content';
+import AdSlot from './AdSlot.astro';
+import Analytics from './Analytics.astro';
+import AiDisclosure from './AiDisclosure.astro';
+import { getReports } from '../../data/reports';
+import '../../styles/report-legacy.css';
+import '../../styles/report.css';
+
+const { entry, archive = false } = Astro.props;
+const { Content } = await render(entry);
+const { ticker, locale, title, description, publishedAt, updatedAt, dataAsOf, translationKey, status } = entry.data;
+const reports = await getReports(locale);
+const base = Astro.site?.toString().replace(/\/$/, '') ?? 'https://coldnew.github.io/stock';
+const iso = (date: Date) => date.toISOString().slice(0, 10);
+const datePath = `/reports/${ticker.toLowerCase()}/${iso(publishedAt)}/`;
+const path = archive
+  ? `${locale === 'en' ? '/en' : ''}${datePath}`
+  : locale === 'en' ? `/en/reports/${ticker.toLowerCase()}/` : `/reports/${ticker.toLowerCase()}/`;
+const alternateLocale = locale === 'en' ? 'zh-TW' : 'en';
+const alternatePath = archive
+  ? `${locale === 'en' ? '' : '/en'}${datePath}`
+  : locale === 'en' ? `/reports/${ticker.toLowerCase()}/` : `/en/reports/${ticker.toLowerCase()}/`;
+---
+<!doctype html>
+<html lang={locale}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="robots" content={status === 'published' ? 'index, follow' : 'noindex, nofollow'} />
+    <link rel="canonical" href={`${base}${path}`} />
+    <link rel="alternate" hreflang={locale} href={`${base}${path}`} />
+    <link rel="alternate" hreflang={alternateLocale} href={`${base}${alternatePath}`} />
+    <link rel="alternate" hreflang="x-default" href={`${base}${path}`} />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content={`${base}${path}`} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:locale" content={locale === 'en' ? 'en_US' : 'zh_TW'} />
+    <meta name="twitter:card" content="summary" />
+    {status === 'published' && <Analytics />}
+    <script is:inline type="application/ld+json" set:html={JSON.stringify({
+      '@context': 'https://schema.org', '@type': 'Article', headline: title,
+      description, datePublished: iso(publishedAt), dateModified: iso(updatedAt ?? publishedAt),
+      inLanguage: locale, author: { '@type': 'Person', name: 'Yen-Chin, Lee' },
+      mainEntityOfPage: `${base}${path}`, isPartOf: { '@type': 'WebSite', name: 'Stock Reports' },
+      translationOfWork: translationKey, dateModifiedSource: iso(dataAsOf),
+    })} />
+  </head>
+  <body>
+    <nav class="breadcrumb"><a href={locale === 'en' ? '/stock/en/' : '/stock/'}>← {locale === 'en' ? 'All reports' : '報告總覽'}</a></nav>
+    <nav class="locale-switch" aria-label={locale === 'en' ? 'Language' : '語言'}><a href={`${base}${alternatePath}`}>{locale === 'en' ? '繁體中文' : 'English'}</a></nav>
+    <header class="report-header">
+      <p class="eyebrow">{ticker} · {locale === 'en' ? 'Investment Research' : '投資研究報告'}</p>
+      <h1>{title}</h1>
+      <p class="report-meta" data-market-date={iso(dataAsOf)}>
+        {locale === 'en' ? 'Market close date (US Eastern)' : '收盤日期（美東時間）'} {iso(dataAsOf)}
+      </p>
+      <AiDisclosure locale={locale} />
+    </header>
+    <AdSlot placement="top" />
+    <main class="report-content"><Content /></main>
+    <AdSlot placement="bottom" />
+    <nav class="related-report">
+      <h2>{locale === 'en' ? 'Related reports' : '延伸閱讀'}</h2>
+      {reports.filter((item) => item.id !== entry.id).slice(0, 8).map((item) => <a href={`${locale === 'en' ? '/stock/en' : '/stock'}/reports/${item.data.ticker.toLowerCase()}/`}>{item.data.title}</a>)}
+    </nav>
+    <footer><span>{locale === 'en' ? 'For educational purposes only. Not financial advice.' : '僅供教育與資訊參考，不構成投資建議。'} · Yen-Chin, Lee</span><span class="footer-links"><a href="/stock/about.html">{locale === 'en' ? 'About' : '關於本站'}</a><a href="/stock/privacy.html">{locale === 'en' ? 'Privacy' : '隱私權政策'}</a><a href="/stock/disclaimer.html">{locale === 'en' ? 'Disclaimer' : '免責聲明'}</a></span></footer>
+    <script is:inline src="/stock/report-interactions.js"></script>
+  </body>
+</html>

@@ -1,0 +1,24 @@
+{
+  "name": "stock-reports",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "postbuild": "node scripts/copy-legacy.mjs",
+    "check": "astro check",
+    "content:check": "node scripts/validate-content.mjs",
+    "build:check": "node scripts/validate-build.mjs",
+    "report:publish": "node scripts/publish-report.mjs",
+    "report:new": "node scripts/new-report.mjs",
+    "preview": "astro preview"
+  },
+  "dependencies": {
+    "@astrojs/mdx": "^4.3.0",
+    "astro": "^5.13.0"
+  },
+  "devDependencies": {
+    "@astrojs/check": "^0.9.10",
+    "typescript": "^5.9.3"
+  }
+}

@@ -1,0 +1,11 @@
+---
+import { getCollection } from 'astro:content';
+import ReportLayout from '../../../../components/report/ReportLayout.astro';
+
+export async function getStaticPaths() {
+  const reports = await getCollection('reports', ({ data }) => data.locale === 'en' && data.isLatest && data.status === 'published');
+  return reports.map((entry) => ({ params: { ticker: entry.data.ticker.toLowerCase() }, props: { entry } }));
+}
+const { entry } = Astro.props;
+---
+<ReportLayout entry={entry} />

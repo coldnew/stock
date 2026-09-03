@@ -1,0 +1,421 @@
+---
+ticker: QQQH
+locale: zh-TW
+title: "QQQH 分析報告 · 避險領口策略的納指100收益基金"
+description: "分析 QQQH（NEOS Nasdaq-100 Hedged Equity Income ETF）：納指100持股搭配賣權價差領口策略，配息／獲利比 302.48% 且 30 天 SEC 殖利率為負，ROC 訊號為全系列最明確的避險收益基金之一"
+publishedAt: 2026-09-03
+dataAsOf: 2026-09-03
+reportType: equity
+translationKey: qqqh-2026-09-03
+tags:
+  - QQQH
+isLatest: true
+status: published
+---
+
+import AdSlot from '../../../../components/report/AdSlot.astro';
+
+<h2>基本介紹：這是什麼樣的基金？</h2>
+<p>QQQH（NEOS Nasdaq-100 Hedged Equity Income ETF）是 NEOS 於 2019 年 12 月 19 日在 NASDAQ 掛牌的主動管理型 ETF，也是 NEOS 旗下資歷最老的基金——與 JEPI 並列為本系列唯二經歷過 2022 年完整熊市考驗的收益基金（QQQH 自 2019 年底成立，更完整走過 2020 年 3 月熔斷）。策略上持有納指100成分股（目前約 108 檔，前三大持股為 NVIDIA 8.65%、Apple 7.11%、Microsoft 5.66%），並疊加一層 NDX 賣權價差領口（put spread collar）：一邊買入賣權價差為下檔鋪墊，一邊賣出買權收取權利金發配息。費率 0.68%，每月配息，過去十二個月累計配發約 $4.90；官方揭露的 distribution rate 為 9.22%、12 個月殖利率 9.38%，但 30 天 SEC yield 僅 -0.04%（neosfunds.com，2026 年 7 月 31 日）。</p>
+
+<div class="callout">
+  <strong>為什麼台灣投資人會關注這類基金：ROC（資本返還）的稅務優勢。</strong>QQQH 的配息／獲利比高達 302.48%，且 30 天 SEC 殖利率為負值，ROC 訊號為全系列最明確之一，意味著配息中相當大比例很可能不是已實現收益，而是「歸還投資人自己的本金」。完整說明與稅務提醒請見 <a href="#roc-note">附錄：ROC 稅務說明 →</a>。
+</div>
+
+<h3>配息時間表</h3>
+<table class="financial compact striped">
+  <thead>
+    <tr>
+      <th>除息日</th>
+      <th>發放日</th>
+      <th>單次配息（美元）</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>2026-03-25</td>
+      <td>2026-03-27</td>
+      <td>$0.39230</td>
+    </tr>
+    <tr>
+      <td>2026-04-29</td>
+      <td>2026-05-01</td>
+      <td>$0.40760</td>
+    </tr>
+    <tr>
+      <td>2026-05-27</td>
+      <td>2026-05-29</td>
+      <td>$0.41980</td>
+    </tr>
+    <tr>
+      <td>2026-06-24</td>
+      <td>2026-06-26</td>
+      <td>$0.42190</td>
+    </tr>
+    <tr>
+      <td>2026-07-29</td>
+      <td>2026-07-31</td>
+      <td>$0.40230</td>
+    </tr>
+    <tr>
+      <td>2026-08-26</td>
+      <td>2026-08-28</td>
+      <td>$0.40840</td>
+    </tr>
+  </tbody>
+</table>
+<p>配息頻率：每月配息。近 6 個月單次配息落在 $0.39～$0.42 之間，過去十二個月累計配發約 $4.90，對應目前尾隨殖利率約 9.04%，配息／獲利比 302.48%。確切除息／發放日請以 NEOS 官網公告為準。</p>
+
+<h2>近期股價走勢（近 50 個交易日）</h2>
+<figure>
+<svg viewBox="0 0 900 380" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;">
+<rect width="100%" height="100%" fill="#f5f4ed"/>
+<line x1="60" y1="290.0" x2="876" y2="290.0" stroke="#e8e7e1" stroke-width="0.8"/>
+<text x="52" y="293.5" fill="#6b6a64" font-size="10" text-anchor="end">$52</text>
+<line x1="60" y1="258.8" x2="876" y2="258.8" stroke="#e8e7e1" stroke-width="0.8"/>
+<text x="52" y="262.2" fill="#6b6a64" font-size="10" text-anchor="end">$52.5</text>
+<line x1="60" y1="227.5" x2="876" y2="227.5" stroke="#e8e7e1" stroke-width="0.8"/>
+<text x="52" y="231.0" fill="#6b6a64" font-size="10" text-anchor="end">$53</text>
+<line x1="60" y1="196.2" x2="876" y2="196.2" stroke="#e8e7e1" stroke-width="0.8"/>
+<text x="52" y="199.8" fill="#6b6a64" font-size="10" text-anchor="end">$53.5</text>
+<line x1="60" y1="165.0" x2="876" y2="165.0" stroke="#e8e7e1" stroke-width="0.8"/>
+<text x="52" y="168.5" fill="#6b6a64" font-size="10" text-anchor="end">$54</text>
+<line x1="60" y1="133.8" x2="876" y2="133.8" stroke="#e8e7e1" stroke-width="0.8"/>
+<text x="52" y="137.2" fill="#6b6a64" font-size="10" text-anchor="end">$54.5</text>
+<line x1="60" y1="102.5" x2="876" y2="102.5" stroke="#e8e7e1" stroke-width="0.8"/>
+<text x="52" y="106.0" fill="#6b6a64" font-size="10" text-anchor="end">$55</text>
+<line x1="60" y1="71.2" x2="876" y2="71.2" stroke="#e8e7e1" stroke-width="0.8"/>
+<text x="52" y="74.8" fill="#6b6a64" font-size="10" text-anchor="end">$55.5</text>
+<line x1="60" y1="40.0" x2="876" y2="40.0" stroke="#e8e7e1" stroke-width="0.8"/>
+<text x="52" y="43.5" fill="#6b6a64" font-size="10" text-anchor="end">$56</text>
+<line x1="60" y1="320" x2="876" y2="320" stroke="#141413" stroke-width="0.8"/>
+<g class="candle" data-date="2026-06-24" data-o="54.96" data-h="55.14" data-l="54.32" data-c="54.58">
+<line x1="60.0" y1="93.7" x2="60.0" y2="145.0" stroke="#3A7A4E" stroke-width="1.1"/>
+<rect x="55.0" y="105.0" width="10.0" height="23.8" fill="#3A7A4E" rx="0.6"/>
+</g>
+<g class="candle" data-date="2026-06-25" data-o="55.22" data-h="55.45" data-l="54.49" data-c="54.80">
+<line x1="76.7" y1="74.4" x2="76.7" y2="134.4" stroke="#3A7A4E" stroke-width="1.1"/>
+<rect x="71.7" y="88.8" width="10.0" height="26.3" fill="#3A7A4E" rx="0.6"/>
+</g>
+<g class="candle" data-date="2026-06-26" data-o="54.62" data-h="54.91" data-l="54.20" data-c="54.58">
+<line x1="93.3" y1="108.1" x2="93.3" y2="152.5" stroke="#3A7A4E" stroke-width="1.1"/>
+<rect x="88.3" y="126.3" width="10.0" height="2.5" fill="#3A7A4E" rx="0.6"/>
+</g>
+<g class="candle" data-date="2026-06-29" data-o="54.63" data-h="55.28" data-l="54.52" data-c="55.22">
+<line x1="110.0" y1="85.0" x2="110.0" y2="132.5" stroke="#C23B32" stroke-width="1.1"/>
+<rect x="105.0" y="88.8" width="10.0" height="36.9" fill="#C23B32" rx="0.6"/>
+</g>
+<g class="candle" data-date="2026-06-30" data-o="55.23" data-h="55.90" data-l="55.23" data-c="55.84">
+<line x1="126.6" y1="46.3" x2="126.6" y2="88.1" stroke="#C23B32" stroke-width="1.1"/>
+<rect x="121.6" y="50.0" width="10.0" height="38.1" fill="#C23B32" rx="0.6"/>
+</g>
+<g class="candle" data-date="2026-07-01" data-o="55.46" data-h="55.74" data-l="55.45" data-c="55.45">
+<line x1="143.3" y1="56.2" x2="143.3" y2="74.4" stroke="#3A7A4E" stroke-width="1.1"/>
+<rect x="138.3" y="73.7" width="10.0" height="1.2" fill="#3A7A4E" rx="0.6"/>
+</g>
+<g class="candle" data-date="2026-07-02" data-o="55.57" data-h="55.74" data-l="54.68" data-c="54.94">
+<line x1="159.9" y1="56.2" x2="159.9" y2="122.5" stroke="#3A7A4E" stroke-width="1.1"/>
+<rect x="154.9" y="66.9" width="10.0" height="39.4" fill="#3A7A4E" rx="0.6"/>
+</g>
+<g class="candle" data-date="2026-07-06" data-o="55.02" data-h="55.65" data-l="55.02" data-c="55.43">
+<line x1="176.6" y1="61.9" x2="176.6" y2="101.2" stroke="#C23B32" stroke-width="1.1"/>
+<rect x="171.6" y="75.6" width="10.0" height="25.6" fill="#C23B32" rx="0.6"/>
+</g>
+<g class="candle" data-date="2026-07-07" data-o="55.09" data-h="55.09" data-l="54.65" data-c="54.90">
+<line x1="193.2" y1="96.9" x2="193.2" y2="124.4" stroke="#3A7A4E" stroke-width="1.1"/>
+<rect x="188.2" y="96.9" width="10.0" height="11.9" fill="#3A7A4E" rx="0.6"/>
+</g>
+<g class="candle" data-date="2026-07-08" data-o="54.65" data-h="55.04" data-l="54.47" data-c="55.04">
+<line x1="209.9" y1="100.0" x2="209.9" y2="135.6" stroke="#C23B32" stroke-width="1.1"/>
+<rect x="204.9" y="100.0" width="10.0" height="24.4" fill="#C23B32" rx="0.6"/>
+</g>
+<g class="candle" data-date="2026-07-09" data-o="55.49" data-h="55.62" data-l="55.29" data-c="55.53">
+<line x1="226.5" y1="63.8" x2="226.5" y2="84.4" stroke="#C23B32" stroke-width="1.1"/>
+<rect x="221.5" y="69.4" width="10.0" height="2.5" fill="#C23B32" rx="0.6"/>
+</g>
+<g class="candle" data-date="2026-07-10" data-o="55.50" data-h="55.72" data-l="55.30" data-c="55.68">
+<line x1="243.2" y1="57.5" x2="243.2" y2="83.8" stroke="#C23B32" stroke-width="1.1"/>
+<rect x="238.2" y="60.0" width="10.0" height="11.2" fill="#C23B32" rx="0.6"/>
+</g>
+<g class="candle" data-date="2026-07-13" data-o="55.49" data-h="55.49" data-l="55.03" data-c="55.10">
+<line x1="259.8" y1="71.9" x2="259.8" y2="100.6" stroke="#3A7A4E" stroke-width="1.1"/>
+<rect x="254.8" y="71.9" width="10.0" height="24.4" fill="#3A7A4E" rx="0.6"/>
+</g>
+<g class="candle" data-date="2026-07-14" data-o="55.33" data-h="55.68" data-l="55.22" data-c="55.55">
+<line x1="276.5" y1="60.0" x2="276.5" y2="88.8" stroke="#C23B32" stroke-width="1.1"/>
+<rect x="271.5" y="68.1" width="10.0" height="13.7" fill="#C23B32" rx="0.6"/>
+</g>
+<g class="candle" data-date="2026-07-15" data-o="55.58" data-h="55.63" data-l="55.09" data-c="55.49">
+<line x1="293.1" y1="63.1" x2="293.1" y2="96.9" stroke="#3A7A4E" stroke-width="1.1"/>
+<rect x="288.1" y="66.3" width="10.0" height="5.6" fill="#3A7A4E" rx="0.6"/>
+</g>
+<g class="candle" data-date="2026-07-16" data-o="55.27" data-h="55.27" data-l="54.75" data-c="54.83">
+<line x1="309.8" y1="85.6" x2="309.8" y2="118.1" stroke="#3A7A4E" stroke-width="1.1"/>
+<rect x="304.8" y="85.6" width="10.0" height="27.5" fill="#3A7A4E" rx="0.6"/>
+</g>
+<g class="candle" data-date="2026-07-17" data-o="54.36" data-h="54.54" data-l="54.04" data-c="54.42">
+<line x1="326.4" y1="131.3" x2="326.4" y2="162.5" stroke="#C23B32" stroke-width="1.1"/>
+<rect x="321.4" y="138.7" width="10.0" height="3.8" fill="#C23B32" rx="0.6"/>
+</g>
+<g class="candle" data-date="2026-07-20" data-o="54.48" data-h="54.76" data-l="54.37" data-c="54.39">
+<line x1="343.1" y1="117.5" x2="343.1" y2="141.9" stroke="#3A7A4E" stroke-width="1.1"/>
+<rect x="338.1" y="135.0" width="10.0" height="5.6" fill="#3A7A4E" rx="0.6"/>
+</g>
+<g class="candle" data-date="2026-07-21" data-o="54.85" data-h="55.02" data-l="54.57" data-c="54.94">
+<line x1="359.8" y1="101.2" x2="359.8" y2="129.4" stroke="#C23B32" stroke-width="1.1"/>
+<rect x="354.8" y="106.3" width="10.0" height="5.6" fill="#C23B32" rx="0.6"/>
+</g>
+<g class="candle" data-date="2026-07-22" data-o="54.81" data-h="55.00" data-l="54.69" data-c="54.83">
+<line x1="376.4" y1="102.5" x2="376.4" y2="121.9" stroke="#C23B32" stroke-width="1.1"/>
+<rect x="371.4" y="113.1" width="10.0" height="1.2" fill="#C23B32" rx="0.6"/>
+</g>
+<g class="candle" data-date="2026-07-23" data-o="54.34" data-h="54.43" data-l="53.94" data-c="54.09">
+<line x1="393.1" y1="138.1" x2="393.1" y2="168.8" stroke="#3A7A4E" stroke-width="1.1"/>
+<rect x="388.1" y="143.7" width="10.0" height="15.6" fill="#3A7A4E" rx="0.6"/>
+</g>
+<g class="candle" data-date="2026-07-24" data-o="53.96" data-h="54.05" data-l="53.60" data-c="53.76">
+<line x1="409.7" y1="161.9" x2="409.7" y2="190.0" stroke="#3A7A4E" stroke-width="1.1"/>
+<rect x="404.7" y="167.5" width="10.0" height="12.5" fill="#3A7A4E" rx="0.6"/>
+</g>
+<g class="candle" data-date="2026-07-27" data-o="54.17" data-h="54.18" data-l="53.43" data-c="53.58">
+<line x1="426.4" y1="153.8" x2="426.4" y2="200.6" stroke="#3A7A4E" stroke-width="1.1"/>
+<rect x="421.4" y="154.4" width="10.0" height="36.9" fill="#3A7A4E" rx="0.6"/>
+</g>
+<g class="candle" data-date="2026-07-28" data-o="53.65" data-h="53.65" data-l="53.03" data-c="53.36">
+<line x1="443.0" y1="186.9" x2="443.0" y2="225.6" stroke="#3A7A4E" stroke-width="1.1"/>
+<rect x="438.0" y="186.9" width="10.0" height="18.1" fill="#3A7A4E" rx="0.6"/>
+</g>
+<g class="candle" data-date="2026-07-29" data-o="52.96" data-h="53.20" data-l="52.32" data-c="52.36">
+<line x1="459.7" y1="215.0" x2="459.7" y2="270.0" stroke="#3A7A4E" stroke-width="1.1"/>
+<rect x="454.7" y="230.0" width="10.0" height="37.5" fill="#3A7A4E" rx="0.6"/>
+</g>
+<g class="candle" data-date="2026-07-30" data-o="52.82" data-h="53.42" data-l="52.82" data-c="53.36">
+<line x1="476.3" y1="201.2" x2="476.3" y2="238.8" stroke="#C23B32" stroke-width="1.1"/>
+<rect x="471.3" y="205.0" width="10.0" height="33.7" fill="#C23B32" rx="0.6"/>
+</g>
+<g class="candle" data-date="2026-07-31" data-o="53.56" data-h="53.72" data-l="53.19" data-c="53.54">
+<line x1="493.0" y1="182.5" x2="493.0" y2="215.6" stroke="#3A7A4E" stroke-width="1.1"/>
+<rect x="488.0" y="192.5" width="10.0" height="1.3" fill="#3A7A4E" rx="0.6"/>
+</g>
+<g class="candle" data-date="2026-08-03" data-o="53.55" data-h="54.15" data-l="53.55" data-c="53.99">
+<line x1="509.6" y1="155.6" x2="509.6" y2="193.1" stroke="#C23B32" stroke-width="1.1"/>
+<rect x="504.6" y="165.6" width="10.0" height="27.5" fill="#C23B32" rx="0.6"/>
+</g>
+<g class="candle" data-date="2026-08-04" data-o="54.15" data-h="54.85" data-l="54.15" data-c="54.77">
+<line x1="526.3" y1="111.9" x2="526.3" y2="155.6" stroke="#C23B32" stroke-width="1.1"/>
+<rect x="521.3" y="116.9" width="10.0" height="38.8" fill="#C23B32" rx="0.6"/>
+</g>
+<g class="candle" data-date="2026-08-05" data-o="54.80" data-h="55.04" data-l="54.66" data-c="54.66">
+<line x1="542.9" y1="100.0" x2="542.9" y2="123.8" stroke="#3A7A4E" stroke-width="1.1"/>
+<rect x="537.9" y="115.0" width="10.0" height="8.8" fill="#3A7A4E" rx="0.6"/>
+</g>
+<g class="candle" data-date="2026-08-06" data-o="54.24" data-h="54.82" data-l="54.24" data-c="54.55">
+<line x1="559.6" y1="113.7" x2="559.6" y2="150.0" stroke="#C23B32" stroke-width="1.1"/>
+<rect x="554.6" y="130.6" width="10.0" height="19.4" fill="#C23B32" rx="0.6"/>
+</g>
+<g class="candle" data-date="2026-08-07" data-o="54.94" data-h="54.97" data-l="54.72" data-c="54.87">
+<line x1="576.2" y1="104.4" x2="576.2" y2="120.0" stroke="#3A7A4E" stroke-width="1.1"/>
+<rect x="571.2" y="106.3" width="10.0" height="4.4" fill="#3A7A4E" rx="0.6"/>
+</g>
+<g class="candle" data-date="2026-08-10" data-o="54.84" data-h="55.02" data-l="54.80" data-c="54.95">
+<line x1="592.9" y1="101.2" x2="592.9" y2="115.0" stroke="#C23B32" stroke-width="1.1"/>
+<rect x="587.9" y="105.6" width="10.0" height="6.9" fill="#C23B32" rx="0.6"/>
+</g>
+<g class="candle" data-date="2026-08-11" data-o="55.25" data-h="55.25" data-l="54.72" data-c="54.89">
+<line x1="609.6" y1="86.9" x2="609.6" y2="120.0" stroke="#3A7A4E" stroke-width="1.1"/>
+<rect x="604.6" y="86.9" width="10.0" height="22.5" fill="#3A7A4E" rx="0.6"/>
+</g>
+<g class="candle" data-date="2026-08-12" data-o="54.77" data-h="55.22" data-l="54.77" data-c="55.13">
+<line x1="626.2" y1="88.8" x2="626.2" y2="116.9" stroke="#C23B32" stroke-width="1.1"/>
+<rect x="621.2" y="94.4" width="10.0" height="22.5" fill="#C23B32" rx="0.6"/>
+</g>
+<g class="candle" data-date="2026-08-13" data-o="55.05" data-h="55.49" data-l="55.05" data-c="55.38">
+<line x1="642.9" y1="71.9" x2="642.9" y2="99.4" stroke="#C23B32" stroke-width="1.1"/>
+<rect x="637.9" y="78.7" width="10.0" height="20.6" fill="#C23B32" rx="0.6"/>
+</g>
+<g class="candle" data-date="2026-08-14" data-o="55.45" data-h="55.45" data-l="55.15" data-c="55.36">
+<line x1="659.5" y1="74.4" x2="659.5" y2="93.1" stroke="#3A7A4E" stroke-width="1.1"/>
+<rect x="654.5" y="74.4" width="10.0" height="5.6" fill="#3A7A4E" rx="0.6"/>
+</g>
+<g class="candle" data-date="2026-08-17" data-o="55.50" data-h="55.52" data-l="55.21" data-c="55.25">
+<line x1="676.2" y1="70.0" x2="676.2" y2="89.4" stroke="#3A7A4E" stroke-width="1.1"/>
+<rect x="671.2" y="71.2" width="10.0" height="15.6" fill="#3A7A4E" rx="0.6"/>
+</g>
+<g class="candle" data-date="2026-08-18" data-o="54.64" data-h="54.98" data-l="54.64" data-c="54.74">
+<line x1="692.8" y1="103.8" x2="692.8" y2="125.0" stroke="#C23B32" stroke-width="1.1"/>
+<rect x="687.8" y="118.7" width="10.0" height="6.3" fill="#C23B32" rx="0.6"/>
+</g>
+<g class="candle" data-date="2026-08-19" data-o="54.83" data-h="54.98" data-l="54.70" data-c="54.77">
+<line x1="709.5" y1="103.8" x2="709.5" y2="121.2" stroke="#3A7A4E" stroke-width="1.1"/>
+<rect x="704.5" y="113.1" width="10.0" height="3.7" fill="#3A7A4E" rx="0.6"/>
+</g>
+<g class="candle" data-date="2026-08-20" data-o="54.61" data-h="54.80" data-l="54.46" data-c="54.49">
+<line x1="726.1" y1="115.0" x2="726.1" y2="136.2" stroke="#3A7A4E" stroke-width="1.1"/>
+<rect x="721.1" y="126.9" width="10.0" height="7.5" fill="#3A7A4E" rx="0.6"/>
+</g>
+<g class="candle" data-date="2026-08-21" data-o="54.68" data-h="54.89" data-l="54.47" data-c="54.85">
+<line x1="742.8" y1="109.4" x2="742.8" y2="135.6" stroke="#C23B32" stroke-width="1.1"/>
+<rect x="737.8" y="111.9" width="10.0" height="10.6" fill="#C23B32" rx="0.6"/>
+</g>
+<g class="candle" data-date="2026-08-24" data-o="54.49" data-h="54.63" data-l="54.24" data-c="54.51">
+<line x1="759.4" y1="125.6" x2="759.4" y2="150.0" stroke="#C23B32" stroke-width="1.1"/>
+<rect x="754.4" y="133.1" width="10.0" height="1.2" fill="#C23B32" rx="0.6"/>
+</g>
+<g class="candle" data-date="2026-08-25" data-o="54.57" data-h="54.82" data-l="54.52" data-c="54.77">
+<line x1="776.1" y1="113.7" x2="776.1" y2="132.5" stroke="#C23B32" stroke-width="1.1"/>
+<rect x="771.1" y="116.9" width="10.0" height="12.5" fill="#C23B32" rx="0.6"/>
+</g>
+<g class="candle" data-date="2026-08-26" data-o="54.23" data-h="54.50" data-l="54.05" data-c="54.35">
+<line x1="792.7" y1="133.8" x2="792.7" y2="161.9" stroke="#C23B32" stroke-width="1.1"/>
+<rect x="787.7" y="143.1" width="10.0" height="7.5" fill="#C23B32" rx="0.6"/>
+</g>
+<g class="candle" data-date="2026-08-27" data-o="54.66" data-h="54.84" data-l="54.53" data-c="54.82">
+<line x1="809.4" y1="112.5" x2="809.4" y2="131.9" stroke="#C23B32" stroke-width="1.1"/>
+<rect x="804.4" y="113.7" width="10.0" height="10.0" fill="#C23B32" rx="0.6"/>
+</g>
+<g class="candle" data-date="2026-08-28" data-o="54.62" data-h="54.97" data-l="54.53" data-c="54.62">
+<line x1="826.0" y1="104.4" x2="826.0" y2="131.9" stroke="#C23B32" stroke-width="1.1"/>
+<rect x="821.0" y="126.3" width="10.0" height="1.2" fill="#C23B32" rx="0.6"/>
+</g>
+<g class="candle" data-date="2026-08-31" data-o="54.37" data-h="54.70" data-l="54.37" data-c="54.49">
+<line x1="842.7" y1="121.2" x2="842.7" y2="141.9" stroke="#C23B32" stroke-width="1.1"/>
+<rect x="837.7" y="134.4" width="10.0" height="7.5" fill="#C23B32" rx="0.6"/>
+</g>
+<g class="candle" data-date="2026-09-01" data-o="54.32" data-h="54.42" data-l="54.15" data-c="54.22">
+<line x1="859.3" y1="138.7" x2="859.3" y2="155.6" stroke="#3A7A4E" stroke-width="1.1"/>
+<rect x="854.3" y="145.0" width="10.0" height="6.3" fill="#3A7A4E" rx="0.6"/>
+</g>
+<g class="candle" data-date="2026-09-02" data-o="54.02" data-h="54.33" data-l="54.02" data-c="54.25">
+<line x1="876.0" y1="144.4" x2="876.0" y2="163.7" stroke="#C23B32" stroke-width="1.1"/>
+<rect x="871.0" y="149.4" width="10.0" height="14.4" fill="#C23B32" rx="0.6"/>
+</g>
+<text x="60.0" y="338" fill="#141413" font-size="9.5" text-anchor="middle">6/24</text>
+<text x="176.6" y="338" fill="#141413" font-size="9.5" text-anchor="middle">7/6</text>
+<text x="293.1" y="338" fill="#141413" font-size="9.5" text-anchor="middle">7/15</text>
+<text x="409.7" y="338" fill="#141413" font-size="9.5" text-anchor="middle">7/24</text>
+<text x="526.3" y="338" fill="#141413" font-size="9.5" text-anchor="middle">8/4</text>
+<text x="642.9" y="338" fill="#141413" font-size="9.5" text-anchor="middle">8/13</text>
+<text x="759.4" y="338" fill="#141413" font-size="9.5" text-anchor="middle">8/24</text>
+<text x="876.0" y="338" fill="#141413" font-size="9.5" text-anchor="middle">9/2</text>
+<text x="16" y="180" fill="#6b6a64" font-size="9" letter-spacing="1" transform="rotate(-90 16 180)" text-anchor="middle">價格（美元）</text>
+<line x1="60" y1="352" x2="876" y2="352" stroke="#e8e7e1" stroke-width="0.8"/>
+<rect x="60" y="358" width="10" height="10" fill="#C23B32" rx="1.5"/>
+<text x="76" y="367" fill="#504e49" font-size="10">上漲日（收盤 ≥ 開盤）</text>
+<rect x="210" y="358" width="10" height="10" fill="#3A7A4E" rx="1.5"/>
+<text x="226" y="367" fill="#504e49" font-size="10">下跌日（收盤 &lt; 開盤）</text>
+</svg>
+  <figcaption>近三個月股價區間約 $52.3～$55.9，9 月 2 日收盤 $54.25；7 月底一度回測 $52.4 後反彈。滑鼠移到任一根 K 棒可查看當日開高低收。</figcaption>
+</figure>
+
+<h2>分析邏輯：領口策略與純備兌看漲的差別</h2>
+<p>把 QQQH 放進本系列的納指100收益基金對照表，第一個要釐清的是：它的領口策略（collar）與 QQQI、GPIQ 那種純備兌看漲（covered call）是兩種不同的取捨。純備兌看漲只做一件事——賣出買權收租，用上漲參與換配息；QQQH 則多花一筆錢買入賣權價差（put spread）替下檔鋪墊。這筆避險成本直接反映在兩個數字上：尾隨殖利率 9.04%，明顯低於 QQQI 的 ≈13.8%；過去一年總報酬 11.80%、成立以來年化 11.33%（stockanalysis.com），屬於用一部分收益與漲幅去換下檔保護的結構。歷史數字僅引用已揭露值，不對 2020、2022 年的單年報酬做推估。</p>
+
+<p>第二個現實是規模：3.78 億美元的資產規模是本系列最小的一檔，遠小於 GPIQ（約 55.8 億）與 JEPI（約 463.4 億）。規模小不代表策略無效，但次級市場流動性、買賣價差與折溢價都需要多留一分心，單筆大額進出更要留意市價單的滑價。</p>
+
+<div class="callout">
+  一句話定位：QQQH 就是 QQQI 的避險姊妹版——同樣是納指100持股、同樣月配息、同樣 0.68% 費率，差別只在 QQQH 每個月多付一筆賣權價差的保費。能接受殖利率從 ≈13.8% 降到 9.04%、換一個下跌時有人墊背的結構，再考慮它；如果要的是最大化當期配息，QQQI 仍是同一家族裡更直接的選擇。
+</div>
+
+
+
+
+<AdSlot placement="mid" />
+<h2>基金結構對照：QQQH vs 本系列其他收益基金</h2>
+<table class="financial compact striped">
+  <thead>
+    <tr>
+      <th>指標</th>
+      <th>QQQH</th>
+      <th>QQQI</th>
+      <th>GPIQ</th>
+      <th>JEPI</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>成立日</td>
+      <td>2019-12</td>
+      <td>2024-01</td>
+      <td>2023-10</td>
+      <td>2020-05</td>
+    </tr>
+    <tr>
+      <td>策略機制</td>
+      <td>持股 + 賣權價差領口</td>
+      <td>持股 + 賣出看漲期權</td>
+      <td>持股 + 賣出看漲期權</td>
+      <td>個股組合 + ELN</td>
+    </tr>
+    <tr>
+      <td>費率</td>
+      <td>0.68%</td>
+      <td>0.68%</td>
+      <td>0.29%</td>
+      <td>0.35%</td>
+    </tr>
+    <tr>
+      <td>資產規模（AUM）</td>
+      <td>約 3.78 億美元</td>
+      <td>—</td>
+      <td>約 55.8 億美元</td>
+      <td>約 463.4 億美元</td>
+    </tr>
+    <tr>
+      <td>beta（vs 大盤）</td>
+      <td>—</td>
+      <td>0.866</td>
+      <td>0.896</td>
+      <td>0.54</td>
+    </tr>
+    <tr>
+      <td>尾隨殖利率（現價）</td>
+      <td>9.04%</td>
+      <td>≈13.8%</td>
+      <td>10.14%</td>
+      <td>8.01%</td>
+    </tr>
+    <tr>
+      <td>配息／獲利比</td>
+      <td>302.48%</td>
+      <td>—</td>
+      <td>—</td>
+      <td>—</td>
+    </tr>
+    <tr>
+      <td>近一年總報酬</td>
+      <td>11.80%</td>
+      <td>—</td>
+      <td>—</td>
+      <td>9.11%</td>
+    </tr>
+  </tbody>
+</table>
+<p>表中「—」代表該數字未揭露或本報告撰寫時無法取得可靠來源，並非數值為零。QQQH 是本系列規模最小（約 3.78 億美元）、成立最早（2019 年 12 月）的 NEOS 基金，與 QQQI 共用納指100持股基底，差別只在多了一層賣權價差領口；費率 0.68% 與 QQQI 相同，高於 GPIQ、JEPI。殖利率 9.04% 為四檔中段班，但配息／獲利比 302.48% 是全表唯一揭露且唯一破 300% 的數字——配息幾乎全為 ROC 的推估，詳見附錄。</p>
+
+<h2>風險提示</h2>
+<div class="risk-grid">
+  <div class="risk-item">
+    <div class="risk-label">避險成本侵蝕上漲參與</div>
+    <div class="risk-desc">買入賣權價差的保費直接墊高成本：殖利率 9.04% 低於 QQQI 的 ≈13.8%，多頭年份的上漲參與與配息都會打折，下檔墊子不是免費的。</div>
+  </div>
+  <div class="risk-item">
+    <div class="risk-label">系列最小規模的流動性風險</div>
+    <div class="risk-desc">資產規模約 3.78 億美元為本系列最小，次級市場流動性、買賣價差與折溢價需留意，大額進出應避免市價單一次敲進。</div>
+  </div>
+  <div class="risk-item">
+    <div class="risk-label">高配息隱含資本返還</div>
+    <div class="risk-desc">配息／獲利比高達 302.48%，意味著配息中相當比例可能來自 ROC 而非已實現收益；ROC 比例並非保證值，須以官方 19a-1 公告為準。</div>
+  </div>
+  <div class="risk-item">
+    <div class="risk-label">beta 未揭露、下檔保護不透明</div>
+    <div class="risk-desc">官方未揭露 beta，賣權價差領口實際能吸收多少跌幅，投資人事前難以量化；保護範圍與履約價結構以 NEOS 官網揭露為準。</div>
+  </div>
+</div>
+
+<div class="analyst-box">
+  <div class="analyst-label">分析師總結</div>
+  QQQH 在本系列中的角色非常單純：它就是 QQQI 的避險姊妹版——同樣的納指100持股基底、同樣的月配息、同樣的 0.68% 費率，唯一的差別是每個月多付一筆賣權價差保費，換來下檔多一層墊子。這個取捨反映在數字上：殖利率 9.04% 低於 QQQI 的 ≈13.8%，過去一年總報酬 11.80%，成立以來年化 11.33%。配息／獲利比 302.48% 加上 -0.04% 的 30 天 SEC yield，讓它的 ROC 訊號成為全系列最明確之一，對在意美國 30% 股利預扣稅的台灣投資人具稅務吸引力，但 ROC 終究是歸還本金、會調降成本基礎，並非真正的額外報酬。規模 3.78 億為系列最小，流動性與折溢價是進場前必須接受的附帶條件；能接受用配息與漲幅換保護的人，它是家族裡邏輯最自洽的避險選項，否則 QQQI 更直接。
+</div>
+
+<h2 data-anchor="roc-note">附錄：ROC 稅務說明</h2>
+<p><strong>為什麼台灣投資人會關注這類基金：ROC（資本返還）的稅務優勢。</strong>美國對非美籍稅務居民課徵的一般股利預扣稅率通常是 30%（台灣與美國沒有租稅協定）；但若配息中有一部分被基金歸類為 ROC（Return of Capital，資本返還），該部分性質上是「歸還投資人自己已投入的本金」而非「當年度所得」，通常不適用 30% 股利預扣稅，而是調降投資人的成本基礎（cost basis），遞延到未來實際出售時才反映為資本利得。QQQH 的配息／獲利比高達 302.48%，且 30 天 SEC yield 僅 -0.04%——配息遠超已實現收益、淨投資收益甚至為負，是本系列目前 ROC 訊號最明確的基金之一，意味著配息中相當大比例很可能來自 ROC 而非已實現收益。但兩點提醒：第一，ROC 比例並非保證值，須以基金每年發布的 19a-1 公告與年度 1099-DIV／1042-S 稅務文件為準；第二，美國預扣稅的免除不等於在台灣完全免稅——這類海外有價證券的配息與資本利得，仍可能被計入台灣個人「基本所得額」（海外所得，超過免稅額度需計入基本稅額申報）。以上僅為一般性稅務背景資訊，不構成個人稅務建議，實際申報請諮詢熟悉台美跨境投資稅務的會計師或稅務顧問。</p>

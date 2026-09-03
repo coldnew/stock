@@ -1,0 +1,483 @@
+---
+ticker: GPIQ
+locale: zh-TW
+title: "GPIQ 分析報告 · 納指100 備兌看漲收益基金"
+description: "分析 GPIQ（Goldman Sachs Nasdaq-100 Premium Income ETF）的備兌看漲策略：唯一實證 NAV 持續成長的納指100 收益基金，與 QQQI、BTCI 完整對照，並檢視其下跌日 beta 是否真的比同類更抗跌"
+publishedAt: 2026-09-02
+dataAsOf: 2026-09-02
+reportType: income-etf
+translationKey: gpiq-2026-09-02
+tags:
+  - GPIQ
+isLatest: true
+status: published
+---
+
+import AdSlot from '../../../../components/report/AdSlot.astro';
+
+<h2>近期股價走勢（近 50 個交易日）</h2>
+<figure>
+<svg viewBox="0 0 900 380" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;">
+<rect width="100%" height="100%" fill="#f5f4ed"/>
+<line x1="60" y1="277.7" x2="876" y2="277.7" stroke="#e8e7e1" stroke-width="0.8"/>
+<text x="52" y="281.2" fill="#6b6a64" font-size="10" text-anchor="end">$54</text>
+<line x1="60" y1="197.1" x2="876" y2="197.1" stroke="#e8e7e1" stroke-width="0.8"/>
+<text x="52" y="200.6" fill="#6b6a64" font-size="10" text-anchor="end">$56</text>
+<line x1="60" y1="116.5" x2="876" y2="116.5" stroke="#e8e7e1" stroke-width="0.8"/>
+<text x="52" y="120.0" fill="#6b6a64" font-size="10" text-anchor="end">$58</text>
+<line x1="60" y1="320" x2="876" y2="320" stroke="#141413" stroke-width="0.8"/>
+<g class="candle" data-date="2026-06-23" data-o="57.75" data-h="58.32" data-l="57.48" data-c="57.61">
+<line x1="60.0" y1="103.6" x2="60.0" y2="137.5" stroke="#3A7A4E" stroke-width="1.1"/>
+<rect x="55.0" y="126.6" width="10.0" height="5.6" fill="#3A7A4E" rx="0.6"/>
+</g>
+<g class="candle" data-date="2026-06-24" data-o="57.71" data-h="58.08" data-l="56.93" data-c="57.44">
+<line x1="76.7" y1="113.3" x2="76.7" y2="159.6" stroke="#3A7A4E" stroke-width="1.1"/>
+<rect x="71.7" y="128.2" width="10.0" height="10.9" fill="#3A7A4E" rx="0.6"/>
+</g>
+<g class="candle" data-date="2026-06-25" data-o="58.59" data-h="58.66" data-l="57.03" data-c="57.88">
+<line x1="93.3" y1="89.9" x2="93.3" y2="155.6" stroke="#3A7A4E" stroke-width="1.1"/>
+<rect x="88.3" y="92.8" width="10.0" height="28.6" fill="#3A7A4E" rx="0.6"/>
+</g>
+<g class="candle" data-date="2026-06-26" data-o="57.17" data-h="57.79" data-l="56.83" data-c="57.10">
+<line x1="110.0" y1="125.0" x2="110.0" y2="163.7" stroke="#3A7A4E" stroke-width="1.1"/>
+<rect x="105.0" y="150.0" width="10.0" height="2.8" fill="#3A7A4E" rx="0.6"/>
+</g>
+<g class="candle" data-date="2026-06-29" data-o="57.86" data-h="58.46" data-l="57.06" data-c="58.44">
+<line x1="126.6" y1="98.0" x2="126.6" y2="154.4" stroke="#C23B32" stroke-width="1.1"/>
+<rect x="121.6" y="98.8" width="10.0" height="23.4" fill="#C23B32" rx="0.6"/>
+</g>
+<g class="candle" data-date="2026-06-30" data-o="58.57" data-h="59.42" data-l="58.46" data-c="59.31">
+<line x1="143.3" y1="59.3" x2="143.3" y2="98.0" stroke="#C23B32" stroke-width="1.1"/>
+<rect x="138.3" y="63.7" width="10.0" height="29.8" fill="#C23B32" rx="0.6"/>
+</g>
+<g class="candle" data-date="2026-07-01" data-o="58.30" data-h="58.49" data-l="58.00" data-c="58.05">
+<line x1="159.9" y1="96.8" x2="159.9" y2="116.5" stroke="#3A7A4E" stroke-width="1.1"/>
+<rect x="154.9" y="104.4" width="10.0" height="10.1" fill="#3A7A4E" rx="0.6"/>
+</g>
+<g class="candle" data-date="2026-07-02" data-o="58.10" data-h="58.39" data-l="56.71" data-c="57.15">
+<line x1="176.6" y1="100.8" x2="176.6" y2="168.5" stroke="#3A7A4E" stroke-width="1.1"/>
+<rect x="171.6" y="112.5" width="10.0" height="38.3" fill="#3A7A4E" rx="0.6"/>
+</g>
+<g class="candle" data-date="2026-07-06" data-o="57.58" data-h="58.10" data-l="57.47" data-c="57.88">
+<line x1="193.2" y1="112.5" x2="193.2" y2="137.9" stroke="#C23B32" stroke-width="1.1"/>
+<rect x="188.2" y="121.4" width="10.0" height="12.1" fill="#C23B32" rx="0.6"/>
+</g>
+<g class="candle" data-date="2026-07-07" data-o="57.30" data-h="57.40" data-l="56.55" data-c="56.93">
+<line x1="209.9" y1="140.7" x2="209.9" y2="175.0" stroke="#3A7A4E" stroke-width="1.1"/>
+<rect x="204.9" y="144.7" width="10.0" height="14.9" fill="#3A7A4E" rx="0.6"/>
+</g>
+<g class="candle" data-date="2026-07-08" data-o="56.62" data-h="57.14" data-l="56.28" data-c="57.09">
+<line x1="226.5" y1="151.2" x2="226.5" y2="185.8" stroke="#C23B32" stroke-width="1.1"/>
+<rect x="221.5" y="153.2" width="10.0" height="18.9" fill="#C23B32" rx="0.6"/>
+</g>
+<g class="candle" data-date="2026-07-09" data-o="57.56" data-h="58.04" data-l="57.37" data-c="57.95">
+<line x1="243.2" y1="114.9" x2="243.2" y2="141.9" stroke="#C23B32" stroke-width="1.1"/>
+<rect x="238.2" y="118.5" width="10.0" height="15.7" fill="#C23B32" rx="0.6"/>
+</g>
+<g class="candle" data-date="2026-07-10" data-o="57.74" data-h="58.20" data-l="57.52" data-c="58.15">
+<line x1="259.8" y1="108.5" x2="259.8" y2="135.9" stroke="#C23B32" stroke-width="1.1"/>
+<rect x="254.8" y="110.5" width="10.0" height="16.5" fill="#C23B32" rx="0.6"/>
+</g>
+<g class="candle" data-date="2026-07-13" data-o="57.55" data-h="57.66" data-l="57.02" data-c="57.15">
+<line x1="276.5" y1="130.2" x2="276.5" y2="156.0" stroke="#3A7A4E" stroke-width="1.1"/>
+<rect x="271.5" y="134.7" width="10.0" height="16.1" fill="#3A7A4E" rx="0.6"/>
+</g>
+<g class="candle" data-date="2026-07-14" data-o="57.76" data-h="57.91" data-l="57.38" data-c="57.75">
+<line x1="293.1" y1="120.2" x2="293.1" y2="141.5" stroke="#3A7A4E" stroke-width="1.1"/>
+<rect x="288.1" y="126.2" width="10.0" height="1.2" fill="#3A7A4E" rx="0.6"/>
+</g>
+<g class="candle" data-date="2026-07-15" data-o="58.08" data-h="58.09" data-l="57.05" data-c="57.59">
+<line x1="309.8" y1="112.9" x2="309.8" y2="154.8" stroke="#3A7A4E" stroke-width="1.1"/>
+<rect x="304.8" y="113.3" width="10.0" height="19.7" fill="#3A7A4E" rx="0.6"/>
+</g>
+<g class="candle" data-date="2026-07-16" data-o="57.27" data-h="57.30" data-l="56.46" data-c="56.73">
+<line x1="326.4" y1="144.7" x2="326.4" y2="178.6" stroke="#3A7A4E" stroke-width="1.1"/>
+<rect x="321.5" y="145.9" width="10.0" height="21.8" fill="#3A7A4E" rx="0.6"/>
+</g>
+<g class="candle" data-date="2026-07-17" data-o="55.82" data-h="56.48" data-l="55.26" data-c="55.98">
+<line x1="343.1" y1="177.8" x2="343.1" y2="226.9" stroke="#C23B32" stroke-width="1.1"/>
+<rect x="338.1" y="197.9" width="10.0" height="6.4" fill="#C23B32" rx="0.6"/>
+</g>
+<g class="candle" data-date="2026-07-20" data-o="56.47" data-h="56.75" data-l="55.98" data-c="56.03">
+<line x1="359.8" y1="166.9" x2="359.8" y2="197.9" stroke="#3A7A4E" stroke-width="1.1"/>
+<rect x="354.8" y="178.2" width="10.0" height="17.7" fill="#3A7A4E" rx="0.6"/>
+</g>
+<g class="candle" data-date="2026-07-21" data-o="56.81" data-h="57.06" data-l="56.53" data-c="56.99">
+<line x1="376.4" y1="154.4" x2="376.4" y2="175.8" stroke="#C23B32" stroke-width="1.1"/>
+<rect x="371.4" y="157.2" width="10.0" height="7.3" fill="#C23B32" rx="0.6"/>
+</g>
+<g class="candle" data-date="2026-07-22" data-o="56.70" data-h="57.04" data-l="56.63" data-c="56.75">
+<line x1="393.1" y1="155.2" x2="393.1" y2="171.7" stroke="#C23B32" stroke-width="1.1"/>
+<rect x="388.1" y="166.9" width="10.0" height="2.0" fill="#C23B32" rx="0.6"/>
+</g>
+<g class="candle" data-date="2026-07-23" data-o="55.97" data-h="56.27" data-l="55.42" data-c="55.78">
+<line x1="409.7" y1="186.2" x2="409.7" y2="220.5" stroke="#3A7A4E" stroke-width="1.1"/>
+<rect x="404.7" y="198.3" width="10.0" height="7.7" fill="#3A7A4E" rx="0.6"/>
+</g>
+<g class="candle" data-date="2026-07-24" data-o="55.78" data-h="55.83" data-l="55.03" data-c="55.18">
+<line x1="426.4" y1="204.0" x2="426.4" y2="236.2" stroke="#3A7A4E" stroke-width="1.1"/>
+<rect x="421.4" y="206.0" width="10.0" height="24.2" fill="#3A7A4E" rx="0.6"/>
+</g>
+<g class="candle" data-date="2026-07-27" data-o="55.80" data-h="55.80" data-l="54.52" data-c="55.03">
+<line x1="443.0" y1="205.2" x2="443.0" y2="256.8" stroke="#3A7A4E" stroke-width="1.1"/>
+<rect x="438.0" y="205.2" width="10.0" height="31.0" fill="#3A7A4E" rx="0.6"/>
+</g>
+<g class="candle" data-date="2026-07-28" data-o="54.57" data-h="54.81" data-l="53.90" data-c="54.53">
+<line x1="459.7" y1="245.1" x2="459.7" y2="281.8" stroke="#3A7A4E" stroke-width="1.1"/>
+<rect x="454.7" y="254.8" width="10.0" height="1.6" fill="#3A7A4E" rx="0.6"/>
+</g>
+<g class="candle" data-date="2026-07-29" data-o="54.48" data-h="54.88" data-l="53.43" data-c="53.47">
+<line x1="476.3" y1="242.3" x2="476.3" y2="300.7" stroke="#3A7A4E" stroke-width="1.1"/>
+<rect x="471.3" y="258.4" width="10.0" height="40.7" fill="#3A7A4E" rx="0.6"/>
+</g>
+<g class="candle" data-date="2026-07-30" data-o="54.60" data-h="55.29" data-l="54.39" data-c="55.20">
+<line x1="493.0" y1="225.7" x2="493.0" y2="262.0" stroke="#C23B32" stroke-width="1.1"/>
+<rect x="488.0" y="229.4" width="10.0" height="24.2" fill="#C23B32" rx="0.6"/>
+</g>
+<g class="candle" data-date="2026-07-31" data-o="55.82" data-h="56.09" data-l="54.89" data-c="55.52">
+<line x1="509.6" y1="193.5" x2="509.6" y2="241.9" stroke="#3A7A4E" stroke-width="1.1"/>
+<rect x="504.6" y="204.4" width="10.0" height="12.1" fill="#3A7A4E" rx="0.6"/>
+</g>
+<g class="candle" data-date="2026-08-03" data-o="55.08" data-h="55.90" data-l="54.88" data-c="55.78">
+<line x1="526.3" y1="201.2" x2="526.3" y2="242.3" stroke="#C23B32" stroke-width="1.1"/>
+<rect x="521.3" y="206.0" width="10.0" height="28.2" fill="#C23B32" rx="0.6"/>
+</g>
+<g class="candle" data-date="2026-08-04" data-o="56.25" data-h="57.37" data-l="56.25" data-c="57.27">
+<line x1="542.9" y1="141.9" x2="542.9" y2="187.1" stroke="#C23B32" stroke-width="1.1"/>
+<rect x="537.9" y="145.9" width="10.0" height="41.1" fill="#C23B32" rx="0.6"/>
+</g>
+<g class="candle" data-date="2026-08-05" data-o="57.41" data-h="57.57" data-l="56.86" data-c="56.88">
+<line x1="559.6" y1="133.9" x2="559.6" y2="162.5" stroke="#3A7A4E" stroke-width="1.1"/>
+<rect x="554.6" y="140.3" width="10.0" height="21.4" fill="#3A7A4E" rx="0.6"/>
+</g>
+<g class="candle" data-date="2026-08-06" data-o="56.49" data-h="56.96" data-l="56.27" data-c="56.68">
+<line x1="576.2" y1="158.4" x2="576.2" y2="186.2" stroke="#C23B32" stroke-width="1.1"/>
+<rect x="571.2" y="169.7" width="10.0" height="7.7" fill="#C23B32" rx="0.6"/>
+</g>
+<g class="candle" data-date="2026-08-07" data-o="57.15" data-h="57.30" data-l="56.85" data-c="57.29">
+<line x1="592.9" y1="144.7" x2="592.9" y2="162.9" stroke="#C23B32" stroke-width="1.1"/>
+<rect x="587.9" y="145.1" width="10.0" height="5.6" fill="#C23B32" rx="0.6"/>
+</g>
+<g class="candle" data-date="2026-08-10" data-o="57.41" data-h="57.41" data-l="57.13" data-c="57.16">
+<line x1="609.6" y1="140.3" x2="609.6" y2="151.6" stroke="#3A7A4E" stroke-width="1.1"/>
+<rect x="604.6" y="140.3" width="10.0" height="10.1" fill="#3A7A4E" rx="0.6"/>
+</g>
+<g class="candle" data-date="2026-08-11" data-o="57.32" data-h="57.32" data-l="56.84" data-c="56.97">
+<line x1="626.2" y1="143.9" x2="626.2" y2="163.3" stroke="#3A7A4E" stroke-width="1.1"/>
+<rect x="621.2" y="143.9" width="10.0" height="14.1" fill="#3A7A4E" rx="0.6"/>
+</g>
+<g class="candle" data-date="2026-08-12" data-o="57.38" data-h="57.52" data-l="57.21" data-c="57.27">
+<line x1="642.9" y1="135.9" x2="642.9" y2="148.4" stroke="#3A7A4E" stroke-width="1.1"/>
+<rect x="637.9" y="141.5" width="10.0" height="4.4" fill="#3A7A4E" rx="0.6"/>
+</g>
+<g class="candle" data-date="2026-08-13" data-o="57.24" data-h="57.82" data-l="57.19" data-c="57.72">
+<line x1="659.5" y1="123.8" x2="659.5" y2="149.2" stroke="#C23B32" stroke-width="1.1"/>
+<rect x="654.5" y="127.8" width="10.0" height="19.3" fill="#C23B32" rx="0.6"/>
+</g>
+<g class="candle" data-date="2026-08-14" data-o="57.83" data-h="57.83" data-l="57.48" data-c="57.66">
+<line x1="676.2" y1="123.4" x2="676.2" y2="137.5" stroke="#3A7A4E" stroke-width="1.1"/>
+<rect x="671.2" y="123.4" width="10.0" height="6.9" fill="#3A7A4E" rx="0.6"/>
+</g>
+<g class="candle" data-date="2026-08-17" data-o="57.83" data-h="57.86" data-l="57.54" data-c="57.59">
+<line x1="692.8" y1="122.2" x2="692.8" y2="135.1" stroke="#3A7A4E" stroke-width="1.1"/>
+<rect x="687.8" y="123.4" width="10.0" height="9.7" fill="#3A7A4E" rx="0.6"/>
+</g>
+<g class="candle" data-date="2026-08-18" data-o="57.05" data-h="57.09" data-l="56.72" data-c="56.85">
+<line x1="709.5" y1="153.2" x2="709.5" y2="168.1" stroke="#3A7A4E" stroke-width="1.1"/>
+<rect x="704.5" y="154.8" width="10.0" height="8.1" fill="#3A7A4E" rx="0.6"/>
+</g>
+<g class="candle" data-date="2026-08-19" data-o="57.20" data-h="57.20" data-l="56.55" data-c="56.76">
+<line x1="726.1" y1="148.8" x2="726.1" y2="175.0" stroke="#3A7A4E" stroke-width="1.1"/>
+<rect x="721.1" y="148.8" width="10.0" height="17.7" fill="#3A7A4E" rx="0.6"/>
+</g>
+<g class="candle" data-date="2026-08-20" data-o="56.55" data-h="56.73" data-l="56.33" data-c="56.46">
+<line x1="742.8" y1="167.7" x2="742.8" y2="183.8" stroke="#3A7A4E" stroke-width="1.1"/>
+<rect x="737.8" y="175.0" width="10.0" height="3.6" fill="#3A7A4E" rx="0.6"/>
+</g>
+<g class="candle" data-date="2026-08-21" data-o="56.62" data-h="56.83" data-l="56.38" data-c="56.65">
+<line x1="759.4" y1="163.7" x2="759.4" y2="181.8" stroke="#C23B32" stroke-width="1.1"/>
+<rect x="754.4" y="170.9" width="10.0" height="1.2" fill="#C23B32" rx="0.6"/>
+</g>
+<g class="candle" data-date="2026-08-24" data-o="56.37" data-h="56.40" data-l="55.97" data-c="56.19">
+<line x1="776.1" y1="181.0" x2="776.1" y2="198.3" stroke="#3A7A4E" stroke-width="1.1"/>
+<rect x="771.1" y="182.2" width="10.0" height="7.3" fill="#3A7A4E" rx="0.6"/>
+</g>
+<g class="candle" data-date="2026-08-25" data-o="56.58" data-h="56.69" data-l="56.27" data-c="56.50">
+<line x1="792.7" y1="169.3" x2="792.7" y2="186.2" stroke="#3A7A4E" stroke-width="1.1"/>
+<rect x="787.7" y="173.8" width="10.0" height="3.2" fill="#3A7A4E" rx="0.6"/>
+</g>
+<g class="candle" data-date="2026-08-26" data-o="56.41" data-h="56.65" data-l="56.33" data-c="56.56">
+<line x1="809.4" y1="170.9" x2="809.4" y2="183.8" stroke="#C23B32" stroke-width="1.1"/>
+<rect x="804.4" y="174.6" width="10.0" height="6.0" fill="#C23B32" rx="0.6"/>
+</g>
+<g class="candle" data-date="2026-08-27" data-o="56.99" data-h="57.25" data-l="56.81" data-c="57.24">
+<line x1="826.0" y1="146.8" x2="826.0" y2="164.5" stroke="#C23B32" stroke-width="1.1"/>
+<rect x="821.0" y="147.2" width="10.0" height="10.1" fill="#C23B32" rx="0.6"/>
+</g>
+<g class="candle" data-date="2026-08-28" data-o="57.22" data-h="57.51" data-l="56.83" data-c="56.93">
+<line x1="842.7" y1="136.3" x2="842.7" y2="163.7" stroke="#3A7A4E" stroke-width="1.1"/>
+<rect x="837.7" y="148.0" width="10.0" height="11.7" fill="#3A7A4E" rx="0.6"/>
+</g>
+<g class="candle" data-date="2026-08-31" data-o="56.89" data-h="57.01" data-l="56.71" data-c="56.98">
+<line x1="859.3" y1="156.4" x2="859.3" y2="168.5" stroke="#C23B32" stroke-width="1.1"/>
+<rect x="854.4" y="157.6" width="10.0" height="3.6" fill="#C23B32" rx="0.6"/>
+</g>
+<g class="candle" data-date="2026-09-01" data-o="56.03" data-h="56.16" data-l="55.63" data-c="55.84">
+<line x1="876.0" y1="190.7" x2="876.0" y2="212.0" stroke="#3A7A4E" stroke-width="1.1"/>
+<rect x="871.0" y="195.9" width="10.0" height="7.7" fill="#3A7A4E" rx="0.6"/>
+</g>
+<text x="60.0" y="338" fill="#141413" font-size="9.5" text-anchor="middle">6/23</text>
+<text x="176.6" y="338" fill="#141413" font-size="9.5" text-anchor="middle">7/2</text>
+<text x="293.1" y="338" fill="#141413" font-size="9.5" text-anchor="middle">7/14</text>
+<text x="409.7" y="338" fill="#141413" font-size="9.5" text-anchor="middle">7/23</text>
+<text x="526.3" y="338" fill="#141413" font-size="9.5" text-anchor="middle">8/3</text>
+<text x="642.9" y="338" fill="#141413" font-size="9.5" text-anchor="middle">8/12</text>
+<text x="759.4" y="338" fill="#141413" font-size="9.5" text-anchor="middle">8/21</text>
+<text x="876.0" y="338" fill="#141413" font-size="9.5" text-anchor="middle">9/1</text>
+<text x="16" y="180" fill="#6b6a64" font-size="9" letter-spacing="1" transform="rotate(-90 16 180)" text-anchor="middle">價格（美元）</text>
+<line x1="60" y1="352" x2="876" y2="352" stroke="#e8e7e1" stroke-width="0.8"/>
+<rect x="60" y="358" width="10" height="10" fill="#C23B32" rx="1.5"/>
+<text x="76" y="367" fill="#504e49" font-size="10">上漲日（收盤 ≥ 開盤）</text>
+<rect x="210" y="358" width="10" height="10" fill="#3A7A4E" rx="1.5"/>
+<text x="226" y="367" fill="#504e49" font-size="10">下跌日（收盤 &lt; 開盤）</text>
+</svg>
+  <figcaption>近三個月股價區間約 $53.4～$59.4，9 月 1 日收盤 $55.84，8 月下旬起震盪走低。滑鼠移到任一根 K 棒可查看當日開高低收。</figcaption>
+</figure>
+
+<div id="container-7cab59a03a06045c82ea9849963afe4f"></div>
+
+
+<h2>基本介紹：這是什麼樣的基金？</h2>
+<p>GPIQ（Goldman Sachs Nasdaq-100 Premium Income ETF）是由 Goldman Sachs Asset Management 於 2023 年 10 月 24 日在 NASDAQ 掛牌的主動管理型 ETF，持有納斯達克100 指數成分股，同時系統化賣出價外（OTM）看漲期權收取權利金，與 QQQI、BTCI 同屬「備兌看漲（covered call）收益型」基金這個大類別。簡單說：買 GPIQ 等於持有納指100 曝險，放棄部分上漲空間換取每月現金流；費率僅 0.29%，是本系列已分析基金中最低的一檔，資產規模約 55.8 億美元，遠大於 QQQI、BTCI，規模與流動性相對寬裕。目前尾隨殖利率約 10.14%。</p>
+
+<div class="callout">
+  <strong>為什麼台灣投資人會關注這類基金：ROC（資本返還）的稅務優勢。</strong>美國對非美籍稅務居民課徵的一般股利預扣稅率通常是 30%（台灣與美國沒有租稅協定）；但若配息中有一部分被基金歸類為 ROC（Return of Capital，資本返還），該部分性質上是「歸還投資人自己已投入的本金」而非「當年度所得」，通常不適用 30% 股利預扣稅，而是調降投資人的成本基礎（cost basis），遞延到未來實際出售時才反映為資本利得。這類備兌看漲收益型基金，配息中 ROC 占比經常偏高（實際比例逐年公告、且各基金不同），是本系列報告鎖定這類產品的重要原因之一。但兩點提醒：第一，ROC 比例並非保證值，須以基金每年發布的 19a-1 公告與年度 1099-DIV／1042-S 稅務文件為準；第二，美國預扣稅的免除不等於在台灣完全免稅——這類海外有價證券的配息與資本利得，仍可能被計入台灣個人「基本所得額」（海外所得，超過免稅額度需計入基本稅額申報）。以上僅為一般性稅務背景資訊，不構成個人稅務建議，實際申報請諮詢熟悉台美跨境投資稅務的會計師或稅務顧問。
+</div>
+
+<h3>配息時間表</h3>
+<table class="financial compact striped">
+  <thead>
+    <tr>
+      <th>除息日</th>
+      <th>發放日</th>
+      <th>單次配息（美元）</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>2026-03-02</td>
+      <td>2026-03-06</td>
+      <td>$0.4527</td>
+    </tr>
+    <tr>
+      <td>2026-04-01</td>
+      <td>2026-04-08</td>
+      <td>$0.4319</td>
+    </tr>
+    <tr>
+      <td>2026-05-01</td>
+      <td>2026-05-07</td>
+      <td>$0.4833</td>
+    </tr>
+    <tr>
+      <td>2026-06-01</td>
+      <td>2026-06-05</td>
+      <td>$0.5192</td>
+    </tr>
+    <tr>
+      <td>2026-07-01</td>
+      <td>2026-07-08</td>
+      <td>$0.5191</td>
+    </tr>
+    <tr>
+      <td>2026-08-03</td>
+      <td>2026-08-07</td>
+      <td>$0.4862</td>
+    </tr>
+  </tbody>
+</table>
+<p>配息頻率：每月配息，除息日固定落在每月第一個交易日附近，發放日約在除息後 4 到 7 天。近六個月單次配息在 $0.43～$0.52 之間波動；以成立時原始投入成本計算的年化殖利率已從成立時的 11.6% 成長到目前的 15.4%。確切除息／發放日請以發行商 GSAM 官網公告為準。</p>
+
+<h2>分析邏輯：備兌看漲不必然侵蝕本金</h2>
+<p>本系列報告分析 QQQI、BTCI 之後，得出一個看似普遍的結論：備兌看漲策略的月配息，長期而言容易靠侵蝕本金（NAV 縮水）來維持，「高殖利率」背後往往是 NAV 持續稀釋的代價。GPIQ 打破了這個推論——同樣是納指100 備兌看漲收益基金，GPIQ 成立以來純價格報酬（不含配息）達 <span class="hl">+44.0%（年化 13.7%）</span>，含配息總報酬更達 <span class="hl">+94.0%（年化 26.2%）</span>，NAV 本身持續成長，不是靠配息堆疊出來的表現。</p>
+
+<div class="callout">
+  GPIQ 證明了備兌看漲策略的框架本身不必然導致 NAV 侵蝕，關鍵在於個別基金的策略參數（例如賣出的履約價距離、正股與期權部位配置）。但這不代表 GPIQ 更抗跌：GPIQ 對 QQQ 的下跌日 beta（0.896）其實略高於 QQQI（0.866），代表在真正的熊市中，GPIQ 的下檔參與度不會比 QQQI 更客氣，兩者是完全不同的風險維度，不應混為一談。
+</div>
+
+
+<AdSlot placement="mid" />
+<h2>NAV 實證對照：GPIQ、QQQI、BTCI 三檔基金天差地遠</h2>
+<figure>
+<svg viewBox="0 0 890 420" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;">
+<rect width="100%" height="100%" fill="#f5f4ed"/>
+<line x1="60" y1="320" x2="830" y2="320" stroke="#e8e7e1" stroke-width="0.8"/>
+<text x="52" y="324" fill="#6b6a64" font-size="10" text-anchor="end">40</text>
+<line x1="60" y1="273" x2="830" y2="273" stroke="#e8e7e1" stroke-width="0.8"/>
+<text x="52" y="277" fill="#6b6a64" font-size="10" text-anchor="end">60</text>
+<line x1="60" y1="227" x2="830" y2="227" stroke="#e8e7e1" stroke-width="0.8"/>
+<text x="52" y="231" fill="#6b6a64" font-size="10" text-anchor="end">80</text>
+<line x1="60" y1="180" x2="830" y2="180" stroke="#e8e7e1" stroke-width="0.8"/>
+<text x="52" y="184" fill="#6b6a64" font-size="10" text-anchor="end">100</text>
+<line x1="60" y1="133" x2="830" y2="133" stroke="#e8e7e1" stroke-width="0.8"/>
+<text x="52" y="137" fill="#6b6a64" font-size="10" text-anchor="end">120</text>
+<line x1="60" y1="87" x2="830" y2="87" stroke="#e8e7e1" stroke-width="0.8"/>
+<text x="52" y="91" fill="#6b6a64" font-size="10" text-anchor="end">140</text>
+<line x1="60" y1="40" x2="830" y2="40" stroke="#e8e7e1" stroke-width="0.8"/>
+<text x="52" y="44" fill="#6b6a64" font-size="10" text-anchor="end">160</text>
+<line x1="60" y1="180" x2="830" y2="180" stroke="#6b6a64" stroke-width="0.6" stroke-dasharray="2 3"/>
+<line x1="60" y1="320" x2="830" y2="320" stroke="#141413" stroke-width="0.8"/>
+<polyline points="60,176.0 82,155.6 104,149.6 126,144.5 148,135.1 170,133.2 192,146.3 214,134.2 236,124.5 258,131.3 280,129.4 302,124.8 324,128.6 346,116.9 368,118.4 390,114.0 412,123.0 434,145.0 456,144.0 478,126.0 500,113.7 522,109.7 544,108.4 566,97.7 588,87.6 610,92.5 632,95.2 654,92.8 676,100.7 698,115.6 720,80.7 742,55.5 764,56.5 786,79.3 808,70.5 830,77.4" fill="none" stroke="#6b6a64" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="830" cy="77.4" r="5" fill="#6b6a64" stroke="#f5f4ed" stroke-width="1.5"/>
+<polyline points="126,183.3 148,175.5 170,174.5 192,185.4 214,177.3 236,171.7 258,177.0 280,175.8 302,173.0 324,175.9 346,167.7 368,168.1 390,165.6 412,173.1 434,191.3 456,190.2 478,177.5 500,169.8 522,166.9 544,166.5 566,159.6 588,153.4 610,158.5 632,161.2 654,161.3 676,167.9 698,180.7 720,159.8 742,145.4 764,147.4 786,165.0 808,157.7 830,160.6" fill="none" stroke="#1B365D" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="830" cy="160.6" r="5" fill="#1B365D" stroke="#f5f4ed" stroke-width="1.5"/>
+<polyline points="324,175.9 346,116.6 368,134.4 390,112.0 412,170.0 434,177.4 456,154.0 478,134.1 500,131.5 522,116.2 544,142.0 566,132.8 588,147.8 610,195.2 632,205.5 654,217.4 676,261.0 698,258.6 720,244.7 742,253.6 764,286.5 786,281.2 808,259.5 830,262.2" fill="none" stroke="#504e49" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="5 3"/>
+<circle cx="830" cy="262.2" r="5" fill="#504e49" stroke="#f5f4ed" stroke-width="1.5"/>
+<text x="838" y="81.4" fill="#6b6a64" font-size="11" font-weight="500">144</text>
+<text x="838" y="164.6" fill="#1B365D" font-size="11" font-weight="500">108</text>
+<text x="838" y="266.2" fill="#504e49" font-size="10">65</text>
+<text x="60" y="338" fill="#141413" font-size="9.5" text-anchor="middle">2023/10</text>
+<text x="148" y="338" fill="#141413" font-size="9.5" text-anchor="middle">2024/02</text>
+<text x="236" y="338" fill="#141413" font-size="9.5" text-anchor="middle">2024/06</text>
+<text x="324" y="338" fill="#141413" font-size="9.5" text-anchor="middle">2024/10</text>
+<text x="412" y="338" fill="#141413" font-size="9.5" text-anchor="middle">2025/02</text>
+<text x="500" y="338" fill="#141413" font-size="9.5" text-anchor="middle">2025/06</text>
+<text x="588" y="338" fill="#141413" font-size="9.5" text-anchor="middle">2025/10</text>
+<text x="676" y="338" fill="#141413" font-size="9.5" text-anchor="middle">2026/02</text>
+<text x="764" y="338" fill="#141413" font-size="9.5" text-anchor="middle">2026/06</text>
+<text x="830" y="338" fill="#141413" font-size="9.5" text-anchor="middle">2026/09</text>
+<text x="16" y="180" fill="#6b6a64" font-size="9" letter-spacing="1" transform="rotate(-90 16 180)" text-anchor="middle">純價格指數（各自成立日=100）</text>
+<line x1="60" y1="352" x2="830" y2="352" stroke="#e8e7e1" stroke-width="0.8"/>
+<line x1="60" y1="366" x2="84" y2="366" stroke="#6b6a64" stroke-width="2.2" stroke-linecap="round"/>
+<circle cx="72" cy="366" r="3.5" fill="#6b6a64"/>
+<text x="92" y="370" fill="#504e49" font-size="10.5">GPIQ</text>
+<line x1="180" y1="366" x2="204" y2="366" stroke="#1B365D" stroke-width="2.2" stroke-linecap="round"/>
+<circle cx="192" cy="366" r="3.5" fill="#1B365D"/>
+<text x="212" y="370" fill="#504e49" font-size="10.5">QQQI</text>
+<line x1="300" y1="366" x2="324" y2="366" stroke="#504e49" stroke-width="1.8" stroke-dasharray="5 3" stroke-linecap="round"/>
+<circle cx="312" cy="366" r="3.5" fill="#504e49"/>
+<text x="332" y="370" fill="#504e49" font-size="10.5">BTCI</text>
+</svg>
+  <figcaption>純價格指數（各自成立日=100，不含配息）：GPIQ 持續走高至 144，QQQI 溫和成長至 108，BTCI 崩跌至 65——三檔基金雖同屬備兌看漲策略，NAV 走勢卻天差地遠。</figcaption>
+</figure>
+
+<h2>基金結構對照：GPIQ vs QQQI vs BTCI</h2>
+<table class="financial compact striped">
+  <thead>
+    <tr>
+      <th>指標</th>
+      <th>GPIQ</th>
+      <th>QQQI</th>
+      <th>BTCI</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>成立日</td>
+      <td>2023-10</td>
+      <td>2024-01</td>
+      <td>2024-10</td>
+    </tr>
+    <tr>
+      <td>費率</td>
+      <td>0.29%</td>
+      <td>0.68%</td>
+      <td>0.98%</td>
+    </tr>
+    <tr>
+      <td>資產規模（AUM）</td>
+      <td>約 55.8 億美元</td>
+      <td>—</td>
+      <td>—</td>
+    </tr>
+    <tr>
+      <td>純價格報酬（年化）</td>
+      <td>+13.7%</td>
+      <td>+3.1%</td>
+      <td>-20.7%</td>
+    </tr>
+    <tr>
+      <td>總報酬（年化，含配息）</td>
+      <td>+26.2%</td>
+      <td>+18.9%</td>
+      <td>+5.2%</td>
+    </tr>
+    <tr>
+      <td>對標的下跌日 / 上漲日 beta</td>
+      <td>0.896 / 0.896</td>
+      <td>0.866 / 0.848</td>
+      <td>0.83 / 0.75</td>
+    </tr>
+    <tr>
+      <td>月配息變異係數</td>
+      <td>8.8%</td>
+      <td>4.1%</td>
+      <td>28.2%</td>
+    </tr>
+    <tr>
+      <td>年化殖利率（原始成本）：成立→目前</td>
+      <td>11.6%→15.4%</td>
+      <td>14.3%→15.7%</td>
+      <td>27.3%→15.3%</td>
+    </tr>
+  </tbody>
+</table>
+<p>關鍵差異在於上漲與下跌的參與度是否對稱。GPIQ 對 QQQ 的下跌日 beta 與上漲日 beta 都是 0.896，幾乎完全對稱；QQQI 則是下跌日 0.866、上漲日 0.848，跌得比漲得多一些。差距看似不大，但長期複利下來，GPIQ 的 NAV 因為沒有被上漲受限拖累，走出了與 QQQI、更與 BTCI 截然不同的軌跡。GPIQ 的資產規模（約 55.8 億美元）也遠大於 QQQI、BTCI，規模與流動性相對寬裕，折溢價與交易成本風險相對較低。</p>
+
+
+
+<h2>唯一的實證壓力測試：2025 年 4 月關稅修正</h2>
+<p>GPIQ 自成立以來還沒有經歷過真正的熊市，唯一的實證壓力事件是 2025 年 4 月的關稅衝擊修正。這次修正中，GPIQ 與 QQQI 站在同一起跑線接受檢驗。</p>
+
+<table class="financial compact striped">
+  <thead>
+    <tr>
+      <th>基金</th>
+      <th>價格跌幅</th>
+      <th>配息降幅</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>GPIQ</td>
+      <td>-22.8%</td>
+      <td>-11.9%</td>
+    </tr>
+    <tr>
+      <td>QQQI</td>
+      <td>-20.0%</td>
+      <td>-13.5%</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="callout">
+  這次修正中，GPIQ 價格跌幅（-22.8%）反而比 QQQI（-20.0%）更深，但配息降幅（-11.9%）比 QQQI（-13.5%）更小。單一事件樣本數太少，不足以直接論斷哪一檔在真正熊市中會更抗跌；但至少可以確認，GPIQ 的「NAV 持續成長」優勢，跟「熊市下檔保護」是兩件不同的事，不能因為前者表現亮眼就假設後者也會比同類產品更好。
+</div>
+
+<p>這次修正只花了 48 天完成下跌，屬於急跌急彈型：下跌發生得又快又急，隱含波動率同步飆升，短期內推升的期權權利金部分抵銷了價格下跌對配息的衝擊。這個模式與 QQQI、OVL 在同一事件中的表現一致——本系列報告反覆驗證的規律（急跌急彈型修正中配息降幅小於價格跌幅，緩跌型熊市中配息降幅貼近甚至超過價格跌幅）在 GPIQ 身上同樣成立。GPIQ 至今尚未經歷緩跌型的深度熊市，這個規律在其身上的下半段（緩跌型熊市中配息是否同步重挫）仍是未知數。</p>
+
+<h2>風險提示</h2>
+<div class="risk-grid">
+  <div class="risk-item">
+    <div class="risk-label">尚未經歷真正的熊市</div>
+    <div class="risk-desc">2023 年 10 月成立以來，唯一的實證壓力事件是 2025 年 4 月僅 48 天的急跌急彈型修正。NAV 持續成長的紀錄，建立在納指100 相對溫和的市場環境之上，尚未被真正的深度熊市考驗過。</div>
+  </div>
+  <div class="risk-item">
+    <div class="risk-label">下跌日 beta 高於 QQQI，「抗跌」不是既定事實</div>
+    <div class="risk-desc">GPIQ 對 QQQ 的下跌日 beta（0.896）略高於 QQQI（0.866），代表在真正的熊市中，GPIQ 的下檔參與度不會比 QQQI 更客氣，「Premium Income」的命名不代表更好的下檔保護。</div>
+  </div>
+  <div class="risk-item">
+    <div class="risk-label">上漲空間仍受期權賣方策略封頂</div>
+    <div class="risk-desc">賣出的看漲期權會限制急漲行情下的參與度，長期而言仍會跑輸純納指100 曝險，只是目前的市場環境下差距被 NAV 成長部分掩蓋。</div>
+  </div>
+  <div class="risk-item">
+    <div class="risk-label">高派息隱含資本返還</div>
+    <div class="risk-desc">月度分配中可能包含相當比例的資本返還（ROC）而非真實已實現收益；ROC 比例並非保證值，且熊市中權利金基數同步萎縮時，「高殖利率」本身在下跌市中也不可持續。</div>
+  </div>
+</div>
+
+<div class="analyst-box">
+  <div class="analyst-label">分析師總結</div>
+  GPIQ 是本系列報告目前分析過表現最好的備兌看漲收益基金：成立以來 NAV 純價格持續成長 +44.0%，含配息總報酬 +94.0%，費率僅 0.29%，規模達 55.8 億美元，流動性寬裕——這些都證明了備兌看漲策略只要參數設計得當，並不必然走向 NAV 侵蝕。但兩個關鍵限制不能忽略：第一，GPIQ 至今唯一的實證壓力測試只有一次 48 天的急跌急彈型修正，尚未經歷真正的深度熊市，NAV 成長紀錄很大程度反映的是這段期間納指100 本身的強勢表現，而非該策略在逆風環境下的韌性；第二，GPIQ 對 QQQ 的下跌日 beta（0.896）其實略高於 QQQI（0.866），沒有證據顯示它在真正熊市中會比 QQQI 更抗跌。如果目的是在納指100 曝險之外額外賺取一筆現金流、且看好指數本身持續上漲，GPIQ 目前的實證表現優於 QQQI 與 BTCI；但若目的是尋求熊市下檔保護，GPIQ 並未展現出比同類產品更好的防禦性，不應把「NAV 持續成長」與「熊市抗跌」混為一談。
+</div>

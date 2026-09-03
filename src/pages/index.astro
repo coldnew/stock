@@ -1,0 +1,6 @@
+---
+import { getLatestReports } from '../data/reports';
+import ReportIndex from '../components/report/ReportIndex.astro';
+const reports = await getLatestReports('zh-TW');
+---
+<ReportIndex reports={reports} locale="zh-TW" />

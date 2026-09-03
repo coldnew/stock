@@ -1,0 +1,41 @@
+#!/usr/bin/env node
+import { readFile, readdir } from 'node:fs/promises';
+import { join } from 'node:path';
+
+const files = (await readdir('src/content/reports', { recursive: true })).filter((file) => file.endsWith('.mdx') || file.endsWith('.md'));
+const reports = [];
+for (const file of files) {
+  const content = await readFile(join('src/content/reports', file), 'utf8');
+  const frontmatter = content.match(/^---\n([\s\S]*?)\n---/m)?.[1] ?? '';
+  const get = (key) => frontmatter.match(new RegExp(`^${key}:\\s*(.+)$`, 'm'))?.[1]?.trim();
+  if (get('status') !== 'published' || get('isLatest') !== 'true') continue;
+  reports.push({ ticker: get('ticker'), locale: get('locale') });
+}
+
+const failures = [];
+for (const path of ['dist/index.html', 'dist/en/index.html']) {
+  let html;
+  try { html = await readFile(path, 'utf8'); } catch { failures.push(`${path}: homepage missing`); continue; }
+  const adSlots = (html.match(/class="ad-slot"/g) ?? []).length;
+  if (adSlots !== 1) failures.push(`${path}: expected 1 homepage ad slot, found ${adSlots}`);
+  if (!html.includes('G-2SXWWHGFPN')) failures.push(`${path}: missing GA4 measurement ID`);
+}
+for (const report of reports) {
+  const prefix = report.locale === 'en' ? 'en/' : '';
+  const path = join('dist', prefix, 'reports', report.ticker.toLowerCase(), 'index.html');
+  let html;
+  try { html = await readFile(path, 'utf8'); } catch { failures.push(`${path}: missing generated page`); continue; }
+  const adSlots = (html.match(/class="ad-slot"/g) ?? []).length;
+  if (adSlots !== 3) failures.push(`${path}: expected 3 ad slots, found ${adSlots}`);
+  if (!html.includes('G-2SXWWHGFPN')) failures.push(`${path}: missing GA4 measurement ID`);
+  if (!html.includes('rel="canonical"') && !html.includes('rel="alternate"')) failures.push(`${path}: missing SEO links`);
+  if (report.locale === 'en' && !html.includes('hreflang="zh-TW"')) failures.push(`${path}: missing Chinese hreflang`);
+}
+for (const path of ['dist/reports/JEPQ.html', 'dist/about.html', 'dist/privacy.html', 'dist/disclaimer.html']) {
+  try { await readFile(path); } catch { failures.push(`${path}: legacy compatibility file missing`); }
+}
+if (failures.length) {
+  console.error(failures.join('\n'));
+  process.exit(1);
+}
+console.log(`validated ${reports.length} published report builds and legacy URL compatibility`);

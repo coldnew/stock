@@ -1,0 +1,11 @@
+---
+const { locale = 'en' } = Astro.props;
+const isEnglish = locale === 'en';
+---
+
+<p class="ai-disclosure" role="note">
+  <span>{isEnglish ? 'AI-assisted writing · Human reviewed' : 'AI 協助撰寫 · 人工審閱'}</span>
+  <a href="https://digital-strategy.ec.europa.eu/en/policies/eu-icons-labelling-ai-generated-content" target="_blank" rel="noopener">
+    {isEnglish ? 'AI content notice' : 'AI 標示說明'}
+  </a>
+</p>

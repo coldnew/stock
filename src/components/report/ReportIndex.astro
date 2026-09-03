@@ -1,0 +1,40 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import AdSlot from './AdSlot.astro';
+import Analytics from './Analytics.astro';
+import AiDisclosure from './AiDisclosure.astro';
+
+const { reports, locale } = Astro.props as {
+  reports: CollectionEntry<'reports'>[];
+  locale: 'zh-TW' | 'en';
+};
+const isEnglish = locale === 'en';
+---
+<!doctype html>
+<html lang={locale}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>{isEnglish ? 'Stock Research Reports' : '股票分析報告'}</title>
+    <meta name="description" content={isEnglish ? 'Evidence-based research on income ETFs, option strategies, and selected equities.' : '收益型 ETF、選擇權策略與個股的實證分析報告。'} />
+    <link rel="canonical" href={`https://coldnew.github.io/stock/${isEnglish ? 'en/' : ''}`} />
+    <Analytics />
+  </head>
+  <body>
+    <header class="report-header">
+      <p class="eyebrow">{isEnglish ? 'Investment Research' : '投資研究'}</p>
+      <h1>{isEnglish ? 'Stock Research Reports' : '股票分析報告'}</h1>
+      <p>{isEnglish ? 'Evidence-based analysis of income strategies, downside risk, and market data.' : '收益策略、下檔風險與市場資料的實證分析。'}</p>
+      <AiDisclosure locale={locale} />
+    </header>
+    <AdSlot placement="top" />
+    <main class="report-list">
+      {reports.map((report) => <a class="report-card" href={`/stock/${isEnglish ? 'en/' : ''}reports/${report.data.ticker.toLowerCase()}/`}>
+        <span class="eyebrow">{report.data.ticker}</span>
+        <h2>{report.data.title}</h2>
+        <p>{report.data.description}</p>
+      </a>)}
+    </main>
+    <footer><span>{isEnglish ? 'For educational purposes only. Not financial advice.' : '僅供教育與資訊參考，不構成投資建議。'}</span><span class="footer-links"><a href="/stock/about.html">{isEnglish ? 'About' : '關於本站'}</a><a href="/stock/privacy.html">{isEnglish ? 'Privacy' : '隱私權政策'}</a><a href="/stock/disclaimer.html">{isEnglish ? 'Disclaimer' : '免責聲明'}</a></span></footer>
+  </body>
+</html>

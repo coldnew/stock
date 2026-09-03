@@ -3,6 +3,8 @@ import type { CollectionEntry } from 'astro:content';
 import AdSlot from './AdSlot.astro';
 import Analytics from './Analytics.astro';
 import AiDisclosure from './AiDisclosure.astro';
+import '../../styles/report-legacy.css';
+import '../../styles/report.css';
 
 const { reports, locale } = Astro.props as {
   reports: CollectionEntry<'reports'>[];
@@ -36,5 +38,6 @@ const isEnglish = locale === 'en';
       </a>)}
     </main>
     <footer><span>{isEnglish ? 'For educational purposes only. Not financial advice.' : '僅供教育與資訊參考，不構成投資建議。'}</span><span class="footer-links"><a href="/stock/about.html">{isEnglish ? 'About' : '關於本站'}</a><a href="/stock/privacy.html">{isEnglish ? 'Privacy' : '隱私權政策'}</a><a href="/stock/disclaimer.html">{isEnglish ? 'Disclaimer' : '免責聲明'}</a></span></footer>
+    <script is:inline src="/stock/report-interactions.js"></script>
   </body>
 </html>

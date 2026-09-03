@@ -71,7 +71,7 @@ draft of this repo without scaling it.
 ## The interactive layer
 
 Every report has one inline `<script>` before `</body>` (identical logic
-copy-pasted across reports — no shared JS file) doing five things:
+copy-pasted across reports — no shared JS file) doing six things:
 
 1. **Theme toggle** — top-right circular button. First visit follows
    `prefers-color-scheme`; once clicked, the choice is saved to
@@ -176,7 +176,24 @@ copy-pasted across reports — no shared JS file) doing five things:
    generator, then copy its output file's contents into the report
    verbatim (Read the generated file, paste that exact text) — never
    reconstruct it from memory or "close enough" while writing the
-   surrounding HTML.
+    surrounding HTML.
+
+6. **Price-timestamp timezone labeling + viewer-local conversion** — all
+    market data on this site is US data, but the audience reads in Taipei
+    (UTC+8), so a bare "9/2 收盤" is ambiguous (US Sep 2 close = Taipei
+    Sep 3 early morning). Two layers, both required in every report: (a)
+    the static `.price-date` label always names the source zone, e.g.
+    `2026-09-02 收盤（美東時間）` — never a bare date; (b) a
+    `localizePriceDate()` block in the shared script reads that date,
+    treats it as 16:00 America/New_York (resolving EST/EDT via `Intl`
+    iteration, not a hardcoded offset), and appends a
+    `<span class="price-date-local">（您當地 M/D, h:mm AM TZ）</span>`
+    rendered in the *viewer's* locale/timezone via `Intl.DateTimeFormat`.
+    The whole block is `try/catch`-guarded with an early return when
+    `window.Intl` is absent, so it can never break the other five behaviors.
+    When authoring a new report, keep both layers — don't drop the static
+    美東時間 label just because the JS span exists (no-JS readers still
+    need it), and don't hand-roll a different conversion.
 
 If you regenerate or hand-roll this script block for a new report, copy it
 verbatim from an existing report rather than rewriting it — it's had a few

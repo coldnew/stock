@@ -507,7 +507,7 @@
   <div class="price-block">
     <div class="price-current">$53.57</div>
     <div class="price-change up">+0.39%</div>
-    <div class="price-date">2026-09-02 收盤</div>
+    <div class="price-date">2026-09-02 收盤（美東時間）</div>
   </div>
 </div>
 
@@ -1061,6 +1061,38 @@
   backBtn.addEventListener('click', function () {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   });
+
+  /* ---------- price timestamp: source tz + viewer-local conversion ---------- */
+  (function localizePriceDate() {
+    var el = document.querySelector('.price-date');
+    if (!el || !window.Intl) return;
+    var m = /(\d{4})-(\d{2})-(\d{2})/.exec(el.textContent);
+    if (!m) return;
+    try {
+      var nyFmt = new Intl.DateTimeFormat('en-US', {
+        timeZone: 'America/New_York', hour12: false,
+        year: 'numeric', month: '2-digit', day: '2-digit',
+        hour: '2-digit', minute: '2-digit', second: '2-digit'
+      });
+      var y = +m[1], mo = +m[2], d = +m[3];
+      var guess = Date.UTC(y, mo - 1, d, 20, 0, 0);
+      for (var i = 0; i < 3; i++) {
+        var parts = {};
+        nyFmt.formatToParts(new Date(guess)).forEach(function (x) { parts[x.type] = x.value; });
+        var nyWallAsUTC = Date.UTC(+parts.year, +parts.month - 1, +parts.day, (+parts.hour) % 24, +parts.minute, +parts.second);
+        guess = Date.UTC(y, mo - 1, d, 16, 0, 0) - (nyWallAsUTC - guess);
+      }
+      var local = new Intl.DateTimeFormat(undefined, {
+        month: 'numeric', day: 'numeric',
+        hour: 'numeric', minute: '2-digit',
+        timeZoneName: 'short'
+      }).format(new Date(guess));
+      var span = document.createElement('span');
+      span.className = 'price-date-local';
+      span.textContent = '（您當地 ' + local + '）';
+      el.appendChild(span);
+    } catch (e) {}
+  })();
 
   /* ---------- collapsible sections + TOC ---------- */
   var body = document.body;

@@ -155,6 +155,19 @@
     border-left: 2pt solid var(--brand);
     background: var(--ivory);
   }
+  .report-shell { display: grid; grid-template-columns: 172px minmax(0, 1fr); gap: 30pt; align-items: start; }
+  .report-sidebar { position: sticky; top: 18pt; max-height: calc(100vh - 36pt); overflow-y: auto; padding-right: 12pt; border-right: 0.5pt solid var(--border); font-size: 10.5pt; }
+  .sidebar-heading { margin-bottom: 10pt; color: var(--near-black); font-size: 13pt; font-weight: 500; letter-spacing: 1pt; }
+  .sidebar-heading span { display: block; margin-top: 1pt; color: var(--stone); font-size: 9pt; font-weight: 400; letter-spacing: 0.5pt; }
+  .report-sidebar a { display: block; padding: 5pt 8pt; border-left: 1.5pt solid transparent; color: var(--stone); text-decoration: none; line-height: 1.4; }
+  .report-sidebar a:hover, .report-sidebar a.is-active { border-left-color: var(--brand); background: var(--ivory); color: var(--brand); }
+  .sidebar-current strong { display: block; font-weight: 500; }
+  .sidebar-current span { display: block; margin-top: 2pt; font-size: 9pt; color: var(--stone); }
+  .sidebar-history { margin-top: 15pt; }
+  .sidebar-history > p { margin: 0 0 4pt 8pt; color: var(--stone); font-size: 9pt; letter-spacing: 1pt; text-transform: uppercase; }
+  .sidebar-history a span { display: block; font-variant-numeric: tabular-nums; }
+  .sidebar-history a small { display: block; margin-top: 1pt; color: var(--stone); font-size: 9pt; }
+  .sidebar-history a.is-active small, .sidebar-history a.is-active span { color: var(--brand); }
   .report-history {
     margin-top: 24pt;
     padding-top: 10pt;
@@ -436,6 +449,15 @@
   svg .candle { cursor: crosshair; }
 
   @media (max-width: 640px) {
+    .report-shell { display: block; }
+    .report-sidebar { position: static; max-height: none; overflow-x: auto; overflow-y: hidden; margin-bottom: 18pt; padding: 0 0 8pt; border-right: 0; border-bottom: 0.5pt solid var(--border); white-space: nowrap; }
+    .sidebar-heading { display: inline-block; margin: 0 12pt 0 0; vertical-align: top; }
+    .sidebar-heading span { display: none; }
+    .report-sidebar a { display: inline-block; min-width: 100pt; border-left: 0; border-bottom: 1.5pt solid transparent; vertical-align: top; white-space: normal; }
+    .report-sidebar a:hover, .report-sidebar a.is-active { border-bottom-color: var(--brand); }
+    .sidebar-history { display: inline-flex; gap: 4pt; margin: 0; vertical-align: top; }
+    .sidebar-history > p { display: none; }
+    .sidebar-history a { min-width: 115pt; }
     table, .kami-table { display: block; overflow-x: auto; white-space: nowrap; }
   }
   .breadcrumb { margin-bottom: 10pt; }

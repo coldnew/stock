@@ -20,6 +20,7 @@ const base = Astro.site?.toString().replace(/\/$/, '') ?? 'https://coldnew.githu
 const iso = (date: Date) => date.toISOString().slice(0, 10);
 const datePath = `/reports/${ticker.toLowerCase()}/${iso(publishedAt)}/`;
 const latestPath = `${locale === 'en' ? '/en' : ''}/reports/${ticker.toLowerCase()}/`;
+const sitePrefix = locale === 'en' ? '/stock/en' : '/stock';
 const path = archive
   ? `${locale === 'en' ? '/en' : ''}${datePath}`
   : locale === 'en' ? `/en/reports/${ticker.toLowerCase()}/` : `/reports/${ticker.toLowerCase()}/`;
@@ -72,17 +73,24 @@ const alternatePath = archive
       </div>
     </div>
     <AdSlot placement="top" />
-    <main class="report-content"><Content /></main>
+    <div class="report-shell">
+      {history.length > 0 && <aside class="report-sidebar" aria-label={locale === 'en' ? 'Report editions' : '報告版本'}>
+        <div class="sidebar-heading">{ticker} <span>{locale === 'en' ? 'Editions' : '報告版本'}</span></div>
+        <a class:list={["sidebar-current", !archive && "is-active"]} href={`${sitePrefix}/reports/${ticker.toLowerCase()}/`}>
+          <strong>{locale === 'en' ? 'Current edition' : '目前版本'}</strong><span>{iso(latest?.data.publishedAt ?? publishedAt)}</span>
+        </a>
+        <div class="sidebar-history">
+          <p>{locale === 'en' ? 'History' : '歷史快照'}</p>
+          {history.map((item) => <a class:list={[archive && item.id === entry.id && "is-active"]} href={`${sitePrefix}/reports/${ticker.toLowerCase()}/${iso(item.data.publishedAt)}/`}>
+            <span>{iso(item.data.publishedAt)}</span><small>{item.data.title}</small>
+          </a>)}
+        </div>
+      </aside>}
+      <main class="report-content"><Content /></main>
+    </div>
     <AdSlot placement="bottom" />
     <AdSlot placement="smartlink" />
     {archive && latest && <p class="archive-banner"><a href={`${base}${latestPath}`}>{locale === 'en' ? 'View the current edition' : '查看最新版報告'} →</a></p>}
-    {history.length > 0 && <section class="report-history" aria-labelledby="report-history-title">
-      <h2 id="report-history-title">{locale === 'en' ? 'Report history' : '歷史版本'}</h2>
-      <p>{locale === 'en' ? 'Earlier dated editions are preserved as snapshots for comparison.' : '過往日期版本會保留為快照，方便比較資料與結論如何變化。'}</p>
-      <ul>
-        {history.map((item) => <li><a href={`${locale === 'en' ? '/stock/en' : '/stock'}/reports/${ticker.toLowerCase()}/${iso(item.data.publishedAt)}/`}>{iso(item.data.publishedAt)} · {item.data.title}</a></li>)}
-      </ul>
-    </section>}
     <nav class="related-report">
       <h2>{locale === 'en' ? 'Related reports' : '延伸閱讀'}</h2>
       {reports.filter((item) => item.id !== entry.id).slice(0, 8).map((item) => <a href={`${locale === 'en' ? '/stock/en' : '/stock'}/reports/${item.data.ticker.toLowerCase()}/`}>{item.data.title}</a>)}

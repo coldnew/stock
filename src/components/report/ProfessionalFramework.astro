@@ -1,0 +1,127 @@
+---
+const { ticker } = Astro.props;
+
+const research = {
+  ARCC: {
+    type: 'BDC',
+    essence: 'ARCC is a business development company: it lends to and invests in mostly middle-market companies, then distributes much of its net investment income. The economic engine is the spread between portfolio yield and funding cost, adjusted for fees, operating expenses, realized gains and credit losses.',
+    moat: 'Scale, sourcing relationships, underwriting history and access to multiple funding channels can improve deal selection and financing resilience. The moat is not permanent: it must be tested through non-accruals, realized losses, net asset value and recurring net investment income across a credit cycle.',
+    risks: 'The inverse case is a recession that raises defaults while funding costs remain high. Watch non-accruals, NAV per share, portfolio yield, debt-to-equity, interest coverage and dividend coverage. A distribution above recurring earnings is a warning, not evidence of safety.',
+    action: 'Treat ARCC as an income-and-credit allocation, not a bond substitute. Prefer a margin of safety to NAV and recurring earnings coverage; require a lower entry price when credit metrics deteriorate or the dividend depends on supplemental income.',
+    source: 'Ares Capital investor relations and SEC filings',
+    url: 'https://www.arescapitalcorp.com/'
+  },
+  CHPY: {
+    type: 'income ETF',
+    essence: 'CHPY should be understood as a packaged equity-income trade. The investor exchanges some upside participation and accepts strategy, fee and distribution variability in return for a targeted cash-distribution profile. The relevant unit of analysis is total return after distributions, not the payout rate in isolation.',
+    moat: 'Any edge comes from implementation: transparent rules, liquid options, disciplined collateral management and reasonable fees. It is a process advantage rather than a durable business moat. Validate it through NAV total return, benchmark-relative upside capture and distribution composition.',
+    risks: 'The inverse case is a flat or falling market in which option premium is insufficient to offset equity losses, or a strong rally in which the overlay sells away too much upside. Monitor NAV, premium/discount, bid-ask spread, realized volatility, option coverage and return of capital.',
+    action: 'Use only when the distribution objective is more important than maximum compounding and the investor understands that distributions can include capital. Compare with an unmodified equity ETF on the same total-return basis before adding exposure.',
+    source: 'Issuer prospectus, fact sheet and SEC filings',
+    url: 'https://www.sec.gov/edgar/search/'
+  },
+  DGRO: {
+    type: 'dividend-growth ETF',
+    essence: 'DGRO is a rules-based portfolio of companies selected for a record of growing dividends and the ability to support those dividends. Its value proposition is quality and shareholder distributions, while its opportunity cost is lower exposure to firms that reinvest all cash for growth.',
+    moat: 'The fund itself has no corporate moat; the portfolio process is the product. The process is credible only if dividend growth is accompanied by earnings growth, conservative payout ratios and acceptable sector diversification. A rising payout funded by debt or shrinking capital investment would falsify the thesis.',
+    risks: 'The inverse case is that the dividend screen tilts toward mature sectors, misses emerging winners or buys quality at excessive valuations. Track sector weights, top holdings, payout ratios, earnings revisions, valuation spread versus a broad-market ETF and the fund’s tracking difference.',
+    action: 'DGRO is best treated as a diversified equity core or quality-income sleeve, not as a high-yield substitute. Add in stages when valuation is reasonable and earnings quality remains intact; do not chase a yield that is low because the price is high.',
+    source: 'iShares DGRO fund page and prospectus',
+    url: 'https://www.ishares.com/us/products/264623/ishares-core-dividend-growth-etf'
+  },
+  GPIX: {
+    type: 'covered-call ETF',
+    essence: 'GPIX combines S&P 500 exposure with an option-income overlay. The portfolio owns the underlying equity risk while option premium can fund distributions. The trade-off is explicit: cash-flow visibility may improve, but upside capture can fall and distributions are not the same as economic return.',
+    moat: 'The only durable advantage is execution quality: low friction, liquid options, clear rules and honest reporting of distribution sources. Test the strategy against the S&P 500 by NAV total return, upside capture, downside capture and maximum drawdown across both rallies and selloffs.',
+    risks: 'The inverse case is a long bull market where calls are repeatedly exercised, or a drawdown where premium only partly cushions the equity loss. Monitor NAV, distribution composition, option notional, expense ratio, spread and premium/discount to NAV.',
+    action: 'Use GPIX for a defined income objective, not as a free yield enhancement. A reasonable entry requires an acceptable valuation and a distribution supported by realized income rather than persistent return of capital.',
+    source: 'PIMCO GPIX fund page, prospectus and SEC filings',
+    url: 'https://www.pimco.com/us/en/investments/etf/pimco-s-and-p-500-high-income-etf'
+  },
+  IQQ: {
+    type: 'international equity ETF',
+    essence: 'IQQ is a geographic diversification instrument. Its result is driven by the countries, sectors, currencies and valuation multiples inside the portfolio, not merely by the label “international.” The investor must ask what exposure is actually added relative to existing U.S. holdings.',
+    moat: 'The benefit is breadth and implementation efficiency rather than a moat. It is valuable when the index gives access to liquid foreign markets at a low tracking cost. Validate the claim through country concentration, sector overlap, tracking difference, turnover and the currency split of underlying holdings.',
+    risks: 'The inverse case is that foreign diversification adds political, currency, tax and governance risk without improving returns. Monitor the largest countries, currency movements, valuation relative to U.S. equities, withholding taxes and bid-ask spreads.',
+    action: 'Use as a deliberate geographic sleeve with a rebalancing rule. Avoid treating it as a short-term currency bet; add only when the diversification benefit is clear and the total cost is acceptable.',
+    source: 'Issuer index methodology, fact sheet and prospectus',
+    url: 'https://www.sec.gov/edgar/search/'
+  },
+  IWMI: {
+    type: 'international small-cap ETF',
+    essence: 'IWMI broadens the opportunity set to international small companies. That can improve exposure to domestic businesses outside mega-cap benchmarks, but the return stream is more sensitive to liquidity, local economic conditions, currencies and index turnover.',
+    moat: 'The product advantage is access and diversification, not a business moat. A credible case requires sufficient trading liquidity, broad country coverage and a tracking process that keeps implementation costs contained. Small-cap breadth is not automatically quality.',
+    risks: 'The inverse case is a liquidity shock in which small-cap spreads widen and the fund falls more than its large-cap benchmark. Watch country and sector weights, fund flows, spreads, tracking difference, currency exposure and the valuation premium or discount to developed-market large caps.',
+    action: 'Keep the position sized as a satellite allocation and rebalance rather than forecast. Require a long horizon and accept that observed price volatility can materially exceed the diversification benefit during stress.',
+    source: 'Issuer fund page, index methodology and prospectus',
+    url: 'https://www.sec.gov/edgar/search/'
+  },
+  MAGS: {
+    type: 'concentrated mega-cap ETF',
+    essence: 'MAGS packages exposure to a small group of mega-cap growth companies. The portfolio can compound strongly when earnings, margins and valuations expand together, but concentration means the investor is making a narrow judgment about technology leadership and capital spending.',
+    moat: 'The underlying companies may possess powerful network, distribution and intangible-asset advantages; the ETF itself is only a wrapper. Test the thesis through earnings growth, free-cash-flow conversion, competitive intensity, capex returns and the overlap with the investor’s existing holdings.',
+    risks: 'The inverse case is multiple compression, regulation, a failed technology cycle or a few companies becoming too large to maintain prior growth. Monitor top-ten weight, correlation among holdings, forward valuation, earnings revisions and the fund’s rebalancing rules.',
+    action: 'Use MAGS as a concentrated satellite, not a diversified core by default. Demand a valuation margin of safety and cap position size so a synchronized mega-cap drawdown does not determine the whole portfolio outcome.',
+    source: 'Roundhill MAGS fund page and prospectus',
+    url: 'https://www.roundhillinvestments.com/etf/mags'
+  },
+  QQQH: {
+    type: 'Nasdaq-100 income ETF',
+    essence: 'QQQH combines Nasdaq-100 equity exposure with an income-oriented option overlay. Its central question is whether the cash distribution compensates for foregone upside, fees and the possibility that equity losses exceed option income.',
+    moat: 'The strategy has no structural moat beyond transparent rules and competent implementation. Judge it against plain Nasdaq-100 exposure using NAV total return, upside capture, downside capture, distribution composition and drawdown—not yield alone.',
+    risks: 'The inverse case is a persistent technology rally that leaves the fund behind, followed by a sharp selloff that premium cannot fully cushion. Monitor option coverage, NAV, premium/discount, bid-ask spread, realized volatility and return of capital.',
+    action: 'Choose QQQH only for an explicit income objective and a willingness to trade some growth participation for cash flow. Compare the after-tax, after-fee total return with QQQ before committing capital.',
+    source: 'Issuer prospectus, fact sheet and SEC filings',
+    url: 'https://www.sec.gov/edgar/search/'
+  },
+  SGOV: {
+    type: 'Treasury-bill ETF',
+    essence: 'SGOV is a cash-management vehicle holding very short-dated U.S. Treasury bills. Its return is primarily the prevailing short-term Treasury yield less fees and small implementation effects; it is not a long-duration bond fund and should not be analyzed like an equity-income product.',
+    moat: 'The underlying credit exposure is backed by the U.S. government, while the practical advantages are liquidity, scale, transparency and operational convenience. The relevant test is tracking difference, spread, creation/redemption efficiency and whether the portfolio maintains its intended short maturity.',
+    risks: 'The inverse case is a rapid fall in short-term rates that reduces reinvestment income, or a liquidity/tax mismatch for the investor. Monitor weighted average maturity, 30-day SEC yield, expense ratio, premium/discount, spread and local tax treatment.',
+    action: 'SGOV fits liquidity reserves and short-horizon capital better than long-term growth objectives. Treat its yield as floating with policy rates, and keep an emergency buffer outside any strategy requiring market execution.',
+    source: 'iShares SGOV fund page, holdings and prospectus',
+    url: 'https://www.ishares.com/us/products/314116/ishares-0-3-month-treasury-bond-etf'
+  },
+  SPCX: {
+    type: 'SPAC exposure ETF',
+    essence: 'SPCX provides a basket of special-purpose acquisition company exposure. The outcome depends on deal quality, redemption behavior, dilution, trust assets, post-merger execution and liquidity. The theme is not equivalent to owning a diversified group of profitable operating companies.',
+    moat: 'Diversification and rule-based access can reduce single-deal risk, but they do not create economic value. The process is credible only if it controls concentration, fees, cash drag and exposure to poor sponsors. Examine the actual holdings rather than relying on the label.',
+    risks: 'The inverse case is a weak deal cycle with redemptions, dilution and falling post-merger prices. Monitor NAV, holdings concentration, cash and trust value, sponsor quality, deal announcements, bid-ask spreads and the gap between pre- and post-deal performance.',
+    action: 'Treat SPCX as a speculative satellite allocation with a predefined loss limit and review date. It is unsuitable as a cash substitute or core equity holding; add only when the portfolio can absorb illiquidity and thesis failure.',
+    source: 'Issuer prospectus, holdings file and SEC filings',
+    url: 'https://www.sec.gov/edgar/search/'
+  }
+};
+
+const item = research[ticker as keyof typeof research];
+if (!item) return;
+---
+
+<section class="professional-framework">
+  <h2>Investment Case</h2>
+  <p><strong>Product type:</strong> {item.type}. {item.essence}</p>
+
+  <h2>Moat and Falsification Test</h2>
+  <p>{item.moat}</p>
+
+  <h2>Inverse Case and Monitoring Dashboard</h2>
+  <p>{item.risks}</p>
+  <table>
+    <thead><tr><th>Question</th><th>What to monitor</th></tr></thead>
+    <tbody>
+      <tr><td>Is the return engine working?</td><td>NAV total return, benchmark-relative return and drawdown</td></tr>
+      <tr><td>Is the cash distribution durable?</td><td>Distribution composition, recurring income and coverage</td></tr>
+      <tr><td>Can the position be implemented?</td><td>Liquidity, bid-ask spread, premium/discount and fees</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Valuation, Entry Point, and Action</h2>
+  <p>{item.action} The chart above is a timing aid, not an estimate of intrinsic value. Reassess the thesis when the product rules, holdings, distribution policy or credit conditions change.</p>
+
+  <h2>Analyst Confidence</h2>
+  <p>Confidence in the structural analysis is moderate. Confidence in any short-term price path is low because rates, volatility, flows and market multiples can change faster than the underlying mandate. This distinction is deliberate: a sound framework does not eliminate uncertainty.</p>
+
+  <h2>Sources</h2>
+  <p><a href={item.url}>{item.source}</a>. The market chart uses the latest completed-session snapshot shown above. Verify the current prospectus, holdings, distributions and tax documents before acting. This report is educational and not personalized financial advice.</p>
+</section>

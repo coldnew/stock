@@ -4,6 +4,9 @@ import AdSlot from './AdSlot.astro';
 import MonetizationScripts from './MonetizationScripts.astro';
 import Analytics from './Analytics.astro';
 import AiDisclosure from './AiDisclosure.astro';
+import MarketTrend from './MarketTrend.astro';
+import MarketDecisionPanel from './MarketDecisionPanel.astro';
+import ProfessionalFramework from './ProfessionalFramework.astro';
 import { getReports } from '../../data/reports';
 import '../../styles/report-legacy.css';
 
@@ -72,6 +75,9 @@ const alternatePath = archive
         </div>
       </div>
     </div>
+{!archive && <MarketTrend ticker={ticker} locale={locale} />}
+{!archive && <MarketDecisionPanel ticker={ticker} locale={locale} reportType={entry.data.reportType} />}
+{!archive && locale === 'en' && <ProfessionalFramework ticker={ticker} />}
     <AdSlot placement="top" />
     <div class:list={["report-shell", history.length === 0 && "without-sidebar"]}>
       {history.length > 0 && <aside class="report-sidebar" aria-label={locale === 'en' ? 'Report editions' : '報告版本'}>

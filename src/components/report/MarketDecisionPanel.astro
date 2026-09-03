@@ -1,0 +1,32 @@
+---
+import { marketSnapshots } from '../../data/market';
+
+interface Props { ticker: string; locale: 'en' | 'zh-TW'; reportType: string; }
+const { ticker, locale, reportType } = Astro.props as Props;
+const snapshot = marketSnapshots[ticker.toUpperCase()];
+const rows = snapshot?.rows ?? [];
+const closes = rows.map(([, close]) => close);
+const latest = closes.at(-1);
+const first = closes[0];
+const high = closes.length ? Math.max(...closes) : undefined;
+const low = closes.length ? Math.min(...closes) : undefined;
+const change = first && latest ? (latest / first - 1) * 100 : undefined;
+const fromHigh = high && latest ? (latest / high - 1) * 100 : undefined;
+const format = (value: number | undefined) => value === undefined ? '—' : value.toFixed(2);
+const isIndustry = reportType === 'other' && ticker.toUpperCase() === 'DRAM';
+---
+{snapshot && latest !== undefined ? <section class="market-decision-panel">
+  <h2>{locale === 'en' ? 'Market Snapshot and Entry Discipline' : '市場快照與入場紀律'}</h2>
+  <table class="financial compact striped">
+    <thead><tr><th>{locale === 'en' ? 'Metric' : '指標'}</th><th>{locale === 'en' ? 'Reading' : '數值'}</th><th>{locale === 'en' ? 'How to use it' : '如何解讀'}</th></tr></thead>
+    <tbody>
+      <tr><td>{locale === 'en' ? 'Latest close' : '最近收盤'}</td><td>{snapshot.currency} {format(latest)}</td><td>{locale === 'en' ? `Latest completed session: ${rows.at(-1)?.[0]}` : `最近完成交易日：${rows.at(-1)?.[0]}`}</td></tr>
+      <tr><td>{locale === 'en' ? '3-month change' : '近三個月變化'}</td><td>{format(change)}%</td><td>{locale === 'en' ? 'Describes path, not expected return.' : '描述路徑，不代表預期報酬。'}</td></tr>
+      <tr><td>{locale === 'en' ? '3-month range' : '近三個月區間'}</td><td>{format(low)}–{format(high)}</td><td>{locale === 'en' ? 'Use as context for volatility and support/resistance.' : '用於理解波動與支撐／壓力，不是估值。'}</td></tr>
+      <tr><td>{locale === 'en' ? 'Drawdown from 3-month high' : '距近三個月高點'}</td><td>{format(fromHigh)}%</td><td>{locale === 'en' ? 'A drawdown is not automatically a margin of safety.' : '回撤不等於安全邊際。'}</td></tr>
+    </tbody>
+  </table>
+  <p>{isIndustry
+    ? (locale === 'en' ? 'DRAM is an industry proxy rather than a single-company valuation. Translate this market path into supplier inventory, contract pricing, capacity discipline, and free-cash-flow evidence before taking a position.' : 'DRAM 是產業代理價格，不是單一公司的估值。實際投資前，須將價格路徑對應至供應商庫存、合約報價、產能紀律與自由現金流。')
+    : (locale === 'en' ? 'Technical timing and business value are separate decisions. Use the chart to define a staged-entry zone and invalidation level; add only when the operating evidence and valuation provide a margin of safety.' : '技術面時機與企業價值是兩個不同決策。用圖表定義分段入場區與失效位階；只有在營運證據與估值共同提供安全邊際時才加碼。')}</p>
+</section> : null}

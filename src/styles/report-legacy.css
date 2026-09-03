@@ -398,6 +398,7 @@
   body { transition: background-color .2s ease, color .2s ease; }
 
   figure svg { display: block; border-radius: 6pt; box-shadow: var(--shadow); }
+  .chart-source { margin: -8pt 0 12pt; color: var(--stone); font-size: 9.5pt; text-align: right; }
 
   .theme-toggle, .back-to-top {
     position: fixed; z-index: 40; border-radius: 50%;

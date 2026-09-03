@@ -1,0 +1,18 @@
+---
+import TrendChart from './TrendChart.astro';
+import { marketSnapshots } from '../../data/market';
+
+interface Props { ticker: string; locale: 'en' | 'zh-TW'; }
+const { ticker, locale } = Astro.props as Props;
+const snapshot = marketSnapshots[ticker.toUpperCase()];
+const rows = snapshot?.rows ?? [];
+const sampleIndexes = rows.length > 7 ? [0, 5, 10, 15, 20, 25, rows.length - 1] : rows.map((_, index) => index);
+const sampled = sampleIndexes.map((index) => rows[index]).filter(Boolean);
+const labels = sampled.map(([date]) => date.slice(5));
+const values = sampled.map(([, close]) => close);
+const title = locale === 'en' ? `${ticker} closing-price trend (3-month snapshot)` : `${ticker} 收盤價趨勢（近三個月快照）`;
+---
+{snapshot && values.length > 1 ? <>
+  <TrendChart title={title} unit="$" labels={labels} values={values} />
+  <p class="chart-source">{locale === 'en' ? 'Source: Yahoo Finance chart data; latest completed session: ' : '資料來源：Yahoo Finance 行情資料；最近完成交易日：'}{rows.at(-1)?.[0]}.</p>
+</> : <p class="chart-source">{locale === 'en' ? 'Market chart unavailable for this report type.' : '此報告類型目前沒有可用的市場圖表。'}</p>}

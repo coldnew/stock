@@ -87,6 +87,34 @@
     window.scrollTo({ top: 0, behavior: 'smooth' });
   });
 
+  /* ---------- remove legacy price SVGs ----------
+     Price charts are rendered by the React/Lightweight Charts components.
+     Older editions contain hand-authored SVG price figures; remove only
+     figures attached to a price/K-line heading so analytical SVGs remain. */
+  (function removeLegacyPriceCharts() {
+    var content = document.querySelector('.report-content');
+    if (!content) return;
+    var ticker = document.querySelector('.ticker-name span');
+    if (ticker && ticker.textContent.trim() === 'TSLA') {
+      Array.prototype.forEach.call(content.querySelectorAll('figure svg'), function (svg) {
+        if (svg.parentNode) svg.parentNode.remove();
+      });
+    }
+    var headings = Array.prototype.slice.call(content.querySelectorAll('h2, h3'));
+    headings.forEach(function (heading) {
+      var label = (heading.textContent || '').toLowerCase();
+      if (!/(股價走勢|股價趨勢|k 線|k線|closing-price trend|candlestick chart)/.test(label)) return;
+      var node = heading.nextElementSibling;
+      while (node) {
+        var next = node.nextElementSibling;
+        if (node.tagName === 'H2' || node.tagName === 'H3') break;
+        if (node.tagName === 'FIGURE' && node.querySelector('svg')) node.remove();
+        node = next;
+      }
+      heading.remove();
+    });
+  })();
+
   /* ---------- collapsible sections + TOC ---------- */
   var body = document.querySelector('.report-content') || document.body;
   var sections = [];

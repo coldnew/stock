@@ -171,6 +171,23 @@
   .sidebar-history a span { display: block; font-variant-numeric: tabular-nums; }
   .sidebar-history a small { display: block; margin-top: 1pt; color: var(--stone); font-size: 9pt; }
   .sidebar-history a.is-active small, .sidebar-history a.is-active span { color: var(--brand); }
+
+  /* Keep the edition navigator independent from the document flow, like the
+     persistent navigation rail in a Fumadocs Docs Layout. This prevents a
+     top ad or a long report from moving it away from the viewport's sidebar
+     position, while the report body remains centered between both rails. */
+  @media (min-width: 1181px) {
+    .report-shell:not(.without-sidebar) { display: block; }
+    .report-shell:not(.without-sidebar) .report-sidebar {
+      position: fixed;
+      top: 50%;
+      left: max(16px, calc(50% - 410px - 190px));
+      width: 172px;
+      transform: translateY(-50%);
+      z-index: 30;
+    }
+    .report-shell:not(.without-sidebar) .report-content { max-width: 100%; }
+  }
   .report-history {
     margin-top: 24pt;
     padding-top: 10pt;

@@ -323,6 +323,8 @@
   .legacy-candlestick { display: none; }
   .lightweight-candlestick-chart { width: 100%; margin: 12pt 0; overflow: hidden; }
   .lightweight-candlestick-chart > div { width: 100%; }
+  .lightweight-price-chart { width: 100%; margin: 12pt 0; overflow: hidden; }
+  .lightweight-price-chart > div { width: 100%; }
   .lightweight-candlestick-caption { margin: 2pt 0 0; color: var(--stone); font-size: 10pt; text-align: center; }
   .chart-attribution { display: block; margin-top: 3pt; color: var(--stone); font-size: 8pt; text-align: right; }
   figcaption {

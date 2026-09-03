@@ -15,7 +15,7 @@ status: draft
 
 import AdSlot from '../../../../components/report/AdSlot.astro';
 import Disclosure from '../../../../components/report/Disclosure.astro';
-import TrendChart from '../../../../components/report/TrendChart.astro';
+import ClosePriceChart from '../../../../components/report/ClosePriceChart';
 
 ## AI Research Bias Awareness
 
@@ -36,7 +36,7 @@ Apple is a global hardware-and-services platform. Customers pay for devices, but
 
 The market-cap check is $324.96 × 14.58B shares = $4.74T, a 0.04% difference from the reported figure. The valuation check is $324.96 ÷ $8.72 = 37.27x P/E and $1.08 ÷ $324.96 = 0.33% dividend yield. These are calculated outputs, not forecasts.
 
-<TrendChart title="AAPL closing-price trend (selected recent sessions)" unit="$" labels={["7/21", "7/24", "7/28", "8/1", "8/6", "8/13", "8/19", "8/26", "9/1", "9/2"]} values={[327.74, 333.02, 340.08, 308.91, 312.41, 305.26, 316.83, 313.45, 325.13, 324.96]} />
+<ClosePriceChart client:load ticker="AAPL" dates={["2026-07-21", "2026-07-24", "2026-07-28", "2026-08-01", "2026-08-06", "2026-08-13", "2026-08-19", "2026-08-26", "2026-09-01", "2026-09-02"]} values={[327.74, 333.02, 340.08, 308.91, 312.41, 305.26, 316.83, 313.45, 325.13, 324.96]} />
 
 The chart shows a sharp post-earnings reset followed by recovery into the latest close. It is a timing aid, not a prediction. The full OHLC candlestick chart remains in the Traditional Chinese edition; both should be read against the same 2026-09-02 cutoff.
 

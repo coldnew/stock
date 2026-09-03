@@ -74,14 +74,12 @@
 
   /* ========== HEADER ========== */
   .report-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
+    display: block;
     margin-bottom: var(--rhythm-module);
     padding-bottom: 10pt;
     border-bottom: 0.5pt solid var(--border);
   }
-  .ticker-block { flex: 1; }
+  .ticker-block { min-width: 0; }
   .ticker-eyebrow {
     display: inline-flex;
     align-items: center;
@@ -116,7 +114,7 @@
   }
   .price-block {
     text-align: right;
-    padding-top: 4pt;
+    margin-top: 8pt;
   }
   .price-current {
     font-family: var(--serif);

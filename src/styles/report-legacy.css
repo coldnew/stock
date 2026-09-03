@@ -301,10 +301,10 @@
     break-inside: avoid;
   }
   .legacy-candlestick { display: none; }
-  .mui-candlestick-chart { width: 100%; margin: 12pt 0; overflow: hidden; }
-  .mui-candlestick-chart > div { width: 100%; }
-  .mui-candlestick-chart canvas { max-width: 100%; }
-  .mui-candlestick-caption { margin: 2pt 0 0; color: var(--stone); font-size: 10pt; text-align: center; }
+  .lightweight-candlestick-chart { width: 100%; margin: 12pt 0; overflow: hidden; }
+  .lightweight-candlestick-chart > div { width: 100%; }
+  .lightweight-candlestick-caption { margin: 2pt 0 0; color: var(--stone); font-size: 10pt; text-align: center; }
+  .chart-attribution { display: block; margin-top: 3pt; color: var(--stone); font-size: 8pt; text-align: right; }
   figcaption {
     font-size: 11pt;
     color: var(--stone);

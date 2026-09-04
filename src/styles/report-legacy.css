@@ -59,6 +59,13 @@
     body { max-width: 210mm; margin: 0 auto; padding: 16mm 18mm 18mm 18mm; }
   }
 
+  /* The web layout has a navigation rail and a reading column. Keep the
+     A4-width constraint for print, but give the screen layout enough room for
+     both columns, like the Fumadocs docs grid. */
+  @media screen and (min-width: 641px) {
+    body { max-width: 1180px; padding: 32px 36px 48px; }
+  }
+
   body {
     color: var(--near-black);
     font-family: var(--serif);
@@ -181,10 +188,8 @@
   .sidebar-group-items a small { display: block; margin-top: 1pt; color: var(--stone); font-size: 9pt; white-space: normal; }
   .sidebar-group-items a.is-active small, .sidebar-group-items a.is-active span { color: var(--brand); }
 
-  /* Keep the edition navigator independent from the document flow, like the
-     persistent navigation rail in a Fumadocs Docs Layout. This prevents a
-     top ad or a long report from moving it away from the viewport's sidebar
-     position, while the report body remains centered between both rails. */
+  /* The navigation rail stays in the grid and sticks to the viewport while
+     the report column keeps its own readable width. */
   @media (min-width: 1181px) {
     .report-shell:not(.without-sidebar) { display: grid; }
     .report-shell:not(.without-sidebar) .report-sidebar { position: sticky; top: 18pt; }

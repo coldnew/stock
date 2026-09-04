@@ -329,6 +329,22 @@
   .candlekit-chart-canvas { width: 100%; height: 420px; }
   .candlekit-chart-loading { min-height: 420px; display: grid; place-items: center; color: var(--stone); border: 1px solid var(--line); }
   .candlekit-chart canvas { max-width: 100%; }
+  .x-image-gallery { margin: 16pt 0 22pt; }
+  .x-image-gallery-frame { position: relative; overflow: hidden; border: 1px solid var(--line); border-radius: 10pt; background: #161616; }
+  .x-image-gallery-track { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; overscroll-behavior-x: contain; }
+  .x-image-gallery-track::-webkit-scrollbar { display: none; }
+  .x-image-gallery-slide { flex: 0 0 100%; display: grid; place-items: center; min-width: 100%; aspect-ratio: 16 / 9; scroll-snap-align: start; background: #161616; }
+  .x-image-gallery-slide img { display: block; width: 100%; height: 100%; object-fit: contain; }
+  .x-image-gallery-arrow { position: absolute; z-index: 1; top: 50%; width: 30pt; height: 30pt; transform: translateY(-50%); border: 0; border-radius: 50%; color: #fff; background: #1b365dcc; font: 28pt/20pt Georgia, serif; cursor: pointer; }
+  .x-image-gallery-arrow:disabled { opacity: .28; cursor: default; }
+  .x-image-gallery-arrow-prev { left: 8pt; }
+  .x-image-gallery-arrow-next { right: 8pt; }
+  .x-image-gallery-controls { display: flex; align-items: center; justify-content: center; gap: 10pt; margin-top: 8pt; }
+  .x-image-gallery-dots { display: flex; gap: 5pt; }
+  .x-image-gallery-dots button { width: 7pt; height: 7pt; padding: 0; border: 0; border-radius: 50%; background: var(--line); cursor: pointer; }
+  .x-image-gallery-dots button.is-active { background: var(--brand); transform: scale(1.25); }
+  .x-image-gallery-count, .x-image-gallery figcaption { color: var(--stone); font: 10.5pt/1.5 system-ui, sans-serif; }
+  .x-image-gallery figcaption { margin-top: 7pt; text-align: center; }
   .chart-summary { display: flex; flex-wrap: wrap; justify-content: center; gap: 8pt 18pt; margin: 3pt 0 8pt; color: var(--stone); font-size: 9pt; }
   .chart-summary strong { color: var(--ink); font-variant-numeric: tabular-nums; }
   .chart-summary .positive { color: #3A7A4E; }

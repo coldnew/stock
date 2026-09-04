@@ -16,6 +16,7 @@ status: published
 import AdSlot from '../../../../components/report/AdSlot.astro';
 import Disclosure from '../../../../components/report/Disclosure.astro';
 import CandlestickChart from '../../../../components/report/CandlestickChart';
+import XImageGallery from '../../../../components/report/XImageGallery';
 
 ## AI 研究偏見自覺
 
@@ -25,9 +26,14 @@ import CandlestickChart from '../../../../components/report/CandlestickChart';
 
 ### 原始圖片
 
-![S.E. Robinson, Jr. 分享的 Cybercab 圖片：車輛在廠區測試環境中展示](https://pbs.twimg.com/media/HRVMMYVW0AAcgwL.jpg)
+<XImageGallery client:load locale="zh-TW" sourceUrl="https://x.com/zhongwen2005/status/2095686878930567388?s=20" images={[
+  {src: '/stock/media/tsla/cybercab-gallery/01.jpg', alt: 'Cybercab 圖片一：車輛外觀與測試環境'},
+  {src: '/stock/media/tsla/cybercab-gallery/02.jpg', alt: 'Cybercab 圖片二：車輛側面與周邊環境'},
+  {src: '/stock/media/tsla/cybercab-gallery/03.jpg', alt: 'Cybercab 圖片三：Cybercab 車內與產品展示'},
+  {src: '/stock/media/tsla/cybercab-gallery/04.jpg', alt: 'Cybercab 圖片四：車輛細節與展示畫面'},
+]} />
 
-圖片來源：[S.E. Robinson, Jr. 的 X 貼文](https://x.com/SERobinsonJr/status/2095672426122158312)，圖片原始檔由 X 貼文提供，作者與貼文連結保留 attribution。
+圖片來源：[大趙的 X 貼文](https://x.com/zhongwen2005/status/2095686878930567388?s=20)，貼文文字為「Really beautiful」。四張圖片保存於本站，並保留原始貼文 attribution；圖片本身只能作為產品展示證據，不能替代安全、監管或營運數據。
 
 ### 搭配影片：完整乘客體驗
 
@@ -132,6 +138,7 @@ Cybercab 圖片與 App 更新提高了 Tesla 自駕產品化的可信度，但�
 - [Tesla Owners Silicon Valley X 影片貼文](https://x.com/teslaownersSV/status/2095686116170985746?s=20)，2026-09-04 取得；約 141 秒乘客視角城市道路行程，影片內嵌使用 X 公開影片來源。
 - [X 貼文連結的 Elon Chron 長文](https://x.com/i/article/2094981857817309185)，2026-09-03；用於核對 App、UI 與 Robotaxi 網路合作表單描述。
 - [Cybercab 圖片原始檔](https://pbs.twimg.com/media/HRVMMYVW0AAcgwL.jpg)，由上述 X 貼文的公開附件提供。
+- [大趙 X 貼文的四張 Cybercab 圖片](https://x.com/zhongwen2005/status/2095686878930567388?s=20)，2026-09-04；本站以左右滑動畫廊呈現，圖片檔案保存於本站。
 - [Tesla Q2 2026 股東更新](https://ir.tesla.com/_flysystem/s3/sec/000162828026049213/tsla-20260722-gen.pdf)，2026-07-22。
 - [Tesla Q2 2026 Form 10-Q](https://www.sec.gov/Archives/edgar/data/1318605/000162828026049270/tsla-20260630.htm)，2026-07-23。
 - [TSLA 歷史行情](https://query1.finance.yahoo.com/v8/finance/chart/TSLA?range=1y&interval=1d)，最近完整資料至 2026-09-03；圖表由本站 CandleKit 元件繪製。

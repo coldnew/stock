@@ -68,6 +68,8 @@ This is a Codex-only hand-written skill kept under `codex-skills/` for simple in
 - Prefer concrete numbers and mechanisms over adjectives.
 - Use tables when they reduce cognitive load: assets, segments, failure paths, management decisions, scenario valuations, action bands.
 - Write in clear investor prose. A good memo should be understandable after one read and useful after one month.
+- Keep the report reader-facing: include only facts, interpretation, uncertainty, and decision-relevant evidence. Never expose production or implementation notes such as local file paths, downloaded-asset details, MIME types, codec names (for example H.264/AAC), responsive/mobile playback notes, component names, build details, or statements that media was saved to the site.
+- Before publishing, perform a reader-value pass on every paragraph and source annotation. Delete any sentence that explains how the site stores, renders, or plays an asset unless it changes the investment conclusion or is required for a legal attribution.
 - Keep memorable formulations, but never let rhetoric outrun evidence.
 - Avoid hiding behind vague labels such as "wait and see" without specifying the price or event that would change the recommendation.
 

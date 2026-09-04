@@ -13,14 +13,21 @@ import '../../styles/report-legacy.css';
 const { entry, archive = false } = Astro.props;
 const { Content } = await render(entry);
 const { ticker, locale, title, description, publishedAt, updatedAt, dataAsOf, translationKey, status } = entry.data;
+const iso = (date: Date) => date.toISOString().slice(0, 10);
 const reports = await getReports(locale);
 const publishedReports = reports.filter((item) => item.data.status === 'published');
 const latest = latestByTicker(publishedReports).get(`${locale}:${ticker}`);
 const history = publishedReports
   .filter((item) => item.data.ticker === ticker && item.id !== latest?.id)
   .sort((a, b) => b.data.publishedAt.valueOf() - a.data.publishedAt.valueOf());
+const historyGroups = [...history.reduce((groups, item) => {
+  const year = iso(item.data.publishedAt).slice(0, 4);
+  const group = groups.get(year) ?? [];
+  group.push(item);
+  groups.set(year, group);
+  return groups;
+}, new Map<string, typeof history>()).entries()];
 const base = Astro.site?.toString().replace(/\/$/, '') ?? 'https://coldnew.github.io/stock';
-const iso = (date: Date) => date.toISOString().slice(0, 10);
 const datePath = `/reports/${ticker.toLowerCase()}/${iso(publishedAt)}/`;
 const latestPath = `/reports/${ticker.toLowerCase()}/`;
 const sitePrefix = '/stock';
@@ -85,16 +92,23 @@ const tslaChart = ticker === 'TSLA'
     <AdSlot placement="top" />
     <div class:list={["report-shell", history.length === 0 && "without-sidebar"]}>
       {history.length > 0 && <aside class="report-sidebar" aria-label="報告版本">
-        <div class="sidebar-heading">{ticker} <span>報告版本</span></div>
-        <a class:list={["sidebar-current", !archive && "is-active"]} href={`${sitePrefix}/reports/${ticker.toLowerCase()}/`}>
-          <strong>目前版本</strong><span>{iso(latest?.data.publishedAt ?? publishedAt)}</span>
-        </a>
-        <div class="sidebar-history">
-          <p>歷史快照</p>
-          {history.map((item) => <a class:list={[archive && item.id === entry.id && "is-active"]} href={`${sitePrefix}/reports/${ticker.toLowerCase()}/${iso(item.data.publishedAt)}/`}>
-            <span>{iso(item.data.publishedAt)}</span><small>{item.data.title}</small>
-          </a>)}
-        </div>
+        <div class="sidebar-heading"><span class="sidebar-kicker">{ticker}</span><strong>報告版本</strong></div>
+        <nav class="sidebar-nav" aria-label={`${ticker} 報告版本`}>
+          <a class:list={["sidebar-current", !archive && "is-active"]} href={`${sitePrefix}/reports/${ticker.toLowerCase()}/`}>
+            <strong>目前版本</strong><span>{iso(latest?.data.publishedAt ?? publishedAt)}</span>
+          </a>
+          <div class="sidebar-history">
+            <p>歷史快照</p>
+            {historyGroups.map(([year, items], index) => <details class="sidebar-group" open={index === 0 || items.some((item) => item.id === entry.id)}>
+              <summary><span>{year}</span><small>{items.length} 篇</small></summary>
+              <div class="sidebar-group-items">
+                {items.map((item) => <a class:list={[archive && item.id === entry.id && "is-active"]} href={`${sitePrefix}/reports/${ticker.toLowerCase()}/${iso(item.data.publishedAt)}/`}>
+                  <span>{iso(item.data.publishedAt).slice(5)}</span><small>{item.data.title}</small>
+                </a>)}
+              </div>
+            </details>)}
+          </div>
+        </nav>
       </aside>}
       <main class="report-content"><Content /></main>
     </div>

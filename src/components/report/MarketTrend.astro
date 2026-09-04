@@ -1,10 +1,13 @@
 ---
 import CandlestickChart from './CandlestickChart';
+import NavTrendChart from './NavTrendChart';
 import { marketSnapshots } from '../../data/market';
+import { navSnapshots } from '../../data/nav';
 
 interface Props { ticker: string; locale?: 'zh-TW'; }
 const { ticker, locale } = Astro.props as Props;
 const snapshot = marketSnapshots[ticker.toUpperCase()];
+const navSnapshot = navSnapshots[ticker.toUpperCase()];
 const rows = snapshot?.rows ?? [];
 const dataUrl = `/stock/data/market/${ticker.toUpperCase()}.json`;
 const firstClose = rows[0]?.[4] ?? 0;
@@ -21,4 +24,5 @@ const low = rows.length ? Math.min(...rows.map((row) => row[3])) : 0;
     <span>最新收盤 <strong>{lastClose.toFixed(2)}</strong></span>
   </div>
   <p class="chart-source">資料來源：Yahoo Finance OHLC 行情資料；{rows.length} 個完成交易日，截止 {rows.at(-1)?.[0]}。</p>
+  {navSnapshot && <NavTrendChart client:load ticker={ticker.toUpperCase()} dataUrl={`/stock/data/nav/${ticker.toUpperCase()}.json`} source={navSnapshot.source} dataAsOf={navSnapshot.dataAsOf} />}
 </> : <p class="chart-source">此報告類型目前沒有可用的市場圖表。</p>}

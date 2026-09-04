@@ -12,6 +12,7 @@
     "build:check": "node scripts/validate-build.mjs",
     "report:publish": "node scripts/publish-report.mjs",
     "market:update": "node --experimental-strip-types scripts/update-market-data.mjs",
+    "nav:update": "node scripts/update-nav-data.mjs",
     "report:new": "node scripts/new-report.mjs",
     "preview": "astro preview"
   },

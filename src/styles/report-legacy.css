@@ -364,6 +364,26 @@
   .chart-summary strong { color: var(--ink); font-variant-numeric: tabular-nums; }
   .chart-summary .positive { color: #3A7A4E; }
   .chart-summary .negative { color: #C23B32; }
+  .nav-trend { margin: 18pt 0 22pt; padding: 14pt 16pt 11pt; border: 0.5pt solid var(--line); border-radius: 8pt; background: color-mix(in srgb, var(--ivory) 82%, var(--paper)); }
+  .nav-trend-loading { min-height: 64pt; display: grid; place-items: center; color: var(--stone); font-size: 9.5pt; }
+  .nav-trend-heading { display: flex; align-items: end; justify-content: space-between; gap: 12pt; }
+  .chart-kicker { display: block; color: var(--brand); font: 8pt/1.2 system-ui, sans-serif; letter-spacing: 1.4pt; text-transform: uppercase; }
+  .nav-trend h2 { margin: 2pt 0 0; font-size: 15pt; line-height: 1.25; }
+  .nav-trend-value { display: grid; justify-items: end; gap: 2pt; font-variant-numeric: tabular-nums; }
+  .nav-trend-value strong { color: var(--ink); font-size: 15pt; }
+  .nav-trend-value span { color: var(--stone); font: 8.5pt/1.2 system-ui, sans-serif; }
+  .nav-trend-canvas { position: relative; margin-top: 10pt; border-top: 0.5pt solid var(--line); border-bottom: 0.5pt solid var(--line); }
+  .nav-trend-canvas svg { width: 100%; height: auto; min-height: 180px; box-shadow: none; border-radius: 0; overflow: visible; }
+  .nav-grid { stroke: var(--line); stroke-width: 1; stroke-dasharray: 3 5; }
+  .nav-line { fill: none; stroke: var(--brand); stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; }
+  .nav-point { fill: var(--brand); opacity: 0; cursor: crosshair; transition: opacity .12s ease, r .12s ease; }
+  .nav-trend-canvas:hover .nav-point, .nav-point:focus { opacity: .42; }
+  .nav-point:hover { opacity: 1 !important; }
+  .nav-tooltip { position: absolute; top: 8pt; right: 8pt; display: grid; gap: 2pt; padding: 5pt 8pt; border-radius: 5pt; background: color-mix(in srgb, var(--ink) 92%, transparent); color: var(--paper); font: 8.5pt/1.2 system-ui, sans-serif; pointer-events: none; }
+  .nav-tooltip strong { font-variant-numeric: tabular-nums; }
+  .nav-tooltip em { margin-left: 4pt; color: #9ed6a8; font-style: normal; }
+  .nav-trend-caption { margin: 8pt 0 0; color: var(--stone); font-size: 9pt; line-height: 1.55; }
+  .nav-trend-caption a { margin-left: 4pt; color: var(--brand); }
   .lightweight-candlestick-caption { margin: 2pt 0 0; color: var(--stone); font-size: 10pt; text-align: center; }
   .chart-attribution { display: block; margin-top: 3pt; color: var(--stone); font-size: 8pt; text-align: right; }
   figcaption {
@@ -553,6 +573,12 @@
     .candlekit-chart { margin-top: 8pt; }
     .candlekit-chart-canvas, .candlekit-chart-loading { height: min(320px, 78vw); min-height: 250px; }
     .candlekit-chart .drawing-toolbar { max-width: 100%; overflow-x: auto; }
+    .nav-trend { padding: 11pt 10pt 9pt; }
+    .nav-trend-heading { align-items: start; }
+    .nav-trend h2 { font-size: 14pt; }
+    .nav-trend-value strong { font-size: 13pt; }
+    .nav-trend-canvas svg { min-height: 150px; }
+    .nav-tooltip { top: 5pt; right: 4pt; }
     .x-image-gallery-lightbox { padding: 42pt 12pt; }
     .x-image-gallery-lightbox-arrow { width: 28pt; height: 28pt; font-size: 24pt; }
     .x-image-gallery-lightbox-prev { left: 5pt; }

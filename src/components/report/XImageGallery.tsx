@@ -21,7 +21,16 @@ export default function XImageGallery({ images, sourceUrl, locale = 'en' }: Prop
     const next = Math.max(0, Math.min(index, images.length - 1));
     const track = trackRef.current;
     if (!track) return;
-    track.scrollTo({ left: next * track.clientWidth, behavior: 'smooth' });
+    const slide = track.querySelectorAll<HTMLButtonElement>('.x-image-gallery-slide')[next];
+    track.scrollTo({ left: slide?.offsetLeft ?? 0, behavior: 'smooth' });
+    setActive(next);
+  };
+
+  const updateActive = (track: HTMLDivElement) => {
+    const slides = Array.from(track.querySelectorAll<HTMLElement>('.x-image-gallery-slide'));
+    if (!slides.length) return;
+    const next = slides.reduce((closest, slide, index) =>
+      Math.abs(slide.offsetLeft - track.scrollLeft) < Math.abs(slides[closest].offsetLeft - track.scrollLeft) ? index : closest, 0);
     setActive(next);
   };
 
@@ -44,10 +53,7 @@ export default function XImageGallery({ images, sourceUrl, locale = 'en' }: Prop
     <figure className="x-image-gallery" aria-label={label}>
       <div className="x-image-gallery-frame">
         <button className="x-image-gallery-arrow x-image-gallery-arrow-prev" type="button" onClick={() => goTo(active - 1)} disabled={active === 0} aria-label={locale === 'zh-TW' ? '上一張圖片' : 'Previous image'}>‹</button>
-        <div className="x-image-gallery-track" ref={trackRef} onScroll={(event) => {
-          const target = event.currentTarget;
-          setActive(Math.round(target.scrollLeft / target.clientWidth));
-        }}>
+        <div className="x-image-gallery-track" ref={trackRef} onScroll={(event) => updateActive(event.currentTarget)}>
           {images.map((image, index) => (
             <button className="x-image-gallery-slide" type="button" onClick={() => { setActive(index); setZoomed(true); }} key={image.src} aria-label={`${image.alt}；點擊放大`}>
               <img src={image.src} alt={image.alt} loading={index === 0 ? 'eager' : 'lazy'} />

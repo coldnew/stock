@@ -80,6 +80,8 @@ Include at least two dated or clearly attributable source URLs. Separate observe
 
 The report is a research article, not a build log. Do not put implementation details in the body or ordinary source annotations: local asset paths, download or storage statements, MIME types, codec names such as H.264/AAC, responsive/mobile playback claims, component names, build/deployment status, or explanations of how an image/video is embedded. Describe what the media shows, why it matters, and its evidence limits. Keep only source attribution and legally necessary rights/context. Before publishing, scan the rendered prose for phrases such as “本站保存”、“本頁保存”、“方便手機播放”、“H.264”、“AAC”、“MP4” and remove them unless the user explicitly requested a technical artifact or the detail is material to the research claim.
 
+When a short metadata label must be bold in MDX, use an explicit `<strong>…</strong>` element (especially at the start of a paragraph) and verify the generated HTML contains `<strong>`. Do not assume `**label**` will render correctly in every content path.
+
 ### English Audience
 
 The English edition is for an international audience. Do not address readers as Taiwanese investors and do not introduce ROC, Taiwan withholding tax, Taiwan filing rules, or Taiwan-specific suitability assumptions unless the report is explicitly about that subject. Use internationally understandable terms, identify U.S. market conventions when relevant, and explain specialist terms such as daily reset, NAV erosion, modified capitalization weighting, or free-cash-flow conversion.

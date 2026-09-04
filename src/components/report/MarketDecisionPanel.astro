@@ -2,7 +2,7 @@
 import { marketSnapshots } from '../../data/market';
 
 interface Props { ticker: string; locale?: 'zh-TW'; reportType: string; }
-const { ticker, locale, reportType } = Astro.props as Props;
+const { ticker, reportType } = Astro.props as Props;
 const snapshot = marketSnapshots[ticker.toUpperCase()];
 const rows = snapshot?.rows ?? [];
 const closes = rows.map(([, , , , close]) => close);

@@ -33,7 +33,8 @@ for (const report of latestReports) {
   let html;
   try { html = await readFile(path, 'utf8'); } catch { failures.push(`${path}: missing generated page`); continue; }
   const adSlots = (html.match(/class="ad-slot"/g) ?? []).length;
-  if (adSlots !== 3) failures.push(`${path}: expected 3 ad slots, found ${adSlots}`);
+  const expectedAdSlots = report.ticker === 'TSLA' ? 5 : 3;
+  if (adSlots !== expectedAdSlots) failures.push(`${path}: expected ${expectedAdSlots} ad slots, found ${adSlots}`);
   if (!html.includes('G-2SXWWHGFPN')) failures.push(`${path}: missing GA4 measurement ID`);
   if (!html.includes('rel="canonical"') && !html.includes('rel="alternate"')) failures.push(`${path}: missing SEO links`);
   if (report.locale !== 'zh-TW') failures.push(`${path}: non-Traditional-Chinese report found`);

@@ -16,6 +16,7 @@ import AdSlot from '../../../../components/report/AdSlot.astro';
 import Disclosure from '../../../../components/report/Disclosure.astro';
 import CandlestickChart from '../../../../components/report/CandlestickChart';
 import XImageGallery from '../../../../components/report/XImageGallery';
+import XImageCompare from '../../../../components/report/XImageCompare';
 
 ## AI 研究偏見自覺
 
@@ -38,9 +39,9 @@ import XImageGallery from '../../../../components/report/XImageGallery';
 
 ### 價格截圖：Cybercab 與 Uber 的單次比較
 
-<XImageGallery client:load locale="zh-TW" sourceUrl="https://x.com/teslaflexx/status/2095692014750781852?s=20" images={[
-  {src: '/stock/media/tsla/cybercab-gallery/teslaflexx-uber-pricing-1.jpg', alt: 'TeslaFlexx 貼文中的 Cybercab 叫車畫面：顯示 Cybercab 車種與 19.35 美元車資'},
-  {src: '/stock/media/tsla/cybercab-gallery/teslaflexx-uber-pricing-2.jpg', alt: 'TeslaFlexx 貼文中的 Uber Priority 比較畫面：顯示 34.98 美元車資'},
+<XImageCompare client:load locale="zh-TW" sourceUrl="https://x.com/teslaflexx/status/2095692014750781852?s=20" images={[
+  {label: 'Cybercab', src: '/stock/media/tsla/cybercab-gallery/teslaflexx-uber-pricing-1.jpg', alt: 'TeslaFlexx 貼文中的 Cybercab 叫車畫面：顯示 Cybercab 車種與 19.35 美元車資'},
+  {label: 'Uber Priority', src: '/stock/media/tsla/cybercab-gallery/teslaflexx-uber-pricing-2.jpg', alt: 'TeslaFlexx 貼文中的 Uber Priority 比較畫面：顯示 34.98 美元車資'},
 ]} />
 
 [TeslaFlexx 的 X 貼文](https://x.com/teslaflexx/status/2095692014750781852?s=20)把同一組 Austin 行程畫面並列：Cybercab 畫面顯示車資 $19.35，另一張 Uber Priority 畫面顯示 $34.98；截圖同時顯示不同的等待／抵達時間。這是「產品可能以較低單次價格切入」的需求線索，不能直接當成 Cybercab 的單位經濟，因為截圖沒有提供完整行程距離、時間、動態加價、稅費、優惠、保險、清潔與遠端支援成本，也沒有證明兩次報價在同一秒、同一服務條件下產生。
@@ -118,6 +119,34 @@ import XImageGallery from '../../../../components/report/XImageGallery';
 
 **後續驗證清單：**觀察 v15 是否真的向 Austin 用戶推送、Robotaxi App 的服務時段是否延長、夜間行程是否可完成，以及官方是否披露每車每日付費里程、取消率、遠端介入與事故資料。若只有版本更新而沒有服務時段、完成率與成本資料，這則回覆只會提高產品成熟度的敘事可信度，不改變本文的基本面安全入場區間。
 
+### NextBigFuture：把無人里程、車隊與產能放在同一張檢查表
+
+[NextBigFuture 的 X 整理](https://x.com/nextbigfuture/status/2095727056382275592?s=20)在 Cybercab 亮相後，把幾個重要但性質不同的數字放在一起：作者稱 Tesla 無人 Robotaxi 累計里程約由 Q2 財報時的 38 萬英里增加至約 100 萬英里，每週約 15 萬英里；同時以 Texas 登記車輛約 420 台、Cybercab 產能最終每週 2,500 台、以及約 25,000–30,000 美元車隊售價等資訊，推論 Tesla 可能在 2027 年出現明顯 EPS 影響。貼文另把 Tesla 與 Waymo 的每週里程直接比較，推算若 Tesla 長期維持約 17% 的週增速，約 17–20 週後可能追上 Waymo。
+
+<XImageGallery client:load locale="zh-TW" sourceUrl="https://x.com/nextbigfuture/status/2095727056382275592?s=20" images={[
+  {src: '/stock/media/tsla/cybercab-gallery/nextbigfuture/01.png', alt: 'NextBigFuture 貼文中的 Tesla 年度安裝產能表：列出 Texas Cybercab 產能大於 125,000 台的整理'},
+  {src: '/stock/media/tsla/cybercab-gallery/nextbigfuture/02.png', alt: 'NextBigFuture 貼文中的累計付費 Robotaxi 里程圖與已宣布服務城市狀態表'},
+  {src: '/stock/media/tsla/cybercab-gallery/nextbigfuture/03.png', alt: 'Robotaxi Radar 的 Cybercab 目擊地點整理截圖，列出多個美國城市與州別'},
+]} />
+
+這組材料的投資價值，在於它把 Robotaxi 論文拆成三個可以逐步驗證的瓶頸：**軟體里程是否加速、車輛供給是否跟得上、以及服務區域能否把供給轉成付費里程**。但不能把三者相加後直接得到收入。累計里程是流量的累積值，不等於每台車每日利用率；登記數是法規／車籍資料，不等於正在服務的車；產能表是安裝能力整理，不等於已完成量產、交付或可合法營運的數量。
+
+#### 數字交叉檢查
+
+| 貼文主張 | 可與何者交叉核對 | 本文採用方式 |
+|---|---|---|
+| 無人里程約由 38 萬增加至 100 萬英里 | Tesla Q2 2026 財報／電話會議曾披露超過 38 萬英里；100 萬與 17% 週增速目前是貼文整理 | 100 萬列為待核對的社群數字，不放入估值；觀察 Tesla 下一次官方累計里程與週增速 |
+| Tesla 約每週 15 萬無人里程、Waymo 約 400–550 萬 | 兩家公司可能採用不同的城市、車型、付費／無人里程定義 | 只能作量級對照；不採用「17–20 週超越」為時間預測 |
+| Texas 登記約 420 台，包含 45 台 Cybercab | Texas 車輛登記／媒體抄錄可作外部交叉核對，但登記不等於上線 | 作為供給準備度線索，不當作有效車隊規模 |
+| Cybercab 每週最終 2,500 台、售價約 25,000–30,000 美元 | Tesla 投資人簡報、管理層歷史目標與正式售價公告 | 作為產能／成本假說；在官方量產數、售價、折舊與車隊合約出現前不納入 EPS |
+| 2027 年 Q3／Q4 對 EPS 有約 2 美元影響 | 作者的推算，非 Tesla 指引 | 不採用；要求先看到付費里程、毛利、CapEx、折舊與現金流的連續資料 |
+
+#### 「17% 週增速」不是可以外推的預測
+
+若只用算術檢查，38 萬英里在 5–6 週內增加到 100 萬，確實接近每週複合成長約 14%–21%；因此作者提出的約 17% 不是毫無根據的數學描述。然而，從低基期的部署期推算長期趨勢，會遇到服務區域、車隊供給、夜間可用性、充電、維修、遠端支援與監管限制。Waymo 也會持續增加里程，兩者的「每週里程」若不是同一口徑，就連追上時間的分子與分母都不一致。
+
+較嚴格的判讀是：這則整理支持「Tesla 的無人 Robotaxi 里程可能進入加速觀察期」，但還不能支持「Tesla 將在 20 週內超越 Waymo」或「Cybercab 會在 2027 年貢獻每股 2 美元」。真正要追蹤的不是累計曲線變陡，而是**每台車每日付費里程、付費時間占比、遠端介入率、事故／取消率、每英里貢獻毛利，以及新增車輛對現金流的回報**。在這些資料出現前，本文維持產品證據偏正面、財務證據不足的評級。
+
 ### 新增 X 線索：完整乘車實證、管理層持股變動與公開叫車時間
 
 #### Sawyer Merritt：完整乘車影片把產品體驗推進到可觀察流程
@@ -187,6 +216,8 @@ import XImageGallery from '../../../../components/report/XImageGallery';
 2. **不能上調的部分：** 不能僅因亮相提高 Robotaxi 收入、毛利、利用率、終端車隊規模或估值倍數假設。這些仍需要實際付費里程、每車每日行程、遠端介入率、事故紀錄、監管核准與量產成本。
 
 接下來 7–30 天，最有資訊價值的觀察順序是：**Austin 實際車隊數量 → 每車每日付費行程 → 無人駕駛與遠端介入紀錄 → 服務區域與監管核准 → 量產速度與每英里成本**。如果一個月後車隊仍停留在幾十台、付費里程沒有加速，這次亮相更接近行銷催化劑；如果上述指標同步改善，才足以把事件從產品證據升級為營運證據。
+
+<AdSlot placement="mid" />
 
 ### 官方資料新增的產品細節：這不是只有外觀的展示車
 
@@ -297,6 +328,8 @@ Rider Guide 還提醒，圖片與規格會依車輛配置、軟體版本與市�
 | 責任與保險 | NHTSA 明確指出 AV 責任與保險仍是政策問題 | 事故責任、保費、索賠與遠端支援成本會直接改變單位經濟 |
 
 故監管判斷應是：**制度方向比過去友善，但商業部署仍是逐州、逐城市、逐車型取得許可的累積過程。** 不能從「煞車踏板規則正在調整」跳躍到「Cybercab 可以在全美自由銷售與營運」。
+
+<AdSlot placement="mid" />
 
 ### 技術路線之爭：相機成本優勢對上感測器冗餘
 
@@ -485,6 +518,7 @@ Cybercab 從發表會 demo 進到「Robotaxi App 可叫車」，提高了 Tesla 
 - [David Moss：Cybercab Unbox Process 近距離影片](https://x.com/DavidMoss/status/2095679565251158046?s=20)，2026-09-04；影片只作製程與產品證據。
 - [TeslaFlexx：Cybercab 與 Uber 價格比較截圖](https://x.com/teslaflexx/status/2095692014750781852?s=20)，2026-09-04；單次截圖只作價格定位線索，不視為長期票價或單位經濟證據。
 - [Seti Park：Cybercab 無稀土馬達與 Tesla 專利解讀](https://x.com/seti_park/status/2095765863412707825?s=20)，2026-09-04；社群轉述與專利圖只作工程假說線索。
+- [NextBigFuture：Cybercab 亮相後的無人里程、車隊與產能整理](https://x.com/nextbigfuture/status/2095727056382275592?s=20)，2026-09-04；作者整理的數字與 EPS 推算作為社群研究線索，未視為 Tesla 指引或已驗證營運數據。
 - [Ashok Elluswamy：關於 Robotaxi 24/7 與 FSD v15 的 X 回覆](https://x.com/aelluswamy/status/2095761727828762689?s=20)，2026-09-04；回覆 @wholemars 的約略路線時間，未附正式版本說明、部署範圍或營運數據，不作發布承諾證據。
 - [原始上下文：@wholemars 關於整晚搭 Cybercab 的 X 貼文](https://x.com/wholemars/status/2095733456667824332)，2026-09-04；用於確認 Elluswamy 回覆中 `it` 所指的 Robotaxi 全天候可用性語境。
 - [WO2024097176A1：Tesla 磁鐵結構專利](https://patents.google.com/patent/WO2024097176A1/en)，2024-05-09 公開；專利申請不等同量產採用或商業化成果。

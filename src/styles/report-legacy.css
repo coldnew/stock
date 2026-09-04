@@ -360,6 +360,16 @@
   .x-image-gallery-lightbox-prev { left: 14pt; }
   .x-image-gallery-lightbox-next { right: 14pt; }
   .x-image-gallery-lightbox-count { position: fixed; bottom: 14pt; left: 50%; transform: translateX(-50%); color: #fff; font: 11pt/1.4 system-ui, sans-serif; }
+  .x-image-compare { margin: 16pt 0 22pt; }
+  .x-image-compare-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12pt; }
+  .x-image-compare-item { min-width: 0; overflow: hidden; border: 1px solid var(--line); border-radius: 10pt; background: #161616; }
+  .x-image-compare-label { padding: 7pt 10pt; color: #fff; background: #1b365c; font: 600 10.5pt/1.3 system-ui, sans-serif; text-align: center; }
+  .x-image-compare-item button { display: block; width: 100%; padding: 0; border: 0; background: #161616; cursor: zoom-in; }
+  .x-image-compare-item img { display: block; width: 100%; height: auto; aspect-ratio: 1 / 1; object-fit: contain; }
+  .x-image-compare figcaption { margin-top: 7pt; color: var(--stone); font: 10.5pt/1.5 system-ui, sans-serif; text-align: center; }
+  .x-image-compare-lightbox { position: fixed; z-index: 1000; inset: 0; display: grid; place-items: center; padding: 32pt 12pt; background: #080808ee; cursor: zoom-out; }
+  .x-image-compare-lightbox img { max-width: 96vw; max-height: 92vh; width: auto; height: auto; object-fit: contain; box-shadow: 0 10pt 40pt #0009; }
+  .x-image-compare-lightbox-close { position: fixed; z-index: 1; top: 14pt; right: 18pt; width: 32pt; height: 32pt; border: 0; border-radius: 50%; color: #fff; background: #1b365cdd; cursor: pointer; font: 25pt/27pt system-ui, sans-serif; }
   .chart-summary { display: flex; flex-wrap: wrap; justify-content: center; gap: 8pt 18pt; margin: 3pt 0 8pt; color: var(--stone); font-size: 9pt; }
   .chart-summary strong { color: var(--ink); font-variant-numeric: tabular-nums; }
   .chart-summary .positive { color: #3A7A4E; }
@@ -505,6 +515,8 @@
     text-decoration: none; border-left: 1.5pt solid var(--border);
     transition: color .15s ease, border-color .15s ease;
   }
+  .report-toc a[data-level="3"] { padding-left: 18pt; font-size: 9pt; }
+  .report-toc a[data-level="4"] { padding-left: 27pt; font-size: 8.5pt; }
   .report-toc a:hover { color: var(--near-black); }
   .report-toc a.active { color: var(--brand); border-left-color: var(--brand); font-weight: 500; }
   @media (max-width: 1180px) { .report-toc { display: none; } }
@@ -583,6 +595,8 @@
     .x-image-gallery-lightbox-arrow { width: 28pt; height: 28pt; font-size: 24pt; }
     .x-image-gallery-lightbox-prev { left: 5pt; }
     .x-image-gallery-lightbox-next { right: 5pt; }
+    .x-image-compare-grid { grid-template-columns: 1fr; gap: 10pt; }
+    .x-image-compare-item img { aspect-ratio: auto; }
     .ad-slot[data-placement="mid"] { min-height: 180pt; }
   }
   .breadcrumb { margin-bottom: 10pt; }

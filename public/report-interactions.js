@@ -83,7 +83,9 @@
     var shell = document.querySelector('.report-layout');
     var toggle = document.querySelector('[data-sidebar-toggle]');
     if (!shell || !toggle) return;
-    var SIDEBAR_KEY = 'report-sidebar-collapsed';
+    // Start open on layouts with enough room; keep a deliberate user choice.
+    // The versioned key resets the old collapsed-by-default state once.
+    var SIDEBAR_KEY = 'report-sidebar-collapsed-v2';
     function setCollapsed(collapsed) {
       shell.classList.toggle('sidebar-collapsed', collapsed);
       document.body.classList.toggle('report-sidebar-collapsed', collapsed);
@@ -95,7 +97,8 @@
     }
     var saved = null;
     try { saved = localStorage.getItem(SIDEBAR_KEY); } catch (e) {}
-    setCollapsed(saved === 'true');
+    var canShowBesideArticle = window.matchMedia('(min-width: 641px)').matches;
+    setCollapsed(saved === null ? !canShowBesideArticle : saved === 'true');
     toggle.addEventListener('click', function () {
       var collapsed = !shell.classList.contains('sidebar-collapsed');
       setCollapsed(collapsed);
@@ -183,18 +186,31 @@
     var toc = document.createElement('nav');
     toc.className = 'report-toc';
     toc.setAttribute('aria-label', '章節導覽');
-    sections.forEach(function (s) {
+    var usedIds = {};
+    var tocHeadings = Array.prototype.slice.call(body.querySelectorAll('h2, h3, h4'));
+    tocHeadings.forEach(function (heading, index) {
+      var level = Number(heading.tagName.slice(1));
+      var baseId = heading.id || heading.getAttribute('data-anchor') || ('section-' + (index + 1));
+      var id = baseId;
+      var suffix = 2;
+      while (usedIds[id] || document.querySelectorAll('#' + CSS.escape(id)).length > 1) {
+        id = baseId + '-' + suffix++;
+      }
+      usedIds[id] = true;
+      heading.id = id;
       var a = document.createElement('a');
-      a.href = '#' + s.id;
-      a.textContent = s.h2.textContent;
+      a.href = '#' + id;
+      a.dataset.level = String(level);
+      a.textContent = heading.textContent;
       toc.appendChild(a);
+      heading.dataset.tocId = id;
     });
     body.appendChild(toc);
 
     if (window.IntersectionObserver) {
       var io = new IntersectionObserver(function (entries) {
         entries.forEach(function (entry) {
-          var link = toc.querySelector('a[href="#' + entry.target.id + '"]');
+          var link = toc.querySelector('a[href="#' + CSS.escape(entry.target.id) + '"]');
           if (!link) return;
           if (entry.isIntersecting) {
             Array.prototype.forEach.call(toc.querySelectorAll('a'), function (l) { l.classList.remove('active'); });
@@ -202,7 +218,7 @@
           }
         });
       }, { rootMargin: '-10% 0px -70% 0px', threshold: 0 });
-      sections.forEach(function (s) { io.observe(s.h2); });
+      tocHeadings.forEach(function (heading) { io.observe(heading); });
     }
   }
 

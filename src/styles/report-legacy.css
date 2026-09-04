@@ -59,11 +59,8 @@
     body { max-width: 210mm; margin: 0 auto; padding: 16mm 18mm 18mm 18mm; }
   }
 
-  /* The web layout has a navigation rail and a reading column. Keep the
-     A4-width constraint for print, but give the screen layout enough room for
-     both columns, like the Fumadocs docs grid. */
   @media screen and (min-width: 641px) {
-    body { max-width: 1180px; padding: 32px 36px 48px; }
+    body { --report-sidebar-width: 268px; max-width: none; margin: 0; padding: 0; }
   }
 
   body {
@@ -160,13 +157,22 @@
     border-left: 2pt solid var(--brand);
     background: var(--ivory);
   }
-  .report-shell { display: grid; grid-template-columns: minmax(0, 188px) minmax(0, 1fr); gap: 30pt; align-items: start; }
+  .report-layout { position: relative; display: grid; grid-template-columns: 0 minmax(0, 1fr); align-items: start; min-height: 100vh; }
+  .report-layout.has-sidebar { grid-template-columns: var(--report-sidebar-width, 268px) minmax(0, 1fr); }
+  .report-layout.sidebar-collapsed { grid-template-columns: 0 minmax(0, 1fr); }
+  .report-main { width: 210mm; max-width: 100%; min-width: 0; margin: 0 auto; padding: 16mm 18mm 18mm; }
+  .report-shell { display: block; min-width: 0; }
   .report-shell.without-sidebar { display: block; }
   .report-content { min-width: 0; overflow-wrap: anywhere; }
   .report-content figure { max-width: 100%; overflow-x: auto; }
   .report-content img, .report-content svg { max-width: 100%; height: auto; }
   .report-content table { max-width: 100%; }
-  .report-sidebar { position: sticky; top: 18pt; max-height: calc(100vh - 36pt); overflow-y: auto; padding-right: 14pt; border-right: 0.5pt solid var(--border); font-size: 10.5pt; }
+  .report-sidebar { position: sticky; top: 0; z-index: 30; width: 100%; min-width: 0; height: 100vh; overflow: hidden; padding: 32px 14pt 32px 24px; border-right: 0.5pt solid var(--border); background: var(--parchment); font-size: 10.5pt; }
+  .report-sidebar-content { min-width: 0; height: 100%; max-height: none; overflow-y: auto; opacity: 1; transition: opacity .15s ease; }
+  .report-sidebar-toggle { position: fixed; z-index: 100; top: 34px; left: calc(var(--report-sidebar-width, 268px) - 34px); display: grid; place-items: center; width: 24pt; height: 28pt; padding: 0; border: 0.5pt solid var(--border); border-radius: 4pt; background: var(--parchment); color: var(--brand); cursor: pointer; font-size: 18pt; line-height: 1; transition: left .25s ease, background-color .15s ease; }
+  .report-sidebar-toggle:hover, .report-sidebar-toggle:focus-visible { background: var(--ivory); color: var(--near-black); outline: 2pt solid color-mix(in srgb, var(--brand) 35%, transparent); outline-offset: 1pt; }
+  .report-layout.sidebar-collapsed .report-sidebar { visibility: hidden; pointer-events: none; }
+  .report-layout.sidebar-collapsed .report-sidebar-toggle { left: 16px; }
   .sidebar-heading { display: flex; flex-direction: column; gap: 1pt; margin-bottom: 12pt; color: var(--near-black); font-size: 13pt; font-weight: 500; }
   .sidebar-heading .sidebar-kicker { color: var(--brand); font-size: 9pt; font-weight: 500; letter-spacing: 1.5pt; }
   .sidebar-heading strong { font-weight: 500; }
@@ -188,12 +194,6 @@
   .sidebar-group-items a small { display: block; margin-top: 1pt; color: var(--stone); font-size: 9pt; white-space: normal; }
   .sidebar-group-items a.is-active small, .sidebar-group-items a.is-active span { color: var(--brand); }
 
-  /* The navigation rail stays in the grid and sticks to the viewport while
-     the report column keeps its own readable width. */
-  @media (min-width: 1181px) {
-    .report-shell:not(.without-sidebar) { display: grid; }
-    .report-shell:not(.without-sidebar) .report-sidebar { position: sticky; top: 18pt; }
-  }
   .report-history {
     margin-top: 24pt;
     padding-top: 10pt;
@@ -523,8 +523,15 @@
     .ticker-name span { display: block; margin-top: 3pt; font-size: 12pt; color: var(--brand); letter-spacing: 1pt; }
     .ticker-sub { font-size: 11pt; line-height: 1.5; }
     .price-block { text-align: left; margin-top: 8pt; }
+    .report-layout { display: block; min-height: 0; }
+    .report-main { width: 100%; max-width: none; padding: 0; }
     .report-shell { display: block; width: 100%; }
-    .report-sidebar { position: static; max-height: none; overflow: visible; margin-bottom: 18pt; padding: 0 0 8pt; border-right: 0; border-bottom: 0.5pt solid var(--border); }
+    .report-sidebar { position: relative; inset: auto; width: 100%; min-width: 0; height: auto; margin-bottom: 18pt; padding: 0 0 8pt; border-right: 0; border-bottom: 0.5pt solid var(--border); background: transparent; visibility: visible; }
+    .report-sidebar-content { min-width: 0; max-height: none; overflow: visible; }
+    .report-sidebar-toggle { position: absolute; top: 0; left: auto; right: 0; border-left: 0.5pt solid var(--border); border-radius: 4pt; }
+    .report-layout.sidebar-collapsed .report-sidebar { height: 28pt; margin-bottom: 12pt; padding: 0; visibility: visible; pointer-events: auto; }
+    .report-layout.sidebar-collapsed .report-sidebar-content { display: none; }
+    .report-layout.sidebar-collapsed .report-sidebar-toggle { left: auto; right: 0; }
     .sidebar-heading { margin-bottom: 8pt; }
     .sidebar-nav { display: block; }
     .sidebar-history { margin-top: 10pt; }

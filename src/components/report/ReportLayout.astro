@@ -71,7 +71,31 @@ const tslaChart = ticker === 'TSLA'
       translationOfWork: translationKey, dateModifiedSource: iso(dataAsOf),
     })} />
   </head>
-  <body>
+  <body class:list={[history.length > 0 && "has-report-sidebar"]}>
+    <div class:list={["report-layout", history.length > 0 && "has-sidebar", history.length === 0 && "without-sidebar"]}>
+    {history.length > 0 && <aside class="report-sidebar" aria-label="報告版本">
+      <div class="report-sidebar-content" id="report-sidebar-content">
+        <div class="sidebar-heading"><span class="sidebar-kicker">{ticker}</span><strong>報告版本</strong></div>
+        <nav class="sidebar-nav" aria-label={`${ticker} 報告版本`}>
+          <a class:list={["sidebar-current", !archive && "is-active"]} href={`${sitePrefix}/reports/${ticker.toLowerCase()}/`}>
+            <strong>目前版本</strong><span>{iso(latest?.data.publishedAt ?? publishedAt)}</span>
+          </a>
+          <div class="sidebar-history">
+            <p>歷史快照</p>
+            {historyGroups.map(([year, items], index) => <details class="sidebar-group" open={index === 0 || items.some((item) => item.id === entry.id)}>
+              <summary><span>{year}</span><small>{items.length} 篇</small></summary>
+              <div class="sidebar-group-items">
+                {items.map((item) => <a class:list={[archive && item.id === entry.id && "is-active"]} href={`${sitePrefix}/reports/${ticker.toLowerCase()}/${iso(item.data.publishedAt)}/`}>
+                  <span>{iso(item.data.publishedAt).slice(5)}</span><small>{item.data.title}</small>
+                </a>)}
+              </div>
+            </details>)}
+          </div>
+        </nav>
+      </div>
+    </aside>}
+    {history.length > 0 && <button class="report-sidebar-toggle" type="button" data-sidebar-toggle aria-expanded="true" aria-controls="report-sidebar-content" aria-label="收起報告版本" title="收起報告版本"><span aria-hidden="true">‹</span></button>}
+    <main class="report-main">
     <nav class="breadcrumb"><a href="/stock/">← 報告總覽</a></nav>
     <div class="report-header">
       <div class="ticker-block">
@@ -90,28 +114,7 @@ const tslaChart = ticker === 'TSLA'
 {!archive && <MarketDecisionPanel ticker={ticker} locale={locale} reportType={entry.data.reportType} />}
 {tslaChart && archive && <CandlestickChart client:load locale={locale === 'zh-TW' ? 'zh-TW' : 'en'} dates={tslaChart.dates} data={tslaChart.data as [number, number, number, number][]} />}
     <AdSlot placement="top" />
-    <div class:list={["report-shell", history.length === 0 && "without-sidebar"]}>
-      {history.length > 0 && <aside class="report-sidebar" aria-label="報告版本">
-        <div class="sidebar-heading"><span class="sidebar-kicker">{ticker}</span><strong>報告版本</strong></div>
-        <nav class="sidebar-nav" aria-label={`${ticker} 報告版本`}>
-          <a class:list={["sidebar-current", !archive && "is-active"]} href={`${sitePrefix}/reports/${ticker.toLowerCase()}/`}>
-            <strong>目前版本</strong><span>{iso(latest?.data.publishedAt ?? publishedAt)}</span>
-          </a>
-          <div class="sidebar-history">
-            <p>歷史快照</p>
-            {historyGroups.map(([year, items], index) => <details class="sidebar-group" open={index === 0 || items.some((item) => item.id === entry.id)}>
-              <summary><span>{year}</span><small>{items.length} 篇</small></summary>
-              <div class="sidebar-group-items">
-                {items.map((item) => <a class:list={[archive && item.id === entry.id && "is-active"]} href={`${sitePrefix}/reports/${ticker.toLowerCase()}/${iso(item.data.publishedAt)}/`}>
-                  <span>{iso(item.data.publishedAt).slice(5)}</span><small>{item.data.title}</small>
-                </a>)}
-              </div>
-            </details>)}
-          </div>
-        </nav>
-      </aside>}
-      <main class="report-content"><Content /></main>
-    </div>
+    <div class="report-shell"><main class="report-content"><Content /></main></div>
     <AdSlot placement="bottom" />
     <AdSlot placement="smartlink" />
     {archive && latest && <p class="archive-banner"><a href={`${base}${latestPath}`}>查看最新版報告 →</a></p>}
@@ -120,6 +123,8 @@ const tslaChart = ticker === 'TSLA'
       {reports.filter((item) => item.id !== entry.id).slice(0, 8).map((item) => <a href={`/stock/reports/${item.data.ticker.toLowerCase()}/`}>{item.data.title}</a>)}
     </nav>
     <footer><span>僅供教育與資訊參考，不構成投資建議。 · Yen-Chin, Lee</span><span class="footer-links"><a href="/stock/about.html">關於本站</a><a href="/stock/privacy.html">隱私權政策</a><a href="/stock/disclaimer.html">免責聲明</a></span></footer>
+    </main>
+    </div>
     <script is:inline src="/stock/report-interactions.js"></script>
     <MonetizationScripts />
   </body>

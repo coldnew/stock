@@ -78,6 +78,31 @@
     setTheme(current === 'dark' ? 'light' : 'dark');
   });
 
+  /* ---------- Fumadocs-style report sidebar ---------- */
+  (function sidebarToggle() {
+    var shell = document.querySelector('.report-layout');
+    var toggle = document.querySelector('[data-sidebar-toggle]');
+    if (!shell || !toggle) return;
+    var SIDEBAR_KEY = 'report-sidebar-collapsed';
+    function setCollapsed(collapsed) {
+      shell.classList.toggle('sidebar-collapsed', collapsed);
+      document.body.classList.toggle('report-sidebar-collapsed', collapsed);
+      shell.setAttribute('data-sidebar-state', collapsed ? 'collapsed' : 'expanded');
+      toggle.setAttribute('aria-expanded', String(!collapsed));
+      toggle.setAttribute('aria-label', collapsed ? '展開報告版本' : '收起報告版本');
+      toggle.title = collapsed ? '展開報告版本' : '收起報告版本';
+      toggle.innerHTML = '<span aria-hidden="true">' + (collapsed ? '›' : '‹') + '</span>';
+    }
+    var saved = null;
+    try { saved = localStorage.getItem(SIDEBAR_KEY); } catch (e) {}
+    setCollapsed(saved === 'true');
+    toggle.addEventListener('click', function () {
+      var collapsed = !shell.classList.contains('sidebar-collapsed');
+      setCollapsed(collapsed);
+      try { localStorage.setItem(SIDEBAR_KEY, String(collapsed)); } catch (e) {}
+    });
+  })();
+
   /* ---------- back to top ---------- */
   window.addEventListener('scroll', function () {
     if (window.scrollY > 500) backBtn.classList.add('visible');

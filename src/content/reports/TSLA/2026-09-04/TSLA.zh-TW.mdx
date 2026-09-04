@@ -97,6 +97,84 @@ import XImageGallery from '../../../../components/report/XImageGallery';
 
 接下來 7–30 天，最有資訊價值的觀察順序是：**Austin 實際車隊數量 → 每車每日付費行程 → 無人駕駛與遠端介入紀錄 → 服務區域與監管核准 → 量產速度與每英里成本**。如果一個月後車隊仍停留在幾十台、付費里程沒有加速，這次亮相更接近行銷催化劑；如果上述指標同步改善，才足以把事件從產品證據升級為營運證據。
 
+### 官方資料新增的產品細節：這不是只有外觀的展示車
+
+Tesla 在 9 月 3 日同步發布 [Cybercab Rider Guide](https://www.tesla.com/robotaxi/riderguides/cybercab/en_us) 與 [Cybercab FAQ](https://www.tesla.com/support/robotaxi/cybercab)。官方資料把亮相從「看得到一台金色車」推進到「可以描述一個乘客服務流程」：乘客在車輛抵達後核對車牌、開門上車、繫安全帶，再於 Robotaxi App 點選開始行程；車輛在接送點最多等待 7 分鐘，乘客可透過 App 或車內螢幕控制車門、行李廂、空調、座椅與重新設定目的地。
+
+| 官方揭露 | 數字／設計 | 投資解讀 |
+|---|---:|---|
+| 載客量 | 最多 2 人 | 短程雙人行程效率較高，但家庭、多人與大件行李需求會轉向 Model Y |
+| 車內腿部空間 | 43.4 英吋 | 有助於乘坐體驗，但不等於高載客率 |
+| 後行李廂 | 20.2 立方英尺（572 公升） | 官方稱可容納 2 個標準托運箱與 2 個登機箱；仍需觀察實際裝載與清潔成本 |
+| 無障礙設計 | 輪椅高度長椅式座椅、服務動物空間、門與頂部按鈕提供 Braille | 擴大可服務客群，也增加設計、維護與責任要求 |
+| 目前可用範圍 | Austin、Texas 的有限區域 | 已有服務入口，但距離多城市、大規模商用仍有很長距離 |
+| 購買模式 | Tesla FAQ 只表示可填表洽詢商用車隊或個人商用車 | 不能把興趣表單當成售車訂單、車隊合約或已確認收入 |
+
+這些細節說明 Tesla 已在處理「乘客如何使用」的服務設計，而不是只有展示車體；但 Rider Guide 仍是乘客操作文件，不是第三方安全驗證、型式認證、事故率報告或每英里獲利報告。特別要注意，官方 FAQ 仍把「目前 Robotaxi 在 Miami、Orlando、Tampa、Austin、Dallas、Houston 的 Model Y 服務」與「Cybercab 目前只在 Austin 有限區域提供」分開描述，不能把整個 Robotaxi 網路規模都算成 Cybercab 的營運規模。
+
+### 監管環境：政策風向改善，不代表 Tesla 已取得無條件通行證
+
+監管面出現一個對專用 AV 有利、但不能過度解讀的變化。NHTSA 於 2026-06-25 提出 FMVSS No. 135 修訂，擬移除「設計上永不由人類駕駛的 AV 必須配置手動煞車控制」要求，同時保留嚴格的煞車距離標準，並表示會另外建立真實道路的 AV 安全性能要求。[NHTSA 公告](https://www.nhtsa.gov/press-releases/fmvss-updates-brake-pedal-requirements)
+
+美國交通部在 9 月 3 日又公布 [AV National Strategy](https://www.transportation.gov/briefing-room/trumps-transportation-secretary-sean-p-duffy-unveils-new-national-av-strategy)，方向是簡化監管、提供一致性、促進跨州互通，同時建立 AV 能力與安全標準。這是 Cybercab 的政策順風，但策略文件與規則制定不等於某一台車已完成所有聯邦與州層級核准。
+
+| 監管層級 | 已知進展 | 對 Tesla 的真正問題 |
+|---|---|---|
+| 聯邦車輛標準 | 手動煞車踏板要求朝專用 AV 調整，仍須符合停止距離與其他安全要求 | 規則變更何時完成、Cybercab 最終如何通過認證 |
+| 州級營運許可 | Texas 已有 Cybercab 獲准在特定框架下運行；Nevada 曾只批准 Tesla 申請 5,000 台中的 10 台 | 車隊規模、營運區域與人類監督條件由各州決定 |
+| 城市／道路條件 | Robotaxi 以地理圍欄與有限區域開始 | 天候、施工、特殊事件與跨州道路規則能否擴張 |
+| 責任與保險 | NHTSA 明確指出 AV 責任與保險仍是政策問題 | 事故責任、保費、索賠與遠端支援成本會直接改變單位經濟 |
+
+故監管判斷應是：**制度方向比過去友善，但商業部署仍是逐州、逐城市、逐車型取得許可的累積過程。** 不能從「煞車踏板規則正在調整」跳躍到「Cybercab 可以在全美自由銷售與營運」。
+
+### 技術路線之爭：相機成本優勢對上感測器冗餘
+
+Tesla 的核心假設是以相機視覺與 AI 在真實道路上完成自主駕駛，這有機會降低硬體成本、簡化車體並讓車隊更容易大量生產。Tesla FAQ 也直接描述 Cybercab 使用 camera vision and sensors 導航；但 Tesla 並未在本次公開資料中提供足以比較 L4 安全性能的第三方測試數據。
+
+Waymo 在 Cybercab 亮相前發布的 [200 million fully autonomous miles 經驗整理](https://waymo.com/blog/2026/08/10ailessons/)則提出相反的工程論點：相機、光達與雷達提供互補與冗餘，HD 地圖可作為複雜道路的先驗，並以獨立安全驗證層檢查自駕系統提出的軌跡。這是 Waymo 的公司立場，不是中立裁判；但它指出了 Tesla 必須回答的可測量問題：在低能見度、施工、異常障礙物與罕見事件下，純視覺方案是否能達到相同或更低的事故與介入率。
+
+| 技術選擇 | 可能優勢 | 尚未解決的風險 |
+|---|---|---|
+| Tesla：相機與 AI 為主 | 硬體成本、重量、維護與量產可能較低 | 雨霧、眩光、遮蔽、深度估計、長尾事件與安全冗餘 |
+| Waymo：相機＋光達＋雷達＋地圖 | 感測器互補、冗餘與限定區域驗證較完整 | 硬體、地圖、維護與車隊成本更高 |
+| 共同瓶頸 | 都需要高利用率車隊與遠端／地面營運 | 事故責任、充電、清潔、維修、乘客支援與跨城市複製 |
+
+因此，Cybercab 的硬體成本優勢只有在「自駕系統可靠到足以取消車內安全人員」時才有經濟價值。若遠端協助、人工調度或事故預防成本居高不下，省下來的感測器成本可能被營運成本吃掉。
+
+### Robotaxi 單位經濟：應從每台車的收入能力，而不是車價開始
+
+對 Robotaxi 而言，車輛售價只是投入項；真正決定回報的是每台車每日付費里程、付費時間占比、每英里收入、能源、維修、清潔、保險、折舊、遠端支援與平台抽成。可用下列框架檢查，而不是直接採用 Tesla 尚未公開的長期預測：
+
+```text
+每車每日貢獻毛利
+= 付費里程 ×（每英里收入 − 能源 − 維修 − 清潔 − 保險 − 遠端支援）
+  − 車輛折舊 − 平台與支付成本
+```
+
+| 變數 | Cybercab 的可能改善 | 目前缺口 |
+|---|---|---|
+| 車輛資本成本 | 專用雙座、輕量與 Unboxed 製造可能降低成本 | 實際量產成本、產能爬坡、保固與折舊未知 |
+| 能源成本 | Tesla 曾對外宣稱低耗能，媒體引用約 165 Wh/mi | 尚缺實際城市道路、空調與塞車條件下的 kWh/mi |
+| 載客利用率 | 雙座車在單人／雙人短途可能減少無效車體 | 雙座限制可能降低家庭、機場與多人行程的需求覆蓋 |
+| 車隊利用率 | 無人駕駛理論上可延長有效服務時間 | 需要付費里程、等待時間、空車率與每日行程數 |
+| 營運成本 | Tesla 可使用既有服務中心、App 與充電網路 | 清潔、輪胎、事故、救援、遠端介入與保險成本未披露 |
+| 收入 | 可能有車資、平台服務、車隊銷售或軟體收入 | 票價、抽成、車隊合約與收入認列方式均未明確 |
+
+最重要的反向檢查是：**如果 Cybercab 每台車每天只增加少量付費里程，即使能耗比 Model Y 低，也不足以支撐高資本回報；如果它能高利用率運行，車價才可能成為巨大優勢。** 所以報告不採用「低於 30,000 美元」的歷史目標價做基準估值，除非 Tesla 公布可驗證的量產售價與車隊經濟。
+
+### 事件後的投資論文重審
+
+| 論文命題 | 亮相後狀態 | 需要什麼證據才可升級 |
+|---|---|---|
+| Tesla 能造出專用無人車 | **部分確認**：官方 FAQ、Rider Guide 與道路車輛已公開 | 量產規模、良率、成本與可靠度 |
+| Tesla 的相機與 AI 能在城市道路安全運行 | **仍未充分確認** | 第三方安全數據、長尾事件、介入率與不同天候測試 |
+| Robotaxi 能形成高回報服務 | **未確認** | 每車每日付費里程、收入／英里、成本／英里與車隊利用率 |
+| Tesla 能快速擴張到多城市 | **尚待驗證** | 實際許可、服務區域、車隊數與跨州複製速度 |
+| Cybercab 能成為 Tesla 最大量產品 | **公司目標，不是結果** | 連續季度產量、交付／部署數與需求證據 |
+| 自駕能抵消汽車本業低毛利 | **估值假設仍偏前置** | Robotaxi 與軟體現金流真正進入財報，而非只增加敘事 |
+
+綜合來看，這是一個值得提高研究密度、但不應降低證據門檻的事件。Cybercab 亮相讓「產品不存在」不再是主要風險；市場下一階段要重新定價的，是「產品能否在安全、監管與單位經濟上形成可複製系統」。
+
 ## 第二步：核心數據與生意本質
 
 | 指標 | 最近可驗證數字 | 投資解讀 |
@@ -169,6 +247,14 @@ Cybercab 圖片與 App 更新提高了 Tesla 自駕產品化的可信度，但�
 - [WIRED：Cybercab 上線後的軟體、監管與車隊利用率挑戰](https://www.wired.com/story/here-comes-the-tesla-cybercab/)，2026-09-02；用於分析 Robotaxi 單位經濟與營運瓶頸。
 - [Axios：Tesla 在 Las Vegas 申請 5,000 台但只獲准 10 台](https://www.axios.com/2026/08/14/tesla-sought-permit-for-5000-robotaxis-in-las-vegas-it-got-10)，2026-08-14；用於說明監管擴張速度風險。
 - [Electrek：Cybercab 的效率、車隊規模與軟體瓶頸](https://electrek.co/2026/08/24/tesla-cybercab-exclusive-access-robotaxi-sept-3/)，2026-08-24；評論媒體觀點，數字仍需 Tesla 官方與營運資料交叉驗證。
+- [Tesla Cybercab FAQ](https://www.tesla.com/support/robotaxi/cybercab)，2026-09-04 查閱；用於核對乘客流程、雙座、尺寸、行李空間、服務範圍與商用車隊興趣表單。
+- [Tesla Cybercab Rider Guide](https://www.tesla.com/robotaxi/riderguides/cybercab/en_us)，發布日期 2026-09-03；用於核對乘客操作與官方產品文件邊界。
+- [Tesla Robotaxi 官方頁面](https://www.tesla.com/robotaxi)，2026-09-04 查閱；用於區分 Model Y Robotaxi 服務城市與 Cybercab 目前有限 Austin 服務。
+- [Tesla Help Us Build Our Robotaxi Network](https://www.tesla.com/robotaxi/interest)，2026-09-04 查閱；合作表單只作商業方向訊號，不視為訂單或收入。
+- [Tesla Q2 2026 股東更新](https://ir.tesla.com/_flysystem/s3/sec/000162828026049213/tsla-20260722-gen.pdf)，2026-07-22；用於核對 Cybercab 已開始生產、Robotaxi 擴張與付費里程背景。
+- [NHTSA：專用 AV 手動煞車踏板規則修訂](https://www.nhtsa.gov/press-releases/fmvss-updates-brake-pedal-requirements)，2026-06-25；用於分析聯邦規則對無方向盤／踏板車型的影響。
+- [美國交通部 AV National Strategy](https://www.transportation.gov/briefing-room/trumps-transportation-secretary-sean-p-duffy-unveils-new-national-av-strategy)，2026-09-03；用於分析政策方向，不能視為個別車型已取得完整核准。
+- [Waymo：從超過 2 億英里全自駕經驗整理的 10 個 AI 教訓](https://waymo.com/blog/2026/08/10ailessons/)，2026-08-26；Waymo 公司立場，用於呈現感測器冗餘、地圖、驗證與 L4 經驗的競爭對照。
 - [Tesla Q2 2026 股東更新](https://ir.tesla.com/_flysystem/s3/sec/000162828026049213/tsla-20260722-gen.pdf)，2026-07-22。
 - [Tesla Q2 2026 Form 10-Q](https://www.sec.gov/Archives/edgar/data/1318605/000162828026049270/tsla-20260630.htm)，2026-07-23。
 - [TSLA 歷史行情](https://query1.finance.yahoo.com/v8/finance/chart/TSLA?range=1y&interval=1d)，最近完整資料至 2026-09-03；圖表由本站 CandleKit 元件繪製。

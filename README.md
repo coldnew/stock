@@ -20,7 +20,7 @@ npm run build
 
 Write report prose in `src/content/reports/<TICKER>/<DATE>/`. Use `.mdx` when the article needs a shared component such as `Metrics` or `Disclosure`. Do not duplicate page HTML, CSS, JavaScript, metadata, related links, or advertising code in an article.
 
-Each report has a latest URL and a dated archive URL. Historical files are immutable snapshots; adding a new report date marks the previous version as historical instead of moving or overwriting it.
+Each report has a latest URL and a dated archive URL. Historical files are immutable snapshots; the latest URL is derived from the newest published `publishedAt` for each ticker and locale, so adding a new report date never requires updating older files.
 
 English reports start as `draft`. After completing the sources and review, publish one locale with `npm run report:publish -- --ticker=JEPQ --date=YYYY-MM-DD --locale=en`. The command validates published English content, including a 400-word minimum, risk and conclusion sections, and at least two source URLs, then reverts the change when validation fails.
 

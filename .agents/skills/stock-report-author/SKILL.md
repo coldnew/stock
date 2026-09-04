@@ -30,7 +30,7 @@ src/content/reports/<TICKER>/<DATE>/<TICKER>.en.mdx
 src/content/reports/<TICKER>/<DATE>/<TICKER>.zh-TW.mdx
 ```
 
-The script marks the previous edition for that ticker as `isLatest: false`. Do not manually move old reports, delete snapshots, or edit the generated route HTML. Historical reports remain immutable and are rendered at dated URLs.
+The latest edition is derived automatically: among published reports with the same ticker and locale, the greatest `publishedAt` is the current version. Do not manually mark older files, delete snapshots, or edit the generated route HTML. Historical reports remain immutable and are rendered at dated URLs.
 
 If the ticker is new or has unusual semantics, check and correct the generated metadata:
 
@@ -39,7 +39,7 @@ If the ticker is new or has unusual semantics, check and correct the generated m
 - `reportType: crypto` for a crypto asset or crypto-focused report.
 - `reportType: other` for benchmarks, leveraged products, industries, commodities, or other non-standard subjects.
 - `translationKey` must match between the English and Traditional Chinese editions for the same date.
-- `isLatest: true` belongs only to the newest edition of that ticker and locale.
+- Do not add a latest-version flag; latest status is derived from `ticker`, `locale`, `status`, and `publishedAt`.
 - Keep both locales aligned on ticker, date, report type, and publication state.
 
 ## Write The MDX
@@ -53,7 +53,6 @@ publishedAt: 2026-09-03
 dataAsOf: 2026-09-03
 reportType: equity
 translationKey: amd-2026-09-03
-isLatest: true
 status: draft
 tags:
   - AMD
@@ -131,7 +130,7 @@ git diff --check
 Before changing `status`, inspect the rendered scope mentally or with the generated files:
 
 - The English and Chinese latest pages use the same ticker and date.
-- The newest edition is the only `isLatest: true` published edition for that ticker and locale.
+- The newest published edition is automatically selected by `ticker + locale + publishedAt`; duplicate dates for the same ticker and locale must fail validation.
 - The report is not still a scaffold: remove phrases such as `Write the`, `Explain the`, `State the`, `Add official`, and `before publication`.
 - Sources support the claims and are not merely generic homepages when a specific filing or prospectus exists.
 - No source, metric, title, or description contains accidental placeholder text.

@@ -1,8 +1,8 @@
 import type { APIRoute } from 'astro';
-import { getCollection } from 'astro:content';
+import { getLatestReports } from '../../data/reports';
 
 export async function getStaticPaths() {
-  const reports = await getCollection('reports', ({ data }) => data.locale === 'zh-TW' && data.isLatest && data.status === 'published');
+  const reports = await getLatestReports('zh-TW');
   return reports.flatMap((entry) => [
     { params: { ticker: entry.data.ticker }, props: { ticker: entry.data.ticker } },
     { params: { ticker: entry.data.ticker.toLowerCase() }, props: { ticker: entry.data.ticker } },

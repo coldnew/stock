@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-import { access, mkdir, readdir, readFile, writeFile } from 'node:fs/promises';
+import { access, mkdir, writeFile } from 'node:fs/promises';
 import { join } from 'node:path';
 
 const args = Object.fromEntries(process.argv.slice(2).map((arg) => {
@@ -41,7 +41,7 @@ const profiles = {
 const [reportType, , , zhTitle, zhDescription] = profiles[ticker] ?? [
   'income-etf', '', '', `${ticker} 分析報告`, `以具日期的實證資料分析 ${ticker} 的策略、收益結構、下檔風險與資料限制。`,
 ];
-const common = `ticker: ${ticker}\npublishedAt: ${date}\ndataAsOf: ${dataAsOf}\nreportType: ${reportType}\ntranslationKey: ${ticker.toLowerCase()}-${date}\nisLatest: true\nstatus: draft\ntags:\n  - ${ticker}\n`;
+const common = `ticker: ${ticker}\npublishedAt: ${date}\ndataAsOf: ${dataAsOf}\nreportType: ${reportType}\ntranslationKey: ${ticker.toLowerCase()}-${date}\nstatus: draft\ntags:\n  - ${ticker}\n`;
 const files = {
   [`${ticker}.zh-TW.mdx`]: `---\n${common}locale: zh-TW\ntitle: "${zhTitle}"\ndescription: "${zhDescription}"\n---\n\nimport AdSlot from '../../../../components/report/AdSlot.astro';\nimport Disclosure from '../../../../components/report/Disclosure.astro';\n\n## 分析摘要\n\n在這裡撰寫中文核心結論。\n\n<AdSlot placement="mid" />\n\n## 策略結構\n\n說明產品、證據與資料限制。\n\n<Disclosure title="資料限制">\n說明哪些數字是觀察值、哪些是估計值，以及哪些情境尚未被資料驗證。\n</Disclosure>\n\n## 主要風險\n\n說明主要風險，以及哪些資料會推翻目前結論。\n\n## 分析結論\n\n根據證據說明結論與關鍵取捨，不做個人化推薦。\n\n## 資料來源\n\n發布前加入至少兩個具日期的第一手資料來源。\n`,
 };
@@ -56,25 +56,7 @@ for (const file of Object.keys(files)) {
   }
 }
 
-const tickerRoot = join('src', 'content', 'reports', ticker);
-let existingFiles = [];
-try {
-  existingFiles = (await readdir(tickerRoot, { recursive: true }))
-    .filter((file) => file.endsWith('.md') || file.endsWith('.mdx'));
-} catch (error) {
-  if (error.code !== 'ENOENT') throw error;
-}
-
 await mkdir(root, { recursive: true });
-
-for (const file of existingFiles) {
-  if (!file.endsWith('.md') && !file.endsWith('.mdx')) continue;
-  const path = join(tickerRoot, file);
-  const content = await readFile(path, 'utf8');
-  if (content.includes('isLatest: true')) {
-    await writeFile(path, content.replace('isLatest: true', 'isLatest: false'));
-  }
-}
 
 for (const [file, content] of Object.entries(files)) {
   const path = join(root, file);

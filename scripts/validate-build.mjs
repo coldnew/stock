@@ -8,9 +8,17 @@ for (const file of files) {
   const content = await readFile(join('src/content/reports', file), 'utf8');
   const frontmatter = content.match(/^---\n([\s\S]*?)\n---/m)?.[1] ?? '';
   const get = (key) => frontmatter.match(new RegExp(`^${key}:\\s*(.+)$`, 'm'))?.[1]?.trim();
-  if (get('status') !== 'published' || get('isLatest') !== 'true') continue;
-  reports.push({ ticker: get('ticker'), locale: get('locale') });
+  if (get('status') !== 'published') continue;
+  reports.push({ ticker: get('ticker'), locale: get('locale'), id: file, publishedAt: get('publishedAt') });
 }
+
+const latestByTicker = new Map();
+for (const report of reports) {
+  const key = `${report.locale}:${report.ticker}`;
+  const current = latestByTicker.get(key);
+  if (!current || report.publishedAt > current.publishedAt) latestByTicker.set(key, report);
+}
+const latestReports = [...latestByTicker.values()];
 
 const failures = [];
 for (const path of ['dist/index.html']) {
@@ -20,7 +28,7 @@ for (const path of ['dist/index.html']) {
   if (adSlots !== 3) failures.push(`${path}: expected 3 homepage ad slots, found ${adSlots}`);
   if (!html.includes('G-2SXWWHGFPN')) failures.push(`${path}: missing GA4 measurement ID`);
 }
-for (const report of reports) {
+for (const report of latestReports) {
   const path = join('dist', 'reports', report.ticker.toLowerCase(), 'index.html');
   let html;
   try { html = await readFile(path, 'utf8'); } catch { failures.push(`${path}: missing generated page`); continue; }

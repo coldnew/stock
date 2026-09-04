@@ -7,7 +7,7 @@ import AiDisclosure from './AiDisclosure.astro';
 import MarketTrend from './MarketTrend.astro';
 import MarketDecisionPanel from './MarketDecisionPanel.astro';
 import CandlestickChart from './CandlestickChart';
-import { getReports } from '../../data/reports';
+import { getReports, latestByTicker } from '../../data/reports';
 import '../../styles/report-legacy.css';
 
 const { entry, archive = false } = Astro.props;
@@ -15,10 +15,10 @@ const { Content } = await render(entry);
 const { ticker, locale, title, description, publishedAt, updatedAt, dataAsOf, translationKey, status } = entry.data;
 const reports = await getReports(locale);
 const publishedReports = reports.filter((item) => item.data.status === 'published');
+const latest = latestByTicker(publishedReports).get(`${locale}:${ticker}`);
 const history = publishedReports
-  .filter((item) => item.data.ticker === ticker && !item.data.isLatest)
+  .filter((item) => item.data.ticker === ticker && item.id !== latest?.id)
   .sort((a, b) => b.data.publishedAt.valueOf() - a.data.publishedAt.valueOf());
-const latest = publishedReports.find((item) => item.data.ticker === ticker && item.data.isLatest);
 const base = Astro.site?.toString().replace(/\/$/, '') ?? 'https://coldnew.github.io/stock';
 const iso = (date: Date) => date.toISOString().slice(0, 10);
 const datePath = `/reports/${ticker.toLowerCase()}/${iso(publishedAt)}/`;

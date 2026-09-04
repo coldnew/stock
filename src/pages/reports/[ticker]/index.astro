@@ -1,9 +1,9 @@
 ---
-import { getCollection } from 'astro:content';
+import { getLatestReports } from '../../../data/reports';
 import ReportLayout from '../../../components/report/ReportLayout.astro';
 
 export async function getStaticPaths() {
-  const reports = await getCollection('reports', ({ data }) => data.locale === 'zh-TW' && data.isLatest && data.status === 'published');
+  const reports = await getLatestReports('zh-TW');
   return reports.map((entry) => ({ params: { ticker: entry.data.ticker.toLowerCase() }, props: { entry } }));
 }
 const { entry } = Astro.props;

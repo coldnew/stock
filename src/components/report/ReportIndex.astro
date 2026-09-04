@@ -4,13 +4,15 @@ import AdSlot from './AdSlot.astro';
 import MonetizationScripts from './MonetizationScripts.astro';
 import Analytics from './Analytics.astro';
 import AiDisclosure from './AiDisclosure.astro';
+import { latestByTicker } from '../../data/reports';
 import '../../styles/index.css';
 
 const { reports, allReports = reports } = Astro.props as { reports: CollectionEntry<'reports'>[]; allReports?: CollectionEntry<'reports'>[] };
+const latest = latestByTicker(allReports);
 const dateLabel = (date: Date) => date.toISOString().slice(0, 10);
 const reportUrl = (report: CollectionEntry<'reports'>) => {
   const base = `/stock/reports/${report.data.ticker.toLowerCase()}`;
-  return report.data.isLatest ? `${base}/` : `${base}/${dateLabel(report.data.publishedAt)}/`;
+  return latest.get(`${report.data.locale}:${report.data.ticker}`)?.id === report.id ? `${base}/` : `${base}/${dateLabel(report.data.publishedAt)}/`;
 };
 const deskLabel = (report: CollectionEntry<'reports'>) => report.data.tags.includes('Q2 2026') ? '季度財報' : report.data.tags.includes('income-etf') ? '收益策略' : report.data.tags.includes('equity') ? '個股研究' : report.data.tags.includes('crypto') ? '數位資產' : '市場研究';
 const lead = allReports[0];

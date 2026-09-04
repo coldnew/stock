@@ -75,7 +75,7 @@ for (const file of files) {
     if (error.code !== 'ENOENT') throw error;
   }
   await mkdir(join('src', 'content', 'reports', ticker, date), { recursive: true });
-  const frontmatter = `---\nticker: ${ticker}\nlocale: zh-TW\ntitle: "${title.replaceAll('"', '\\"')}"\ndescription: "${description.replaceAll('"', '\\"')}"\npublishedAt: ${date}\ndataAsOf: ${date}\nreportType: ${typeByTicker[ticker] ?? 'income-etf'}\ntranslationKey: ${ticker.toLowerCase()}-${date}\ntags:\n  - ${ticker}\nisLatest: true\nstatus: published\n---\n\n`;
+  const frontmatter = `---\nticker: ${ticker}\nlocale: zh-TW\ntitle: "${title.replaceAll('"', '\\"')}"\ndescription: "${description.replaceAll('"', '\\"')}"\npublishedAt: ${date}\ndataAsOf: ${date}\nreportType: ${typeByTicker[ticker] ?? 'income-etf'}\ntranslationKey: ${ticker.toLowerCase()}-${date}\ntags:\n  - ${ticker}\nstatus: published\n---\n\n`;
   const imports = "import AdSlot from '../../../../components/report/AdSlot.astro';\n";
   const items = metrics.map((item) => `{ label: ${JSON.stringify(item.label)}, value: ${JSON.stringify(item.value)} }`).join(', ');
   const metricsMarkup = metrics.length ? `${metricsImport}\n\n<Metrics items={[${items}]} />\n\n` : '';

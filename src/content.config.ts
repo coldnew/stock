@@ -14,7 +14,6 @@ const reports = defineCollection({
     reportType: z.enum(['income-etf', 'equity', 'crypto', 'other']),
     translationKey: z.string(),
     tags: z.array(z.string()).default([]),
-    isLatest: z.boolean().default(true),
     status: z.enum(['draft', 'published']).default('published'),
   }),
 });

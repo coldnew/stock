@@ -5,7 +5,22 @@ export async function getReports(locale: 'zh-TW' | 'en') {
   return entries.sort((a, b) => b.data.publishedAt.valueOf() - a.data.publishedAt.valueOf());
 }
 
+export function reportKey(report: { data: { ticker: string; locale: string } }) {
+  return `${report.data.locale}:${report.data.ticker}`;
+}
+
+export function latestByTicker<T extends { id: string; data: { ticker: string; locale: string; publishedAt: Date; status: string } }>(reports: T[]) {
+  const latest = new Map<string, T>();
+  for (const report of reports) {
+    if (report.data.status !== 'published') continue;
+    const key = reportKey(report);
+    const current = latest.get(key);
+    if (!current || report.data.publishedAt.valueOf() > current.data.publishedAt.valueOf()) latest.set(key, report);
+  }
+  return latest;
+}
+
 export async function getLatestReports(locale: 'zh-TW' | 'en') {
   const reports = await getReports(locale);
-  return reports.filter((report) => report.data.isLatest && report.data.status === 'published');
+  return [...latestByTicker(reports).values()].sort((a, b) => b.data.publishedAt.valueOf() - a.data.publishedAt.valueOf());
 }

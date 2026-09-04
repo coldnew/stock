@@ -13,7 +13,7 @@ for (const file of files) {
 }
 
 const failures = [];
-for (const path of ['dist/index.html', 'dist/en/index.html']) {
+for (const path of ['dist/index.html']) {
   let html;
   try { html = await readFile(path, 'utf8'); } catch { failures.push(`${path}: homepage missing`); continue; }
   const adSlots = (html.match(/class="ad-slot"/g) ?? []).length;
@@ -21,15 +21,14 @@ for (const path of ['dist/index.html', 'dist/en/index.html']) {
   if (!html.includes('G-2SXWWHGFPN')) failures.push(`${path}: missing GA4 measurement ID`);
 }
 for (const report of reports) {
-  const prefix = report.locale === 'en' ? 'en/' : '';
-  const path = join('dist', prefix, 'reports', report.ticker.toLowerCase(), 'index.html');
+  const path = join('dist', 'reports', report.ticker.toLowerCase(), 'index.html');
   let html;
   try { html = await readFile(path, 'utf8'); } catch { failures.push(`${path}: missing generated page`); continue; }
   const adSlots = (html.match(/class="ad-slot"/g) ?? []).length;
   if (adSlots !== 3) failures.push(`${path}: expected 3 ad slots, found ${adSlots}`);
   if (!html.includes('G-2SXWWHGFPN')) failures.push(`${path}: missing GA4 measurement ID`);
   if (!html.includes('rel="canonical"') && !html.includes('rel="alternate"')) failures.push(`${path}: missing SEO links`);
-  if (report.locale === 'en' && !html.includes('hreflang="zh-TW"')) failures.push(`${path}: missing Chinese hreflang`);
+  if (report.locale !== 'zh-TW') failures.push(`${path}: non-Traditional-Chinese report found`);
 }
 for (const path of ['dist/reports/JEPQ.html', 'dist/reports/jepq.html', 'dist/about.html', 'dist/privacy.html', 'dist/disclaimer.html']) {
   try { await readFile(path); } catch { failures.push(`${path}: legacy compatibility file missing`); }

@@ -1,7 +1,0 @@
----
-import { getLatestReports, getReports } from '../../data/reports';
-import ReportIndex from '../../components/report/ReportIndex.astro';
-const reports = await getLatestReports('en');
-const allReports = (await getReports('en')).filter((report) => report.data.status === 'published');
----
-<ReportIndex reports={reports} allReports={allReports} locale="en" />

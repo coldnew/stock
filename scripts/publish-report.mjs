@@ -9,13 +9,12 @@ const args = Object.fromEntries(process.argv.slice(2).map((arg) => {
 }));
 const ticker = String(args.ticker || '').toUpperCase();
 const date = String(args.date || '');
-const locale = args.locale === 'en' ? 'en' : args.locale === 'zh-TW' ? 'zh-TW' : '';
-if (!/^[A-Z0-9.-]+$/.test(ticker) || !/^\d{4}-\d{2}-\d{2}$/.test(date) || !locale) {
-  console.error('Usage: npm run report:publish -- --ticker=JEPQ --date=YYYY-MM-DD --locale=en');
+if (!/^[A-Z0-9.-]+$/.test(ticker) || !/^\d{4}-\d{2}-\d{2}$/.test(date)) {
+  console.error('Usage: npm run report:publish -- --ticker=JEPQ --date=YYYY-MM-DD');
   process.exit(1);
 }
 
-const path = join('src', 'content', 'reports', ticker, date, `${ticker}.${locale}.mdx`);
+const path = join('src', 'content', 'reports', ticker, date, `${ticker}.zh-TW.mdx`);
 const original = await readFile(path, 'utf8');
 if (!/^status:\s*draft\s*$/m.test(original)) {
   console.error(`not a draft or missing status: ${path}`);

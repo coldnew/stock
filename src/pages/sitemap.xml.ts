@@ -5,14 +5,13 @@ const origin = 'https://coldnew.github.io/stock';
 const escapeXml = (value: string) => value.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&apos;');
 
 export const GET: APIRoute = async () => {
-  const reports = [...await getReports('zh-TW'), ...await getReports('en')].filter((report) => report.data.status === 'published');
+  const reports = (await getReports('zh-TW')).filter((report) => report.data.status === 'published');
   const urls = [
     { path: '/', date: new Date() },
-    { path: '/en/', date: new Date() },
     ...reports.map((report) => ({
       path: report.data.isLatest
-        ? `${report.data.locale === 'en' ? '/en' : ''}/reports/${report.data.ticker.toLowerCase()}/`
-        : `${report.data.locale === 'en' ? '/en' : ''}/reports/${report.data.ticker.toLowerCase()}/${report.data.publishedAt.toISOString().slice(0, 10)}/`,
+        ? `/reports/${report.data.ticker.toLowerCase()}/`
+        : `/reports/${report.data.ticker.toLowerCase()}/${report.data.publishedAt.toISOString().slice(0, 10)}/`,
       date: report.data.updatedAt ?? report.data.publishedAt,
     })),
   ];

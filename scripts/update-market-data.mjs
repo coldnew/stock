@@ -21,11 +21,17 @@ const range = String(args.range || '6mo');
 if (!/^\d+(d|mo|y)$/.test(range)) throw new Error('Range must look like 30d, 6mo, or 1y');
 
 const selected = tickers.length ? tickers : watchlist;
-const todayInNewYork = new Intl.DateTimeFormat('en-CA', {
+const newYorkClock = new Intl.DateTimeFormat('en-CA', {
   timeZone: 'America/New_York', year: 'numeric', month: '2-digit', day: '2-digit',
-}).format(new Date());
+  hour: '2-digit', minute: '2-digit', hour12: false,
+}).formatToParts(new Date()).reduce((parts, part) => ({ ...parts, [part.type]: part.value }), {});
+const todayInNewYork = `${newYorkClock.year}-${newYorkClock.month}-${newYorkClock.day}`;
+const afterClose = Number(newYorkClock.hour) > 16 || (Number(newYorkClock.hour) === 16 && Number(newYorkClock.minute) >= 5);
 const period1 = Math.floor(Date.now() / 1000) - ({ d: 86400, mo: 30 * 86400, y: 365 * 86400 }[range.match(/(d|mo|y)$/)[1]] * Number.parseInt(range, 10));
-const period2 = Math.floor(Date.now() / 1000);
+// Query through the next New York calendar date at 00:00 UTC so Yahoo
+// finalizes the just-closed US session; the filter below still excludes any
+// in-progress bar when the market has not reached the close.
+const period2 = Math.floor(Date.UTC(Number(newYorkClock.year), Number(newYorkClock.month) - 1, Number(newYorkClock.day) + 1, 2) / 1000);
 const headers = { 'User-Agent': 'Mozilla/5.0 (compatible; stock-reports/1.0)' };
 const snapshots = {};
 
@@ -37,10 +43,11 @@ for (const ticker of selected) {
   const result = payload.chart?.result?.[0];
   if (!result?.timestamp?.length) throw new Error(`${ticker}: no chart data returned`);
   const quote = result.indicators.quote[0];
-  const rows = result.timestamp.map((timestamp, index) => [
-    new Date(timestamp * 1000).toISOString().slice(0, 10),
-    quote.open[index], quote.high[index], quote.low[index], quote.close[index],
-  ]).filter(([date, open, high, low, close]) => date < todayInNewYork && [open, high, low, close].every((value) => Number.isFinite(value) && value > 0));
+  const rows = result.timestamp.map((timestamp, index) => {
+    const date = new Date(timestamp * 1000).toISOString().slice(0, 10);
+    const close = quote.close[index] ?? (date === todayInNewYork && afterClose ? result.meta.regularMarketPrice : null);
+    return [date, quote.open[index], quote.high[index], quote.low[index], close];
+  }).filter(([date, open, high, low, close]) => (date < todayInNewYork || (date === todayInNewYork && afterClose)) && [open, high, low, close].every((value) => Number.isFinite(value) && value > 0));
   if (rows.length < 2) throw new Error(`${ticker}: fewer than two completed sessions returned`);
   snapshots[ticker] = { currency: result.meta.currency || 'USD', rows };
   console.log(`${ticker}: ${rows.length} sessions through ${rows.at(-1)[0]}`);

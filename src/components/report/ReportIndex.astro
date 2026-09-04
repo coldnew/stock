@@ -5,6 +5,7 @@ import MonetizationScripts from './MonetizationScripts.astro';
 import Analytics from './Analytics.astro';
 import AiDisclosure from './AiDisclosure.astro';
 import { latestByTicker } from '../../data/reports';
+import { watchlist } from '../../data/watchlist';
 import '../../styles/index.css';
 
 const { reports, allReports = reports } = Astro.props as { reports: CollectionEntry<'reports'>[]; allReports?: CollectionEntry<'reports'>[] };
@@ -19,9 +20,14 @@ const lead = allReports[0];
 const feed = allReports.slice(1, 11);
 const priorityTickers = ['TSLA', 'GOOG', 'AAPL', 'MSFT', 'NVDA', 'AMD'];
 const coverage = [...reports].sort((a, b) => {
-  const priority = (ticker: string) => { const index = priorityTickers.indexOf(ticker); return index === -1 ? priorityTickers.length : index; };
+  const priority = (ticker: string) => {
+    const featured = priorityTickers.indexOf(ticker);
+    if (featured !== -1) return featured;
+    const tracked = watchlist.indexOf(ticker);
+    return priorityTickers.length + (tracked === -1 ? watchlist.length : tracked);
+  };
   return priority(a.data.ticker) - priority(b.data.ticker) || b.data.publishedAt.valueOf() - a.data.publishedAt.valueOf();
-}).slice(0, 12);
+});
 const editionsByTicker = new Map<string, CollectionEntry<'reports'>[]>();
 allReports.forEach((report) => { const editions = editionsByTicker.get(report.data.ticker) ?? []; editions.push(report); editionsByTicker.set(report.data.ticker, editions); });
 const archivedTickers = [...editionsByTicker.entries()].filter(([, editions]) => editions.length > 1).sort(([a], [b]) => a.localeCompare(b));

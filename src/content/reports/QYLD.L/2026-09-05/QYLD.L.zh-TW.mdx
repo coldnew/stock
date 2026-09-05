@@ -1,0 +1,111 @@
+---
+ticker: QYLD.L
+locale: zh-TW
+title: "QYLD.L 研究報告 · 倫敦掛牌 Nasdaq 100 Covered Call UCITS ETF"
+description: "分析 QYLD.L 的 UCITS 架構、Nasdaq 100 備兌買權、月配息與 NAV 風險，並以 2026-09-03 可得市場行情建立技術進場紀律。"
+publishedAt: 2026-09-05
+dataAsOf: 2026-09-03
+reportType: income-etf
+translationKey: qyld-l-2026-09-05
+tags:
+  - QYLD.L
+  - ETF
+  - Nasdaq 100
+  - Covered Call
+  - 倫敦掛牌
+status: published
+---
+
+import AdSlot from '../../../../components/report/AdSlot.astro';
+import Disclosure from '../../../../components/report/Disclosure.astro';
+import CandlestickChart from '../../../../components/report/CandlestickChart';
+
+## 分析摘要
+
+<strong>研究日期：</strong>2026-09-05。<strong>行情截止：</strong>2026-09-03（本報告圖表資料的最新完整交易日）。QYLD.L 收盤 $16.888，當日開高低收為 $16.872／$16.944／$16.800／$16.888；這是倫敦掛牌、美元交易的 Global X Nasdaq 100 Covered Call UCITS ETF，不是美國 Nasdaq 掛牌的 QYLD。Global X 官方頁面顯示，倫敦 USD distributing share class 的 ticker 為 QYLD LN，另有 GBP 掛牌的 QYLP LN，因此投資人下單前必須確認交易所、幣別與 ISIN。
+
+QYLD.L 的核心不是「高配息就等於高報酬」，而是以 Nasdaq 100 曝險換取賣出買權的權利金。這會提高現金分配的可能性，卻同時放棄部分上漲空間，並保留底層股票下跌風險。Global X 官方資料截至 2026-09-04 顯示 TER 0.45%、基金註冊地愛爾蘭、採 synthetic 被動追蹤、AUM 約 9.41 億美元；月配息僅適用 distributing share class。
+
+## 第一部分：產品結構
+
+| 項目 | QYLD.L |
+| --- | --- |
+| 基金 | Global X Nasdaq 100 Covered Call UCITS ETF |
+| 掛牌 | London Stock Exchange；USD：QYLD LN，GBP：QYLP LN |
+| ISIN | IE00BM8RJ059（USD distributing share class） |
+| 指數 | Cboe Nasdaq-100 BuyWrite v2 UCITS Index |
+| 架構 | UCITS、愛爾蘭註冊、synthetic index tracking |
+| TER | 0.45%，官方資料截至 2026-09-04 |
+| 配息 | distributing share class 尋求月配；不可視為固定收益 |
+
+Global X 說明 QYLD LN 透過賣出 Nasdaq 100 買權來複製 buy-write 指數。這不是傳統債券收益，也不是無風險股息；權利金收入取決於波動率、選擇權價格與策略執行，配息則可能包含不同來源，應查看每期正式分配通知與 NAV 總報酬。
+
+QYLD.L 與美國 QYLD 的名稱相近但法律架構、掛牌地、幣別與稅務文件不同。本站追蹤代號保留 `.L`，是為了避免把倫敦掛牌 UCITS ETF 與美國版本混為一談。
+
+## 第二部分：收益引擎與護城河
+
+QYLD.L 的一句話本質是：持有或複製 Nasdaq 100 的經濟曝險，再出售買權把部分未來上漲交換成當期權利金；投資人取得現金流的同時，承擔上漲封頂、下跌未封頂與 NAV 複利不足的風險。
+
+它沒有個別企業的護城河。產品優勢來自指數規則、衍生品執行、基金規模、流動性、UCITS 法規框架與交易成本控制。官方頁面列出 Citi 為 swap counterparty，因此除了 Nasdaq 100 與選擇權風險，也要監控交換交易對手與合成 ETF 的文件披露。護城河測試不是「配息率是否高」，而是扣除費用與分配後，NAV 總報酬能否在不同市場環境維持可接受的追蹤品質。
+
+<AdSlot placement="mid" />
+
+## 第三部分：目前行情與技術位置
+
+<CandlestickChart client:load locale="zh-TW" dataUrl="/stock/data/QYLD.L.json" levels={[
+  {price: 16.80, label: "近期價格支撐觀察", color: "#1B365D"},
+  {price: 16.74, label: "50日均線", color: "#8B5CF6"},
+  {price: 16.64, label: "200日均線", color: "#C23B32"},
+  {price: 17.26, label: "近一年高點", color: "#9B5C2E"}
+]} />
+
+圖表使用 2025-09-05 至 2026-09-03 的 251 個交易日 OHLC。QYLD.L 最新收盤 $16.888 高於 20 日均線 $16.796、50 日均線 $16.742 與 200 日均線 $16.642；但近期價格靠近 $16.80 一帶，且仍低於近一年高點 $17.26。這是價格結構偏穩定，不是收益安全已被證明。
+
+以近一年低點 $15.714 與高點 $17.260 計算，23.6%、38.2%、50% 與 61.8% 回撤位約為 $16.895、$16.669、$16.487 與 $16.169。這些是由 OHLC 序列計算的 timing 位階，不是基金 NAV 的估值。收盤跌破 $16.80 且無法收回，代表近期支撐轉弱；跌破 50 日線後持續走低，應檢查 Nasdaq 100、美元、配息來源與 NAV；跌破 200 日線，則不宜只用月配息率合理化持有。
+
+## 第四部分：估值、配息與總報酬
+
+收益型 ETF 最容易犯的錯，是只看現金分配率。QYLD.L 的投資人應同時看：NAV 總報酬、配息後 NAV 走勢、配息來源、期權覆蓋方式、TER、買賣價差、交易幣別與匯率。Global X 官方的績效欄位以 NAV total return 呈現，並提醒市場價格可能與 NAV 不同；因此單月配息不能直接當作預期年化報酬。
+
+本報告不以未經核對的年化配息率做結論。正式判斷需要逐期分配通知、NAV 序列與投資人實際交易幣別；若配息提高但 NAV 長期下降，投資人得到的可能只是資本返還或把未來報酬提前支付，而不是創造額外價值。
+
+| 情境 | 觀察條件 | 行動框架 |
+| --- | --- | --- |
+| 收益與 NAV 同步 | 配息後 NAV 維持，且總報酬追蹤指數合理 | 可作收益策略衛星部位，仍需限制權重 |
+| 配息高但 NAV 走弱 | 配息率吸引人，但 NAV 回撤持續 | 暫停加碼，拆解 ROC、權利金與底層 Nasdaq 100 損益 |
+| 趨勢轉弱 | 收盤跌破 $16.64 附近 200 日線 | 重新評估是否需要 QYLD 的收益交換，不以配息掩蓋本金風險 |
+
+## 第五部分：逆向思考與主要風險
+
+| 失敗路徑 | 影響 | 要觀察的證據 |
+| --- | --- | --- |
+| Nasdaq 100 大跌 | 選擇權權利金只能部分緩衝，NAV 仍可能下降 | 指數回撤、波動率、NAV 與配息後總報酬 |
+| Nasdaq 100 強勁上漲 | 賣出的買權限制上行，可能落後 QQQ／Nasdaq 100 | 上漲捕捉率與指數相對報酬 |
+| 配息來源不耐久 | 現金流看似穩定，但本金逐步消耗 | 每期分配通知、ROC、NAV 趨勢與覆蓋比例 |
+| 合成 ETF 與跨境交易風險 | 交易對手、匯率、價差與稅務增加實際摩擦 | swap counterparty、美元／英鎊報價、流動性與券商文件 |
+| 名稱與代號混淆 | 買到不同掛牌、幣別或 share class | LSE ticker、ISIN、交易幣別與 KID |
+
+最可能的分析錯誤，是把 QYLD.L 當成「每月提款機」。它其實是把部分未來上漲出售為權利金的期權策略，適合用總報酬與 NAV 紀律審查，不適合只用當期現金流排名。
+
+## Entry Point Analysis
+
+空手投資人若需要 Nasdaq 100 的收益型衛星工具，可先確認自己能接受上漲封頂、底層下跌與跨境交易摩擦，再設定最大配置比例。技術上，$16.80 是短線支撐觀察位，$16.74 是 50 日線，$16.64 是 200 日線；分批的前提是 NAV、配息來源與成交價差沒有同步惡化。
+
+既有持有人應以配息後總報酬和 NAV 為主要儀表板，而非只看入帳金額。若價格跌破 200 日線、配息後 NAV 持續下降，或配息主要依賴資本返還，應減少新增資金並重新比較 QYLD.L、直接持有 Nasdaq 100 ETF 與其他收益策略。失效條件是收益交換不再符合需求，或投資人其實需要資產成長而非當期現金流。
+
+## 分析結論
+
+QYLD.L 是倫敦掛牌的 Nasdaq 100 Covered Call UCITS ETF，具備 UCITS 架構、美元／英鎊不同掛牌、synthetic tracking 與 distributing share class 的月配息設計。它的優勢是把選擇權策略包裝成可交易產品；它的代價是上漲受限、下跌仍在、配息來源需拆解，且 TER 0.45% 高於 VOO／VTI 這類單純市值加權核心 ETF。
+
+截至圖表最新行情，價格仍高於 20／50／200 日均線，但這只代表目前趨勢尚未破壞。本站將 QYLD.L 加入 ETF 追蹤，理由是它值得持續觀察配息後 NAV 與總報酬，而不是因為高配息率就給出買入結論。正式行動應以 share class、交易幣別、最新分配通知與台灣投資人適用的稅務規則再次核對。
+
+## 資料來源
+
+- [Global X QYLD UCITS 官方基金頁面](https://globalxetfs.eu/funds/qyld)：指數、UCITS 架構、TER、AUM、share class、掛牌與配息說明。
+- [Global X QYLD UCITS 官方 factsheet](https://globalxetfs.eu/content/files/QYLD_UCITS-factsheet.pdf)：策略、基金屬性、指數、費用與風險揭露。
+- [London Stock Exchange QYLD 公司頁面](https://www.londonstockexchange.com/stock/QYLD/global-x-etfs-icav/company-page)：倫敦掛牌與交易資訊。
+- [QYLD.L 歷史行情](https://stockanalysis.com/quote/lon/QYLD/history/)：交叉核對倫敦市場 2026-09-04 行情；圖表序列採可取得的 Yahoo Finance QYLD.L OHLC，最新完整交易日為 2026-09-03。
+
+<Disclosure title="資料與研究限制">
+QYLD.L 同一基金有不同 share class、掛牌地與交易幣別；本報告以 London USD distributing share class 為主要研究對象，但下單前仍須以券商顯示的 ISIN、幣別與 KID 確認。配息不是保證收益，也不等同總報酬；跨境稅務、交易成本與投資人適用性需依最新規定及專業意見確認。
+</Disclosure>

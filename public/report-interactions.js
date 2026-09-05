@@ -144,9 +144,9 @@
   })();
 
   /* ---------- collapsible sections + TOC ---------- */
-  var body = document.querySelector('.report-content') || document.body;
+  var body = document.querySelector('.report-content');
   var sections = [];
-  (function buildSections() {
+  if (body) (function buildSections() {
     var kids = Array.prototype.slice.call(body.children);
     var current = null;
     var counter = 0;
@@ -171,7 +171,7 @@
     });
   })();
 
-  sections.forEach(function (s) {
+  if (body) sections.forEach(function (s) {
     function toggle() {
       var collapsed = s.h2.classList.toggle('collapsed');
       s.wrap.classList.toggle('collapsed', collapsed);
@@ -182,7 +182,7 @@
     });
   });
 
-  if (sections.length) {
+  if (body && sections.length) {
     var toc = document.createElement('nav');
     toc.className = 'report-toc';
     toc.setAttribute('aria-label', '章節導覽');

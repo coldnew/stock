@@ -33,7 +33,7 @@ const coverage = [...reports].sort((a, b) => {
 });
 const trackedCoverage = coverage.filter((report) => trackedAssetByTicker.has(report.data.ticker));
 const coverageMarkets = [...new Set(trackedAssets.map(({ market }) => market))];
-const marketLabel = (market: string) => market === 'TW' ? '台股' : '美股';
+const marketLabel = (market: string) => market === 'TW' ? '台股' : market === 'UK' ? '英國／倫敦掛牌' : '美股';
 const assetTypeLabel = (assetType: string) => assetType === 'etf' ? 'ETF' : assetType === 'bdc' ? 'BDC／收益型' : '個股';
 const tagCloud = groupReportsByTag(allReports).slice(0, 18);
 const siteUrl = 'https://coldnew.github.io/stock/';

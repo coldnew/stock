@@ -10,7 +10,6 @@ export const trackedAssets: TrackedAsset[] = [
   ...['AAPL', 'AMD', 'GOOG', 'MSFT', 'NVDA', 'SPCX', 'TSLA'].map((ticker) => ({ ticker, market: 'US' as const, assetType: 'equity' as const, displayTicker: ticker })),
   { ticker: 'ARCC', market: 'US', assetType: 'bdc', displayTicker: 'ARCC' },
   ...['BTCI', 'CHPY', 'DGRO', 'DRAM', 'GPIQ', 'GPIX', 'IQQ', 'IWMI', 'MAGS', 'OVL', 'QDVO', 'QQQ', 'QQQH', 'QQQI', 'SGOV', 'SPYI', 'TQQQ', 'VOO', 'VTI'].map((ticker) => ({ ticker, market: 'US' as const, assetType: 'etf' as const, displayTicker: ticker })),
-  { ticker: 'QYLD.L', market: 'UK', assetType: 'etf', displayTicker: 'QYLD.L' },
 ];
 
 /** 相容既有批次行情與排序邏輯的清單。 */
@@ -26,4 +25,5 @@ export const trackedAssetByTicker = new Map(trackedAssets.map((asset) => [asset.
 export const reportOnlyTickers = [
   'AVGO',
   '2330.TW',
+  'QYLD.L',
 ];

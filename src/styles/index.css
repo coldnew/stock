@@ -45,17 +45,6 @@ body { max-width: 780px; margin: 0 auto; padding: 26px 22px 64px; color: var(--n
 .coverage-item > span:nth-child(2) { min-width: 0; overflow-wrap: anywhere; }
 .coverage-item > span:last-child { color: var(--brand); text-align: right; }
 .coverage-item:hover { color: var(--brand); }
-.archive-guide { margin-top: 52px; padding: 24px 0 0; border-top: 1px solid var(--near-black); }
-.archive-guide h2 { margin: 0 0 4px; color: var(--brand); font-size: 21px; font-weight: 500; }
-.archive-guide > p { margin: 0 0 14px; color: var(--stone); font-size: 13px; }
-.archive-list { display: flex; flex-direction: column; gap: 8px; }
-.archive-list details { border-bottom: 1px solid var(--border); }
-.archive-list summary { display: flex; justify-content: space-between; gap: 16px; padding: 10px 0; cursor: pointer; color: var(--near-black); font-size: 14px; list-style-position: inside; }
-.archive-list summary::marker { color: var(--brand); }
-.archive-count { flex: 0 0 auto; color: var(--stone); font-size: 12px; }
-.archive-list ul { margin: 0 0 10px; padding-left: 24px; }
-.archive-list li { padding: 3px 0; color: var(--stone); font-size: 13px; }
-.archive-list a { color: var(--brand); }
 .index-footer { display: flex; justify-content: space-between; gap: 16px; margin-top: 48px; padding-top: 16px; border-top: 1px dotted var(--border); color: var(--stone); font-size: 12px; }
 .index-footer a { margin-left: 12px; color: var(--stone); text-decoration: none; }
 .index-footer a:hover { color: var(--brand); }

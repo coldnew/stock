@@ -1,0 +1,93 @@
+<button class="search-trigger" type="button" data-search-open aria-haspopup="dialog" aria-label="搜尋文章">
+  <span aria-hidden="true">⌕</span><span class="search-trigger-label">搜尋</span><kbd>⌘K</kbd>
+</button>
+<dialog class="search-dialog" data-search-dialog aria-labelledby="search-dialog-title">
+  <div class="search-dialog-panel">
+    <div class="search-dialog-header">
+      <h2 id="search-dialog-title">搜尋文章</h2>
+      <button type="button" class="search-close" data-search-close aria-label="關閉搜尋">×</button>
+    </div>
+    <label class="search-input-wrap">
+      <span aria-hidden="true">⌕</span>
+      <input type="search" data-search-input placeholder="搜尋股票代號、標題、標籤或文章內容" autocomplete="off" />
+    </label>
+    <p class="search-status" data-search-status>輸入關鍵字開始搜尋</p>
+    <div class="search-results" data-search-results></div>
+  </div>
+</dialog>
+<script is:inline>
+  (() => {
+    const dialog = document.querySelector('[data-search-dialog]');
+    const open = document.querySelector('[data-search-open]');
+    const close = document.querySelector('[data-search-close]');
+    const input = document.querySelector('[data-search-input]');
+    const status = document.querySelector('[data-search-status]');
+    const results = document.querySelector('[data-search-results]');
+    if (!dialog || !open || !close || !input || !status || !results) return;
+    let index = null;
+    let loading = null;
+    const normalize = (value) => value.toLocaleLowerCase('zh-TW').trim();
+    const loadIndex = async () => {
+      if (index) return index;
+      if (!loading) loading = fetch('/stock/search-index.json').then((response) => response.json()).then((data) => { index = data.items || []; return index; });
+      return loading;
+    };
+    const show = () => {
+      if (!dialog.open) dialog.showModal();
+      input.focus();
+      input.select();
+      loadIndex().catch(() => { status.textContent = '搜尋索引目前無法載入，請稍後再試。'; });
+    };
+    const render = async () => {
+      const query = normalize(input.value);
+      if (!query) { status.textContent = '輸入關鍵字開始搜尋'; results.replaceChildren(); return; }
+      const items = await loadIndex();
+      const matches = items.filter((item) => normalize([item.title, item.description, item.ticker, ...(item.tags || []), item.text].join(' ')).includes(query)).slice(0, 12);
+      status.textContent = matches.length ? `找到 ${matches.length} 篇文章` : '找不到符合的文章';
+      results.replaceChildren(...matches.map((item) => {
+        const link = document.createElement('a');
+        link.className = 'search-result';
+        link.href = item.url;
+        const meta = document.createElement('span');
+        meta.className = 'search-result-meta';
+        meta.textContent = `${item.ticker} · ${item.date} · ${(item.tags || []).map((tag) => `#${tag}`).join(' ')}`;
+        const title = document.createElement('strong');
+        title.textContent = item.title;
+        const description = document.createElement('span');
+        description.className = 'search-result-description';
+        description.textContent = item.description;
+        link.append(meta, title, description);
+        return link;
+      }));
+    };
+    open.addEventListener('click', show);
+    close.addEventListener('click', () => dialog.close());
+    dialog.addEventListener('click', (event) => { if (event.target === dialog) dialog.close(); });
+    input.addEventListener('input', () => { render().catch(() => { status.textContent = '搜尋失敗，請稍後再試。'; }); });
+    document.addEventListener('keydown', (event) => {
+      if ((event.metaKey || event.ctrlKey) && event.key.toLowerCase() === 'k') { event.preventDefault(); show(); }
+      if (event.key === 'Escape' && dialog.open) dialog.close();
+    });
+  })();
+</script>
+<style>
+  .search-trigger { display: inline-flex; align-items: center; gap: 6px; padding: 6px 9px; border: 1px solid var(--border, #dedcd2); border-radius: 5px; background: transparent; color: var(--stone, #6b6a64); cursor: pointer; font: inherit; font-size: 13px; }
+  .search-trigger:hover, .search-trigger:focus-visible { border-color: var(--brand, #1b365d); color: var(--brand, #1b365d); outline: none; }
+  .search-trigger kbd { padding: 1px 4px; border: 1px solid var(--border, #dedcd2); border-radius: 3px; font-size: 10px; }
+  .search-dialog { width: min(680px, calc(100% - 28px)); padding: 0; border: 1px solid var(--border, #dedcd2); border-radius: 8px; background: var(--parchment, #f5f4ed); color: var(--near-black, #141413); box-shadow: 0 24px 80px rgb(20 20 19 / 22%); }
+  .search-dialog::backdrop { background: rgb(20 20 19 / 38%); backdrop-filter: blur(2px); }
+  .search-dialog-panel { padding: 20px; }
+  .search-dialog-header { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+  .search-dialog h2 { margin: 0; font-size: 20px; }
+  .search-close { border: 0; background: transparent; color: var(--stone, #6b6a64); cursor: pointer; font-size: 24px; line-height: 1; }
+  .search-input-wrap { display: flex; align-items: center; gap: 10px; margin-top: 16px; padding: 10px 12px; border: 1px solid var(--border, #dedcd2); border-radius: 5px; background: var(--ivory, #faf9f5); color: var(--brand, #1b365d); }
+  .search-input-wrap input { width: 100%; border: 0; outline: 0; background: transparent; color: inherit; font: inherit; font-size: 15px; }
+  .search-status { margin: 12px 0 6px; color: var(--stone, #6b6a64); font-size: 12px; }
+  .search-results { max-height: min(60vh, 520px); overflow-y: auto; }
+  .search-result { display: grid; gap: 3px; padding: 11px 8px; border-top: 1px solid var(--border, #dedcd2); color: inherit; text-decoration: none; }
+  .search-result:hover, .search-result:focus-visible { background: var(--ivory, #faf9f5); outline: 0; }
+  .search-result-meta { color: var(--brand, #1b365d); font-size: 11px; }
+  .search-result strong { font-size: 16px; font-weight: 500; }
+  .search-result-description { overflow: hidden; color: var(--stone, #6b6a64); font-size: 12px; text-overflow: ellipsis; white-space: nowrap; }
+  @media (max-width: 640px) { .search-trigger-label, .search-trigger kbd { display: none; } .search-trigger { padding: 6px 8px; } .search-dialog-panel { padding: 16px; } }
+</style>

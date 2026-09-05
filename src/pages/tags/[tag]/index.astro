@@ -1,0 +1,54 @@
+---
+import { getReports, latestByTicker } from '../../../data/reports';
+import { groupReportsByTag, tagHref, tagSlug } from '../../../data/tags';
+import '../../../styles/index.css';
+import SearchDialog from '../../../components/report/SearchDialog.astro';
+
+const origin = '/stock';
+const dateLabel = (date: Date) => date.toISOString().slice(0, 10);
+const reportHref = (report: Awaited<ReturnType<typeof getReports>>[number], latest: ReturnType<typeof latestByTicker>) => {
+  const base = `${origin}/reports/${report.data.ticker.toLowerCase()}`;
+  return latest.get(`${report.data.locale}:${report.data.ticker}`)?.id === report.id ? `${base}/` : `${base}/${dateLabel(report.data.publishedAt)}/`;
+};
+
+export async function getStaticPaths() {
+  const reports = (await getReports('zh-TW')).filter((report) => report.data.status === 'published');
+  return groupReportsByTag(reports).map((group) => ({
+    params: { tag: group.slug },
+    props: { label: group.label, reports: group.reports },
+  }));
+}
+
+const { label, reports } = Astro.props as { label: string; reports: Awaited<ReturnType<typeof getReports>> };
+const publishedReports = (await getReports('zh-TW')).filter((report) => report.data.status === 'published');
+const latest = latestByTicker(publishedReports);
+const relatedTags = groupReportsByTag(publishedReports).slice(0, 18);
+---
+<!doctype html>
+<html lang="zh-TW">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>{`#${label}｜每日投資研究`}</title>
+    <meta name="description" content={`瀏覽所有標記為 #${label} 的投資研究文章。`} />
+    <link rel="canonical" href={`https://coldnew.github.io/stock/tags/${tagSlug(label)}/`} />
+  </head>
+  <body>
+    <nav class="site-nav"><a class="site-mark" href="/stock/">RESEARCH DESK</a><span>文章標籤</span><SearchDialog /></nav>
+    <header class="index-header">
+      <p class="eyebrow">文章標籤</p>
+      <h1>{'#'}{label}</h1>
+      <p class="index-intro">共 {reports.length} 篇研究文章；股票代號會自動成為標籤，主題標籤則來自文章資料。</p>
+    </header>
+    <main>
+      <section class="daily-feed" aria-labelledby="tag-reports-title">
+        <div class="section-heading"><p class="eyebrow">標籤文章</p><h2 id="tag-reports-title">{'#'}{label}</h2></div>
+        <div class="post-list">
+          {reports.map((report) => <article class="post-row"><div class="post-row-meta"><strong>{report.data.ticker}</strong><time datetime={dateLabel(report.data.publishedAt)}>{dateLabel(report.data.publishedAt)}</time></div><div><h3><a href={reportHref(report, latest)}>{report.data.title}</a></h3><p>{report.data.description}</p><a class="read-link" href={reportHref(report, latest)}>繼續閱讀 →</a></div></article>)}
+        </div>
+      </section>
+      <section class="tag-cloud-section" aria-labelledby="related-tags-title"><div class="section-heading"><p class="eyebrow">標籤索引</p><h2 id="related-tags-title">其他標籤</h2></div><div class="tag-cloud">{relatedTags.map((tag) => <a class="tag-link" href={tagHref(tag.label)}>{'#'}{tag.label}<span>{tag.reports.length}</span></a>)}</div></section>
+    </main>
+    <footer class="index-footer"><span>僅供教育與資訊參考，不構成投資建議。</span><span class="footer-links"><a href="/stock/">回到報告總覽</a><a href="/stock/about.html">關於本站</a></span></footer>
+  </body>
+</html>

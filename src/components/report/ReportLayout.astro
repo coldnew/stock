@@ -8,6 +8,8 @@ import MarketTrend from './MarketTrend.astro';
 import MarketDecisionPanel from './MarketDecisionPanel.astro';
 import CandlestickChart from './CandlestickChart';
 import { getReports, latestByTicker } from '../../data/reports';
+import { getReportTags, tagHref } from '../../data/tags';
+import SearchDialog from './SearchDialog.astro';
 import '../../styles/report-legacy.css';
 
 const { entry, archive = false } = Astro.props;
@@ -27,6 +29,7 @@ const historyGroups = [...history.reduce((groups, item) => {
   groups.set(year, group);
   return groups;
 }, new Map<string, typeof history>()).entries()];
+const reportTags = getReportTags(entry);
 const base = Astro.site?.toString().replace(/\/$/, '') ?? 'https://coldnew.github.io/stock';
 const datePath = `/reports/${ticker.toLowerCase()}/${iso(publishedAt)}/`;
 const latestPath = `/reports/${ticker.toLowerCase()}/`;
@@ -97,12 +100,13 @@ const tslaChart = ticker === 'TSLA'
     </aside>}
     {history.length > 0 && <button class="report-sidebar-toggle" type="button" data-sidebar-toggle aria-expanded="true" aria-controls="report-sidebar-content" aria-label="收起報告版本" title="收起報告版本"><span aria-hidden="true">‹</span></button>}
     <main class="report-main">
-    <nav class="breadcrumb"><a href="/stock/">← 報告總覽</a></nav>
+    <nav class="breadcrumb"><a href="/stock/">← 報告總覽</a><SearchDialog /></nav>
     <div class="report-header">
       <div class="ticker-block">
         <div class="ticker-eyebrow">投資研究報告</div>
         <h1 class="ticker-name">{title} <span>{ticker}</span></h1>
         <div class="ticker-sub">{description}</div>
+        <nav class="report-tags" aria-label="文章標籤">{reportTags.map((tag) => <a href={tagHref(tag)}>#{tag}</a>)}</nav>
         <AiDisclosure locale={locale} />
       </div>
       <div class="price-block">

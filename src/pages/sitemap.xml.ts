@@ -1,5 +1,6 @@
 import type { APIRoute } from 'astro';
 import { getReports, latestByTicker } from '../data/reports';
+import { groupReportsByTag } from '../data/tags';
 
 const origin = 'https://coldnew.github.io/stock';
 const escapeXml = (value: string) => value.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&apos;');
@@ -7,6 +8,7 @@ const escapeXml = (value: string) => value.replace(/&/g, '&amp;').replace(/</g, 
 export const GET: APIRoute = async () => {
   const reports = (await getReports('zh-TW')).filter((report) => report.data.status === 'published');
   const latest = latestByTicker(reports);
+  const tags = groupReportsByTag(reports);
   const urls = [
     { path: '/', date: new Date() },
     ...reports.map((report) => ({
@@ -15,6 +17,7 @@ export const GET: APIRoute = async () => {
         : `/reports/${report.data.ticker.toLowerCase()}/${report.data.publishedAt.toISOString().slice(0, 10)}/`,
       date: report.data.updatedAt ?? report.data.publishedAt,
     })),
+    ...tags.map((tag) => ({ path: `/tags/${tag.slug}/`, date: tag.reports[0]?.data.updatedAt ?? tag.reports[0]?.data.publishedAt ?? new Date() })),
   ];
   const body = urls.map(({ path, date }) => `  <url><loc>${escapeXml(origin + path)}</loc><lastmod>${date.toISOString().slice(0, 10)}</lastmod></url>`).join('\n');
   return new Response(`<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${body}\n</urlset>`, {

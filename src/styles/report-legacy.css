@@ -116,6 +116,9 @@
     color: var(--olive);
     line-height: 1.4;
   }
+  .report-tags { display: flex; flex-wrap: wrap; gap: 6pt; margin: 9pt 0 4pt; font: 10pt/1.4 var(--serif); }
+  .report-tags a { padding: 3pt 7pt; border: 0.5pt solid var(--border); border-radius: 999pt; color: var(--brand); text-decoration: none; }
+  .report-tags a:hover { background: var(--ivory); }
   .price-block {
     text-align: right;
     margin-top: 8pt;
@@ -624,7 +627,7 @@
     .x-image-compare-item img { aspect-ratio: auto; }
     .ad-slot[data-placement="mid"] { min-height: 180pt; }
   }
-  .breadcrumb { margin-bottom: 10pt; }
+  .breadcrumb { display: flex; align-items: center; justify-content: space-between; gap: 16pt; margin-bottom: 10pt; }
   .breadcrumb a { font-size: 9.5pt; color: var(--stone); text-decoration: none; }
   .breadcrumb a:hover { color: var(--brand); }
   .related-report {

@@ -82,7 +82,9 @@ const siteUrl = 'https://coldnew.github.io/stock/';
           if (attribute === 'data-market-filter') market = tab.getAttribute(attribute);
           else assetType = tab.getAttribute(attribute);
           items.forEach(function (item) {
-            item.hidden = (market !== 'all' && item.getAttribute('data-market') !== market) || (assetType !== 'all' && item.getAttribute('data-asset-type') !== assetType);
+            var visible = (market === 'all' || item.getAttribute('data-market') === market) && (assetType === 'all' || item.getAttribute('data-asset-type') === assetType);
+            item.hidden = !visible;
+            item.style.display = visible ? '' : 'none';
           });
         }
         [[marketGroup, 'data-market-filter'], [typeGroup, 'data-type-filter']].forEach(function (pair) {

@@ -57,6 +57,7 @@ body { max-width: 780px; margin: 0 auto; padding: 26px 22px 64px; color: var(--n
 .coverage-item { display: grid; grid-template-columns: 52px minmax(0, 1fr) 16px; gap: 10px; align-items: baseline; min-width: 0; padding: 14px 0; border-bottom: 1px solid var(--border); color: inherit; font-size: 14px; text-decoration: none; }
 .coverage-item > span:nth-child(2) { min-width: 0; overflow-wrap: anywhere; }
 .coverage-item > span:last-child { color: var(--brand); text-align: right; }
+.coverage-item[hidden] { display: none !important; }
 .coverage-item:hover { color: var(--brand); }
 .index-footer { display: flex; justify-content: space-between; gap: 16px; margin-top: 48px; padding-top: 16px; border-top: 1px dotted var(--border); color: var(--stone); font-size: 12px; }
 .index-footer a { margin-left: 12px; color: var(--stone); text-decoration: none; }

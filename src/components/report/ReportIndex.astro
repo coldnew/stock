@@ -16,8 +16,8 @@ const reportUrl = (report: CollectionEntry<'reports'>) => {
   return latest.get(`${report.data.locale}:${report.data.ticker}`)?.id === report.id ? `${base}/` : `${base}/${dateLabel(report.data.publishedAt)}/`;
 };
 const deskLabel = (report: CollectionEntry<'reports'>) => report.data.tags.includes('Q2 2026') ? '季度財報' : report.data.tags.includes('income-etf') ? '收益策略' : report.data.tags.includes('equity') ? '個股研究' : report.data.tags.includes('crypto') ? '數位資產' : '市場研究';
-const lead = allReports[0];
-const feed = allReports.slice(1, 11);
+const latestResearch = allReports.slice(0, 3);
+const feed = allReports.slice(3, 13);
 const priorityTickers = ['TSLA', 'GOOG', 'AAPL', 'MSFT', 'NVDA', 'AMD'];
 const coverage = [...reports].sort((a, b) => {
   const priority = (ticker: string) => {
@@ -50,7 +50,7 @@ const archivedTickers = [...editionsByTicker.entries()].filter(([, editions]) =>
     <AdSlot placement="top" />
     <main>
       <section class="coverage" aria-labelledby="coverage-title"><div class="section-heading"><p class="eyebrow">追蹤清單</p><h2 id="coverage-title">目前追蹤</h2></div><div class="coverage-grid">{coverage.map((report) => <a class="coverage-item" href={reportUrl(report)}><span class="ticker">{report.data.ticker}</span><span>{report.data.title}</span><span aria-hidden="true">↗</span></a>)}</div></section>
-      {lead && <article class="lead-post"><div class="post-kicker"><span>{dateLabel(lead.data.publishedAt)}</span></div><div class="post-meta"><span class="ticker">{lead.data.ticker}</span><span>{deskLabel(lead)}</span></div><h2><a href={reportUrl(lead)}>{lead.data.title}</a></h2><p>{lead.data.description}</p><a class="read-link" href={reportUrl(lead)}>閱讀完整文章 <span aria-hidden="true">→</span></a></article>}
+      {latestResearch.length > 0 && <section class="latest-research" aria-labelledby="latest-title"><div class="section-heading"><p class="eyebrow">最新研究</p><h2 id="latest-title">今天值得先讀</h2></div><div class="latest-research-grid">{latestResearch.map((report, index) => <article class:list={["lead-post", index === 0 && "lead-post-featured"]}><div class="post-kicker"><span>{dateLabel(report.data.publishedAt)}</span></div><div class="post-meta"><span class="ticker">{report.data.ticker}</span><span>{deskLabel(report)}</span></div><h2><a href={reportUrl(report)}>{report.data.title}</a></h2><p>{report.data.description}</p><a class="read-link" href={reportUrl(report)}>閱讀完整文章 <span aria-hidden="true">→</span></a></article>)}</div></section>}
       <section class="daily-feed" aria-labelledby="feed-title"><div class="section-heading"><p class="eyebrow">編輯室文章</p><h2 id="feed-title">每日報導</h2></div><div class="post-list">{feed.map((report) => <article class="post-row"><div class="post-row-meta"><strong>{report.data.ticker}</strong><time datetime={dateLabel(report.data.publishedAt)}>{dateLabel(report.data.publishedAt)}</time><span>{deskLabel(report)}</span></div><div><h3><a href={reportUrl(report)}>{report.data.title}</a></h3><p>{report.data.description}</p><a class="read-link" href={reportUrl(report)}>繼續閱讀 →</a></div></article>)}</div></section>
       <AdSlot placement="mid" />
     </main>

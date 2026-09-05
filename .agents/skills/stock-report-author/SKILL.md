@@ -109,6 +109,14 @@ Every publishable report must include one deliberate mid-article `<AdSlot placem
 
 Every actively traded asset report must include a dated current-market visualization. For stocks and ETFs this means a candlestick chart covering the latest completed session and enough recent sessions to make the trend readable; include the data cutoff, OHLC values, and source. Do not use a decorative or single-candle chart.
 
+Technical analysis must be reproducible from the report's dated OHLC data and must be treated as timing evidence, not a forecast. Apply the following review before writing technical conclusions:
+
+- Identify the analysis window and the actual swing high／low used for any trendline or Fibonacci calculation; show the resulting price levels and calculation basis.
+- Discuss trend direction, moving averages or momentum, support, resistance, volume, and breakout／breakdown conditions. If a level is subjective, label it as an observation threshold rather than a fact.
+- When a chart-reading post, AI chart interpretation, Elliott Wave count, or social-media price map is used, link the original source and separate its observations from the report's independently calculated levels. AI or social chart reading may pre-screen a setup, but cannot by itself create a buy, sell, or valuation conclusion.
+- Add the relevant calculated levels to the existing interactive candlestick chart when the component supports annotations. Use the repository's existing React chart implementation and market JSON; never substitute TradingView embeds, screenshots, MUI X Charts, or another unassigned chart library.
+- Cross-check the technical setup against fundamentals, valuation, event risk, and relative market performance. A technical breakout without operating evidence is only a timing event; a cheap valuation without price stabilization is not a timing signal.
+
 Every investment report must also include an explicit `Entry Point Analysis` section (or a clearly translated equivalent) with both technical timing and fundamental valuation. Cover trend, moving averages or momentum, support/resistance, breakout or breakdown conditions, valuation-based price bands, margin-of-safety logic, staged-entry rules, and the operating evidence required before adding.
 
 Separate technical timing from business value. Price bands are scenarios or decision thresholds, not guaranteed intrinsic value or personalized advice. Include distinct guidance for an empty-handed investor and an existing holder, plus add, trim, and thesis-invalidation triggers.

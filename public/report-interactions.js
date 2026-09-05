@@ -3,6 +3,36 @@
   var root = document.documentElement;
   var NS = 'http://www.w3.org/2000/svg';
 
+  /* ---------- homepage coverage tabs ---------- */
+  (function coverageTabs() {
+    Array.prototype.forEach.call(document.querySelectorAll('[data-tab-group]'), function (group) {
+      var tabs = Array.prototype.slice.call(group.querySelectorAll('[role="tab"]'));
+      tabs.forEach(function (tab) {
+        tab.addEventListener('click', function () {
+          var target = tab.getAttribute('data-tab-target');
+          tabs.forEach(function (item) {
+            var selected = item === tab;
+            item.setAttribute('aria-selected', String(selected));
+            item.tabIndex = selected ? 0 : -1;
+            var panelId = item.getAttribute('aria-controls');
+            var panel = panelId && document.getElementById(panelId);
+            if (panel) panel.hidden = !selected;
+          });
+          var panel = target && document.getElementById(target);
+          if (panel) panel.hidden = false;
+        });
+        tab.addEventListener('keydown', function (event) {
+          if (event.key !== 'ArrowLeft' && event.key !== 'ArrowRight') return;
+          event.preventDefault();
+          var index = tabs.indexOf(tab);
+          var next = event.key === 'ArrowRight' ? (index + 1) % tabs.length : (index - 1 + tabs.length) % tabs.length;
+          tabs[next].focus();
+          tabs[next].click();
+        });
+      });
+    });
+  })();
+
   /* The source date is the 4:00 p.m. US Eastern market close. */
   (function localizeMarketDate() {
     var el = document.querySelector('[data-market-date]');

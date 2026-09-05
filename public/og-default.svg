@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">Stock Reports</title>
+  <desc id="desc">繁體中文股票、ETF 與市場事件研究</desc>
+  <rect width="1200" height="630" fill="#f5f1e8"/>
+  <rect x="72" y="72" width="1056" height="486" rx="24" fill="#fbfaf6" stroke="#d9d2c5" stroke-width="2"/>
+  <circle cx="174" cy="178" r="34" fill="#bb5a3c"/>
+  <path d="M158 180l12 12 23-29" fill="none" stroke="#fff" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="140" y="300" fill="#171717" font-family="Georgia, 'Noto Serif TC', serif" font-size="68" font-weight="700">Stock Reports</text>
+  <text x="144" y="366" fill="#5c5a55" font-family="Arial, 'Noto Sans TC', sans-serif" font-size="30">繁體中文股票、ETF 與市場事件研究</text>
+  <path d="M144 450h910" stroke="#d9d2c5" stroke-width="2"/>
+  <text x="144" y="500" fill="#bb5a3c" font-family="Arial, 'Noto Sans TC', sans-serif" font-size="24" letter-spacing="4">RESEARCH · EVIDENCE · DISCIPLINE</text>
+</svg>

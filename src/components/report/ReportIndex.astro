@@ -34,13 +34,18 @@ const coverage = [...reports].sort((a, b) => {
 const equityCoverage = coverage.filter((report) => individualWatchlist.includes(report.data.ticker));
 const etfCoverage = coverage.filter((report) => etfWatchlist.includes(report.data.ticker));
 const tagCloud = groupReportsByTag(allReports).slice(0, 18);
+const siteUrl = 'https://coldnew.github.io/stock/';
 ---
 <!doctype html>
 <html lang="zh-TW">
   <head>
     <meta charset="utf-8" /><meta name="viewport" content="width=device-width" />
-    <title>每日投資研究</title><meta name="description" content="每日更新的公司、ETF 與市場事件實證研究。" /><link rel="alternate" type="application/rss+xml" title="每日投資研究 RSS" href="/stock/rss.xml" />
-    <link rel="canonical" href={`https://coldnew.github.io/stock${currentPage === 1 ? '/' : `/page/${currentPage}/`}`} /><Analytics />
+    <title>每日投資研究｜Stock Reports</title><meta name="description" content="繁體中文股票、ETF 與市場事件研究：追蹤行情、基本面、技術面、估值、風險與可驗證的投資條件。" /><meta name="author" content="Yen-Chin, Lee" /><meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" /><link rel="alternate" type="application/rss+xml" title="每日投資研究 RSS" href="/stock/rss.xml" />
+    <link rel="canonical" href={`https://coldnew.github.io/stock${currentPage === 1 ? '/' : `/page/${currentPage}/`}`} /><meta property="og:type" content="website" /><meta property="og:title" content="每日投資研究｜Stock Reports" /><meta property="og:description" content="繁體中文股票、ETF 與市場事件研究。" /><meta property="og:url" content={`${siteUrl}${currentPage === 1 ? '' : `page/${currentPage}/`}`} /><meta property="og:image" content="https://coldnew.github.io/stock/og-default.svg" /><meta property="og:image:alt" content="Stock Reports 繁體中文投資研究" /><meta name="twitter:card" content="summary_large_image" /><meta name="twitter:image" content="https://coldnew.github.io/stock/og-default.svg" /><Analytics />
+    <script is:inline type="application/ld+json" set:html={JSON.stringify({
+      '@context': 'https://schema.org', '@type': 'WebSite', name: 'Stock Reports', url: siteUrl,
+      description: '繁體中文股票、ETF 與市場事件研究。', inLanguage: 'zh-TW', publisher: { '@type': 'Organization', name: 'Stock Reports', url: siteUrl },
+    })} />
   </head>
   <body>
     <header class="index-header">

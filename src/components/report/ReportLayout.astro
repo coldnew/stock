@@ -37,6 +37,10 @@ const sitePrefix = '/stock';
 const path = archive
   ? datePath
   : `/reports/${ticker.toLowerCase()}/`;
+const articleUrl = `${base}${path}`;
+const ogImage = `${base}/og-default.svg`;
+const reportTypeLabel = entry.data.reportType === 'income-etf' ? '收益型 ETF' : entry.data.reportType === 'equity' ? '個股研究' : entry.data.reportType === 'crypto' ? '數位資產研究' : '市場研究';
+const keywords = [ticker, reportTypeLabel, ...reportTags].filter(Boolean).join(', ');
 const tslaChart = ticker === 'TSLA'
   ? (iso(publishedAt) === '2026-07-22'
     ? {
@@ -55,24 +59,49 @@ const tslaChart = ticker === 'TSLA'
     <meta name="viewport" content="width=device-width" />
     <title>{title}</title>
     <meta name="description" content={description} />
+    <meta name="keywords" content={keywords} />
+    <meta name="author" content="Yen-Chin, Lee" />
     <meta name="robots" content={status === 'published' ? 'index, follow' : 'noindex, nofollow'} />
-    <link rel="canonical" href={`${base}${path}`} />
-    <link rel="alternate" hreflang="zh-TW" href={`${base}${path}`} />
-    <link rel="alternate" hreflang="x-default" href={`${base}${path}`} />
+    <meta name="googlebot" content={status === 'published' ? 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' : 'noindex, nofollow'} />
+    <link rel="canonical" href={articleUrl} />
+    <link rel="alternate" hreflang="zh-TW" href={articleUrl} />
+    <link rel="alternate" hreflang="x-default" href={articleUrl} />
     <link rel="alternate" type="application/rss+xml" title="每日投資研究 RSS" href={`${base}/rss.xml`} />
     <meta property="og:type" content="article" />
-    <meta property="og:url" content={`${base}${path}`} />
+    <meta property="og:url" content={articleUrl} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:locale" content="zh_TW" />
-    <meta name="twitter:card" content="summary" />
+    <meta property="og:site_name" content="Stock Reports" />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:image:alt" content={`${ticker} ${title}`} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="article:published_time" content={publishedAt.toISOString()} />
+    <meta property="article:modified_time" content={(updatedAt ?? publishedAt).toISOString()} />
+    <meta property="article:section" content={reportTypeLabel} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
     {status === 'published' && <Analytics />}
     <script is:inline type="application/ld+json" set:html={JSON.stringify({
-      '@context': 'https://schema.org', '@type': 'Article', headline: title,
+      '@context': 'https://schema.org', '@type': 'Article', '@id': `${articleUrl}#article`, headline: title,
       description, datePublished: iso(publishedAt), dateModified: iso(updatedAt ?? publishedAt),
-      inLanguage: locale, author: { '@type': 'Person', name: 'Yen-Chin, Lee' },
-      mainEntityOfPage: `${base}${path}`, isPartOf: { '@type': 'WebSite', name: 'Stock Reports' },
-      translationOfWork: translationKey, dateModifiedSource: iso(dataAsOf),
+      inLanguage: locale, keywords, articleSection: reportTypeLabel, image: ogImage,
+      author: { '@type': 'Person', name: 'Yen-Chin, Lee', url: `${base}/about.html` },
+      publisher: { '@type': 'Organization', name: 'Stock Reports', url: `${base}/`, logo: { '@type': 'ImageObject', url: ogImage } },
+      mainEntityOfPage: { '@type': 'WebPage', '@id': articleUrl },
+      isPartOf: { '@type': 'WebSite', name: 'Stock Reports', url: `${base}/` },
+      about: { '@type': 'Thing', name: ticker },
+      citation: `${base}/rss.xml`, translationOfWork: translationKey, dateModifiedSource: iso(dataAsOf),
+    })} />
+    <script is:inline type="application/ld+json" set:html={JSON.stringify({
+      '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [
+        { '@type': 'ListItem', position: 1, name: '報告總覽', item: `${base}/` },
+        { '@type': 'ListItem', position: 2, name: ticker, item: `${base}${latestPath}` },
+        { '@type': 'ListItem', position: 3, name: title, item: articleUrl },
+      ],
     })} />
   </head>
   <body class:list={[history.length > 0 && "has-report-sidebar"]}>

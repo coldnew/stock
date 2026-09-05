@@ -141,7 +141,7 @@ Before changing `status`, inspect the rendered scope mentally or with the genera
 - Each publishable locale includes the deliberate mid `AdSlot`; monetization scripts remain centralized in shared components.
 - The page does not make a personalized recommendation or promise a return.
 
-## Publish
+## Publish, Commit, And Push
 
 Keep both locale files as `status: draft` while writing. Publish only after the article and sources are complete:
 
@@ -151,6 +151,26 @@ npm run report:publish -- --ticker=AMD --date=YYYY-MM-DD --locale=zh-TW
 ```
 
 The publish command validates the English content and reverts the file if validation fails. Run `npm run content:check` again after publishing both locales, then run a full build. Do not publish a placeholder merely to make a ticker appear on the index. If one locale is not ready, leave that locale as `draft` and explain the incomplete coverage in the handoff.
+
+For this repository, a completed report task defaults to the full release flow: after publication and all required checks pass, automatically create a focused commit and push it to the current branch's configured remote. The normal sequence is:
+
+```bash
+npm run report:publish -- --ticker=AMD --date=YYYY-MM-DD --locale=zh-TW
+npm run check
+npm run content:check
+npm run build
+npm run build:check
+git diff --check
+git add <report-files>
+git commit -m "新增或更新 <TICKER> 投資研究報告"
+git push
+```
+
+Before committing, inspect `git status --short` and `git diff --stat`. Stage only the report files and the intended supporting changes; never include unrelated user changes. After pushing, verify the commit hash, remote push result, and that `git status --short` is clean.
+
+Stop before publishing, committing, or pushing when a required data source is missing for a formal conclusion, any validation or build check fails, the report is still a scaffold, the configured remote or branch is unavailable, or the worktree contains unrelated changes that cannot be safely separated. In those cases, explain the exact blocker and leave the report as a draft when possible.
+
+If the user explicitly says `draft only`, `do not publish`, `do not commit`, or `do not push`, follow that narrower instruction for the current task.
 
 ## History And URLs
 
@@ -172,4 +192,4 @@ The index and report layout discover historical published editions from the cont
 
 ## Completion Handoff
 
-Report what was added, the locales and publication state, the source coverage, and the checks run. If the user explicitly asks for a commit or push, use a focused commit message and verify `git status --short` afterward. Do not push merely because a report was written unless the user authorized pushing in the current request or the established task explicitly includes publishing.
+Report what was added, the locales and publication state, the source coverage, the checks run, the commit hash, and the push result. A completed report task includes the automatic commit-and-push flow above unless the user narrowed the request to drafting, checking, or local-only work.

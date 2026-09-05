@@ -1,5 +1,5 @@
 import { mkdir, writeFile } from 'node:fs/promises';
-import { watchlist } from '../src/data/watchlist.ts';
+import { reportOnlyTickers, watchlist } from '../src/data/watchlist.ts';
 
 const args = Object.fromEntries(process.argv.slice(2).map((arg) => {
   const [key, ...value] = arg.replace(/^--/, '').split('=');
@@ -13,8 +13,8 @@ if (args.help) {
 
 const tickers = String(args.ticker || '').split(',').filter(Boolean).map((ticker) => ticker.toUpperCase());
   
-if (tickers.length && tickers.some((ticker) => !watchlist.includes(ticker))) {
-  throw new Error(`Ticker must be in watchlist: ${watchlist.join(', ')}`);
+if (tickers.length && tickers.some((ticker) => !watchlist.includes(ticker) && !reportOnlyTickers.includes(ticker))) {
+  throw new Error(`Ticker must be in watchlist or report-only list: ${[...watchlist, ...reportOnlyTickers].join(', ')}`);
 }
 
 const range = String(args.range || '6mo');

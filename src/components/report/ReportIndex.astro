@@ -5,7 +5,7 @@ import MonetizationScripts from './MonetizationScripts.astro';
 import Analytics from './Analytics.astro';
 import AiDisclosure from './AiDisclosure.astro';
 import { latestByTicker } from '../../data/reports';
-import { individualWatchlist, etfWatchlist, watchlist } from '../../data/watchlist';
+import { trackedAssets, trackedAssetByTicker, watchlist } from '../../data/watchlist';
 import { groupReportsByTag, tagHref } from '../../data/tags';
 import SearchDialog from './SearchDialog.astro';
 import '../../styles/index.css';
@@ -31,8 +31,10 @@ const coverage = [...reports].sort((a, b) => {
   };
   return priority(a.data.ticker) - priority(b.data.ticker) || b.data.publishedAt.valueOf() - a.data.publishedAt.valueOf();
 });
-const equityCoverage = coverage.filter((report) => individualWatchlist.includes(report.data.ticker));
-const etfCoverage = coverage.filter((report) => etfWatchlist.includes(report.data.ticker));
+const trackedCoverage = coverage.filter((report) => trackedAssetByTicker.has(report.data.ticker));
+const coverageMarkets = [...new Set(trackedAssets.map(({ market }) => market))];
+const marketLabel = (market: string) => market === 'TW' ? '台股' : '美股';
+const assetTypeLabel = (assetType: string) => assetType === 'etf' ? 'ETF' : assetType === 'bdc' ? 'BDC／收益型' : '個股';
 const tagCloud = groupReportsByTag(allReports).slice(0, 18);
 const siteUrl = 'https://coldnew.github.io/stock/';
 ---
@@ -57,7 +59,7 @@ const siteUrl = 'https://coldnew.github.io/stock/';
     </header>
     <AdSlot placement="top" />
     <main>
-      <section class="coverage" aria-labelledby="coverage-title"><div class="section-heading"><p class="eyebrow">明確列入追蹤的標的</p><h2 id="coverage-title">目前追蹤</h2><p class="coverage-note">只有列入個股或 ETF 追蹤清單的標的會顯示在這裡；其他研究文章仍會出現在下方每日報導，但不代表本站持續追蹤。</p></div><div class="coverage-tabs" data-tab-group="coverage" role="tablist" aria-label="追蹤清單分類"><button type="button" role="tab" aria-selected="true" aria-controls="coverage-equity" id="coverage-tab-equity" data-tab-target="coverage-equity">個股追蹤 <span>{equityCoverage.length}</span></button><button type="button" role="tab" aria-selected="false" aria-controls="coverage-etf" id="coverage-tab-etf" data-tab-target="coverage-etf">ETF 追蹤 <span>{etfCoverage.length}</span></button></div><div class="coverage-panel" role="tabpanel" id="coverage-equity" aria-labelledby="coverage-tab-equity" data-tab-panel="coverage-equity"><div class="coverage-grid">{equityCoverage.map((report) => <a class="coverage-item" href={reportUrl(report)}><span class="ticker">{report.data.ticker}</span><span>{report.data.title}</span><span aria-hidden="true">↗</span></a>)}</div></div><div class="coverage-panel" role="tabpanel" id="coverage-etf" aria-labelledby="coverage-tab-etf" data-tab-panel="coverage-etf" hidden><div class="coverage-grid">{etfCoverage.map((report) => <a class="coverage-item" href={reportUrl(report)}><span class="ticker">{report.data.ticker}</span><span>{report.data.title}</span><span aria-hidden="true">↗</span></a>)}</div></div></section>
+      <section class="coverage" aria-labelledby="coverage-title"><div class="section-heading"><p class="eyebrow">明確列入追蹤的標的</p><h2 id="coverage-title">目前追蹤</h2><p class="coverage-note">可先按市場，再按資產類型篩選。未來加入台股 ETF 或其他收益型工具時，不需要重新設計首頁。</p></div><div class="coverage-tabs" data-tab-group="coverage-market" role="tablist" aria-label="追蹤市場分類"><button type="button" role="tab" aria-selected="true" aria-controls="coverage-market-all" id="coverage-market-tab-all" data-market-filter="all">全部 <span>{trackedCoverage.length}</span></button>{coverageMarkets.map((market) => <button type="button" role="tab" aria-selected="false" aria-controls={`coverage-market-${market}`} id={`coverage-market-tab-${market}`} data-market-filter={market}>{marketLabel(market)} <span>{trackedCoverage.filter((report) => trackedAssetByTicker.get(report.data.ticker)?.market === market).length}</span></button>)}</div><div class="coverage-tabs" data-tab-group="coverage-type" role="tablist" aria-label="資產類型分類"><button type="button" role="tab" aria-selected="true" data-type-filter="all">全部類型</button>{['equity', 'etf', 'bdc'].map((assetType) => <button type="button" role="tab" aria-selected="false" data-type-filter={assetType}>{assetTypeLabel(assetType)} <span>{trackedCoverage.filter((report) => trackedAssetByTicker.get(report.data.ticker)?.assetType === assetType).length}</span></button>)}</div><div class="coverage-panel" role="tabpanel" id="coverage-market-all" data-coverage-panel><div class="coverage-grid">{trackedCoverage.map((report) => { const asset = trackedAssetByTicker.get(report.data.ticker)!; return <a class="coverage-item" href={reportUrl(report)} data-market={asset.market} data-asset-type={asset.assetType}><span class="ticker">{asset.displayTicker}</span><span>{report.data.title}</span><span aria-hidden="true">↗</span></a>; })}</div></div></section>
       <section class="tag-cloud-section" aria-labelledby="tag-cloud-title"><div class="section-heading"><p class="eyebrow">文章索引</p><h2 id="tag-cloud-title">依標籤瀏覽</h2></div><div class="tag-cloud">{tagCloud.map((tag) => <a class="tag-link" href={tagHref(tag.label)}>#{tag.label}<span>{tag.reports.length}</span></a>)}</div></section>
       <section class="daily-feed" aria-labelledby="feed-title"><div class="section-heading"><p class="eyebrow">編輯室文章</p><h2 id="feed-title">每日報導</h2></div><div class="post-list">{feed.map((report) => <article class="post-row"><div class="post-row-meta"><strong>{report.data.ticker}</strong><time datetime={dateLabel(report.data.publishedAt)}>{dateLabel(report.data.publishedAt)}</time><span>{deskLabel(report)}</span></div><div><h3><a href={reportUrl(report)}>{report.data.title}</a></h3><p>{report.data.description}</p><a class="read-link" href={reportUrl(report)}>繼續閱讀 →</a></div></article>)}</div><nav class="pagination" aria-label="每日報導分頁">{currentPage > 1 && <a class="pagination-prev" href={currentPage === 2 ? '/stock/' : `/stock/page/${currentPage - 1}/`} rel="prev">‹ 上一頁</a>}<div class="pagination-pages">{Array.from({ length: totalPages }, (_, index) => index + 1).map((number) => number === currentPage ? <span aria-current="page">{number}</span> : <a href={number === 1 ? '/stock/' : `/stock/page/${number}/`}>{number}</a>)}</div>{currentPage < totalPages && <a class="pagination-next" href={`/stock/page/${currentPage + 1}/`} rel="next">下一頁 ›</a>}</nav></section>
       <AdSlot placement="mid" />
@@ -67,28 +69,26 @@ const siteUrl = 'https://coldnew.github.io/stock/';
     <script is:inline src="/stock/report-interactions.js"></script>
     <script is:inline>
       (function () {
-        var group = document.querySelector('[data-tab-group="coverage"]');
-        if (!group) return;
-        var tabs = Array.prototype.slice.call(group.querySelectorAll('[role="tab"]'));
-        function activate(tab) {
-          tabs.forEach(function (item) {
-            var selected = item === tab;
-            item.setAttribute('aria-selected', String(selected));
-            item.tabIndex = selected ? 0 : -1;
-            var panel = document.getElementById(item.getAttribute('aria-controls'));
-            if (panel) panel.hidden = !selected;
+        var marketGroup = document.querySelector('[data-tab-group="coverage-market"]');
+        var typeGroup = document.querySelector('[data-tab-group="coverage-type"]');
+        var items = Array.prototype.slice.call(document.querySelectorAll('[data-coverage-panel] .coverage-item'));
+        if (!marketGroup || !typeGroup) return;
+        var market = 'all';
+        var assetType = 'all';
+        function activate(group, tab, attribute) {
+          Array.prototype.slice.call(group.querySelectorAll('[role="tab"]')).forEach(function (item) {
+            item.setAttribute('aria-selected', String(item === tab));
+          });
+          if (attribute === 'data-market-filter') market = tab.getAttribute(attribute);
+          else assetType = tab.getAttribute(attribute);
+          items.forEach(function (item) {
+            item.hidden = (market !== 'all' && item.getAttribute('data-market') !== market) || (assetType !== 'all' && item.getAttribute('data-asset-type') !== assetType);
           });
         }
-        tabs.forEach(function (tab) {
-          tab.addEventListener('click', function () { activate(tab); });
-          tab.addEventListener('keydown', function (event) {
-            if (event.key !== 'ArrowLeft' && event.key !== 'ArrowRight') return;
-            event.preventDefault();
-            var index = tabs.indexOf(tab);
-            var next = event.key === 'ArrowRight' ? (index + 1) % tabs.length : (index - 1 + tabs.length) % tabs.length;
-            tabs[next].focus();
-            activate(tabs[next]);
-          });
+        [[marketGroup, 'data-market-filter'], [typeGroup, 'data-type-filter']].forEach(function (pair) {
+          var group = pair[0];
+          var attribute = pair[1];
+          group.querySelectorAll('[role="tab"]').forEach(function (tab) { tab.addEventListener('click', function () { activate(group, tab, attribute); }); });
         });
       })();
     </script>

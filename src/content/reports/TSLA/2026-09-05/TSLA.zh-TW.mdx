@@ -437,7 +437,25 @@ Tesla 活動通常同時承載三種估值：今天汽車／能源業務的現�
 
 ## 第四部分：技術面——今天的圖表應該告訴我們什麼
 
-<CandlestickChart client:load locale="zh-TW" dataUrl="/stock/data/market/TSLA.json" levels={[{price: 338, label: "下方支撐", color: "#C23B32"}, {price: 349, label: "短線支撐", color: "#C23B32"}, {price: 384, label: "事件高點", color: "#3A7A4E"}, {price: 385, label: "突破確認", color: "#3A7A4E"}]} />
+<CandlestickChart client:load locale="zh-TW" dataUrl="/stock/data/market/TSLA.json" levels={[{price: 334.2, label: "Fib 23.6%", color: "#8B5CF6"}, {price: 338, label: "下方支撐", color: "#C23B32"}, {price: 349, label: "短線支撐", color: "#C23B32"}, {price: 357, label: "Fib 38.2%", color: "#8B5CF6"}, {price: 375.4, label: "Fib 50%", color: "#8B5CF6"}, {price: 384, label: "事件高點", color: "#3A7A4E"}, {price: 385, label: "突破確認", color: "#3A7A4E"}, {price: 393.8, label: "Fib 61.8%", color: "#8B5CF6"}]} />
+
+### Jesse Launz 方法：先讓圖表做預選，再由基本面決定是否交易
+
+[Jesse Launz 的貼文](https://x.com/jesselaunz/status/2096141540771111103?s=20)提出一個適合本報告的技術分析工作流：先用圖表讀取工具標出趨勢線、阻力線與 Fibonacci，必要時提出波浪理論的候選解讀，作為人工交易前的預選；再把這個價格訊號與事件、估值和風險資料分開驗證。這裡採用的是「可重算的價格結構」部分，不把 AI 讀圖或 Elliott Wave 的主觀浪型當作獨立證據。
+
+以站內截至 2026-09-04 的日線資料，取 2026-05-13 高點 $453.40 到 2026-07-29 低點 $297.38 作為中期波段，計算得到 Fibonacci 反彈參考位：23.6% 約 $334.20、38.2% 約 $356.98、50% 約 $375.39、61.8% 約 $393.80。9 月 4 日收盤 $354.08，位於 38.2% 約 $357 下方；因此目前比較精確的描述是「反彈接近第一個中期分水嶺但尚未站穩」，而不是已經完成趨勢反轉。
+
+| 圖表訊號 | 目前讀法 | 需要的確認 |
+|---|---|---|
+| $334.20／Fib 23.6% | 中期反彈的低位回收區；與 $338 結構警戒接近 | 跌破後能否快速收回，及成交量是否放大 |
+| $356.98／Fib 38.2% | 今日收盤略低於此位，是短線多空分水嶺 | 連續收盤站上，而非盤中短暫穿越 |
+| $375.39／Fib 50% | 反彈若延續，下一個中期壓力區 | 需同時突破事件後賣壓與 60 日均線附近壓力 |
+| $393.80／Fib 61.8% | 接近前波反彈上方的強壓區 | 需有 Robotaxi 付費里程、監管進展或毛利數據配合 |
+| $384–$385 | 9 月 3 日事件高點附近的現場供需壓力 | 放量收盤突破，才代表市場重新接受商轉敘事 |
+
+這套線位不能取代趨勢判斷。$357 之上若只出現一天反彈，可能只是事件後回補；$375–$394 之間若量能萎縮，則更像反彈而非新升勢；若收盤跌破 $338 且 NHTSA 或營運數據沒有改善，應把結構解讀為反彈失敗。波浪理論在這裡只作情境標籤，因為不同分析者可以對同一段走勢給出不同浪型，不能作為單一買入理由。
+
+Jesse Launz 所說的「orthogonal」低相關策略，對 TSLA 的實務轉譯是把三類訊號分離：**價格結構**回答現在是否有交易時機；**基本面與監管**回答這個時機是否值得承擔；**相對強弱／市場因素**回答上漲是否只是 Nasdaq、成長股或事件風險溢價一起變動。只有技術面站回關鍵線位、Robotaxi 的營運資料改善，且 TSLA 相對 QQQ 的表現不是單純大盤 beta，才可把觀察升級為較高信心的趨勢訊號。目前三者尚未同時成立，因此技術圖表維持 timing 工具定位，不提高估值中樞。
 
 截至 9 月 4 日的日線資料顯示：收盤 $354.08、開盤 $362.18、最高 $364.69、最低 $351.32，成交量約 6,440 萬股；20 日均線約 $348.44、60 日均線約 $364.22、200 日均線約 $399.56，14 日 RSI 約 55。價格仍低於 60 日與 200 日均線，短線尚未形成長期趨勢反轉；RSI 也沒有落入超賣，不能把下跌直接解讀成已經完成修復。
 
@@ -504,6 +522,7 @@ Tesla 活動通常同時承載三種估值：今天汽車／能源業務的現�
 - [NHTSA 官方：Cybercab 自我認證 Audit Query](https://www.nhtsa.gov/press-releases/investigation-tesla-cybercab-self-certification)，核對聯邦監管機關的調查範圍。
 - [TSLA Ming：FMVSS 自我認證與 Part 555 豁免的法規整理](https://x.com/tslaming/status/2095872120253476953?s=20)，作為第三方制度框架解讀；不取代 NHTSA、Tesla 或正式認證文件。
 - [TSLA Ming：Tesla 脈衝雷射清潔專利整理](https://x.com/tslaming/status/2096154653549564024?s=20)，整理 US 2026/0257648 A1 的車輛光學與太陽能板清潔架構；以 [USPTO 專利公開案](https://patents.google.com/patent/US20260257648A1/en)為主要技術來源，專利不等於量產或商業化。
+- [Jesse Launz：以 AI 讀取圖表、標示趨勢線與 Fibonacci 作為交易前預選](https://x.com/jesselaunz/status/2096141540771111103?s=20)，本報告只採用可由 OHLC 資料重算的波段與 Fibonacci 線位，不把 AI 讀圖或波浪理論當成獨立交易證據。
 - [TechCrunch：聯邦監管調查 Cybercab 上路](https://techcrunch.com/2026/09/04/feds-launch-investigation-into-teslas-cybercab-deployment/)，交叉核對 NHTSA 調查脈絡與聯邦規則。
 - [Axios：Cybercab 在 Austin 提供叫車服務](https://www.axios.com/2026/09/04/tesla-cybercab-launch-austin)，核對初期車隊與有限服務狀態。
 - [Texas AV Tracker：9 月 4 日新增 12 台 Model Y、Texas 車隊達 432 台](https://x.com/texasavtracker/status/2096016395578523678?s=20)，用於追蹤 Texas DMV AV registry 的車隊登記增長；登記數不等於上線車、付費里程或收入。

@@ -14,5 +14,6 @@ export const watchlist = [...individualWatchlist, ...etfWatchlist];
 
 /** 有報告但未列入上述清單的標的，只會出現在每日報導，不會被當成追蹤標的。 */
 export const reportOnlyTickers = [
+  'AVGO',
   '2330.TW',
 ];

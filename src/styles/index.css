@@ -24,6 +24,7 @@ body { max-width: 780px; margin: 0 auto; padding: 26px 22px 64px; color: var(--n
 .read-link:hover { text-decoration: underline; }
 .daily-feed, .coverage { margin-top: 48px; }
 .coverage { margin-bottom: 48px; }
+.coverage-note { max-width: 640px; margin: 8px 0 0; color: var(--stone); font-size: 13px; line-height: 1.7; }
 .section-heading { display: flex; align-items: baseline; justify-content: space-between; gap: 20px; border-bottom: 1px solid var(--near-black); }
 .section-heading .eyebrow { margin: 0 0 7px; }
 .section-heading h2 { margin: 0 0 7px; font-size: 24px; font-weight: 500; }

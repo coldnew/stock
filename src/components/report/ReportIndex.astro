@@ -59,6 +59,34 @@ const archivedTickers = [...editionsByTicker.entries()].filter(([, editions]) =>
     <section class="archive-guide" aria-labelledby="archive-title"><h2 id="archive-title">回看歷史文章</h2><p>保留日期版本，方便比較事實、風險與結論如何隨時間變化。</p>{archivedTickers.length > 0 && <div class="archive-list">{archivedTickers.map(([ticker, editions]) => <details><summary><span>{ticker} · {editions[0].data.title}</span><span class="archive-count">{editions.length} 個版本</span></summary><ul>{[...editions].sort((a, b) => b.data.publishedAt.valueOf() - a.data.publishedAt.valueOf()).map((edition) => <li><a href={reportUrl(edition)}>{dateLabel(edition.data.publishedAt)} · {edition.data.title}</a></li>)}</ul></details>)}</div>}</section>
     <AdSlot placement="bottom" /><AdSlot placement="smartlink" />
     <footer class="index-footer"><span>僅供教育與資訊參考，不構成投資建議。</span><span class="footer-links"><a href="/stock/about.html">關於本站</a><a href="/stock/privacy.html">隱私權政策</a><a href="/stock/disclaimer.html">免責聲明</a></span></footer>
-    <script is:inline src="/stock/report-interactions.js"></script><MonetizationScripts />
+    <script is:inline src="/stock/report-interactions.js"></script>
+    <script is:inline>
+      (function () {
+        var group = document.querySelector('[data-tab-group="coverage"]');
+        if (!group) return;
+        var tabs = Array.prototype.slice.call(group.querySelectorAll('[role="tab"]'));
+        function activate(tab) {
+          tabs.forEach(function (item) {
+            var selected = item === tab;
+            item.setAttribute('aria-selected', String(selected));
+            item.tabIndex = selected ? 0 : -1;
+            var panel = document.getElementById(item.getAttribute('aria-controls'));
+            if (panel) panel.hidden = !selected;
+          });
+        }
+        tabs.forEach(function (tab) {
+          tab.addEventListener('click', function () { activate(tab); });
+          tab.addEventListener('keydown', function (event) {
+            if (event.key !== 'ArrowLeft' && event.key !== 'ArrowRight') return;
+            event.preventDefault();
+            var index = tabs.indexOf(tab);
+            var next = event.key === 'ArrowRight' ? (index + 1) % tabs.length : (index - 1 + tabs.length) % tabs.length;
+            tabs[next].focus();
+            activate(tabs[next]);
+          });
+        });
+      })();
+    </script>
+    <MonetizationScripts />
   </body>
 </html>

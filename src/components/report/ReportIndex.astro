@@ -8,7 +8,7 @@ import { latestByTicker } from '../../data/reports';
 import { watchlist } from '../../data/watchlist';
 import '../../styles/index.css';
 
-const { reports, allReports = reports } = Astro.props as { reports: CollectionEntry<'reports'>[]; allReports?: CollectionEntry<'reports'>[] };
+const { reports, allReports = reports, page = 1, pageSize = 10 } = Astro.props as { reports: CollectionEntry<'reports'>[]; allReports?: CollectionEntry<'reports'>[]; page?: number; pageSize?: number };
 const latest = latestByTicker(allReports);
 const dateLabel = (date: Date) => date.toISOString().slice(0, 10);
 const reportUrl = (report: CollectionEntry<'reports'>) => {
@@ -16,7 +16,9 @@ const reportUrl = (report: CollectionEntry<'reports'>) => {
   return latest.get(`${report.data.locale}:${report.data.ticker}`)?.id === report.id ? `${base}/` : `${base}/${dateLabel(report.data.publishedAt)}/`;
 };
 const deskLabel = (report: CollectionEntry<'reports'>) => report.data.tags.includes('Q2 2026') ? '季度財報' : report.data.tags.includes('income-etf') ? '收益策略' : report.data.tags.includes('equity') ? '個股研究' : report.data.tags.includes('crypto') ? '數位資產' : '市場研究';
-const feed = allReports.slice(0, 10);
+const totalPages = Math.max(1, Math.ceil(allReports.length / pageSize));
+const currentPage = Math.min(Math.max(page, 1), totalPages);
+const feed = allReports.slice((currentPage - 1) * pageSize, currentPage * pageSize);
 const priorityTickers = ['TSLA', 'GOOG', 'AAPL', 'MSFT', 'NVDA', 'AMD'];
 const coverage = [...reports].sort((a, b) => {
   const priority = (ticker: string) => {
@@ -37,7 +39,7 @@ const etfCoverage = coverage.filter(isEtf);
   <head>
     <meta charset="utf-8" /><meta name="viewport" content="width=device-width" />
     <title>每日投資研究</title><meta name="description" content="每日更新的公司、ETF 與市場事件實證研究。" /><link rel="alternate" type="application/rss+xml" title="每日投資研究 RSS" href="/stock/rss.xml" />
-    <link rel="canonical" href="https://coldnew.github.io/stock/" /><Analytics />
+    <link rel="canonical" href={`https://coldnew.github.io/stock${currentPage === 1 ? '/' : `/page/${currentPage}/`}`} /><Analytics />
   </head>
   <body>
     <header class="index-header">
@@ -50,7 +52,7 @@ const etfCoverage = coverage.filter(isEtf);
     <AdSlot placement="top" />
     <main>
       <section class="coverage" aria-labelledby="coverage-title"><div class="section-heading"><p class="eyebrow">追蹤清單</p><h2 id="coverage-title">目前追蹤</h2></div><div class="coverage-tabs" data-tab-group="coverage" role="tablist" aria-label="追蹤清單分類"><button type="button" role="tab" aria-selected="true" aria-controls="coverage-equity" id="coverage-tab-equity" data-tab-target="coverage-equity">個股追蹤 <span>{equityCoverage.length}</span></button><button type="button" role="tab" aria-selected="false" aria-controls="coverage-etf" id="coverage-tab-etf" data-tab-target="coverage-etf">ETF 追蹤 <span>{etfCoverage.length}</span></button></div><div class="coverage-panel" role="tabpanel" id="coverage-equity" aria-labelledby="coverage-tab-equity" data-tab-panel="coverage-equity"><div class="coverage-grid">{equityCoverage.map((report) => <a class="coverage-item" href={reportUrl(report)}><span class="ticker">{report.data.ticker}</span><span>{report.data.title}</span><span aria-hidden="true">↗</span></a>)}</div></div><div class="coverage-panel" role="tabpanel" id="coverage-etf" aria-labelledby="coverage-tab-etf" data-tab-panel="coverage-etf" hidden><div class="coverage-grid">{etfCoverage.map((report) => <a class="coverage-item" href={reportUrl(report)}><span class="ticker">{report.data.ticker}</span><span>{report.data.title}</span><span aria-hidden="true">↗</span></a>)}</div></div></section>
-      <section class="daily-feed" aria-labelledby="feed-title"><div class="section-heading"><p class="eyebrow">編輯室文章</p><h2 id="feed-title">每日報導</h2></div><div class="post-list">{feed.map((report) => <article class="post-row"><div class="post-row-meta"><strong>{report.data.ticker}</strong><time datetime={dateLabel(report.data.publishedAt)}>{dateLabel(report.data.publishedAt)}</time><span>{deskLabel(report)}</span></div><div><h3><a href={reportUrl(report)}>{report.data.title}</a></h3><p>{report.data.description}</p><a class="read-link" href={reportUrl(report)}>繼續閱讀 →</a></div></article>)}</div></section>
+      <section class="daily-feed" aria-labelledby="feed-title"><div class="section-heading"><p class="eyebrow">編輯室文章</p><h2 id="feed-title">每日報導</h2></div><div class="post-list">{feed.map((report) => <article class="post-row"><div class="post-row-meta"><strong>{report.data.ticker}</strong><time datetime={dateLabel(report.data.publishedAt)}>{dateLabel(report.data.publishedAt)}</time><span>{deskLabel(report)}</span></div><div><h3><a href={reportUrl(report)}>{report.data.title}</a></h3><p>{report.data.description}</p><a class="read-link" href={reportUrl(report)}>繼續閱讀 →</a></div></article>)}</div><nav class="pagination" aria-label="每日報導分頁">{currentPage > 1 && <a class="pagination-prev" href={currentPage === 2 ? '/stock/' : `/stock/page/${currentPage - 1}/`} rel="prev">‹ 上一頁</a>}<div class="pagination-pages">{Array.from({ length: totalPages }, (_, index) => index + 1).map((number) => number === currentPage ? <span aria-current="page">{number}</span> : <a href={number === 1 ? '/stock/' : `/stock/page/${number}/`}>{number}</a>)}</div>{currentPage < totalPages && <a class="pagination-next" href={`/stock/page/${currentPage + 1}/`} rel="next">下一頁 ›</a>}</nav></section>
       <AdSlot placement="mid" />
     </main>
     <AdSlot placement="bottom" /><AdSlot placement="smartlink" />

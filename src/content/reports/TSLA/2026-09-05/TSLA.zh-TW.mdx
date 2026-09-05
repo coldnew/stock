@@ -108,6 +108,21 @@ Tesla 在 Austin 以無方向盤、無踏板、雙座 Cybercab 提供有限區�
 
 需要分開三件事：Texas 是否允許無人車在道路上運行、聯邦車輛標準是否容許這種車型、以及 Tesla 是否能在事故或系統失效時提供可接受的乘客安全方案。州級營運許可不會自動消除聯邦合規風險，因此今天不能把「已能載客」寫成「已完成法規驗證」。
 
+### FMVSS 自我認證與 NHTSA Audit Query：爭議核心不是「有沒有豁免」
+
+<img src="/stock/media/tsla/cybercab-gallery/fmvss-self-certification.jpg" alt="Cybercab FMVSS 自我認證與 NHTSA 審查關係示意圖" loading="lazy" style="width:100%; border-radius:12px;" />
+
+[TSLA Ming 的整理](https://x.com/tslaming/status/2095872120253476953?s=20)提出一個值得納入的法規框架：美國通常採車廠自我認證，而不是每一款車上市前都由 NHTSA 逐車核准；因此 Tesla 沒有先申請 Part 555 豁免，可能是因為公司主張 Cybercab 已依適用的 FMVSS 完成自我認證，而不是承認車型不符合規則後尋求臨時豁免。這個框架有助於解釋為什麼「Austin 已載客」與「NHTSA 啟動審查」可以同時成立。
+
+但這則貼文是第三方解讀，不能取代 Tesla 的認證文件或 NHTSA 的法律結論。自我認證不等於政府預先批准，也不代表 NHTSA 只能事後旁觀；Audit Query 正是在檢查 Tesla 是否有充分工程依據，證明無方向盤、踏板、傳統後視鏡與其他硬體配置仍符合適用安全標準。如果 NHTSA 認為自我認證基礎不足，後果可能包括補件、召回、限制部署、要求設計修改或其他執法處置。
+
+這會把 Cybercab 的監管風險拆成兩層：
+
+1. **制度路徑風險：** Tesla 選擇自我認證而非先取得 Part 555 豁免，能否在現行規則下站得住腳。
+2. **工程證據風險：** 即使自我認證在程序上成立，車輛是否有足夠測試、替代控制與失效安全設計，支持沒有傳統駕駛硬體的安全主張。
+
+因此，市場不應把「沒有申請豁免」讀成「Tesla 已經獲得 NHTSA 放行」，也不應把 Audit Query 直接讀成「Cybercab 已被判定違規」。在估值上，這則整理讓我們更清楚知道監管審查的真正變數，但不降低本文對 Cybercab 擴張速度的折價；在 NHTSA 結果、Tesla 工程文件與正式處置出現前，Robotaxi 仍應視為高不確定性的選擇權。
+
 <AdSlot placement="mid" />
 
 ### 媒體反應的共識與分歧
@@ -146,6 +161,68 @@ Tesla 的 [Cybercab Rider Guide](https://www.tesla.com/robotaxi/riderguides/cybe
 | 影片為單一社群示範 | 證明有人展示了產品互動 | 不代表乘客普遍可用、也不代表收入 |
 
 前一天曾流傳「9 月 5 日 17:00 對外開放」的時間線；今天應改寫成：**Austin 已出現公開可訂服務的報導，但服務數量、地理圍籬與資格限制仍要以 Robotaxi App 和 Tesla 官方狀態為準。** 這比把第三方貼文當成完整商轉更精確。
+
+### 內部攝影機警示：乘客隱私與安全監控的邊界
+
+<video controls playsinline preload="metadata" poster="/stock/media/tsla/cybercab-videos/interior-camera-warning.jpg" style="width:100%; max-height:720px; border-radius:12px; background:#111;">
+  <source src="/stock/media/tsla/cybercab-videos/interior-camera-warning.mp4" type="video/mp4" />
+  您的瀏覽器不支援影片播放，請改看<a href="https://x.com/notateslaapp/status/2096050553277096106?s=46&t=fA-tC603qPKYVO4bQZneEw">Not a Tesla App 原始影片貼文</a>。
+</video>
+
+[Not a Tesla App 的影片](https://x.com/notateslaapp/status/2096050553277096106?s=46&t=fA-tC603qPKYVO4bQZneEw)顯示，乘客遮住 Cybercab 車內攝影機後，車內系統提示不要遮擋鏡頭；原始影片約 4 分 20 秒，本文保存可直接播放的 H.264／AAC MP4 版本。這項觀察支持一個重要的產品推論：Cybercab 的「無安全駕駛」體驗，仍依賴車內感測與乘客狀態監控，至少需要知道鏡頭是否被遮蔽，才能把異常交給車隊支援、遠端協助或安全流程處理。
+
+它同時暴露一個尚未定價的取捨。對乘客而言，車內攝影機涉及隱私與信任；對 Tesla 而言，鏡頭可用性又可能是維持安全營運、處理干擾與降低責任風險的必要條件。若未來要求乘客不得遮擋鏡頭，Tesla 需要在 Rider Guide、告知同意、影像保存、人工存取與申訴流程上給出清楚規則。單一影片不能證明攝影機影像會被錄製、上傳或由人工即時監看，也不能推導出事故率或遠端介入率。
+
+| 影片直接證據 | 可以支持的判斷 | 不能支持的判斷 |
+|---|---|---|
+| 遮擋內部鏡頭會出現系統警示 | 車內感測器狀態被納入乘客體驗流程 | 代表整套乘客監控已通過監管或安全驗證 |
+| Cybercab 需要鏡頭保持可用 | 無人服務可能依賴車內狀態偵測與異常處理 | 代表 Tesla 已公開影像保存、人工介入或隱私政策 |
+| 社群影片可重現一個提示 | 產品確實存在可觀察的限制條件 | 代表所有車輛、所有軟體版本都有相同行為 |
+
+投資上，這是**產品化與責任邊界的證據**，不是自駕安全證明。後續應追蹤 Tesla 是否在官方 Rider Guide 補充攝影機遮擋規則、影像處理政策、客服／遠端支援的觸發條件，以及這些限制是否提高乘客取消率或降低重複使用意願。
+
+### 車體底部展示：工程透明度增加，但規格仍未完成驗證
+
+<video controls playsinline preload="metadata" poster="/stock/media/tsla/cybercab-videos/underbody-overview.jpg" style="width:100%; max-height:720px; border-radius:12px; background:#111;">
+  <source src="/stock/media/tsla/cybercab-videos/underbody-overview.mp4" type="video/mp4" />
+  您的瀏覽器不支援影片播放，請改看<a href="https://x.com/itskyleconner/status/2095916065939194164?s=20">Kyle Conner 原始影片貼文</a>。
+</video>
+
+[Kyle Conner 的 Cybercab 底部展示影片](https://x.com/itskyleconner/status/2095916065939194164?s=20)提供比外觀照片更接近工程層的觀察：影片展示車體底部與動力／電氣配置，畫面並標示約 50 kWh、僅支援 DC 充電的資訊。這些內容支持 Cybercab 正以專用車體與簡化使用情境設計，而不是把既有乘用車直接改成 Robotaxi；較小的電池若能配合高頻補電與固定車隊調度，可能降低車重、材料與資本成本。
+
+但影片屬於活動展示與第三方拍攝，不能確認最終量產版本的電池容量、熱管理、充電功率、續航、維修週期或每英里成本。「約 50 kWh」也不能直接等同於更低的全生命週期成本；Robotaxi 真正的限制可能在充電等待、尖峰排隊、車隊調度與電池衰減。投資上，這是**工程路徑的正面線索**，不是成本下降或毛利率改善的財務證據。
+
+### 亞洲展示巡迴：需求教育與監管前置，不等於服務上線
+
+<img src="/stock/media/tsla/cybercab-gallery/tesla-asia-display.jpg" alt="Tesla Asia Cybercab 展示巡迴海報：香港、東京、北京與上海" loading="lazy" style="width:100%; border-radius:12px;" />
+
+[Tesla Asia 的公告](https://x.com/Tesla_Asia/status/2095693211906036069?s=20)表示 Cybercab 將於 9 月在香港、東京、北京與上海展示，海報列出香港 9 月 9 日、東京 9 月 11 日、北京與上海 9 月 18 日。這是重要的商業化訊號，但它首先代表**市場教育、品牌展示與監管／合作夥伴前置溝通**，不是已取得上述城市的無人 Robotaxi 營運許可，也不是需求、票價或收入已被驗證。
+
+亞洲展示的價值在於 Tesla 可以測量消費者反應、收集車隊與基礎設施合作意向，並讓不同監管市場提前理解無方向盤、無踏板車型的安全設計；風險則是展示活動容易讓市場把「可展示」誤讀成「可營運」。在估值模型中，我把它列為**商業化選項的可見度上升**，不提高 2026–2027 年 Robotaxi 收入預測；只有當官方公布試乘規則、當地許可、服務地理圍籬與付費行程，才會轉成營運證據。
+
+### 24/7 服務：軟體路線圖訊號，不是營運承諾
+
+[Ashok Elluswamy 的回覆](https://x.com/aelluswamy/status/2095761727828762689?s=20)回應「希望 Robotaxi 能全天候服務」的提問，表示「大約下個月，v15 計畫中的下一項技術整合會啟用它」。這是目前最直接的 24/7 服務時間表線索，支持 Tesla 正把 Robotaxi 的限制從單純車輛能力，延伸到軟體版本、夜間運行與服務編排；若真的延長服務時段，理論上可增加夜間供給、提高每車可營運時間，並改善固定車隊資產的利用率。
+
+但這句話沒有說明「它」究竟是全天候自動駕駛、夜間感知能力、服務排程、遠端支援，還是其他未公開的 v15 技術；也沒有給出城市、日期、地理圍籬、乘客資格或安全條件。因此不能把「下個月」當成確定上線日期，更不能把服務時數增加直接換算成收入增加。真正需要驗證的是：v15 是否正式發布、Robotaxi App 是否顯示 24 小時可叫車、夜間完成率與取消率是否改善、遠端介入是否上升，以及 NHTSA 的合規審查是否允許服務時間擴張。
+
+| 這則回覆支持的判斷 | 尚未支持的判斷 |
+|---|---|
+| Tesla 正把全天候 Robotaxi 視為近期軟體整合目標 | v15 一定在下個月如期推出 |
+| Robotaxi 的營運能力受軟體版本與服務編排影響 | 24/7 已在所有城市開放 |
+| 若延長時段，車隊利用率可能上升 | 夜間需求、毛利、事故率與遠端支援成本已改善 |
+
+估值上，這則訊號只讓 Robotaxi 的**營運選項可見度**上升，不改變本文的基本面安全入場區間；除非 Tesla 公布實際服務時段與連續 KPI，否則不把它列入基準情境的收入預測。
+
+### Gulf Coast Lithium：電池垂直整合的第一個可觀察節點
+
+<img src="/stock/media/tsla/cybercab-gallery/cybertruck-gulf-coast-lithium.jpg" alt="Cybertruck 官方展示使用 Gulf Coast Lithium Refinery 鋰材料的 4680 電池芯" loading="lazy" style="width:100%; border-radius:12px;" />
+
+[Cybertruck 官方帳號](https://x.com/cybertruck/status/2096003208015659206?s=20)表示，第一台使用含 Gulf Coast Lithium Refinery 鋰材料之 4680 電池芯的 Cybertruck 已完成。這是 Tesla 從原料精煉、電池芯到整車製造之間出現可追蹤連接的製造證據；若能穩定放大，可能降低部分原料外部採購的不確定性、改善批次追溯，並讓 4680 的成本與品質改善更容易被內部控制。
+
+但「第一台」只證明產品導入節點，不代表 Gulf Coast 已達到商業化產能、成本已低於外購鋰、4680 良率已改善，也不能直接推論 Cybercab 使用相同電池化學體系。Tesla 沒有在這則貼文中公布精煉產量、每噸成本、回收率、電池芯良率或對毛利的影響，因此本文只把它列為**製造執行的正面線索**，不調高 2026–2027 年汽車毛利假設。
+
+對 Cybercab 的間接意義是：專用車隊若採用較小電池與高頻使用，電池成本、壽命、充電週期與維修可得性會直接影響單位經濟；Tesla 若能把鋰材料與 4680 芯的成本／良率做出連續改善，才可能讓「車隊規模化」從資本支出故事逐步變成可驗證的貢獻毛利。下一個應追蹤的不是更多展示照片，而是 4680 產量、良率、每 kWh 成本、Cybercab 電池規格與車隊維修數據。
 
 ### 專利與馬達成本：有工程路徑，不是量產證明
 
@@ -240,6 +317,7 @@ Robotaxi 的收入不能用「車價低」或「一次叫車便宜」推導。�
 - [Tesla Robotaxi 合作興趣表單](https://www.tesla.com/robotaxi/interest)，核對車隊與基礎設施合作方向。
 - [AP：NHTSA 啟動 Cybercab 安全調查](https://apnews.com/article/2228b6499d46c79169672f874e67eef1)，核對監管事件與無方向盤／踏板爭議。
 - [NHTSA 官方：Cybercab 自我認證 Audit Query](https://www.nhtsa.gov/press-releases/investigation-tesla-cybercab-self-certification)，核對聯邦監管機關的調查範圍。
+- [TSLA Ming：FMVSS 自我認證與 Part 555 豁免的法規整理](https://x.com/tslaming/status/2095872120253476953?s=20)，作為第三方制度框架解讀；不取代 NHTSA、Tesla 或正式認證文件。
 - [TechCrunch：聯邦監管調查 Cybercab 上路](https://techcrunch.com/2026/09/04/feds-launch-investigation-into-teslas-cybercab-deployment/)，交叉核對 NHTSA 調查脈絡與聯邦規則。
 - [Axios：Cybercab 在 Austin 提供叫車服務](https://www.axios.com/2026/09/04/tesla-cybercab-launch-austin)，核對初期車隊與有限服務狀態。
 - [Texas AV Tracker：9 月 4 日新增 12 台 Model Y、Texas 車隊達 432 台](https://x.com/texasavtracker/status/2096016395578523678?s=20)，用於追蹤 Texas DMV AV registry 的車隊登記增長；登記數不等於上線車、付費里程或收入。
@@ -251,6 +329,11 @@ Robotaxi 的收入不能用「車價低」或「一次叫車便宜」推導。�
 - [RobotaxiRadar X 影片](https://x.com/RobotaxiRadar/status/2095611074905039226?s=20)、[Tesla Owners Silicon Valley X 影片](https://x.com/teslaownersSV/status/2095686116170985746?s=20)與 [Sawyer Merritt X 影片](https://x.com/sawyermerritt/status/2095715234560274527?s=46&t=fA-tC603qPKYVO4bQZneEw)，僅作乘客體驗素材，不作安全或獲利證據。
 - [TeslaFlexx 價格比較](https://x.com/teslaflexx/status/2095692014750781852?s=20)，單次截圖只作價格定位線索。
 - [BLKMDL3：Cybercab 遊戲控制器影片](https://x.com/BLKMDL3/status/2095937091163042299?s=20)，約 16 秒產品互動示範；影片只作車內體驗證據，不作自駕安全或收入證據。
+- [Not a Tesla App：Cybercab 內部攝影機遮擋警示影片](https://x.com/notateslaapp/status/2096050553277096106?s=46&t=fA-tC603qPKYVO4bQZneEw)，影片顯示遮擋鏡頭會觸發車內提示；本文保存 H.264／AAC MP4，僅作產品限制與乘客隱私／安全邊界的觀察。
+- [Kyle Conner：Cybercab 底部與工程配置展示影片](https://x.com/itskyleconner/status/2095916065939194164?s=20)，影片展示車體底部並出現約 50 kWh、DC 充電資訊；本文保存壓縮後的 H.264／AAC MP4，不把展示畫面視為最終量產規格。
+- [Tesla Asia：Cybercab 亞洲展示巡迴](https://x.com/Tesla_Asia/status/2095693211906036069?s=20)，公告香港、東京、北京與上海的 2026 年 9 月展示日期；本文保存海報圖片，展示不等於當地 Robotaxi 服務已獲准或上線。
+- [Ashok Elluswamy：v15 計畫與 24/7 Robotaxi 回覆](https://x.com/aelluswamy/status/2095761727828762689?s=20)，回覆使用者對全天候服務的提問；僅作軟體路線圖線索，不視為確定日期、功能規格或營運承諾。
+- [Cybertruck 官方：Gulf Coast Lithium Refinery 與 4680 電池芯](https://x.com/cybertruck/status/2096003208015659206?s=20)，表示首台搭載相關鋰材料 4680 電池芯的 Cybertruck 完成；本文保存官方照片，僅作電池製造導入與成本驗證線索，不視為產能、良率或 Cybercab 規格證明。
 - [Tesla Q2 2026 股東更新](https://ir.tesla.com/_flysystem/s3/sec/000162828026049213/tsla-20260722-gen.pdf)與 [Q2 2026 Form 10-Q](https://www.sec.gov/Archives/edgar/data/1318605/000162828026049270/tsla-20260630.htm)，作為汽車、能源、服務、現金流與資本支出的財務基礎。
 
 <Disclosure>

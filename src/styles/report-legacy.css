@@ -392,6 +392,24 @@
   .nav-tooltip em { margin-left: 4pt; color: #9ed6a8; font-style: normal; }
   .nav-trend-caption { margin: 8pt 0 0; color: var(--stone); font-size: 9pt; line-height: 1.55; }
   .nav-trend-caption a { margin-left: 4pt; color: var(--brand); }
+  .fleet-trend { margin: 18pt 0 22pt; padding: 14pt 16pt 11pt; border: 0.5pt solid var(--line); border-radius: 8pt; background: color-mix(in srgb, var(--ivory) 82%, var(--paper)); }
+  .fleet-trend-heading { display: flex; align-items: end; justify-content: space-between; gap: 12pt; }
+  .fleet-trend h3 { margin: 2pt 0 0; font-size: 15pt; line-height: 1.25; }
+  .fleet-trend-value { display: grid; justify-items: end; gap: 2pt; font-variant-numeric: tabular-nums; }
+  .fleet-trend-value strong { color: var(--ink); font-size: 15pt; }
+  .fleet-trend-value span { color: var(--stone); font: 8.5pt/1.2 system-ui, sans-serif; }
+  .fleet-trend-canvas { position: relative; margin-top: 10pt; border-top: 0.5pt solid var(--line); border-bottom: 0.5pt solid var(--line); }
+  .fleet-trend-canvas svg { width: 100%; height: auto; min-height: 190px; box-shadow: none; border-radius: 0; overflow: visible; }
+  .fleet-grid { stroke: var(--line); stroke-width: 1; stroke-dasharray: 3 5; }
+  .fleet-axis { fill: var(--stone); font: 10px/1 system-ui, sans-serif; }
+  .fleet-area { fill: color-mix(in srgb, var(--brand) 16%, transparent); }
+  .fleet-line { fill: none; stroke: var(--brand); stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; }
+  .fleet-point { fill: var(--brand); stroke: var(--paper); stroke-width: 2; cursor: crosshair; transition: r .12s ease; }
+  .fleet-tooltip { position: absolute; top: 8pt; right: 8pt; display: grid; gap: 2pt; padding: 5pt 8pt; border-radius: 5pt; background: color-mix(in srgb, var(--ink) 92%, transparent); color: var(--paper); font: 8.5pt/1.2 system-ui, sans-serif; pointer-events: none; }
+  .fleet-tooltip strong { font-variant-numeric: tabular-nums; }
+  .fleet-tooltip em { margin-left: 4pt; color: #9ed6a8; font-style: normal; }
+  .fleet-trend-caption { margin: 8pt 0 0; color: var(--stone); font-size: 9pt; line-height: 1.55; }
+  .fleet-trend-caption a { margin-left: 4pt; color: var(--brand); }
   .lightweight-candlestick-caption { margin: 2pt 0 0; color: var(--stone); font-size: 10pt; text-align: center; }
   .chart-attribution { display: block; margin-top: 3pt; color: var(--stone); font-size: 8pt; text-align: right; }
   figcaption {
@@ -590,6 +608,12 @@
     .nav-trend-value strong { font-size: 13pt; }
     .nav-trend-canvas svg { min-height: 150px; }
     .nav-tooltip { top: 5pt; right: 4pt; }
+    .fleet-trend { padding: 11pt 10pt 9pt; }
+    .fleet-trend-heading { align-items: start; }
+    .fleet-trend h3 { font-size: 14pt; }
+    .fleet-trend-value strong { font-size: 13pt; }
+    .fleet-trend-canvas svg { min-height: 155px; }
+    .fleet-tooltip { top: 5pt; right: 4pt; }
     .x-image-gallery-track { gap: 7pt; padding: 8pt; }
     .x-image-gallery-slide { flex-basis: 85%; }
     .x-image-gallery-lightbox { padding: 42pt 12pt; }

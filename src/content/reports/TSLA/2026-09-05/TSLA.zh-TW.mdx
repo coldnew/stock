@@ -15,6 +15,7 @@ status: published
 import AdSlot from '../../../../components/report/AdSlot.astro';
 import Disclosure from '../../../../components/report/Disclosure.astro';
 import CandlestickChart from '../../../../components/report/CandlestickChart';
+import FleetGrowthChart from '../../../../components/report/FleetGrowthChart';
 
 ## AI 研究偏見自覺
 
@@ -54,6 +55,18 @@ Tesla 在 Austin 以無方向盤、無踏板、雙座 Cybercab 提供有限區�
 | 2026-08 | 314 | +133 | 目前最大單月絕對增量 |
 | 2026-09-03 | 420 | +106 | 相對增幅約 34% |
 | 2026-09-04 | 432 | +12 | 單日新增 Model Y，仍在擴張 |
+
+<FleetGrowthChart client:load source="https://texasavtracker.com/tesla" points={[
+  ['2026-01', 1],
+  ['2026-02', 8],
+  ['2026-04', 25],
+  ['2026-05', 42],
+  ['2026-06', 84],
+  ['2026-07', 181],
+  ['2026-08', 314],
+  ['2026-09-03', 420],
+  ['2026-09-04', 432],
+]} />
 
 這條序列有三個值得重視的訊息。第一，從 5 月 42 台到 9 月 4 日 432 台，約四個月增加 **10.3 倍**；即使排除 1 月低基期，6–8 月的絕對新增量也由 42 台升至 97 台、再升至 133 台，說明 Tesla 在 Austin 之外建立 Texas 車隊供給的速度曾明顯加快。第二，9 月前幾天的車隊已比 8 月快照增加 118 台，增幅約 37.6%；這是很強的供給準備訊號，但不應誤寫成需求增長。第三，9 月 4 日新增的 12 台是 Model Y，不是 Cybercab；因此今日的數據更像是**既有 Robotaxi 車隊擴容**，而非 Cybercab 量產速度的直接證明。
 

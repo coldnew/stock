@@ -1,0 +1,104 @@
+---
+ticker: TSLA
+locale: zh-TW
+title: "TSLA：四則 Cybercab 社群資料的證據分層"
+description: "2026 年 9 月 7 日研究：把兩段影片與兩張圖片集中到同一個 carousel，分辨事故、監管、促銷與營運證據，並更新 Cybercab 的投資解讀。"
+publishedAt: 2026-09-07
+dataAsOf: 2026-09-04
+reportType: equity
+translationKey: tsla-2026-09-07
+tags:
+  - TSLA
+status: published
+---
+
+import AdSlot from '../../../../components/report/AdSlot.astro';
+import Disclosure from '../../../../components/report/Disclosure.astro';
+import CandlestickChart from '../../../../components/report/CandlestickChart';
+import XMediaCarousel from '../../../../components/report/XMediaCarousel';
+
+## AI 研究偏見自覺
+
+<strong>研究日期：</strong>2026-09-07。<strong>行情截止：</strong>2026-09-04 美股收盤。本文把社群貼文當成待驗證線索，不把影片觀看數、單一事故畫面、促銷貼文或 NHTSA 通用圖卡直接寫成 Tesla 官方認證、需求或收入。
+
+## 結論先行
+
+這四則資料適合放在同一個「Cybercab 證據檢視」carousel，但它們不是同一件事：前兩張影片是飛機事故及其周邊畫面，後兩張圖片分別是 NHTSA 自動化分級圖卡與中國促銷資訊。它們可以幫助我們提出問題，不能單獨證明 Cybercab 發生事故、已獲 Level 4 認證，或中國需求正在反轉。
+
+| 資料 | 可以支持的判斷 | 不能支持的判斷 |
+|---|---|---|
+| ThomasAlxDmy 影片 | 事故影片值得核對 Cybercab 是否在畫面與事故報告中出現 | 不能直接寫成「第一起 Cybercab 事故」 |
+| DriveTeslaCA 影片 | 提供同一類飛機事故的另一段視角 | 不能證明被撞車輛就是 Tesla 或 Cybercab |
+| TeslaYoda 圖片 | NHTSA Level 4 的一般描述包含「系統駕駛、乘客不需操控」 | 不能證明 NHTSA 已認證 Cybercab 為 Level 4 |
+| TSLA Ming 圖片 | 提出中國現有庫存促銷與融資優惠的待核對線索 | 不能單靠貼文推導全國需求或毛利改善 |
+
+**投資結論：觀望。** Cybercab 的產品敘事仍有選擇權價值，但目前新增資料沒有足夠的一手證據讓我們上調 Robotaxi 收入或估值假設。下一步應優先取得事故官方報告、Tesla 中國官方活動條款、NHTSA 對特定車型的文件，以及實際付費行程與介入率。
+
+## 收盤價與技術位置
+
+<CandlestickChart client:load locale="zh-TW" dataUrl="/stock/data/market/TSLA.json" levels={[{price: 338, label: "結構否定", color: "#C23B32"}, {price: 349, label: "短線支撐", color: "#C23B32"}, {price: 384, label: "事件高點", color: "#3A7A4E"}, {price: 385, label: "突破確認", color: "#3A7A4E"}]} />
+
+圖表只是 timing 工具，不是預測。若收盤跌破約 $338，代表近期支撐結構被破壞；若收盤重新站上 $384–$385 並伴隨量能，才代表市場重新接受商業化敘事。技術訊號仍需成交量、下一次財報、汽車毛利與 Robotaxi 營運數據確認。
+
+<AdSlot placement="mid" />
+
+## 四則資料集中檢視
+
+<XMediaCarousel client:load locale="zh-TW" items={[
+  { type: 'video', src: '/stock/media/tsla/cybercab-videos/thomas-plane-incident.mp4', alt: 'ThomasAlxDmy 分享的飛機事故影片', label: '影片 1／事故畫面', caption: '貼文稱這是 Cybercab 事故，但影片本身與文字不足以確認事故車輛身分；先列為未驗證事件線索。', sourceUrl: 'https://x.com/ThomasAlxDmy/status/2096703147687227643?s=20' },
+  { type: 'video', src: '/stock/media/tsla/cybercab-videos/drivetesla-aircraft-incident.mp4', alt: 'DriveTeslaCA 分享的機場飛機事故影片', label: '影片 2／同類事故視角', caption: '貼文說明飛機接近停有 Tesla 車輛的區域，但也承認被撞車輛看起來不是 Tesla；不能寫成 Cybercab 受損證據。', sourceUrl: 'https://x.com/DriveTeslaca/status/2096766767746199715?s=20' },
+  { type: 'image', src: '/stock/media/tsla/cybercab-videos/nhtsa-level4-graphic.jpg', alt: 'NHTSA 自動化 Level 4 描述圖卡', label: '圖片 3／監管語境', caption: 'NHTSA 的一般 Level 4 描述可用來理解無方向盤與踏板的設計語境，但不是對 Cybercab 個案的核准。', sourceUrl: 'https://x.com/teslayoda/status/2096618587251146758?s=20' },
+  { type: 'image', src: '/stock/media/tsla/cybercab-videos/china-incentives.jpg', alt: 'Tesla 中國現有庫存促銷資訊', label: '圖片 4／中國促銷線索', caption: '貼文聲稱 Model 3／Model Y 有現金折扣、零利率與保險補貼；需以 Tesla 中國官方條款與交付數據交叉驗證。', sourceUrl: 'https://x.com/tslaming/status/2096762973704667438?s=20' }
+]} />
+
+### 影片組：事故敘事不能替代事故資料
+
+兩段影片集中放在 carousel 前兩張，因為它們同屬「飛機事故周邊畫面」，但不代表它們是 Cybercab 的事故紀錄。第一則貼文把事件描述成「第一起 Cybercab 事故」，第二則則描述飛機接近停放 Tesla 車輛的區域，並明確保留「看起來不是 Tesla」的限制。兩個說法都缺少事故編號、車輛 VIN、警方／航空主管機關報告或 Tesla 事故聲明。
+
+對 TSLA 投資研究的正確用法是建立待查核事件，而不是把畫面轉成安全事故率。若後續官方文件確認 Cybercab 被撞、乘客受傷、車輛自動駕駛系統有因果關係，才需要重審安全、保險與監管論文；在此之前，唯一可靠的結論是社群對「Cybercab 是否在事故現場」產生了混淆。
+
+### 圖片組：Level 4 與中國促銷是兩條不同的研究線
+
+NHTSA 的 Level 4 圖卡是分類教育材料。它說明在有限服務區域內，系統可處理所有駕駛任務、乘客不需操控；但「描述符合設計概念」不等於 NHTSA 已對 Tesla 特定車型完成合規審查。報告仍應追蹤正式法規文件、豁免／自我認證路徑、測試數據與服務區域限制。
+
+中國促銷圖片則是商業條件線索。若折扣、五年零利率與保險補貼被官方活動頁確認，可能說明 Tesla 正以金融條件支撐短期成交；但這同時可能壓低實現價格與汽車毛利。真正需要的是同店成交價、交付量、庫存天數、融資成本與中國汽車毛利的連續序列。
+
+## 對投資論文的更新
+
+### 上調的部分
+
+- 社群資料顯示 Cybercab 已進入「監管語境、事故敘事與商業促銷」的真實世界討論，不再只是舞台概念。
+- NHTSA Level 4 的一般描述，讓我們能更清楚拆解「有限區域無人駕駛」與一般消費者車輛的差異。
+
+### 不上調的部分
+
+- 不上調 Robotaxi 收入、每車每日付費里程或毛利。
+- 不把兩段飛機事故影片計入 Tesla 安全事故率。
+- 不把社群促銷圖卡計入中國交付與 ASP 預測。
+
+### 需要的新證據
+
+1. 飛機事故官方報告是否列出 Tesla／Cybercab 車輛、位置與損害狀況。
+2. Tesla 中國官方活動條款與 9 月交付、庫存、ASP、汽車毛利。
+3. NHTSA 對 Cybercab 的正式合規文件、限制條件與處置結果。
+4. Austin Robotaxi 每車每日付費行程、取消率、遠端介入率、充電停駛時間與保險成本。
+
+<AdSlot placement="mid" />
+
+## 否定條件與操作框架
+
+若 $338 下方出現放量收盤，先視為事件交易結束、結構轉弱；若站回 $384–$385 但沒有利用率、毛利或監管證據，仍不追價。基本面上，只有在 Robotaxi 服務範圍擴大、有效車隊與付費里程同步增長、遠端介入率下降，且中國促銷沒有進一步侵蝕毛利時，才有理由重新評估估值。
+
+<AdSlot placement="mid" />
+
+## 資料來源與限制
+
+- [ThomasAlxDmy：事故影片](https://x.com/ThomasAlxDmy/status/2096703147687227643?s=20)
+- [TeslaYoda：NHTSA Level 4 圖卡](https://x.com/teslayoda/status/2096618587251146758?s=20)
+- [TSLA Ming：中國促銷貼文](https://x.com/tslaming/status/2096762973704667438?s=20)
+- [DriveTeslaCA：機場事故影片](https://x.com/DriveTeslaca/status/2096766767746199715?s=20)
+- [Tesla Cybercab Rider Guide](https://www.tesla.com/robotaxi/riderguides/cybercab/en_us/)
+
+<Disclosure title="研究限制">
+四則 X 貼文皆為第三方社群資料；本報告已下載 MP4 供手機播放，並保留原始貼文連結，但本地檔案不代表內容已經官方驗證。影片與圖片只用於事件辨識與研究問題設定，不作買入依據。
+</Disclosure>

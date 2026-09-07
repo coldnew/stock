@@ -1,0 +1,103 @@
+---
+ticker: IBIT
+locale: zh-TW
+title: "IBIT：比特幣現貨曝險，與 BTCI 收益策略的取捨"
+description: "比較 IBIT 與 BTCI 的比特幣曝險、費用、分配、上漲參與度、NAV 風險與台灣投資人實際使用情境。"
+publishedAt: 2026-09-07
+dataAsOf: 2026-09-04
+reportType: income-etf
+translationKey: ibit-2026-09-07
+tags:
+  - IBIT
+  - BTCI
+status: published
+---
+
+import AdSlot from '../../../../components/report/AdSlot.astro';
+import Disclosure from '../../../../components/report/Disclosure.astro';
+import Metrics from '../../../../components/report/Metrics.astro';
+import CandlestickChart from '../../../../components/report/CandlestickChart';
+
+<Metrics items={[{ label: "IBIT 贊助費", value: "0.25%" }, { label: "IBIT 分配", value: "無" }, { label: "BTCI 管理費", value: "0.98%" }, { label: "BTCI 分配頻率", value: "月配" }]} />
+
+## 核心結論
+
+IBIT 與 BTCI 不是同一類產品。IBIT 是以信託形式提供比特幣價格曝險，目標是反映比特幣價格、沒有定期分配；BTCI 則以直接曝險比特幣的 ETP 為底，主動寫 Bitcoin Futures ETF 的買權來產生月度收入。前者較接近「持有比特幣價格」，後者是「用部分上漲空間換現金流」。
+
+**研究判斷：若目標是長期累積比特幣上漲，IBIT 的結構較乾淨；若目標是接受上漲封頂與較高費用、換取月度現金流，才研究 BTCI。** BTCI 的高分配率不能直接等同於高總報酬，必須同時看 NAV、總報酬與分配來源。
+
+## 近期行情與技術圖
+
+<CandlestickChart client:load locale="zh-TW" dataUrl="/stock/data/market/IBIT.json" levels={[{price: 35, label: "心理支撐", color: "#C23B32"}, {price: 40, label: "區間中軸", color: "#8B5CF6"}]} />
+
+這張圖只用來觀察 IBIT 的進出場節奏，不能替代比特幣現貨、基金 NAV 或 BTCI 的總報酬分析。比特幣交易是 24／7，IBIT 則在 Nasdaq 交易；週末與美股休市期間可能出現價格資訊不同步。
+
+<AdSlot placement="mid" />
+
+## IBIT 與 BTCI 的結構差異
+
+| 面向 | IBIT | BTCI |
+|---|---|---|
+| 核心目的 | 反映比特幣價格表現 | 比特幣曝險加上選擇權收益 |
+| 底層 | 主要持有由託管人保管的比特幣 | 比特幣 ETP、現金／國庫券與選擇權部位 |
+| 收益來源 | 比特幣價格變化，扣除費用 | 選擇權權利金、底層曝險與利息等 |
+| 分配 | 官方資料標示無分配 | 月配；分配可能包含選擇權權利金、資本利得、利息與 ROC |
+| 費用 | 贊助費 0.25% | 管理費 0.98%，另有取得基金費用，官方頁面列總年度營運費用 0.99% |
+| 上漲參與 | 沒有系統性賣出買權，較完整參與上漲 | 寫買權可能限制快速上漲的參與度 |
+| 主要風險 | 比特幣高波動、託管、折溢價與信託結構 | 比特幣波動、選擇權封頂、NAV 侵蝕、分配不等於報酬 |
+
+## 為什麼 IBIT 是 BTCI 的重要比較基準
+
+BTCI 的「高收入」必須與一個沒有選擇權封頂、費用較低的比特幣基準相比，IBIT 正好提供這個基準。比較時不能只問「哪一檔配得多」，而要拆成三個問題：
+
+1. **相同比特幣行情下，誰保留更多上漲？** 快速單邊上漲時，IBIT 理論上較完整參與；BTCI 的買權策略可能放棄部分上行換取權利金。
+2. **震盪或下跌時，權利金是否足以抵消跌幅？** BTCI 有收入緩衝的可能，但選擇權收入不是本金保護；若比特幣長期下跌，分配可能只是把資產以現金形式返還。
+3. **投資人要的是現金流還是總報酬？** IBIT 沒有月配，必須自行出售部分部位；BTCI 則把部分策略收益定期分配，但管理費較高、稅務分類與 NAV 路徑更複雜。
+
+因此，本報告把 IBIT 視為 BTCI 的「總報酬基準」而不是競爭產品。BTCI 若要證明自己值得持有，至少應在完整市場週期中展示：分配後 NAV 沒有持續被侵蝕、總報酬相對 IBIT 的落差合理、下跌日捕獲率改善，且現金流價值足以補償上漲封頂與較高費用。
+
+## 分配率不是報酬率
+
+NEOS 官方頁面列 BTCI 月配與分配率，但同時說明分配可能由選擇權權利金、股息、資本利得與利息組成，並可能被分類為 ROC。ROC 在某些情況下可能延後課稅，但它也會降低成本基礎；不能把每月收到的現金全部當成投資獲利。
+
+對台灣投資人而言，實際比較應建立在「美元總報酬、NAV 變化、匯率、券商費用與個人稅務」上，而不是只看殖利率網站的年化數字。美國 ETF 的分配與資本利得處理也可能因投資人身分與年度申報而不同，本文不把個別稅務判斷寫成普遍結論。
+
+## AI Berkshire 六關檢查
+
+| 關卡 | IBIT | BTCI |
+|---|---|---|
+| 能力圈 | 結構簡單，主要理解比特幣價格與信託追蹤即可 | 必須理解 ETP、買權、執行價、到期、權利金與 ROC |
+| 好生意／好產品 | 低費用、流動性與託管基礎設施是優勢 | 以策略換現金流，產品價值取決於週期與執行 |
+| 護城河 | 規模、品牌、流動性與機構託管網路 | NEOS 的選擇權管理與收益分配流程 |
+| 管理層 | 追蹤誤差、託管與基金運作 | 選擇權覆蓋比例、下跌控制、分配可持續性 |
+| 估值／價格 | 主要看 BTC 風險與 IBIT 折溢價 | 同時承擔 BTC 風險與策略／費用風險 |
+| 否定條件 | 長期追蹤誤差或流動性惡化 | NAV 長期下滑、分配主要來自本金、上漲期明顯落後 IBIT |
+
+## 什麼情況才考慮哪一檔
+
+- **偏向 IBIT：** 目標是保留比特幣長期上漲、不要月配、希望費用與策略層較少，並且能自行管理提款。
+- **偏向 BTCI：** 目標是現金流，接受上漲不完整、費用較高、分配組成複雜，並會每月檢查 NAV 與總報酬，而不是只看現金入帳。
+- **兩者並列研究：** 若投資人想把一部分比特幣曝險改成收益策略，應以 IBIT 作為無選擇權基準，設定明確的 BTCI 配置上限與淘汰條件。
+
+## 風險與否定條件
+
+1. 比特幣大幅下跌時，IBIT 與 BTCI 都可能出現大幅本金損失；BTCI 的月配不是保本。
+2. 比特幣快速上漲時，BTCI 的買權覆蓋可能使總報酬落後 IBIT。
+3. BTCI 分配率下降、ROC 比例升高或 NAV 持續下滑時，高現金流敘事需要重審。
+4. IBIT 若長期出現異常折溢價、追蹤誤差、託管或流動性問題，低費用優勢不足以單獨消除結構風險。
+
+## 結論
+
+IBIT 是比特幣現貨曝險的基準產品；BTCI 是以選擇權收益換取月度現金流的策略產品。這兩者應該一起研究，但不應用 BTCI 的分配率替代 IBIT 的總報酬，也不應用 IBIT 的單純上漲曝險否定有現金流需求的投資人。正式配置前，應以連續期間的 NAV、分配後總報酬、上漲捕獲率、下跌捕獲率與個人稅務結果做決策。
+
+<Disclosure title="資料限制">
+IBIT 的費用、投資目標與是否分配引用 iShares 官方產品資料；BTCI 的策略、費用、分配與 NAV 資訊引用 NEOS 官方頁面。市場圖表使用本網站截至 2026-09-04 的行情快照；過去績效不保證未來結果。IBIT 本次先建立為報告標的，尚未加入首頁 ETF 追蹤清單。
+</Disclosure>
+
+## 資料來源
+
+- [iShares IBIT 官方產品頁](https://www.ishares.com/us/products/333011/ishares-bitcoin-trust-etf)
+- [iShares IBIT 產品簡介](https://www.ishares.com/us/literature/product-brief/ibit-product-brief.pdf)
+- [SEC：iShares Bitcoin Trust 公開說明書](https://www.sec.gov/Archives/edgar/data/1980994/000143774924020207/bit20240606_424b3.htm)
+- [NEOS BTCI 官方產品頁](https://neosfunds.com/btci/)
+- [本網站 BTCI 報告](https://coldnew.github.io/stock/reports/btci/)

@@ -25,5 +25,6 @@ export const trackedAssetByTicker = new Map(trackedAssets.map((asset) => [asset.
 export const reportOnlyTickers = [
   'AVGO',
   '2330.TW',
+  'IBIT',
   'QYLD.L',
 ];

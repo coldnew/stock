@@ -116,6 +116,16 @@ Emanuel AOF 的案例值得放進 NVIDIA 研究，但證據層級要放低：它
 
 此案例讓 NVDA 的 AI 應用追蹤從「模型是否更聰明」延伸到「模型能否閉環完成專業工作」。可觀察指標包括每項設計的推理成本、工具呼叫成功率、工程師節省時間、錯誤返工率、企業私有部署需求，以及是否需要 NVIDIA 加速的本地或雲端環境。現階段將它列為正面的產品訊號，不上調營收預估。
 
+## 新增產品：NVIDIA PAIR 把閒置本地算力接成推理叢集
+
+Yes!Online 分享的 [NVIDIA PAIR](https://www.nvidia.com/en-us/ai-on-rtx/personal-ai-router/) 不是大型資料中心的新 GPU 產品，而是把家中或小型工作環境裡的 RTX 電腦、DGX Spark 與 Apple Silicon Mac 接到單一本地端點，再把 AI 應用與代理程式的推理請求分派到可用節點。NVIDIA 官方說明支援 Ollama、LM Studio，且提示、檔案與代理上下文可留在本地網路；同時也明確說明它不會把多台機器合併成一個虛擬 GPU，而是平行處理工作。
+
+對 NVDA 的投資意義有兩面。正面是 NVIDIA 正把價值從「單顆 GPU 性能」延伸到本地 AI 軟體入口，讓既有 RTX 與 DGX Spark 的閒置容量更容易被使用，也可能提高消費級 GPU 的黏著度與升級意願。這與前述工程代理案例相連：當 AI 工作流開始大量呼叫工具，使用者會更在意本地延遲、隱私與可用容量。
+
+限制也很清楚：PAIR 是 beta 軟體，官方頁面沒有披露下載量、活躍節點、付費模式、每台裝置帶來的 GPU 銷售或企業收入。它還需要使用者自行擁有相容設備，且多機只是平行工作，不等於記憶體可合併、單一模型可以無限制放大。若工作負載不適合拆分、網路延遲過高或本地模型品質不及雲端，實際使用率可能有限。
+
+因此，PAIR 目前是**軟體分發與硬體利用率的正面產品訊號**，不是新的營收預測依據。後續應追蹤正式版時間、支援模型與框架、節點利用率、企業部署、DGX Spark 出貨與 RTX 升級需求；若軟體能使多台既有設備產生持續推理工作，NVIDIA 的平台護城河會比單純硬體銷售更完整，但仍須由使用數據與收入驗證。
+
 ## 風險與否定條件
 
 - 100K／400K 是社群或管理層公開說法，沒有獨立採購文件前，不能直接納入財務預測。
@@ -142,6 +152,8 @@ Emanuel AOF 的案例值得放進 NVIDIA 研究，但證據層級要放低：它
 - [NVIDIA SEC 文件：AI cloud 合作與投資承諾](https://www.sec.gov/Archives/edgar/data/1045810/000104581026000075/nvda-20260726.htm)
 - [Emanuel AOF：互動式 3D 醫療圖譜示範](https://x.com/Emanuel_Andre7/status/2096528986390085696?s=20)
 - [GoFly：GPT-6／Codex 設計 FPV 飛控 PCB 示範](https://x.com/GoGoFly23/status/2096436525110309251?s=20)
+- [Yes!Online：NVIDIA PAIR 個人 AI Router](https://x.com/yesonline/status/2095882573662818518?s=20)
+- [NVIDIA 官方：Personal AI Router（PAIR）](https://www.nvidia.com/en-us/ai-on-rtx/personal-ai-router/)
 
 <Disclosure title="資料限制">
 本報告把 X 貼文視為研究線索；GPU 數量、訓練叢集所有權、付款關係與上線時程尚未由公開一手財務文件完整交叉驗證。過去股價與技術圖不代表未來報酬。

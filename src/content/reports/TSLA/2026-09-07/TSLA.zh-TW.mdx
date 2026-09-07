@@ -51,6 +51,27 @@ import XMediaCarousel from '../../../../components/report/XMediaCarousel';
   { type: 'image', src: '/stock/media/tsla/cybercab-videos/china-incentives.jpg', alt: 'Tesla 中國現有庫存促銷資訊', label: '圖片 4／中國促銷線索', caption: '貼文聲稱 Model 3／Model Y 有現金折扣、零利率與保險補貼；需以 Tesla 中國官方條款與交付數據交叉驗證。', sourceUrl: 'https://x.com/tslaming/status/2096762973704667438?s=20' }
 ]} />
 
+## 新增資料：產品時程可信度與 Cybercab 製造假說
+
+<XMediaCarousel client:load locale="zh-TW" items={[
+  { type: 'video', src: '/stock/media/tsla/cybercab-videos/tesla-product-timeline-risk.mp4', alt: 'Tesla 車款與 Optimus 產品時程的社群整理影片', label: '時程／交付落差', caption: 'AJ Investment Research 將 Elon Musk 2022 年對 Cybertruck、Semi、Roadster 與 Optimus 的時程說法，和後續交付狀況並列；這是評估管理層時程可信度的壓力測試，不是完整的項目進度資料。', sourceUrl: 'https://x.com/alojoh/status/2096498312731902420?s=20' },
+  { type: 'video', src: '/stock/media/tsla/cybercab-videos/cybercab-colorform-rim.mp4', alt: 'KraussMaffei ColorForm 反應射出成型與模內塗層示範', label: '製造／ColorForm 假說', caption: 'Luca Greco 推測 Cybercab 外板可能採用改造的 ColorForm／RIM 工藝；KraussMaffei 官方可支持工藝本身的原理與潛在優勢，但 Tesla 導入、4,500 噸鎖模力與 Cybercab 特定產線仍未獲官方證實。', sourceUrl: 'https://x.com/lucagrecoita/status/2096657922780430359?s=20' }
+]} />
+
+### 時程承諾是 Cybercab 估值的折價因子
+
+AJ Investment Research 把 2022 年的管理層時程與後續產品交付放在同一張圖上，提供了一個合理但不完整的反方問題：Tesla 能否把舞台上的工程目標，轉成可重複製造、通過監管並產生收入的產品？Cybertruck、Semi、Roadster 與 Optimus 的產品定義、供應鏈和監管難度不同，因此不能用貼文的年份差直接計算「延遲率」；但它足以提醒我們，Cybercab 的量產日期、車隊開放日期與真正可收費服務日期必須拆開追蹤。
+
+對估值的處理是：在 Tesla 公布量產爬坡、車隊可用率、每車每日付費行程與單位毛利前，不把 Cybercab 的遠期收入提前折現成基準情境。若後續延遲，影響不只是收入往後移，還包括研發資本化、閒置產能、監管成本與市場對管理層預測可信度的折價。
+
+### ColorForm 可能改善製程，但目前仍是工程假說
+
+KraussMaffei 的 [ColorForm 官方說明](https://www.kraussmaffei.com/en/our-processes/colorform)顯示，這類工藝是在模具內以 PUR 進行塗層，結合多組分射出與模內塗層，目標是減少獨立塗裝系統、溶劑與漆料浪費；官方並提出最高約 40% 成本節省的情境說法。若 Cybercab 的外板確實採用相近工藝，理論上可降低塗裝設備、製程時間與部分排放，並讓顏色直接形成於零件表面。
+
+但這不能直接變成 Tesla 的毛利預測。實際經濟性還取決於零件尺寸、模具壽命、材料良率、表面耐久、維修替換、顏色一致性、設備投資與量產節拍。Luca Greco 所說的 4,500 噸鎖模力和 Tesla 特定改造方案，本文只列為待驗證的製造假說；需要 Tesla、KraussMaffei 或設備供應合約、產線照片與量產數據支持後，才可上調 Cybercab 的成本模型。
+
+這兩則資料合在一起的投資含義是：Cybercab 可能同時有「製程創新」與「時程執行」兩條不確定性。前者若被量產數據證實，能改善單車成本；後者若反覆延後，則可能把成本優勢留在簡報裡。後續檢查順序應是量產設備進場、試產良率、實際交付、服務可用率與每車貢獻毛利，而不是先用社群估算替收入估值。
+
 ## 新增資料：服務可用性、部署廣度與歐盟政策
 
 <XMediaCarousel client:load locale="zh-TW" items={[
@@ -180,6 +201,9 @@ EFIEBER 的 Giga Berlin 產量數字若被官方產量或交付資料確認，�
 - [EFIEBER：Giga Berlin 產量與歐洲 FSD 觀點](https://x.com/EFIEBER_ANDRE/status/2096499948497887668?s=20)
 - [Waymo 官方：2026 年融資與行程規模](https://waymo.com/blog/2026/02/waymo-raises-usd16-billion-investment-round/)
 - [Tesla Cybercab Rider Guide](https://www.tesla.com/robotaxi/riderguides/cybercab/en_us/)
+- [AJ Investment Research：Tesla 產品時程與交付落差](https://x.com/alojoh/status/2096498312731902420?s=20)
+- [Luca Greco：Cybercab ColorForm／RIM 製造假說](https://x.com/lucagrecoita/status/2096657922780430359?s=20)
+- [KraussMaffei：ColorForm 官方工藝說明](https://www.kraussmaffei.com/en/our-processes/colorform)
 
 <Disclosure title="研究限制">
 四則 X 貼文皆為第三方社群資料；本報告已下載 MP4 供手機播放，並保留原始貼文連結，但本地檔案不代表內容已經官方驗證。影片與圖片只用於事件辨識與研究問題設定，不作買入依據。

@@ -8,7 +8,7 @@ export const navSnapshots: Record<string, NavSnapshot> = {
     "currency": "USD",
     "seriesType": "nav-total-return-index",
     "source": "https://neosfunds.com/qqqi/",
-    "dataAsOf": "2026-09-03",
+    "dataAsOf": "2026-09-04",
     "points": [
       [
         "2024-01-29",
@@ -3805,6 +3805,10 @@ export const navSnapshots: Record<string, NavSnapshot> = {
       [
         "2026-09-03",
         15790
+      ],
+      [
+        "2026-09-04",
+        15825
       ]
     ]
   },
@@ -3813,7 +3817,7 @@ export const navSnapshots: Record<string, NavSnapshot> = {
     "currency": "USD",
     "seriesType": "nav-total-return-index",
     "source": "https://neosfunds.com/spyi/",
-    "dataAsOf": "2026-09-03",
+    "dataAsOf": "2026-09-04",
     "points": [
       [
         "2022-08-29",
@@ -9682,6 +9686,10 @@ export const navSnapshots: Record<string, NavSnapshot> = {
       [
         "2026-09-03",
         17630
+      ],
+      [
+        "2026-09-04",
+        17591
       ]
     ]
   },
@@ -9690,7 +9698,7 @@ export const navSnapshots: Record<string, NavSnapshot> = {
     "currency": "USD",
     "seriesType": "nav-total-return-index",
     "source": "https://neosfunds.com/iwmi/",
-    "dataAsOf": "2026-09-03",
+    "dataAsOf": "2026-09-04",
     "points": [
       [
         "2024-06-24",
@@ -12899,6 +12907,10 @@ export const navSnapshots: Record<string, NavSnapshot> = {
       [
         "2026-09-03",
         14414
+      ],
+      [
+        "2026-09-04",
+        14447
       ]
     ]
   },
@@ -12907,7 +12919,7 @@ export const navSnapshots: Record<string, NavSnapshot> = {
     "currency": "USD",
     "seriesType": "nav-total-return-index",
     "source": "https://neosfunds.com/qqqh/",
-    "dataAsOf": "2026-09-03",
+    "dataAsOf": "2026-09-04",
     "points": [
       [
         "2019-12-19",
@@ -22712,6 +22724,10 @@ export const navSnapshots: Record<string, NavSnapshot> = {
       [
         "2026-09-03",
         18959
+      ],
+      [
+        "2026-09-04",
+        18990
       ]
     ]
   },
@@ -22720,7 +22736,7 @@ export const navSnapshots: Record<string, NavSnapshot> = {
     "currency": "USD",
     "seriesType": "nav-total-return-index",
     "source": "https://neosfunds.com/btci/",
-    "dataAsOf": "2026-09-03",
+    "dataAsOf": "2026-09-04",
     "points": [
       [
         "2024-10-16",
@@ -25473,6 +25489,10 @@ export const navSnapshots: Record<string, NavSnapshot> = {
       [
         "2026-09-03",
         11389
+      ],
+      [
+        "2026-09-04",
+        11177
       ]
     ]
   }

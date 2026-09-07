@@ -51,6 +51,31 @@ import XMediaCarousel from '../../../../components/report/XMediaCarousel';
   { type: 'image', src: '/stock/media/tsla/cybercab-videos/china-incentives.jpg', alt: 'Tesla 中國現有庫存促銷資訊', label: '圖片 4／中國促銷線索', caption: '貼文聲稱 Model 3／Model Y 有現金折扣、零利率與保險補貼；需以 Tesla 中國官方條款與交付數據交叉驗證。', sourceUrl: 'https://x.com/tslaming/status/2096762973704667438?s=20' }
 ]} />
 
+## 新增資料：服務可用性、部署廣度與歐盟政策
+
+<XMediaCarousel client:load locale="zh-TW" items={[
+  { type: 'image', src: '/stock/media/tsla/cybercab-videos/tampa-robotaxi-status.jpg', alt: 'Tampa Tesla Robotaxi 顯示沒有可用車輛的畫面', label: '營運 1／Tampa 可用性', caption: 'Robotaxi Radar 回報 Tampa 當下沒有可用車；這是單一時間點的供給觀察，不是城市級需求或服務失敗率。', sourceUrl: 'https://x.com/RobotaxiRadar/status/2096723531534913738?s=20' },
+  { type: 'image', src: '/stock/media/tsla/cybercab-videos/tampa-waymo-status.jpg', alt: 'Tampa Waymo 顯示約三分鐘等待時間的畫面', label: '營運 2／競品對照', caption: '同一則貼文顯示 Waymo 約三分鐘可叫車；可作為服務可用性對照，但兩個 App 的區域、時間與車隊口徑未必相同。', sourceUrl: 'https://x.com/RobotaxiRadar/status/2096723531534913738?s=20' },
+  { type: 'image', src: '/stock/media/tsla/cybercab-videos/cybercab-sightings-map.jpg', alt: 'Robotaxi Radar 整理的 Cybercab 美國目擊地圖', label: '部署 3／目擊地圖', caption: '目擊地點已擴散到多州，但作者也註明多數資料來自公開回報、尚未獨立驗證；不能直接換算量產台數或上線車隊。', sourceUrl: 'https://x.com/RobotaxiRadar/status/2096667247104438307?s=20' },
+  { type: 'image', src: '/stock/media/tsla/cybercab-videos/eu-fsd-vote.jpg', alt: 'FSD 歐盟市場投票日期相關整理圖', label: '政策 4／歐盟 FSD', caption: '貼文指出 10 月 6 日可能是 FSD 進入歐盟市場的重要投票節點；仍需以歐盟與各國主管機關正式議程確認。', sourceUrl: 'https://x.com/tonyhua64243679/status/2096714267873395005?s=20' }
+]} />
+
+### 服務可用性比目擊數更接近商業證據
+
+Tampa 的截圖是本批資料最有用的負面證據：Robotaxi 顯示沒有可用車，而 Waymo 顯示約三分鐘等待。它不能證明 Tesla 的整體服務落後，也不能把一個時間點的「無車」解讀為需求不足；但它提醒我們，Robotaxi 的產品不是「車輛出現在城市裡」，而是乘客在需要時能否叫到車。後續應建立同時段、同區域、重複取樣的可用率、等待時間、取消率與完成率序列。
+
+Robotaxi Radar 的目擊地圖則是供給部署的線索。它列出大量城市，但作者明確說明資料來自公開回報、部分只有文字、地點可能不精確且尚未獨立驗證。這可以用來產生 VIN、州別登記與服務區域的查核清單，不能直接當作 Tesla 已在這些城市商業營運。
+
+Dave Lee 的長篇論點把 Cybercab 解讀為 Tesla 放棄較直觀的低價方向盤車、集中工程資源於 FSD 與乘客導向架構的戰略選擇。這是有助於理解管理層資源配置的投資假說，但不是營收證據；它必須由量產成本、車隊可用率、FSD 介入率與單車每日貢獻毛利驗證。真正的風險是：若 Cybercab 延遲，Tesla 可能同時失去低價車的量增選項與 Robotaxi 的成長選項。
+
+### 歐盟投票是事件風險，不是核准結果
+
+Tony 的貼文把 10 月 6 日標為 FSD 進入歐盟市場的重要節點。這應列入事件日曆，但在正式議程、投票議題、適用國家、功能版本與責任規則確認前，不能寫成「FSD 將於 10 月 6 日獲准」。若有利結果，短期可能改善 FSD 採用與市場情緒；若延後或附加限制，則會延長 Tesla 在歐洲的商業化等待。對估值而言，事件的方向比日期本身重要，且不應把 Supervised FSD 核准直接套用到無方向盤 Cybercab。
+
+### 管理層敘事與 NVIDIA 資料要分開
+
+Dave Lee 的 Tesla 論點，以及 Jensen Huang 與 The AI Investor 關於 NVIDIA Grace Blackwell、OpenAI 訓練叢集與 400K GPU 的貼文，分屬兩家公司不同的投資論文。NVIDIA 相關貼文可支持「先進模型訓練仍高度依賴高階 NVIDIA 平台」這個待驗證假說，但不能直接證明 OpenAI 的商業收入、NVIDIA 訂單金額，或 Google／Anthropic 必然落後。它們不應混入 TSLA 的 Robotaxi 收入估值，應另在 NVDA 報告追蹤叢集部署、客戶資本支出與實際採購證據。
+
 ### 影片組：事故敘事不能替代事故資料
 
 兩段影片集中放在 carousel 前兩張，因為它們同屬「飛機事故周邊畫面」，但不代表它們是 Cybercab 的事故紀錄。第一則貼文把事件描述成「第一起 Cybercab 事故」，第二則則描述飛機接近停放 Tesla 車輛的區域，並明確保留「看起來不是 Tesla」的限制。兩個說法都缺少事故編號、車輛 VIN、警方／航空主管機關報告或 Tesla 事故聲明。
@@ -97,6 +122,13 @@ NHTSA 的 Level 4 圖卡是分類教育材料。它說明在有限服務區域�
 - [TeslaYoda：NHTSA Level 4 圖卡](https://x.com/teslayoda/status/2096618587251146758?s=20)
 - [TSLA Ming：中國促銷貼文](https://x.com/tslaming/status/2096762973704667438?s=20)
 - [DriveTeslaCA：機場事故影片](https://x.com/DriveTeslaca/status/2096766767746199715?s=20)
+- [Robotaxi Radar：Tampa 可用性與 Waymo 等待時間](https://x.com/RobotaxiRadar/status/2096723531534913738?s=20)
+- [Robotaxi Radar：Cybercab 目擊地圖](https://x.com/RobotaxiRadar/status/2096667247104438307?s=20)
+- [Dave Lee：Cybercab 戰略論點](https://x.com/davelee/status/2096707456504336812?s=20)
+- [Tony：歐盟 FSD 投票節點](https://x.com/tonyhua64243679/status/2096714267873395005?s=20)
+- [Jensen Huang：Grace Blackwell 與 OpenAI](https://x.com/JensenHuang/status/2096700264569090384?s=20)
+- [The AI Investor：NVIDIA 訓練平台假說](https://x.com/The_AI_Investor/status/2096721642584260997?s=20)
+- [The AI Investor：NVIDIA 平台與前沿模型](https://x.com/The_AI_Investor/status/2096707655314416069?s=20)
 - [Tesla Cybercab Rider Guide](https://www.tesla.com/robotaxi/riderguides/cybercab/en_us/)
 
 <Disclosure title="研究限制">

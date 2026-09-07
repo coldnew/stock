@@ -120,6 +120,14 @@ Zhongwen2005 同時整理 Tesla 中國限時現車現金激勵：Model 3 5,000 �
 
 因此，本次資料形成一個重要對照：Austin 目擊數上升代表部署可見度增加，中國現車折扣則提醒傳統汽車業務仍需要促銷支撐。Tesla 若要讓 Cybercab 估值脫離敘事，必須同時證明無人車隊擴大、服務可用率提高、每車收入增加，並讓現有車款的折扣沒有持續侵蝕現金流與毛利。
 
+## 新增技術解讀：FSD 14.3.8 正面處理長尾障礙，但不代表問題已解決
+
+Mylifeonmystyle 對鐵路平交道欄杆的解釋，把前一節觀察到的繞路行為連到電腦視覺的典型難題：細長物體在遠距離只有少量像素，深度估計容易受背景、陰影、標線與天候干擾，而平交道欄杆又是低頻長尾場景。這是合理的工程假說，但貼文對內部模型解析度與訓練資料的描述並非 Tesla 技術文件，不能當成已確認的 FSD 架構細節。
+
+較重要的是，FSD 14.3.8 的版本說明確實列出「改善對伸入、懸掛或傾斜進入行車路徑的罕見與特殊物體處理」，並稱相關訓練使用車隊中的低頻事件；可參考 [FSD Database 的版本紀錄](https://www.fsddb.com/release-notes/2026.26.6.5) 與 [TeslaScope 的版本整理](https://teslascope.com/software/2026.26.6.5)。這支持「Tesla 正針對長尾物體更新模型」的判斷，但不支持「鐵路欄杆已被可靠處理」或「無人駕駛安全已解決」。
+
+投資上，軟體更新是一個領先指標，實際安全與商業價值仍要看更新後的介入率、錯誤煞停、繞路比例、遠端支援、乘客取消率與不同硬體版本的差異。若 14.3.8 讓 Robotaxi 更常採取保守繞路，事故風險可能下降，卻可能增加時間與營運成本；若它勇於通過受限路段，則要以獨立安全數據確認風險沒有轉移。這正是 Cybercab 必須在安全與可用性之間同時通過的驗收，而不是只看版本號。
+
 ## 新增資料：服務可用性、部署廣度與歐盟政策
 
 <XMediaCarousel client:load locale="zh-TW" items={[
@@ -263,6 +271,9 @@ EFIEBER 的 Giga Berlin 產量數字若被官方產量或交付資料確認，�
 - [Cybercab Spotter：Austin 無人 Cybercab 目擊數](https://x.com/CybercabSpotter/status/2096774114996310429?s=20)
 - [大趙：Tesla 中國現車現金激勵](https://x.com/zhongwen2005/status/2096790371514859595?s=20)
 - [Tesla 中國：現行促銷活動](https://www.tesla.cn/campaign/sales-promo-overview)
+- [Mylifeonmystyle：FSD 與鐵路平交道細長障礙物分析](https://x.com/mylifeonmystyle/status/2096796842725892560?s=20)
+- [FSD Database：FSD 14.3.8 版本紀錄](https://www.fsddb.com/release-notes/2026.26.6.5)
+- [TeslaScope：FSD 14.3.8 版本整理](https://teslascope.com/software/2026.26.6.5)
 - [Tesla：4680 與乾式電極說明](https://www.tesla.com/learn/engineering-tesla-vehicle-batteries-safety-durability-longevity)
 - [Tesla Investor Relations：2023 Investor Day 資料索引](https://ir.tesla.com/)
 - [Tesla：Cybercab 無線充電展示](https://www.youtube.com/watch?v=sDUOky6TYtw)

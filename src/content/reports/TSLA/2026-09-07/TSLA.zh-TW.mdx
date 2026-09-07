@@ -44,6 +44,16 @@ Robotaxi Radar 同日修正 Texas DMV 登記數：Cybercab 登記數由 39 更�
 
 兩則資料放在一起後，Cybercab 的現況比較像「注意力與測試部署同步增加，但商業化密度仍未證明」。若搜尋熱度繼續創高而登記、可載客車輛與付費行程沒有同步增長，熱度可能只是事件行銷；若 45 輛登記車在數週內轉成穩定付費里程，才會開始支持服務收入的早期證據。下一次更新應以 Texas DMV 原始紀錄、Tesla Robotaxi App 可預約範圍與實際行程觀察交叉核對。
 
+## 新增新聞交叉驗證：Austin 已開始有限度 Cybercab 營運
+
+<XMediaCarousel client:load locale="zh-TW" items={[{ type: 'image', src: '/stock/media/tsla/cybercab-videos/electric-cars-report-cybercab.jpg', alt: 'Electric Cars Report 報導中的 Tesla Cybercab 圖片', label: '新聞／Austin 營運', caption: 'Electric Cars Report 於 2026-09-07 報導 Austin 已有少量 Cybercab 上路，並整理 Texas DMV 45 輛登記與中國 9 月展示計畫；這是媒體報導，仍需 Tesla 與 DMV 原始資料交叉核對。', sourceUrl: 'https://electriccarsreport.com/2026/09/tesla-cybercab-starts-austin-robotaxi-operations-ahead-of-china-debut/' }]} />
+
+Electric Cars Report 報導，Tesla 已在 Austin 啟動少量 Cybercab Robotaxi 營運，並引用 Texas DMV：截至 8 月 31 日，當地車隊共有 45 輛登記車輛，其中部分此前主要用於員工試乘。這比「概念展示」更接近商業化測試，因為它提供了實際車隊與乘客服務的營運場景；但「開始營運」仍不能解讀成完整規模化服務，文章沒有提供每日完成行程、營收、乘客等待時間、接管率或車隊利用率。
+
+報導另整理 Cybercab 的八鏡頭視覺方案、AI 4 運算硬體、無 LiDAR／高精地圖、47.6 kWh 電池、約 10.2 kWh／100 公里能耗，以及 Tesla 長期約每英里 0.20 美元的營運成本目標。這些數字必須分成「文章轉述的規格」、「Tesla 的長期目標」與「目前 Austin 車隊的實際結果」三層；尤其 0.20 美元是達到規模後的目標，不是現階段 45 輛車的實際單位經濟。
+
+這則新聞讓 TSLA 的 Cybercab 論文略微前進，但只前進一格：從「展示／測試」進入「有限度營運與資料收集」。它尚不足以讓我們把 Robotaxi 收入放進基準估值。要升級到可量化的商業證據，至少要取得連續數週的可載客車輛、每日付費行程、每車每日里程、取消與接管率、充電／清潔／維修停機時間，以及乘客支付價格與 Tesla 實際抽成。
+
 ## 收盤價與技術位置
 
 <CandlestickChart client:load locale="zh-TW" dataUrl="/stock/data/market/TSLA.json" levels={[{price: 338, label: "結構否定", color: "#C23B32"}, {price: 349, label: "短線支撐", color: "#C23B32"}, {price: 384, label: "事件高點", color: "#3A7A4E"}, {price: 385, label: "突破確認", color: "#3A7A4E"}]} />
@@ -91,6 +101,19 @@ KraussMaffei 的 [ColorForm 官方說明](https://www.kraussmaffei.com/en/our-pr
 投資上應分成兩層：第一層是已知的 gigacasting 製程方向，可能降低焊點、零件與人工工序；第二層是 Cybercab 是否採用更大鑄件、能否達到穩定良率，以及碰撞維修、模具停機與設備資本支出的實際代價。大型鑄件若受損，可能提高局部維修成本與車輛停駛時間；若模具或鑄造設備故障，也可能造成整條產線的集中風險。因此，製程整合不等於自動帶來更高毛利。
 
 這段影片可以支持「Cybercab 的估值必須把製造學納入」的研究方向，不能直接上調 Robotaxi 收入。後續需要 Tesla 工廠實拍、供應商設備資料、試產良率、每車鑄件成本、維修工時、設備利用率與量產節拍，才能判斷製程優勢是否轉成每車貢獻毛利與車隊可用率。
+
+## 新增資料：4680 電池與 Cybercab 單車成本假說
+
+<XMediaCarousel client:load locale="zh-TW" items={[
+  { type: 'image', src: '/stock/media/tsla/cybercab-videos/foxjuly-4680-explainer.jpg', alt: 'Foxjuly 分享的 Tesla 4680 電池乾式電極說明圖', label: '電池／4680 乾式電極', caption: 'Foxjuly 解釋 4680 大圓柱電池、乾式電極與無極耳設計的可能經濟性；貼文部分內容來自與 Grok 的對話，不能當作 Tesla 對 Cybercab 電池規格的正式揭露。', sourceUrl: 'https://x.com/Foxjuly1Foxjuly/status/2096302122342248835?s=20' },
+  { type: 'image', src: '/stock/media/tsla/cybercab-videos/foxjuly-4680-details.jpg', alt: 'Foxjuly 分享的 4680 電池技術細節圖', label: '電池／製程細節', caption: '貼文把省略溶劑乾燥、減少連接複雜度與充放電能力連結到成本與效率；良率、壽命、安全與量產成本仍需一手資料驗證。', sourceUrl: 'https://x.com/Foxjuly1Foxjuly/status/2096302122342248835?s=20' }
+]} />
+
+Foxjuly 貼文提出：若 Cybercab 採用 Tesla 自製 4680 電池，乾式電極可省去部分溶劑塗布與烘乾流程，大圓柱與無極耳設計則可能減少電芯連接複雜度，理論上有助於能耗、材料與製造成本。這些是合理的工程方向，但貼文也明確是個人與 Grok 的整理，並沒有提供 Cybercab 電池包、電芯供應、乾式電極良率或 Tesla 成本會計的原始文件。
+
+對 Cybercab 的投資意義必須分三層看：4680 技術是否可行、是否能穩定量產、以及節省是否真的流向 Tesla 的每車毛利。即使乾式電極降低製程能耗，爬坡期的良率、設備折舊、報廢率與售後壽命仍可能抵銷優勢；無極耳與大圓柱也需要用熱管理、快充循環、安全測試與維修數據證明，不能只由電池直徑推導性能。
+
+這則資料支持「電池製造是 Cybercab 低營運成本假說的一部分」，但不支持立即上調估值。後續應追蹤 Tesla 是否在官方車型文件確認電芯型號、電池包容量與供應來源，並取得 4680 量產良率、每 kWh 成本、循環壽命、快充曲線、召回／維修率與車隊實際能耗。若 Austin 車隊的實際充電成本、可用率與維修停機時間改善，才可把工程敘事轉成 Robotaxi 單位經濟證據。
 
 ## 新增資料：Cybercab 技術清單的證據分層
 
@@ -294,11 +317,13 @@ EFIEBER 的 Giga Berlin 產量數字若被官方產量或交付資料確認，�
 - [大趙：Tesla 中國現車現金激勵](https://x.com/zhongwen2005/status/2096790371514859595?s=20)
 - [Tesla 中國：現行促銷活動](https://www.tesla.cn/campaign/sales-promo-overview)
 - [Mylifeonmystyle：FSD 與鐵路平交道細長障礙物分析](https://x.com/mylifeonmystyle/status/2096796842725892560?s=20)
+- [Electric Cars Report：Austin Cybercab 開始有限度營運](https://electriccarsreport.com/2026/09/tesla-cybercab-starts-austin-robotaxi-operations-ahead-of-china-debut/)
 - [FSD Database：FSD 14.3.8 版本紀錄](https://www.fsddb.com/release-notes/2026.26.6.5)
 - [TeslaScope：FSD 14.3.8 版本整理](https://teslascope.com/software/2026.26.6.5)
 - [Tesla：4680 與乾式電極說明](https://www.tesla.com/learn/engineering-tesla-vehicle-batteries-safety-durability-longevity)
 - [Tesla Investor Relations：2023 Investor Day 資料索引](https://ir.tesla.com/)
 - [Tesla：Cybercab 無線充電展示](https://www.youtube.com/watch?v=sDUOky6TYtw)
+- [Foxjuly：Cybercab 與 4680 電池乾式電極分析](https://x.com/Foxjuly1Foxjuly/status/2096302122342248835?s=20)
 - [Tesla Car World：Next-Gen Tesla Giga Press 4.0](https://www.youtube.com/watch?v=d_OSaRmHsNs)
 
 <Disclosure title="研究限制">

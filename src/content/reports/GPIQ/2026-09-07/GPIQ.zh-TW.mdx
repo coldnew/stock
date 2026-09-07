@@ -15,7 +15,6 @@ description: "以 9 月配息 $0.4968、官方點 NAV 與最新 K 線更新 GPIQ
 import AdSlot from '../../../../components/report/AdSlot.astro';
 import Disclosure from '../../../../components/report/Disclosure.astro';
 import Metrics from '../../../../components/report/Metrics.astro';
-import MarketTrend from '../../../../components/report/MarketTrend.astro';
 
 <Metrics items={[{ label: "9 月單次配息", value: "$0.4968" }, { label: "官方 NAV（09-03）", value: "$56.48" }, { label: "費率", value: "0.29%" }, { label: "本次判斷", value: "觀察" }]} />
 
@@ -25,11 +24,9 @@ GPIQ 本週的關鍵事件是 9 月配息除息（除息日 09-01，單次 $0.49
 
 前版（2026-09-04）的核心發現維持不變：GPIQ 是本系列中唯一成立以來 NAV 持續成長的納指 100 收益基金（純價格報酬約 +44%，含配息總報酬約 +94%，前版揭露值），證明備兌框架本身不必然侵蝕本金；但它的下跌日 beta（0.896）略高於 QQQI（0.866），抗跌並不比同類更客氣，兩者是不同的風險維度。本次研究維持「觀察」。
 
-## 行情圖
+## 行情解讀
 
-<MarketTrend ticker="GPIQ" locale="zh-TW" />
-
-K 線顯示除息後的收復路徑：09-01 除息（$0.4968）後，09-02 以 55.80 開盤、收 55.91，09-03 跳空開高收 56.47，09-04 高位整理收 56.62。三個交易日市價上漲約 1.3%，而 9 月配息相當於除息前市價約 0.9%，除息缺口已收復且有餘，屬於健康的除息後走勢。
+頁面頂部已自動附上 K 線圖（與本文同一截止日 2026-09-04，此處不再重貼）。K 線顯示除息後的收復路徑：09-01 除息（$0.4968）後，09-02 以 55.80 開盤、收 55.91，09-03 跳空開高收 56.47，09-04 高位整理收 56.62。三個交易日市價上漲約 1.3%，而 9 月配息相當於除息前市價約 0.9%，除息缺口已收復且有餘，屬於健康的除息後走勢。
 
 <AdSlot placement="mid" />
 

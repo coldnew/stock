@@ -1,0 +1,60 @@
+---
+ticker: SPY
+locale: zh-TW
+title: "SPY：週線回撤與長期買入紀律"
+description: "分析 SPY 週線圖、重大回撤與 Danny Cheng 關於逢大跌買入高 conviction 股票的觀點，區分指數 timing 與長期配置。"
+publishedAt: 2026-09-07
+dataAsOf: 2026-09-04
+reportType: income-etf
+translationKey: spy-2026-09-07
+tags:
+  - SPY
+  - ETF
+status: published
+---
+
+import AdSlot from '../../../../components/report/AdSlot.astro';
+import Disclosure from '../../../../components/report/Disclosure.astro';
+import CandlestickChart from '../../../../components/report/CandlestickChart';
+
+## 結論先行
+
+Danny Cheng 的 SPY 週線貼文提出一個長期投資紀律：每年通常會出現一至兩次重大回撤，投資人應避免恐慌，等高信念資產出現更好的價格。這個框架比「SPY 本月會不會突破某個整數價位」更有用，但重大回撤不會按固定日程發生，也不代表每次下跌都已經便宜。
+
+SPY 適合用來建立市場 beta 與估值情緒的基準；真正的買入規則應事先定義現金比例、分批間距、再平衡與最大可接受回撤，而不是等看到大跌後才臨時決定。
+
+## 週線技術圖
+
+<CandlestickChart client:load locale="zh-TW" dataUrl="/stock/data/market/SPY.json" levels={[{price: 700, label: "心理支撐", color: "#C23B32"}, {price: 780, label: "貼文觀察位", color: "#3A7A4E"}]} />
+
+「SPY 是否突破 $780」是市場情境問題，不是可獨立驗證的投資結論。突破若沒有成交量、企業盈餘與市場廣度支持，可能只是估值擴張；下跌若伴隨盈餘仍穩健，才可能提供長期分批配置機會。
+
+<AdSlot placement="mid" />
+
+## 回撤買入框架
+
+| 層次 | 問題 | 紀律 |
+|---|---|---|
+| 市場 | 下跌是流動性、景氣、估值還是結構性盈利問題？ | 先判斷原因，再決定是否加碼 |
+| 價格 | 距離高點多少、估值是否改善？ | 不用單一百分比定義便宜 |
+| 組合 | 現金與其他資產能否承受繼續下跌？ | 分批而非一次押注 |
+| 標的 | 高 conviction 股票是否真的通過基本面檢查？ | 不因大盤下跌就買所有股票 |
+
+## 與 VOO、VTI 的關係
+
+SPY、VOO 都以 S&P 500 為核心曝險，SPY 的優勢通常在流動性與選擇權市場；VOO 更常被用於低費用長期持有。VTI 則擴大到美國全市場。本文不把 SPY 的週線目標價當作 VOO 或 VTI 的預測，也不把指數回撤自動轉成個股買入訊號。
+
+## 風險與否定條件
+
+- 歷史上有回撤，不代表下一次回撤深度或時間可預測。
+- 指數長期上漲可能伴隨多年高估值，等待「大跌」也可能造成現金拖累。
+- 高 conviction 股票可能比 SPY 承擔更高的單一公司風險。
+- 若企業盈餘下修、信用壓力擴散或市場廣度惡化，逢跌買入應降低速度而非機械執行。
+
+## 資料來源
+
+- [Danny Cheng：SPY 週線與回撤觀點](https://x.com/dannycheng2022/status/2096502049836056658?s=20)
+
+<Disclosure title="研究限制">
+社群貼文中的 $780 是觀察位，不是目標價或保證。SPY 圖表使用本網站截至 2026-09-04 的行情快照；過去回撤不保證未來結果。
+</Disclosure>

@@ -126,6 +126,16 @@ Yes!Online 分享的 [NVIDIA PAIR](https://www.nvidia.com/en-us/ai-on-rtx/person
 
 因此，PAIR 目前是**軟體分發與硬體利用率的正面產品訊號**，不是新的營收預測依據。後續應追蹤正式版時間、支援模型與框架、節點利用率、企業部署、DGX Spark 出貨與 RTX 升級需求；若軟體能使多台既有設備產生持續推理工作，NVIDIA 的平台護城河會比單純硬體銷售更完整，但仍須由使用數據與收入驗證。
 
+## 新增研究：Rubin Ultra 的 HBM4 堆疊取捨
+
+<XMediaCarousel client:load locale="zh-TW" items={[{ type: 'image', src: '/stock/media/nvda/rubin-ultra-hbm4-8hi.jpg', alt: 'Rubin Ultra HBM4 12-Hi 與 8-Hi 規格比較圖', label: 'HBM4／Rubin Ultra', caption: 'QQ_Timmy 整理 SemiAnalysis 對 Rubin Ultra HBM 堆疊高度的推導；圖中數字與規格屬第三方分析，尚待 NVIDIA 或供應商正式文件確認。', sourceUrl: 'https://x.com/QQ_Timmy/status/2096471641693790578?s=20' }]} />
+
+QQ_Timmy 轉述 SemiAnalysis 的分析，認為 Rubin Ultra 若從 12-Hi 改為 8-Hi，重點可能不是容量不足，而是推理工作負載更在意「每單位頻寬成本」。貼文的推導是：在介面寬度與 pin 速度相同時，堆疊高度主要改變容量與 DRAM 晶片數，不必然等比例改變頻寬；若 8-Hi 足以滿足工作負載，便可能降低每顆 GPU 的 HBM 晶片用量與供應壓力。
+
+這個假說對 NVDA 有兩面性。正面是：若每美元可取得的有效記憶體頻寬提高，推理系統的總持有成本可能下降，客戶更容易擴大部署；同時，HBM 供給瓶頸若緩解，也可能改善 Rubin Ultra 的交付彈性。負面是：每 GPU 容量下降可能使大型模型需要更多 GPU、增加模型切分與網路通訊需求，實際系統成本不能只看 HBM BOM。若高容量對特定訓練或 KV cache 工作負載仍然重要，8-Hi 的成本優勢也可能被叢集規模與互連成本抵銷。
+
+因此，這則貼文目前只能提高「Rubin Ultra 以推理經濟性最佳化」的研究優先級，不能直接推導 NVIDIA 毛利率、HBM 供應量或訂單金額。後續要核對的資料包括：NVIDIA 正式 Rubin Ultra 規格、每 GPU HBM 容量與頻寬、HBM4 供應商與良率、整機櫃的 GPU／網路數量、每 token 成本，以及客戶實際採用的模型尺寸與 KV cache 配置。若官方規格確認容量下修但頻寬與實測推理吞吐上升，這才會支持「以頻寬而非容量最佳化」的判斷。
+
 ## 風險與否定條件
 
 - 100K／400K 是社群或管理層公開說法，沒有獨立採購文件前，不能直接納入財務預測。
@@ -154,6 +164,8 @@ Yes!Online 分享的 [NVIDIA PAIR](https://www.nvidia.com/en-us/ai-on-rtx/person
 - [GoFly：GPT-6／Codex 設計 FPV 飛控 PCB 示範](https://x.com/GoGoFly23/status/2096436525110309251?s=20)
 - [Yes!Online：NVIDIA PAIR 個人 AI Router](https://x.com/yesonline/status/2095882573662818518?s=20)
 - [NVIDIA 官方：Personal AI Router（PAIR）](https://www.nvidia.com/en-us/ai-on-rtx/personal-ai-router/)
+- [QQ_Timmy：Rubin Ultra HBM4 12-Hi／8-Hi 分析](https://x.com/QQ_Timmy/status/2096471641693790578?s=20)
+- [SemiAnalysis：Rubin Ultra HBM4 分析原文](https://x.com/SemiAnalysis_/status/2096282606803284031)
 
 <Disclosure title="資料限制">
 本報告把 X 貼文視為研究線索；GPU 數量、訓練叢集所有權、付款關係與上線時程尚未由公開一手財務文件完整交叉驗證。過去股價與技術圖不代表未來報酬。

@@ -26,5 +26,6 @@ export const reportOnlyTickers = [
   'AVGO',
   '2330.TW',
   'IBIT',
+  'U',
   'QYLD.L',
 ];

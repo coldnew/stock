@@ -17,6 +17,7 @@ import AdSlot from '../../../../components/report/AdSlot.astro';
 import Disclosure from '../../../../components/report/Disclosure.astro';
 import Metrics from '../../../../components/report/Metrics.astro';
 import CandlestickChart from '../../../../components/report/CandlestickChart';
+import XMediaCarousel from '../../../../components/report/XMediaCarousel';
 
 <Metrics items={[{ label: "IBIT 贊助費", value: "0.25%" }, { label: "IBIT 分配", value: "無" }, { label: "BTCI 管理費", value: "0.98%" }, { label: "BTCI 分配頻率", value: "月配" }]} />
 
@@ -78,6 +79,20 @@ NEOS 官方頁面列 BTCI 月配與分配率，但同時說明分配可能由選
 - **偏向 IBIT：** 目標是保留比特幣長期上漲、不要月配、希望費用與策略層較少，並且能自行管理提款。
 - **偏向 BTCI：** 目標是現金流，接受上漲不完整、費用較高、分配組成複雜，並會每月檢查 NAV 與總報酬，而不是只看現金入帳。
 - **兩者並列研究：** 若投資人想把一部分比特幣曝險改成收益策略，應以 IBIT 作為無選擇權基準，設定明確的 BTCI 配置上限與淘汰條件。
+
+## 風險與否定條件
+
+## 新增資料：Cathie Wood 的 2030 目標與比特幣敘事重估
+
+<XMediaCarousel client:load locale="zh-TW" items={[{ type: "video", src: "/stock/media/ibit-cathie-bitcoin-2030.mp4", alt: "Cathie Wood 討論比特幣 2030 年目標的影片", label: "影片／ARK 2030 情境", caption: "影片轉述 ARK 的 2030 年牛市情境與穩定幣、黃金對比；情境不是保證，也不是 IBIT 目標價。", sourceUrl: "https://x.com/WOLF_Bitcoin_/status/2096274660421697783?s=20" }]} />
+
+WOLF Bitcoin 轉述 Cathie Wood 的說法：ARK 的 2030 年牛市情境為每枚比特幣 150 萬美元；她同時指出，穩定幣已取代比特幣部分「新興市場避險／跨境美元」角色，黃金近年領先比特幣，而歷史上黃金領先可能是比特幣下一輪上行的前置訊號。這段資料的第一個問題是媒體轉述，第二個問題是「牛市情境」不是基準預測。
+
+ARK 官方 2030 目標確實列出約 30 萬、71 萬與 150 萬美元的熊／基準／牛市情境，並明確說明這些價格依賴市場規模、滲透率與供給假設，不能視為保證。對 IBIT 的投資意義是：它提供長期上行的情境分析，卻不能直接轉換成 IBIT 目標價，因為還要扣除費用、追蹤誤差、美元匯率與比特幣本身的路徑風險。
+
+穩定幣的觀察反而很重要。若穩定幣在新興市場承擔支付與美元替代功能，比特幣的投資論點就更集中在稀缺資產、機構配置、抵押品與非主權價值儲藏，而不是所有加密貨幣使用情境都由 BTC 捕獲。這不一定削弱 IBIT，但會使「比特幣可吃下所有數位貨幣 TAM」的估值敘事變得過度簡化。
+
+黃金領先比特幣是週期觀察，不是交易訊號。要驗證它是否真的具有領先性，需要定義時間窗、計算滯後期並控制利率、美元、流動性與 ETF 資金流；單一兩年樣本不足以形成買入規則。
 
 ## 風險與否定條件
 

@@ -1,0 +1,54 @@
+---
+interface Props {
+  author: string;
+  handle: string;
+  timestamp: string;
+  sourceUrl: string;
+  avatar?: string;
+  mediaUrl?: string;
+  mediaAlt?: string;
+  verified?: boolean;
+  views?: string;
+  replies?: string;
+  reposts?: string;
+  likes?: string;
+}
+
+const {
+  author,
+  handle,
+  timestamp,
+  sourceUrl,
+  avatar,
+  mediaUrl,
+  mediaAlt = '',
+  verified = false,
+  views,
+  replies,
+  reposts,
+  likes,
+} = Astro.props as Props;
+const hasMetrics = replies || reposts || likes || views;
+---
+
+<article class="x-post-card" aria-label={`X 貼文：${author}`}>
+  <header class="x-post-card-header">
+    {avatar ? <img class="x-post-card-avatar" src={avatar} alt={`${author} 頭像`} width="44" height="44" /> : <span class="x-post-card-avatar x-post-card-avatar-placeholder" aria-hidden="true">{author.slice(0, 1)}</span>}
+    <div class="x-post-card-author">
+      <div class="x-post-card-name">{author}{verified && <span class="x-post-card-verified" aria-label="已驗證">✓</span>}</div>
+      <div class="x-post-card-handle">{handle}</div>
+    </div>
+    <a class="x-post-card-mark" href={sourceUrl} target="_blank" rel="noreferrer" aria-label="在 X 開啟原始貼文">𝕏</a>
+  </header>
+  <div class="x-post-card-body"><slot /></div>
+  {mediaUrl && <a class="x-post-card-media" href={sourceUrl} target="_blank" rel="noreferrer"><img src={mediaUrl} alt={mediaAlt} loading="lazy" /></a>}
+  <footer class="x-post-card-footer">
+    <a href={sourceUrl} target="_blank" rel="noreferrer"><time datetime={timestamp}>{timestamp}</time><span>在 X 查看原文</span><span aria-hidden="true">↗</span></a>
+    {hasMetrics && <div class="x-post-card-metrics" aria-label="貼文互動摘要">
+      {replies && <span><b aria-hidden="true">○</b>{replies}</span>}
+      {reposts && <span><b aria-hidden="true">↻</b>{reposts}</span>}
+      {likes && <span><b aria-hidden="true">♡</b>{likes}</span>}
+      {views && <span><b aria-hidden="true">▥</b>{views} 瀏覽</span>}
+    </div>}
+  </footer>
+</article>

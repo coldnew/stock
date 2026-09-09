@@ -50,6 +50,14 @@ Nebius 的生意可以一句話概括：把電力、場址、GPU、網路與軟�
 
 但護城河的反面是集中度與重資本。微軟與 Meta 兩家即撐起數百億美元的合約 backlog（公司稱客戶承諾總額超過 400 億美元），若任一家的部署節奏放緩、AI 資本支出週期反轉，或 Vera Rubin／Blackwell 供應、電力併網、地方許可任一環節卡關，名目需求無法轉成可交付收入。同時不應把「AI 推理產能三倍成長」「拍賣溢價」等營運亮點直接乘上單價換成利潤：推理利用率、電力成本、折舊年限（2026 年起伺服器折舊由四年延長至五年，具美化帳面利潤的效果）都會扭曲毛利率的解讀。
 
+### 事件補充（2026-09-09）：Astra 循環深度與推理算力
+
+2026 年 9 月 1–2 日 The Information 引述知情人士報導，OpenAI 即將推出的 Astra 模型採用「受限的循環深度」（recurrent depth／looped transformer）：同一組 Transformer 層在輸出下一個 token 前對內部狀態多跑幾圈，把一部分計算從可見思維鏈搬進隱藏層激活值。（事實：媒體報導；OpenAI 未發布架構文件，其首席科學家僅公開稱前沿模型的計算圖深度仍在 GPT-4 的兩倍以內）開源側已有同路線先例（ByteDance Ouro、Nanbeige 4.2-3B、Huginn-3.5B），但需注意兩個被簡化的前提：其一，「3.5B 跑出 50B 評分」出自 Huginn 論文，條件是把 test-time 推理預算一路加到等效 50B 參數模型的 FLOPs，不是同等成本打平；其二，共享權重存在轉換損耗（2026 年 iso-depth scaling 研究測得 φ≈0.46），每一輪循環遠換不回一層獨立參數。（事實：公開論文；推論：架構紅利真實但非免費）
+
+對 NBIS 的讀數是中性偏正面：推理需求更 durable（持續性負載優於一次性訓練採購），有利 5GW 產能去化與長約續簽；但第二季的拍賣溢價與短約高價吃的是「搶卡」行情，若循環深度降低對峰值參數量的依賴，短約溢價可能比長約先退潮。（推論）第三季驗證時除產能上線與遞延收入外，加看短約與拍賣價格是否維持；不改變市銷率約 49 倍、安全邊際薄的估值判斷。
+
+（來源：[TechCrunch 轉述 The Information 報導](https://tech.yahoo.com/ai/chatgpt/articles/openai-astra-uses-hidden-reasoning-154630586.html)（2026-09-03）；[Sebastian Raschka 技術解析](https://sebastianraschka.com/blog/2026/openai-astra-looped-transformers.html)（2026-09-02）；[Huginn 深度循環論文](https://arxiv.org/html/2502.05171v2)；皆為 2026-09-09 可得之公開資料）
+
 ## 財務與估值
 
 以下數字全部以 modules/ai-berkshire/tools/financial_rigor.py 的精確十進制計算驗證，未經心算，資料截止 2026-09-08：
@@ -93,5 +101,5 @@ Nebius 的投資故事骨架清晰：以微軟與 Meta 的數百億美元長約�
 - [Motley Fool 經 Yahoo 轉載：Aschenbrenner 買入 NBIS 5.6% 的分析（2026-06-05）](https://finance.yahoo.com/markets/stocks/articles/nebius-stock-170-2026-leopold-215000495.html)
 
 <Disclosure title="資料限制">
-本報告以 2026-09-08 收盤資料與 2026 年第二季財報為基準；Autopilot 貼文與 Aschenbrenner 持股故事僅視為市場情緒線索，未經公司一手文件證實的新主張不納入財務預測。微軟與 Meta 合約金額為多年期總值，須待交付與驗收方能轉為認列營收。估值數字以 financial_rigor.py 精確計算，但股本與股價皆隨時間變動。過去股價與技術圖不代表未來報酬，本報告為研究筆記，不構成個人化投資建議。
+本報告以 2026-09-08 收盤資料與 2026 年第二季財報為基準；Autopilot 貼文與 Aschenbrenner 持股故事僅視為市場情緒線索，未經公司一手文件證實的新主張不納入財務預測。微軟與 Meta 合約金額為多年期總值，須待交付與驗收方能轉為認列營收。估值數字以 financial_rigor.py 精確計算，但股本與股價皆隨時間變動。過去股價與技術圖不代表未來報酬，本報告為研究筆記，不構成個人化投資建議。2026-09-09 新增之 Astra 事件補充係媒體報導與公開論文的整理，OpenAI 未證實架構細節，屬需求側推論，未納入財務預測。
 </Disclosure>

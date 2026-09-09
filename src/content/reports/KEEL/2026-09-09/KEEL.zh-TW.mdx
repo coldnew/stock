@@ -47,6 +47,14 @@ Keel 的商業模式可拆成三層。第一層是現況：加拿大殘存的比
 
 第一性原理視角：客戶付費買的是「MW 乘以可上線時程」，複製難度在於電網併網排隊與地方許可，而非建築本身。Keel 自稱其三處站點恰好卡住「已有併網容量＋2027 可交付」的窗口，這是整篇投資論文唯一不可被財報替代的護城河主張。反過來說，若 hyperscaler 自建電廠、或公用事業加速放行併網，這層護城河會快速變薄；且公司坦承面臨來自老牌 HPC 營運商、其他礦商轉型同業的競爭，對手資源可能更雄厚。
 
+### 事件補充（2026-09-09）：Astra 循環深度與推理算力
+
+2026 年 9 月 1–2 日 The Information 引述知情人士報導，OpenAI 即將推出的 Astra 模型採用「受限的循環深度」（recurrent depth／looped transformer）：同一組 Transformer 層在輸出下一個 token 前對內部狀態多跑幾圈，把一部分計算從可見思維鏈搬進隱藏層激活值。（事實：媒體報導；OpenAI 未發布架構文件，其首席科學家僅公開稱前沿模型的計算圖深度仍在 GPT-4 的兩倍以內）開源側已有同路線先例（ByteDance Ouro、Nanbeige 4.2-3B、Huginn-3.5B），但需注意兩個被簡化的前提：其一，「3.5B 跑出 50B 評分」出自 Huginn 論文，條件是把 test-time 推理預算一路加到等效 50B 參數模型的 FLOPs，不是同等成本打平；其二，共享權重存在轉換損耗（2026 年 iso-depth scaling 研究測得 φ≈0.46），每一輪循環遠換不回一層獨立參數。（事實：公開論文；推論：架構紅利真實但非免費）
+
+對 KEEL 的讀數是：主題順風，但零分計入。循環深度強化的是「已上線推理容量利用率」，而 KEEL 零租約、零 HPC 營收，吃不到任何好處，直到年底三紙租約落地。（推論）Astra 事件對 KEEL 只是敘事，不是證據；「高風險觀察」的結論與租約、許可、現金消耗三行追蹤清單不變。
+
+（來源：[TechCrunch 轉述 The Information 報導](https://tech.yahoo.com/ai/chatgpt/articles/openai-astra-uses-hidden-reasoning-154630586.html)（2026-09-03）；[Sebastian Raschka 技術解析](https://sebastianraschka.com/blog/2026/openai-astra-looped-transformers.html)（2026-09-02）；[Huginn 深度循環論文](https://arxiv.org/html/2502.05171v2)；皆為 2026-09-09 可得之公開資料）
+
 ## 財務與估值：驗證了多少、缺口在哪
 
 以下數字均經工具驗算或三源交叉核對，缺口如實列示。
@@ -85,5 +93,5 @@ KEEL 的身份已經核實無誤：它是更名後的 Bitfarms，一家正在用
 - [Yahoo Finance：Aschenbrenner 買入 KEEL（2026-05-31）](https://finance.yahoo.com/markets/stocks/articles/keel-infrastructure-corp-keel-leopold-213945800.html)
 
 <Disclosure title="資料限制">
-本報告行情截至 2026-09-08（收 3.73 美元，單日收盤漲幅約 7.49%；社群所稱 10.5% 應為盤中口徑，未能以收盤資料驗證）。財務數字取自 Q2 財報與 SEC 10-Q 並經工具驗算；HPC 租約、租金水準、2027 年交付時程屬公司前瞻性陳述，尚未兌現。Aschenbrenner 持倉僅揭露至 Q2 季底。過去股價不代表未來報酬，本報告不做個人化推薦。
+本報告行情截至 2026-09-08（收 3.73 美元，單日收盤漲幅約 7.49%；社群所稱 10.5% 應為盤中口徑，未能以收盤資料驗證）。財務數字取自 Q2 財報與 SEC 10-Q 並經工具驗算；HPC 租約、租金水準、2027 年交付時程屬公司前瞻性陳述，尚未兌現。Aschenbrenner 持倉僅揭露至 Q2 季底。過去股價不代表未來報酬，本報告不做個人化推薦。2026-09-09 新增之 Astra 事件補充係媒體報導與公開論文的整理，OpenAI 未證實架構細節，屬需求側推論，未納入財務預測。
 </Disclosure>

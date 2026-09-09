@@ -49,6 +49,14 @@ CoreWeave 自稱 The Essential Cloud for AI，商業模式是向 AI 實驗室與
 
 反面是客戶集中度。S-1 揭露微軟佔 2024 年營收 62%、前兩大客戶合計 77%，公司稱隨 OpenAI（119 億美元五年合約）等新約加入，微軟在未來承諾營收中的佔比已降至一半以下，但集中度風險並未消失：失去或重談任一主力合約都會直接衝擊營收與融資條件。這是典型的 neocloud 結構性弱點，不是靠一季財報就能解除的。
 
+### 事件補充（2026-09-09）：Astra 循環深度與推理算力
+
+2026 年 9 月 1–2 日 The Information 引述知情人士報導，OpenAI 即將推出的 Astra 模型採用「受限的循環深度」（recurrent depth／looped transformer）：同一組 Transformer 層在輸出下一個 token 前對內部狀態多跑幾圈，把一部分計算從可見思維鏈搬進隱藏層激活值。（事實：媒體報導；OpenAI 未發布架構文件，其首席科學家僅公開稱前沿模型的計算圖深度仍在 GPT-4 的兩倍以內）開源側已有同路線先例（ByteDance Ouro、Nanbeige 4.2-3B、Huginn-3.5B），但需注意兩個被簡化的前提：其一，「3.5B 跑出 50B 評分」出自 Huginn 論文，條件是把 test-time 推理預算一路加到等效 50B 參數模型的 FLOPs，不是同等成本打平；其二，共享權重存在轉換損耗（2026 年 iso-depth scaling 研究測得 φ≈0.46），每一輪循環遠換不回一層獨立參數。（事實：公開論文；推論：架構紅利真實但非免費）
+
+對 CRWV 的讀數偏正面但只作用在需求側：若循環深度普及，單位查詢的推理 FLOPs 上升，GPU 開機時數與利用率獲得結構性支撐，有利 backlog 轉成開機容量。但同一趨勢也要求更嚴格地檢視管理層「舊架構 GPU 以原價簽約至 2029 年」的主張——推理效率提升若快於需求成長，舊卡租金首當其衝。（推論）追蹤清單不變，僅把「已交付 backlog 比例」的權重再調高一格；不改變本報告的追價紀律結論。
+
+（來源：[TechCrunch 轉述 The Information 報導](https://tech.yahoo.com/ai/chatgpt/articles/openai-astra-uses-hidden-reasoning-154630586.html)（2026-09-03）；[Sebastian Raschka 技術解析](https://sebastianraschka.com/blog/2026/openai-astra-looped-transformers.html)（2026-09-02）；[Huginn 深度循環論文](https://arxiv.org/html/2502.05171v2)；皆為 2026-09-09 可得之公開資料）
+
 ## 財務與估值：營收翻倍、虧損擴大、利息吃掉一切
 
 以下數字均經 `financial_rigor.py` 工具驗算，禁止心算：
@@ -99,5 +107,5 @@ CoreWeave 是一家用資產負債表換成長的公司：1,040 億美元 backlo
 - 行情資料：本站 `public/data/market/CRWV.json`（截止 2026-09-08）
 
 <Disclosure title="資料限制">
-本報告把社群貼文視為研究線索；單日漲幅、名人持股、backlog 轉換時程與交付進度尚未由下一季 10-Q 完整交叉驗證。財務數字引自公司財報與 SEC 文件，但債務、股本與指引會隨再融資與增發變動。過去股價與技術圖不代表未來報酬，本文為研究框架，不構成個人化投資建議。
+本報告把社群貼文視為研究線索；單日漲幅、名人持股、backlog 轉換時程與交付進度尚未由下一季 10-Q 完整交叉驗證。財務數字引自公司財報與 SEC 文件，但債務、股本與指引會隨再融資與增發變動。過去股價與技術圖不代表未來報酬，本文為研究框架，不構成個人化投資建議。2026-09-09 新增之 Astra 事件補充係媒體報導與公開論文的整理，OpenAI 未證實架構細節，屬需求側推論，未納入財務預測。
 </Disclosure>

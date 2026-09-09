@@ -144,7 +144,7 @@ const tslaChart = ticker === 'TSLA'
         </div>
       </div>
     </div>
-{!archive && <MarketTrend ticker={ticker} locale={locale} />}
+{!archive && !entry.data.hideMarketTrend && <MarketTrend ticker={ticker} locale={locale} />}
 {!archive && <MarketDecisionPanel ticker={ticker} locale={locale} reportType={entry.data.reportType} />}
 {tslaChart && archive && <CandlestickChart client:load locale={locale === 'zh-TW' ? 'zh-TW' : 'en'} dates={tslaChart.dates} data={tslaChart.data as [number, number, number, number][]} />}
     <AdSlot placement="top" />

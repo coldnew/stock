@@ -14,6 +14,15 @@ const change = first && latest ? (latest / first - 1) * 100 : undefined;
 const fromHigh = high && latest ? (latest / high - 1) * 100 : undefined;
 const format = (value: number | undefined) => value === undefined ? '—' : value.toFixed(2);
 const isIndustry = reportType === 'other' && ticker.toUpperCase() === 'DRAM';
+const lastDate = rows.at(-1)?.[0] ?? '';
+const year = lastDate.slice(0, 4);
+const ytdRows = rows.filter(([date]) => date.slice(0, 4) === year && date <= lastDate);
+const prevYearEnd = [...rows].reverse().find(([date]) => date.slice(0, 4) < year);
+const ytdBase = prevYearEnd?.[4] ?? ytdRows[0]?.[4];
+const ytdChange = ytdBase && latest ? (latest / ytdBase - 1) * 100 : undefined;
+const ytdHigh = ytdRows.length ? Math.max(...ytdRows.map((row) => row[2])) : undefined;
+const ytdLow = ytdRows.length ? Math.min(...ytdRows.map((row) => row[3])) : undefined;
+const ytdPartial = ytdRows.length > 0 && (ytdRows[0]?.[0] ?? '') > `${year}-01-07`;
 ---
 {snapshot && latest !== undefined ? <section class="market-decision-panel">
   <h2>市場快照與入場紀律</h2>
@@ -21,6 +30,8 @@ const isIndustry = reportType === 'other' && ticker.toUpperCase() === 'DRAM';
     <thead><tr><th>指標</th><th>數值</th><th>如何解讀</th></tr></thead>
     <tbody>
       <tr><td>最近收盤</td><td>{snapshot.currency} {format(latest)}</td><td>最近完成交易日：{rows.at(-1)?.[0]}</td></tr>
+      <tr><td>年初至今報酬</td><td>{ytdChange === undefined ? '—' : `${ytdChange >= 0 ? '+' : ''}${ytdChange.toFixed(2)}%`}</td><td>{year} 年初至今{ytdPartial ? `（行情起於 ${ytdRows[0]?.[0]}，非完整年）` : ''}，描述路徑，不代表預期報酬。</td></tr>
+      <tr><td>年初至今區間</td><td>{ytdLow === undefined || ytdHigh === undefined ? '—' : `${format(ytdLow)}–${format(ytdHigh)}`}</td><td>當年高低點，用於理解波動與位階，不是估值。</td></tr>
       <tr><td>近三個月變化</td><td>{format(change)}%</td><td>描述路徑，不代表預期報酬。</td></tr>
       <tr><td>近三個月區間</td><td>{format(low)}–{format(high)}</td><td>用於理解波動與支撐／壓力，不是估值。</td></tr>
       <tr><td>距近三個月高點</td><td>{format(fromHigh)}%</td><td>回撤不等於安全邊際。</td></tr>

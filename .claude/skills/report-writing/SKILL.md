@@ -14,6 +14,12 @@ The agent's job is research, reasoning, prose, citations, and translation qualit
 - Use existing report components such as `Metrics` and `Disclosure`.
 - Run `npm run check` and `npm run build` after writing.
 
+## Charts: one price chart per page
+
+- The shared layout auto-renders a market chart above every non-archive report. Do not embed a second `CandlestickChart` / `ClosePriceChart` from the same market JSON in the MDX body.
+- Exception (technical-analysis-dedicated): a single annotated `<CandlestickChart levels={...}>` in the body is allowed only when annotated levels are the core evidence, and the layout default must be suppressed for that page (`hideMarketTrend: true` in frontmatter) so the total stays at one.
+- Market snapshot YTD: backfill `src/data/market.ts` history to the first trading week of January before publishing (pinned `period2`, never past `dataAsOf`), so the shared panel's 年初至今 rows reflect the full year.
+
 ## Do not edit for ordinary writing tasks
 
 - `src/components/report/`

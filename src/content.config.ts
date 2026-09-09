@@ -15,6 +15,7 @@ const reports = defineCollection({
     translationKey: z.string(),
     tags: z.array(z.string()).default([]),
     status: z.enum(['draft', 'published']).default('published'),
+    hideMarketTrend: z.boolean().optional(),
   }),
 });
 

@@ -30,4 +30,11 @@ export const reportOnlyTickers = [
   'SPY',
   'U',
   'QYLD.L',
+  'SEI',
+  'CRWV',
+  'NBIS',
+  'BE',
+  'KEEL',
+  'APLD',
+  'IREN',
 ];

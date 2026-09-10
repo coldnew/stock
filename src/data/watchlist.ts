@@ -37,4 +37,7 @@ export const reportOnlyTickers = [
   'KEEL',
   'APLD',
   'IREN',
+  'ASTS',
+  'RKLB',
+  'OKLO',
 ];

@@ -40,4 +40,5 @@ export const reportOnlyTickers = [
   'ASTS',
   'RKLB',
   'OKLO',
+  'NET',
 ];

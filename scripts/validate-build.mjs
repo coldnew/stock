@@ -33,7 +33,7 @@ for (const report of latestReports) {
   let html;
   try { html = await readFile(path, 'utf8'); } catch { failures.push(`${path}: missing generated page`); continue; }
   const adSlots = (html.match(/class="ad-slot"/g) ?? []).length;
-  const expectedAdSlots = report.ticker === 'TSLA' ? 5 : 3;
+  const expectedAdSlots = 3;
   if (adSlots !== expectedAdSlots) failures.push(`${path}: expected ${expectedAdSlots} ad slots, found ${adSlots}`);
   if (!html.includes('G-2SXWWHGFPN')) failures.push(`${path}: missing GA4 measurement ID`);
   if (!html.includes('rel="canonical"') && !html.includes('rel="alternate"')) failures.push(`${path}: missing SEO links`);

@@ -7,6 +7,12 @@ description: "Use when adding, updating, translating, publishing, or archiving a
 
 Use this skill for every new or revised report in this repository. The project is an Astro static site backed by an MDX content collection. Write research in the content files and let the existing layouts, routes, styles, analytics, history navigation, and advertising components do the repeated work.
 
+## Authorship
+
+Reports in this repository are drafted by the AI coding agent — model Muse Spark (`opencode/muse-spark-1.3-contributor-free`), running via OpenCode. The repository owner reviews, publishes, and is responsible for the final content.
+
+Every new or updated report edition must disclose this in its `Disclosure` component, e.g. zh-TW: 「本報告初稿由 AI 助手（Muse Spark）撰寫，經站方審閱發布」；en: "Drafted by an AI assistant (Muse Spark) and reviewed before publication." Never sign a report with a human author name and never present the agent as a licensed analyst. Editions published before this rule are backfilled the next time they are touched, not mass-edited.
+
 ## Before Editing
 
 1. Read the repository `README.md`, `src/content.config.ts`, `scripts/new-report.mjs`, `scripts/publish-report.mjs`, and `scripts/validate-content.mjs` when the workflow or schema is unclear.

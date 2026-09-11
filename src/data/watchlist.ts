@@ -41,4 +41,5 @@ export const reportOnlyTickers = [
   'RKLB',
   'OKLO',
   'NET',
+  '6739.TW',
 ];

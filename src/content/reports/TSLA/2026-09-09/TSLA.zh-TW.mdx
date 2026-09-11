@@ -212,6 +212,20 @@ Tesla Energy 官方帳號發文（76.5 萬瀏覽，UTC 9 月 10 日凌晨、即�
   <p>約 69,000 台 Powerwall 放電超過 500MW；官方第一方宣稱，量級與 2025 年事件一致，待財報兌現。</p>
 </XPostCard>
 
+## 新增資料十三：安全研究員把 Model 3 車機跑進 QEMU，肯定熔絲信任鏈（單一來源）
+
+安全研究員 @0xrootRE 連發兩則同一研究線（9/09、9/10）：先花 24 小時把一台真實 Model 3 車機 eMMC dump 在 QEMU 下跑起來（自述繞過 LUKS／TPM、修 Mesa／AppArmor／Xorg，最終放棄 GPU 加速改純 2D 輸出點亮 UI）；再發長文分析 Tesla 以硬體熔絲（/sys/firmware/oem/eom）為根錨的信任鏈（is-fused＋私有 PKI 決定工廠門控，級聯服務／測功／運輸模式），結論是縱深防禦落地紮實、向工程團隊致敬。
+
+查核與定位：無任何媒體或第三方轉述，全線只有研究員自述，技術細節我方無法獨立驗證；「繞過 LUKS／TPM」最可能是在拿到 dump 後的實驗室金鑰還原，不是密碼學攻破，不能讀成遠端漏洞；留言區亦有降溫聲音（eFuse 在三星 Knox 早用多年、質疑是否 AI 代筆）。投資意涵極薄：正面讀法是第三方背書 Tesla 軟體工程嚴謹度（呼應軟體 thesis），反面是實體接觸攻擊面確實存在——但兩者都無營運數字，不進估值，僅記為工程側花絮。
+
+<XPostCard author="0xroot" handle="@0xrootRE" timestamp="2026-09-09" sourceUrl="https://x.com/0xrootRE/status/2097688866715324673?s=20" mediaUrl="https://pbs.twimg.com/media/HRx8354bgAEqlkK.jpg?name=orig" mediaAlt="0xrootRE 原始貼文附圖" views="41.7K">
+  <p>Model 3 車機 eMMC dump 在 QEMU 下點亮 UI；研究員自述、無第三方轉述，工程側花絮。</p>
+</XPostCard>
+
+<XPostCard author="0xroot" handle="@0xrootRE" timestamp="2026-09-10" sourceUrl="https://x.com/0xrootRE/status/2098040461000638817?s=20" mediaAlt="0xrootRE 熔絲信任鏈分析長文" views="32K">
+  <p>硬體熔絲為根錨的信任鏈分析，肯定縱深防禦；單一來源技術自述，不進估值。</p>
+</XPostCard>
+
 ## 其他 TSLA 線索：分級處理
 
 S.E. Robinson, Jr. 的每日整理還提到 9 月 24 日 Tesla Semi Rollout Event、Mustang Ridge 538,720 平方英尺的配送中心、Model Y 融資利率由 0.99% 調至 1.49%、Cybercab 生產速度「比傳統汽車快五倍以上」、San Antonio Robotaxi 停車與調度據點、Cybertruck 材料與攝影機改良、Texas Lithium Refinery 首批鋰材料，以及 FSD V14.3.9 的 Automatic Collision Evasion。
@@ -235,7 +249,7 @@ S.E. Robinson, Jr. 的每日整理還提到 9 月 24 日 Tesla Semi Rollout Even
 
 ## 分析結論
 
-今日最可靠的更新不是「1,000 輛即將上路」，而是兩個較窄、較可驗證的事實：NHTSA 已把 Cybercab 擴張意圖納入約 1,000 輛的估計調查母體；Tesla 已公開展示把 Unboxed 平行組裝用於 Cybercab 的製造方法。9 月 9 日再添三筆分級不同的證據：Goldman 的 $0.05–$0.30／英里成本區間（有量產前提、Hold 評級不變、重點是軟體）、德州車隊總數 437 輛（新增數轉述不一）、FSD v14.2 Lite 單一車主好評（僅供追蹤）；同日 Cybercab 香港亞洲巡展首日則是三商場靜態展示，屬行銷延伸而非營運證據；同日晚再添兩筆：法國 FSD 路測無不可克服障礙（AFP 與部長雙重來源，超速仍是卡關點，TCMV 10 月投票前觀察）、Dave Lee 的 Cybercab 體驗論（利益相關方單人心得，僅供情緒追蹤）；Tesla Energy 的加州 500MW VPP 事件則是能源第二曲線的第一方證據（公司單方面宣稱，待財報兌現）。六者合起來加強的是同一個 thesis：車輛成本下降後，勝負手移到軟體與擴張速度；VPP 另開一條估值輔線，但目前只能記敘事分。TSLA 的 Robotaxi 論文因此變得更可測量，並非更確定。
+今日最可靠的更新不是「1,000 輛即將上路」，而是兩個較窄、較可驗證的事實：NHTSA 已把 Cybercab 擴張意圖納入約 1,000 輛的估計調查母體；Tesla 已公開展示把 Unboxed 平行組裝用於 Cybercab 的製造方法。9 月 9 日再添三筆分級不同的證據：Goldman 的 $0.05–$0.30／英里成本區間（有量產前提、Hold 評級不變、重點是軟體）、德州車隊總數 437 輛（新增數轉述不一）、FSD v14.2 Lite 單一車主好評（僅供追蹤）；同日 Cybercab 香港亞洲巡展首日則是三商場靜態展示，屬行銷延伸而非營運證據；同日晚再添兩筆：法國 FSD 路測無不可克服障礙（AFP 與部長雙重來源，超速仍是卡關點，TCMV 10 月投票前觀察）、Dave Lee 的 Cybercab 體驗論（利益相關方單人心得，僅供情緒追蹤）；Tesla Energy 的加州 500MW VPP 事件則是能源第二曲線的第一方證據（公司單方面宣稱，待財報兌現）。六者合起來加強的是同一個 thesis：車輛成本下降後，勝負手移到軟體與擴張速度；VPP 另開一條估值輔線，但目前只能記敘事分；安全研究員的 QEMU／信任鏈系列則是工程側花絮（單一來源、無營運意涵，不計入 thesis 權重）。TSLA 的 Robotaxi 論文因此變得更可測量，並非更確定。
 
 ## 資料來源
 
@@ -264,3 +278,5 @@ S.E. Robinson, Jr. 的每日整理還提到 9 月 24 日 Tesla Semi Rollout Even
 - [France24／AFP：Tesla's semi-autonomous driving could be adapted to EU norms](https://www.france24.com/en/live-news/20260903-tesla-s-semi-autonomous-driving-could-be-adapted-to-eu-norms-france)，2026-09-03。
 - [Euronews／AFP：France tests Tesla self-driving](https://www.euronews.com/next/2026/09/03/france-tests-tesla-self-driving-two-months-after-calling-it-too-risky)，2026-09-03。
 - [TeslaNorth：Tesla Hands France Two FSD Cars for UTAC Tests](https://teslanorth.com/2026/09/03/tesla-fsd-france-utac-tests)，2026-09-04。
+- [0xroot（Model 3 車機 QEMU 啟動）原始貼文](https://x.com/0xrootRE/status/2097688866715324673?s=20)，2026-09-09。
+- [0xroot（熔絲信任鏈分析）原始貼文](https://x.com/0xrootRE/status/2098040461000638817?s=20)，2026-09-10。

@@ -7,7 +7,7 @@ export type TrackedAsset = {
 
 /** 首頁追蹤清單的單一來源：市場與資產類型分開記錄，方便日後加入台股 ETF。 */
 export const trackedAssets: TrackedAsset[] = [
-  ...['AAPL', 'AMD', 'GOOG', 'MSFT', 'NVDA', 'SPCX', 'TSLA'].map((ticker) => ({ ticker, market: 'US' as const, assetType: 'equity' as const, displayTicker: ticker })),
+  ...['AAPL', 'AMD', 'GOOG', 'INTC', 'MSFT', 'NVDA', 'SPCX', 'TSLA'].map((ticker) => ({ ticker, market: 'US' as const, assetType: 'equity' as const, displayTicker: ticker })),
   { ticker: 'ARCC', market: 'US', assetType: 'bdc', displayTicker: 'ARCC' },
   ...['BTCI', 'CHPY', 'DGRO', 'DRAM', 'GPIQ', 'GPIX', 'IQQ', 'IWMI', 'MAGS', 'OVL', 'QDVO', 'QQQ', 'QQQH', 'QQQI', 'SGOV', 'SPYI', 'TQQQ', 'VOO', 'VTI'].map((ticker) => ({ ticker, market: 'US' as const, assetType: 'etf' as const, displayTicker: ticker })),
 ];

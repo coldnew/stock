@@ -43,4 +43,5 @@ export const reportOnlyTickers = [
   'NET',
   '6739.TW',
   'MCD',
+  'AMZN',
 ];

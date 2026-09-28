@@ -42,4 +42,5 @@ export const reportOnlyTickers = [
   'OKLO',
   'NET',
   '6739.TW',
+  'MCD',
 ];

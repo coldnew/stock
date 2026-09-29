@@ -1,0 +1,76 @@
+---
+ticker: SPYI
+publishedAt: 2026-09-29
+dataAsOf: 2026-09-28
+reportType: income-etf
+translationKey: spyi-2026-09-29
+status: published
+tags:
+  - SPYI
+locale: zh-TW
+title: "SPYI：9 月配息微降、均線糾結，S&P 版的同題問答"
+description: "2026-09-29 更新：9 月配 $0.5338、尾隨殖利率約 11.9%、beta 0.71，熊市韌性假設不變，維持觀察。"
+---
+
+import AdSlot from '../../../../components/report/AdSlot.astro';
+import Disclosure from '../../../../components/report/Disclosure.astro';
+import Metrics from '../../../../components/report/Metrics.astro';
+
+<Metrics items={[{ label: "9 月配息", value: "$0.5338（-1.6% MoM）" }, { label: "尾隨殖利率（現價）", value: "約 11.9%" }, { label: "費用率", value: "0.68%" }, { label: "beta（vs S&P 500）", value: "0.71（前版）" }, { label: "配息組成（推估）", value: "幾乎全為 ROC" }, { label: "本次判斷", value: "觀察" }]} />
+
+## 核心結論
+
+SPYI 的 9 月與 QQQI 是同一道考題的兩個版本：[單月配 $0.5338（除息 09-16，發放 09-18），較 8 月的 $0.5423 下滑 1.6%](https://dividendhistory.org/payout/SPYI/)，降幅小於 QQQI 的 2.7%——符合 S&P 500 波動率低於納指 100、SPX 權利金較薄的結構。但市價端較弱：09-28 收 53.34 美元，恰壓在 20／50 日線（53.44／53.44）下方，較前版截止（09-02 收 53.57）小跌 0.4%，而同期 QQQI 上漲 1.2%。一強一弱的分化，來自標的指數本身（納指 9 月跑贏標普），不是產品優劣。尾隨殖利率約 11.9%，beta 0.71（前版），熊市韌性假設不變。本次維持「觀察」。
+
+## 行情解讀
+
+K 線顯示 09-28 收 53.34（開 53.51、高 53.55、低 53.22），雙均線糾結於 53.44，多空未表態。與 QQQI（站上雙均線、乖離 +1.3%）對比，SPYI 的位置更尷尬：上有均線壓、下無乖離緩衝。支撐先看 53.22（09-28 低點），再看 8 月低點區（追蹤時精算）；壓力為雙均線帶 53.44，有效站上才算轉強。6 月 30 日時點資產約 104 億美元（[24/7 Wall St 引述](https://247wallst.com/investing/etf/2026/09/14/these-3-etfs-pay-up-to-14-percent-and-legally-shield-most-of-it-from-the-irs/)），是 NEOS 旗艦，流動性無虞。
+
+## 配息可持續性：S&P 版的權利金數學
+
+SPYI 的配息率（~11.9%）天然低於 QQQI（~13.7%），差值約 2 個百分點——這是 SPX 隱含波動率低於 NDX 的直接映射，不是管理優劣。9 月 $0.5338 僅略低於年均（2026 年至今九次合計約 $4.79，月均 $0.532），實屬持平，單月解讀無意義。真正的可持續性問題與 QQQI 同構：本金有無被侵蝕。本次查核未取得 SPYI 的 NAV 總報酬時序（官網動態載入），列為資訊缺口；替代證據是市價：09-02 至 09-28 含息報酬約（53.34＋0.5338）／53.57－1 ≈ ＋0.6%，配息後本金大致持平——中性，不加分不扣分。
+
+稅務結構與 QQQI 同源（[1256 節＋ROC，FY 說明書口徑 94–99% 遞延](https://247wallst.com/investing/etf/2026/09/14/these-3-etfs-pay-up-to-14-percent-and-legally-shield-most-of-it-from-the-irs/)）：配息多為延稅而非免稅，熊市賣出時稅基墊高，稅單與虧損並存。台灣投資人另計（美股配息扣繳＋ROC 調整基價），稅務處理與 QQQI 一致，不贅述。
+
+<AdSlot placement="mid" />
+
+## 熊市韌性與 QQQI 的選擇題
+
+前版 beta 0.71（vs S&P 500）意味著真熊市中 SPYI 比 QQQI（0.87）多約 1.5 成緩衝——這是 S&P 版唯一的結構優勢，也是「求穩選 SPYI、求息選 QQQI」的全部依據。但 0.71 仍是七成跟跌，不是保護；2025 年 4 月修正的實證（前版系列）同樣適用。若把兩檔並排，選擇框架很乾淨：要最大月現金流選 QQQI（~13.7%），要最小波動選 SPYI（beta 0.71），要熊市保護兩者都不選（去 CSHI 或現金）。本篇不替讀者選，只給刻度。
+
+## 進場點分析
+
+<strong>技術面（截至 09-28，可複算）：</strong>均線糾結、方向未表態。有效站上 53.44（雙均線帶）為轉強首訊；摜破 53.22（09-28 低點）轉弱。
+
+<strong>基本面觸發（情境閾值）：</strong>偏多加碼觸發為 10 月配息回升至 $0.54 上方且站上均線帶；基準為持有領息，以 53.22 為防守線；偏空（單月配息跌破 $0.51 且市價破位、或大盤進入修正）則減碼至觀察倉。
+
+| 行動 | 空手者 | 持有者 |
+|---|---|---|
+| 現在（53.34，糾結） | 等方向表態，不提前押注 | 續抱領息，防守線 53.22 |
+| 有效站上 53.44 | 建第一批（小倉），停損 53.10 下方 | 不加碼，等 10 月配息 |
+| 10 月配息回升＋站穩均線 | 追第二批 | 續抱，移動停利 |
+| 摜破 53.22 或配息跌破 $0.51 | 全數等待，結論作廢 | 減半，見偏空情境 |
+
+<strong>減碼信號：</strong>單月配息跌破 $0.51、市價摜破 53.22、S&P 進入技術修正。
+
+## 主要風險與否定條件
+
+- 熊市跟跌七成：beta 0.71 不是保護，配息同步縮水。
+- 權利金較薄：SPX 波動率低於 NDX，牛市中配息上檔天然低於 QQQI。
+- ROC 稅務：遞延非免除，熊市賣出稅損並存。
+- 本篇結論的作廢條件：單月配息跌破 $0.51，或摜破 53.22——出現任一即改判減碼。
+
+## 分析結論
+
+9 月的 SPYI 是 QQQI 的低波動鏡像：配息少降一點（-1.6% vs -2.7%），市價弱一點（-0.4% vs +1.2%），beta 低一點（0.71 vs 0.87）。維持觀察：均線糾結處不預設立場，站上 53.44 建首批，破 53.22 全退。求息去 QQQI，求穩留 SPYI，要保護兩者都不選。本文不做個人化推薦。
+
+## 資料來源
+
+- [NEOS：SPYI 官網（配息表，截至 07-31 版）](https://neosfunds.com/spyi/)
+- [DividendHistory：SPYI 配息史（含 09-16 $0.5338）](https://dividendhistory.org/payout/SPYI/)
+- [24/7 Wall St：稅務結構與 AUM（09-14）](https://247wallst.com/investing/etf/2026/09/14/these-3-etfs-pay-up-to-14-percent-and-legally-shield-most-of-it-from-the-irs/)
+- [Yahoo Finance：SPYI 行情](https://finance.yahoo.com/quote/SPYI/)
+
+<Disclosure title="資料限制">
+本報告行情截止 2026-09-28（SPYI 收 53.34 美元；均線為本站快照試算）。未取得 SPYI 的 NAV 總報酬時序，市價含息報酬為本站概算；9 月配息引自第三方配息史，未取得 19a-1 原文；beta 0.71 沿用前版。本文不做個人化投資建議。
+</Disclosure>

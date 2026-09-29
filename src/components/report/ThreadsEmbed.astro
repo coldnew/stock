@@ -1,0 +1,26 @@
+---
+interface Props {
+  permalink: string;
+  author?: string;
+  fallbackLabel?: string;
+}
+
+const { permalink, author = 'Threads 貼文', fallbackLabel } = Astro.props as Props;
+---
+
+<!-- 官方 Threads embed：embed.js 會把 blockquote 置換為互動式 embed。
+     無 JS 時只顯示原文連結。單篇內嵌請用 Threads 貼文右上 share 選單的 permalink。 -->
+<blockquote class="text-post-media threads-embed" data-text-post-permalink={permalink} data-text-post-version="v1">
+  <a href={permalink} target="_blank" rel="noreferrer">{fallbackLabel ?? `在 Threads 查看${author}的原始貼文`}</a>
+</blockquote>
+<script is:inline>
+(function () {
+  if (!document.getElementById('threads-embed-js')) {
+    var s = document.createElement('script');
+    s.id = 'threads-embed-js';
+    s.async = true;
+    s.src = 'https://www.threads.com/embed.js';
+    document.head.appendChild(s);
+  }
+})();
+</script>

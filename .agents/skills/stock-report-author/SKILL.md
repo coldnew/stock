@@ -102,6 +102,19 @@ Use MDX when the report benefits from an existing component:
 - `Metrics` for a small set of clearly sourced headline figures.
 - `Disclosure` for data limitations, methodology notes, and educational disclaimers.
 - `AdSlot` only for a deliberate in-article mid placement. The shared layout already supplies top and bottom advertising.
+- `XPostCard` for every cited X post (official widget + static fallback; renders the real embed with video/thread expansion, never a bare URL or paraphrase-only mention). Import path follows the scaffold; pass the original `sourceUrl`, and a `mediaUrl` only when the post carries a photo whose direct image URL is known from a fetch result — never fabricate one.
+- `ThreadsEmbed` for every cited Threads post (`permalink` + `author` + `fallbackLabel`).
+
+### Inline Citations (no URL graveyards)
+
+Every factual claim that comes from a cited post, filing, article, or dataset MUST link inline at the point of use with a Markdown link (`[text](url)`), so the reader can verify without scrolling. The end-of-report Sources section remains as the bibliography, but a report whose published body (before Sources) contains zero inline links is a defect. Bare URLs pasted as prose are forbidden — always wrap them in a component (`XPostCard` / `ThreadsEmbed`) or an inline link.
+
+### Prose Rhythm (not a bullet dump)
+
+- No section may be bullets-only scaffolding: every bulleted list needs a prose lead-in that states the judgment, with bullets carrying only the supporting facts.
+- Never more than 6 consecutive bullets; longer enumerations must be split with a prose bridge or converted to a table.
+- Key comparisons (before/after, bull/bear, claim-vs-verification) belong in a Markdown table or `Metrics`, not in bullets.
+- Each major section opens with 1–2 prose sentences framing what follows; single-sentence sections followed only by a card are forbidden.
 
 ### Chart Deduplication (one price chart per page)
 

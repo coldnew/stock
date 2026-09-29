@@ -415,6 +415,11 @@
   .x-post-card-metrics { display: flex; flex-wrap: wrap; gap: 13pt; color: #536471; }
   .x-post-card-metrics span { display: inline-flex; align-items: center; gap: 4pt; }
   .x-post-card-metrics b { color: #60717d; font-size: 12pt; font-weight: 400; }
+  .x-post-embed { max-width: 620px; margin: 20pt auto 24pt; padding: 0; border: 0; }
+  .x-post-embed > a { display: block; margin-bottom: 8pt; color: var(--stone); font: 9.5pt/1.5 system-ui, sans-serif; }
+  .x-post-embed .x-post-card { margin: 0 auto; }
+  .threads-embed { max-width: 620px; margin: 20pt auto 24pt; padding: 0; border: 0; }
+  .threads-embed > a { color: var(--stone); font: 9.5pt/1.5 system-ui, sans-serif; }
   .x-image-compare { margin: 16pt 0 22pt; }
   .x-image-compare-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12pt; }
   .x-image-compare-item { min-width: 0; overflow: hidden; border: 1px solid var(--line); border-radius: 10pt; background: #161616; }

@@ -4,6 +4,7 @@ import { join } from 'node:path';
 
 const files = (await readdir('src/content/reports', { recursive: true })).filter((file) => file.endsWith('.mdx') || file.endsWith('.md'));
 const failures = [];
+const warnings = [];
 const publishedDates = new Map();
 for (const file of files) {
   const path = join('src/content/reports', file);
@@ -18,9 +19,12 @@ for (const file of files) {
   const key = `${locale}:${ticker}:${publishedAt}`;
   if (publishedDates.has(key)) failures.push(`${path}: duplicate published date for ${ticker} (${publishedDates.get(key)})`);
   else publishedDates.set(key, path);
+  const body = content.split('## 資料來源')[0];
+  if (!body.includes('](')) warnings.push(`${path}: published body has no inline links before Sources`);
 }
 if (failures.length) {
   console.error(failures.join('\n'));
   process.exit(1);
 }
+if (warnings.length) console.warn('warnings:\n' + warnings.join('\n'));
 console.log(`validated ${files.length} content files; published Traditional-Chinese reports passed`);

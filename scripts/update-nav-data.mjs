@@ -10,6 +10,12 @@ const sources = {
   BTCI: 'https://neosfunds.com/btci/',
 };
 
+// Deliberately unsupported (no issuer daily NAV series; do NOT fabricate from
+// market prices — premium/discount noise would violate the NavTrendChart caption):
+// - GPIQ/GPIX (Goldman Sachs): monthly factsheet returns only, no embeddable daily series.
+// - QDVO/DGRO/MAGS/QQQ/TQQQ/VOO and equities: NAV trend is an income-fund concept;
+//   their market snapshot is the price chart. QDVO monthly payouts get DistributionTrend.
+
 const parseArray = (html, name) => {
   const match = html.match(new RegExp(`(?:const|let|var)\\s+${name}\\s*=\\s*(\\[[^;]+\\])`));
   if (!match) throw new Error(`Missing ${name}`);

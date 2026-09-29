@@ -29,12 +29,13 @@ Run the project scaffold from the repository root:
 npm run report:new -- --ticker=AMD --date=YYYY-MM-DD
 ```
 
-Use an uppercase ticker and an ISO date. The script creates both:
+Use an uppercase ticker and an ISO date. The script creates:
 
 ```text
-src/content/reports/<TICKER>/<DATE>/<TICKER>.en.mdx
 src/content/reports/<TICKER>/<DATE>/<TICKER>.zh-TW.mdx
 ```
+
+Reports are currently published in Traditional Chinese only. The validator rejects English editions (`English reports are no longer supported`), so do not create `.en.mdx` files and do not reference EN routes as live surfaces. If English coverage is ever reintroduced, it needs its own specification; until then, every "both locales" rule in older revisions of this skill is superseded by this paragraph.
 
 The latest edition is derived automatically: among published reports with the same ticker and locale, the greatest `publishedAt` is the current version. Do not manually mark older files, delete snapshots, or edit the generated route HTML. Historical reports remain immutable and are rendered at dated URLs.
 
@@ -44,9 +45,8 @@ If the ticker is new or has unusual semantics, check and correct the generated m
 - `reportType: income-etf` only for an income-oriented ETF.
 - `reportType: crypto` for a crypto asset or crypto-focused report.
 - `reportType: other` for benchmarks, leveraged products, industries, commodities, or other non-standard subjects.
-- `translationKey` must match between the English and Traditional Chinese editions for the same date.
+- `translationKey` uses the `<ticker>-<date>` convention (e.g. `tsla-2026-09-29`). Cross-locale matching is retired with the EN track.
 - Do not add a latest-version flag; latest status is derived from `ticker`, `locale`, `status`, and `publishedAt`.
-- Keep both locales aligned on ticker, date, report type, and publication state.
 
 ## Write The MDX
 
@@ -54,30 +54,32 @@ Write the article body, not a standalone HTML page. Keep these frontmatter field
 
 ```yaml
 ---
-ticker: AMD
-publishedAt: 2026-09-03
-dataAsOf: 2026-09-03
-reportType: equity
-translationKey: amd-2026-09-03
+ticker: DRAM
+publishedAt: 2026-09-29
+dataAsOf: 2026-09-28
+reportType: other
+translationKey: dram-2026-09-29
 status: draft
 tags:
-  - AMD
-locale: en
-title: "Clear, search-friendly report title"
+  - DRAM
+locale: zh-TW
+title: "Dated, search-friendly report title"
 description: "A dated summary of the subject, evidence, key trade-offs, and principal risks."
 ---
 ```
 
-Every publishable English report needs these headings exactly:
+Every publishable zh-TW report needs these sections (exact headings; this replaces the retired EN heading list):
 
 ```markdown
-## Executive Summary
-## Key Risks
-## Analyst Conclusion
-## Sources
+## 分析摘要
+## 行情快照
+## 進場點分析
+## 主要風險與否定條件
+## 分析結論
+## 資料來源
 ```
 
-Also include sections appropriate to the subject, such as `Business Model`, `Strategy and Structure`, `Evidence`, `Valuation Framework`, `Benchmark Construction`, or `Use Case`. Write at least 400 English words. The conclusion must state what evidence supports the thesis, what could invalidate it, and what should be monitored next.
+Plus a `Disclosure` component (data limits, AI authorship, no personalized advice) and, for daily/event editions, a `每日事件速覽` section immediately after the market snapshot. Also include sections appropriate to the subject, such as business-model, moat, valuation-band, or product-structure analysis. The conclusion must state what evidence supports the thesis, what could invalidate it (at least one explicit 作廢條件), and what should be monitored next.
 
 Include at least two dated or clearly attributable source URLs. Separate observed facts from interpretation, estimates, and scenarios. Avoid personalized suitability claims, guaranteed returns, undisclosed forecasts, and statements that imply the report is financial advice.
 
@@ -87,11 +89,13 @@ The report is a research article, not a build log. Do not put implementation det
 
 When a short metadata label must be bold in MDX, use an explicit `<strong>…</strong>` element (especially at the start of a paragraph) and verify the generated HTML contains `<strong>`. Do not assume `**label**` will render correctly in every content path.
 
-### English Audience
+### English Edition (retired)
 
-The English edition is for an international audience. Do not address readers as Taiwanese investors and do not introduce ROC, Taiwan withholding tax, Taiwan filing rules, or Taiwan-specific suitability assumptions unless the report is explicitly about that subject. Use internationally understandable terms, identify U.S. market conventions when relevant, and explain specialist terms such as daily reset, NAV erosion, modified capitalization weighting, or free-cash-flow conversion.
+The EN track is retired: the validator fails any `.en.mdx` file, the scaffold no longer generates one, and `/stock/en/` routes are legacy. Do not write English editions, do not cite EN heading lists, and do not apply the audience rules below. This section is kept as a tombstone so future agents don't resurrect it from git history without a new specification.
 
-### Traditional Chinese Edition
+~~The English edition is for an international audience. Do not address readers as Taiwanese investors and do not introduce ROC, Taiwan withholding tax, Taiwan filing rules, or Taiwan-specific suitability assumptions unless the report is explicitly about that subject. Use internationally understandable terms, identify U.S. market conventions when relevant, and explain specialist terms such as daily reset, NAV erosion, modified capitalization weighting, or free-cash-flow conversion.~~
+
+### Traditional Chinese Edition (the live edition)
 
 Write a real `zh-TW` translation or localized analysis, not a copy of the English template. Keep the same analytical conclusion and evidence boundaries, but use natural Traditional Chinese. Do not claim that ROC or Taiwan tax treatment applies to an international reader; include Taiwan-specific tax context only when the Chinese edition's scope requires it.
 
@@ -139,7 +143,7 @@ Do not add custom SVG charts or numeric metrics unless the data, date, units, so
 
 ### Monetization Check
 
-Every publishable report must include one deliberate mid-article `<AdSlot placement="mid" />` in each locale when the article is long enough to have a natural reading break. This is the standard monetization placement for the daily report; do not paste ad scripts, smartlinks, popunders, or multiple ad blocks into the article. The shared layout supplies top and bottom advertising, so verify the rendered page has a readable ad separation rather than adding ad density for its own sake.
+Every publishable report must include one deliberate mid-article `<AdSlot placement="mid" />` when the article is long enough to have a natural reading break. This is the standard monetization placement for the daily report; do not paste ad scripts, smartlinks, popunders, or multiple ad blocks into the article. The shared layout supplies top and bottom advertising, so verify the rendered page has a readable ad separation rather than adding ad density for its own sake.
 
 ### Market Timing And Entry Points
 
@@ -173,7 +177,7 @@ git diff --check
 
 Before changing `status`, inspect the rendered scope mentally or with the generated files:
 
-- The English and Chinese latest pages use the same ticker and date.
+- The latest page uses the report's ticker and date; latest status is derived, never hand-flagged.
 - The newest published edition is automatically selected by `ticker + locale + publishedAt`; duplicate dates for the same ticker and locale must fail validation.
 - The report is not still a scaffold: remove phrases such as `Write the`, `Explain the`, `State the`, `Add official`, and `before publication`.
 - Sources support the claims and are not merely generic homepages when a specific filing or prospectus exists.
@@ -182,19 +186,18 @@ Before changing `status`, inspect the rendered scope mentally or with the genera
 - The current candlestick is dated to the latest completed session, readable over a meaningful recent window, and backed by OHLC source data.
 - Entry-point analysis covers both technical timing and fundamental valuation, with staged actions and explicit invalidation triggers.
 - A daily report leads with a dated event brief that separates confirmed facts, unknowns, market read-through, and next checks.
-- Each publishable locale includes the deliberate mid `AdSlot`; monetization scripts remain centralized in shared components.
+- Each publishable report includes the deliberate mid `AdSlot`; monetization scripts remain centralized in shared components.
 - The page does not make a personalized recommendation or promise a return.
 
 ## Publish, Commit, And Push
 
-Keep both locale files as `status: draft` while writing. Publish only after the article and sources are complete:
+Keep the file as `status: draft` while writing. Publish only after the article and sources are complete:
 
 ```bash
-npm run report:publish -- --ticker=AMD --date=YYYY-MM-DD --locale=en
 npm run report:publish -- --ticker=AMD --date=YYYY-MM-DD --locale=zh-TW
 ```
 
-The publish command validates the English content and reverts the file if validation fails. Run `npm run content:check` again after publishing both locales, then run a full build. Do not publish a placeholder merely to make a ticker appear on the index. If one locale is not ready, leave that locale as `draft` and explain the incomplete coverage in the handoff.
+The publish command flips the status and runs `content:check`, reverting the file if validation fails. Run `npm run content:check` again after publishing, then run a full build. Do not publish a placeholder merely to make a ticker appear on the index.
 
 For this repository, a completed report task defaults to the full release flow: after publication and all required checks pass, automatically create a focused commit and push it to the current branch's configured remote. The normal sequence is:
 
@@ -222,15 +225,15 @@ The latest report is available at:
 
 ```text
 /stock/reports/<ticker>/
-/stock/en/reports/<ticker>/
 ```
 
 The immutable dated edition is available at:
 
 ```text
 /stock/reports/<ticker>/<date>/
-/stock/en/reports/<ticker>/<date>/
 ```
+
+(`/stock/en/…` routes are legacy tombstones, not live surfaces.)
 
 The index and report layout discover historical published editions from the content collection. Do not create `report/*.html` files for new content. Legacy `.html` URLs are handled by the shared redirect generator.
 

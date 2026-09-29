@@ -5,3 +5,5 @@
 - [ ] 明天（09-30）：開 GOOG 新日期版（FCF 轉負＋capex 驗證版，youngstockuser 09-28 貼文角度）。
   數字已 pre-verified（Q2 財報 7/22 全中：rev $119.8B +24%、Cloud +82%、backlog $514B、FCF -$5.9B、FY guide $195–205B）；待辦：重算 2027 consensus PE（原文稱 ~23x）、確認 09-29/09-30 收盤價。與 GOOG 09-29（技術回調版）不重疊。
   Billy 三星除息套利篇不寫（定位不合＋無法獨立驗證＋事件已結束）。
+- [ ] 待選（WealthCode 09-29 二十檔超跌文）：AAOI / RKLB / ASTS 三選一單獨寫。
+  注意：原文回調幅度不可直接引用（抽查 AAOI 實際 -58.6% vs 原文稱 -49%），撰寫時每個數字自己重算。優先 AAOI（呼應 NVDA capex 主線）。

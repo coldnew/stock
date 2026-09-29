@@ -1,0 +1,117 @@
+---
+ticker: NVDA
+publishedAt: 2026-09-29
+dataAsOf: 2026-09-28
+reportType: equity
+translationKey: nvda-2026-09-29
+status: published
+tags:
+  - NVDA
+locale: zh-TW
+title: "NVDA 驗證：Goldman capex tracker 洗版，+92% 是需求還是價格幻覺"
+description: "2026-09-29 驗證版：社群流傳 Goldman Capex Tracker 稱資料中心年增 92%、半導體 57%，主張熱潮高度集中。查證：方向成立，但 92% 是單季年增且被記憶體漲價墊高，細項原圖未見公開。NVDA 09-28 收 228.86 美元。"
+---
+
+import AdSlot from '../../../../components/report/AdSlot.astro';
+import Disclosure from '../../../../components/report/Disclosure.astro';
+import Metrics from '../../../../components/report/Metrics.astro';
+import XPostCard from '../../../../components/report/XPostCard.astro';
+
+## 分析摘要
+
+兩則貼文把一張 Goldman Capex Tracker 的截圖送上檯面：資料中心 capex 年增 92%、2025–29 CAGR 43%，半導體年增 57%、CAGR 29%，其他工業則平淡無奇。結論很嗆：這輪資本支出熱潮不是全面復甦，是兩個板塊撐起來的。本站能找到的一手交叉證據大多站在同一邊：[Dell'Oro 9 月 16 日確認 2Q26 資料中心 capex 年增 92%](https://www.prnewswire.com/news-releases/data-center-capex-grew-92-percent-in-2q-2026-driven-by-surging-ai-demand-and-memory-costs-according-to-delloro-group-302879910.html)，[TrendForce 估前九大 CSP 2026 年 capex 合計約 8,300 億美元、年增上修到 79%](https://en.prnasia.com/releases/global/north-american-ai-data-center-expansion-drives-2026-capex-of-top-nine-csps-to-us-830-billion-says-trendforce-532046.shtml)，四大 hyperscaler 財報季全數上調財測。但有兩個折扣必須先講：92% 是單季年增、不是全年，而且名目數字裡摻了記憶體漲價的水分；Goldman 那張原圖本站沒找到公開版本，細項數字目前只有二手轉述。NVDA 09-28 收 228.86 美元、單日漲 1.68%，從 09-14 低點反彈 8.5%，市值約 5.52 兆美元——市場已經把這套需求敘事計入價格，剩下的是兌現問題。
+
+## 行情快照
+
+<strong>資料說明：</strong>以下為 NVDA 日線（[Yahoo Finance](https://finance.yahoo.com/quote/NVDA/history/)，站內行情 JSON 已更新至 2026-09-28，為最新已收盤的美股 session）。9 月 8 日一根長黑摜破 233 美元後，9 月 14 日盤中最低到 208.93、收 210.96 落底，隨後連 10 個交易日收復到 228.86；09-28 盤中最高 233.21，剛好摸到 09-08 的起跌區上緣（開盤 233.11、前高 233.71），收了一根帶 4.35 美元上影線的黑 K——壓力區有反應，但沒被打下去。
+
+<Metrics items={[{ label: "收盤（09-28）", value: "$228.86" }, { label: "單日漲跌", value: "+1.68%" }, { label: "年初至今", value: "+21.2%" }, { label: "市值（09-28）", value: "約 $5.52 兆" }, { label: "9/14 低點以來", value: "+8.5%" }, { label: "本次判斷", value: "需求敘事續強、結構集中" }]} />
+
+年初至今報酬以 01-02 收盤 188.85 起算至 09-28 收盤 228.86，為 +21.2%。市值算法是 228.86 × 241.0 億股（[CNBC 即時報價](https://www.cnbc.com/quotes/NVDA)揭露 sharesout 24.10B），約 5.52 兆美元——注意 CNBC 的市值數字是即時報價、日期與 dataAsOf 不同，此處是本站用同一股數重算的 09-28 快照。
+
+## 每日事件速覽
+
+<XPostCard author="Knockouttrader" handle="@knockouttrader" timestamp="2026-09-28" sourceUrl="https://x.com/knockouttrader/status/2104666119726383271" views="約 1,669">The capex boom is getting bigger and bigger led by Datacenters (+92% YoY; +43% 25-29 CAGR) and Semis (+57%; +29%) according to Goldman's Capex Tracker</XPostCard>
+
+<XPostCard author="駿HaYaO" handle="@QQ_Timmy" timestamp="2026-09-29" sourceUrl="https://x.com/QQ_Timmy/status/2104853422625493374?s=20" views="約 1,019">現在的資本支出熱潮，不是全面景氣復蘇，而是高度集中在「資料中心 + 半導體」。1. 資料中心最多 2026 年 capex 年增約 92%，2025–29 年複合成長率約 43%。而且 2026 年的支出已經來到前一次高峰的 192%，等於遠超舊高。2. 半導體緊接在後 2026 年年增約 57%，中期 CAGR 約 29%。2026 支出約是前高的 157%。3. 其他產業大多普通，甚至偏弱 把資料中心從「一般工業」拿掉後，剩下的工業 capex 成長就沒那麼亮眼。再生能源、傳統發電、礦業、部分海運、營建設備、卡車、機場等，成長低、修正下修，或還在舊高附近徘徊。</XPostCard>
+
+<strong>事件狀態：</strong>源頭是 @knockouttrader 09-28 深夜貼出的 Goldman Tracker 截圖（約 1,669 瀏覽），@QQ_Timmy 09-29 早間加上中文解讀轉發（約 1,019 瀏覽）。兩則都是二手轉述，Goldman 原報告沒有公開連結。
+
+<strong>已確認事實：</strong>92% 這個數字在第三方機構有對應：Dell'Oro 2Q26 資料中心 capex 年增 92%（[新聞稿 09-16](https://www.prnewswire.com/news-releases/data-center-capex-grew-92-percent-in-2q-2026-driven-by-surging-ai-demand-and-memory-costs-according-to-delloro-group-302879910.html)）；CSP 財測集體上調（[TMT Finance 整理 8 月財報季](https://www.tmtfinance.com/intel/2026-hyperscaler-capex-tops-us700bn-analysis)，四家合計 7,200–7,450 億美元）。NVDA 股價 09-28 收 228.86（站內行情）。
+
+<strong>財經解讀：</strong>這組數字的市場意義不在「熱」，在「窄」。Goldman 5 月就說過 AI 基建受益者要撐起 S&P 500 今年約一半的獲利成長（[Trading Dashboard 整理 05-27](https://tradingdashboard.com/en/news/goldman-lifts-2026-sp-500-target-to-8000)），買盤邏輯和 TWD 那篇「指數好看、結構集中」是同一個：指數失真，選股重於選市。NVDA 正好站在漏斗最窄的那一端。
+
+<strong>下一步查核：</strong>找 Goldman Tracker 原圖或券商 note 對齊 +57%/CAGR 細項；10 月 hyperscaler Q3 財報是否維持 2026 capex guidance；Dell'Oro 3Q26 報告（約 12 月）確認 92% 是趨勢還是單季 spike。
+
+## 逐條查證：四個數字，兩個半成立
+
+下表先給結論，後面給證據。評分標準只有一個：有沒有具日期、可追溯的公開資料。
+
+| 貼文說法 | 查證結果 | 關鍵證據 |
+|---|---|---|
+| 資料中心 capex 年增 92% | 成立，但須加註單季 | Dell'Oro 2Q26 年增 92%，與 Tracker 一致 |
+| 半導體年增 57%、CAGR 29% | 未能獨立證實 | 只有 Tracker 截圖轉述，無公開一手來源 |
+| CAGR 43%（DC 25–29） | 未能獨立證實 | 同上；Goldman 公開口徑只有總量（2026 年 AI capex 7,650 億、2031 年 1.6 兆） |
+| 熱潮集中、其他工業平淡 | 成立 | hyperscaler 財測全上調 vs 傳統工業資本紀律；S&P capex 33% 成長由 AI 撐起 |
+
+先說站得住的部分。Dell'Oro 的 92% 不只數字對得上，連結構都對得上：neocloud 和 AI model builder 是成長最快的客戶群，Dell、Supermicro 領銜 server 出貨，white-box 創歷史新高（[新聞稿](https://www.prnewswire.com/news-releases/data-center-capex-grew-92-percent-in-2q-2026-driven-by-surging-ai-demand-and-memory-costs-according-to-delloro-group-302879910.html)）。CSP 財測更具體：[TrendForce 整理](https://en.prnasia.com/releases/global/north-american-ai-data-center-expansion-drives-2026-capex-of-top-nine-csps-to-us-830-billion-says-trendforce-532046.shtml)，微軟 2026 capex 上到 1,900 億（年增約 130%）、Google 1,800–1,900 億（破百）、Meta 1,250–1,450 億（約 85%）、AWS 超過 2,300 億（逾 50%）。Goldman 5 月 7 日的 note 也留了旁證：S&P 500 全年 capex 估增 33%，五家 hyperscaler 佔指數 capex 的 32%，錢正從 buyback 輪動到 capex（[AOL 整理 05-09](https://www.aol.com/articles/goldman-sachs-spots-troubling-big-161300000.html)）。
+
+折扣有兩處。第一，92% 是 2Q 單季年增，QQ_Timmy 寫成「2026 年增」是把時間維度吃掉了，全年數字要等下半年財報收齊才知道；第二，名目 capex 被記憶體漲價墊高，Amazon 親口承認上調主因是記憶體變貴、不是多蓋（[TMT Finance](https://www.tmtfinance.com/intel/2026-hyperscaler-capex-tops-us700bn-analysis)），微軟 1,900 億裡也有約 250 億是零組件成本。所以「+92%」裡有一部分是價格、不是量——對 GPU 訂單是利多，對「實質建設速度」的解讀要打折。
+
+至於半導體 +57% 和兩組 CAGR，本站搜不到 Goldman 公開版本，只能標「未能獨立證實」。Goldman 公開口徑裡最接近的是「Tracking Trillions」：2026 年 AI capex 7,650 億、2031 年 1.6 兆（[官網](http://goldmansachs.com/insights/articles/tracking-trillions-the-assumptions-shaping-scale-of-the-ai-build-out)），以及 Beth Kindig 整理的細拆（compute 4,940 億、data center 2,320 億，[X 貼文 05-18](https://x.com/Beth_Kindig/status/2056506526395674821)）——總量對得上，板塊細項對不上。在找到原圖之前，這三個數字只能當傳聞等級引用。
+
+<AdSlot placement="mid" />
+
+## 進場點分析
+
+<strong>本節不是買賣建議，是觀察閾值。</strong>下面每個價位都是從 09-08 到 09-28 的實際 OHLC 算出來的，破了就是破了，沒破就繼續看。
+
+技術面是 V 型修復：9 月 14 日盤中 208.93 落底後，10 個交易日收復 8.5%（收盤 210.96 → 228.86）。上檔 233–234 是雙重壓力——09-08 開盤 233.11 與前高 233.71 的起跌缺口，加上 09-28 盤中 233.21 正好摸到後留下 4.35 美元上影線，短線追價被洗了一次。下檔先看 225（09-25 收盤 225.07，守住才有 09-28 這根），再看 218–220（09-10–09-11 底部區），最後是 209–211（09-14 低點區）。動能站在多方這邊沒錯，但 09-28 收黑 K，短線是「壓力區受阻、不是突破」，追價和抄底都不對稱。
+
+<strong>規模視角：</strong>市值約 5.52 兆美元（228.86 × 241.0 億股，股數引 [CNBC](https://www.cnbc.com/quotes/NVDA)）；09-28 日內波幅 5.17 美元，乘上股數等於單日約 1,246 億美元的市值擺動。這個量級的意思很實際：5% 的波動就是 2,700 多億美元消長，分批和事件紀律比擇時精度重要，評價看的是 capex 兌現，不是 K 線形狀。
+
+基本面的錨只有一個：hyperscaler 的 capex guidance 有沒有兌現成訂單。情境表如下：
+
+| 情境 | 觸發 | 解讀 |
+|---|---|---|
+| 兌現 | Q3 財報維持或上調 2026 guidance | 訂單能見度延續，233–234 突破看量能配合 |
+| 持平消化 | guidance 不變、記憶體續漲墊名目 | 名目與實質脫鉤，225–234 區間震盪機率高 |
+| 下修 | 任一家下修或承認遞延 | 需求敘事破裂，先看 225，再看 218 |
+
+空手的人：09-28 是壓力測試失敗的第一天，不接飛刀也不追突破，等回測 225–226 守住、或帶量站上 234 再說。持有的人：結構停損看 209–211 低點區（收破且隔日不回，才是 V 型失效），在那之前讓 capex 兌現的子彈飛。加碼只在「兌現」情境出現後考慮，減碼觸發是「下修」情境或破 218。
+
+## 主要風險與否定條件
+
+最大的風險是集中度本身：當五家 hyperscaler 佔 S&P 500 capex 的 32%（[Goldman 5 月 note](https://www.aol.com/articles/goldman-sachs-spots-troubling-big-161300000.html)），NVDA 的訂單能見度就繫在極少數客戶的資本開支決議上。Goldman 自己都在「Tracking Trillions」裡承認，單一假設變動就能讓預測差幾千億（[Augment 整理 05-21](https://augment.market/pulse/725b-in-capex-the-math-behind-the-datacenter-buildout)）。CoreWeave 背 250 億美元、利率 11% 的債在前面跑，就是這種結構的縮影：需求是真的，槓桿也是真的。
+
+第二個風險是價格幻覺：記憶體漲價墊高的名目 capex（Amazon、微軟都承認），意味著 Tracker 上的高成長有一部分不會變成 GPU 台數。如果 3Q 記憶體續漲而 hyperscaler 實質建設放緩，名目與訂單就會脫鉤。
+
+第三個是總經：Fed 9 月 16 日重啟升息到 3.75–4%，長債殖利率墊高會壓縮所有長天期成長股的評價倍數，capex 兌現得跑得比折現率快才行。
+
+本篇的作廢條件有三個，觸發任一，上面的判斷全部保留：
+
+1. **任一 hyperscaler 在 Q3 財報下修 2026 capex guidance 或承認遞延**——「需求延續」前提不成立。
+2. **Dell'Oro 3Q26 報告（約 12 月）顯示資料中心 capex 年增大幅收斂**——92% 被證偽為單季 spike，不是趨勢。
+3. **NVDA 收盤跌破 209–211 低點區且隔日不回**——V 型結構失效，技術面轉弱。
+
+## 分析結論
+
+這篇的判斷可以壓成三句：Tracker 的方向有人證，細項數字只有半套；92% 裡摻了記憶體漲價的水，實質建設速度沒看起來那麼誇張；NVDA 股價已經把「需求延續」計入價格，09-28 在 233–234 壓力區受阻，剩下全看 Q3 財報季 hyperscaler 的 guidance 兌不兌現。集中度是這輪行情的引擎，也是它唯一的 Achilles' heel——看多 AI 鏈和看空集中度，在這個位置是同一筆功課。證據支持「續強但追價不對稱」，能推翻它的是上面的三個作廢條件，最先到的是 10 月的 hyperscaler 財報。
+
+## 資料來源
+
+- [Knockouttrader 原貼文（Goldman Capex Tracker 截圖，2026-09-28）](https://x.com/knockouttrader/status/2104666119726383271)
+- [QQ_Timmy 中文解讀轉發（2026-09-29）](https://x.com/QQ_Timmy/status/2104853422625493374?s=20)
+- [Dell'Oro：2Q26 資料中心 capex 年增 92%（新聞稿，2026-09-16）](https://www.prnewswire.com/news-releases/data-center-capex-grew-92-percent-in-2q-2026-driven-by-surging-ai-demand-and-memory-costs-according-to-delloro-group-302879910.html)
+- [TrendForce：前九大 CSP 2026 capex 約 8,300 億美元（2026-07-20 轉載，原始調查 05-06）](https://en.prnasia.com/releases/global/north-american-ai-data-center-expansion-drives-2026-capex-of-top-nine-csps-to-us-830-billion-says-trendforce-532046.shtml)
+- [TMT Finance：2026 hyperscaler capex 合計 7,200–7,450 億美元（2026-08-18）](https://www.tmtfinance.com/intel/2026-hyperscaler-capex-tops-us700bn-analysis)
+- [Goldman Sachs：Tracking Trillions（2026-05）](http://goldmansachs.com/insights/articles/tracking-trillions-the-assumptions-shaping-scale-of-the-ai-build-out)
+- [AOL 轉述 Goldman 5 月 7 日 note：buyback 轉 capex、S&P capex 增 33%（2026-05-09）](https://www.aol.com/articles/goldman-sachs-spots-troubling-big-161300000.html)
+- [Business Insider：Goldman capex supercycle 與 16 檔受益股（2026-06-18）](https://www.businessinsider.com/stocks-to-buy-ai-capex-beneficiaries-tech-investing-goldman-sachs-2026-6)
+- [Augment：7,250 億 capex 背後的數學與假設敏感性（2026-05-21）](https://augment.market/pulse/725b-in-capex-the-math-behind-the-datacenter-buildout)
+- [NVDA 歷史行情：Yahoo Finance 日線（站內 JSON，更新至 2026-09-28）](https://finance.yahoo.com/quote/NVDA/history/)
+- [NVDA 股數與即時報價：CNBC（sharesout 24.10B，查詢於 2026-09-29）](https://www.cnbc.com/quotes/NVDA)
+
+<Disclosure title="資料限制與作者聲明">
+本報告初稿由 AI 助手（Muse Spark）撰寫，經站方審閱發布，不構成個人化投資建議。Goldman Capex Tracker 的板塊細項（半導體 +57%、兩組 CAGR）目前僅見社群截圖轉述，本站未取得 Goldman 原報告公開版本，已在正文明示為「未能獨立證實」；92% 經 Dell'Oro 交叉驗證為 2Q26 單季年增，非全年數字。股數引 CNBC 即時報價，市值為本站以 09-28 收盤價重算。評價僅為情境框架，無目標價；後續以 hyperscaler Q3 財報與 Dell'Oro 3Q 報告為準。
+</Disclosure>

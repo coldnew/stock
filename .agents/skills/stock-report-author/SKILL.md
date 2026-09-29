@@ -219,6 +219,16 @@ Stop before publishing, committing, or pushing when a required data source is mi
 
 If the user explicitly says `draft only`, `do not publish`, `do not commit`, or `do not push`, follow that narrower instruction for the current task.
 
+## Corrections To Published Editions
+
+Dated URLs mean early readers may see different bytes than later readers, so amendments are a controlled exception, not a workflow:
+
+- Allowed in place (same `publishedAt`, commit message must state the fix): typos, JSX/brace errors, chart-wiring fixes, verified-number corrections against the same `dataAsOf`, and the authorship-disclosure backfill.
+- Never amended in place: anything that changes `dataAsOf`, adds evidence, revises the conclusion, or adds/removes sections — that is a new dated edition.
+- `publishedAt` is never backdated. An amended file keeps its original date; the fix rides in git history, not in a new timestamp.
+
+Market history is append-only: `update-market-data.mjs` union-merges fetched rows with stored rows (fetched wins on overlap) and refuses to shrink history on narrow `--range` runs, warning loudly instead. Never hand-edit `src/data/market.ts` rows to "fix" a report number — fix the report.
+
 ## History And URLs
 
 The latest report is available at:

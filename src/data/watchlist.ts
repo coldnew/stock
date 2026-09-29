@@ -67,4 +67,5 @@ export const reportOnlyTickers = [
   'PLTR',
   'COST',
   'GLD',
+  'QQQM',
 ];

@@ -21,6 +21,7 @@ for (const file of files) {
   else publishedDates.set(key, path);
   const body = content.split('## 資料來源')[0];
   if (!body.includes('](')) warnings.push(`${path}: published body has no inline links before Sources`);
+  if (!content.includes('Muse Spark') && !content.includes('AI 助手')) failures.push(`${path}: missing AI-authorship disclosure (Muse Spark)`);
 }
 if (failures.length) {
   console.error(failures.join('\n'));

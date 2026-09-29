@@ -65,4 +65,6 @@ export const reportOnlyTickers = [
   'LLY',
   'TMO',
   'PLTR',
+  'COST',
+  'GLD',
 ];

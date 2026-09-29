@@ -1,9 +1,12 @@
 import { useEffect, useMemo, useState } from 'react';
 
 type Point = [string, number];
-type Props = { ticker: string; dataUrl: string; source: string; dataAsOf: string };
+type Props = { ticker: string; dataUrl: string; source: string; dataAsOf: string; locale?: 'en' | 'zh-TW' };
 
-export default function NavTrendChart({ ticker, dataUrl, source, dataAsOf }: Props) {
+const MONTH_EN = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+
+export default function NavTrendChart({ ticker, dataUrl, source, dataAsOf, locale = 'zh-TW' }: Props) {
+  const zh = locale === 'zh-TW';
   const [points, setPoints] = useState<Point[]>([]);
   const [loadError, setLoadError] = useState(false);
   const [hover, setHover] = useState<number | null>(null);
@@ -27,7 +30,16 @@ export default function NavTrendChart({ ticker, dataUrl, source, dataAsOf }: Pro
     const height = 240;
     const x = (index: number) => (index / Math.max(recent.length - 1, 1)) * width;
     const y = (value: number) => height - ((value - min) / range) * (height - 24) - 12;
-    return { recent, min, max, width, height, path: recent.map((point, index) => `${index ? 'L' : 'M'} ${x(index).toFixed(2)} ${y(point[1]).toFixed(2)}`).join(' '), x, y };
+    const monthOf = (date: string) => date.slice(0, 7);
+    let ticks = recent.map((point, index) => ({ index, month: monthOf(point[0]) }))
+      .filter((tick, i, all) => i === 0 || tick.month !== all[i - 1].month);
+    if (ticks.length > 8) ticks = ticks.filter((_, i) => i % 2 === 0);
+    const tickLabel = (month: string) => {
+      const [y, m] = month.split('-').map(Number);
+      if (zh) return m === 1 ? `${y}年1月` : `${m}月`;
+      return m === 1 ? `Jan ${y}` : MONTH_EN[m - 1];
+    };
+    return { recent, min, max, width, height, path: recent.map((point, index) => `${index ? 'L' : 'M'} ${x(index).toFixed(2)} ${y(point[1]).toFixed(2)}`).join(' '), x, y, ticks, tickLabel };
   }, [points]);
   if (loadError) return <section className="nav-trend nav-trend-loading" aria-label={`${ticker} NAV 淨值趨勢`}>NAV 趨勢資料暫時無法載入。</section>;
   if (points.length < 2) return <section className="nav-trend nav-trend-loading" aria-label={`${ticker} NAV 淨值趨勢`}>載入 NAV 趨勢資料…</section>;
@@ -37,9 +49,10 @@ export default function NavTrendChart({ ticker, dataUrl, source, dataAsOf }: Pro
   return <section className="nav-trend" aria-label={`${ticker} NAV 淨值總報酬趨勢`}>
     <div className="nav-trend-heading"><div><span className="chart-kicker">NAV / 淨值</span><h2>{ticker} NAV 變化趨勢</h2></div><div className="nav-trend-value"><strong>{selected[1].toLocaleString()}</strong><span>{selected[0]}</span></div></div>
     <div className="nav-trend-canvas">
-      <svg viewBox={`0 0 ${chart.width} ${chart.height + 8}`} role="img" aria-label={`${ticker} 最近 ${chart.recent.length} 筆 NAV 總報酬指數`} onMouseLeave={() => setHover(null)}>
+      <svg viewBox={`0 0 ${chart.width} ${chart.height + 24}`} role="img" aria-label={`${ticker} 最近 ${chart.recent.length} 筆 NAV 總報酬指數`} onMouseLeave={() => setHover(null)}>
         {[0, 0.5, 1].map((ratio) => <line key={ratio} x1="0" x2={chart.width} y1={chart.y(chart.min + (chart.max - chart.min) * ratio)} y2={chart.y(chart.min + (chart.max - chart.min) * ratio)} className="nav-grid" />)}
         <path d={chart.path} className="nav-line" />
+        {chart.ticks.map((tick) => <text key={tick.month} x={chart.x(tick.index)} y={chart.height + 16} textAnchor="middle" className="fleet-axis">{chart.tickLabel(tick.month)}</text>)}
         {chart.recent.map((point, index) => <circle key={point[0]} cx={chart.x(index)} cy={chart.y(point[1])} r={hover === index ? 5 : 3} className="nav-point" onMouseEnter={() => setHover(index)} onClick={() => setHover(index)} />)}
       </svg>
       <div className="nav-tooltip"><span>{selected[0]}</span><strong>{selected[1].toLocaleString()} <em>{change >= 0 ? '+' : ''}{change.toFixed(2)}%</em></strong></div>

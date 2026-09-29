@@ -24,5 +24,5 @@ const low = rows.length ? Math.min(...rows.map((row) => row[3])) : 0;
     <span>最新收盤 <strong>{lastClose.toFixed(2)}</strong></span>
   </div>
   <p class="chart-source">資料來源：Yahoo Finance OHLC 行情資料；{rows.length} 個完成交易日，截止 {rows.at(-1)?.[0]}。</p>
-  {navSnapshot && <NavTrendChart client:load ticker={ticker.toUpperCase()} dataUrl={`/stock/data/nav/${ticker.toUpperCase()}.json`} source={navSnapshot.source} dataAsOf={navSnapshot.dataAsOf} />}
+  {navSnapshot && <NavTrendChart client:load ticker={ticker.toUpperCase()} dataUrl={`/stock/data/nav/${ticker.toUpperCase()}.json`} source={navSnapshot.source} dataAsOf={navSnapshot.dataAsOf} locale={locale} />}
 </> : <p class="chart-source">此報告類型目前沒有可用的市場圖表。</p>}

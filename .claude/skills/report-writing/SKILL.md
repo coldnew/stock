@@ -37,6 +37,11 @@ The agent's job is research, reasoning, prose, citations, and translation qualit
 - Income-fund reports may discuss ROC only when the security actually distributes income.
 - Published English reports should be at least 400 words and include `Key Risks`, `Analyst Conclusion`, and at least two source URLs.
 
+## De-AI pass
+
+- Before publishing, run one de-AI pass with the `humanizer-zh-next` agent skill (`.agents/skills/humanizer-zh-next/SKILL.md`); the full workflow and repo guardrails live in `.agents/skills/stock-report-author/SKILL.md` ("De-AI Pass" section).
+- `npm run prose:check` blocks template scaffolding (tour-guide openings, collaboration scars, generic-optimism closings, 賦能/抓手-type buzzwords, decorative emoji); quoted posts inside `XPostCard` / `ThreadsEmbed` are exempt. `閉環` is domain vocabulary here, not AI taste.
+
 ## New report command
 
 Start with:

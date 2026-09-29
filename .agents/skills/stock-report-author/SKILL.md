@@ -121,6 +121,30 @@ Every factual claim that comes from a cited post, filing, article, or dataset MU
 - Key comparisons (before/after, bull/bear, claim-vs-verification) belong in a Markdown table or `Metrics`, not in bullets.
 - Each major section opens with 1–2 prose sentences framing what follows; single-sentence sections followed only by a card are forbidden.
 
+### De-AI Pass (humanizer-zh-next)
+
+After the draft is fact-complete and before publishing, run one de-AI pass with the
+`humanizer-zh-next` agent skill (`.agents/skills/humanizer-zh-next/SKILL.md`).
+Reports are `zh-TW` investment research, so apply the skill with these repo guardrails
+— the skill's fidelity rules win over its style rules wherever they conflict:
+
+- **Genre is 技術/財經分析, not 個人敘事/營銷.** Never invent facts, numbers, dates,
+  quotes, cases, or causal claims to "add humanity". Every figure keeps its `dataAsOf`
+  and source; `Disclosure`, `Metrics`, levels, and 作廢條件 stay byte-identical in meaning.
+- **Keep zh-TW, never drift to simplified.** The skill's examples are simplified-Chinese;
+  apply the pattern, not the script. `指數`, `賦能`→具體動作, 標點全形化仍按本站規範.
+- **Domain terms are not AI taste.** `閉環` (SpaceX 閉環兌現 / closed-loop execution),
+  `護城河`, `安全邊際`, `作廢條件` are legitimate investment vocabulary — do not rewrite them.
+  Fix only decorative stacking (三連排比湊數, 空泛三段式) and template scaffolding.
+- **Quoted evidence is untouchable.** Verbatim content inside `XPostCard` / `ThreadsEmbed`
+  (including emoji in the original post) is someone else's voice — never polish it.
+- **Priority hits for this repo:** 導覽式開場 (讓我們深入探討/下面我們來拆解),
+  協作痕跡 (當然可以/下面是一份/希望這對你有幫助), 知識截止聲明,
+  通用積極結尾 (未來可期/廣闊前景/將創造更大價值), 權威姿態
+  (歸根結底/真正的問題是/核心在於) 後面只跟空話的, 成串破折號製造揭示感,
+  結尾突然的人造金句. `npm run prose:check` blocks the hard failures and prints
+  advisories for the rest — clear failures, read advisories, then do the human pass.
+
 ### Chart Deduplication (one price chart per page)
 
 `ReportLayout` auto-renders `MarketTrend` (a `CandlestickChart` fed by `/stock/data/market/<TICKER>.json`) above every non-archive report. The MDX body MUST NOT embed a second chart from the same source: do not import or embed `CandlestickChart` / `ClosePriceChart` in an ordinary report. State OHLC, data cutoff, and support/resistance levels in prose and the Entry Point section instead.
@@ -189,6 +213,9 @@ Before changing `status`, inspect the rendered scope mentally or with the genera
 - A daily report leads with a dated event brief that separates confirmed facts, unknowns, market read-through, and next checks.
 - Each publishable report includes the deliberate mid `AdSlot`; monetization scripts remain centralized in shared components.
 - The page does not make a personalized recommendation or promise a return.
+- The de-AI pass (humanizer-zh-next, see above) is done: `prose:check` passes and no
+  template scaffolding, tour-guide openings, collaboration scars, or generic-optimism
+  closings remain in the report's own voice (quoted posts excluded).
 
 ## Publish, Commit, And Push
 

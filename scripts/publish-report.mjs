@@ -22,10 +22,12 @@ if (!/^status:\s*draft\s*$/m.test(original)) {
 }
 const published = original.replace(/^status:\s*draft\s*$/m, 'status: published');
 await writeFile(path, published);
-const result = spawnSync('npm', ['run', 'content:check'], { stdio: 'inherit' });
-if (result.status !== 0) {
-  await writeFile(path, original);
-  console.error(`publication rejected and reverted: ${path}`);
-  process.exit(result.status ?? 1);
+for (const check of ['content:check', 'prose:check']) {
+  const result = spawnSync('npm', ['run', check], { stdio: 'inherit' });
+  if (result.status !== 0) {
+    await writeFile(path, original);
+    console.error(`publication rejected by ${check} and reverted: ${path}`);
+    process.exit(result.status ?? 1);
+  }
 }
 console.log(`published ${path}`);

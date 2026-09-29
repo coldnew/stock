@@ -9,6 +9,7 @@
     "postbuild": "node scripts/copy-legacy.mjs",
     "check": "astro check",
     "content:check": "node scripts/validate-content.mjs",
+    "prose:check": "node scripts/validate-prose.mjs",
     "build:check": "node scripts/validate-build.mjs",
     "report:publish": "node scripts/publish-report.mjs",
     "market:update": "node --experimental-strip-types scripts/update-market-data.mjs",

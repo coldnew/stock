@@ -170,6 +170,7 @@ Run the checks from the repository root:
 ```bash
 npm run check
 npm run content:check
+npm run prose:check
 npm run build
 npm run build:check
 git diff --check
@@ -205,6 +206,7 @@ For this repository, a completed report task defaults to the full release flow: 
 npm run report:publish -- --ticker=AMD --date=YYYY-MM-DD --locale=zh-TW
 npm run check
 npm run content:check
+npm run prose:check
 npm run build
 npm run build:check
 git diff --check

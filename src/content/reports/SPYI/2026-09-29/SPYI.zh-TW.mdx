@@ -15,6 +15,7 @@ description: "2026-09-29 更新：9 月配 $0.5338、尾隨殖利率約 11.9%、
 import AdSlot from '../../../../components/report/AdSlot.astro';
 import Disclosure from '../../../../components/report/Disclosure.astro';
 import Metrics from '../../../../components/report/Metrics.astro';
+import DistributionTrend from '../../../../components/report/DistributionTrend';
 
 <Metrics items={[{ label: "9 月配息", value: "$0.5338（-1.6% MoM）" }, { label: "尾隨殖利率（現價）", value: "約 11.9%" }, { label: "費用率", value: "0.68%" }, { label: "beta（vs S&P 500）", value: "0.71（前版）" }, { label: "配息組成（推估）", value: "幾乎全為 ROC" }, { label: "本次判斷", value: "觀察" }]} />
 
@@ -31,6 +32,8 @@ K 線顯示 09-28 收 53.34（開 53.51、高 53.55、低 53.22），雙均線�
 SPYI 的配息率（~11.9%）天然低於 QQQI（~13.7%），差值約 2 個百分點——這是 SPX 隱含波動率低於 NDX 的直接映射，不是管理優劣。9 月 $0.5338 僅略低於年均（2026 年至今九次合計約 $4.79，月均 $0.532），實屬持平，單月解讀無意義。真正的可持續性問題與 QQQI 同構：本金有無被侵蝕。本次查核未取得 SPYI 的 NAV 總報酬時序（官網動態載入），列為資訊缺口；替代證據是市價：09-02 至 09-28 含息報酬約（53.34＋0.5338）／53.57－1 ≈ ＋0.6%，配息後本金大致持平——中性，不加分不扣分。
 
 稅務結構與 QQQI 同源（[1256 節＋ROC，FY 說明書口徑 94–99% 遞延](https://247wallst.com/investing/etf/2026/09/14/these-3-etfs-pay-up-to-14-percent-and-legally-shield-most-of-it-from-the-irs/)）：配息多為延稅而非免稅，熊市賣出時稅基墊高，稅單與虧損並存。台灣投資人另計（美股配息扣繳＋ROC 調整基價），稅務處理與 QQQI 一致，不贅述。
+
+<DistributionTrend client:load ticker="SPYI" dataAsOf="2026-09-28" source="https://neosfunds.com/spyi/#distributions" points={[["01月", 0.5309], ["02月", 0.5219], ["03月", 0.5104], ["04月", 0.5247], ["05月", 0.5353], ["06月", 0.531], ["07月", 0.53], ["08月", 0.5423], ["09月", 0.5338]]} />
 
 <AdSlot placement="mid" />
 

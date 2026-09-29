@@ -15,6 +15,7 @@ description: "2026-09-29 更新：9 月配 $0.6339、NAV 總報酬推估續創�
 import AdSlot from '../../../../components/report/AdSlot.astro';
 import Disclosure from '../../../../components/report/Disclosure.astro';
 import Metrics from '../../../../components/report/Metrics.astro';
+import DistributionTrend from '../../../../components/report/DistributionTrend';
 
 <Metrics items={[{ label: "9 月配息", value: "$0.6339（-2.7% MoM）" }, { label: "尾隨殖利率（現價）", value: "約 13.7%" }, { label: "NAV（09-25）", value: "$55.77" }, { label: "資產規模", value: "約 150 億美元" }, { label: "下跌日 beta", value: "0.87（前版）" }, { label: "本次判斷", value: "觀察" }]} />
 
@@ -31,6 +32,8 @@ K 線顯示 09-28 收 55.39 美元（開 55.58、高 55.62、低 55.10），較�
 先給結論：雜訊。9 月 $0.6339 是今年第三低（僅高於 3 月 $0.6089、2 月 $0.6140），但 2026 年至今九次配息合計 $5.7249、月均 $0.6361，9 月僅低於均值 0.3%。NDX 備兌的月配本來就隨波動率起伏（6 月 $0.6572 高點 vs 本月低點，振幅約 ±3%），用單月判斷趨勢是雜訊交易。真正的可持續性指標有二，且皆通過：其一，NAV 總報酬續創新高（本金未被侵蝕）；其二，[年初至今 NAV ＋11.37%（截至 08-31）](https://neosfunds.com/qqqi/)，配息率 14% 建立在正報酬上，不是龐氏結構。另一個常被忽略的品質訊號：[30 天 SEC 殖利率 -0.05%](https://neosfunds.com/qqqi/)——幾乎全部報酬來自選擇權與資本利得，這正是備兌型產品該有的樣子（SEC yield 只計股息利息，不計權利金）。
 
 規模是新的觀察變數：150 億美元、2.6852 億股，是 8 月底以來持續淨流入的結果（規模越大，NDX 買權交易的市場衝擊越大）。目前買賣差 0.02% 顯示流動性無礙，但須把「規模→衝擊成本→配息率」列入長期追蹤——這是所有備兌 ETF 做大後的共同宿命。
+
+<DistributionTrend client:load ticker="QQQI" dataAsOf="2026-09-28" source="https://neosfunds.com/qqqi/#distributions" points={[["01月", 0.6359], ["02月", 0.614], ["03月", 0.6089], ["04月", 0.6297], ["05月", 0.6589], ["06月", 0.6572], ["07月", 0.6346], ["08月", 0.6518], ["09月", 0.6339]]} />
 
 <AdSlot placement="mid" />
 

@@ -104,6 +104,7 @@ Use MDX when the report benefits from an existing component:
 - `AdSlot` only for a deliberate in-article mid placement. The shared layout already supplies top and bottom advertising.
 - `XPostCard` for every cited X post (official widget + static fallback; renders the real embed with video/thread expansion, never a bare URL or paraphrase-only mention). Import path follows the scaffold; pass the original `sourceUrl`, and a `mediaUrl` only when the post carries a photo whose direct image URL is known from a fetch result — never fabricate one.
 - `ThreadsEmbed` for every cited Threads post (`permalink` + `author` + `fallbackLabel`).
+- `DistributionTrend` for monthly-payout history in income-ETF reports (`ticker` + inline `points` of `[month, $/share]` + `source` + `dataAsOf`; `client:load`). Embed only with verified per-month amounts from the issuer's distribution table or a dated announcement — never interpolate a missing month, omit it and state the gap. Pair with a one-sentence read (noise vs signal) so the chart is evidence, not decoration.
 
 ### Inline Citations (no URL graveyards)
 

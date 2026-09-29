@@ -472,6 +472,8 @@
   .fleet-tooltip em { margin-left: 4pt; color: #9ed6a8; font-style: normal; }
   .fleet-trend-caption { margin: 8pt 0 0; color: var(--stone); font-size: 9pt; line-height: 1.55; }
   .fleet-trend-caption a { margin-left: 4pt; color: var(--brand); }
+  .dist-bar { fill: color-mix(in srgb, var(--brand) 72%, transparent); cursor: crosshair; transition: fill .12s ease; }
+  .dist-bar-active { fill: var(--brand); }
   .lightweight-candlestick-caption { margin: 2pt 0 0; color: var(--stone); font-size: 10pt; text-align: center; }
   .chart-attribution { display: block; margin-top: 3pt; color: var(--stone); font-size: 8pt; text-align: right; }
   figcaption {

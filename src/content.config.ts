@@ -5,7 +5,7 @@ const reports = defineCollection({
   loader: glob({ base: './src/content/reports', pattern: '**/*.{md,mdx}' }),
   schema: z.object({
     ticker: z.string().regex(/^[A-Z0-9.-]+$/),
-    locale: z.enum(['zh-TW', 'en']),
+    locale: z.enum(['zh-TW']),
     title: z.string(),
     description: z.string().min(40).max(180),
     publishedAt: z.coerce.date(),

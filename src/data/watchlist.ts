@@ -70,4 +70,5 @@ export const reportOnlyTickers = [
   'QQQM',
   'VGT',
   'AAOI',
+  'TSLY',
 ];

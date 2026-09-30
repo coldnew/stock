@@ -1,0 +1,127 @@
+---
+ticker: TSLA
+publishedAt: 2026-10-01
+dataAsOf: 2026-09-29
+reportType: equity
+translationKey: tsla-2026-10-01
+status: published
+tags:
+  - TSLA
+  - 機構持股
+  - 投票權結構
+locale: zh-TW
+title: "TSLA 2026-10-01：散戶只剩 15.6%？機構持股與投票權結構驗證"
+description: "驗證 TeslaBoomerMama 機構持股追蹤：13G/A 對上 insider 數字，散戶占比是 15.6–17.5% 的區間估計，趨勢比單點可信。"
+---
+
+import AdSlot from '../../../../components/report/AdSlot.astro';
+import Disclosure from '../../../../components/report/Disclosure.astro';
+import Metrics from '../../../../components/report/Metrics.astro';
+import XPostCard from '../../../../components/report/XPostCard.astro';
+
+## 分析摘要
+
+本篇是 [TSLA 2026-09-30 雙事件版](../2026-09-30/)的續集：上一篇驗證了投票權的機制（IVRVP 散戶直投＋$30B 額度），這篇驗證票在誰手上。AleXandra Merz（@TeslaBoomerMama，散戶倡議派帳號）9 月 30 日更新的追蹤顯示，截至 9 月 20 日機構持有約 56.0% 流通股，散戶殘差只剩 6.15 億股、15.6%。查證後本站的定調是趨勢成立、單點打折：三個 insider 輸入數字（699.6M／423.7M／3.95B）與 SEC 13G/A 一手文件逐字相符，數學自洽；但機構端的 Fintel 原始數字因 403 無法獨立複核，且散戶占比是殘差估算法的產物。更誠實的表述是一個區間：分母取 3.95B（含 mirror 股）得 15.6%，分母剔除 Musk 無控制權的 mirror 股（3.52B）得 17.5%。兩種算法下結論一致：散戶已從價格邊際定價者退為投票結構中的小數。
+
+一個時間落差必須先說：09-30 美股收盤在本站抓數時尚未出爐，行情面沿用 09-29，與 TSLY 2026-10-01 版的處理一致。股權結構數字本身截至 9 月 20 日，不受此影響。
+
+## 行情快照
+
+<Metrics items={[{ label: "09-29 收盤", value: "352.84 美元" }, { label: "09-29 區間", value: "351.67 – 358.74" }, { label: "單日漲跌", value: "-1.29%" }, { label: "20 日均線", value: "366.12（上壓）" }, { label: "50 日均線", value: "347.78（下撐）" }, { label: "年初至今", value: "-19.5%（01-02 收 438.07）" }, { label: "市值（09-29）", value: "$1.39兆（3.95B 股 × $352.84，CNBC）" }]} />
+
+09-29 走勢與 09-30 版記載一致：開 358.40、高 358.74、低 351.67、收 352.84，全天在 50 日均線（347.78）之上、20 日均線（366.12）之下，均線區間與上一版同 dataAsOf，直接沿用。10 月 2 日交付數據是下一個驗證點，股權結構本身不改變短線技術位，只改變解讀：當 56% 籌碼在機構手上、散戶剩 15–17%，財報與交付日的跳空更多反映機構調倉而非散戶情緒。
+
+<strong>規模視角：</strong>09-29 日內振幅 7.07 美元 × 39.5 億股，隱含單日 ±279 億美元市值擺動——mega-cap 指數級流動性，機構進出不需要讓價，但散戶在這種擺動裡做短線等於用小船追航母。
+
+## 每日事件速覽
+
+<XPostCard author="AleXandra Merz" handle="@TeslaBoomerMama" timestamp="2026-09-30" sourceUrl="https://x.com/TeslaBoomerMama/status/2105113190849777805?s=20" views="約 1,805">Tesla Institutional Ownership keeps growing Sept 20, 2026 Source: Fintel The previous trend continues, now 5804 institutions (-10) hold 9.4m $TSLA shares more than five weeks ago. With the same methodology than below, Retail is now down to 615 million shares, barely 15.6%. Putting in comment an older post where I explain the methodology. (And again, ignore the end of 2022 jump in the chart, that's the last stock split they did not adjust for.)</XPostCard>
+
+<strong>事件狀態：</strong>散戶倡議派帳號的半月度追蹤更新（約 1,805 瀏覽），資料源 Fintel，統計時點 9 月 20 日。與 8 月 14 日版（5,814 家、2,202,389,506 股、散戶 625M／15.8%）同方法論連續可比：機構家數少 10 家、持股多 940 萬股，散戶殘差從 625M 降到 615M。作者無付費群導流，主動在留言貼出方法論說明（8 月 15 日版、29.1K 瀏覽），這在 X 財經帳號裡屬於少見的透明。
+
+<XPostCard author="AleXandra Merz" handle="@TeslaBoomerMama" timestamp="2026-08-15" sourceUrl="https://x.com/TeslaBoomerMama/status/2088681260252332125" views="約 29,100">Tesla Retail vs Institutions Lots of comments overnight, especially from Korea (why?) about the methodology used below and "grok says that it's not correct ...". First up: It's very complicated to get retail data, so what I do is add insiders and Institutions and then extrapolate Retail. Two issues: INSTITUTIONS - most institutions have to do SEC filings for quarter-end dates. So these are the most solid source. Does not capture everything, but best we got. - the ETFs publish daily data of their stock holdings. So Fintel does their "cooking" of mixing both, better than nothing, but not ultra precise. It is however very good to spot trends. INSIDERS: - Elon has Tesla shares with voting rights (699m) and the 2025 comp Restricted Stock that does "mirror voting" to reflect all other votes (423m). Elon disclaims beneficial ownership of these 2025 RSUs. But they are in the 3.95bn total outstanding shares. So when you analyze the three groups and compare it to all outstanding stock, you have to either use the 3.95b with both these numbers, or you have to deduct first the 423m from the 3.95b to make 3.52b your base number. I am going with the 3.95b number. So when you all ask Grok, you have to give it all these details to get to a realistic number. Now is 15.8% retail spot on? Nobody knows. But it is most certainly not 30% or anything close to it. The trend is very clear. Why do I think that retail has sold Tesla? - some outright sold TSLA, we all heard about it - some sold TSLA to buy SPCX - some sold TSLA (and other single stock) to go into S&P500 or QQQ ETFs, who then buy TSLA again - ETFs had generally inflows and bought (Q2-2026 +61b in S&P500 ETFs. In June alone, $IVV took in roughly $43–44 billion (its strongest monthly organic growth rate in years)). There is still a lot of cash around that is waiting to enter the market, so expect this trend to continue. - active managers (ETFs, mutual funds, hedge funds, banks, ...) bought more Tesla. This is the most important shift compared to other quarters.</XPostCard>
+
+<strong>方法論白話：</strong>散戶拿不到直接數據，所以用殘差法。流通股減機構減 insider，剩下的就是散戶。機構數來自 13F 季底申報疊加 ETF 日持倉（Fintel 混合調製，作者原話：看趨勢很好、精度別苛求）。Insider 分三塊：Elon 具投票權 699.6M、2025 薪酬案 mirror 股 423.7M（Musk 聲明不具實益所有權、由秘書按比例跟投）、基數 3.95B。她把兩種分母算法都攤開，選了 3.95B 版。本站把另一種也算出來，讀者自己選。
+
+## 逐條查證
+
+| 原文主張 | 查證 | 結論 |
+|---|---|---|
+| 5,804 家機構、五週 +940 萬股（Fintel，9/20） | Fintel 原頁回 403，精確數字無法獨立複核；量級有旁證（[13f.finance](https://13f.finance/stock/TSLA) 顯示 4,862 家純 13F 基金持有，Fintel 因納入 ETF 日持倉而家數較高，方向一致） | 部分成立（趨勢可採，單點存疑） |
+| Elon 699.6M 投票股、423.7M mirror 股、流通 3.95B | [SEC 13G/A 一手文件](http://sec.gov/Archives/edgar/data/1318605/000110465926075203/xslSCHEDULE_13G_X02/primary_doc.xml)（6/16 事件）逐字相符：699,580,882 股具投票權、423,743,904 績效股聲明不具實益所有權並 mirror 投票 | 成立 |
+| 散戶 615M 股、15.6% | 數學自洽：3,950 − 2,211.8 − 699.6 − 423.7 = 614.9M；但殘差法本質是估計，作者自己也說沒人知道精不精確 | 成立（含方法論註記） |
+| IVV 六月單月流入 $43–44B、Q2 S&P ETF 流入 $61B | 無第二來源，僅作者單方面說法 | 單一來源，不採為事實 |
+| 散戶賣 TSLA 去買 SPCX／轉進 ETF | 軼事加推論；SPCX 輪動假說與本站 SPCX 覆蓋方向一致但未經資金流數據證實 | 推論，不採為事實 |
+| 主動型經理人本季加碼是最重要的邊際變化 | 與 Q2 13F 季（8 月中申報截止）時點吻合，邏輯自洽但無持倉明細支撐 | 推論，列入觀察 |
+
+兩個額外交叉驗證值得記。第一，[TipRanks 持股頁](https://www.tipranks.com/stocks/tsla)顯示 insider 占比 28.5%，而 (699.6 + 423.7) / 3,950 = 28.4%，幾乎完全吻合，說明她的 insider 區塊與第三方聚合商用的是同一組基數。第二，13G/A 揭露的 19.9% 是法定基數口徑（3,755,723,871 股為底加減限制股調整），換算到她用的 3.95B 基數是 17.7%，兩個數字都對，只是分母不同，引用時別混用。
+
+## 方法論深挖：15.6% 是怎麼來的、誤差在哪
+
+殘差法的公式很簡單：散戶＝流通股 − 機構持股 − insider 持股。誤差全部藏在三個輸入裡，本站逐一拆開。
+
+機構端是最大不確定。Fintel 把兩種頻率的數據混在一起：13F 是季底快照（9 月 20 日的數字裡混的是 6 月 30 日持倉、8 月中才申報齊），ETF 持倉是日頻。所以「五週 +940 萬股」並不是五週內真實發生的機構買盤，很大一部分是 13F 申報的時間差 waterfall。作者說「看趨勢很好」是公允的，但把 9.4M 當成五週淨流入來解讀是錯的。
+
+分母選擇是第二個不確定，也是本站與原文分歧最大的一處。423.7M mirror 股 Musk 既無處分權也無投票控制權（秘書按比例跟投，實質是跟隨票），把它留在分母會系統性壓低散戶占比：
+
+| 分母 | 散戶股數 | 散戶占比 |
+|---|---|---|
+| 3.95B（含 mirror，原文算法） | 615M | 15.6% |
+| 3.52B（剔除 mirror） | 615M | 17.5% |
+
+本站採用區間表述 15.6–17.5%，結論不變：無論哪種分母，散戶都已遠離 30% 這種傳統印象，更接近 1/6。
+
+第三個不確定是 insider 遺漏：公式只扣了 Elon，董事會其他成員與高管持股未單列。這部分量級小（合計不足 1%），方向是讓散戶再低一點，不影響判斷，記一筆即可。
+
+<AdSlot placement="mid" />
+
+## 進場點分析
+
+股權結構報告的進場邏輯與財報型報告不同：重點不是下一季賺多少，而是籌碼結構改變後，股價對事件的反應函數變了。三個結構性判讀：
+
+第一，機構 56% 加被動 ETF 持續吸納，意味著 TSLA 越來越像指數成分股在交易：彈性來自權重調整與因子輪動，個股 alpha 變薄。09-29 那種 −1.29% 的日子，散戶情緒解釋力下降，機構調倉解釋力上升。
+
+第二，投票權版圖實質向 Elon 傾斜。具投票權 699.6M（17.7%）加上 423.7M 跟隨性質的 mirror 票後，積極股東要擋下董事會支持的議案，門檻比票面更高。這是 09-30 版 IVRVP 散戶直投機制的另一面：散戶拿到了投票通道，但票數占比繼續萎縮。對潛在 SpaceX 合併投票的解讀是，通過的結構性阻力比市場以為的小。
+
+第三，SPCX 輪動假說如果為真，代表 Tesla 生態內出現了散戶資金的替代性出口：不看好車、但看好 Musk 的錢，從 TSLA 流向 SPCX。這會削弱 TSLA 散戶底部的厚度，急跌時少一層接盤。該假說待資金流數據證實，目前只列入觀察。
+
+| 情境 | 觸發 | 動作 |
+|---|---|---|
+| 結構確認 | Q3 13F（11 月中）機構持股續增、散戶殘差續降 | 維持判斷：籌碼繼續機構化，波動服從指數邏輯 |
+| 趨勢反轉 | 13F 顯示機構減持、或 ETF 出現持續淨流出 | 重估：散戶占比回升未必是利好（可能是機構用腳投票） |
+| 事件交易 | 10/2 交付、10 月下旬財報前後跳空 | 只看位置不看方向：347.78 下方分批、366.12 上方不追，沿用 09-30 版技術位 |
+
+空手者：股權結構不構成買入理由，它只告訴你這張票現在是誰在玩。真要動手，等 10/2 交付與財報把 347.78–366.12 區間打破再說。持有者：散戶占比萎縮不構成賣出理由，但要認清現實——你的票在投票權重裡只剩 1/6，想靠散戶團結擋議案的時代過去了。
+
+<strong>規模視角：</strong>市值 $1.39T（09-29），日振幅隱含 ±279 億美元。機構化之後，這種擺動是日常，不是異常，倉位大小要按 2% 等於 280 億美元來感受。
+
+## 主要風險與否定條件
+
+第一，Fintel 單點數字風險。本站沒能獨立抓到 Fintel 原頁，如果 Fintel 後續修正 9/20 統計（13F waterfall 補齊後常發生），+9.4M 可能縮水甚至反轉。跟蹤方法是等作者下期更新，看趨勢是否延續，而非死守 940 萬這個數字。
+
+第二，分母突變風險。2025 薪酬案後續 tranche 歸屬會新增流通股（基數從 3.95B 膨脹），直接稀釋所有百分比。基數一變，新舊兩期的散戶占比就不可比，必須重算。
+
+第三，推論層風險。IVV 流入、SPCX 輪動、主動經理人加碼三段都是作者的解釋，不是數據。尤其是「散戶賣 TSLA 買 SPCX」，目前零資金流證據，錯了不影響持股數字本身，但會動搖「散戶去哪了」的敘事。
+
+<strong>作廢條件一：</strong>11 月中 Q3 13F 出爐後，若機構持股不增反減、散戶殘差回升到 17% 以上，「機構化延續」判斷作廢，改判為 Q2 單季現象。
+<strong>作廢條件二：</strong>若 2025 薪酬案新 tranche 大規模歸屬導致流通基數變動超 5%，本篇所有百分比失效，需重算後再下判斷。
+<strong>作廢條件三：</strong>股價收破 347.78（50 日均線）且 10/2 交付失手，技術面轉弱優先於結構面討論，本篇進場框架暫停使用。
+
+## 分析結論
+
+證據支持三句話。機構增持趨勢成立（8/14 到 9/20 同方法論連續兩期，insider 輸入有 13G/A 背書）。散戶 15.6% 是估計不是普查，誠實區間是 15.6–17.5%，但無論哪端，散戶邊緣化都是事實。投票權版圖：機構 56%＋Elon 可控 17.7%＋mirror 跟隨票 10.7%，明年股東會與潛在 SpaceX 合併投票的結構性阻力，比只看散戶聲量以為的小。
+
+接下來盯三件事：10/2 交付數據（短線方向）、10 月下旬財報（基本面）、11 月中 Q3 13F（本篇作廢條件一的裁判）。Fintel 數字若被修正，以修正後為準。
+
+<Disclosure title="資料限制與作者聲明">
+本報告初稿由 AI 助手（Muse Spark）撰寫，經站方審閱發布，不構成個人化投資建議。股權結構數字統計時點為 2026-09-20（Fintel，經作者轉述，本站因 403 未能直接複核原頁）；行情 dataAsOf 為 2026-09-29（09-30 美股收盤抓數時尚未出爐）。散戶占比為殘差估算法產物，精度有限，結論應理解為趨勢與區間。利率、13F 申報時滯等二手引用已註明出處與限制。
+</Disclosure>
+
+## 資料來源
+
+- [TeslaBoomerMama 機構持股更新（2026-09-30，約 1,805 瀏覽）](https://x.com/TeslaBoomerMama/status/2105113190849777805?s=20)
+- [TeslaBoomerMama 方法論說明（2026-08-15，約 29,100 瀏覽）](https://x.com/TeslaBoomerMama/status/2088681260252332125)
+- [Elon Musk Schedule 13G/A 一手文件（SEC，6/16 事件）](http://sec.gov/Archives/edgar/data/1318605/000110465926075203/xslSCHEDULE_13G_X02/primary_doc.xml)
+- [TSLA 機構持股聚合（13f.finance，4,862 家 13F 基金）](https://13f.finance/stock/TSLA)
+- [TSLA 持股結構（TipRanks，insider 28.5%）](https://www.tipranks.com/stocks/tsla)
+- [Fintel TSLA 所有權頁（作者資料源，本站未能直接存取）](https://fintel.io/so/us/tsla)

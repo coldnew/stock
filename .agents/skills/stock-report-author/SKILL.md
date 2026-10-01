@@ -23,6 +23,11 @@ Every new or updated report edition must disclose this in its `Disclosure` compo
 
 ## Create The Edition
 
+When a source-verification step concludes the material is worth a report, proceed
+directly through scaffold → write → publish → commit → push without asking for
+confirmation. Only stop when a blocker from the stop-list below applies, or the user
+has narrowed the request (`draft only`, `do not publish`, etc.).
+
 Run the project scaffold from the repository root:
 
 ```bash
@@ -47,6 +52,9 @@ If the ticker is new or has unusual semantics, check and correct the generated m
 - `reportType: other` for benchmarks, leveraged products, industries, commodities, or other non-standard subjects.
 - `translationKey` uses the `<ticker>-<date>` convention (e.g. `tsla-2026-09-29`). Cross-locale matching is retired with the EN track.
 - Do not add a latest-version flag; latest status is derived from `ticker`, `locale`, `status`, and `publishedAt`.
+- Scaffold only when writing starts. An empty scaffold draft breaks the build
+  (schema validation runs over the whole collection), so if an edition is deferred,
+  delete its directory instead of leaving it in the tree.
 
 ## Write The MDX
 
@@ -110,9 +118,20 @@ Use MDX when the report benefits from an existing component:
 - `ThreadsEmbed` for every cited Threads post (`permalink` + `author` + `fallbackLabel`).
 - `DistributionTrend` for monthly-payout history in income-ETF reports (`ticker` + inline `points` of `[month, $/share]` + `source` + `dataAsOf`; `client:load`). Embed only with verified per-month amounts from the issuer's distribution table or a dated announcement — never interpolate a missing month, omit it and state the gap. Pair with a one-sentence read (noise vs signal) so the chart is evidence, not decoration.
 
+### MDX Build Pitfalls (learned the hard way)
+
+These break `npm run build` or trip the prose gate — check them before publishing:
+
+- `XPostCard` children must be a single paragraph. Blank lines inside the children
+  break MDX parsing; a multi-paragraph quote must use the `postText` prop instead.
+- Never put a raw half-width `<` immediately before digits in prose (`<445k` parses
+  as a JSX tag and fails the build). Reword comparisons in Chinese.
+- Spaced em-dash clusters (` — — `) trip the `prose:check` advisory for
+  revelation-effect dashes. Reword instead of decorating.
+
 ### Inline Citations (no URL graveyards)
 
-Every factual claim that comes from a cited post, filing, article, or dataset MUST link inline at the point of use with a Markdown link (`[text](url)`), so the reader can verify without scrolling. The end-of-report Sources section remains as the bibliography, but a report whose published body (before Sources) contains zero inline links is a defect. Bare URLs pasted as prose are forbidden — always wrap them in a component (`XPostCard` / `ThreadsEmbed`) or an inline link.
+Every factual claim that comes from a cited post, filing, article, or dataset MUST link inline at the point of use with a Markdown link (`[text](url)`), so the reader can verify without scrolling. The end-of-report Sources section remains as the bibliography, but a report whose published body (before Sources) contains zero inline links is a defect. Bare URLs pasted as prose are forbidden — always wrap them in a component (`XPostCard` / `ThreadsEmbed`) or an inline link. Never reconstruct a URL from memory: if a link was not fetched or seen, cite it as plain text (handle + date + description) instead of guessing the address.
 
 ### Prose Rhythm (not a bullet dump)
 
@@ -252,7 +271,7 @@ If the user explicitly says `draft only`, `do not publish`, `do not commit`, or 
 
 Dated URLs mean early readers may see different bytes than later readers, so amendments are a controlled exception, not a workflow:
 
-- Allowed in place (same `publishedAt`, commit message must state the fix): typos, JSX/brace errors, chart-wiring fixes, verified-number corrections against the same `dataAsOf`, and the authorship-disclosure backfill.
+- Allowed in place (same `publishedAt`, commit message must state the fix): typos, JSX/brace errors, chart-wiring fixes, verified-number corrections against the same `dataAsOf` (including a verification-status upgrade such as 半確認→成立 when new evidence arrives but the conclusion is unchanged), and the authorship-disclosure backfill.
 - Never amended in place: anything that changes `dataAsOf`, adds evidence, revises the conclusion, or adds/removes sections — that is a new dated edition.
 - `publishedAt` is never backdated. An amended file keeps its original date; the fix rides in git history, not in a new timestamp.
 

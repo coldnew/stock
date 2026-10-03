@@ -72,4 +72,5 @@ export const reportOnlyTickers = [
   'VGT',
   'AAOI',
   'TSLY',
+  '00406A.TW',
 ];

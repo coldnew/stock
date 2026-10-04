@@ -1,0 +1,95 @@
+---
+ticker: RKLB
+publishedAt: 2026-10-05
+dataAsOf: 2026-10-02
+reportType: equity
+translationKey: rklb-2026-10-05
+status: published
+tags:
+  - RKLB
+  - Iridium
+  - FCC
+  - Neutron
+locale: zh-TW
+title: "Rocket Lab（RKLB）週末增補：FCC 案號與三張國防訂單落地，10-04 版的三個數字修正"
+description: "無新交易時段，以 2026-10-02 收盤為資料截止：qinbafrank 長文主張逐項驗收（FCC GN 26-257、Iridium 精確財務、HASTE／SB-AMTI／SDN 三單），並修正 10-04 版三處口徑。"
+hideMarketTrend: true
+---
+
+import AdSlot from '../../../../components/report/AdSlot.astro';
+import Disclosure from '../../../../components/report/Disclosure.astro';
+import Metrics from '../../../../components/report/Metrics.astro';
+import XPostCard from '../../../../components/report/XPostCard.astro';
+import CandlestickChart from '../../../../components/report/CandlestickChart';
+
+## 分析摘要
+
+本篇為週末增補版：10/03–05 無交易時段，行情沿用 2026-10-02 收盤 73.92 美元（+4.91%），不重複 10-04 版的技術判斷。新增的全部是證據：中文圈一篇 7.8K 瀏覽的 RKLB 深度長文提出了 FCC 審批時間表、Iridium 精確財務與 Q3 三張國防訂單，經一手來源交叉後**幾乎全數證實**，僅三處口徑需修正（現金、對價、backlog 小數）。結論維持 **Watch** 不變，但催化劑日曆現在可以精確到日：FCC 評論期 10/15、10/30、11/9，Q3 財報的 backlog 數字是下一個驗證點。
+
+## 每日事件速覽
+
+<XPostCard author="qinbafrank" handle="@qinbafrank" timestamp="2026-10-04" sourceUrl="https://x.com/qinbafrank/status/2106561635217551560?s=20" avatar="https://pbs.twimg.com/profile_images/1453864539720601606/rEHaWNk1_normal.jpg" views="約 7.8K">RKLB 再看好的四條邏輯：ATM 拋壓結束、Iridium 進 FCC 尾聲、Q3 訂單爆發、Neutron 推遲已被消化，60 多是支撐。</XPostCard>
+
+<strong>事件狀態：</strong>10/04 凌晨發布的個人研究長文（附 6 月梳理舊文連結），非公司公告、非媒體報導。價值在於把分散在一手公告裡的數字串成完整時間線，本篇的任務是逐項驗收這條時間線，並標出原文的口徑出入。
+
+<strong>已確認事實：</strong>FCC 已受理 Iridium 交易移轉申請並開評論期（見下表）；Iridium 2025 年營收 8.72 億、OEBITDA 4.95 億（一手公告精確值）；9/30 Synspective 20 發為 RKLB 最大商業單（對方交叉證實）。
+
+<strong>財經解讀：</strong>長文最有價值的一句是「60 多的支撐」配合「11 月初看審批、27 年初看 Neutron」的兩段式框架——把 47 倍市銷率的估值問題轉換成兩個有日期的執行問題。這正是 10-04 版缺的催化劑日曆。
+
+<strong>下一步查核：</strong>10/15 FCC 評論截止有無反對意見（SpaceX 已要求審查但不反對）；Q3 財報 backlog 是否落在 28–30 億區間；Neutron 一級鑑定試驗節點。
+
+## 行情快照
+
+<CandlestickChart client:load locale="zh-TW" dataUrl="/stock/data/market/RKLB.json" levels={[{price: 76.09, label: "10-02 高點壓力", color: "#C23B32"}, {price: 67.80, label: "20 日均支撐", color: "#3A7A4E"}]} />
+
+行情無變化，重述 10-02 本站數據：開 72.08、高 76.09、低 71.45、收 73.92 美元（+4.91%），高出 20 日均（67.80 美元）約 9.0%，站上 50 日均（69.76 美元）。64 日區間為 58.60 至 93.09 美元。週末無新價格訊號，技術判斷沿用 10-04 版：73.92 介於 10-02 高點壓力 76.09 與 20 日均支撐 67.80 之間，等表態。
+
+<Metrics items={[{ label: "10-02 收盤", value: "73.92 美元（+4.91%）" }, { label: "FCC 評論截止", value: "10/15、10/30、11/9" }, { label: "Q3 backlog 預估", value: "28–30 億美元" }, { label: "Iridium 交割指引", value: "2027 年中" }]} />
+
+<AdSlot placement="mid" />
+
+## 策略結構與查核
+
+下表是長文九組主張的驗收結果，判定標準為一手公告、SEC 文件、FCC 案卷。
+
+| 長文主張 | 查核結果 | 來源層級 |
+|---|---|---|
+| FCC 評論期 10/15、10/30、11/9 | 證實，GN Docket 26-257，9/16 受理；移轉含國際 214、空間站 x1、地面站 x6 | [FCC 案卷轉述](https://www.exterrajsc.com/p/fcc-opens-comment-period-on-bid-to) |
+| Iridium 2025 營收 8.71 億／OEBITDA 4.95 億 | 證實（精確 871.7M／495.3M，+5% YoY） | [Iridium 一手公告](https://investor.iridium.com/2026-02-12-Iridium-Announces-2025-Results-Issues-2026-Outlook) |
+| 手握 ~43 億（23.8＋19.44） | ⚠️ 口徑修正：Q2 純現金 21.38 億，23.8 億是含證券的 total liquidity；43 億為 gross 未扣費用 | [SEC 10-Q／Q2 PR](https://www.sec.gov/Archives/edgar/data/1819994/000181999426000061/rklb-08102026ex991.htm) |
+| Iridium 現金對價 ~28 億 | ⚠️ 低估：$27 × 1.06 億股 ≈ **28.6 億**，另加期權約 0.94 億 | [併購協議 SEC](https://www.sec.gov/Archives/edgar/data/1819994/000175392626001454/g085841_ex99-3.htm) |
+| HASTE $266m、SB-AMTI $397m、SDN＋$12m | 三項全證實（266m 的 7/21 為 award 日，PR 在 7/27） | [公司 PR](https://rocketlabcorp.com/updates/record-contract-rslp-kodiak/)、[SB-AMTI](https://investors.rocketlabcorp.com/news-releases/news-release-details/rocket-lab-awarded-397-million-contract-build-and-launch)、[SDN](https://investors.rocketlabcorp.com/news-releases/news-release-details/space-force-selects-rocket-lab-space-data-network-consortium) |
+| 9/30 Synspective 20 發、backlog 破百 | 證實，RKLB 最大商業單，2028–2031 每年執行 | [公司 PR](https://rocketlabcorp.com/updates/rocket-lab-secures-largest-ever-electron-commercial-deal-20-launch-contract-for-synspective/) |
+| 9/26 第 97 發、2026 年第 18 發 | 證實，但 18 發含 3 發 HASTE，非全是 Electron | [公司 PR](https://rocketlabcorp.com/updates/mission-success-rocket-lab-launches-97th-electron-mission/) |
+| Q2 backlog 23.5 億 | ⚠️ 小數修正：精確值 **23.6 億**（+137% YoY），無實質錯誤 | [SEC 8-K](https://www.sec.gov/Archives/edgar/data/1819994/000181999426000061/rklb-08102026ex991.htm) |
+| GHOST 首套 Kodiak LC-4、2027 運營 | 證實，貨櫃式可部署發射系統，2 座發射台 | [公司 PR](https://investors.rocketlabcorp.com/news-releases/news-release-details/rocket-lab-unveils-ghost-deployable-launch-system-enable) |
+| 創辦人賣股造成拋壓 | 有大額出售（7 月約 2.86 億）但屬 **10b5-1 計劃性**，9 月無新增申報 | SEC Form 4 |
+
+<strong>三個修正的實質影響：</strong>現金口徑修正後，closing 可用資金比「43 億」薄，併購後的安全墊更依賴 Iridium 自身現金流如期併入；28.6 億對價意味著 ATM 的 19.44 億覆蓋約三分之二，剩餘由存量流動性支付；backlog 小數無影響。長文「拋壓過去了」的判斷成立——ATM 已完成、9 月無 Beck 新增申報，但 10b5-1 是計劃性而非看空，這點原文未區分，本篇補上。
+
+<strong>11 月初走完的只是評論期：</strong>10/15、10/30、11/9 是公眾意見程序的三個截止日，不是批准日。之後仍需 FCC 實質審查，交割指引仍是 2027 年中，中間 7 個月存在變數。把「11 月初」理解成靴子落地是超前解讀，正確理解是「11 月初确认無實質反對」。
+
+## 主要風險與否定條件
+
+沿用 10-04 版雙作廢條件，並新增 FCC 專屬觸發：**若 10/15 評論截止出現實質反對意見（特別是 SpaceX 從「審查」升級為反對），Iridium 時間線重估，論文延期**。Neutron 滑到 2027 的表述在長文與市場預期中已一致，不再是增量風險，真正的增量風險只剩執行：GHOST 的 2027 亞軌道首飛、Neutron 一級鑑定試驗，任一失約都會把「執行力溢價」一次沒收。
+
+## 進場點分析
+
+無新價格訊號，沿用 10-04 版框架並疊加日曆：10/15 前是 FCC 事件空窗，短線維持 67.80–76.09 區間判斷；Q3 財報（backlog 是否 28–30 億）是下一個基本面驗證點，在此之前不追價。空手者等 10/15 無反對確認或回測 20 日均；持有者續抱，事件日曆已精確到日，不需要用倉位表達焦慮。
+
+## 分析結論
+
+長文的價值不在觀點，在時間線：它把 ATM、股東會、FCC、Q3 訂單、Neutron 五件事排成一條可追蹤的鏈，查核後鏈條不斷，只是三個數字要換成精確口徑。RKLB 維持 Watch，後續只看 10/15、Q3 backlog、Neutron 節點三件事——本篇之後，這三件事都有了可證偽的數字。
+
+## 資料來源
+
+- [qinbafrank RKLB 深度長文（2026-10-04，約 7.8K 瀏覽）](https://x.com/qinbafrank/status/2106561635217551560?s=20)
+- [FCC GN Docket 26-257 評論期公告轉述](https://www.exterrajsc.com/p/fcc-opens-comment-period-on-bid-to)
+- [Iridium 2025 年報公告](https://investor.iridium.com/2026-02-12-Iridium-Announces-2025-Results-Issues-2026-Outlook)
+- [Rocket Lab 9/15 ATM 完成公告](https://www.globenewswire.com/news-release/2026/09/15/3361819/0/en/rocket-lab-fully-funds-iridium-acquisition-including-completion-of-1-94-billion-atm.html)
+- [Synspective 20 發 PR（2026-09-30）](https://rocketlabcorp.com/updates/rocket-lab-secures-largest-ever-electron-commercial-deal-20-launch-contract-for-synspective/)
+- [本站 RKLB 2026-10-04](../2026-10-04/)；行情：本站 market/RKLB.json（Yahoo Finance 日線，截止 2026-10-02）
+
+<Disclosure title="資料限制">
+本篇為週末增補版，行情截止 2026-10-02（週五），10/03–05 無交易時段、無新價格訊號，技術判斷沿用 10-04 版；FCC 日期為評論程序截止日而非批准日；現金與對價數字經 SEC 文件口徑修正；倍數推算為敏感度測試，不構成個人化投資建議。本報告初稿由 AI 助手（Muse Spark）撰寫，經站方審閱發布。
+</Disclosure>

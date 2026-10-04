@@ -74,4 +74,5 @@ export const reportOnlyTickers = [
   'TSLY',
   '00406A.TW',
   'CRCL',
+  'LITE',
 ];

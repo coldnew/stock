@@ -1,0 +1,89 @@
+---
+ticker: OKLO
+publishedAt: 2026-10-04
+dataAsOf: 2026-10-02
+reportType: equity
+translationKey: oklo-2026-10-04
+status: published
+tags:
+  - OKLO
+  - 先進核能
+  - SMR
+  - 十倍股
+locale: zh-TW
+title: "Oklo（OKLO）日報：十倍或歸零的查核，零 binding PPA 與 30 億現金的兩面"
+description: "以 2026-10-02 收盤為資料截止日，查核 X 十倍股論戰中 OKLO 的定位：NRC 授權進度、燃料與資料中心協議的約束力區分、一年 26% 的股數膨脹，以及十倍數學。"
+hideMarketTrend: true
+---
+
+import AdSlot from '../../../../components/report/AdSlot.astro';
+import Disclosure from '../../../../components/report/Disclosure.astro';
+import Metrics from '../../../../components/report/Metrics.astro';
+import XPostCard from '../../../../components/report/XPostCard.astro';
+import CandlestickChart from '../../../../components/report/CandlestickChart';
+
+## 分析摘要
+
+截至 2026-10-02（週五），OKLO 收盤價為 35.87 美元，單日下跌 0.75%。X 十倍股論戰中，教學頻道只給 OKLO「題材交易」定位，潘姓交易員則稱其「有可能十倍，也有可能歸零」。查核後認為「十倍或歸零」是對這檔股票報酬分佈最誠實的描述：手握約 30 億美元現金，但已交割的具約束力購電協議為零、首度商轉最早 2027 年末、股數一年膨脹約 26%。本報告結論為 **Watch（僅限題材倉位）**：把合作意向誤讀成已建成資產是唯一不可犯的錯。
+
+## 每日事件速覽
+
+10/02 晚間美股教學頻道長文把 OKLO 歸入「有故事、只適合題材交易」：AI 缺電是大邏輯，但許可、燃料、首座電站建設、融資每一步都可能延期，「不要把合作意向誤讀成已建成、已盈利的核電資產」。10/03 潘姓交易員回覆補上另一半：「有可能十倍，也有可能歸零」。回覆區另有讀者稱 43 美元買入現價 35 美元，約 19% 的回調正是歸零側定價的日常形態，個案不構成論證，但說明了波動稅的形狀。
+
+<XPostCard author="美股教学频道" handle="@stockchanneltea" timestamp="2026-10-02" sourceUrl="https://x.com/stockchanneltea/status/2106146709013135716?s=20" avatar="https://pbs.twimg.com/profile_images/2043231399688404992/sV2npsQa_normal.jpg" views="約 34.9K">OKLO 只適合題材交易，許可燃料建設融資每一步都可能延期。</XPostCard>
+
+<XPostCard author="潘驴邓晓闲缺一" handle="@JohnsonZ91127" timestamp="2026-10-03" sourceUrl="https://x.com/JohnsonZ91127/status/2106291387226640789?s=20" avatar="https://pbs.twimg.com/profile_images/1953379546268659712/2Yf1LgRv_normal.jpg" views="約 20K">OKLO 有可能十倍，也有可能歸零或大幅下跌。</XPostCard>
+
+## 行情快照
+
+<CandlestickChart client:load locale="zh-TW" dataUrl="/stock/data/market/OKLO.json" levels={[{price: 38.39, label: "20 日均壓力", color: "#C23B32"}, {price: 34.38, label: "64 日低點支撐", color: "#3A7A4E"}]} />
+
+本地行情顯示，10/02 開 37.30、高 37.46、低 35.65、收 35.87 美元，單日下跌 0.75%。現價低於 20 日均（38.39 美元）約 6.6%，亦低於 50 日均（40.61 美元），且距離 64 日低點 34.38 美元僅約 4% 空間；64 日區間為 34.38 至 53.08 美元，整段結構是均線空頭排列下的貼底震盪。技術上這不是「止跌」，只是「還沒破底」。
+
+<Metrics items={[{ label: "10-02 收盤", value: "35.87 美元（-0.75%）" }, { label: "相對 20 日均", value: "低約 6.6%" }, { label: "市值（10-02）", value: "約 66.7 億美元" }, { label: "現金儲備（Q2）", value: "約 30 億美元" }]} />
+
+<strong>規模視角：</strong>以 66.7 億美元市值計，10/02 日內振幅 5.05% 隱含約 3.4 億美元的市值消長。相對於 RKLB 同日約 20 億美元的成交金額，OKLO 的流動性明顯更薄，波動會被情緒放大——這也是題材倉位必須限縮的 microstructure 理由。
+
+<AdSlot placement="mid" />
+
+## 策略結構與查核
+
+OKLO 的十倍故事有三根支柱：執照、燃料、客戶。本節按約束力逐根驗收，區分「已交割」與「意向書」是全文最重要的動作。
+
+| 支柱 | 查核結果 | 來源層級 |
+|---|---|---|
+| NRC 執照 | 2020 年 COLA 曾於 2022 年被無偏見駁回；現行 Aurora 走 pre-application＋DOE 授權先行，2025-07 完成 COLA readiness 評估、2026-05 PDC topical report 獲批，但以上皆不是建造許可；首堆（INL，2025-09 動工）目標 2027 年末至 2028 年初商轉 | NRC／[公司公告](https://oklo.com/newsroom/news-details/2026/Oklos-NRC-Principal-Design-Criteria-Topical-Report-Approved-for-Aurora-Powerhouse-in-Idaho/default.aspx) |
+| HALEU 燃料 | 首堆用 DOE 2019 年批的 EBR-II 回收料；Centrus 2026-06 LOI 供 5 座 Aurora、2029 年起交貨，明示尚待 definitive agreement，屬非約束性；DOE 剩餘鈽利用計畫僅進入進階談判 | 公司 PR／[Centrus LOI](https://oklo.com/newsroom/news-details/2026/Oklo-Centrus-Sign-Letter-of-Intent-to-Purchase-Nuclear-Fuel-for-Aurora-Powerhouse-Deployment-in-Southern-Ohio/default.aspx) |
+| 資料中心協議 | 已交割的 binding PPA 為零，公司仍零營收；Meta 2026-01 為開發支持協議（預付電費＋資助燃料，非傳統電量交割）；Switch 12GW、Equinix 500MW 等皆為 non-binding 框架 | 公司 PR／[Meta 協議](https://oklo.com/newsroom/news-details/2026/Oklo-Meta-Announce-Agreement-in-Support-of-1-2-GW-Nuclear-Energy-Development-in-Southern-Ohio/default.aspx) |
+| 資金與稀釋 | 現金加有價證券約 30 億美元；總股本一年自約 1.46 億膨脹至 1.86 億（約 26%），ATM 持續中；2026 全年指引營運現金用 1.2–1.5 億＋資本支出 4–5 億 | SEC 10-Q／公司電話會 |
+| 空方論點 | Kerrisdale 2024-11 指無批准設計、燃料成本低估、需再募 27 億，當時被視為激進，但 ATM 稀釋與零營收兩項已被後續財報驗證 | [Kerrisdale 報告](https://www.kerrisdalecap.com/wp-content/uploads/2024/11/OKLO-Kerrisdale.pdf) |
+
+<strong>十倍數學：</strong>66.7 億美元的 10 倍是約 670 億美元。以 2030 年 20–30 億美元營收、給予 20 倍以上遠期市銷率才能勉強觸及，這要求 2028 年後多 GW 如期併網且電價兌現。歸零側則不需要任何戲劇性事件：授權或燃料任一環節再拖 12–18 個月，疊加 ATM 持續稀釋，股東價值即被時間與股數兩面侵蝕。教學頻道的「題材交易」與 Johnson 的「或歸零」講的是同一分佈的兩端，兩者都成立。
+
+## 主要風險與否定條件
+
+最大風險不是核電故事證偽，而是「用建成資產的倍數為意向書定價」。Ohio 1.2GW 園區首期最早 2030、全量 2034，任何把 2030 年代現金流按 2026 年折現率全額計入的估值都經不起 C2 分母檢驗（r−g 不足 5 個百分點的久期遊戲）。此外，Centrus LOI 若無法轉為 definitive agreement，2029 年後的燃料敘事將出現缺口。
+
+<strong>作廢條件一（翻多）：</strong>拿到第一份具約束力的 binding PPA，或 NRC 頒發建造許可，則歸零機率顯著下修，可重新評估題材倉位上限。
+
+<strong>作廢條件二（止損）：</strong>有效跌破 64 日低點 34.38 美元且伴隨新一輪 ATM，則下降趨勢確認，題材倉位亦應離場而非攤平。
+
+## 進場點分析
+
+技術上 35.87 美元卡在 34.38 支撐與 38.39 壓力之間，破底與收復 20 日均的距離分別是 4% 與 7%，屬於不對稱偏空的等待區。空手者唯一的參與方式是小額題材倉位＋以 34.38 為硬止損；任何基本面倉位都應等到作廢條件一出現。持有者若成本在 40 美元上方（如回覆區 43 美元案例），應先承認這是波動稅而非基本面背叛，再按同一止損紀律處理，不加碼攤平。
+
+## 分析結論
+
+「十倍或歸零」不是修辭，是 OKLO 當前資訊結構下最精確的刻畫：30 億現金買了時間，但時間只夠走到 2028 年前後的第一度電；binding PPA 為零意味著估值完全由預期支撐。維持 Watch（僅限題材倉位），後續只看 binding PPA、建造許可、燃料 definitive agreement 三件事，其他皆為噪音。
+
+## 資料來源
+
+- [Oklo：NRC PDC topical report 獲批（2026-05）](https://oklo.com/newsroom/news-details/2026/Oklos-NRC-Principal-Design-Criteria-Topical-Report-Approved-for-Aurora-Powerhouse-in-Idaho/default.aspx)
+- [Oklo–Centrus 燃料 LOI（2026-06）](https://oklo.com/newsroom/news-details/2026/Oklo-Centrus-Sign-Letter-of-Intent-to-Purchase-Nuclear-Fuel-for-Aurora-Powerhouse-Deployment-in-Southern-Ohio/default.aspx)
+- [Oklo–Meta 開發支持協議（2026-01）](https://oklo.com/newsroom/news-details/2026/Oklo-Meta-Announce-Agreement-in-Support-of-1-2-GW-Nuclear-Energy-Development-in-Southern-Ohio/default.aspx)
+- [美股教学频道十倍股長文（2026-10-02）](https://x.com/stockchanneltea/status/2106146709013135716?s=20)與[潘驴邓晓闲缺一回覆（2026-10-03）](https://x.com/JohnsonZ91127/status/2106291387226640789?s=20)
+- 行情：本站 market/OKLO.json（Yahoo Finance 日線，截止 2026-10-02）；市值交叉 [CNBC](https://www.cnbc.com/quotes/OKLO)；財報交叉 SEC 10-Q 與公司電話會
+
+<Disclosure title="資料限制">
+本篇為日報更新，行情截止 2026-10-02（週五），10/03–04 為週末無交易；授權、燃料、商轉時程皆含前瞻性陳述，首堆 2027 年末商轉為公司目標而非承諾；零 binding PPA 為截至公司最新披露的狀態；倍數推算為敏感度測試，不構成個人化投資建議。本報告初稿由 AI 助手（Muse Spark）撰寫，經站方審閱發布。
+</Disclosure>

@@ -1,0 +1,89 @@
+---
+ticker: CRCL
+publishedAt: 2026-10-04
+dataAsOf: 2026-10-02
+reportType: equity
+translationKey: crcl-2026-10-04
+status: published
+tags:
+  - CRCL
+  - 穩定幣
+  - USDC
+  - 十倍股
+locale: zh-TW
+title: "Circle（CRCL）首篇：95% 收入隨利率浮動的生意，配得上十倍主線嗎"
+description: "以 2026-10-02 收盤為資料截止日，拆解 X 十倍股論戰分歧最大的名字：Q2 儲備收益佔比 95.2%、降息 100bps 淨損 3.77 億、Coinbase 分成吃掉六成，以及 7 年 40% 複合的十倍算術。"
+hideMarketTrend: true
+---
+
+import AdSlot from '../../../../components/report/AdSlot.astro';
+import Disclosure from '../../../../components/report/Disclosure.astro';
+import Metrics from '../../../../components/report/Metrics.astro';
+import XPostCard from '../../../../components/report/XPostCard.astro';
+import CandlestickChart from '../../../../components/report/CandlestickChart';
+
+## 分析摘要
+
+截至 2026-10-02（週五），CRCL 收盤價為 81.25 美元，單日下跌 2.00%，本站首篇覆蓋。X 十倍股論戰中分歧最大的是它：潘姓交易員將其與 RKLB 並列為僅有的兩個十倍選擇，教學頻道卻只給「題材交易」定位，理由是收入高度依賴儲備收益、利率下降與分銷成本侵蝕盈利。查核 Q2 財報與 10-Q 後，教學頻道的保守站在當前降息循環中更有依據：儲備收益佔比 95.2%、Coinbase 分成吃掉約六成、-100bps 對應淨損約 3.77 億美元。本報告結論為 **Watch**：十倍在算術上需要 USDC 流通量連續 7 年 40% 複合，horizon 長且容錯低。
+
+## 每日事件速覽
+
+10/02 晚間美股教學頻道長文稱 CRCL 的 USDC 與鏈上支付「很有空間」，但現階段收入仍高度依賴儲備收益，「只有支付網絡真實使用和非儲備收入佔比提升，才可能升級為長期平台邏輯」。10/03 潘姓交易員回覆直接把它抬進十倍主線。回覆區另有「CRCL 網紅股、太多人看好、車太重」的評論——查核：IPO（2025/06，定價 31 美元）首日收 83.23 美元（上漲約 168%），16 個月後股價 81.25 美元等於原地踏步，籌碼擁擠的抱怨有依據。
+
+<XPostCard author="美股教学频道" handle="@stockchanneltea" timestamp="2026-10-02" sourceUrl="https://x.com/stockchanneltea/status/2106146709013135716?s=20" avatar="https://pbs.twimg.com/profile_images/2043231399688404992/sV2npsQa_normal.jpg" views="約 34.9K">CRCL 只適合題材交易，非儲備收入佔比提升前不能升級為平台邏輯。</XPostCard>
+
+<XPostCard author="潘驴邓晓闲缺一" handle="@JohnsonZ91127" timestamp="2026-10-03" sourceUrl="https://x.com/JohnsonZ91127/status/2106291387226640789?s=20" avatar="https://pbs.twimg.com/profile_images/1953379546268659712/2Yf1LgRv_normal.jpg" views="約 20K">十倍股只選 RKLB 與 CRCL。</XPostCard>
+
+## 行情快照
+
+<CandlestickChart client:load locale="zh-TW" dataUrl="/stock/data/market/CRCL.json" levels={[{price: 89.59, label: "20 日均壓力", color: "#C23B32"}, {price: 75.20, label: "回調 61.8% 支撐", color: "#3A7A4E"}]} />
+
+本地行情顯示，10/02 開 85.78、高 88.40、低 80.14、收 81.25 美元，單日下跌 2.00%，日內振幅達 10.17%，是三檔裡波動最劇烈的一檔。現價低於 20 日均（89.59 美元）約 9.3%，恰壓在 50 日均（81.40 美元）下方邊緣；64 日區間為 57.84 至 103.28 美元，回調 61.8% 位置約 75.20 美元是下方第一支撐。結構上屬於 IPO 高點回落後的均線糾結，方向未明但波動率高。
+
+<Metrics items={[{ label: "10-02 收盤", value: "81.25 美元（-2.00%）" }, { label: "相對 20 日均", value: "低約 9.3%" }, { label: "市值（10-02）", value: "約 207 億美元" }, { label: "市銷率（TTM）", value: "約 7.1 倍" }]} />
+
+<strong>規模視角：</strong>以 207 億美元市值計，10/02 日內振幅 10.17% 隱含約 21 億美元的市值消長。7.1 倍 TTM 市銷率在三檔裡看似最便宜，但分母是 95% 隨利率浮動的收入，便宜可能是對利率風險的定價而非折價，詳見下節。
+
+<AdSlot placement="mid" />
+
+## 策略結構與查核
+
+CRCL 生意的本質一句話：把 USDC 儲備金的利息拿出來，先分六成給渠道（主要是 Coinbase），剩下才是自己的。以下數字經公司 Q2 新聞稿與 SEC 10-Q／8-K 交叉。
+
+| 項目 | 查核結果 | 來源層級 |
+|---|---|---|
+| Q2 總營收 7.01 億美元（年增 7%） | 其中儲備收益 6.68 億、佔 95.2%；分銷加交易成本 4.10 億；RLDC（儲備減分銷）2.89 億、利潤率 41.2%；淨利僅 4,800 萬美元 | 公司／[Q2 新聞稿](https://www.circle.com/pressroom/circle-reports-second-quarter-2026-results) |
+| USDC 流通量 | 期末 733 億美元（年增 19%），期內均值 765 億美元（年增 25%）創新高；儲備回報率約 3.5%，年減 66bps，已被流通量增長抵銷 | 公司／[10-Q](https://www.sec.gov/Archives/edgar/data/1876042/000187604226000248/crcl-20260630.htm) |
+| 利率敏感度 | -100bps 對應儲備收益 -7.37 億、分銷成本 -3.6 億，淨損約 3.77 億美元，約當 Q2 年化 RLDC 的三分之一；管理層稱利率與流通量關係高度不確定 | 公司 10-Q／[Q2 電話會](https://www.fool.com/earnings/call-transcripts/2026/08/12/circle-crcl-q2-2026-earnings-call-transcript/) |
+| 非儲備收入 | Other 收入 3,360 萬美元（年增 41%）但佔比僅 4.8%；2026 指引 Other 3.1–3.3 億美元含 Arc presale 一次性確認 1.8 億，剔除後反年減約 2,000 萬 | 公司／Q2 新聞稿指引表 |
+| 股本與稀釋 | 截至 7/30 約 2.54 億股；2025/06 IPO 公司新發 1,990 萬股，2025/08 follow-on 再以 130 美元新發 350 萬股淨得 4.45 億美元 | SEC／[10-Q](https://www.sec.gov/Archives/edgar/data/1876042/000187604226000248/crcl-20260630.htm) |
+
+<strong>十倍數學：</strong>207 億美元的 10 倍是約 2,070 億美元。公司自己給的對沖是 USDC「through-cycle 40% CAGR」：40% 複合約 7 年翻 10 倍（1.4 的 7 次方約 10.5），算術上走得通。但三個前提全是外部變量：流通量連 7 年 40% 複合、Coinbase 分成比例不惡化、降息循環不把利差吃光。更苛刻的是，分母端的儲備回報率每降 100bps 就吃掉約 3.77 億淨利，在降息循環裡這是一台倒著開的印鈔機。因此：教學頻道的「題材交易」是對當前利率環境的誠實定價；Johnson 的押注則是把 7 年 horizon 與三個外部變量全押順，容錯極低。
+
+## 主要風險與否定條件
+
+第一風險是利率：儲備回報率再降 66bps 的量級若重演且流通量增速放緩，RLDC 將雙面受擊。第二風險是分成結構：Coinbase 拿走約六成儲備收益，Circle 對最大渠道沒有議價冗餘，任何分成上調都直接從 41% 的 RLDC 利潤率扣。第三風險是指引品質：Other 收入靠 Arc presale 一次性墊高，剔除後反年減，支付網絡變現仍是 PPT 大於損益表。
+
+<strong>作廢條件一（翻多）：</strong>USDC 流通量單季增長 30% 以上且非儲備收入佔比突破 10%，則「平台邏輯升級」成立，可上修定位。
+
+<strong>作廢條件二（轉空）：</strong>連續降息下儲備回報率再下一個 50bps 台階，或 Coinbase 分成比例上調，則持有者應降倉，空手者不接刀。
+
+## 進場點分析
+
+技術上 81.25 美元跌破 50 日均 81.40 美元、距 20 日均壓力 89.59 美元約 10% 空間，屬於弱勢反彈格局：收復 89.59 前不追，跌破 75.20 支撐則趨勢轉壞。基本面倉位需要先看到作廢條件一的證據；在此之前，任何參與都是對利率與流通量的宏觀押注而非公司押注，應按宏觀倉位管理。空手者等待非儲備收入佔比的季度驗證；持有者以 75.20 為紀律線。
+
+## 分析結論
+
+CRCL 是三檔裡商業模式最容易看懂、十倍路徑最難走通的一個：看懂的是利差生意，難的是利差不在自己手裡。7.1 倍市銷率的「便宜」是對 95% 浮動收入與六成渠道分成的定價。維持 Watch，後續只看 USDC 流通量增速、儲備回報率、非儲備收入佔比三個數字，其他皆為噪音。
+
+## 資料來源
+
+- [Circle：2026 Q2 財報新聞稿](https://www.circle.com/pressroom/circle-reports-second-quarter-2026-results)
+- [Circle 10-Q（2026-06-30）](https://www.sec.gov/Archives/edgar/data/1876042/000187604226000248/crcl-20260630.htm)
+- [Circle IPO 定價公告（2025-06）](https://www.circle.com/pressroom/circle-announces-pricing-of-upsized-initial-public-offering)
+- [美股教学频道十倍股長文（2026-10-02）](https://x.com/stockchanneltea/status/2106146709013135716?s=20)與[潘驴邓晓闲缺一回覆（2026-10-03）](https://x.com/JohnsonZ91127/status/2106291387226640789?s=20)
+- 行情：本站 market/CRCL.json（Yahoo Finance 日線，截止 2026-10-02）；市值交叉 [CNBC](https://www.cnbc.com/quotes/CRCL)
+
+<Disclosure title="資料限制">
+本站首篇 CRCL 覆蓋，行情截止 2026-10-02（週五），10/03–04 為週末無交易；利率敏感度為 10-Q 靜態試算（以 6 月供應不變為假設），實際淨影響隨流通量與分成談判浮動；Arc presale 確認時點依公司指引，存在遞延可能；倍數推算為敏感度測試，不構成個人化投資建議。本報告初稿由 AI 助手（Muse Spark）撰寫，經站方審閱發布。
+</Disclosure>

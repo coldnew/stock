@@ -28,6 +28,29 @@ directly through scaffold → write → publish → commit → push without aski
 confirmation. Only stop when a blocker from the stop-list below applies, or the user
 has narrowed the request (`draft only`, `do not publish`, etc.).
 
+## Direct-Write Rule (operator instruction — do not ask)
+
+When the user pastes a link/post — with OR without `write`, `go`, `寫`,
+or any other instruction — do NOT ask for confirmation and do NOT ask
+where to file it. A bare pasted link IS the instruction: fetch it, decide,
+and write the edition. Summarize-then-wait is forbidden. Decide and act:
+
+- Infer the ticker from the post content (`$`-tags, author context, subject).
+  One post, one primary ticker — file it there without asking.
+- Date logic: new evidence for an already-published edition is always a NEW
+  dated edition (never amend in place); `dataAsOf` = latest completed session
+  from the market update, `publishedAt` = next date. Update market data first.
+- A ticker with no existing coverage is NOT a reason to ask: run
+  `market:update`, scaffold the new ticker directory, and write the edition.
+- `write` alone means run the FULL release flow: write → publish →
+  checks → commit → push, without asking. Draft-only happens solely when the
+  user explicitly says `draft only` (or equivalent).
+- Publish only when checks pass; commit only report files + their supporting
+  market data; push to the current branch. Never stage unrelated user changes.
+- Only stop to ask when genuinely blocked: material spans multiple tickers
+  with no clear primary, or a required data source is missing. Otherwise act
+  and state assumptions in the handoff.
+
 Run the project scaffold from the repository root:
 
 ```bash

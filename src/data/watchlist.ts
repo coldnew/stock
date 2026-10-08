@@ -75,4 +75,5 @@ export const reportOnlyTickers = [
   '00406A.TW',
   'CRCL',
   'LITE',
+  'IONQ',
 ];

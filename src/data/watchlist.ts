@@ -77,4 +77,5 @@ export const reportOnlyTickers = [
   'LITE',
   'IONQ',
   'EMXC',
+  'FIGS',
 ];

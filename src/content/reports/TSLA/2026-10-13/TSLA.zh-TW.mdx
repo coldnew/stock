@@ -9,9 +9,12 @@ tags:
   - TSLA
   - Cybertruck
   - Q3交付
+  - Cybercab
+  - Robotaxi
+  - NHTSA
 locale: zh-TW
-title: "TSLA 日報：Cybertruck 算術題——Q3 其他車型 8,295 輛，年化 3 萬對 25 萬目標"
-description: "2026-10-13 日報：TSLA 收 378.03 美元跌 1.22%、市值約 1.50 兆；Kshsb 用 Q3 其他車型 8,295 輛還原 Cybertruck 約 7,000–8,000 輛，SpaceX 關聯採購與 Ford Fathom 低價競品是兩條延伸線，維持事件觀察。"
+title: "TSLA 日報：Cybertruck 算術、孟菲斯事故與 NHTSA 校區請願——10-12 四條線一次看"
+description: "2026-10-13 日報（dataAsOf 10-12）：TSLA 收 378.03 美元跌 1.22%、市值約 1.50 兆；Cybertruck Q3 約 7,000–8,000 輛推算、孟菲斯疑似事故照片、NHTSA 缺陷請願 DP26010 與馬斯克安全論、第二波媒體解讀，維持事件觀察。"
 ---
 
 import AdSlot from '../../../../components/report/AdSlot.astro';
@@ -22,63 +25,131 @@ import XPostCard from '../../../../components/report/XPostCard.astro';
 
 ## 分析摘要
 
-10 月 12 日 [Kshsb（@Kshsb783142）Cybertruck 長文](https://x.com/Kshsb783142/status/2109671506007789903?s=20)（約 2.3K 瀏覽）做了一道減法：特斯拉 Q3「其他車型」交付 8,295 輛，扣掉 Model S／X 庫存尾貨與剛起量的 Semi，Cybertruck 落在 7,000–8,000 輛，年化約 3 萬輛，只有馬斯克當年 25 萬輛目標的 13%。這套算法不是首創，來自 [Electrek 10 月 7 日的估算](https://electrek.co/2026/10/07/tesla-other-models-deliveries-crash-cybertruck-sales/)，Kshsb 的增量是把三條線串起來：產能利用率不到四分之一、8 月反手漲價 5,000 美元、SpaceX 在 2025 年 Q4 包下 1,279 輛。分層先劃清：交付總數是 Tier-1（公司 8-K），7,000–8,000 是 Tier-3（媒體估算），SpaceX 數字是 Tier-2（S&P 註冊數據經 Bloomberg 報導），漲價原因是 Tier-4（分析師解讀）。同日 TSLA 收 378.03 美元、跌 1.22%，市值約 1.50 兆美元。結論維持事件觀察：Cybertruck 佔 Q3 總交付不到 2%，計價權重極低，這篇的價值是記下推算方法與兩個待驗點（Cybercab 計入方式、10 月 21 日財報汽車毛利率），不是買賣訊號。
+10 月 12 日一天浮現四條 TSLA 線索，全部指向同一個財報前夜。第一，[Kshsb（@Kshsb783142）Cybertruck 長文](https://x.com/Kshsb783142/status/2109671506007789903?s=20)（約 2.3K 瀏覽）用 Q3「其他車型」交付 8,295 輛還原 Cybertruck 約 7,000–8,000 輛，年化 3 萬對 25 萬目標；第二，[Shawn（@mylifeonmystyle）流出的孟菲斯 Cybercab 事故照片](https://x.com/mylifeonmystyle/status/2109620515656581345?s=20)（約 15.5K 瀏覽），地點、責任、自駕狀態全部待確認；第三，[NHTSA 缺陷請願審查 DP26010](https://selfdrivenews.com/nhtsa-tesla-robotaxi-school-zone-speeding-petition/)（10-09 立案，約 1,000 輛校區超速、零傷亡）疊加[馬斯克 X Takeover 安全論](https://elonmuskarchive.org/video/elon-musk-what-comes-next-for-humanity-2026-10)（逐字稿確認）；第四，10-12 第二波媒體解讀補上 FSD 與 Robotaxi 責任分野、Waymo 前例與 10 月 30 日認證大限。分層先劃清：Q3 交付總數 Tier-1（公司 8-K），DP26010 立案 Tier-1（多源確認），Cybertruck 餘數與孟菲斯事故 Tier-3／Tier-4。同日 TSLA 收 378.03 美元、跌 1.22%，市值約 1.50 兆美元。結論維持事件觀察：四件事對估值的直接權重都接近零，真正的定價權在 10 月 21 日財報（汽車毛利率＋Robotaxi 指引）與 10 月 30 日 Cybercab 認證答覆。
 
 ## 行情快照
 
 <strong>行情截止：</strong>2026 年 10 月 12 日（週一）收盤——最新已完成交易日；10-02 Q3 交付超預期後的走勢見下。
 
-<Metrics items={[{ label: "10-12 收盤", value: "378.03 美元（-1.22%）" }, { label: "10-12 區間", value: "377.58 – 382.70" }, { label: "前日收盤", value: "382.70（10-09，+2.05%）" }, { label: "市值（10-12）", value: "約 1.50 兆美元（378.03 × 3.96B 股，股數沿用 10-09 版）" }]} />
+<Metrics items={[{ label: "10-12 收盤", value: "378.03 美元（-1.22%）" }, { label: "10-12 區間", value: "377.58 – 382.70" }, { label: "前日收盤", value: "382.70（10-09，+2.05%）" }, { label: "均線位置", value: "MA20 369.61、MA50 356.08，雙雙守住" }, { label: "市值（10-12）", value: "約 1.50 兆美元（378.03 × 3.96B 股，股數沿用 10-09 版）" }]} />
 
-10 月 2 日 Q3 交付 486,532 輛超預期（市場預期 461,974），當天收 370.59、漲 4.6%，之後五個交易日走出 370–383 的橫盤：10-05 收 378.73、10-06 收 380.68、10-07 回吐至 377.81、10-08 再探 375.00、10-09 反彈回 382.70、10-12 開 382.61、低走收 378.03。解讀只有一句：利多兌現後的擁擠橫盤，377.58（10-12 低點）是短線第一支撐，382.70（10-12 高點、與 10-09 收盤重合）是第一壓力。一篇 2.3K 瀏覽的車型算術文不在行情驅動名單上，留言區最高讚回覆也是「不太影響特斯拉股價」——市場的定價權在 10 月 21 日財報的汽車毛利率，不在 Cybertruck。
+10 月 2 日 Q3 交付 486,532 輛超預期（市場預期 461,974），當天收 370.59、漲 4.6%，之後走出 370–383 的橫盤：10-05 收 378.73、10-06 收 380.68、10-07 回吐至 377.81、10-08 再探 375.00、10-09 反彈回 382.70、10-12 開 382.61、低走收 378.03。解讀只有一句：利多兌現後的擁擠橫盤，377.58（10-12 低點）是短線第一支撐，382.70（10-12 高點、與 10-09 收盤重合）是第一壓力。四則社群貼文（最高 15.5K 瀏覽）都不在行情驅動名單上，市場的定價權在 10 月 21 日財報。
 
-<strong>規模視角：</strong>以 1.50 兆美元市值計，10/12 單日振幅 5.12 美元隱含約 200 億美元市值擺動——mega-cap 指數級流動性，單一車型的銷量推算撼動不了分毫，真正的波動源仍是財報（10 月 21 日盤後，見 10-08 版）。
+<strong>規模視角：</strong>以 1.50 兆美元市值計，10/12 單日振幅 5.12 美元隱含約 200 億美元市值擺動——mega-cap 指數級流動性，單一車型推算或一起鈑金事故都撼動不了分毫；同樣的監管雜訊在小市值自駕概念股上會是 5–10% 的行情，在 TSLA 上只是 1% 級別的噪音，這本身就是倉位不宜過重的依據。
 
 ## 每日事件速覽
 
-<strong>事件狀態（一）：</strong>[Kshsb（@Kshsb783142）10 月 12 日貼文](https://x.com/Kshsb783142/status/2109671506007789903?s=20)（約 2.3K 瀏覽）：用 Q3「其他車型」交付數還原 Cybertruck 季度銷量，連帶點出產能利用率、漲價邏輯、SpaceX 關聯採購與 Ford 低價競品四條延伸線，文末自帶「不構成投資建議」聲明。
+### 事件一：Cybertruck 算術題——8,295 輛的減法
+
+[Kshsb 10 月 12 日貼文](https://x.com/Kshsb783142/status/2109671506007789903?s=20)（約 2.3K 瀏覽）做了一道減法：Q3「其他車型」交付 8,295 輛，扣掉 Model S／X 庫存尾貨與剛起量的 Semi，Cybertruck 落在 7,000–8,000 輛，年化約 3 萬輛，只有當年 25 萬輛目標的 13%，並串起產能利用率、8 月漲價、SpaceX 關聯採購三條延伸線。
 
 <XPostCard author="Kshsb" handle="@Kshsb783142" timestamp="2026-10-12" sourceUrl="https://x.com/Kshsb783142/status/2109671506007789903?s=20" views="約 2.3K" postText="根據Electrek的估算，三季度交付了7000到8000輛，年化下來大概2.8萬到3.2萬輛，只有當初目標的13%……特斯拉得州工廠的Cybertruck最大年產能是12.5萬輛。現在實際銷量2.8到3.2萬，產能利用率不到四分之一……2025年第四季度，SpaceX買了1279輛Cybertruck，占美國註冊量的18%……我的看法是，Cybertruck已經從一個「高產量項目」，變成了一個「豪華小眾產品」。" />
 
-<strong>已確認事實：</strong>Q3 總交付 486,532 輛、其中其他車型 8,295 輛（年減 48%，2021 年以來最低），來自[特斯拉 10 月 2 日 8-K](https://www.stocktitan.net/sec-filings/TSLA/8-k-tesla-inc-reports-material-event-750c0543f755.html)，列 Tier-1；其他車型產量 7,004 輛、年減 40%，同源。Model S／X 今年 4 月停產、剩約 600 輛庫存加 350 輛 Signature 尾單，Semi 9 月 25 日啟動客戶交付，兩項均為 Electrek 估算的「幾百輛」，列 Tier-3。Cybertruck 7,000–8,000 輛是 8,295 逐項扣除後的餘數，列 Tier-3，誤差帶至少正負千輛。2 月雙電機入門版 59,990 美元（10 天促銷價）、[8 月 25 日全線上調 5,000 美元至 74,990 美元](https://www.reuters.com/business/autos-transportation/tesla-raises-prices-cybertrucks-us-2026-08-25/)，後者有 Reuters 報導，列 Tier-2。SpaceX 在 2025 年 Q4 購入 1,279 輛、佔全美註冊 7,071 輛的 18%，另加 xAI 等關聯方 60 輛，來自 [S&P Global Mobility 註冊數據經 Bloomberg 報導](https://www.ttnews.com/articles/spacex-buy-tesla-cybertruck)（2026 年 4 月 16 日），列 Tier-2；關聯交易條款未披露。晨星「豪華小眾定位、漲價保單車利潤」說法，經貼文轉述、無一手來源，列 Tier-4。[Ford Fathom 起售 28,350 美元、2027 年底交付](https://arstechnica.com/cars/2026/08/ford-picks-fathom-for-its-affordable-truck-name-starts-at-28350/)（8 月 6 日公布），列 Tier-2。
+<strong>已確認事實：</strong>Q3 總交付 486,532 輛、其他車型 8,295 輛（年減 48%，2021 年以來最低），來自[特斯拉 10 月 2 日 8-K](https://www.stocktitan.net/sec-filings/TSLA/8-k-tesla-inc-reports-material-event-750c0543f755.html)，列 Tier-1。Model S／X 今年 4 月停產、剩約 600 輛庫存加 350 輛 Signature 尾單，Semi 9 月 25 日啟動客戶交付，均列 Tier-3。[8 月 25 日全線上調 5,000 美元至 74,990 美元](https://www.reuters.com/business/autos-transportation/tesla-raises-prices-cybertrucks-us-2026-08-25/)有 Reuters 報導，列 Tier-2；漲價原因的晨星解讀無一手來源，列 Tier-4。SpaceX 2025 年 Q4 購入 1,279 輛、佔全美註冊 18%，來自 [S&P 註冊數據經 Bloomberg 報導](https://www.ttnews.com/articles/spacex-buy-tesla-cybertruck)（2026 年 4 月舊聞），列 Tier-2。[Ford Fathom 起售 28,350 美元、2027 年底交付](https://arstechnica.com/cars/2026/08/ford-picks-fathom-for-its-affordable-truck-name-starts-at-28350/)，列 Tier-2。
 
-<strong>財經解讀：</strong>這道減法的最大變數，Electrek 自己點了名：Cybercab。德州廠二季度已開始生產 Cybercab，數量級是幾千輛，特斯拉沒說自有 Robotaxi 車隊的車算不算交付——如果算，8,295 裡還要再扣一塊，Cybertruck 真實數字比 7,000 更低；如果不算，產量 7,004 對交付 8,295 的缺口就是在清庫存。兩種讀法都對 Cybertruck 不利，只是差在「賣不動」還是「不想造」。第二，漲價這件事有 Reuters 背書，但原因沒有：貼文引晨星說是「放棄平價走量、保單車利潤」，Electrek 則記下單電機長續航版只賣 173 輛就砍掉——兩個側寫拼起來，Cybertruck 的需求曲線比價格標籤更值得看，10 月 21 日財報的汽車毛利率會給出第一個硬數字。第三，SpaceX 的 1,279 輛是 2025 年 Q4 的舊聞（今年 4 月已報導），對 Q3 數字沒有直接影響，它的作用是提醒：關聯方採購佔註冊量近兩成時，「交付」與「終端需求」之間要打折扣，條款還沒披露。第四，Fathom 28,350 美元是 2027 年底的事，遠水不解近渴，但它鎖死了 Cybertruck 往下走量的路：起售價 74,990 對 28,350，差了 2.6 倍，平價皮卡市場基本不用想了。所以本帖的定位是「觀察清單＋2」：Cybercab 計入方式、財報汽車毛利率，二者任一有硬數字才升級。
+<strong>財經解讀：</strong>這道減法的最大變數是 Cybercab——德州廠二季度已投產，數量級幾千輛，特斯拉沒說自有車隊的車算不算交付；若計入，Cybertruck 真實數字比 7,000 更低。其他車型佔 Q3 總交付僅 1.7%，就算推算全錯，對合併報表的影響也在小數點後。待驗點有二：Cybercab 計入方式、10 月 21 日財報汽車毛利率。
+
+### 事件二：孟菲斯疑似事故——一張照片、三個反轉
+
+[Shawn 10 月 12 日貼文](https://x.com/mylifeonmystyle/status/2109620515656581345?s=20)（約 15.5K 瀏覽）流出一張 Cybercab 事故照片：前艙蓋嚴重變形，前方皮卡尾部受損。貼文自己列了三個反轉點：地點疑為田納西孟菲斯而非 Austin、有說法稱第三方先撞皮卡、涉事車疑為原型測試車；是否自駕未知，更無 FSD 過失證據。
+
+<XPostCard author="Shawn" handle="@mylifeonmystyle" timestamp="2026-10-12" sourceUrl="https://x.com/mylifeonmystyle/status/2109620515656581345?s=20" views="約 15.5K" mediaUrl="https://pbs.twimg.com/media/HUbgrabWIAAjdNc?format=webp&name=large" postText="重大突发：Cybercab发生交通事故，事情可能并非表面看起来那么简单！照片显示，一辆Cybercab前舱盖严重变形，前方皮卡尾部受损……事故地点可能是田纳西州Memphis，而非Robotaxi主要运营城市Austin……涉事Cybercab可能是一辆原型测试车，而非正式投入无人驾驶运营的车辆。目前尚无法确认Cybercab是否处于自动驾驶状态，更没有证据证明FSD存在驾驶失误……以上事故经过仍主要来自社交媒体讨论，尚待官方确认。" />
+
+<strong>已確認事實：</strong>照片內容列 Tier-2（多帳號轉發、原始拍攝者不明）；孟菲斯合理性列 Tier-3（[MyCybercab 目擊記錄](https://mycybercab.com/sighting/sight_1790376348_9670)顯示 9 月至少 4 起）；責任、自駕狀態、車輛身份全部 Tier-4。背景案列 Tier-3：[Electrek 10 月 7 日報導](https://electrek.co/2026/10/07/tesla-cybercab-crash-philadelphia-door-panel/)費城金色 Cybercab 低速碰撞、門皮脫落，賓州許可名單無特斯拉，大概率非無人駕駛；再往前 [5 月 13 日第一起公開道路事故](https://www.notateslaapp.com/news/4141/tesla-cybercab-rear-ended-in-first-known-public-road-incident)（被追尾）亦低速無人傷。硬框架來自 [NHTSA Standing General Order](https://www.nhtsa.gov/laws-regulations/standing-general-order-crash-reporting)：ADS 介入事故即使僅財損亦須上報——收錄與否本身就是「當時誰在開」的公開信號。
+
+<strong>財經解讀：</strong>期望損失為零，價值在頻率——5 天內兩起有照片事故，對照車隊從幾十輛往幾千輛爬坡，是中性的規模化影子，值得記、不值得怕。若本案進入 NHTSA 資料庫，說明 ADS 當時在線，跟進「Robotaxi 出險率」長期線；若沒進，與費城案同類，翻篇。
+
+### 事件三：DP26010 請願＋馬斯克安全論——同一枚硬幣
+
+NHTSA 缺陷調查辦公室（ODI）10 月 9 日立案 [DP26010](https://www.roadandtrack.com/news/a74108053/tesla-robotaxi-nhtsa-school-zone-speeding-allegation/)，源於 9 月 23 日請願書（ODI 11766676），指控 2026 年式 Model Y 與 Cybercab 在 ADS 啟用時於校區速限區超速：涵蓋約 1,000 輛、三段影片、四起通報、零碰撞零傷亡，經 [Quartz](https://qz.com/nhtsa-tesla-robotaxi-speeding-school-zones-101226)、[Seattle Times](https://www.seattletimes.com/business/tesla-faces-u-s-probe-over-claim-of-robotaxis-speeding-in-school-zones/)、[Seeking Alpha](https://seekingalpha.com/news/4652069-tesla-to-be-probed-by-the-nhtsa-over-speeding-robotaxis-in-school-zones) 交叉確認，列 Tier-1。這是 NHTSA 流程中最早的一步，不是正式調查，更不是召回；120 天決定期約至 2027 年 1 月 21 日，歷史上多數請願走不到正式調查。另需區分：Cybercab 另有一樁 9 月開啟的 FMVSS 自我認證審計問詢（AQ26002，回覆死線 10 月 30 日，見下事件四），兩案並行互不隸屬。
+
+論述面上，馬斯克 10 月 10 日 X Takeover 訪談親自解釋謹慎擴張：一輛 Robotaxi 出事即全球頭條＋監管叫停，標準是接近零事故（灰色小貓案例已解、進新城先排危險路口、不行就地理圍欄），見[訪談逐字稿](https://elonmuskarchive.org/video/elon-musk-what-comes-next-for-humanity-2026-10)與[整理報導](https://pioneerlands.org/story/transport-elon-explains-why-tesla-moves-slowl-2026-10-11)。規模面上，[Austin 已逾 300 輛、Texas DMV 登記 319 輛、30 天約 8 倍](https://www.allthings-elon.com/articles/tesla-robotaxi-300-cybercabs-austin-scale-2026-10-11)，Dallas 在望，列 Tier-2。
+
+<XPostCard sourceUrl="https://x.com/mylifeonmystyle/status/2109737139898613797?s=20" author="Shawn" handle="mylifeonmystyle" timestamp="2026-10-12T20:05:00+08:00" views="804" postText="Elon X Takeover 2026｜2/6 为什么Robotaxi扩张如此谨慎？10月10日Elon解释安全与监管考量：①月度增长率其实非常高，不愿因一次严重事故影响整个项目；②全球每年约100万人死于交通事故，但一辆Robotaxi致命事故就可能成全球头条、引发监管叫停；③夜间灰色小猫趴灰色路面的极端场景要能避开；④新城市先排除高风险路段，必要时地理围栏。Robotaxi最终竞争不只是技术与成本，更是安全、规模和公众信任。" />
+
+<XPostCard sourceUrl="https://x.com/mylifeonmystyle/status/2109788375599272332?s=20" author="Shawn" handle="mylifeonmystyle" timestamp="2026-10-12T23:28:00+08:00" views="534" postText="Elon系日报20261012：①NHTSA于10月9日启动缺陷请愿审查，指控Model Y及Cybercab在学校限速区超速，涉约1,000辆并附视频证据，目前非正式调查或召回；②Austin街头Cybercab越来越多见，已超300辆注册、30天约8倍；③Terafactory产出价值将跻身全球前20大经济体；④美取消电补一年后Tesla仍占约半壁；⑤Starlink 15-25今晚发射、CRS-35将执行；⑥波兰Starlink纵火案有进展；⑦Elon中期选举捐款达2.76亿美元；⑧Grok Bot购物暴露AI代理安全风险。" />
+
+上述兩則貼文經逐項核實：請願案號、車輛數、影片證據數、Austin 車隊規模皆與一手來源一致；日報第 3–8 項屬次要脈絡，不影響估值判斷，僅列備查。
+
+### 事件四：第二波解讀增量——責任分野與 10-30 大限
+
+觸發貼文是 [M（@Maggie191919，10 月 12 日，734 瀏覽）](https://x.com/Maggie191919/status/2109795677286867211?s=20)轉述富途匯總的評論：三條件框架（安全數據、許可擴張、單位成本），「監管審查不等於認定違法」，提問未來三年最大挑戰是技術還是監管接受速度。
+
+<XPostCard sourceUrl="https://x.com/Maggie191919/status/2109795677286867211?s=20" author="M" handle="Maggie191919" timestamp="2026-10-12T23:57:00+08:00" views="734" postText="$TSLA Robotaxi再次面临监管考验……根据10月12日富途美股新闻汇总，美国监管机构正在关注Tesla Robotaxi涉嫌在学校区域超速的问题……对于 $TSLA 来说，Robotaxi的长期增长逻辑建立在三个关键条件之上。第一，自动驾驶系统必须持续提高安全性，并能够提供可信的运行数据。第二，监管机构必须允许服务从有限区域逐渐扩大到更多城市。第三，车辆运营成本必须足够低，才能形成具有吸引力的商业利润……监管审查并不等于已经认定特斯拉存在违法行为。你认为未来三年 $TSLA Robotaxi最大的挑战，是技术成熟度，还是监管机构对无人驾驶商业化的接受速度？" />
+
+貼文本身是評論，但其引用的 10-12 媒體波確有增量，核實如下表：
+
+| 新增量 | 來源 | 等級 |
+|---|---|---|
+| FSD（Supervised）由車主負責 vs Robotaxi 由 ADS 決定車速、責任歸 Tesla，是本案關鍵法律分野 | [Electrek 10-12](https://electrek.co/2026/10/12/nhtsa-tesla-robotaxi-school-zone-speeding-petition/) | Tier-3 分析 |
+| 2025-06 Austin 發布期超速影片前例；2025-10 FSD 闖紅燈調查＋Mad Max 配置檔案 | 同上 | Tier-2／3 |
+| AQ26002 認證審查 9 月 3 日啟動、21 個問題，Tesla 申請延至 11 月 20 日、NHTSA 只准 30 天→10 月 30 日截止 | [新浪／智通財經 10-12](https://finance.sina.com.cn/stock/hkstock/ggscyd/2026-10-12/doc-iniuytpc8347848.shtml) | Tier-2 |
+| Waymo Austin ISD 約 20 起校車案＋2025 年 12 月自願軟體召回；是請願升級為召回的參照路徑 | [certi.news 10-12](https://certi.news/zh/article/15795) | Tier-3 |
+| 約 1,000 輛是聯邦首個官方車隊估算（社區追蹤僅數十輛活躍車） | [知瀾 10-12](https://www.pic720.com/article/6acce13e8e9f093dc24bdb00) | Tier-3 |
+| 無手動控制車輛聯邦豁免上限 2,500 輛；Musk 稱 2027 年前難有可觀 Cybercab 收入；Wells Fargo 指 Austin 營運品質問題 | [AlphaPilot 10-12](https://www.alphapilot.tech/zh-CN/discover/tesla-s-school-zone-speeding-probe-is-small-the-robotaxi-timeline-is-what-s-at-risk) 引述 | Tier-3 轉述 |
+
+兩處口徑差異已 reconciled：Electrek 稱認證答覆「9 月 30 日到期」，新浪稱「延至 10 月 30 日」，實為原期限＋30 天延期，並無矛盾。AlphaPilot 稱消息公布後股價上漲約 2%，與本站 OHLC（10-12 收跌 1.22%）不一致，不採用其漲幅數字，只採用其估值與時間表框架。
 
 <AdSlot placement="mid" />
 
 ## 進場點分析
 
-技術面以 10-12 OHLC 為準：開 382.61、高 382.70、低 377.58、收 378.03。上檔第一壓力 382.70（10-12 高點，與 10-09 收盤重合），再上是 383.33（10-06 高點）與 Q3 交付日高區；下檔第一支撐 377.58（10-12 低點，跌破則看 375 整數關與 10-08 低點 368.03 一帶）。
+技術面以 10-12 OHLC 為準：開 382.61、高 382.70、低 377.58、收 378.03。上檔第一壓力 382.70（10-12 高點、與 10-09 收盤重合），再上是 383.33（10-06 高點）；下檔第一支撐 377.58（10-12 低點），再下是 375 整數關與 10-08 低點 368.03 一帶；MA20（369.61）與 MA50（356.08）雙雙守住，多頭結構未壞。
 
-基本面錨不變：Q3 交付成立、德國 FSD 待驗（10-08 版）、Cybertruck 推算（本篇）之後，可計價資訊仍然是零——其他車型佔 Q3 總交付 1.7%，就算推算全錯，對合併報表的影響也在小數點後。空手者：375–383 是財報前的擁擠區，無買點；等 10 月 21 日財報把汽車毛利率與 Cybercab 計入方式攤開。持有者：377.58 跌破且三日不回才考慮降倉；加碼條件是財報毛利率超預期或歐洲放行硬數字，而非再一篇車型算術文。
+基本面錨：Q3 交付成立、四事件皆不進計價模型——Cybertruck 佔比 1.7%、事故期望損失為零、請願零傷亡且程序早期。真正的考點按時序排列：10 月 21 日財報（汽車毛利率＋Robotaxi 指引）、10 月 30 日 Cybercab 認證宣誓答覆、2027 年 1 月 DP26010 准駁決定。
+
+| 情境 | 條件 | 動作 |
+|---|---|---|
+| 空手者 | 收復 $383＋財報 Robotaxi 指引不變 | 第一批試探，倉位宜小；375–383 擁擠區無買點 |
+| 持倉者 | 續抱，$375 失守前不動作 | 跌破 MA20 減碼，MA50 為硬停損參考 |
+| 加碼 | DP26010 一月決議駁回＋10-30 認證過關＋重返 $390 | 才考慮加碼，提前加碼等於替監管不確定性付費 |
+| 作廢 | 見下節作廢條件任一成立 | 承認框架破裂，降倉或離場 |
 
 ## 主要風險與否定條件
 
-本節延續 10-07／10-08／10-09 版的風險主線（交付兌現後追高、降價傷毛利、FSD 監管未定、資本開支），新增 Cybertruck 專屬條目。作廢條件：10 月 21 日財報揭露 Cybercab 計入方式、推算基礎改變（本篇 Tier-3 數字即作廢，轉為財報追蹤）；375 整數關帶量跌破且三日不回，本篇區間框架作廢。
+本節延續 10-07／10-08／10-09 版的風險主線（交付兌現後追高、降價傷毛利、FSD 監管未定、資本開支），新增 Cybertruck、事故、請願三組條目。校區超速案的最大風險不是罰款，而是「ADS 連簡單速限都守不住」的敘事一旦成立，會連帶質疑整個無人駕駛合規能力；Waymo 校車案走到自願召回就是前例。但關鍵差異是責任主體：FSD 時代車主可背鍋，Robotaxi 時代每一次超速都是 Tesla 自己的決策，監管容忍度只會更低。
 
 | # | 風險 | 說明 | 否定／觀察點 |
-|---|------|------|--------------|
-| 1 | 推算誤差 | 7,000–8,000 是餘數估算，Cybercab 若計入交付則實際更低 | 財報或官方口徑揭露 Cybercab 計入方式 |
-| 2 | 關聯交易折扣 | SpaceX 等關聯方佔註冊量近兩成，條款未披露，終端需求需打折看 | 關聯採購條款或 2026 年延續數據披露 |
-| 3 | 漲價傷量 | 雙電機版半年內從 59,990 漲到 74,990，需求曲線未知 | Q4 其他車型交付是否繼續探底 |
-| 4 | 低價競品鎖死走量路 | Fathom 28,350 美元 2027 年底交付，平價皮卡市場基本無望 | Fathom 預訂（2027 年初開放）熱度 |
-| 5 | 財報前追高 | 375–383 擁擠區，波動源是 10-21 汽車毛利率 | 財報毛利率低於預期即回吐 |
+|---|---|------|--------------|
+| 1 | Cybertruck 推算誤差 | 7,000–8,000 是餘數估算，Cybercab 若計入交付則實際更低 | 財報揭露 Cybercab 計入方式 |
+| 2 | 關聯交易折扣 | SpaceX 等關聯方佔註冊量近兩成，條款未披露 | 關聯採購條款或 2026 年延續數據 |
+| 3 | 事故責任反轉 | 若證實 ADS 全責且有傷亡，敘事從鈑金升級為監管 | NHTSA SGO 資料庫是否收錄孟菲斯案 |
+| 4 | 事故頻率加速 | 車隊爬坡期碰撞曝光常態化，輿論壓力累積 | 未來 30 天是否出現再一起有照片事故 |
+| 5 | DP26010 升級 | 請願轉為正式缺陷調查，時間表風險實質化 | 2027 年 1 月准駁決定 |
+| 6 | 10-30 認證爆雷 | AQ26002 答覆避重就輕或再申請延期 | 10 月 30 日宣誓答覆內容 |
+| 7 | 財報下修指引 | 汽車毛利率或 Robotaxi 城市／車隊指引轉弱 | 10 月 21 日財報 |
+| 8 | 財報前追高 | 375–383 擁擠區，375 帶量跌破且三日不回即轉弱 | 375／MA20／MA50 三道防線 |
+
+作廢條件（任一成立即推翻本篇事件觀察結論）：NHTSA 將 DP26010 升級為正式調查或認定 ADS 缺陷；10-30 認證答覆爆雷或再延期；財報下修 Robotaxi 指引或揭露 Cybercab 口徑改變推算基礎；股價連兩日收破 $375 且失守 MA20。
 
 ## 分析結論
 
-證據支持三句話：第一，Q3 其他車型 8,295 輛是 Tier-1 硬數字，年減 48%、2021 年以來最低，這個沒得洗；第二，Cybertruck 7,000–8,000 輛是 Tier-3 推算，方向大概率對、精度別指望，Cybercab 是唯一的暗箱；第三，這整件事對 TSLA 估值的權重不到 2%，上一篇的 FSD 框架文和這一篇的車型算術文，市場反應會一樣——不看。需要盯的下一件事只有 10 月 21 日財報：汽車毛利率決定漲價保利潤的故事成不成立，Cybercab 口徑決定這道減法要不要重算。空手者繼續等，持有者拿著 377.58 當停損參考，財報前不加倉。
+證據支持四句話：第一，Q3 其他車型 8,295 輛是 Tier-1 硬數字，年減 48%、2021 年以來最低，Cybertruck 餘數方向大概率對、精度別指望；第二，孟菲斯事故目前只有照片加社群轉述，唯一可驗的是孟菲斯確有測試車在跑，兩案並排的結論是「規模化伴隨剮蹭」；第三，DP26010 是程序最早一步、零傷亡，撼動不了 1.5 兆市值，真正的風險是時間表——監管接受速度比技術成熟度更 binding，技術可靠里程迭代，許可與信任一旦失去以年為單位重建；第四，市場也這麼投票——15.5K 瀏覽的事故貼文與立案消息都只收小黑。空手者繼續等，持有者拿著 377.58／$375 當停損參考，財報前不加倉。下一步監測：10-21 財報、10-30 認證答覆、明年 1 月下旬 DP26010 准駁、Austin 車隊事故期望值。
 
 <Disclosure title="資料限制與作者聲明">
-本報告初稿由 AI 助手（Muse Spark）撰寫，經站方審閱發布。Q3 交付與產量數字來自特斯拉 8-K（Tier-1）；Cybertruck 7,000–8,000 輛為 Electrek 估算（Tier-3），特斯拉未單獨披露；SpaceX 採購來自 S&P 註冊數據經 Bloomberg 報導（Tier-2，2026 年 4 月舊聞）；漲價原因的分析師解讀為貼文轉述（Tier-4）。市值以 3.96B 股沿用數計算。內容為研究筆記，不構成個人化投資建議。
+本報告初稿由 AI 助手（Muse Spark）撰寫，經站方審閱發布。Q3 交付來自特斯拉 8-K（Tier-1）；Cybertruck 餘數為 Electrek 估算（Tier-3）；孟菲斯事故來自單一 X 社群貼文（Tier-4）；DP26010 細節來自二級媒體對 ODI 文件的轉述，原始請願書未逐字取得；第二波解讀（Waymo 前例、200 倍本益比、2027 年表述）為 Tier-3 轉述。市值以 3.96B 股沿用數計算。內容為研究筆記，不構成個人化投資建議。
 </Disclosure>
 
 ## 資料來源
 
 - [Kshsb @Kshsb783142 Cybertruck 長文（2026-10-12）](https://x.com/Kshsb783142/status/2109671506007789903?s=20)
-- [Tesla Q3 2026 Production, Deliveries & Deployments 8-K（2026-10-02）](https://www.stocktitan.net/sec-filings/TSLA/8-k-tesla-inc-reports-material-event-750c0543f755.html)
-- [Electrek: Tesla's 'Other Models' deliveries crash 48%（2026-10-07）](https://electrek.co/2026/10/07/tesla-other-models-deliveries-crash-cybertruck-sales/)
-- [Electrek: Tesla Q3 2026 deliveries slip 2% to 486,532（2026-10-02）](https://electrek.co/2026/10/02/tesla-q3-2026-deliveries-486532/)
+- [Shawn @mylifeonmystyle Cybercab 事故貼文（2026-10-12）](https://x.com/mylifeonmystyle/status/2109620515656581345?s=20)
+- [Shawn X Takeover 2/6（2026-10-12）](https://x.com/mylifeonmystyle/status/2109737139898613797?s=20)
+- [Shawn Elon系日报 20261012（2026-10-12）](https://x.com/mylifeonmystyle/status/2109788375599272332?s=20)
+- [M @Maggie191919 富途匯總評論（2026-10-12）](https://x.com/Maggie191919/status/2109795677286867211?s=20)
+- [Tesla Q3 2026 Production & Deliveries 8-K（2026-10-02）](https://www.stocktitan.net/sec-filings/TSLA/8-k-tesla-inc-reports-material-event-750c0543f755.html)
+- [Electrek: Other Models deliveries crash 48%（2026-10-07）](https://electrek.co/2026/10/07/tesla-other-models-deliveries-crash-cybertruck-sales/)
 - [Reuters: Tesla raises prices on two Cybertruck trims（2026-08-25）](https://www.reuters.com/business/autos-transportation/tesla-raises-prices-cybertrucks-us-2026-08-25/)
-- [Electrek: Tesla raises Cybertruck prices by $5,000 despite abysmal demand（2026-08-25）](https://electrek.co/2026/08/25/tesla-cybertruck-price-increase-5000-demand/)
-- [TTNews/Bloomberg: SpaceX Buying Spree Inflates Tesla Cybertruck Sales（2026-04-16）](https://www.ttnews.com/articles/spacex-buy-tesla-cybertruck)
-- [Ars Technica: Ford picks Fathom, starts at $28,350（2026-08-06）](https://arstechnica.com/cars/2026/08/ford-picks-fathom-for-its-affordable-truck-name-starts-at-28350/)
+- [TTNews/Bloomberg: SpaceX Buying Spree（2026-04-16）](https://www.ttnews.com/articles/spacex-buy-tesla-cybertruck)
+- [Ars Technica: Ford Fathom $28,350（2026-08-06）](https://arstechnica.com/cars/2026/08/ford-picks-fathom-for-its-affordable-truck-name-starts-at-28350/)
+- [Electrek: Cybercab loses door panel in Philadelphia crash（2026-10-07）](https://electrek.co/2026/10/07/tesla-cybercab-crash-philadelphia-door-panel/)
+- [Not a Tesla App: Cybercab rear-ended first incident（2026-05-13）](https://www.notateslaapp.com/news/4141/tesla-cybercab-rear-ended-in-first-known-public-road-incident)
+- [Electrek: NHTSA weighs probe into school-zone speeding（2026-10-12）](https://electrek.co/2026/10/12/nhtsa-tesla-robotaxi-school-zone-speeding-petition/)
+- [Quartz: NHTSA Tesla Robotaxi speeding school zones（2026-10-12）](https://qz.com/nhtsa-tesla-robotaxi-speeding-school-zones-101226)
+- [Road & Track: school-zone speeding allegation（2026-10-12）](https://www.roadandtrack.com/news/a74108053/tesla-robotaxi-nhtsa-school-zone-speeding-allegation/)
+- [Elon Musk Archive: X Takeover 訪談逐字稿（2026-10-10）](https://elonmuskarchive.org/video/elon-musk-what-comes-next-for-humanity-2026-10)
+- [All Things Elon: 300 Cybercabs Austin（2026-10-11）](https://www.allthings-elon.com/articles/tesla-robotaxi-300-cybercabs-austin-scale-2026-10-11)
+- [AlphaPilot: 校区超速调查与 Robotaxi 时间表（2026-10-12）](https://www.alphapilot.tech/zh-CN/discover/tesla-s-school-zone-speeding-probe-is-small-the-robotaxi-timeline-is-what-s-at-risk)
+- [新浪財經／智通財經：Robotaxi再遇監管考驗（2026-10-12）](https://finance.sina.com.cn/stock/hkstock/ggscyd/2026-10-12/doc-iniuytpc8347848.shtml)
+- [certi.news: NHTSA 考慮調查校區超速（2026-10-12）](https://certi.news/zh/article/15795)
+- [知瀾：NHTSA 立案审查涉千辆车队（2026-10-12）](https://www.pic720.com/article/6acce13e8e9f093dc24bdb00)

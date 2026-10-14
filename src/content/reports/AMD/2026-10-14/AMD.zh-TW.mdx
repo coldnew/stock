@@ -10,9 +10,10 @@ tags:
   - Fermi
   - TensorWave
   - credit-support
+  - CPU推理
 locale: zh-TW
-title: "AMD替Fermi機房信用兜底：AI信用鏈第二單，10月31日見分曉"
-description: "2026-10-14事件版：查核AMD為Fermi 222MW租約信用支持、65億租約含金量、7月CORZ前例與進場紀律。"
+title: "AMD信用兜底Fermi＋CPU推理無純標的論：信用鏈第二單，10月31日見分曉"
+description: "2026-10-14事件版：AMD為Fermi 222MW租約信用支持、65億租約含金量、CPU推理框架查核與進場紀律。"
 ---
 
 import AdSlot from '../../../../components/report/AdSlot.astro';
@@ -55,6 +56,14 @@ import XPostCard from '../../../../components/report/XPostCard.astro';
 | 7 月 CORZ 類似合作 | 官方 PR＋路透＋8-K（信用支持＋股權證） | Tier-1 成立 |
 | AMD 淨現金 88 億（評論區） | [Q2 財報](https://ir.amd.com/news-events/press-releases/detail/1295/amd-reports-second-quarter-2026-financial-results)實算約 99 億——方向成立、數字略低 | Tier-1 修正 |
 
+<strong>第二事件（同日併入）：</strong>Kshsb 回覆體框架文，被問「$ARM、$INTC 還是 $AMD」哪個是 CPU 推理標的，答案是三個都不是純標的、現在還太早（約 194 觀看，純觀點＋框架，低觸及但作者有供應鏈 track record 且關鍵數字可驗）。
+
+<XPostCard author="Kshsb" handle="@Kshsb783142" timestamp="2026-10-14" sourceUrl="https://x.com/Kshsb783142/status/2110264773124448530?s=20" avatar="https://pbs.twimg.com/profile_images/2066938357947731968/I9ZC-xAX_normal.jpg" views="約 194" postText="这个问题问得很好，说实话我也没有一个标准答案。 先说我模糊的地方。英伟达自己在推理市场也不是没有布局，它投了Groq，又投了d-Matrix，两家都是做推理专用芯片的。而且英伟达把它们的架构接进了自己的NVLink Fusion生态，让它们插进英伟达的机架，用英伟达的互联和网络。所以推理这块，英伟达不是没有牌，它是在用投资和生态的方式，把推理赛道也圈进自己的体系里。 这就让CPU这个问题的答案变得更复杂了。 如果单看x86，AMD现在是最直接的受益者。服务器CPU份额在涨，供给缺口摆在英特尔那边，AMD是承接溢出需求最顺的那个。但问题是，CPU的增量需求到底有多大，能持续多久，这件事本身还没有被验证。 英特尔的问题是它自己的，供给只能满足一半，制程还在爬坡，赌它不如赌需求本身。 ARM是架构层的赢家，但你买ARM的股票，买的是IP授权，不是CPU出货量的直接暴露。 所以这三家，严格说没有一个是纯正的CPU推理标的。 我自己的判断是，这个问题之所以难回答，是因为Agentic AI对CPU的拉动，现在还处在一个推演阶段。苏姿丰说2030年CPU市场2000亿，花旗说3000亿，这些数字是模型算出来的，不是已经发生的订单。真正的验证，要看接下来几个季度服务器CPU的出货量和定价。 所以我现在对这个问题，持保留态度。不是不想给答案，是觉得这个问题现在还太早。 $AMD $INTC $ARM $NVDA 免责声明：本文纯属个人观点，不构成任何投资建议。" />
+
+<strong>查核（第二事件）：</strong>[d-Matrix 9-10 官宣接入 NVLink Fusion](https://blogs.nvidia.com/blog/d-matrix-nvlink-fusion/)（NVDA 官方部落格，Tier-1 成立）；[NVDA 擬投資 d-Matrix（The Information 經 DCD，10-09）](https://www.datacenterdynamics.com/en/news/report-nvidia-plans-to-invest-in-inference-chip-startup-d-matrix/)——「計劃中」、金額估值未揭露，半確認；Groq 實為 2025-12 授權＋挖人交易（約 $200 億），非典型股權投資——口徑差異；[蘇姿豐 OCP 昨日喊 2030 CPU TAM 超 $2000 億、50% CAGR、九個月三度上修](https://finance.yahoo.com/technology/ai/articles/amd-ceo-lisa-su-sees-085841033.html)（Yahoo 10-13，Tier-1 成立）；[花旗 $3000 億＋目標價 $575→$800](https://seekingalpha.com/news/4650495-amd-rises-as-citi-ups-price-target-as-firm-sees-cpu-market-hitting-300b-by-2030)（SeekingAlpha 10-06，Tier-2 成立）；[Mercury Q2：AMD 伺服器份額 34.5%、經調整 46.4%，Intel 只能滿足一半訂單](https://www.pulse24media.com/article/intel-cpu-shortage-amd-server-share-gain)（Pulse24Media 09-28 引 Mercury，Tier-2 成立）。
+
+<strong>財經解讀（第二事件）：</strong>作者最誠實的一句是「這些數字是模型算出來的，不是已經發生的訂單」——這正是本篇把 Fermi（訂單能見度）與 CPU TAM（2030 模型）分開處理的原因。Su 的 $2000 億九個月從 600 億三級跳（1200 億在 5 月），樂觀有立場；花旗 $3000 億配 $800 目標價是賣方背書。兩個數字都服務同一個待驗證：接下來幾個季度伺服器 CPU 出貨量與定價。對 AMD 持有人的意義是順序——先看 10-31 交割（本季），再看 EPYC 售罄到年底（下季），2030 模型只是估值天花板的材料。
+
 <AdSlot placement="mid" />
 
 ## 進場點分析
@@ -74,6 +83,8 @@ import XPostCard from '../../../../components/report/XPostCard.astro';
 
 <strong>加碼信號：</strong>租約交割＋建設貸款關閉、擔保額度揭露溫和、650MW 框架轉簽約。<strong>減碼信號：</strong>摜破 50 日線、租約流產、擔保額度大到需要重估 AMD 資產負債表。
 
+<strong>框架註腳：</strong>CPU 推理 TAM（Su $2000 億／花旗 $3000 億）是 2030 估值天花板的材料，不進第一批條件；第一批只看 10-31 交割＋608.18——天花板可以等，交割不能等。
+
 ## 主要風險與否定條件
 
 - 交割風險：租約 10-31 大限剩 18 天，流產則信用支持自動落空，Fermi 回到原點、AMD 白背書。
@@ -81,11 +92,12 @@ import XPostCard from '../../../../components/report/XPostCard.astro';
 - 租客風險：TensorWave 年輕私人 GPU 雲，15 年 65 億租約的付款能力未經周期驗證；下游付不起租金，帳最終落到擔保人頭上——貼文最後一問正是此意。
 - 财務誇大風險：貼文「虧 7 億多」實約 3.5 億；Fermi 7 月另發 $4.31 億可轉債（淨得約 $3.8 億），「沒什麼錢」略誇張——但 10-Q 的持續經營疑慮段是白紙黑字，方向不變。
 - 信用鏈傳染風險：NVDA／Jupiter（放貸端）＋AMD／Fermi（借貸端）同屬「芯片信用前置化」；任一單爆雷，市場會重估整條鏈的或有負債。
+- TAM 推演風險：Su $2000 億九個月三度上修（600→1200→2000 億）、花旗 $3000 億配 $800 目標價——都是模型不是訂單；若接下來兩季伺服器 CPU 出貨或定價轉弱，2030 天花板先下修，EPYC 售罄能否延續到年底是最近的觀測點。
 - 本篇結論的作廢條件：10-31 租約流產，或擔保額度揭露實質侵蝕淨現金，或摜破 50 日線 533.70——出現任一即改判。
 
 ## 分析結論
 
-貼文的鏈條畫得對（AMD 賣卡→TensorWave 租樓→Fermi 借錢→AMD 擔保），數字的毛邊有三處：虧損約誇大一倍、Fermi 7 月其實融了 $4.31 億可轉債、AMD 墊子約 99 億比評論區說的厚。方向成立、數字打折——本篇採信框架、修正數字。信用支持是 AMD 賣更多顯卡的必要成本，不是慈善；10 月 31 日交割是第一個驗收點，建設貸款是第二個。AMD 股價 10-13 先跌後收復，市場用半天時間把「擔保＝風險」改判成「擔保＝訂單能見度」——改判對不對，看 10-31 兌現。$375 式倒數沒有，但 $608 式確認戰有：站上 20 日線＋交割完成，才是第一批的票。
+貼文的鏈條畫得對（AMD 賣卡→TensorWave 租樓→Fermi 借錢→AMD 擔保），數字的毛邊有三處：虧損約誇大一倍、Fermi 7 月其實融了 $4.31 億可轉債、AMD 墊子約 99 億比評論區說的厚。方向成立、數字打折——本篇採信框架、修正數字。信用支持是 AMD 賣更多顯卡的必要成本，不是慈善；10 月 31 日交割是第一個驗收點，建設貸款是第二個。AMD 股價 10-13 先跌後收復，市場用半天時間把「擔保＝風險」改判成「擔保＝訂單能見度」——改判對不對，看 10-31 兌現。$375 式倒數沒有，但 $608 式確認戰有：站上 20 日線＋交割完成，才是第一批的票。Kshsb 的框架文給本篇加了一個時間尺度註腳：Fermi 看的是十幾天後的交割，CPU TAM 看的是 2030 的模型——前者落空傷本季，後者落空傷估值，兩個不互相作廢。同日 Kshsb 一篇 CPU 推理框架文（$AMD 首 tag）結論是「暫無答案」：NVDA 用投資＋NVLink Fusion 把推理賽道圈進體系，x86 單看 AMD 是最直接受益者（Mercury Q2 份額 34.5%），但 CPU 增量需求本身未被驗證——Su 的 2030 年 $2000 億與花旗 $3000 億都是模型不是訂單。本篇採信其「推演階段」定性：Fermi 看的是這一季的訂單能見度，CPU TAM 看的是 2030 的模型，兩個時間尺度不混用。
 
 ## 資料來源
 
@@ -97,7 +109,13 @@ import XPostCard from '../../../../components/report/XPostCard.astro';
 - AMD Q2 財報（2026-08-04）：[131 億現金短投、32 億債](https://ir.amd.com/news-events/press-releases/detail/1295/amd-reports-second-quarter-2026-financial-results)
 - Financial News（2026-10-14）：[Fermi 收 +14.46%／$3.72](https://www.financial-news.co.uk/fermi-shares-jump-14-on-amd-credit-support-deal/)；TIKR 盤中 16%
 - X 貼文：[Alan Chen 10-14 信用鏈分析（含配圖）](https://x.com/alanchen/status/2110180286755402036?s=20)
+- NVDA 官方部落格（Jesse Clayton，2026-09-10）：[d-Matrix 接入 NVLink Fusion](https://blogs.nvidia.com/blog/d-matrix-nvlink-fusion/)
+- DCD 引 The Information（2026-10-09）：[NVDA 擬投資 d-Matrix（計劃中）](https://www.datacenterdynamics.com/en/news/report-nvidia-plans-to-invest-in-inference-chip-startup-d-matrix/)
+- Yahoo（2026-10-13）：[蘇姿豐 OCP：2030 CPU TAM 超 $2000 億、50% CAGR](https://finance.yahoo.com/technology/ai/articles/amd-ceo-lisa-su-sees-085841033.html)
+- SeekingAlpha 引花旗（2026-10-06）：[CPU 市場 $3000 億、目標價 $575→$800](https://seekingalpha.com/news/4650495-amd-rises-as-citi-ups-price-target-as-firm-sees-cpu-market-hitting-300b-by-2030)
+- Pulse24Media 引 Mercury（2026-09-28）：[AMD 伺服器份額 34.5%、Intel 訂單僅能滿足一半](https://www.pulse24media.com/article/intel-cpu-shortage-amd-server-share-gain)
+- X 貼文：[Kshsb 10-14 CPU 推理框架文（$AMD 首 tag，約 194 觀看）](https://x.com/Kshsb783142/status/2110264773124448530?s=20)
 
 <Disclosure title="資料限制與作者揭露">
-本報告初稿由 AI 助手（Muse Spark）撰寫，經站方審閱發布，不構成個人化投資建議。行情為 Yahoo Finance AMD 快照（262 個交易日，dataAsOf 2026-10-13）；市值以 1.63B 股×收盤價估算。Fermi 財務取自 10-Q（Tier-1）；「虧 7 億多」「盤中兩成」等貼文數字已逐項標等級，未證實者不作買賣依據。AMD 擔保金額未揭露前，或有負債規模為未知數。
+本報告初稿由 AI 助手（Muse Spark）撰寫，經站方審閱發布，不構成個人化投資建議。行情為 Yahoo Finance AMD 快照（262 個交易日，dataAsOf 2026-10-13）；市值以 1.63B 股×收盤價估算。Fermi 財務取自 10-Q（Tier-1）；「虧 7 億多」「盤中兩成」等貼文數字已逐項標等級，未證實者不作買賣依據。AMD 擔保金額未揭露前，或有負債規模為未知數。第二事件（Kshsb CPU 推理框架，約 194 觀看）為個人觀點＋框架：Groq 實為授權＋挖人交易（口徑差異）、d-Matrix 投資僅「計劃中」（半確認），Su $2000 億與花旗 $3000 億皆為模型非訂單——只作時間尺度註腳，不作買賣依據。
 </Disclosure>

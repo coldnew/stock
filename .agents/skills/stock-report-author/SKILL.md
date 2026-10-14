@@ -15,11 +15,16 @@ Every new or updated report edition must disclose this in its `Disclosure` compo
 
 ## Before Editing
 
-1. Read the repository `README.md`, `src/content.config.ts`, `scripts/new-report.mjs`, `scripts/publish-report.mjs`, and `scripts/validate-content.mjs` when the workflow or schema is unclear.
-2. Check `git status --short`. Preserve unrelated user changes and work with them.
-3. Inspect the target ticker directory before creating a new date. A new edition must not overwrite an existing snapshot.
-4. For investment claims, obtain current, dated sources before writing. Prefer company investor relations pages, SEC filings, official fund pages, prospectuses, index methodology documents, and other first-party disclosures. Do not invent current price, yield, assets, earnings, valuation, or performance figures.
-5. Treat the requested date as the report's `publishedAt` and `dataAsOf` date only when the source evidence supports that date. State data limitations when a source is older or a scenario is untested.
+1. Run the `date` command to confirm today's date before writing anything. The agent's
+   training-data sense of "today" is unreliable — the shell date is the single source
+   of truth for `publishedAt`, "latest session", and every "as of" claim in the report.
+   Never date an edition from memory; a future-dated `publishedAt` misleads readers
+   about what was knowable when.
+2. Read the repository `README.md`, `src/content.config.ts`, `scripts/new-report.mjs`, `scripts/publish-report.mjs`, and `scripts/validate-content.mjs` when the workflow or schema is unclear.
+3. Check `git status --short`. Preserve unrelated user changes and work with them.
+4. Inspect the target ticker directory before creating a new date. A new edition must not overwrite an existing snapshot.
+5. For investment claims, obtain current, dated sources before writing. Prefer company investor relations pages, SEC filings, official fund pages, prospectuses, index methodology documents, and other first-party disclosures. Do not invent current price, yield, assets, earnings, valuation, or performance figures.
+6. Treat the requested date as the report's `publishedAt` and `dataAsOf` date only when the source evidence supports that date. State data limitations when a source is older or a scenario is untested.
 
 ## Create The Edition
 
@@ -40,6 +45,10 @@ and write the edition. Summarize-then-wait is forbidden. Decide and act:
 - Date logic: new evidence for an already-published edition is always a NEW
   dated edition (never amend in place); `dataAsOf` = latest completed session
   from the market update, `publishedAt` = next date. Update market data first.
+  One edition per ticker per day: same-day increments merge into today's edition
+  in place — never forward-date `publishedAt` into the future to dodge the
+  unique `ticker:publishedAt` constraint. `publishedAt` must never exceed the
+  shell-confirmed today (see Before Editing step 1).
 - A ticker with no existing coverage is NOT a reason to ask: run
   `market:update`, scaffold the new ticker directory, and write the edition.
 - `write` alone means run the FULL release flow: write → publish →

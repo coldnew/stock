@@ -78,4 +78,5 @@ export const reportOnlyTickers = [
   'IONQ',
   'EMXC',
   'FIGS',
+  'SOXX',
 ];

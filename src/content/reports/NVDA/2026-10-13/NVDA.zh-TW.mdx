@@ -1,7 +1,7 @@
 ---
 ticker: NVDA
 publishedAt: 2026-10-13
-dataAsOf: 2026-10-12
+dataAsOf: 2026-10-13
 reportType: equity
 translationKey: nvda-2026-10-13
 status: published
@@ -11,8 +11,8 @@ tags:
   - AI信用鏈
   - 資料中心
 locale: zh-TW
-title: "NVDA 日報：Oracle Jupiter 不可抗力——AI 信用鏈第一個裂縫"
-description: "2026-10-13 日報：NVDA 收 226.32 美元跌 1.29%、三日回吐 4.7%，市值約 5.45 兆；Oracle 新墨西哥 2.45GW 園區發不可抗力通知、180 億美元貸款跌破九折，芯片訂單的信用端開始被定價。"
+title: "NVDA 日報：債市千點利差來襲——AI 信用鏈第二道裂縫"
+description: "2026-10-13 日報：NVDA 收 228.52 美元漲 0.97%、勉強站回 20 日線，市值約 5.51 兆；CoreWeave 債券利差破千點、馬斯克親認建機房極難，信用市場正為 AI 兌現風險定價。"
 ---
 
 import AdSlot from '../../../../components/report/AdSlot.astro';
@@ -22,68 +22,79 @@ import XPostCard from '../../../../components/report/XPostCard.astro';
 
 ## 分析摘要
 
-10 月 12 日[ Street αlpha 貼文](https://x.com/StAlphaResearch/status/2109466299902668893?s=20)（約 7.8K 瀏覽）把 AI 行情拆成一句話：英偉達賺走現金，雲廠商和資料中心營運商借錢買卡，債券投資人把錢借給後者——買半導體股買的是鏈上現金流最好的一環，但這一環的訂單來自另外兩環的借貸能力。而借錢的那一環剛出事：[Oracle 9 月 24 日對新墨西哥 Project Jupiter 園區發出不可抗力通知](https://www.reuters.com/business/oracle-cites-force-majeure-shield-itself-controversial-data-center-bloomberg-2026-09-24/)（Reuters，Tier-1），約 180 億美元銀行貸款在次級市場跌到九折一帶，Oracle 信用風險指標衝上歷史新高。同日 NVDA 收 226.32 美元、跌 1.29%，自 10-07 版收盤三個交易日回吐約 4.7%，首度收破 20 日線。本篇維持事件觀察：需求端（8 月財報 70% 年增指引、Rubin 量產）依然強勁，但訂單的確定性第一次被信用市場打折，估值需要為「電力＋融資」兩個瓶頸留位置。
+10 月 13 日信用市場給 AI 行情開了第二刀：[Alan Chen 貼文](https://x.com/alanchen/status/2110123297866453404?s=20)（約 7.8K 瀏覽）轉述 ZeroHedge——CoreWeave 無擔保債券相對國債利差首次觸及 1,000 個基點，Oracle 相關債券交易表現像深度垃圾債，連 Meta 的 Project Beignet 利差也逼近歷史高位；馬斯克親自回覆承認超級計算資料中心需求雖旺，但「拿到錢跟真正建成是兩回事」，連 SpaceX 的工程團隊都覺得非常難。這是 9 月 24 日 Oracle Jupiter 不可抗力之後，信用鏈的第二個事件：上次是單一園區接不上電，這次是整個 AI 基建融資模型的風險要價上調。同日 NVDA 收 228.52 美元、漲 0.97%，勉強站回 20 日線——股債兩市第一次明顯分歧：債市在定價兌現風險，股市還在等財報。本篇維持事件觀察：需求端（70% 年增指引、Rubin 量產）未動，但馬斯克親口把「交付執行」列為瓶頸，訂單方程式裡電力＋融資之外，再添「建成能力」一項。
 
 ## 行情快照
 
-<strong>行情截止：</strong>2026 年 10 月 12 日（週一）收盤；OHLC 經本站行情源驗證（NVDA.json 273 列至 10-12）。
+<strong>行情截止：</strong>2026 年 10 月 13 日（週二）收盤；OHLC 經本站行情源驗證（NVDA.json 274 列至 10-13）。
 
-<Metrics items={[{ label: "10-12 收盤", value: "226.32 美元（-1.29%）" }, { label: "10-12 區間", value: "224.90 – 228.86" }, { label: "均線位置", value: "MA20 227.50（首度收破）、MA50 222.59（上方約 1.7%）" }, { label: "自 10-07 收盤累計", value: "約 -4.7%（237.47 → 226.32）" }, { label: "年初至今", value: "約 +19.8%（01-02 收 188.85，沿用 10-08 版）" }, { label: "市值（10-12）", value: "約 5.45 兆美元（226.32 × 24.10B 股，股數沿用 10-08 版 CNBC）" }]} />
+<Metrics items={[{ label: "10-13 收盤", value: "228.52 美元（+0.97%）" }, { label: "10-12 區間", value: "223.06 – 228.64" }, { label: "均線位置", value: "MA20 228.32（收復約 0.1%）、MA50 223.03（上方約 2.5%）" }, { label: "距窗口高點", value: "約 -6.1%（10-06 高 243.37）" }, { label: "年初至今", value: "約 +21.0%（01-02 收 188.85，沿用 10-08 版）" }, { label: "市值（10-13）", value: "約 5.51 兆美元（228.52 × 24.10B 股，股數沿用 10-08 版 CNBC）" }]} />
 
-10 月 8 日、9 日、12 日連三黑，從 237.47 跌到 226.32，剛好把 10 月初跳空追高的那批人洗到水面下。技術面只記兩個數字：上檔 228.86（10-12 高點，收復才算止跌），下檔 222.59（50 日線，約 1.7% 距離，失守則本篇框架作廢）。估值錨沿用 10-08 版：財報給的 70% 年增是供給受限口徑，需求更強，但股價預支的是需求兌現，不是供給瓶頸消失。
+10 月 13 日開 224.27、高 228.64、低 223.06、收 228.52，收盤只比 20 日線高約兩毛錢——收復是收復了，屬於最薄的那種。三個數字記位置：上檔 228.86（10-12 高點，仍未實體收復），下檔 223.03（50 日線，約 2.5% 距離），中間 228.32（20 日線，得失只在一根 K 線）。估值錨不變：財報 70% 年增是供給受限口徑，股價預支的是需求兌現，不是瓶頸消失。
 
-<strong>規模視角：</strong>以 5.45 兆美元市值計，10/12 單日振幅 3.96 美元隱含約 950 億美元市值擺動——一個交易日的雜訊就超過 Oracle 整個 Jupiter 園區貸款的五倍。mega-cap 流動性不缺買家，缺的是財報前追價的理由。
+<strong>規模視角：</strong>以 5.51 兆美元市值計，10/13 單日振幅 5.58 美元隱含約 1,345 億美元市值擺動——股權面一天的雜訊，仍超過 Jupiter 整個園區貸款的七倍。mega-cap 流動性不缺買家，缺的是信用裂縫擴散時繼續追價的理由。
 
 ## 每日事件速覽
 
-<strong>事件狀態：</strong>[Street αlpha（@StAlphaResearch）10 月 12 日貼文](https://x.com/StAlphaResearch/status/2109466299902668893?s=20)（約 7.8K 瀏覽，附上週美股週報連結）：核心論點是 AI 鏈的錢流向——英偉達收現金、客戶舉債、債券人買單；Oracle 新墨西哥 2.45GW 園區接不上電、啟動不可抗力，180 億美元貸款跌到九折；結論是芯片不缺，缺的是電、變壓器和願意按面值借錢的人，NVDA 2028 財年 16 到 20 吉瓦指引的確定性隨 Oracle 債券每一美分下跌而下降。
+<strong>事件狀態（一）：</strong>[Street αlpha（@StAlphaResearch）10 月 12 日貼文](https://x.com/StAlphaResearch/status/2109466299902668893?s=20)（約 7.8K 瀏覽）：AI 鏈錢流向是英偉達收現金、客戶舉債、債券人買單；Oracle 新墨西哥 2.45GW 園區接不上電啟動不可抗力，180 億美元貸款跌到九折；芯片不缺，缺的是電、變壓器和願意按面值借錢的人。
 
 <XPostCard author="Street αlpha | Macro & Equities" handle="@StAlphaResearch" timestamp="2026-10-12" sourceUrl="https://x.com/StAlphaResearch/status/2109466299902668893?s=20" views="約 7.8K" postText="这轮AI行情里，钱的流向是这样的：1）英伟达卖芯片赚走了利润和估值。2）云厂商和数据中心运营商借钱买芯片、盖机房，债券投资人把钱借给他们。标志性事件是Oracle因为新墨西哥一个2.45吉瓦的数据中心接不上电，正式启动了合同里的不可抗力条款，它的违约保险成本涨到历史新高，那个项目180亿美元的贷款在二级市场只值九折。芯片不缺，缺的是电、是变压器、是愿意继续按面值借钱的人。对追半导体的散户，我们要明白的核心逻辑是英伟达自己不借钱，但它的客户在借。Oracle的债券每跌一美分，英伟达2028财年那16到20吉瓦里就有一部分订单的确定性在下降。" />
 
-<strong>已確認事實（Tier-1）：</strong>不可抗力通知為真——[Reuters 9 月 24 日報導](https://www.reuters.com/business/oracle-cites-force-majeure-shield-itself-controversial-data-center-bloomberg-2026-09-24/)引 Bloomberg：Oracle 發函給開發商 Blue Owl，目標是 2028 年上線跳票時遞延租金而非退租；[Bloomberg Law 同日報導](https://news.bloomberglaw.com/artificial-intelligence/oracle-cites-force-majeure-to-shield-itself-on-big-data-center)補細節：2.45GW 園區（約供 180 萬戶用電）、若認定電力承諾不可抗力可延三年起租、約 20 家銀行 180 億美元貸款已跌破 90 美分、CNBC 證實函件存在、Oracle 股價當日收跌 3.47%。斷電原因是[輸氣管線 Green Chile 許可被拒、投運推遲到 2027 年 2 月](https://finance.yahoo.com/technology/ai/articles/oracle-triggers-force-majeure-massive-132317477.html)，Bloom 2.46GW 燃料電池微電網的空污許可 11 月 23 日才到期，[ENR 9 月 28 日](https://www.enr.com/articles/63720-oracle-invokes-force-majeure-as-new-mexico-project-jupiter-power-work-faces-hurdles)確認 Oracle 自稱時程不變、STACK 稱三方仍一致。信用風險歷史新高、貸款 89 至 91 美分報價（FT 經 Searchlight 轉述）列 Tier-2，有兩家轉述但源頭單一。
+<strong>事件狀態（二）：</strong>[Alan Chen（@alanchen）10 月 13 日貼文](https://x.com/alanchen/status/2110123297866453404?s=20)（約 7.8K 瀏覽）：ZeroHedge 稱 CoreWeave 無擔保債券利差首次觸及 1,000 基點、Oracle 相關債券像深度垃圾債、Meta Project Beignet 利差逼近歷史高位；馬斯克回覆承認需求雖旺、但建成極難，連 SpaceX 團隊都覺得難；債市追問的是機房何時收錢、收的錢夠不夠覆蓋建設與債務，客戶排隊等算力、債主排隊收利息可以同時發生。
 
-<strong>未確認／待驗證：</strong>貼文的「16 到 20 吉瓦」查無 NVDA 官方出處——[8 月 26 日財報電話會](https://www.druckfin.com/en/articles/nvidia-issues-first-ever-full-year-guide-of-70-growth-while-warning-memory-costs-20260826)給的是 70% 年增（供給受限口徑、需求近 100%）與每吉瓦 400 億美元 Rubin 收入機會，不是吉瓦數指引，列待驗證；10 年期拍賣 5.3% 有買家為真（[財政部官方結果 PDF](https://fiscaldata.treasury.gov/static-data/published-reports/auctions-query/results/R_20261007_2.pdf)：10 月 7 日重開 390 億、得標利率 5.30%、認購比 2.77、2000 年 11 月以來最高殖利率但[評級 STRONG](https://helious.io/auctions/10-year-note)），利率天花板暫穩是真利多不是利空。
+<XPostCard author="Alan Chen" handle="@alanchen" timestamp="2026-10-13" sourceUrl="https://x.com/alanchen/status/2110123297866453404?s=20" views="約 7.8K" postText="AI机房的债券正在被砸，马斯克却补了一句话：连SpaceX这样的工程团队，都觉得把这些东西建起来非常难。ZeroHedge今天发帖称，CoreWeave无担保债券相对美国国债的利差首次触及1000个基点，也就是额外要付约10个百分点的风险溢价。它还形容Oracle的相关债券交易表现像深度垃圾债，连Meta的Project Beignet项目债利差也在逼近纪录高位。马斯克随后回应：超级计算数据中心的需求确实很旺，但拿到钱，和真正建成拥有巨大供电、散热、网络能力的复杂系统，是两件不同的事。他甚至搬出SpaceX的工程能力来作比较，他甚至搬出SpaceX的工程能力来作比较，然后承认：“连我们都觉得非常难。”债市正在追问一个股票市场容易跳过去的问题：你说未来算力需求巨大，我相信；但你的机房什么时候能开始收钱，收的钱够不够覆盖建设成本和债务？" />
 
-<strong>財經解讀：</strong>Jupiter 事件的殺傷力不在 Oracle 一家，而在它示範了「電力許可→租金起付→貸款價格」的傳導鏈：一個園區接不上電，就能讓投資級公司的信用被重定價。NVDA 自身財報極強（Q2 財政 2027 營收 962 億、Rubin 進入量產、採購承諾 2,790 億、[5,000 億融資計畫](https://futurumgroup.com/insights/nvidia-q2-fy-2027-ai-infrastructure-demand-extends-into-fy-2028)），但每一吉瓦都要先過電力與融資兩關——Rubin 每吉瓦 400 億美元是 NVDA 的收入機會，不是客戶已簽的訂單。10-08 版驗的 lab 獲利（需求耐久）與本版的信用裂縫（兌現風險）合起來，才是完整的 AI 訂單方程式。
+<strong>已確認事實（Tier-1／Tier-2）：</strong>Jupiter 不可抗力為真——[Reuters 9 月 24 日](https://www.reuters.com/business/oracle-cites-force-majeure-shield-itself-controversial-data-center-bloomberg-2026-09-24/)引 Bloomberg：Oracle 發函 Blue Owl、目標遞延租金；[Bloomberg Law](https://news.bloomberglaw.com/artificial-intelligence/oracle-cites-force-majeure-to-shield-itself-on-big-data-center)補 2.45GW、可延三年起租、貸款跌破 90 美分；[ENR 9 月 28 日](https://www.enr.com/articles/63720-oracle-invokes-force-majeure-as-new-mexico-project-jupiter-power-work-faces-hurdles)確認管線 2027-02、空污許可 11-23。Oracle 信用惡化有硬數據：[5 年期 CDS 10 月 8 至 9 日達 257 至 261 基點創至少 2009 年來新高、2056 債券殖利率破 8%](https://dagomcapital.com/ai-credit-risk-warning-signs/)（Tier-2）；[6.70% 2056 債券 10 月 8 日殖利率 8.35%、較 30 年期國債高約 275 基點](https://capefearadvisors.substack.com/p/adding-it-up-bridge-work)（TRACE 實盤，Tier-2）；S&P 7 月已砍 Oracle 至 BBB-（Tier-1，經多家轉述）。馬斯克回覆為真——[本人 10 月 13 日親回 ZeroHedge](https://x.com/elonmusk/status/2110122281603326170)：「超級計算資料中心需求確實旺，但拿到錢跟建成擁有巨大供電散熱網絡能力的複雜系統是兩回事」，SpaceX 團隊表述與貼文轉述一致。
+
+<strong>半確認／待驗證：</strong>CoreWeave 利差千點列半確認——ZeroHedge 10 月 13 日首發，[Bitwise 的 André Dragosch 同日獨立轉述 1,000 基點 spread-to-worst、殖利率約 15%](https://blockchain.news/flashnews/coreweave-unsecured-notes-yield-15-hy-market)，且 [10 月 8 日 AI 債券指數中 CoreWeave 利差已達 848 基點居八家之首](https://aistockwire.com/blog/hyperscaler-debt-bond-market-banks-crowding-out-governments-october-2026)，軌跡連貫但皆為二手；Oracle「像深度垃圾債」是修辭——投資級 BBB- 與垃圾有別，方向成立、措辭誇大；Meta Beignet 逼近歷史高位列待驗證——[Meta 真正破紀錄的是 Hyperion 273 億美元債（9 月底跌至 94.4 美分），且利差實際收窄](https://privatecreditprep.com/newsletter/2026-10-06-meta-hyperion-bond)，Beignet 本身無一手數據；貼文「16 到 20 吉瓦」仍查無 NVDA 官方出處，維持待驗證。
+
+<strong>財經解讀：</strong>兩個事件合起來，信用鏈的裂縫從「單點事故」變成「系統要價」：Jupiter 是一座園區接不上電，千點利差是整個 neocloud 融資模型被重定價。馬斯克回覆的價值在於把第三個瓶頸說破——前兩個是電與錢，第三個是建成能力：簽約、借錢、買 GPU 之後，通電、散熱、網絡、按約交付每一步都能吃掉半年，而利息不等人。NVDA 自身財報極強（Q2 財政 2027 營收 962 億、Rubin 量產、採購承諾 2,790 億、[5,000 億融資計畫](https://futurumgroup.com/insights/nvidia-q2-fy-2027-ai-infrastructure-demand-extends-into-fy-2028)），但每一吉瓦都要先過電力、融資、建成三關。10 月 13 日股漲債跌的分歧，歷史上多數時候是債先對——股權面還有財報可以等，債權面每天都要計息。
 
 <AdSlot placement="mid" />
 
 ## 進場點分析
 
-技術面以 10-12 OHLC 為準：開 228.73、高 228.86、低 224.90、收 226.32。三個交易日從 237.47 跌下來，第一個停損區 228.86（10-12 高點，收復前不猜底），真正的多空線是 50 日線 222.59——三個交易日前還在 243 摸高的人，現在離 50 日線只剩約 1.7%，位置比 10-08 版擁擠得多。
+技術面以 10-13 OHLC 為準：開 224.27、高 228.64、低 223.06、收 228.52。20 日線 228.32 算收復，但只高約兩毛錢，10-12 高點 228.86 仍未實體突破——止跌確認以收復 228.86 為準，現在只能算暫停破底。真正的多空線下移到 50 日線 223.03（約 2.5% 距離），10 月初 243 一帶追高的人，目前仍被套約 6%。
 
-基本面錨更新：多頭手裡是 70% 年增指引＋Rubin 量產＋2,790 億採購承諾，空頭手裡是 Jupiter 示範的信用傳導＋記憶體漲價吃毛利（財報已預告 Q4 毛利率探底 71% 至 72%）。11 月下旬財報前，股價走的是「信用事件折價」不是「需求證偽」，兩者下場完全不同：前者跌出買點，後者跌出趨勢。
+基本面錨更新：多頭手裡是 70% 年增指引＋Rubin 量產＋2,790 億採購承諾，空頭手裡從 Jupiter 一條信用傳導變成兩條（園區斷電＋全行業利差走闊），外加馬斯克親證的建成難度＋記憶體漲價吃毛利（Q4 毛利率探底 71% 至 72% 已預告）。11 月下旬財報前，股價走的是「信用事件折價」不是「需求證偽」，兩者下場完全不同：前者跌出買點，後者跌出趨勢。
 
-空手者：226 一帶不接飛刀，等 222.59 一帶守住才建第一批，或等收復 228.86 確認止跌；持有者：222.59 跌破且三日不回才降倉，區間震盪屬信用事件消化；加碼條件只有一個——財報指引上調或 hyperscaler 開支再上修，不是再一則不可抗力。
+空手者：228.86 未收復前不接飛刀，等 223.03 一帶守住建第一批，或等實體站上 228.86 確認止跌；持有者：223.03 跌破且三日不回才降倉，區間震盪屬信用事件消化；加碼條件只有一個——財報指引上調或 hyperscaler 開支再上修，不是再一則利差新高。
 
 ## 主要風險與否定條件
 
-本節延續 10-08 版風險主線（轉述跳票、需求集中度、記憶體漲價水分），新增信用傳導專屬條目。作廢條件更新：50 日線 222.59 帶量跌破且三日不回，或 hyperscaler 下修開支，或 11 月財報指引低於 70% 年增口徑，任一出現即作廢「需求強、等財報」框架。
+本節延續 10-08 版風險主線（轉述跳票、需求集中度、記憶體漲價水分），信用傳導條目擴為兩條。作廢條件更新：50 日線 223.03 帶量跌破且三日不回，或 hyperscaler 下修開支，或 11 月財報指引低於 70% 年增口徑，任一出現即作廢「需求強、等財報」框架。
 
 | # | 風險 | 說明 | 否定／觀察點 |
 |---|------|------|--------------|
-| 1 | 信用傳導擴散 | Jupiter 只是第一個，貸款折價蔓延到其他園區 | 第二個不可抗力或貸款大跌即升級 |
-| 2 | 電力瓶頸坐實 | 管線 2027-02、空污許可 11-23，任一再延 | 許可結果與管線進度是硬時間表 |
-| 3 | 16-20GW 失實 | 貼文吉瓦數無官方出處 | 財報電話會口徑（70% 年增）為準 |
-| 4 | 記憶體吃毛利 | Q4 毛利率探底 71% 至 72% 已預告 | 價格轉嫁進度看下季電話會 |
-| 5 | 轉弱 | 222.59（50 日線）跌破 | 三日不回即作廢本篇框架 |
+| 1 | 信用傳導擴散 | Jupiter 之後利差擴到全行業，neocloud 再融資成本跳升 | 第二個不可抗力或 CoreWeave 付息出問題即升級 |
+| 2 | 建成不及預期 | 馬斯克親證通電散熱網絡極難，上線遞延、收入後移、利息照計 | 園區通電與交付進度是硬時間表 |
+| 3 | 電力瓶頸坐實 | 管線 2027-02、空污許可 11-23，任一再延 | 許可結果與管線進度是硬時間表 |
+| 4 | 16-20GW 失實 | 貼文吉瓦數無官方出處 | 財報電話會口徑（70% 年增）為準 |
+| 5 | 記憶體吃毛利 | Q4 毛利率探底 71% 至 72% 已預告 | 價格轉嫁進度看下季電話會 |
+| 6 | 轉弱 | 223.03（50 日線）跌破 | 三日不回即作廢本篇框架 |
 
 ## 分析結論
 
-Jupiter 不可抗力是 AI 行情第一次為「借錢的那一環」付錢：2.45GW、180 億美元、三年遞延、九折貸款，每一個數字都經 Tier-1 確認，傳導鏈完整。NVDA 三日回吐 4.7%、首度收破 20 日線，是市場為信用風險定價，不是為需求證偽付錢——70% 年增指引與 Rubin 量產仍站在多頭那邊。結論維持事件觀察：空頭的賭注是信用裂縫擴散＋50 日線失守，多頭的賭注是財報指引兌現＋電力許可過關，下一個裁判是 11 月 23 日空污許可、管線進度與 11 月下旬財報。後續監測三件事：第二個 Jupiter 式事件有沒有出現、貸款報價是回升還是續跌、222.59／228.86 區間誰先破。
+Jupiter 是第一道裂縫，千點利差是第二道：前者證明單一園區能讓投資級公司被重定價，後者證明整個 AI 基建融資模型正在被加價，而馬斯克親口承認「拿到錢跟建成是兩回事」，等於把交付執行風險寫進了財報季前的共識。NVDA 10 月 13 日漲 0.97%、勉強站回 20 日線，是股權面在等財報、債權面先動手的標準分歧——歷史經驗裡債多半先對。結論維持事件觀察：空頭的賭注是信用裂縫擴散＋建成遞延，多頭的賭注是財報指引兌現＋電力許可過關，下一個裁判是 11 月 23 日空污許可、管線進度與 11 月下旬財報。後續監測三件事：CoreWeave 利差是回落還是續創高、第二個 Jupiter 式事件有沒有出現、223.03／228.86 區間誰先破。
 
 ## 資料來源
 
-- [Street αlpha 10 月 12 日 AI 信用鏈貼文](https://x.com/StAlphaResearch/status/2109466299902668893?s=20)——事件主體，Tier-4（框架有料、吉瓦數待驗）
+- [Alan Chen 10 月 13 日 AI 機房債市貼文](https://x.com/alanchen/status/2110123297866453404?s=20)——事件二，Tier-4（轉述 ZeroHedge，馬斯克回覆為真）
+- [馬斯克 10 月 13 日回覆 ZeroHedge 原文](https://x.com/elonmusk/status/2110122281603326170)——Tier-1（本人親回，建成難度親證）
+- [Street αlpha 10 月 12 日 AI 信用鏈貼文](https://x.com/StAlphaResearch/status/2109466299902668893?s=20)——事件一，Tier-4（框架有料、吉瓦數待驗）
+- [NextNewsNetwork 10 月 13 日 ZeroHedge 轉述彙整](https://nextnewsnetwork.com/2026/10/13/coreweave-debt-sparks-wall-street-alarm-as-traders-sound-off-on-ai-build-out)——Tier-3（明示未獨立驗證利差數字）
+- [AIStockWire 10 月 11 日 AI 債券指數](https://aistockwire.com/blog/hyperscaler-debt-bond-market-banks-crowding-out-governments-october-2026)——Tier-2（10-08 CoreWeave 848 基點，方法公開）
+- [Dagom Capital 10 月 12 日 AI 信用風險](https://dagomcapital.com/ai-credit-risk-warning-signs/)——Tier-2（Oracle CDS 257 至 261 基點破紀錄）
+- [Cape Fear 10 月 11 日過橋融資分析](https://capefearadvisors.substack.com/p/adding-it-up-bridge-work)——Tier-2（TRACE 實盤，Oracle 2056 債券 8.35%）
+- [Private Credit Prep 10 月 6 日 Meta Hyperion](https://privatecreditprep.com/newsletter/2026-10-06-meta-hyperion-bond)——Tier-2（Beignet 待驗的反證：破紀錄的是 Hyperion）
 - [Reuters 9 月 24 日 Oracle 不可抗力報導](https://www.reuters.com/business/oracle-cites-force-majeure-shield-itself-controversial-data-center-bloomberg-2026-09-24/)——Tier-1（引 Bloomberg，CNBC 證實函件）
 - [Bloomberg Law 9 月 24 日細節報導](https://news.bloomberglaw.com/artificial-intelligence/oracle-cites-force-majeure-to-shield-itself-on-big-data-center)——Tier-1（2.45GW、三年遞延、貸款破 90 美分）
 - [ENR 9 月 28 日工程進度報導](https://www.enr.com/articles/63720-oracle-invokes-force-majeure-as-new-mexico-project-jupiter-power-work-faces-hurdles)——Tier-1（管線、許可時間表）
-- [RealtyToday 9 月 28 日信用影響彙整](https://www.realtytoday.com/articles/114970/20260928/oracles-force-majeure-notice-project-jupiter-puts-rent-timing-play-projects-loans-trade-below.htm)——Tier-2（FT 貸款報價、Google-SpaceX 解約條款側寫）
 - [財政部 10 月 7 日 10 年期拍賣官方結果](https://fiscaldata.treasury.gov/static-data/published-reports/auctions-query/results/R_20261007_2.pdf)——Tier-1（5.30%、認購比 2.77）
 - [NVDA 財政 2027 Q2 財報彙整](https://www.druckfin.com/en/articles/nvidia-issues-first-ever-full-year-guide-of-70-growth-while-warning-memory-costs-20260826)——Tier-2（70% 年增、400 億美元每吉瓦、2,790 億採購承諾）
-- 本站行情源 `public/data/market/NVDA.json`——至 10-12 OHLC，已驗證
-- NVDA 2026-10-08 版——24.10B 股數、01-02 收 188.85、lab 獲利前情
+- 本站行情源 `public/data/market/NVDA.json`——至 10-13 OHLC，已驗證
+- NVDA 2026-10-08 版——24.10B 股數、01-02 收 188.85 前情
 
 <Disclosure title="資料限制與作者聲明">
-本報告初稿由 AI 助手（Muse Spark）撰寫，經站方審閱發布；僅為研究記錄，不構成個人化投資建議。16 到 20 吉瓦為貼文單方說法、查無 NVDA 官方出處，以財報 70% 年增口徑為準；貸款報價與信用風險指標為二手轉述；股數沿用 10-08 版 CNBC 24.10B。市場有風險，決策前請核對一手來源。
+本報告初稿由 AI 助手（Muse Spark）撰寫，經站方審閱發布；僅為研究記錄，不構成個人化投資建議。16 到 20 吉瓦為貼文單方說法、查無 NVDA 官方出處，以財報 70% 年增口徑為準；千點利差為社群首發、雙二手源交叉，列半確認；Oracle「深度垃圾債」為修辭、實際評級 BBB-；Beignet 利差待驗；股數沿用 10-08 版 CNBC 24.10B。市場有風險，決策前請核對一手來源。
 </Disclosure>

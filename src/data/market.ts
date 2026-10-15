@@ -89405,7 +89405,7 @@ export const marketSnapshots: Record<string, MarketSnapshot> = {
         934.0700073242188,
         953.5999755859375,
         929.030029296875,
-        953.19
+        953.1900024414062
       ]
     ]
   },

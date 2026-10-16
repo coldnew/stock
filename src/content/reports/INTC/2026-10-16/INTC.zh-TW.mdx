@@ -1,0 +1,109 @@
+---
+ticker: INTC
+publishedAt: 2026-10-16
+dataAsOf: 2026-10-15
+reportType: equity
+translationKey: intc-2026-10-16
+status: published
+tags:
+  - INTC
+  - Intel
+  - Crescent-Island
+  - D270
+  - AI-推理
+locale: zh-TW
+title: "INTC 更新：D270 推理卡 OCP 亮相，連兩日收破百元關作廢成立"
+description: "2026-10-16 更新：D270 規格逐項核實對上官方口徑，產品可信但股價連兩日收破 100 作廢成立；95–97 整理區保衛戰與新框架。"
+---
+
+import AdSlot from '../../../../components/report/AdSlot.astro';
+import Disclosure from '../../../../components/report/Disclosure.astro';
+import Metrics from '../../../../components/report/Metrics.astro';
+import XPostCard from '../../../../components/report/XPostCard.astro';
+
+## 分析摘要
+
+兩分鐘白話：Intel 在 OCP 峰會上把 Crescent Island 扶正為 GPU D 系列、首款 D270 規格全開——160G 零售卡、ODM 最高 480G、LPDDR5x 頻寬 1.5TB/s、FP8 算力 1.3 PFLOPS，散戶拆解文的每個硬數字都對上了官方口徑，這是 Intel 五年來最可信的一次資料中心 AI 出牌。但股價不領情：10-14 收 98.12、10-15 收 95.37，連兩日收破百元關，[前版](/stock/reports/INTC/2026-10-13/)的作廢條件字面成立，結論改判。本篇為作廢後的新框架：產品是真的、趨勢是壞的——D270 還在送樣、沒有定價沒有出貨日，遠水救不了 95–97 整理區的近火；超大規模業者 ROI 拷問（星展峰會延續線）仍是頭頂的雲。持有者看 95 整數關，空手者不接刀。
+
+## 行情快照
+
+<strong>行情截止：</strong>2026 年 10 月 15 日收盤，Yahoo Finance／CNBC INTC 連續交易日快照（264 個交易日，2025-09-29 起，新增 10-13／10-14／10-15 三根）。
+
+<Metrics items={[{ label: "10-15 收盤", value: "95.37 美元" }, { label: "10-15 區間", value: "90.02 – 96.87" }, { label: "單日漲跌", value: "-2.8%" }, { label: "20 日均線", value: "113.50" }, { label: "50 日均線", value: "103.37" }, { label: "距波段高點", value: "-33.0%" }, { label: "年初至今", value: "+142.2%" }, { label: "市值（10-15）", value: "$5,045億（5.29B 股 × $95.37）" }]} />
+
+作廢成立，而且是字面成立：10-13 收 102.81（還在百元關上）、10-14 收 98.12（首破）、10-15 收 95.37（次破），連兩日收盤低於 100，觸發[前版](/stock/reports/INTC/2026-10-13/)「連兩日收破 100 即改判」的白紙黑字。三個交易日 102.81→95.37 是 -7.2%，低點 90.02 一度灌破 91；收盤 95.37 正好落在前版預告的「09 月整理區上緣約 95–97」裡——支撐區到了，但不是用止穩的方式到的，是用長黑灌進來的。均線全面空頭：收盤低 20 日線 16.0%、低 50 日線 7.7%，YTD 漲幅從 +157% 收斂到 +142.2%，距 06-30 波段高點 142.35 是 -33.0%（前版引用的 06-22 的 140.94 為舊快照口徑，本次以完整 264 日快照為準）。
+
+## 每日事件速覽
+
+<XPostCard author="karminski-牙医" handle="@karminski3" timestamp="2026-10-15" views="約 35,800" sourceUrl="https://x.com/karminski3/status/2110715237397868791?s=20" mediaUrl="https://pbs.twimg.com/media/HUrEK20aQAAubxV?format=webp&name=large" postText="intel 牙膏挤暴了搞了个 480G 的显卡？……intel 终于开窍了, 在今年的OCP峰会上展示了Crescent Island系列新显卡的最新信息: intel D270……官方给到的它的单卡 FP8 浮点性能是 1.3 PFLOPS……我看了一下卡的零售版本其实最大是160G显存, 480G是专门给ODM厂商（HP, DELL等）专供的……都是 LPDDR5x, 能干到 1.5TB/s……给了 1280-bit位宽的显存控制器……而且驱动啥的完全不用担心, vLLM, SGLang, PyTorch 也都做了适配。不过这个卡短板也很明显, 它完全没有类似 NVLink 的卡间高速互联桥, 跨卡只能走 PCIe 5.0……（不过我看有人说定价估计要到2万刀……）" />
+
+<strong>狀態（發稿時）：</strong>事件成立，硬體規格幾乎逐項對上官方與第三方口徑（見下表）；作者自算的 tps 推導與 2 萬美元定價傳聞列為未證實，不入估值。
+
+| 貼文論點 | 核驗結果 | 出處與評級 |
+|---|---|---|
+| OCP 峰會發布、代號 Crescent Island 扶正為 D 系列 | 成立：Intel 10-12 官方新聞稿，OCP Global Summit 當日，D270 打頭陣 | [Intel 官方新聞稿 10-12](https://www.intc.com/news-events/press-releases/detail/1783/intel-accelerates-open-infrastructure-for-the-agentic-ai-era)（Tier-1 一手）、[Tom's Hardware 10-12](https://www.tomshardware.com/tech-industry/artificial-intelligence/intels-crescent-island-ai-accelerator-officially-powers-new-gpu-d-series-products-chip-delivers-1-3-peak-pflops-of-fp8-compute-and-1-5-tb-s-of-memory-bandwidth)（Tier-2） |
+| FP8 1.3 PFLOPS、頻寬 1.5TB/s、350W、PCIe 5.0 風冷 | 成立，官方口徑逐字相符；Xe3P 架構、32 核、256 XMX | [Intel 10-12](https://www.intc.com/news-events/press-releases/detail/1783/intel-accelerates-open-infrastructure-for-the-agentic-ai-era)（Tier-1）、[Phoronix](https://www.phoronix.com/news/Intel-GPU-D-Series)（Tier-2） |
+| 零售 160G、ODM 專供 480G、20 顆粒、1280-bit | 成立：官方免責聲明「Intel 自有卡 160GB、夥伴可做到 480GB」；第三方拆出 20 顆 8GB 與 1280-bit 估算，與貼文完全咬合 | [Intel 產品頁](https://www.intel.com/content/www/us/en/products/details/discrete-gpus/data-center-gpu/d-series.html)（Tier-1）、[NAND Research](https://nand-research.com/intel-gpu-d270-an-inference-first-gpu-for-the-data-center/)（Tier-2） |
+| 無 NVLink 類互聯、跨卡走 PCIe | 成立：官方稱「無需專有網路」；第三方明指多卡推理走 PCIe 5.0、張量並行受考驗 | [Intel 10-12](https://www.intc.com/news-events/press-releases/detail/1783/intel-accelerates-open-infrastructure-for-the-agentic-ai-era)（Tier-1）、[Jon Peddie 10-14](https://www.jonpeddie.com/news/intels-d270-puts-inference-in-ordinary-racks/)（Tier-2） |
+| MXFP4／MXFP8 硬體支援、vLLM 等適配 | 基本成立：第三方確認 FP4 微縮放（MXFP4）到 FP64 全速率；軟體名單有 vLLM、Hugging Face 等，SGLang 未逐項點名 | [NAND Research](https://nand-research.com/intel-gpu-d270-an-inference-first-gpu-for-the-data-center/)（Tier-2）、[StorageReview 10-12](https://www.storagereview.com/news/intel-gpu-d-series-480gb-lpddr5x-1-3-pflops-fp8-350w-pcie-card?amp=)（Tier-2） |
+| 傳聞定價 2 萬美元、自算 tps | 待驗證：官方未公布定價與出貨日（送樣中）；tps 為作者理論推導，無獨立數據 | [Notebookcheck](https://www.notebookcheck.net/Intel-s-new-GPU-packs-up-to-480GB-of-memory-but-skips-3D-graphics.1422369.0.html)（Tier-2，確認未公布定價） |
+
+<AdSlot placement="mid" />
+
+## D270 是什麼：規格可信、定位取巧、缺兩塊拼圖
+
+先給結論：D270 是 Intel 五年來最可信的資料中心 AI 出牌，但它是一張「推理專用、錯位競爭」的牌，不是正面對決輝達的牌。
+
+<strong>可信的三處。</strong>第一，規格不是 PPT：Crescent Island 從 OCP 2025 亮相、Hot Chips 拆矽片，到這次給出頻寬與算力數字，是一年期的連續交付，不是突然變出來的。第二，定位取巧但誠實：LPDDR5X 換 HBM，等於用一半以下的頻寬換近四倍的單卡容量（第三方對比 Gaudi 3 的說法），打的是「塞不進液冷機房的企業推理」這個輝達 HGX 覆蓋不到的縫隙；單卡 300B 參數、八卡破萬億的說法經第三方驗算「有條件成立」（ dense 模型要 480G 卡或 FP4 權重）。第三，短板自己攤開：無專有互聯、多卡走 PCIe，是明牌，作者沒有避談，官方也沒有遮掩。
+
+<strong>缺的兩塊拼圖。</strong>一定價與出貨日都沒公布，客戶只在送樣，營收貢獻時間表是零；二獨立性能數據（tokens／秒、每 token 成本）是零，第三方齊聲要等實測。這意味著 D270 今天只能修復「Intel 在 AI 硬體缺席」的敘事，不能修復任何一季的財報數字——Q3 財報的資料中心營收驗證點維持不變。
+
+<strong>對 INTC 故事的實質影響。</strong>加分項在「CPU＋推理」的同一條線：星展峰會上陳立武說前沿模型公司向他要更多 CPU 做推理編排，D270 補上 GPU 側的推理拼圖，Intel 的推理敘事第一次兩條腿走路。扣分項也在同一條線：星展峰會的「資本約束」沒有被 D270 移動分毫——hyperscaler 的 ROI 拷問針對的是花錢速度，不是缺一張推理卡；且 LPDDR5X 合約價 Q2 單季飆漲約八成（德媒引 TrendForce），480G 版本的成本經濟學要看 DRAM 臉色，而 DRAM 正是這兩週市場最恐慌的東西（[見 MU 版](/stock/reports/MU/2026-10-15/)）。
+
+## 進場點分析
+
+<strong>技術面（截至 10-15，可複算）：</strong>作廢後的第一個戰場就是腳下。10-15 收 95.37，落在前版預告的 09 月整理區上緣 95–97 之內——位置到了，形態是壞的（長黑灌入、非止穩）。紀律按三層寫：守住 95 並收回 98.12（10-14 收）算止穩第一步，收回 100 整數關才算站回作廢線；反壓由近而遠是 98.12、100、102.81（10-13 收）、103.37（50 日線）；有效跌破 95（建議連兩日收盤計）則整理區上緣失守，往 09 月整理區下半與更深回測找支撐，不接刀。
+
+<strong>基本面價格帶（作廢後重設）：</strong>偏多（錨定客戶落地＋D270 送樣轉量產訂單）維持 140–150 減碼帶不變——產品可信度上升，但觸發條件一個沒到；基準（評估潮延續、CPU 續缺、股價在 95–100 震盪）是震盪觀察，不預設多空；偏空（14A 缺陷卡關、hyperscaler 實質砍 capex、95 失守）則轉空方隊列，等待下一輪基本面錨。
+
+<strong>規模視角：</strong>以 10-15 收盤市值約 $5,045億 計，當日 6.85 美元振幅隱含約 $362億 消長；巨型權值、指數級流動性，分批影響小，波動多隨大盤與費半連動——10-15 本就是半導體全面回調日，INTC 的 -2.8% 裡有板塊成分也有破關的自身成分。
+
+| 行動 | 空手者 | 持有者 |
+|---|---|---|
+| 現在（95.37，踩在 95–97 區上緣） | 不接刀，等 95 表態 | 續抱但停損下移到連兩日收破 95 |
+| 收回 98.12 → 100 | 建第一批（作廢線收復確認），停損 95 下方 | 加碼一批，移動停利 |
+| 跌破 95（連兩日收盤計） | 全數等待，轉偏空隊列 | 減半，見偏空情境處理 |
+| 錨定客戶官宣或 D270 量產訂單 | 追第二批 | 續抱至 140 減碼帶 |
+
+<strong>加碼信號：</strong>具名錨定客戶、D270 拿到量產訂單或公布定價出貨日、Q3 資料中心營收超預期。<strong>減碼信號：</strong>連兩日收破 95、hyperscaler 實質下修 capex、14A 風險量產遞延。
+
+## 主要風險與否定條件
+
+- 資本開支風險（延續）：星展峰會的 ROI 拷問未被 D270 移動，hyperscaler 若實質砍 capex，14A 評估轉簽約後延，2026 年底死線跳票。
+- 整理區失守風險：95.37 已踩在 95–97 區上緣，跌破 95 則前版 95–97 的緩衝假設失效，回測更深。
+- D270 兌現風險：送樣無定價無出貨日，若 2026 年底前無量產訂單，「最可信出牌」退化為又一次 PPT；LPDDR5X 漲價侵蝕 480G 版本經濟性。
+- 多卡互聯天花板：無專有 scale-up fabric，大模型多卡推理走 PCIe，第三方已點名這是工程問號，企業大規模部署前需看夥伴伺服器設計如何解。
+- 本篇結論的作廢條件（作廢後重設）：連兩日收破 95 轉偏空；出現 hyperscaler 實質下修 capex 證據轉偏空；反之收回 100 則作廢線收復，框架轉回震盪偏多。
+
+## 分析結論
+
+D270 讓 Intel 的推理故事第一次有了硬體實體，但股價用連兩日收破百元關投票：產品是真的、趨勢是壞的，遠水救不了近火。前版作廢條件字面成立，本篇改判為作廢後觀察：95–97 整理區是新的戰場，守住才有談 D270 的資格，失守則連產品敘事一起打折。本文不做個人化推薦。
+
+## 資料來源
+
+- [Intel 官方新聞稿 10-12：OCP 峰會 D 系列（Tier-1 一手）](https://www.intc.com/news-events/press-releases/detail/1783/intel-accelerates-open-infrastructure-for-the-agentic-ai-era)
+- [Intel 產品頁：D270 規格（Tier-1）](https://www.intel.com/content/www/us/en/products/details/discrete-gpus/data-center-gpu/d-series.html)
+- [Tom's Hardware 10-12：Crescent Island 命名與規格（Tier-2）](https://www.tomshardware.com/tech-industry/artificial-intelligence/intels-crescent-island-ai-accelerator-officially-powers-new-gpu-d-series-products-chip-delivers-1-3-peak-pflops-of-fp8-compute-and-1-5-tb-s-of-memory-bandwidth)
+- [NAND Research：D270 推理優先拆解（Tier-2）](https://nand-research.com/intel-gpu-d270-an-inference-first-gpu-for-the-data-center/)
+- [Jon Peddie 10-14：普通機架推理＋互聯問號（Tier-2）](https://www.jonpeddie.com/news/intels-d270-puts-inference-in-ordinary-racks/)
+- [StorageReview 10-12：480G／夥伴名單／軟體生態（Tier-2）](https://www.storagereview.com/news/intel-gpu-d-series-480gb-lpddr5x-1-3-pflops-fp8-350w-pcie-card?amp=)
+- [Notebookcheck：未公布定價與出貨日（Tier-2）](https://www.notebookcheck.net/Intel-s-new-GPU-packs-up-to-480GB-of-memory-but-skips-3D-graphics.1422369.0.html)
+- [Phoronix：D 系列發布（Tier-2）](https://www.phoronix.com/news/Intel-GPU-D-Series)
+- [CNBC INTC 即時報價（OHLC／股數驗證）](https://www.cnbc.com/quotes/INTC)
+- [本站 INTC 2026-10-13 版（前版作廢線）](/stock/reports/INTC/2026-10-13/)
+- [本站 INTC 2026-09-29 版（前版框架）](/stock/reports/INTC/2026-09-29/)
+- [本站 MU 2026-10-15 版（DRAM 恐慌連動）](/stock/reports/MU/2026-10-15/)
+
+<Disclosure title="資料限制與 AI 撰寫聲明">
+本報告初稿由 AI 助手（Muse Spark）撰寫，經站方審閱發布。行情數據截至 2026-10-15 收盤（Yahoo Finance／CNBC：開 93.61、高 96.87、低 90.02、收 95.37，總股數 5.29B 股，市值約 $5,045億 為收盤價乘股數之計算值；MA20 113.50、MA50 103.37 為本站快照自算）；波段高點 142.35（06-30）以完整 264 日快照為準，前版 140.94（06-22）為舊快照口徑；作廢裁決以 10-14 收 98.12、10-15 收 95.37 連兩日收破 100 為據；D270 規格以 Intel 官方新聞稿與產品頁為準，散戶貼文的 tps 推導與 2 萬美元定價屬未證實、未列入估值；Q3 財報尚未發布。本文為研究筆記，不構成個人化投資建議。
+</Disclosure>

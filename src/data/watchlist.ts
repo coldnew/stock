@@ -79,4 +79,5 @@ export const reportOnlyTickers = [
   'EMXC',
   'FIGS',
   'SOXX',
+  'LEN',
 ];

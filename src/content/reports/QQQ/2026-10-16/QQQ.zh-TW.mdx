@@ -9,10 +9,11 @@ tags:
   - QQQ
   - 威廉指標
   - 超買超賣
+  - 資金面
   - 50日線
 locale: zh-TW
-title: "QQQ 日報：50 日線二度守住，Williams %R 三段實算驗證"
-description: "2026-10-16 日報：QQQ 50 日線二度守住；Williams %R 教學文全數核實，本站實算三段驗證＋當前 -73.5 收復訊號。"
+title: "QQQ 日報：50 日線二度守住，%R 驗證＋資金面長文"
+description: "2026-10-16 日報：QQQ 50 日線二度守住；Williams %R 三段實算驗證；中本麻三資金瓶頸長文核實（JPM罕見miss、500B財團勘誤、CRWV CDS破1100bp）。"
 ---
 
 import AdSlot from '../../../../components/report/AdSlot.astro';
@@ -26,11 +27,13 @@ import XPostCard from '../../../../components/report/XPostCard.astro';
 
 新事件是方法論：[另一面 10 月 16 日貼文](https://x.com/OtherSideBJ/status/2110906069165977997?s=20)（約 9,694 瀏覽）講 Larry Williams 的 Williams %R——超買（-20 上方）說明的是強、不是到頂，真正值得看的是線何時離開極端區。本篇不只核實了他的公式與人物戰績（Tier-1 全數命中），更用本站行情源把他舉的三個 QQQ 例子逐段實算了一遍：4 月 21 天有 17 天超買、5 月 20 天 18 天超買一路漲到 738、7 月底 9 天跌破 -80 後收復——三段全數成立。按他自己的框架，當前讀數（10-14 的 -93.0 收復到 10-15 的 -73.5）正是一個回升訊號；但訊號不等於解除警報，均線壓力仍在，見每日事件速覽。
 
+第二事件是資金面：[中本麻三 10 月 16 日長文](https://x.com/harry03994688/status/2110942076586332338?s=20)（約 1,932 瀏覽）主張瓶頸在錢不在技術——JPM 財報罕見 miss 疊加 CFO 親口承認 AI 敞口「modest but not immune」、NVDA 500B 財團恰證明銀行無法標準化放貸、CRWV CDS 定價合理。核實下來硬核全中且被盤中事件強化（10-15 CDS 衝上 1194.5bp 歷史新高），只有 AVGO 被誤植入財團名單一處勘誤；黃仁勳同日「不需兜底」的反駁列為對沖，見每日事件速覽。
+
 ## 行情快照
 
 <strong>行情截止：</strong>2026 年 10 月 15 日（週四）收盤；OHLC 經本站行情源驗證（QQQ.json 264 列至 10-15）。
 
-<Metrics items={[{ label: "10-15 收盤", value: "728.00 美元（-0.13%）" }, { label: "10-15 區間", value: "715.44 – 729.43" }, { label: "均線位置", value: "MA20 743.10（下方約 2.1%）、MA50 726.87（上方約 0.2%，二度守住）" }, { label: "Williams %R（14）", value: "-73.5（10-14 為 -93.0，收復 -80 上方）" }, { label: "距窗口高點", value: "約 -4.2%（收盤極值 759.66，盤中高 762.86）" }, { label: "規模（10-15）", value: "約 3,460億美元（728.00 × 475.30M 股，股數沿用 09-29 版推算）" }, { label: "本次判斷", value: "事件觀察（50 日線連續兩天守住）" }]} />
+<Metrics items={[{ label: "10-15 收盤", value: "728.00 美元（-0.13%）" }, { label: "10-15 區間", value: "715.44 – 729.43" }, { label: "均線位置", value: "MA20 743.10（下方約 2.1%）、MA50 726.87（上方約 0.2%，二度守住）" }, { label: "Williams %R（14）", value: "-73.5（10-14 為 -93.0，收復 -80 上方）" }, { label: "CRWV 5Y CDS", value: "1194.5bp 歷史新高（10-15 盤中，隱含 5 年違約機率超 60%）" }, { label: "距窗口高點", value: "約 -4.2%（收盤極值 759.66，盤中高 762.86）" }, { label: "規模（10-15）", value: "約 3,460億美元（728.00 × 475.30M 股，股數沿用 09-29 版推算）" }, { label: "本次判斷", value: "事件觀察（50 日線連續兩天守住）" }]} />
 
 10 月 15 日開 718.55、高 729.43、低 715.44、收 728.00。結構上是一根下影線：盤中低點摜破 50 日線 1.6%，收盤收回線上，守住的幅度（1.13 美元、0.16%）比 10-14（2.29 美元）更薄。紀律同步更新：作廢線自 726.66 上移至 726.87（以 10-15 重算）；收復 743.10（20 日線）則警報降級，收破 726.87 則按約定改判減碼。年初至今以 01-02 收 613.12 起算約＋18.7%。
 
@@ -38,7 +41,7 @@ import XPostCard from '../../../../components/report/XPostCard.astro';
 
 ## 每日事件速覽
 
-<strong>事件狀態：</strong>[另一面（@OtherSideBJ）10 月 16 日貼文](https://x.com/OtherSideBJ/status/2110906069165977997?s=20)（約 9,694 瀏覽，附 1 圖）：Larry Williams 戰績（1 萬美元一年做到超 110 萬、紀錄近 40 年無人能破）＋Williams %R 教學——公式只回答收盤價落在最近 14 根 K 線高低區間的什麼位置（最高為 0、最低為 -100），-20 上方只說明貼著近期高位；QQQ 4 月到 5 月底幾乎天天超買、此時賣出等於在 600 多下車看著它漲到 740 多；超買說明強不是到頂，值得看的是線離開極端區的時刻（7 月底跌破 -80 後收復、價格回升）；Length 預設 14，調小更靈敏、調大更平滑。
+<strong>事件狀態（一）：</strong>[另一面（@OtherSideBJ）10 月 16 日貼文](https://x.com/OtherSideBJ/status/2110906069165977997?s=20)（約 9,694 瀏覽，附 1 圖）：Larry Williams 戰績（1 萬美元一年做到超 110 萬、紀錄近 40 年無人能破）＋Williams %R 教學——公式只回答收盤價落在最近 14 根 K 線高低區間的什麼位置（最高為 0、最低為 -100），-20 上方只說明貼著近期高位；QQQ 4 月到 5 月底幾乎天天超買、此時賣出等於在 600 多下車看著它漲到 740 多；超買說明強不是到頂，值得看的是線離開極端區的時刻（7 月底跌破 -80 後收復、價格回升）；Length 預設 14，調小更靈敏、調大更平滑。
 
 <XPostCard author="另一面" handle="@OtherSideBJ" timestamp="2026-10-16" sourceUrl="https://x.com/OtherSideBJ/status/2110906069165977997?s=20" views="約 9,694" mediaUrl="https://pbs.twimg.com/media/HUtsSFNbQAAHT01?format=webp&name=large" postText="世界顶级老交易员 Larry Williams，曾用一年时间把 1 万美元做到了超过 110 万美元。这个纪录至今无人能破。……比如纳指ETF QQQ，从 4 月到 5 月底几乎天天显示“超买”，照着“超买就卖”来做，你会在 600 多美元下车，然后看着它一路涨到 740 多……它只回答一个问题：今天的收盘价，落在最近 14 根K线最高价和最低价之间的什么位置。……所以 -20 上方，只说明收盘价靠近最近三周左右的高位。……“超买”说明的是强，不是到顶。更值得看的，是线什么时候离开这些区域。比如图里 7 月底，%R 跌到 -80 下方，价格也回到近期低位；之后线重新回到 -80 上方，价格也开始回升。……" />
 
@@ -54,13 +57,21 @@ import XPostCard from '../../../../components/report/XPostCard.astro';
 
 <strong>財經解讀：</strong>這篇的價值不在預測，而在給本站紀律加了一個可計算的計時器——按作者自己的框架，當前讀數（10-14 的 -93.0 收復到 10-15 的 -73.5，重返 -80 上方）正是一個回升訊號，與 50 日線二度守住同向。但三個保留：第一，%R 是純價格位置指標，不含成交量，鈍化時（強趨勢中長期貼頂）追高與接刀都危險；第二，訊號需要均線確認，743.10 的 20 日線壓著，反彈第一關還沒過；第三，作者 7 月的例子是 -80 下方待了數天後收復才回升，10-15 只是收復第一天，樣本只有一日。所以用法是：%R 收復列為加分項，不單獨觸發行動——收復 743.10 才是警報降級，跌破 726.87 仍是全退。
 
+<strong>事件狀態（二）：資金瓶頸長文</strong>[中本麻三（@harry03994688）10 月 16 日貼文](https://x.com/harry03994688/status/2110942076586332338?s=20)（約 1,932 瀏覽）：很難相信 AI 到頂——JPM、Wells Fargo 財報談數據中心敞口時非常小心、敞口有限（季報低於預期原因之一）；Hock Tan 瓶頸在錢是對的，銀行沒有 SOP 給數據中心融資，NVDA／AVGO 才自己下場組 500B 財團；金融業無法像 2008 房市那樣標準化放貸，所以理解 $CRWV 的 CDS 定價；neocloud 不碰（高槓桿＋ATM 稀釋）、semis 擁擠無安全邊際（50 倍 PS）；Jevons 存在但需求趕不上台積電造芯速度。
+
+<XPostCard author="中本麻三" handle="@harry03994688" timestamp="2026-10-16" sourceUrl="https://x.com/harry03994688/status/2110942076586332338?s=20" views="約 1,932" postText="我很难相信AI到了顶部。……AVGO CEO hock tan说瓶颈在于资金方面非常有道理。……NVIDIA /AVGO不得不自己下场组建500B的财团来参与。……所以我也能理解 $CRWV 的CDS定价。……对于SEMIS而言，仍然是一个超长的繁荣周期中的一部分，但是这个投资相当拥挤……50倍的PS多么合理……杰文斯悖论存在，但是我们的需求赶不上TSMC造芯片的速度。" />
+
+<strong>核實分級：</strong>JPM 罕見 miss 全 Tier-1（[AP](https://apnews.com/article/jpmorgan-citi-goldman-wells-banks-earnings-bonds-f3e3daf4ebed0e99a744aa7bac5e86ee)：Q3 EPS $5.57 vs 預期 $5.93，近 3 年首次；[CNBC 銀行季報直播](https://www.cnbc.com/2026/10/13/bank-earnings-live-updates.html)：CFO Barnum「敞口 modest 但無人能 immune 於 AI 情緒反轉」、單一發行人集中度管控、擠出效應待觀察）；WFC 需釐清——EPS $1.87（+13%）是 beat，miss 的是營收，Scharf 的槓桿警告（[CNBC](https://www.cnbc.com/2026/10/13/bank-earnings-live-updates.html)）為真，故「季報低於預期」適用 JPM、半適用 WFC；500B 財團存在 Tier-1（[NVDA 官方 IR](https://investor.nvidia.com/news/press-release-details/2026/NVIDIA-Partners-With-Apollo-BlackRock-Blackstone-Brookfield-Goldman-Sachs-and-KKR-to-Establish-AI-Compute-Infrastructure-Financing-Platforms-to-Mobilize-Over-500-Billion-of-Third-Party-Capital/default.aspx)：8 月 10 日 MOU，Apollo／BlackRock／Blackstone／Brookfield／高盛／KKR），但** AVGO 不是締約方**——名單勘誤，且只是 MOU 非承諾基金、NVDA 兜底上限 $125B（[Reuters 10-01 reality check](https://www.reuters.com/legal/transactional/nvidias-bet-that-its-chips-can-finance-ai-boom-gets-wall-street-reality-check-2026-10-01/)：華爾街質疑晶片作長期抵押品），此保留反而強化作者論點；CRWV CDS 理解 Tier-1 且被事件超越（[CNBC 10-15](https://www.cnbc.com/2026/10/15/coreweave-credit-default-swaps-hit-distress-levels-as-investors-sour-on-ai-debt.html)：5Y CDS 盤中 1194.5bp 歷史新高、違約機率超 60%，10-06 才 368bp；[Reuters 10-15](https://money.usnews.com/investing/news/articles/2026-10-15/ai-credit-default-swap-spreads-widen-sharply)：ORCL 288bp、軟銀 424bp 同創新高）；黃仁勳同日在 Stockholm 反駁「不需兜底、資金成本在降」（[TNW 引 Bloomberg](https://thenextweb.com/news/huang-coreweave-backstop-stockholm)）列為對沖；組件 $100B／50x PS、Gemini Flash 3.8、biotech 偏好皆無名無源，列心證不採信。
+
+<strong>財經解讀：</strong>這篇是資金面總閘門的文字版——%R 給的是計時器，這篇給的是天花板：只要 CDS 繼續破頂、銀行繼續「modest」，估值修復就沒有地基。與 WiseInvest 第三反轉條件（hyperscaler capex）是同一枚硬幣的兩面：錢不到位，capex 指引就是空話。用法上，它把「震盪不追 V」的權重再加一分：%R 收復＋50 日線守住是加分，CDS 破頂是減分，兩邊抵銷後仍是事件觀察、不預支反轉。
+
 <AdSlot placement="mid" />
 
 ## 進場點分析
 
 技術面以 10-15 OHLC 為準：開 718.55、高 729.43、低 715.44、收 728.00。位置一次寫清：上壓 743.10（20 日線，約 2.1% 距離，收復即警報降級）、貼線 726.87（50 日線，僅上方 0.2%，連續兩天盤中刺破、收盤收回）、下檔 759.66 高點以來跌幅約 4.2%、%R -73.5（收復 -80 上方第一天）。紀律更新：收破 726.87 全退（10-15 版 726.66 上移 0.21）；收復 743.10 建第一批的條件不變；站上 759.66 追第二批不變。
 
-%R 事件不產生新的進場點，但給貼線操作加了一個刻度：空手者不追高，728 一帶做多等於同時下注 50 日線三度守住＋%R 繼續上行，賠率不對；定期定額者不受影響。收租策略（10-14 版路飞事件）在連續刺破的位置風險不變：崩盤式破線時高位接貨，保證金只保不斷頭。WiseInvest 三窗口（10-15／16 第一窗口）正在兌現中：台積電法說與 PPI 之夜，QQQ 用下影線交了第一張考卷，10-16 收盤是第二張。
+%R 事件不產生新的進場點，但給貼線操作加了一個刻度：空手者不追高，728 一帶做多等於同時下注 50 日線三度守住＋%R 繼續上行，賠率不對；定期定額者不受影響。收租策略（10-14 版路飞事件）在連續刺破的位置風險不變：崩盤式破線時高位接貨，保證金只保不斷頭。WiseInvest 三窗口（10-15／16 第一窗口）正在兌現中：台積電法說與 PPI 之夜，QQQ 用下影線交了第一張考卷，10-16 收盤是第二張。資金面事件把進場的否決權再加一條：CRWV CDS 若繼續破頂（1194.5bp 之上），任何技術收復都先打對折——錢不到位，反彈只有交易價值、沒有持有價值。
 
 ## 主要風險與否定條件
 
@@ -80,10 +91,11 @@ import XPostCard from '../../../../components/report/XPostCard.astro';
 | 10 | 貼線假破 | 盤中刺破後收回，連續消耗多頭保證金 | 10-16 收盤是否三度守住 726.87 |
 | 11 | 反轉誤判（假 V） | 連跌後大漲兩三天再回踩是震盪市標配，大陽線不等於反轉 | 三窗口逐一兌現才加分，不預支；SOXX 517.47 為跨資產確認 |
 | 12 | 指標鈍化誤用 | %R 在強趨勢中長期貼頂（超買）或貼底（超賣），單看數值追高接刀 | %R 重返 -20 上方且收復 743.10 才算多頭收復，缺一不可 |
+| 13 | 信用事件擴散 | CRWV CDS 破頂已外溢至 ORCL（288bp）、軟銀（424bp）同創新高；投資級若跟進，估值天花板再下移 | CDS 曲線＋投資級利差監測；財團 MOU 落地進度 |
 
 ## 分析結論
 
-證據支持六句話：第一，50 日線連續兩天守住（10-14 收盤線上 2.29 美元、10-15 收盤線上 1.13 美元），作廢扳機沒有扣下，但守住的邊際越來越薄；第二，另一面貼文的人物與公式部分全數 Tier-1（11,376% 賽會紀錄近 40 年無人打破、%R 公式與 -20／-80 線三源一致），不是財經雞湯；第三，本站用同一公式實算的三段例子全數成立（4 月 81% 天數超買、5 月 90%、7 月底破 -80 後收復），作者沒有拿特例當通則；第四，按作者自己的框架，當前 -73.5（從 -93.0 收復 -80 上方第一天）是一個回升訊號，與 50 日線守住同向，但只列加分不觸發行動；第五，真正的驗收仍是價格本身——收復 743.10 警報降級，跌破 726.87 全退，%R 只是計時器不是方向盤；第六，WiseInvest 第一窗口（台積電法說＋PPI 之夜）QQQ 用下影線交卷，10-16 收盤看第二張：三度守住則貼線警報降級，失守則按約定改判。下一步監測：10-16 收盤能否三度守住 726.87、%R 能否繼續上行、巨頭財報指引方向。
+證據支持七句話：第一，50 日線連續兩天守住（10-14 收盤線上 2.29 美元、10-15 收盤線上 1.13 美元），作廢扳機沒有扣下，但守住的邊際越來越薄；第二，另一面貼文的人物與公式部分全數 Tier-1（11,376% 賽會紀錄近 40 年無人打破、%R 公式與 -20／-80 線三源一致），不是財經雞湯；第三，本站用同一公式實算的三段例子全數成立（4 月 81% 天數超買、5 月 90%、7 月底破 -80 後收復），作者沒有拿特例當通則；第四，按作者自己的框架，當前 -73.5（從 -93.0 收復 -80 上方第一天）是一個回升訊號，與 50 日線守住同向，但只列加分不觸發行動；第五，真正的驗收仍是價格本身——收復 743.10 警報降級，跌破 726.87 全退，%R 只是計時器不是方向盤；第六，WiseInvest 第一窗口（台積電法說＋PPI 之夜）QQQ 用下影線交卷，10-16 收盤看第二張：三度守住則貼線警報降級，失守則按約定改判。第七，中本麻三資金面長文的硬核（JPM 罕見 miss、Barnum 原話、500B 財團存在、CRWV CDS 破頂）全數 Tier-1，AVGO 誤植一名勘誤，黃仁勳反駁列對沖——資金面是反轉的天花板，CDS 繼續破頂則技術收復打對折。下一步監測：10-16 收盤能否三度守住 726.87、%R 能否繼續上行、巨頭財報指引方向。
 
 ## 資料來源
 
@@ -94,7 +106,13 @@ import XPostCard from '../../../../components/report/XPostCard.astro';
 - [Trading Technologies：%R 文檔（1979 年書籍出處）](https://library.tradingtechnologies.com/trade/analytics/charts/technical-indicators/williams-r-willr/)——Tier-1
 - 本站行情源 `public/data/market/QQQ.json`——至 10-15 OHLC，已驗證（264 列）；%R 與均線均為本站實算
 - [QQQ 2026-10-15 版（本站，Rosenberg＋日曆前情）](/stock/reports/QQQ/2026-10-15/)
+- [中本麻三 10 月 16 日資金瓶頸長文](https://x.com/harry03994688/status/2110942076586332338?s=20)——本篇第二事件，JPM／財團／CDS 硬核 Tier-1，AVGO 誤植一處勘誤
+- [AP：JPMorgan Q3 罕見 miss（$5.57 vs $5.93，近 3 年首次）](https://apnews.com/article/jpmorgan-citi-goldman-wells-banks-earnings-bonds-f3e3daf4ebed0e99a744aa7bac5e86ee)——Tier-1
+- [CNBC 銀行季報直播：Barnum／Scharf／Solomon 原話](https://www.cnbc.com/2026/10/13/bank-earnings-live-updates.html)——Tier-1
+- [NVDA 官方 IR：500B 財團 MOU（締約方無 AVGO）](https://investor.nvidia.com/news/press-release-details/2026/NVIDIA-Partners-With-Apollo-BlackRock-Blackstone-Brookfield-Goldman-Sachs-and-KKR-to-Establish-AI-Compute-Infrastructure-Financing-Platforms-to-Mobilize-Over-500-Billion-of-Third-Party-Capital/default.aspx)——Tier-1＋勘誤依據
+- [CNBC 10-15：CRWV CDS 1194.5bp 歷史新高](https://www.cnbc.com/2026/10/15/coreweave-credit-default-swaps-hit-distress-levels-as-investors-sour-on-ai-debt.html)——Tier-1
+- [Reuters 10-15：ORCL 288bp、軟銀 424bp 同創新高](https://money.usnews.com/investing/news/articles/2026-10-15/ai-credit-default-swap-spreads-widen-sharply)——Tier-1
 
 <Disclosure title="資料限制與作者聲明">
-本報告初稿由 AI 助手（Muse Spark）撰寫，經站方審閱發布；僅為研究記錄，不構成個人化投資建議。Larry Williams 戰績與 %R 公式經三重來源確認 Tier-1；QQQ 三段例子（4 月、5 月、7 月底）為本站用同一公式對行情源逐日重算，%R 與 MA20／MA50 均為自算非引用；當前 -73.5 讀數按作者框架列回升訊號、僅加分不觸發行動；股數沿用 09-29 版推算 475.30M；dataAsOf 為 10-15（10-16 盤進行中）。市場有風險，決策前請核對一手來源。
+本報告初稿由 AI 助手（Muse Spark）撰寫，經站方審閱發布；僅為研究記錄，不構成個人化投資建議。Larry Williams 戰績與 %R 公式經三重來源確認 Tier-1；QQQ 三段例子（4 月、5 月、7 月底）為本站用同一公式對行情源逐日重算，%R 與 MA20／MA50 均為自算非引用；當前 -73.5 讀數按作者框架列回升訊號、僅加分不觸發行動；中本麻三長文硬核（JPM miss、Barnum 原話、500B 財團、CRWV CDS）Tier-1，AVGO 誤植一處勘誤，組件 PS／模型名等無源指控列心證；股數沿用 09-29 版推算 475.30M；dataAsOf 為 10-15（10-16 盤進行中）。市場有風險，決策前請核對一手來源。
 </Disclosure>

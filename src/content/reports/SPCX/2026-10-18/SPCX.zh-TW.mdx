@@ -1,0 +1,157 @@
+---
+ticker: SPCX
+publishedAt: 2026-10-18
+dataAsOf: 2026-10-16
+reportType: equity
+translationKey: spcx-2026-10-18
+status: published
+tags:
+  - SPCX
+  - 合併傳聞
+  - 財報週
+  - 解禁供給
+  - 泡沫對照
+locale: zh-TW
+title: "SPCX 週報：合併傳聞喊到 $420、財報與解禁三日連發，股價先破 MA50"
+description: "2026-10-18 週報（dataAsOf 10-16）：SPCX 收 146.03 跌 1.74%、收破 MA50；Panke 十點合併論與 $420 全股票預測、Kyle 財報週地圖（SPCX 10-20、TSLA 10-21、解禁 10-22）、尼克胡十月泡沫對照。維持事件觀察。"
+---
+
+import AdSlot from '../../../../components/report/AdSlot.astro';
+import Disclosure from '../../../../components/report/Disclosure.astro';
+import Metrics from '../../../../components/report/Metrics.astro';
+import XPostCard from '../../../../components/report/XPostCard.astro';
+
+## 分析摘要
+
+這一週的 SpaceX 有兩條曲線同時走，方向卻相反。價格那條繼續往下：10 月 16 日收 146.03 美元、跌 1.74%，收盤落在 MA20（155.24）與 MA50（148.15）之下，較 10-06 波段高點 176.42 跌約一成七、較 6 月 IPO 高點 225.64 跌約三成五；本站 10-14 版訂下的 160 作廢線，在 10-13（156.54）與 10-14（152.16）已連兩日收破，事件觀察框架正式作廢。敘事那條卻在往上疊：10 月 17 日 [Panke（@spcxGOD）](https://x.com/spcxGOD/status/2111457572939067661?s=20) 用十點「連連看」把合併題材再推一格，並在回覆裡給出全股票收購、每股 420 美元、換股比 2.43 至 3.24（對應 TSLA 355 至 473 美元）的具體預測；同一日 [Kyle Reidhead（@KyleReidhead）](https://x.com/KyleReidhead/status/2111487473973092737?s=20) 把下週的行事曆攤開：週二 SPCX 財報、週三 TSLA 財報、週四最多 13 億股 SPCX 解禁，三個催化劑擠在三個交易日裡。
+
+第三則貼文是不同尺度的提醒。10 月 16 日晚 [尼克胡（@huh62007）](https://x.com/huh62007/status/2111217204456784340?s=20)（約 14.4 萬瀏覽）稱查到 2000 年網路泡沫「也是 10 月一個平凡的週五見頂、花十幾年才回來」，留言區立刻校正：納斯達克真正的頂是 2000 年 3 月 10 日，不是 10 月。三則貼文切入的角度剛好對上三種問題——單一公司的事件（合併傳聞）、產業層級的行事曆（財報與解禁）、系統層級的情緒（泡沫對照）。逐項核實後，本篇的定位不變：合併預測是 Tier-4 個人推演、財報與解禁的日曆是 Tier-1、泡沫對照是情緒指標而非估值輸入；維持事件觀察，不為任何一則貼文追價。
+
+<Metrics
+  dataAsOf="2026-10-16"
+  items={[
+    { label: "收盤（2026-10-16）", value: "$146.03（-1.74%）" },
+    { label: "市值（2026-10-16）", value: "約 $1.98T（13.57B 股）" },
+    { label: "均線位置", value: "MA20 155.24／MA50 148.15，雙線之下" },
+    { label: "本週變動（10-09→10-16）", value: "-10.17%" },
+    { label: "距 ATH 225.64", value: "-35.3%" },
+    { label: "Panke 合併預測", value: "全股票、$420／股，比價 2.43–3.24（Tier-4）" },
+    { label: "SPCX Q3（10-20）", value: "預估營收 $12.9B、EPS $0.11–0.16（Tier-2）" },
+    { label: "TSLA Q3（10-21）", value: "預估營收 $27.79B、EPS $0.43–0.46（Tier-2）" },
+    { label: "解禁（10-22）", value: "最多 1.3B 股，約 $192B、流通量 +45%（Tier-3/4）" },
+    { label: "合併機率", value: "Dan Ives 80%／Polymarket 63%（皆 2027 年底前，Tier-4 轉述）" },
+    { label: "泡沫對照校正", value: "納指頂為 2000-03-10，非 10 月（Tier-1）" },
+  ]}
+/>
+
+## 行情快照
+
+<strong>行情截止：</strong>2026 年 10 月 16 日（週五）收盤——最新已完成交易日；SPCX 上市約四個月，累積 88 個交易日。
+
+10-16 開 147.80、高 147.92、低 142.95、收 146.03，跌 1.74%，全天在平盤下運行、盤中一度下探 142.95。這一根陰線把前兩版的兩個位置一次跌穿：10-14 版訂下的 160 作廢線早在 10-14 就因連兩日收破而成立（10-13 收 156.54、10-14 收 152.16），本週更直接落到 MA20（155.24）與 MA50（148.15）之下——趨勢防線由支撐轉為壓力。以較長視窗看：本週（10-09 收 162.57 至 10-16 收 146.03）跌 10.17%，自 10-06 波段高點 176.42 回落 17.2%，自 6 月 IPO 脈衝高點 225.64 回落 35.3%。以上 OHLC 取自本站行情快照（Yahoo Finance 日線）。
+
+<strong>規模視角：</strong>以收盤 146.03 美元乘上約 13.57B 股（post-Cursor 股本口徑）計，市值約 1.98 兆美元；10-16 單日高低差 4.97 美元，對應約 674 億美元的市值擺動。mega-cap 等級的流動性下，單日 2% 上下的擺動仍屬噪音區間，但意義在於位置——同樣一根 1.74% 的陰線，發生在均線上方是回檔，發生在 MA50 之下就是延續。相對參照：特斯拉 10-16 收 354.72 美元、跌 2.13%，同日收破 MA20（370.33）與 MA50（359.46）；兩家在同一週一起失守中期均線，正是本週「合併敘事升溫、股價同步破位」的完整畫面。
+
+## 每日事件速覽
+
+### 事件一：Panke 的十點合併論與 $420 預測——把 2018 年的價格當成 2026 年的預測
+
+10 月 17 日（週六）[Panke（@spcxGOD）](https://x.com/spcxGOD/status/2111457572939067661?s=20) 發出約 4.65 萬瀏覽的長串，標題就是結論：「SpaceX 下週極可能與特斯拉合併」，並用十個「點」串起論證。其中多數是既有的公開題材（Barclays 的合併報告、Dan Ives 的機率、Terafab 共用晶片廠、特斯拉以 Starlink 定位車輛的專利、馬斯克在 Roadster 直播下留的「Tesla x SpaceX」），真正的新增只有兩處：一是把時間收斂到「下週」，二是給出價格。
+
+<XPostCard author="Panke" handle="@spcxGOD" timestamp="2026-10-17" sourceUrl="https://x.com/spcxGOD/status/2111457572939067661?s=20" views="約 46.5K" postText="Its time to connect the dots on this beautiful Saturday. Highly likely SpaceX will merge with Tesla next week. 1. Elon Musk new interview with Walter Isaacson (his biographer) drops Tuesday, the same day SpaceX reports earnings. Clips are already out and he admits he was gone too long from his companies. 2. Isaacson in yesterday interview tells you not enough people are paying attention that the Roadster is a joint product from Tesla and SpaceX and that this will eventually lead to a merger. 3. Tesla and SpaceX earnings taking place one after another on 20th and 21st of October, only 1 day apart. 4. Elon dropping cryptic hints. 5. Barclays suddenly reporting that Tesla + SpaceX merger could be possible before Tesla annual meeting as soon as 6 December. Pay attention the $SPCX lockups finish on 8 December. 6. JPMorgan after the Roadster reveal. 7. Dan Ives reportedly puts the merger odds at 80% by end of 2027. Polymarket reportedly has it at 63% by end of 2027. 8. One chip fab for both. 9. Tesla just filed a patent to locate its cars with Starlink satellites. 10. Elon quoted the Roadster livestream with just 3 words: 'Tesla x SpaceX'. The dots are all here, its time to connect them." />
+
+價格那一點在回覆裡補齊：他判斷 SpaceX 下週將宣布以每股 420 美元、全股票收購特斯拉，換股比落在 2.43 至 3.24 之間、對應 TSLA 每股 355 至 473 美元，並補一句「他們不會付到最高的 473」。
+
+<XPostCard author="Panke" handle="@spcxGOD" timestamp="2026-10-17" sourceUrl="https://x.com/spcxGOD/status/2111472763617505293?s=20" views="回覆串" postText="I think SpaceX will make an announcement to buy Tesla next week for $420 a share in an all stock deal. This is the same price Elon wanted to take Tesla private years ago. The range is a ratio of 2.43 to 3.24 = $355 to $473 for $TSLA. They won't pay the maximum of $473." />
+
+<strong>驗證結果：論證骨架多半成立、預測本身列 Tier-4。</strong>先說成立的部分。420 美元確是 2018 年馬斯克「funding secured」時的私有化報價，這個數字有出處，是象徵而非估值；換股比的算術也自洽——2.43 × 146.03 = 354.9、3.24 × 146.03 = 473.1，區間與「$355 至 $473」對得上，中間值 2.876 × 146.03 = 420.0，正是他給的目標價。十點裡被引用的事實也大多可溯：Barclays 的合併報告（路徑、換股比與治理數字見本站 [TSLA 2026-10-17 版](/stock/reports/TSLA/2026-10-17/)）、Dan Ives 的機率、Terafab 共用晶圓廠（[Reuters 8-06](https://www.reuters.com/business/media-telecom/spacex-says-terafab-be-built-texas-with-initial-investment-168-billion-2026-08-06/) 已確認 SpaceX 與 Tesla 首期合投 168 億），都是既有公開資訊。
+
+再說要打折扣的部分。第一，「下週宣布」沒有任何一手來源支撐，本質是個人推演；把十條舊聞在週六重新排列，不構成新證據。第二，換股比出現兩個口徑打架——Panke 給 2.43–3.24，而 Barclays 報告與 [Ryan Zurrer（@kukulabanze）](https://x.com/kukulabanze/status/2111508695228702724?s=20) 在另一則討論裡給的是約 0.65 到 0.7，兩者不在同一基準上（一為 SPCX 換 TSLA 的股數比、一為另一種表述），轉述時不可混用。第三，機率數字各家不同：Dan Ives 的 80% 與 Polymarket 的 63% 都是「2027 年底前」，而本站 TSLA 版記錄的 Kalshi 是「3 月前」由 29% 升至 56%——不同市場、不同到期日，不能相加，也不宜並列成一個「共識」。
+
+<strong>財經解讀：</strong>對 SPCX 股東而言，一筆全股票收購特斯拉的算術必須先問方向。若真以約 420 美元、全股票成交，那是把一家 AI 資本開支龐大、自由現金流為負的整車與 AI 事業整批裝進 SpaceX，代價是 SPCX 大規模增發與每股權益稀釋；換股比愈高（2.43–3.24），稀釋愈重。因此合併敘事在特斯拉股東那裡是「溢價」，在 SPCX 股東這裡更接近「增發與承接」。把 420 美元對照特斯拉 10-16 收盤 354.72，隱含溢價約 18.4%——這是收購方的成本，不是收購方的收益。這也是本站一路追蹤的「敘事溢價」的鏡像：題材先讓兩邊股價各自升溫，但帳要先算清楚才知道誰付錢、誰收錢。在條款官宣之前，420 美元只是一個好記的價格，不是估計值。
+
+### 事件二：Kyle Reidhead 的財報週地圖——財報、財報、解禁，三天連發
+
+同一日 [Kyle Reidhead（@KyleReidhead，Milk Road）](https://x.com/KyleReidhead/status/2111487473973092737?s=20)（約 1.97 萬瀏覽）發出的不是預測，而是行事曆：週二（10-20）SPCX 公布 Q3，市場預估營收 129 億美元（Q2 為 78.1 億）、EPS 約 0.11 至 0.16 美元（Q2 為 -0.09）；週三（10-21）TSLA 公布 Q3，預估營收 277.9 億（Q2 為 282.4 億）、EPS 約 0.43 至 0.46（Q2 為 0.33）；週四（10-22）最多 13 億股 SPCX 解禁，市值約 1,920 億美元、相當於把可交易流通量放大約 45%。他並記錄一則傳聞：兩份財報被「趕」在期中考前發布，是為了留出宣布合併的時間。
+
+<XPostCard author="Kyle Reidhead | Milk Road" handle="@KyleReidhead" timestamp="2026-10-17" sourceUrl="https://x.com/KyleReidhead/status/2111487473973092737?s=20" views="約 19.7K" postText="This is a BIG week for Elon and his companies. Tuesday: $SPCX reports Q3 earnings. The Street expects $12.9 billion in revenue (vs $7.81 billion in Q2) and EPS of ~$0.11 to $0.16 (vs -$0.09 in Q2). Wednesday: $TSLA reports Q3 earnings. The Street expects $27.79 billion in revenue (vs $28.24 billion in Q2) and EPS of ~$0.43 to $0.46 (vs $0.33 in Q2). Thursday: up to 1.3 billion SPCX shares unlock, the largest release yet. That's ~$192 billion of stock and would grow the tradable float by ~45%. And then there are rumours that both Q3 earnings are being rushed out to give time for the companies to announce a merge before the mid-terms. Going to be a wild end of the year for these companies!" />
+
+<strong>驗證結果：日曆與預估數字多數可交叉，解禁數字與本站追蹤同源。</strong>SPCX 的 Q3 預估與本站 10-13 版記錄的賣方共識吻合（Fiscal.ai 口徑為營收約 129.8 億、EPS 0.13，透過 Yahoo／Stocktwits 轉述），列 Tier-2 成立；TSLA 的 277.9 億與 EPS 0.43–0.45，與本站 [TSLA 2026-10-17 版](/stock/reports/TSLA/2026-10-17/) 引用的 Zacks 共識（營收約 278 億、EPS 0.43–0.45、30 天內下修 11.91%）一致，列 Tier-2 成立。解禁方面，13 億股與本站招股書衍生追蹤的「財報後最大一批約 13.1 億股」對得上；「財報後第二個完整交易日」正是週四，與 Kyle 的排程一致；192 億美元以約 147.7 美元計、流通量放大 45% 反推原始流通約 29 億股，內部自洽。第三，[Panke 的解禁追蹤](https://tape.panke.app/unlocks)與 [SpaceValued](https://spacevalued.com/spacex-lock-up-expiration-dates) 另載 12 月 8 日為 180 天鎖定結束的終批，與 Panke 正文「lockups finish on 8 December」一致。要打折的是「財報趕發以留合併時間」與「期中考前」這兩句——均為匿名傳聞（前綴是 "there are rumours"），且與 Barclays「可能趕在 12 月 6 日特斯拉股東會前」的窗口相互競爭，兩個時點（11 月初期中考 vs 12 月股東會）不可同時為真，列待驗證。
+
+<strong>財經解讀：</strong>把三天拆開看，性質完全不同。週二財報是基本面驗收——共識要求 SpaceX 單季營收季增約 65%，這個斜率的可持續性比任何合併傳聞都重要；本站的驗收線是 AI 算力單季收入站上 30 億美元與年底 1,000 億 ARR run-rate 目標，Q3 是第一個檢驗點。週四解禁是供給壓力測試——13 億股、約 1,920 億美元的一次性供給，是本季最大的一批；但本站對「解禁即賣壓」的立場不變：10 月 9 日同額度一批已釋出且當天未放量，看 Form 144 與成交量比看日曆更可靠。夾在中間的週三 TSLA 財報則是敘事的蓄水池。真正的風險在於三天連發的疊加：若財報平淡、解禁又逢敘事降溫，兩股力量會互相放大；反之若財報超預期，供給反而可能被需求吸收。這也是本週最需要盯的不是單一數字，而是「基本面兌現」與「供給落地」誰先到。
+
+### 事件三：尼克胡的「十月見頂」——泡沫對照的事實校正
+
+10 月 16 日晚 [尼克胡（@huh62007）](https://x.com/huh62007/status/2111217204456784340?s=20)（約 14.4 萬瀏覽）以一則短貼文引爆討論：他稱查到 2000 年網路泡沫「居然也是 10 月一個平凡的週五見頂」，之後「花了十幾年才重新回來」，直言「感覺有些後怕」。留言區給出的校正很關鍵——[Christine（@Christinei5se）](https://x.com/Christinei5se/status/2111253430143226066?s=20) 指出納斯達克真正的泡沫頂是 2000 年 3 月 10 日，隨後一路跌到 2002 年 10 月、累計回落約 78%，直到 2015 年才重新突破前高。
+
+<XPostCard author="尼克胡｜投资与生活" handle="@huh62007" timestamp="2026-10-16" sourceUrl="https://x.com/huh62007/status/2111217204456784340?s=20" views="約 144.1K" postText="我发现了一个恐怖的事情！我查了一下2000年互联网泡沫是什么时候见顶破裂的。然后发现居然也是10月一个平凡的周五见顶了，然后花了十几年才重新回来，感觉有些后怕。" />
+
+<strong>驗證結果：貼文的事實主張錯誤、留言區的校正正確。</strong>納斯達克綜合指數的歷史高點是 2000 年 3 月 10 日的盤中 5,048.62 點，不是 10 月；其後熊市延續至 2002 年 10 月，最大回撤約 78%，指數直到 2015 年 4 月才重返 5,000 點之上。貼文把月份記成了 10 月，方向（泡沫、長期回撤）對，錨點錯。留言區另兩種立場也值得記錄：[秀一（@xiuyimeigu）](https://x.com/xiuyimeigu/status/2111234164604424472?s=20) 認為這不是股災、而是人工智慧板塊的回調，其他板塊沒有大跌；[美股闲谈（@usstocktalk）](https://x.com/usstocktalk/status/2111227493248110977?s=20) 主張不要拿過去套現在，應先等回調 20%、再看趨勢是否改變。定位上，這是一則情緒指標（Tier-4），校正後的歷史事實（Tier-1）才是可用的。
+
+<strong>財經解讀：</strong>泡沫對照在動能股殺盤時會大量湧現，它的價值是反過來讀市場心理，而不是當成估值模型。用「泡沫論」判 SPCX 破產式回撤，需要一個前提：本體是沒有收入的燒錢故事。但 SPCX 不是——它 2025 年全年營收 186.7 億、年增逾九成，Starlink 已是獲利引擎（Q2 賺 16.6 億營業利益）。所以它的 35% 回撤，性質更接近「高倍數敘事股在利率與風險偏好轉向下的估值壓縮」，而非「沒有盈利的網路公司崩盤」。兩者外型相似（都是動能股的深回撤），體質不同，這是把 2000 年當鏡子時最容易照錯的地方。真正該引用 2000 年的教訓只有一條：當估值提前透支多年盈利時，兌現的速度決定回撤的深度——而這一條，正是週二財報要回答的問題。
+
+<AdSlot placement="mid" />
+
+## 進場點分析
+
+技術面以 10-16 OHLC 為準：開 147.80、高 147.92、低 142.95、收 146.03。作廢框架進入第五版——本週的兩件事把它推得更低：160 作廢線在 10-14 因連兩日收破而成立，本週收盤再落到 MA20（155.24）與 MA50（148.15）之下，中期均線由支撐轉壓力。下檔先看 10-15 低點 140.66（本週低點區），再往下是 8 月 3 日低點 104.83 的更深支撐；上檔壓力依序為 MA50（148.15）、MA20（155.24）與 160 作廢線。均線若無法在未來兩週收復，趨勢定義就由「回檔」改為「下行」。
+
+<strong>規模視角：</strong>以約 1.98 兆美元市值計，10-16 單日 4.97 美元的振幅對應約 674 億美元市值擺動——一天的擺動就超過本週四解禁金額的三分之一。mega-cap 指數級流動性的含義是：同一條均線的意義更多在於機構再平衡的觸發，而非散戶的方向；這也解釋了為什麼一次 13 億股、約 1,920 億美元的解禁，在盤面上可能被 3 兆美元量級的需求與被動資金部分吸收。
+
+基本面錨：以 146.03 美元、約 1.98 兆美元市值，對 FY27 共識營收約 1,065 億美元，市銷率約 18.6 倍——較 10-13 版當時的約 21 倍，因為股價下跌與共識上修而同時鬆了一口氣。Q3 財報的兩道驗收線不變：AI 算力單季收入站上 30 億美元、年底 1,000 億 ARR run-rate。合併敘事對這一組錨的影響是間接的：它會推高波動、但不改變財報數字。
+
+| 情境 | 條件 | 動作 |
+|---|---|---|
+| 空手者 | 已破 MA50，不接刀；等財報給出 AI 收入證據、或收復 MA50 站穩 | 140–148 是破位後的第一個觀察帶，不是價值區；不因 $420 預測追進 |
+| 持倉者 | 破 MA50 已觸發紀律；10-14 作廢成立後應已降部位 | 財報前後再定去留；不因敘事升溫回補 |
+| 加碼 | 僅當財報 AI 收入站上 30 億美元且站回 MA50／160 之上 | 基準是證據與價位，不是貼文 |
+| 作廢（本次空頭判讀） | 收復 MA50（148.15）且站穩兩個交易日、或財報指引超預期且站回 160 | 二者任一成立即推翻本版偏空判讀 |
+
+## 主要風險與否定條件
+
+本節為作廢後風險主線第五版：前一版的「160 作廢線」已成立，本週新增「MA50 失守」與「三日催化劑疊加」兩條。
+
+| # | 風險 | 說明 | 否定／觀察點 |
+|---|---|---|---|
+| 1 | 舊框架作廢 | 160 作廢線 10-14 成立（連兩日收破） | 本條已成立，不再觀察 |
+| 2 | MA50 失守 | 10-16 收 146.03、破 MA50（148.15）與 MA20（155.24），支撐轉壓力 | 能否收復並站穩 148.15 |
+| 3 | 合併證偽 | 任一方否認、或拖過 12-06 股東會無公告，機率回吐帶動溢價回吐 | 公司聲明、董事會文件、顧問委任有無 |
+| 4 | 敘事透支 | Panke $420、Dan Ives 80%、Polymarket 63% 讓溢價前置，反向消息殺傷放大 | 機率是否回落、賣方是否跟進建模 |
+| 5 | 財報×解禁疊加 | 週二財報若平淡、週四 13 億股解禁同時落地，兩股力量互相放大 | 看 Form 144 與成交量，不看日曆 |
+| 6 | 財報不及預期 | 共識要求 Q3 營收季增約 65%，AI 單季收入與 ARR 目標是驗收線 | 30 億美元季營收驗收線、1,000 億 ARR |
+| 7 | 解禁供給懸頂 | 財報後最大批次約 13.1 億股、12-08 終批；但有 10-09 未放量的前例 | 反彈先當減碼窗、不當反轉 |
+| 8 | 換股比不利 | 全股票收購對 SPCX 是增發與承接（2.43–3.24 比愈高稀釋愈重） | 正式條款的換股比與投票權安排 |
+| 9 | 機率口徑混用 | Dan Ives/Polymarket 為 2027 年底前、Kalshi 為 3 月前，數字不可相加 | 以單一市場、單一到期日為準 |
+| 10 | 泡沫情緒外溢 | 2000 年類比在動能股殺盤時放大波動，但 SPCX 有實質營收與獲利引擎 | 區分估值壓縮與無盈利崩盤 |
+| 11 | 大盤系統性風險 | SPCX 與 TSLA 同週破 MA50，個股敘事無法對沖系統性 beta | 科技股與 AI 交易的整體風險偏好 |
+| 12 | 資料口徑限制 | 股本與解禁百分比在不同來源間不一致，市值與稀釋比為本站估算 | 以正式招股書與文件揭露為準 |
+
+作廢條件：收復 MA50（148.15）並站穩兩個交易日；或 Q3 財報 AI 單季收入站上 30 億美元且公司維持年底 1,000 億 ARR 目標、股價站回 160；或合併正式公告且條款對 SPCX 股東有利。反向的作廢延續條件：收破 140.66（10-15 低點）且無基本面或敘事支撐。追蹤清單：10-20 SPCX 財報（AI 收入與 capex、ARR 目標）、10-21 TSLA 財報、10-22 解禁實際賣壓（Form 144／成交量）、12-06 特斯拉股東會與 12-08 鎖定終批、合併條款（換股比與治理）、MA50 是否收復。
+
+## 分析結論
+
+證據支持六句話：第一，SPCX 的技術框架正式進入作廢後階段——10-16 收 146.03、跌 1.74%，收破 MA20 與 MA50，本週跌 10.17%、距 ATH 回落 35.3%；第二，合併敘事卻同步升溫，Panke 用十點舊聞在週六重新排列、給出下週全股票收購每股 420 美元、比價 2.43–3.24 的預測，但該預測無一手來源、列 Tier-4，且換股比與 Barclays／Ryan Zurrer 的 0.65–0.7 口徑打架；第三，420 美元是 2018 年的象徵價、對特斯拉 10-16 收盤隱含約 18.4% 溢價，對 SPCX 股東而言是增發與承接的成本而非收益；第四，Kyle Reidhead 的行事曆把下週排成財報（10-20 SPCX）、財報（10-21 TSLA）、解禁（10-22 最多 13 億股、約 1,920 億美元、流通量 +45%）三天連發，SPCX 與 TSLA 的預估數字均與本站既有共識吻合，唯「財報趕發以留合併時間」為匿名傳聞、且與 Barclays 的 12-06 窗口競爭；第五，尼克胡的「十月見頂」是事實錯誤（納指頂為 2000-03-10），其價值僅在於情緒指標，而 SPCX 有實質營收與獲利引擎，回撤性質更接近估值壓縮而非無盈利崩盤；第六，下一步監測：10-20 財報的 AI 收入與 ARR、10-22 解禁的實際賣壓、以及能否收復 MA50（148.15）與 160。
+
+倉位紀律：破 MA50 已執行降部位，不因 $420 預測或合併升溫回補，也不因泡沫論反手做空——敘事托底與基本面破位讓兩個方向的邊際同時收窄，最可能的路徑是圍繞財報與 MA50 的震盪。等到的證據（財報 AI 收入、解禁量能、合併條款）比等到的預測（$420、下週）更值錢。
+
+<Disclosure title="資料限制與作者聲明">
+本報告初稿由 AI 助手（Muse Spark）撰寫，經站方審閱發布。10-16 OHLC 取自本站行情快照（Yahoo Finance 日線，88 個交易日，截至 2026-10-16）；MA20（155.24）與 MA50（148.15）由收盤序列計算；市值約 1.98 兆美元以 146.03 美元乘約 13.57B 股（post-Cursor 股本口徑，沿用既有版本）估算，股數與解禁百分比在不同來源間不一致，稀釋比為本站推算。事件一：Panke 的合併預測為 Tier-4 個人推演（無一手來源），其中「下週宣布」不可查證、$420 為 2018 年私有化報價、換股比 2.43–3.24 的算術自洽但與 Barclays／Ryan Zurrer 的 0.65–0.7 口徑基準不同，機率數字（Dan Ives 80%／Polymarket 63% 為 2027 年底前、Kalshi 為 3 月前）不可相加；Barclays 報告、Terafab 合投與特斯拉 Starlink 定位專利為既有公開資訊（Tier-1／Tier-2）。事件二：SPCX 與 TSLA 的 Q3 預估與本站既有共識吻合（與 10-13 SPCX 版引述的 Fiscal.ai 口徑、10-17 TSLA 版引述的 Zacks 共識一致，列 Tier-2）；13 億股解禁與本站招股書衍生追蹤的「財報後最大批次約 13.1 億股」同源（Tier-1／Tier-3），192 億美元與 +45% 流通量為 Kyle 的自算（Tier-4），「財報趕發以留合併時間」為匿名傳聞、且與 Barclays 的窗口競爭（待驗證）。事件三：尼克胡的「10 月見頂」為事實錯誤，納斯達克歷史高點為 2000 年 3 月 10 日的盤中 5,048.62 點，最大回撤約 78% 至 2002 年 10 月、約 2015 年 4 月重返 5,000 點之上；留言區校正（Christine）正確，情緒立場（秀一、美股闲谈）為個人意見。本篇寫作期間外部搜尋不可用，合併相關事實以貼文原文與本站既有版本（含其引用的 Barclays、CNBC、Reuters 連結）交叉，未新增外部一手來源。內容為研究筆記，不構成個人化投資建議。
+</Disclosure>
+
+## 資料來源
+
+- [Panke 十點合併論與 $420 預測貼文（2026-10-17）](https://x.com/spcxGOD/status/2111457572939067661?s=20)
+- [Panke 回覆：全股票收購每股 420 美元、比價 2.43–3.24（2026-10-17）](https://x.com/spcxGOD/status/2111472763617505293?s=20)
+- [Kyle Reidhead 財報週地圖（2026-10-17）](https://x.com/KyleReidhead/status/2111487473973092737?s=20)
+- [Ryan Zurrer 回覆：換股比約 0.65（2026-10-17）](https://x.com/kukulabanze/status/2111508695228702724?s=20)
+- [尼克胡「十月見頂」貼文（2026-10-16）](https://x.com/huh62007/status/2111217204456784340?s=20)
+- [Christine 校正：納指頂為 2000-03-10（2026-10-17）](https://x.com/Christinei5se/status/2111253430143226066?s=20)
+- [秀一：AI 板塊回調非股災（2026-10-16）](https://x.com/xiuyimeigu/status/2111234164604424472?s=20)
+- [美股闲谈：不套用過去、等回調 20%（2026-10-17）](https://x.com/usstocktalk/status/2111227493248110977?s=20)
+- [Reuters：SpaceX 與 Tesla 首期 168 億建 TeraFab（2026-08-06）](https://www.reuters.com/business/media-telecom/spacex-says-terafab-be-built-texas-with-initial-investment-168-billion-2026-08-06/)
+- [Panke 解禁追蹤（含 180 天批次明細）](https://tape.panke.app/unlocks)
+- [SpaceValued：SpaceX 解禁日期表（招股書口徑）](https://spacevalued.com/spacex-lock-up-expiration-dates)
+- [本站 SPCX 2026-10-14 版（160 作廢線、解禁時程、Baron／Larry／馬斯克百兆鏈出處）](/stock/reports/SPCX/2026-10-14/)
+- [本站 SPCX 2026-10-13 版（FY27 共識、Pivotal 230、巴西頻譜）](/stock/reports/SPCX/2026-10-13/)
+- [本站 TSLA 2026-10-17 版（Barclays 合併報告、Kalshi 機率、摩根士丹利 SOTP、Zacks 共識）](/stock/reports/TSLA/2026-10-17/)
+- 本站行情快照：public/data/market/SPCX.json（Yahoo Finance 日線，88 個交易日，截至 2026-10-16）

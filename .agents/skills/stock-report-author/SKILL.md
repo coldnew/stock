@@ -201,7 +201,10 @@ Reports are `zh-TW` investment research, so apply the skill with these repo guar
 - **Domain terms are not AI taste.** `閉環` (SpaceX 閉環兌現 / closed-loop execution),
   `護城河`, `安全邊際`, `作廢條件` are legitimate investment vocabulary — do not rewrite them.
   Fix only decorative stacking (三連排比湊數, 空泛三段式) and template scaffolding.
-- **Quoted evidence is untouchable.** Verbatim content inside `XPostCard` / `ThreadsEmbed`
+- Reader-facing clarity: avoid `作廢框架` as a section or metric label; use `技術判讀` or
+  `失效條件` for the current read, and reserve `作廢條件` for explicit invalidation triggers.
+  If a chart is used in `進場點分析`, use the annotated `CandlestickChart` exception with
+  `hideMarketTrend: true` so the page still has exactly one price chart.- **Quoted evidence is untouchable.** Verbatim content inside `XPostCard` / `ThreadsEmbed`
   (including emoji in the original post) is someone else's voice — never polish it.
 - **Priority hits for this repo:** 導覽式開場 (讓我們深入探討/下面我們來拆解),
   協作痕跡 (當然可以/下面是一份/希望這對你有幫助), 知識截止聲明,

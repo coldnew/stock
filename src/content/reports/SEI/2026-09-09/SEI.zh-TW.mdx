@@ -19,7 +19,7 @@ import CandlestickChart from '../../../../components/report/CandlestickChart';
 
 ## 結論先行
 
-2026 年 9 月 8 日 Autopilot 盤後貼文稱 Leopold Aschenbrenner 前持股 Solaris Energy 單日上漲 16.6%，把一檔原本只在能源圈被討論的股票推到 AI 敘事的聚光燈下。先說可驗證的部分：本報告引用的行情序列顯示，SEI 在 9 月 8 日收 63.96 美元，較前一交易日（9 月 4 日收 55.00 美元）上漲約 16.3%，盤中最高 65.26 美元，量級與貼文說法一致，但「前持股」與漲因歸屬仍是社群說法，未經一手文件證實。
+2026 年 9 月 8 日 Autopilot 盤後貼文稱 Leopold Aschenbrenner 前持股 Solaris Energy 單日上漲 16.6%，把一檔原本只在能源圈被討論的股票推到 AI 敘事的聚光燈下。先說可驗證的部分：這份報告引用的行情序列顯示，SEI 在 9 月 8 日收 63.96 美元，較前一交易日（9 月 4 日收 55.00 美元）上漲約 16.3%，盤中最高 65.26 美元，量級與貼文說法一致，但「前持股」與漲因歸屬仍是社群說法，未經一手文件證實。
 
 **投資結論：基本面轉型有實證支撐，但追高前先分清三件事。** 第一，可驗證的利多是真實的：Q2 營收 2.194 億美元創新高、Power Solutions 佔比持續拉高、9 月 2 日收購 Omega 補上 EPC 施工能力、第三季財測上修。第二，估值已不再便宜：以 9 月 8 日收盤價與 8 月初流通股數驗算，市值約 49 億美元，而公司仍背負約 24.9 億美元合併債務，且 2029 年前還有約 38 億美元的電力資本開支計畫。第三，單日 16% 的漲幅主要是情緒與事件疊加（Omega 併購＋名人持股敘事），不是當天出現了新的財報數字。若 66 美元壓力帶不被帶量突破、或後續合約沒有兌現為營收，這類漲幅回吐一半是常態，不代表公司變壞。
 
@@ -43,7 +43,7 @@ import CandlestickChart from '../../../../components/report/CandlestickChart';
 
 ## 先正名：這家 SEI 是誰
 
-同代號混淆是這份報告的第一個坑。經 SEC EDGAR（CIK 0001697500）與公司官網交叉核實：本報告對象是 **Solaris Energy Infrastructure, Inc.，NYSE: SEI**，總部在德州休士頓，前身為 Solaris Oilfield Infrastructure, Inc.，2024 年 9 月更名。它不是 Solana 區塊鏈代幣、不是 SolarEdge（SEDG）、也不是任何同縮寫的金融或生技公司。公司有兩個法定部門：Solaris Power Solutions（發電、配電、電控與 turnkey 電廠）與 Solaris Logistics Solutions（油氣完井耗材的物流設備與服務）。2024 年 9 月收購 Mobile Energy Rentals（MER）是切入分散式電力的起點，2025 年 8 月再併入 HVMVLV 補上高低壓配電能力，2026 年 9 月 2 日的 Omega 則是補上重型土木與 EPC 施工。公司自述 Power Solutions 贡献超過九成的 EBITDA 方向，舊物流業務則退居現金牛角色。創辦人 Bill Zartler 仍任董事長兼共同執行長，2025 年 10 月加入的 Amanda Brock（前 Aris Water Solutions 執行長）出任共同執行長，屬於創辦人主導的經營結構。
+同代號混淆是這份報告的第一個坑。經 SEC EDGAR（CIK 0001697500）與公司官網交叉核實：這份報告對象是 **Solaris Energy Infrastructure, Inc.，NYSE: SEI**，總部在德州休士頓，前身為 Solaris Oilfield Infrastructure, Inc.，2024 年 9 月更名。它不是 Solana 區塊鏈代幣、不是 SolarEdge（SEDG）、也不是任何同縮寫的金融或生技公司。公司有兩個法定部門：Solaris Power Solutions（發電、配電、電控與 turnkey 電廠）與 Solaris Logistics Solutions（油氣完井耗材的物流設備與服務）。2024 年 9 月收購 Mobile Energy Rentals（MER）是切入分散式電力的起點，2025 年 8 月再併入 HVMVLV 補上高低壓配電能力，2026 年 9 月 2 日的 Omega 則是補上重型土木與 EPC 施工。公司自述 Power Solutions 贡献超過九成的 EBITDA 方向，舊物流業務則退居現金牛角色。創辦人 Bill Zartler 仍任董事長兼共同執行長，2025 年 10 月加入的 Amanda Brock（前 Aris Water Solutions 執行長）出任共同執行長，屬於創辦人主導的經營結構。
 
 ## 商業模式與護城河
 
@@ -55,7 +55,7 @@ Solaris 賣的不是電，而是「來不及等電網的電」。資料中心客
 
 2026 年 9 月 1–2 日 The Information 引述知情人士報導，OpenAI 即將推出的 Astra 模型採用「受限的循環深度」（recurrent depth／looped transformer）：同一組 Transformer 層在輸出下一個 token 前對內部狀態多跑幾圈，把一部分計算從可見思維鏈搬進隱藏層激活值。（事實：媒體報導；OpenAI 未發布架構文件，其首席科學家僅公開稱前沿模型的計算圖深度仍在 GPT-4 的兩倍以內）開源側已有同路線先例（ByteDance Ouro、Nanbeige 4.2-3B、Huginn-3.5B），但需注意兩個被簡化的前提：其一，「3.5B 跑出 50B 評分」出自 Huginn 論文，條件是把 test-time 推理預算一路加到等效 50B 參數模型的 FLOPs，不是同等成本打平；其二，共享權重存在轉換損耗（2026 年 iso-depth scaling 研究測得 φ≈0.46），每一輪循環遠換不回一層獨立參數。（事實：公開論文；推論：架構紅利真實但非免費）
 
-對 SEI 的讀數偏正面但只作用在需求側：持續性推理負載有利 behind-the-meter 微電網的出租率與長約續簽，呼應 Power Solutions 的轉型方向。（推論）但不改變本報告的三件事——66 美元壓力仍未突破、約 49 億美元市值已對 2029 年 3.2GW 藍圖提前定價、收費 MW 與 Q3 指引兌現仍是唯一驗證；不追敘事下單的紀律不變。
+對 SEI 的讀數偏正面但只作用在需求側：持續性推理負載有利 behind-the-meter 微電網的出租率與長約續簽，呼應 Power Solutions 的轉型方向。（推論）但不改變這份報告的三件事——66 美元壓力仍未突破、約 49 億美元市值已對 2029 年 3.2GW 藍圖提前定價、收費 MW 與 Q3 指引兌現仍是唯一驗證；不追敘事下單的紀律不變。
 
 （來源：[TechCrunch 轉述 The Information 報導](https://tech.yahoo.com/ai/chatgpt/articles/openai-astra-uses-hidden-reasoning-154630586.html)（2026-09-03）；[Sebastian Raschka 技術解析](https://sebastianraschka.com/blog/2026/openai-astra-looped-transformers.html)（2026-09-02）；[Huginn 深度循環論文](https://arxiv.org/html/2502.05171v2)；皆為 2026-09-09 可得之公開資料）
 
@@ -85,7 +85,7 @@ Q2 2026（截至 6 月 30 日，8 月 5 日新聞稿＋8 月 6 日 10-Q）：總
 - 持有者：以 53 美元為趨勢防守線。收盤跌破 53 美元且三日內收不回，代表突破失效，至少降倉到可安眠的水位；守住則續抱並把 Q3 財報（對照 90–105 百萬美元指引）當作下一驗證點。
 - 加碼：只在兩種情形考慮，一是放量突破 66 美元且後續有新長約公告跟進，二是回測 53 美元出現支撐買盤。單純因為「名人還在談」而加碼，不在條件內。
 - 減碼：觸發任一即執行：跌破 48 美元（9 月初整理下緣）、Q3 指引下修、新增股權融資、或 Omega 出現整合減損跡象。減碼是紀律，不是對公司的道德判斷。
-- 失效觸發總表：技術失效看 48/53 失守；基本面失效看收費 MW 連兩季停滯、三大客戶任一解約或延後上電、淨債務續升而 EBITDA 未跟上。任一發生，本報告的偏正面假說即暫停，等待新的交叉驗證。
+- 失效觸發總表：技術失效看 48/53 失守；基本面失效看收費 MW 連兩季停滯、三大客戶任一解約或延後上電、淨債務續升而 EBITDA 未跟上。任一發生，這份報告的偏正面假說即暫停，等待新的交叉驗證。
 
 ## 結論
 
@@ -102,5 +102,5 @@ SEI 的轉型故事有財報背書：營收、收費 MW、長約覆蓋、財測�
 
 <Disclosure title="資料限制">
 本報告初稿由 AI 助手（Muse Spark）撰寫，經站方審閱發布。
-本報告行情取自倉庫內 SEI.json（資料截止 2026-09-08），財務數字以公司 8 月 5 日新聞稿與 8 月 6 日 10-Q 為準並經工具交叉驗證；Autopilot 貼文與名人持股說法屬社群線索，未經一手文件證實。市值以 8 月 3 日流通股數驗算，9 月 2 日 Omega 案新增約 360 萬股後的即時股數以上市公司後續揭露為準。過去股價與技術圖不代表未來報酬，本報告不做個人化推薦。2026-09-09 新增之 Astra 事件補充係媒體報導與公開論文的整理，OpenAI 未證實架構細節，屬需求側推論，未納入財務預測。
+這份報告行情取自倉庫內 SEI.json（資料截止 2026-09-08），財務數字以公司 8 月 5 日新聞稿與 8 月 6 日 10-Q 為準並經工具交叉驗證；Autopilot 貼文與名人持股說法屬社群線索，未經一手文件證實。市值以 8 月 3 日流通股數驗算，9 月 2 日 Omega 案新增約 360 萬股後的即時股數以上市公司後續揭露為準。過去股價與技術圖不代表未來報酬，這份報告不做個人化推薦。2026-09-09 新增之 Astra 事件補充係媒體報導與公開論文的整理，OpenAI 未證實架構細節，屬需求側推論，未納入財務預測。
 </Disclosure>

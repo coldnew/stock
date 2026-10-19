@@ -172,6 +172,20 @@ Every factual claim that comes from a cited post, filing, article, or dataset MU
 - Key comparisons (before/after, bull/bear, claim-vs-verification) belong in a Markdown table or `Metrics`, not in bullets.
 - Each major section opens with 1–2 prose sentences framing what follows; single-sentence sections followed only by a card are forbidden.
 
+### Human-like voice (not template AI)
+
+Write like a specific analyst who has read the filings and is willing to take a position, not like a neutral summary generator. The report should sound like one person's reasoned judgment, not a template filled in.
+
+- Open each section with the judgment or the fact that matters most, then support it; do not warm up with "本報告將…" or "以下我們來看…".
+- Vary sentence length and paragraph rhythm. Avoid every paragraph starting with the same subject ("本版/本站/市場") or the same verb pattern ("值得注意的是/可以看到/可以看出").
+- Prefer named, dated facts ("台積電 10-16 收 354.72 美元，較 MA50 359.46 低 1.3%") over abstract praise ("股價表現強勁"). If a number is unavailable, say what is missing instead of padding with adjectives.
+- State causality explicitly and once ("因為 X，所以 Y"), rather than stacking three paraphrases of the same point.
+- Keep one idea per paragraph and cut throat-clearing. A paragraph that only restates the previous paragraph's conclusion is a defect.
+- Hedge with evidence, not with adverb stacks: say "若財報 EPS 低於 0.40，本版偏空判讀作廢" instead of "可能/或許/大概率會".
+- Do not manufacture insight by relabeling a fact ("這意味著…/這說明了…") unless the inference adds something the fact alone did not.
+- Read the finished paragraph aloud. If it sounds like a template or a press release, rewrite it in the analyst's own words while keeping every number, source, and 作廢條件 unchanged.
+- Human voice never overrides fidelity: no invented facts, anecdotes, quotes, or causal claims; every figure keeps its `dataAsOf` and source.
+
 ### De-AI Pass (humanizer-zh-next)
 
 After the draft is fact-complete and before publishing, run one de-AI pass with the

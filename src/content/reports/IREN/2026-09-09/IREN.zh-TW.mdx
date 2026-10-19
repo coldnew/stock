@@ -59,7 +59,7 @@ IREN 自稱垂直整合 AI 雲平台，實際由三層堆疊組成。第一層�
 
 2026 年 9 月 1–2 日 The Information 引述知情人士報導，OpenAI 即將推出的 Astra 模型採用「受限的循環深度」（recurrent depth／looped transformer）：同一組 Transformer 層在輸出下一個 token 前對內部狀態多跑幾圈，把一部分計算從可見思維鏈搬進隱藏層激活值。（事實：媒體報導；OpenAI 未發布架構文件，其首席科學家僅公開稱前沿模型的計算圖深度仍在 GPT-4 的兩倍以內）開源側已有同路線先例（ByteDance Ouro、Nanbeige 4.2-3B、Huginn-3.5B），但需注意兩個被簡化的前提：其一，「3.5B 跑出 50B 評分」出自 Huginn 論文，條件是把 test-time 推理預算一路加到等效 50B 參數模型的 FLOPs，不是同等成本打平；其二，共享權重存在轉換損耗（2026 年 iso-depth scaling 研究測得 φ≈0.46），每一輪循環遠換不回一層獨立參數。（事實：公開論文；推論：架構紅利真實但非免費）
 
-對 IREN 的讀數偏正面且直指其護城河定義：本報告把 IREN 定義為「電力與交付執行力公司」，而循環深度普及意味著已上線容量的利用率更有支撐——推理是 24 小時持續負載，40 億美元簽約 ARR 的含金量不在參數量而在開機時數。（推論）但輝達供貨、液冷施工與客戶驗收節奏不變，Horizon 2–4 號仍是唯一驗證點；不改變「不追高、等交付」的結論。
+對 IREN 的讀數偏正面且直指其護城河定義：本報告把 IREN 定義為「電力與交付執行力公司」，而循環深度普及，已上線容量的利用率更有支撐——推理是 24 小時持續負載，40 億美元簽約 ARR 的含金量不在參數量而在開機時數。（推論）但輝達供貨、液冷施工與客戶驗收節奏不變，Horizon 2–4 號仍是唯一驗證點；不改變「不追高、等交付」的結論。
 
 （來源：[TechCrunch 轉述 The Information 報導](https://tech.yahoo.com/ai/chatgpt/articles/openai-astra-uses-hidden-reasoning-154630586.html)（2026-09-03）；[Sebastian Raschka 技術解析](https://sebastianraschka.com/blog/2026/openai-astra-looped-transformers.html)（2026-09-02）；[Huginn 深度循環論文](https://arxiv.org/html/2502.05171v2)；皆為 2026-09-09 可得之公開資料）
 

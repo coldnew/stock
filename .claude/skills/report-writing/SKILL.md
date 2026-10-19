@@ -41,6 +41,7 @@ The agent's job is research, reasoning, prose, citations, and translation qualit
 
 - Before publishing, run one de-AI pass with the `humanizer-zh-next` agent skill (`.agents/skills/humanizer-zh-next/SKILL.md`); the full workflow and repo guardrails live in `.agents/skills/stock-report-author/SKILL.md` ("De-AI Pass" section).
 - `npm run prose:check` blocks template scaffolding (tour-guide openings, collaboration scars, generic-optimism closings, 賦能/抓手-type buzzwords, decorative emoji); quoted posts inside `XPostCard` / `ThreadsEmbed` are exempt. `閉環` is domain vocabulary here, not AI taste.
+- Human-like voice: follow the "Human-like voice (not template AI)" rules in `.agents/skills/stock-report-author/SKILL.md`. Write as a specific analyst with a position; vary rhythm; prefer named, dated facts over abstract praise; state causality once; cut throat-clearing and repeated scaffolding. Human voice never overrides fidelity: no invented facts, anecdotes, quotes, or causal claims, and every figure keeps its `dataAsOf` and source.
 
 ## New report command
 

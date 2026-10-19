@@ -119,7 +119,7 @@ Every publishable zh-TW report needs these sections (exact headings; this replac
 ## 資料來源
 ```
 
-Plus a `Disclosure` component (data limits, AI authorship, no personalized advice) and, for daily/event editions, a `每日事件速覽` section immediately after the market snapshot. Also include sections appropriate to the subject, such as business-model, moat, valuation-band, or product-structure analysis. The conclusion must state what evidence supports the thesis, what could invalidate it (at least one explicit 作廢條件), and what should be monitored next.
+Plus a `Disclosure` component (data limits, AI authorship, no personalized advice) and, for daily/event editions, a `每日事件速覽` section immediately after the market snapshot. Also include sections appropriate to the subject, such as business-model, moat, valuation-band, or product-structure analysis. The conclusion must state what evidence supports the thesis, what could invalidate it (at least one explicit 失效條件), and what should be monitored next.
 
 Include at least two dated or clearly attributable source URLs. Separate observed facts from interpretation, estimates, and scenarios. Avoid personalized suitability claims, guaranteed returns, undisclosed forecasts, and statements that imply the report is financial advice.
 
@@ -181,9 +181,9 @@ Write like a specific analyst who has read the filings and is willing to take a 
 - Prefer named, dated facts ("台積電 10-16 收 354.72 美元，較 MA50 359.46 低 1.3%") over abstract praise ("股價表現強勁"). If a number is unavailable, say what is missing instead of padding with adjectives.
 - State causality explicitly and once ("因為 X，所以 Y"), rather than stacking three paraphrases of the same point.
 - Keep one idea per paragraph and cut throat-clearing. A paragraph that only restates the previous paragraph's conclusion is a defect.
-- Hedge with evidence, not with adverb stacks: say "若財報 EPS 低於 0.40，本版偏空判讀作廢" instead of "可能/或許/大概率會".
+- Hedge with evidence, not with adverb stacks: say "若財報 EPS 低於 0.40，本版偏空判讀失效" instead of "可能/或許/大概率會".
 - Do not manufacture insight by relabeling a fact ("這意味著…/這說明了…") unless the inference adds something the fact alone did not.
-- Read the finished paragraph aloud. If it sounds like a template or a press release, rewrite it in the analyst's own words while keeping every number, source, and 作廢條件 unchanged.
+- Read the finished paragraph aloud. If it sounds like a template or a press release, rewrite it in the analyst's own words while keeping every number, source, and 失效條件 unchanged.
 - Human voice never overrides fidelity: no invented facts, anecdotes, quotes, or causal claims; every figure keeps its `dataAsOf` and source.
 
 ### De-AI Pass (humanizer-zh-next)
@@ -195,14 +195,14 @@ Reports are `zh-TW` investment research, so apply the skill with these repo guar
 
 - **Genre is 技術/財經分析, not 個人敘事/營銷.** Never invent facts, numbers, dates,
   quotes, cases, or causal claims to "add humanity". Every figure keeps its `dataAsOf`
-  and source; `Disclosure`, `Metrics`, levels, and 作廢條件 stay byte-identical in meaning.
+  and source; `Disclosure`, `Metrics`, levels, and 失效條件 stay byte-identical in meaning.
 - **Keep zh-TW, never drift to simplified.** The skill's examples are simplified-Chinese;
   apply the pattern, not the script. `指數`, `賦能`→具體動作, 標點全形化仍按本站規範.
 - **Domain terms are not AI taste.** `閉環` (SpaceX 閉環兌現 / closed-loop execution),
-  `護城河`, `安全邊際`, `作廢條件` are legitimate investment vocabulary — do not rewrite them.
+  `護城河`, `安全邊際`, `失效條件` are legitimate investment vocabulary — do not rewrite them.
   Fix only decorative stacking (三連排比湊數, 空泛三段式) and template scaffolding.
-- Reader-facing clarity: avoid `作廢框架` as a section or metric label; use `技術判讀` or
-  `失效條件` for the current read, and reserve `作廢條件` for explicit invalidation triggers.
+- Reader-facing clarity: avoid `失效框架` as a section or metric label; use `技術判讀` or
+  `失效條件` for the current read, and reserve `失效條件` for explicit invalidation triggers.
   If a chart is used in `進場點分析`, use the annotated `CandlestickChart` exception with
   `hideMarketTrend: true` so the page still has exactly one price chart.- **Quoted evidence is untouchable.** Verbatim content inside `XPostCard` / `ThreadsEmbed`
   (including emoji in the original post) is someone else's voice — never polish it.

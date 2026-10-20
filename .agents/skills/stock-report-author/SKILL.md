@@ -9,9 +9,11 @@ Use this skill for every new or revised report in this repository. The project i
 
 ## Authorship
 
-Reports in this repository are drafted by the AI coding agent — model Muse Spark (`opencode/muse-spark-1.3-contributor-free`), running via OpenCode. The repository owner reviews, publishes, and is responsible for the final content.
+Reports in this repository are drafted by the AI coding agent running in OpenCode. The repository owner reviews, publishes, and is responsible for the final content.
 
-Every new or updated report edition must disclose this in its `Disclosure` component, e.g. zh-TW: 「本報告初稿由 AI 助手（Muse Spark）撰寫，經站方審閱發布」；en: "Drafted by an AI assistant (Muse Spark) and reviewed before publication." Never sign a report with a human author name and never present the agent as a licensed analyst. Editions published before this rule are backfilled the next time they are touched, not mass-edited. Presence of the disclosure is enforced by `validate-content.mjs` as a publication failure, not a warning.
+Every new or updated report edition must disclose AI authorship in its `Disclosure` component, e.g. zh-TW: 「本報告初稿由 AI 助手撰寫，經站方審閱發布」；en: "Drafted by an AI assistant and reviewed before publication." Never sign a report with a human author name and never present the agent as a licensed analyst.
+
+Never hardcode a model, vendor, or agent name in this skill, in the disclosure template, or in the validator. The model that runs a session changes without notice, and a stale name turns into a false attribution on every page it was copied into. If the operator names the model for one specific edition, put it in parentheses for that edition only (zh-TW: 「本報告初稿由 AI 助手（<model id>）撰寫，經站方審閱發布」); otherwise use the generic sentence above. Editions published before this rule are backfilled the next time they are touched, not mass-edited. Presence of the disclosure is enforced by `validate-content.mjs` as a publication failure, not a warning — the check looks for AI authorship, never for a specific model name.
 
 ## Before Editing
 

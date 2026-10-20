@@ -80,4 +80,5 @@ export const reportOnlyTickers = [
   'FIGS',
   'SOXX',
   'LEN',
+  '513100.SS',
 ];

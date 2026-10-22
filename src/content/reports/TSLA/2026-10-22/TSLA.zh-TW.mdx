@@ -1,0 +1,206 @@
+---
+ticker: TSLA
+publishedAt: 2026-10-22
+dataAsOf: 2026-10-21
+reportType: equity
+translationKey: tsla-2026-10-22
+status: published
+tags:
+  - TSLA
+  - 財報週
+  - Q3-2026
+  - Robotaxi
+  - Terafab
+  - NHTSA
+  - 併購
+locale: zh-TW
+title: "TSLA 日報：19.6% 毛利率交出來了，盤後 373.65 把財報日的漲幅全部吐回去"
+description: "2026-10-22 日報（dataAsOf 10-21）：TSLA 收 386.47 漲 3.41%、貼齊 MA200 386.94；拆解 Q3 財報（汽車毛利率 ex-credits 18.1%、FCF 15.31 億但資本開支只花 47.32 億、營業利益 -55.8%），盤後 373.65 已回到財報前水位。"
+hideMarketTrend: true
+---
+
+import AdSlot from '../../../../components/report/AdSlot.astro';
+import Disclosure from '../../../../components/report/Disclosure.astro';
+import Metrics from '../../../../components/report/Metrics.astro';
+import XPostCard from '../../../../components/report/XPostCard.astro';
+import CandlestickChart from '../../../../components/report/CandlestickChart';
+
+## 分析摘要
+
+10 月 21 日 TSLA 收 386.47 美元、漲 3.41%，盤中最高 388.84 幾乎頂著 MA200（386.94）。這是 10-20 版訂下的失效條件「收復 MA50 並連續站穩兩個交易日」走完的第三根，前兩版的偏空判讀因此必須改判：本次轉為中性偏多，但中性偏多不等於買進。
+
+改判的依據不在股價，在財報。Q3 2026 的官方文件把該交出來的數字都交出來了：總營收 280.46 億美元、調整後每股盈餘 0.48 美元、汽車毛利率剔除監管積分後 18.1%（上季 16.3%）、自由現金流 15.31 億美元（上季為負 10.92 億）。同一份文件裡，營業利益只有 7.18 億美元、同比少 55.8%，GAAP 淨利 7.87 億美元、同比少 42.7%，總營收還比去年同期少 0.2%。這是一份環比修復、同比惡化的財報，不是一份成長財報。
+
+自由現金流的來源必須寫清楚，因為它是這份財報唯一的驚喜。FCF 從上季負 10.92 億翻正到正 15.31 億，改善 26.23 億；同期資本開支少花 10.57 億（57.89 億降到 47.32 億），營業現金流多出 15.66 億（46.97 億升到 62.63 億）。而營業現金流那 15.66 億，主要來自應付及應計增加 39.91 億與遞延收入增加 12.55 億兩項營運資金，獲利端只貢獻 3.20 億。換句話說，這季的現金流是省出來的加遞延的，不是賺出來的。
+
+Alan Chen 在 10-21 晚間 20:10 說「盤後居然沒怎么跌」，以當下快照成立，但時間戳不是重點，重點是 19:59:58 EDT 的最後成交價：373.65 美元，與財報前一日的 373.71 只差 0.06 美元。白天漲的 3.41% 在盤後被整數抹平，市場用一整個交易時段對這份財報重新定價，結論是回到財報前的水位。
+
+Shawn 整理的 12 大信號在數字層面幾乎全數與官方文件一致，這反而是本版最值得記錄的部分。汽車毛利率 ex-credits 18.1%、交付 486,532 輛、FSD 訂閱 174 萬、2026 年資本開支指引從 250 億降到 200 億都對得上，沒有虛報；他結論那句「Tesla 的未來已經有了時間表，但還沒有相應的利潤表」則屬判斷，本站在下面用另一組數字接。
+
+<Metrics
+  dataAsOf="2026-10-21"
+  items={[
+    { label: "10-21 收盤", value: "$386.47（+3.41%）" },
+    { label: "10-21 區間", value: "$380.51 – $388.84" },
+    { label: "盤後（19:59 EDT）", value: "$373.65（-3.32%），幾乎回到財報前 $373.71" },
+    { label: "MA20 / MA50 / MA200", value: "$370.03 / $362.18 / $386.94，收盤貼齊 MA200" },
+    { label: "市值（2026-10-21）", value: "約 $1.527T（3.95B 股 × $386.47）" },
+    { label: "年初至今", value: "-14.06%（2025 年底 $449.72 起算；01-02 $438.07 起算 -11.78%）" },
+    { label: "距 52 週盤中高 498.83", value: "-22.5%" },
+    { label: "成交量", value: "37.47M，約為 10 日均量的 1.52 倍" },
+    { label: "PE TTM / forward", value: "386.78 倍 / 206.01 倍" },
+    { label: "Q3 調整後 EPS", value: "$0.48，高於 LSEG $0.43、Zacks $0.45" },
+    { label: "Q3 自由現金流", value: "$1,531M（上季 -$1,092M）" },
+    { label: "2026 資本開支指引", value: "約 $20B（前值 $25B，電話會口徑 Tier-2）" },
+  ]}
+/>
+
+## 行情快照
+
+<strong>行情截止：</strong>2026 年 10 月 21 日（週三）美股收盤——最新已完成交易日，268 個交易日樣本。10-21 的 OHLC 為開 381.51、高 388.84、低 380.51、收 386.47。
+
+一根漲 3.41% 的紅棒，收盤距離 MA200 只差 0.12%，盤中高點 388.84 差一點點就摸到前版標記的上檔觀察位 390。往前看 8 根：10-12 收 378.03、10-13 收 375.23、10-14 收 367.16、10-15 收 362.44、10-16 收 354.72、10-19 收 368.06、10-20 收 373.71、10-21 收 386.47。10-19 起連三根收在 MA50（362.18）上方，10-20 版那條「收復 MA50 並連續站穩兩個交易日」的失效條件在 10-20 收盤就已成立，本版是確認不是預告。
+
+量能是這根紅棒最紮實的部分。3,746.8 萬股是 10 日均量的 1.52 倍，遠高於 10-19 的 1.21 倍，這是財報前一日的正常水準，財報日卻沒放大到 2 倍。往上看的空間並不寬裕：距 2025-12-22 的 52 週盤中高點 498.83 還有 22.5%，年初至今 -14.06%（以 2025 年底收盤 449.72 起算；若以 01-02 收盤 438.07 起算是 -11.78%，兩個口徑都在引用）。近 60 日 +25.71%、近 20 日只有 +1.67%，說明真正的反彈集中在最近這五天（+5.26%）。
+
+<strong>規模視角：</strong>以 386.47 美元乘約 39.5 億股（CNBC 報價 API 的 sharesout 口徑）計，10-21 市值約 1.527 兆美元；當日高低差 8.33 美元對應約 329 億美元的市值擺動，盤後 373.65 對應的市值則是 1.475 兆美元。1.5 兆美元級的流動性意味著同一天的 3.41% 與盤後的 3.32% 都只是大型資金的一次次重新平衡，不是方向判斷的分歧；這種量級下，財報後的定價要等下一個完整交易日的量價，而不是等盤後報價。
+
+## 每日事件速覽
+
+### 事件一：Q3 2026 官方 8-K——一份環比修復、同比惡化的財報
+
+10 月 21 日，特斯拉向 SEC 提交 [8-K（accession 0001628280-26-066738）](https://www.sec.gov/Archives/edgar/data/1318605/000162828026066738/exhibit9914.htm)，Item 2.02 與 9.01，附件 Ex-99.1 就是官網的《Q3 2026 Update》文字版。本站以下所有財務數字都取自這份文件，不採用社群轉述的版本。
+
+先看三個最大的科目。營業利益 7.18 億美元，是去年同期 16.24 億的 44.2%，利潤率從 5.78% 掉到 2.56%，整整少 322 個基點；GAAP 淨利 7.87 億美元、同比少 42.7%，調整後淨利 16.97 億美元、同比只少 4.1%，兩者之間 9.10 億美元的落差在公司的調節表上寫得很清楚：股權薪酬稅後淨額加回 9.82 億，數位資產未實現收益扣回 2.24 億，SpaceX 持股未實現損失加回 1.08 億、特定稅項加回 0.44 億。差距幾乎全在股權薪酬，不在稅。真正的缺口在稅前：9.56 億對去年同期的 19.59 億，其中其他損益淨額從負 0.28 億擴大到負 1.17 億，多蝕 0.89 億，稅項少繳 4.18 億只抵掉一部分。
+
+營業利益為什麼掉得這麼多，費用表說得很清楚：OpEx 從去年同期 34.30 億升到 47.76 億，增加 13.46 億；其中研發費用從 16.30 億升到 27.61 億、增 69.4%，SG&A 從 15.62 億升到 20.15 億、增 29.0%。這不是一次性項目，而是與 Austin 晶圓廠、SI 算力、Optimus 三條線同時開支的結構性結果。
+
+收入端則是三個方向。三大業務中汽車營收 205.60 億美元、同比少 3.1%，能源 28.81 億美元、同比少 15.6%，服務及其他 46.05 億美元、同比多 32.5%——服務及其他佔總營收的比重從去年同期的 12.4% 拉到 16.4%，四個百分點的結構位移是這季收入端唯一明確的好消息。毛利率方面，總毛利率 19.59%，比去年同期的 17.99% 高 160 個基點，汽車毛利率（GAAP）18.5%、剔除監管積分後 18.1%，上季是 16.9% 與 16.3%。
+
+<strong>財經解讀：</strong>把這幾組數字連起來，Q3 的故事其實只有一句——Tesla 正在用營業利益換未來。營收持平、毛利率回升，但費用端同時開了三條線，結果是營業利益腰斬、GAAP 淨利少四成。市場若只看 19.6% 的毛利率與 0.48 的 EPS，會漏掉真正決定 2027 年以後結構的兩件事：研發費用年增 69.4%，以及資本開支指引雖下修到 200 億、但 Terafab 的長期投入是「north of $100 billion」。費用是當期成本，Terafab 是資產，兩者在當期損益表上會打架，這就是本季盤後被賣掉的合理原因。還有一個數字容易被單季視角掩蓋：TTM 自由現金流上季是 57.62 億美元，本季只剩 33.03 億，因為過去四季的資本開支從 95.28 億拉到 154.07 億。單季 FCF 轉正是一件事，TTM 自由現金流一年內蒸發四成是另一件事。
+
+### 事件二：Alan Chen 的「盤後沒怎麼跌」——時間戳與盤後收盤價之差
+
+10 月 21 日晚間 20:10，[Alan Chen（@alanchen）](https://x.com/alanchen/status/2112999912627712004) 發文，頁面當時顯示 TSLA $386.47、漲 3.41%。
+
+<XPostCard author="Alan Chen" handle="@alanchen" timestamp="2026-10-21" sourceUrl="https://x.com/alanchen/status/2112999912627712004" views="19.4K">特斯拉营收没达预期、净利润同比下降43%，财报刚出来，盘后居然没怎么跌。原本还等着看有没有合并的新消息，目前也没看到正式协议。市场已经不在乎merger了？ / 这份财报也有能托住股价的数字：调整后EPS 0.48美元，高于预期的0.45美元；自由现金流15.3亿美元，上季度还是负的。毛利率从上季度16.8%回到19.6%，营业利润率也从1.4%回到2.6%。同比不好看，但环比确实缓过来了一点。 / FSD付费订阅达到174万，同比增长67%。汽车营收同比下降3%，软件订阅还在长，愿意继续押自动驾驶的人，至少又拿到了一个能看的数字。 / 至于合并，昨天刚确认双方成立委员会讨论，今天没宣布交易，也不等于昨天的预期就清零了。盘后暂时扛住，更像是财报没坏到需要砸盘，合并的想象也还留着。想等一个"不宣布合并就暴跌"的剧本，市场这会儿还没配合。 $TSLA</XPostCard>
+
+<strong>驗證：</strong>貼文引用的數字基本上都對得上官方文件：營收未達預期、淨利同比 -43%（官方 -42.7%）、調整後 EPS 0.48 對預期 0.45、FCF 15.3 億美元、毛利率 19.6%（官方 19.59%）、營業利潤率 2.6%（官方 2.56%）、FSD 訂閱 174 萬同比 +67%、汽車營收同比 -3%。問題出在「營收沒達預期」這五個字取決於哪家共識：FactSet 的營收估計是 280.6 億、Bloomberg 281.3 億，實際 280.46 億，確實是不到 0.3% 的輕微 miss；但 LSEG 估 279 億、Zacks 估 277.8 億，實際值反而高於兩者。這不是筆誤，是共識口徑分歧，引用時必須帶著口徑一起走。
+
+貼文真正錯在時間戳。20:10 發文時盤後才剛開始，而 CNBC 報價 API 的盤後最後成交（19:59:58 EDT）是 373.65 美元，較前一日收盤 373.71 幾乎持平，較當日收盤跌 12.82 美元、跌幅 3.32%。同一則留言 @Cario0x2 說「盤後跌了 2%」，@WaleatX 則精準指出 capex 只花 47 億、預期 80 億，現金流是少花錢省出來的——這兩點與官方數據完全一致：實際資本開支 47.32 億美元，而華爾街平均預期在 75 億到 79.6 億之間。
+
+<strong>財經解讀：</strong>把時間軸拉直，市場對這份財報的反應其實非常清楚。白天 3.41% 的上漲發生在財報公布之前（美股盤後才開記者會），是消息提前外流的樂觀定價；財報落地後，盤後用 3.32% 把這一段完全吐回去，收在財報前一日的水位。這是「壞到需要砸盤」與「好到值得追價」之間的第三種答案：沒有砸盤，但市場也不願意在 386 這個位置重新定價，於是把價格送回原點。
+
+### 事件三：Shawn 的 12 大信號——數字幾乎全對，但官方文件裡沒有那些資本金額
+
+10 月 21 日晚間 22:36，[Shawn（@mylifeonmystyle）](https://x.com/mylifeonmystyle/status/2113036620052181199) 貼出電話會的 12 大重點整理，瀏覽量 3,110。
+
+<XPostCard author="Shawn" handle="@mylifeonmystyle" timestamp="2026-10-21" sourceUrl="https://x.com/mylifeonmystyle/status/2113036620052181199" views="3,110">🚨 Tesla Q3财报电话会：Elon释放12大信号！Robotaxi、FSD、Optimus、Terafab时间表更加清晰！10月21日，Tesla召开Q3财报电话会…我整理的12大重点 …… ①营收$280.5亿基本持平、调整后EPS $0.48超预期、整体毛利率19.6%、汽车毛利率(剔除积分)18.1%、营业利润仅$7.18亿同比下降56%、FCF $15.3亿、现金及投资$454亿 ②2030年前后年产销目标500万辆、Q3交付486,532辆、订单积压四年最高、电池供应仍是瓶颈 ③Robotaxi 2027年开始显著贡献利润（2027Q2开始明显、Q3/Q4扩大）④Cybercab Austin 后进 Dallas，Austin 车队自推出扩大约10倍，年底前扩展更多城市，未来以自营车队为主而非卖给私人 ⑤Robotaxi 尚未达到每英里$0.30成本 ⑥无监督FSD消费者车目标2027Q2，欧洲FSD争取2027Q1监管批准（是目标非已批准）⑦FSD 174万活跃用户、北美新车FSD选购率超75%⑧Optimus 2027年底开始外部商业交付、Fremont产线已启动、还需约一年解决AI/机械可靠性/使用寿命、2027年4月左右整合AI5、2027年不会有大规模销量 ⑨Terafab 可能成为史上最大半导体投资项目之一、2028年有用芯片规模化生产、真正扩大产量预计2028年底、设备投资至少$100亿、长期总投入可能超$1,000亿、Tesla与SpaceX分担方式未定 ⑩Megapack需求强劲、Texas Megafactory已开始生产、规划年产能50GWh、AI数据中心电力需求驱动 ⑪2026年资本开支指引从$250亿下调至$200亿、主要靠经营现金流、已安排约$300亿短期债务融资额度 ⑫Tesla–SpaceX合并电话会回避相关问题、双方已成立特别委员会、无公布合并比例/交易估值/股东权益安排 …… Tesla的未来已经有了时间表，但还没有相应的利润表。</XPostCard>
+
+<strong>驗證：</strong>逐項對照官方 Ex-99.1 與[電話會逐字稿](https://stockanalysis.com/stocks/tsla/transcripts/712902-q3-2026/)（Tier-2），結果是 12 項裡有 9 項完全對得上、2 項只對得上口徑、1 項僅有口頭來源。
+
+| # | 貼文說法 | 官方文件對照 | 判定 |
+|---|---|---|---|
+| 1 | 營收 280.5 億、調整後 EPS 0.48、毛利率 19.6%、汽車毛利率剔除積分 18.1%、營業利益 7.18 億 -56%、FCF 15.3 億、現金 454 億 | 總營收 28,046、non-GAAP EPS 0.48、總毛利率 19.59%、汽車毛利率 ex-credits 18.1%、營業利益 718（-55.8%）、FCF 1,531、現金及短期投資 45,447 | 全部對得上 |
+| 2 | 2030 年前後年產 500 萬輛、Q3 交付 486,532、訂單積壓四年最高、電池供應仍是瓶頸 | 交付 486,532（YoY -2%）、production 464,391；Highlights 寫「largest backlog for our passenger vehicles in four years」與「battery availability continued to be the limiting factor in increasing auto volumes」 | 數據對得上；500 萬輛是管理層目標不是指引 |
+| 3 | Robotaxi 2027 年開始顯著貢獻利潤（Q2 明顯、Q3/Q4 擴大） | 逐字稿：Robotaxi「not going to move the needle this quarter…starts to become noticeable probably in Q2 and then probably a big deal by Q3 or Q4 of next year」 | 一致，且是管理層原話 |
+| 4 | Cybercab Austin 後進 Dallas、車隊約 10 倍、年底前更多城市、以自營車隊為主 | Highlights：9/3 在 Austin 以 Cybercab 開始提供載客服務、無監督里程 QoQ 成長 8 倍；逐字稿：車隊一個月約 10 倍、下一站 Dallas、年底前 24/7 運營 | 一致；車隊規模與產能數字未披露 |
+| 5 | Robotaxi 尚未達每英里 0.30 美元 | 逐字稿：尚未達到 0.30 美元／付費英里的目標 | 一致 |
+| 6 | 無監督 FSD 消費者車 2027Q2、歐洲 2027Q1 監管批准 | 逐字稿：無監督 FSD 首次客戶啟用目標 2027 Q2；EU 全面批准「maybe within a few months…surprised if it takes longer than Q1」 | 一致，但都還是目標而非批准 |
+| 7 | FSD 174 萬活躍用戶、北美新車選購率超 75% | 官方 Active FSD subscriptions 1.74M（YoY +67%）；北美逾 75% 付費訂閱出自逐字稿 | 一致 |
+| 8 | Optimus 2027 年底外部交付、Fremont 產線已啟動、還需約一年、AI5 約 2027/4、2027 不會有大規模銷量 | Outlook 寫 Optimus 已在 Fremont 開始生產；逐字稿：到每週 2 萬台需「at least a year, maybe a little longer」、AI5 約 2027/4、對外交付約 2027 年底、首批客戶為工業應用 | 一致 |
+| 9 | Terafab 可能是史上最大半導體投資之一、2028 年規模化生產、設備投資至少 100 億、長期總投入可能超過 1,000 億 | 逐字稿：「tens of billions for Terafab」「not going to be less than tens of billions in capital equipment up through early 2028」「north of $100 billion long term」；官方文件只寫 Austin Fab 於 2027 年開始設備調試 | 口徑一致；但金額全部出自電話會，官方文件沒有任何 Terafab 金額 |
+| 10 | Megapack 需求強勁、Texas Megafactory 已生產、規劃 50GWh | 官方：Megafactory Texas 已開產、規劃年產能 50 GWh；Nevada 首批 LFP Megapack 出貨、儲能訂單率與 backlog 為歷史最高 | 一致 |
+| 11 | 2026 資本開支指引 250 億下調至 200 億、主要靠經營現金流、已安排約 300 億短期債務融資額度 | 逐字稿：Taneja 稱下修至約 200 億並以經營現金流支應；已取得最多 300 億借款額度但「We do not plan to make any draws under any of the new facilities in this calendar year」 | 一致；且「今年不動用」是貼文沒寫的關鍵 |
+| 12 | 合併電話會迴避、雙方已成立特別委員會、未公布合併比例／估值／權益安排 | 電話會對合併提問確實迴避；但「雙方已成立特別委員會」只出現在 Musk 與 Taneja 的口頭說法，[SpaceX 官方 8-K](https://www.sec.gov/Archives/edgar/data/1181412/000162828026066482/spaceexplorationtechnologi.htm) 全文未出現 committee、Tesla 或 conflict 任何一個字 | 前半一致，後半僅口頭 |
+
+<strong>財經解讀：</strong>第 11 項是整份清單裡對估值影響最大、也最容易被忽略的一條。Taneja 說的是「今年不打算動用這 300 億額度」，把 capex 指引從 250 億降到 200 億 的同時又說未來幾年資本開支持續擴張、Musk 補一句 2028 年會是「tens of billions」——這兩句合起來的意思是：2026 年的現金流好看，是因為把支出往後推，而不是支出變小。往後推的代價是 2027 與 2028 兩年的自由現金流會更難看，而 Terafab 自己的設備下單期落在 2027 上半年到 2028 年初。Shawn 結尾那句「有時間表、沒有利潤表」說的就是這件事，本站同意，並且要把他的三個觀察指標收進追蹤清單：Robotaxi 單英里利潤、Optimus 商業訂單與製造成本、AI 與 Terafab 資本支出對 FCF 的影響。
+
+### 事件四：兩條平行線——合併敘事與 NHTSA 審查都沒有往前走
+
+合併這條線在 10-21 沒有新文件，但有新的定價。SpaceX 在 10-20 提交了[自己的 8-K 股東信](https://www.sec.gov/Archives/edgar/data/1181412/000162828026066482/spaceexplorationtechnologi.htm)，Q3 營收 146 億美元（去年同期 56 億）、淨利 44 億美元（前年同期虧損 11 億）、調整後 EBITDA 88 億美元（年增 306%），其中 SI 業務營收 75.6 億美元、年增 830%。這是一份非常漂亮的財報，但整份 40,685 字元的股東信裡，「committee」出現 0 次、「Tesla」出現 0 次。
+
+<strong>驗證：</strong>「雙方已成立特別委員會」目前只有兩種來源：Musk 在 SpaceX 電話會的口頭說法（他自稱是利害關係人所以不參與討論、並說不應假定合併是必然、是被「somewhat overstated」），以及媒體轉述。華爾街的溢價期待則有具體數字：[路透 10-21 報導](https://www.investing.com/news/stock-market-news/teslaspacex-deal-wall-st-says-inevitable-but-musk-says-its-not-certain-4962374) 指出，投資人對 TSLA 股東應得溢價的預期已從「幾乎無」升到最高 35%，RBC 與 JPMorgan 認為要 20% 到 35%；[Daniel Ives 維持 Outperform、目標價 500 美元](https://www.tipranks.com/news/top-analyst-daniel-ives-weighs-in-on-tesla-and-meta-stocks-after-earnings-heres-what-he-sees)，並稱 2027 年底前合併機率 80% 到 90%，他另說股價得漲到約 550 美元才容易過關；Gene Munster 則給出兩年內 95%。[Altimeter 的 Brad Gerstner](https://www.investing.com/news/stock-market-news/teslaspacex-deal-wall-st-says-inevitable-but-musk-says-its-not-certain-4962374) 認為控制權溢價可能落在 420 到 550 美元區間。合併還需要至少 50% 流通在外股份的同意票。
+
+NHTSA 那條線則有實質進展。[NHTSA 9 月 3 日對 Cybercab 自證合規開立審查（AQ26002）](https://www.nhtsa.gov/press-releases/investigation-tesla-cybercab-self-certification)，9 月 10 日由首席法律顧問 Peter Simshauser 發出 Special Order 共 21 項要求，9 月 22 日給 30 天延期到 [10 月 30 日](https://eletric-vehicles.com/tesla/tesla-gets-30-more-days-to-defend-cybercab-self-certification-to-nhtsa/)，回覆須宣誓附誓章，罰則最高每日 27,874 美元、上限 139,356,994 美元。[NHTSA 10 月中旬對 Tesla 自證合規的結案函](https://www.selfdrivinginsider.com/nhtsa-just-ruled-on-teslas-cybercab-audit-self-certification-survives-barely/) 判定自證的核心邏輯站得住、認定「no evidence Tesla acted in bad faith」，但要求三項 FMVSS（乘員碰撞保護標示、雨刷、telltale 指示燈）在 60 天內補上工程數據或改申請 Part 555 豁免，並新增三項義務：任何碰撞須於 5 個工作日內通報、每季回報車隊里程與接管率、擴展到任何新州之前先通知 NHTSA。Tesla 對此的說法是「validation of our approach」。
+
+<strong>財經解讀：</strong>兩條線的共同點是都不在財報裡，卻直接決定 386 美元能不能站住。合併線目前是純口頭與媒體敘事，沒有任何一份交易所文件記載特別委員會的存在，這與 Alan Chen 貼文裡「昨天剛確認雙方成立委員會討論」在證據等級上不是同一件事——電話會口頭是 Tier-2，交易所文件才是 Tier-1，現在後者缺席。溢價期待從 0 拉到 35% 這件事本身說明市場正在為一個還不存在的文件定價，這種定價的脆弱性很高，只要文件延遲，溢價就會先收縮。NHTSA 這邊，結案函對 Tesla 是偏正面的（自證邏輯站得住），但附帶的季度里程與接管率回報義務，恰恰是 Robotaxi 商業化最難看的兩個數字，2027 年之前會被公開。
+
+<AdSlot placement="mid" />
+
+## 進場點分析
+
+技術面以 10-21 OHLC 為準：開 381.51、高 388.84、低 380.51、收 386.47。技術判讀第六版（中性偏多、貼頂未破）：MA50（362.18）自 10-19 起連三根站上，MA20（370.03）在腳下 4.3%，MA200（386.94）就壓在頭頂 0.12% 的位置，10-21 高點 388.84 差一點點就摸到前版的 390 觀察位。下檔依序是財報前收盤 373.71（也就是盤後 373.65 的落點）、MA20 370.03、MA50 362.18，最深是 10-16 的盤中低點 349.33。
+
+<CandlestickChart client:load locale="zh-TW" dataUrl="/stock/data/market/TSLA.json" levels={[{price: 386.94, label: "MA200 多空分界", color: "#C23B32"}, {price: 390, label: "前版上檔觀察", color: "#8B5CF6"}, {price: 373.71, label: "財報前收盤", color: "#C23B32"}, {price: 370.03, label: "MA20", color: "#8B5CF6"}, {price: 362.18, label: "MA50", color: "#8B5CF6"}, {price: 349.33, label: "10-16 低點", color: "#3A7A4E"}]} />
+
+<strong>規模視角：</strong>以約 1.527 兆美元市值計，10-21 單日振幅 8.33 美元對應約 329 億美元的市值擺動，盤後 373.65 對應的市值是 1.475 兆美元。1.5 兆美元級的流動性加上 beta 1.76，代表 386 這個價位的每一分鐘波動都主要由大型資金的再平衡驅動。讀取節奏：日盤 1.52 倍均量的上漲配上盤後 3.32% 的回落，典型的「事件前買、事件後賣」結構，不構成趨勢確認。真正能改變判讀的是財報後第一個完整交易日的量價組合。
+
+基本面錨分成三層，不再混用。第一層是已實現的季報：營收 280.46 億、調整後 EPS 0.48、汽車毛利率 ex-credits 18.1%、FCF 15.31 億、現金及短期投資 454.47 億，資產負債表上總資產 1,575.17 億、權益 892.89 億、非追索債務 92.65 億。第二層是電話會給出的時間表（Tier-2）：2026 年資本開支約 200 億、已取得最多 300 億額度但今年不動用、2027 年 Austin Fab 設備調試、Terafab 長期投入逾 1,000 億、Robotaxi 2027 Q2 起對利潤有明顯貢獻、Optimus 2027 年底對外交付。第三層是合併敘事：溢價期待 0% 到 35%，Ives 給 80% 到 90% 機率、Gerstner 給 420 到 550 美元區間，但沒有任何交易所文件。
+
+以 386.47 美元計，PE TTM 386.78 倍、forward PE 206.01 倍、TTM 營收 1,036.19 億美元、EV 1.444 兆美元、ROE TTM 4.30%、beta 1.76。這個估值結構意味著 Q3 的 0.48 美元 EPS 對估值幾乎沒有影響力，市場給的是 2027 年之後的選擇權價格。10-21 官方 Outlook 提到年底 SI 訓練算力要達到 400 MW、Austin Fab 2027 年開始設備調試，這兩句是資本開支的先行指標，2027 年第一季的季報會先看到折舊。
+
+| 情境 | 條件 | 動作 |
+|---|---|---|
+| 空手者 | 中性偏多但已貼齊 MA200，盤後又退回財報前水位 | 373.71 到 386.94 是決策帶不是價值區；等財報後首個完整交易日的量價確認，不在 386 追 |
+| 持倉者 | 10-20 版失效條件已成立，偏空判讀結束 | 續抱但把 373.71 設為新的防守線；跌破且無合併文件出現，先減碼再看 |
+| 加碼 | 僅當收盤站上 MA200（386.94）並帶量（10 日均量 1.5 倍以上）站穩，或合併文件出現且換股比與股東權益安排可核對 | 依據是價位與文件，不是目標價或機率 |
+| 失效（本次中性偏多判讀） | 跌破 373.71 並失守 MA20（370.03）、或 10/30 NHTSA 宣誓回覆未提出三項 FMVSS 的工程數據、或 FQ4 指引下修 | 任一成立即退回偏空 |
+
+## 主要風險與否定條件
+
+本節是失效框架第六版。10-20 版那條「收復 MA50 並連續站穩兩個交易日」已於 10-20 收盤成立並被本版吸收，因此本版換上新的失效條件：主觀判斷由偏空轉為中性偏多，失效條件要對應到新的支撐位與新的事件。
+
+| # | 風險 | 說明 | 否定／觀察點 |
+|---|---|---|---|
+| 1 | MA200 就在頭頂 | 收盤 386.47 距離 MA200（386.94）只有 0.12%，10-21 高點 388.84 未站上 | 帶量站上 386.94 並站穩 |
+| 2 | 盤後已退回原點 | 19:59 EDT 報 373.65，等於財報前的 373.71 | 財報後首個完整交易日的收盤位置 |
+| 3 | 營收 miss 與否取決於口徑 | FactSet／Bloomberg 口徑是不到 0.3% 的 miss，LSEG／Zacks 口徑是 beat | 引用時必須帶共識來源，不得只寫「未達預期」 |
+| 4 | FCF 來自少花錢 | FCF 改善 26.23 億，資本開支少花 10.57 億、營運資金貢獻逾 50 億，獲利只貢獻 3.20 億 | 2027 年資本開支回補後的 FCF |
+| 5 | 研發費用年增 69.4% | OpEx 增 13.46 億，SG&A 與研發同步上升，是結構性而非一次性 | Q4 與 FY2027 的費用指引 |
+| 6 | 汽車營收與交付雙降 | 汽車營收同比 -3.1%、交付 486,532 輛同比 -2%，官方稱電池供應仍是產量上限 | Q4 交付量與存貨天數 |
+| 7 | 積分收入退坡 | 監管積分從去年同期 4.17 億降到 1.13 億，ex-credits 毛利率卻上升，說明改善來自成本端不是積分 | ex-credits 毛利率能否守住 18% |
+| 8 | 合併敘事無文件支撐 | SpaceX 8-K 全文無 committee／Tesla 字樣，「雙方成立特別委員會」僅口頭 | 交易所文件或董事會公告 |
+| 9 | 溢價預期已透支 | 華爾街對 TSLA 股東溢價期待從幾乎無升到最高 35% | 文件出現後的實際條款 |
+| 10 | 合併投票門檻 | 至少需要 50% 流通在外股份同意 | 股東投票安排與任何委託書 |
+| 11 | Terafab 資本缺口 | 電話會口徑是設備到 2028 年初至少「tens of billions」、長期「north of $100 billion」，且與 SpaceX 分擔未定 | 資本支出預算與分攤協議 |
+| 12 | NHTSA 三項 FMVSS 未結 | 乘員碰撞保護標示、雨刷、telltale 須 60 天內補工程數據或申請 Part 555 豁免 | 10/30 宣誓回覆 |
+| 13 | 新增監管義務 | 碰撞 5 個工作日內通報、每季回報車隊里程與接管率、擴州前先通知 | 首次季度回報的里程與接管率 |
+| 14 | 估值倍數極高 | PE TTM 386.78 倍、forward 206.01 倍，對當期盈餘幾乎無支撐 | 估值支撐只能來自 2027 之後的敘事 |
+| 15 | 市場廣度 | 10-21 Nasdaq +1.05%、SOX +1.97%，TSLA 上漲部分來自大盤 | 相對 SOX 的超额與否 |
+| 16 | 財報季事件密度 | 10-22 SpaceX 解禁賣壓、10-28 SK 海力士財報、10-30 NHTSA 回覆、12 月 FQ4 財報 | 事件間隔拉長時的部位風險 |
+
+失效條件（本次中性偏多判讀的推翻條件，任一成立即結束）：收盤跌破 373.71 並同時失守 MA20（370.03）；或 10 月 30 日 NHTSA 宣誓回覆未提出三項 FMVSS 的工程數據或豁免申請；或 FQ4 指引下修。反向的偏多確認條件（任一成立即視為本版轉為偏多）：合併文件出現且換股比、估值與股東權益安排可核對；或收盤站上 MA200（386.94）並帶量站穩。
+
+追蹤清單：財報後首個完整交易日的量價與 MA200 得失、10-22 SpaceX 解禁實際賣壓、10-28 SK 海力士財報（記憶體成本端）、10-30 NHTSA 宣誓回覆與 Part 555 豁免進度、Q4 交付量與 FSD 訂閱數、SpaceX 與 Tesla 交易所文件是否出現特別委員會字樣、Terafab 的資本預算與與 SpaceX 的分攤安排、Optimus 首批外部客戶訂單。
+
+## 分析結論
+
+證據支持七句話。第一，Q3 2026 官方 8-K 的數字是環比修復、同比惡化：營收 280.46 億近乎持平、汽車營收 -3.1%、營業利益 -55.8%、GAAP 淨利 -42.7%，同時總毛利率回升 160 個基點、汽車毛利率剔除積分後從 16.3% 升到 18.1%。第二，Q3 最被引用的兩組數字，自由現金流 15.31 億與資本開支 47.32 億，都指向同一件事：現金流改善 26.23 億裡，資本開支少花占 10.57 億、營運資金占大頭，獲利只占 3.20 億；把 FCF 講成「盈利回穩」是誤讀。第三，Alan's 貼文數字幾乎全對，但「盤後沒怎麼跌」錯在時間戳，19:59:58 EDT 的 373.65 與財報前的 373.71 幾乎相同，市場在盤後把白天 3.41% 的漲幅整數吐回，方向是「不砸盤但不追價」。第四，Shawn 的 12 項清單 9 項與官方文件完全一致、1 項口徑一致（合併）、1 項只有口頭來源（特別委員會），沒有虛報，這在財報夜的社群轉述裡不常見，他那句「有時間表、沒有利潤表」是本版同意的概括。第五，資本開支指引從 250 億降到 200 億要連著讀兩句：Taneja 同時說已取得 300 億額度但今年不動用，Musk 說 2028 年會是 tens of billions。2026 年的現金流是被推後的支出換來的。第六，兩條非財報線同樣決定估值：合併目前沒有任何交易所文件支撐，華爾街溢價期待卻已從 0 拉到 35%；NHTSA 的結案函對自證合規是偏正面的，但「擴州前先通知」與「季度回報里程與接管率」兩項新義務，正好把 2027 年 Robotaxi 最難看的兩個數字變成公開資料。第七，技術面 10-19 起連三根站上 MA50、10-21 收盤 386.47 貼齊 MA200 386.94、量能 1.52 倍均量，10-20 版的偏空判讀到期作廢，本版改為中性偏多，10-20 版留下的三道待驗證項此刻全部有答案：汽車毛利率 ex-credits 18.1% 已公布、capex 指引約 200 億已在電話會給出、Cybercab 產能與服務收入披露這一項官方仍未給數字，但服務及其他營收 46.05 億、同比 +32.5%、佔比升到 16.4% 是可核對的替代觀察。
+
+倉位紀律：偏空判讀解除不等於追價。386.47 貼著 MA200、盤後又回到 373.65，這個位置的成本與報酬不對稱，合理的做法是把 373.71 當成新的防守線，把 MA200 當成加碼的觸發條件，而不是把 500 美元的目標價或 80% 到 90% 的合併機率當成持有的理由。真正會改變判讀的，是未來兩週內的兩個有日期的東西：10 月 30 日的 NHTSA 回覆，以及 12 月的 FQ4 財報。
+
+<Disclosure title="資料限制與作者聲明">
+本報告初稿由 AI 助手撰寫，經站方審閱發布。10-21 OHLC 取自本站行情快照（Yahoo Finance 日線，268 個交易日，截至 2026-10-21）；MA20（370.03）、MA50（362.18）與 MA200（386.94）由收盤序列計算；市值約 1.527 兆美元以 386.47 美元乘約 39.5 億股計算，股數取自 CNBC 報價 API 的 sharesout 口徑。盤後價 373.65 與盤後成交量取自同一 API 的 ExtendedMktQuote（時間 19:59:58 EDT），為盤後最後成交、非正式收盤，僅供對照。所有 Q3 2026 財務數字均取自 Tesla 8-K（accession 0001628280-26-066738）附件 Ex-99.1《Q3 2026 Update》文字版，屬 Tier-1；其中汽車毛利率剔除監管積分後 18.1% 取自該文件的毛利率表。2026 年資本開支指引約 200 億、300 億借款額度、Terafab 資本金額、Robotaxi 與 Optimus 時間表、Robotaxi 未達每英里 0.30 美元等說法僅見於電話會逐字稿（Tier-2），官方文件未載金額。共識數字因供應商而異：FactSet 營收 280.6 億、Bloomberg 281.3 億、LSEG 279 億、Zacks 277.8 億；EPS 估計 LSEG 0.43、Zacks 0.45，本報告不以單一口徑宣稱營收未達預期。「雙方已成立特別委員會」目前僅有 SpaceX 電話會口頭說法與媒體轉述（Tier-2），SpaceX 8-K 股東信全文未出現 committee、Tesla 或 conflict 字樣，本報告不將其列為已確認事實。NHTSA 結案函內容來自專門追蹤自駕法規的媒體（Tier-2），10-30 期限與 Special Order 罰則為 Tier-1（官方 PDF 與新聞稿）。合併溢價區間、Ives 的 500 美元目標價與 80% 至 90% 機率、Munster 的 95%、Gerstner 的 420 至 550 美元均為賣方觀點（Tier-2），不構成本站的估值基礎。內容為研究筆記，不構成個人化投資建議。
+</Disclosure>
+
+## 資料來源
+
+- [Tesla 8-K（accession 0001628280-26-066738）與附件 Ex-99.1《Q3 2026 Update》（2026-10-21）](https://www.sec.gov/Archives/edgar/data/1318605/000162828026066738/exhibit9914.htm)
+- [StockAnalysis：Tesla Q3 2026 財報電話會逐字稿（2026-10-21）](https://stockanalysis.com/stocks/tsla/transcripts/712902-q3-2026/)
+- [Benzinga：Tesla Q3 2026 earnings call transcript](https://www.benzinga.com/news/26/10/62515021/tesla-q3-2026-earnings-call-transcript)
+- [Alan Chen（@alanchen）：TSLA 財報與盤後判讀（2026-10-21）](https://x.com/alanchen/status/2112999912627712004)
+- [Shawn（@mylifeonmystyle）：Tesla Q3 財報電話會 12 大信號（2026-10-21）](https://x.com/mylifeonmystyle/status/2113036620052181199)
+- [SpaceX 8-K 股東信（accession 0001628280-26-066482，2026-10-20）](https://www.sec.gov/Archives/edgar/data/1181412/000162828026066482/spaceexplorationtechnologi.htm)
+- [Reuters 10-21：華爾街稱 Tesla–SpaceX 合併難以避免，Musk 稱並非確定](https://www.investing.com/news/stock-market-news/teslaspacex-deal-wall-st-says-inevitable-but-musk-says-its-not-certain-4962374)
+- [TipRanks：Daniel Ives 維持 Outperform、目標價 500 美元，稱 2027 年底前合併機率 80%–90%](https://www.tipranks.com/news/top-analyst-daniel-ives-weighs-in-on-tesla-and-meta-stocks-after-earnings-heres-what-he-sees)
+- [TipRanks：Ives 稱 Tesla–SpaceX 合併是 no-brainer，股價需約 550 美元才容易過關](https://www.tipranks.com/news/tesla-stock-rises-ahead-of-earnings-as-dan-ives-calls-spacex-merger-a-no-brainer)
+- [Yahoo Finance：Tesla Q3 財報、交付與現金流，含合併想像（2026-10-21）](https://finance.yahoo.com/markets/stocks/article/tesla-q3-preview-delivery-outlook-cash-flow-and-a-dash-of-merger-speculation-on-tap-160637755.html)
+- [NHTSA 新聞稿：對 Tesla Cybercab 自證合規的調查](https://www.nhtsa.gov/press-releases/investigation-tesla-cybercab-self-certification)
+- [NHTSA Special Order（AQ26002，2026-09-10，官方 PDF）](https://static.nhtsa.gov/odi/inv/2026/INIM-AQ26002-17090P1.pdf)
+- [Electric Vehicles：Tesla 獲 30 天延期，回覆期限延至 10 月 30 日](https://eletric-vehicles.com/tesla/tesla-gets-30-more-days-to-defend-cybercab-self-certification-to-nhtsa/)
+- [Self-Driving Insider：NHTSA 判定 Cybercab 自證合規勉強通過（2026-10 中旬報導）](https://www.selfdrivinginsider.com/nhtsa-just-ruled-on-teslas-cybercab-audit-self-certification-survives-barely/)
+- [Seoul Economic Daily 2026-10-22：Tesla 盤後跌逾 2%，Nasdaq 漲 1.05%、S&P 500 漲 0.58%、Dow 漲 0.69%](https://en.sedaily.com/finance/2026/10/22/samsung-sk-hynix-slip-in-premarket-as-traders-book-profits)
+- [本站 TSLA 2026-10-20 版（失效條件、ARK 模型與 RBC 合併價）](/stock/reports/TSLA/2026-10-20/)
+- [本站 TSLA 2026-10-19 版（Roadster 技術觀察）](/stock/reports/TSLA/2026-10-19/)
+- 本站行情快照：public/data/market/TSLA.json（Yahoo Finance 日線，268 個交易日，截至 2026-10-21）

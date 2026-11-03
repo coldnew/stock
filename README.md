@@ -27,7 +27,7 @@ npm run build
 
 ### 廣告
 
-共用 `AdSlot` 元件集中管理核准的 Adsterra 原生、橫幅與 smartlink 版位。`MonetizationScripts` 每頁只載入一次 social-bar 與 popunder 腳本。廣告置於文章區段之外，贊助連結標示清楚，並為每個目標市場驗證 Adsterra 政策與用戶同意要求。
+共用 `AdSlot` 元件集中管理核准的 Adsterra 原生、橫幅與 smartlink 版位。`MonetizationScripts` 每頁只載入一次 social-bar 腳本；已移除會攔截文章互動的 popunder 腳本。廣告置於文章區段之外，贊助連結標示清楚，並為每個目標市場驗證 Adsterra 政策與用戶同意要求。
 
 ### 框架結構
 

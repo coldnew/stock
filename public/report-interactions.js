@@ -95,14 +95,21 @@
       toggle.title = collapsed ? '展開報告版本' : '收起報告版本';
       toggle.innerHTML = '<span aria-hidden="true">' + (collapsed ? '›' : '‹') + '</span>';
     }
-    var saved = null;
-    try { saved = localStorage.getItem(SIDEBAR_KEY); } catch (e) {}
-    var canShowBesideArticle = window.matchMedia('(min-width: 641px)').matches;
-    setCollapsed(saved === null ? !canShowBesideArticle : saved === 'true');
+    var desktopLayout = window.matchMedia('(min-width: 641px)');
+    function preferenceKey() {
+      return SIDEBAR_KEY + (desktopLayout.matches ? '' : '-mobile');
+    }
+    function restoreSidebar() {
+      var saved = null;
+      try { saved = localStorage.getItem(preferenceKey()); } catch (e) {}
+      setCollapsed(saved === null ? !desktopLayout.matches : saved === 'true');
+    }
+    restoreSidebar();
+    desktopLayout.addEventListener('change', restoreSidebar);
     toggle.addEventListener('click', function () {
       var collapsed = !shell.classList.contains('sidebar-collapsed');
       setCollapsed(collapsed);
-      try { localStorage.setItem(SIDEBAR_KEY, String(collapsed)); } catch (e) {}
+      try { localStorage.setItem(preferenceKey(), String(collapsed)); } catch (e) {}
     });
   })();
 

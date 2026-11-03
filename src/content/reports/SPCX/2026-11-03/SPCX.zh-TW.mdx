@@ -11,13 +11,14 @@ tags:
   - Starship
   - AI算力
 locale: zh-TW
-title: "SpaceX（SPCX）研究報告：拆解 Shaun Maguire 的 2028 模型，成長押注在地面算力與融資"
+title: "SpaceX：拆解 Maguire 的 2028 成長模型"
 description: "核讀 Shaun Maguire 10 月 30 日的 SpaceX 長文與財務模型：2028 年營收預估 7,311 億美元，約 78% 來自地面算力；以 11 月 2 日行情檢視資本支出、星艦發射假設與進場條件。"
 ---
 
 import AdSlot from '../../../../components/report/AdSlot.astro';
 import Disclosure from '../../../../components/report/Disclosure.astro';
 import XPostCard from '../../../../components/report/XPostCard.astro';
+import XImageGallery from '../../../../components/report/XImageGallery';
 
 ## 分析摘要
 
@@ -35,7 +36,12 @@ Shaun Maguire 的 SpaceX 模型值得讀，因為它把樂觀論點寫成可追�
 
 截至 11 月 3 日，本版新增的證據是 Maguire 的長文與附表，發布時間為 10 月 30 日 20:07 UTC。可確認的是他公開了什麼假設；附表未附財報連結，因此即使部分欄位沒有 F 標記，本版也不將其升格為公司確認的歷史數字，更不把預測視為公司指引。
 
-<XPostCard author="Shaun Maguire" handle="@shaunmmaguire" timestamp="2026-10-30T20:07:52Z" sourceUrl="https://x.com/shaunmmaguire/status/2116260821080973679" mediaUrl="https://pbs.twimg.com/media/HV0t9QvakAASlJl.png" mediaAlt="Shaun Maguire 發布的 SpaceX 2026 至 2028 年財務預測及假設表" verified={true}>People don't understand SpaceX</XPostCard>
+<XImageGallery client:load locale="zh-TW" sourceUrl="https://x.com/shaunmmaguire/status/2116260821080973679" images={[{src: "https://pbs.twimg.com/media/HV0t9QvakAASlJl.png", alt: "Shaun Maguire 的 SpaceX 2026 至 2028 年財務預測與產能假設；單位為百萬美元"}]} />
+
+<details class="source-post">
+<summary>原始貼文 · Shaun Maguire · 2026-10-30</summary>
+<XPostCard author="Shaun Maguire" handle="@shaunmmaguire" timestamp="2026-10-30T20:07:52Z" sourceUrl="https://x.com/shaunmmaguire/status/2116260821080973679" verified={true}>People don't understand SpaceX</XPostCard>
+</details>
 
 文章的財務含義是把 SpaceX 的評價重心轉向大規模 AI 基礎設施。下一步需要公司分部收入、已上線 GW、合約收款、資本支出與融資條款來核對；發射進展是交付能力的證據，仍不能單獨證明算力毛利或自由現金流。
 

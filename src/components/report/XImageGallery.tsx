@@ -50,7 +50,7 @@ export default function XImageGallery({ images, sourceUrl, locale = 'en' }: Prop
   }, [zoomed, active]);
 
   return (
-    <figure className="x-image-gallery" aria-label={label}>
+    <figure className={`x-image-gallery${images.length === 1 ? ' x-image-gallery-single' : ''}`} aria-label={label}>
       <div className="x-image-gallery-frame">
         <button className="x-image-gallery-arrow x-image-gallery-arrow-prev" type="button" onClick={() => goTo(active - 1)} disabled={active === 0} aria-label={locale === 'zh-TW' ? '上一張圖片' : 'Previous image'}>‹</button>
         <div className="x-image-gallery-track" ref={trackRef} onScroll={(event) => updateActive(event.currentTarget)}>
@@ -68,7 +68,9 @@ export default function XImageGallery({ images, sourceUrl, locale = 'en' }: Prop
         </div>
         <span className="x-image-gallery-count">{active + 1} / {images.length}</span>
       </div>
-      <figcaption>{locale === 'zh-TW' ? '左右滑動或使用箭頭瀏覽圖片；點擊圖片可放大檢視。' : 'Swipe or use the arrows to browse; click an image to zoom.'} · <a href={sourceUrl} target="_blank" rel="noreferrer">X 原始貼文</a></figcaption>
+      <figcaption>{images.length === 1
+        ? (locale === 'zh-TW' ? '點擊圖片可放大檢視。' : 'Click the image to zoom.')
+        : (locale === 'zh-TW' ? '左右滑動或使用箭頭瀏覽圖片；點擊圖片可放大檢視。' : 'Swipe or use the arrows to browse; click an image to zoom.')} · <a href={sourceUrl} target="_blank" rel="noreferrer">X 原始貼文</a></figcaption>
       {zoomed && <div className="x-image-gallery-lightbox" role="dialog" aria-modal="true" aria-label={`${images[active].alt}；放大檢視`} onClick={() => setZoomed(false)}>
         <button className="x-image-gallery-lightbox-close" type="button" onClick={() => setZoomed(false)} aria-label={locale === 'zh-TW' ? '關閉放大檢視' : 'Close zoom'}>×</button>
         <button className="x-image-gallery-lightbox-arrow x-image-gallery-lightbox-prev" type="button" onClick={(event) => { event.stopPropagation(); goTo(active - 1); }} disabled={active === 0} aria-label={locale === 'zh-TW' ? '上一張圖片' : 'Previous image'}>‹</button>

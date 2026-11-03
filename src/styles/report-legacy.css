@@ -47,7 +47,7 @@
     --positive:  #1B365D;
     --negative:  #6b6a64;
     --serif: "TsangerJinKai02", "Source Han Serif TC", "Noto Serif CJK TC", "Songti TC", "PMingLiU", Georgia, serif;
-    --sans: var(--serif);
+    --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", sans-serif;
 
     --rhythm-module:  14pt;
     --rhythm-section: 18pt;
@@ -168,6 +168,22 @@
   .report-content figure { max-width: 100%; overflow-x: auto; }
   .report-content img, .report-content svg { max-width: 100%; height: auto; }
   .report-content table { max-width: 100%; }
+  .report-content { font-family: var(--sans); letter-spacing: 0; }
+  .report-content a { color: var(--brand); text-decoration-thickness: 1px; text-underline-offset: 3px; }
+  .report-content p { line-height: 1.85; margin-bottom: 16px; }
+  .report-content h2 { margin-top: 36px; margin-bottom: 16px; }
+  .report-content table { margin: 20px 0 24px; font-family: var(--sans); font-size: 14px; line-height: 1.65; }
+  .report-content table th { padding: 12px; background: var(--tag-bg); color: var(--brand); font-weight: 600; }
+  .report-content table td { padding: 12px; }
+  .report-content table tbody tr:nth-child(even) { background: var(--ivory); }
+  .report-content table td[style*="text-align:right"],
+  .report-content table td[align="right"] { font-variant-numeric: tabular-nums; white-space: nowrap; }
+  .ticker-name { font-family: var(--sans); font-size: clamp(28px, 3vw, 38px); line-height: 1.35; letter-spacing: -.025em; text-wrap: balance; }
+  .ticker-name > span { display: block; margin: 12px 0; font: 600 12px/1.4 var(--sans); letter-spacing: .14em; color: var(--brand); }
+  .ticker-sub { font: 15px/1.8 var(--sans); color: var(--olive); }
+  .source-post { margin: 16px 0 24px; padding: 14px 16px; border: 1px solid var(--border); border-radius: 8px; background: var(--ivory); font: 14px/1.6 var(--sans); }
+  .source-post > summary { cursor: pointer; color: var(--brand); }
+  .source-post .twitter-tweet { margin: 16px auto 0; }
   .report-sidebar { position: fixed; z-index: 30; top: 0; left: 0; width: var(--report-sidebar-width, 268px); min-width: 0; height: 100vh; overflow: hidden; box-sizing: border-box; padding: 32px 14pt 32px 24px; border-right: 0.5pt solid var(--border); background: var(--parchment); font-size: 10.5pt; transition: transform .25s ease, visibility .25s ease; }
   .report-sidebar-content { min-width: 0; height: 100%; max-height: none; overflow-y: auto; opacity: 1; transition: opacity .15s ease; }
   .report-sidebar-toggle { position: fixed; z-index: 100; top: 34px; left: calc(var(--report-sidebar-width, 268px) - 34px); display: grid; place-items: center; width: 24pt; height: 28pt; padding: 0; border: 0.5pt solid var(--border); border-radius: 4pt; background: var(--parchment); color: var(--brand); cursor: pointer; font-size: 18pt; line-height: 1; transition: left .25s ease, background-color .15s ease; }
@@ -342,6 +358,12 @@
   .x-image-gallery-track::-webkit-scrollbar { display: none; }
   .x-image-gallery-slide { flex: 0 0 min(85%, 360px); display: grid; place-items: center; min-width: 0; aspect-ratio: 4 / 5; padding: 0; border: 0; border-radius: 7pt; overflow: hidden; scroll-snap-align: start; background: #242424; cursor: zoom-in; }
   .x-image-gallery-slide img { display: block; width: 100%; height: 100%; object-fit: contain; }
+  .x-image-gallery-single .x-image-gallery-frame { background: var(--ivory); border: 1px solid var(--border); }
+  .x-image-gallery-single .x-image-gallery-track { padding: 0; }
+  .x-image-gallery-single .x-image-gallery-slide { flex-basis: 100%; aspect-ratio: auto; border-radius: 0; background: #fff; }
+  .x-image-gallery-single .x-image-gallery-slide img { height: auto; }
+  .x-image-gallery-single .x-image-gallery-arrow,
+  .x-image-gallery-single .x-image-gallery-controls { display: none; }
   .x-image-gallery-arrow { position: absolute; z-index: 1; top: 50%; width: 30pt; height: 30pt; transform: translateY(-50%); border: 0; border-radius: 50%; color: #fff; background: #1b365dcc; font: 28pt/20pt Georgia, serif; cursor: pointer; }
   .x-image-gallery-arrow:disabled { opacity: .28; cursor: default; }
   .x-image-gallery-arrow-prev { left: 8pt; }
@@ -631,7 +653,7 @@
     html, body { width: 100%; max-width: none; overflow-x: hidden; }
     body { padding: 16px 14px 42px; font-size: 11.5pt; letter-spacing: 0; line-height: 1.62; }
     .report-header { margin-bottom: 12pt; padding-bottom: 9pt; }
-    .ticker-name { max-width: 100%; font-size: clamp(22pt, 8.5vw, 29pt); line-height: 1.2; overflow-wrap: anywhere; }
+    .ticker-name { max-width: 100%; font-size: clamp(26px, 7vw, 32px); line-height: 1.4; overflow-wrap: anywhere; }
     .ticker-name span { display: block; margin-top: 3pt; font-size: 12pt; color: var(--brand); letter-spacing: 1pt; }
     .ticker-sub { font-size: 11pt; line-height: 1.5; }
     .price-block { text-align: left; margin-top: 8pt; }
@@ -645,6 +667,8 @@
     .report-layout.sidebar-collapsed .report-sidebar { height: 28pt; margin-bottom: 12pt; padding: 0; visibility: visible; pointer-events: auto; }
     .report-layout.sidebar-collapsed .report-sidebar-content { display: none; }
     .report-layout.sidebar-collapsed .report-sidebar-toggle { left: auto; right: 0; }
+    .report-layout:not([data-sidebar-state="expanded"]) .report-sidebar { height: 28pt; margin-bottom: 12pt; padding: 0; }
+    .report-layout:not([data-sidebar-state="expanded"]) .report-sidebar-content { display: none; }
     .sidebar-heading { margin-bottom: 8pt; }
     .sidebar-nav { display: block; }
     .sidebar-history { margin-top: 10pt; }
@@ -658,6 +682,10 @@
     .report-content p, .report-content li { overflow-wrap: anywhere; }
     .report-content table, .report-content .kami-table { display: block; width: 100%; max-width: 100%; overflow-x: auto; white-space: normal; -webkit-overflow-scrolling: touch; }
     .report-content table th, .report-content table td, .report-content .kami-table th, .report-content .kami-table td { min-width: 112px; overflow-wrap: anywhere; }
+    .report-content table:has(th[style*="text-align:right"]):not(:has(th:nth-child(5))) { display: table; table-layout: fixed; font-size: 12px; }
+    .report-content table:has(th[style*="text-align:right"]):not(:has(th:nth-child(5))) th,
+    .report-content table:has(th[style*="text-align:right"]):not(:has(th:nth-child(5))) td { min-width: 0; padding: 10px 6px; }
+    .report-content table:has(th[style*="text-align:right"]):not(:has(th:nth-child(5))) th:first-child { width: 31%; }
     .report-content pre { max-width: 100%; overflow-x: auto; white-space: pre-wrap; overflow-wrap: anywhere; padding: 10pt; font-size: 9.5pt; line-height: 1.5; }
     .report-content blockquote { margin-left: 0; margin-right: 0; }
     .report-content video { display: block; width: 100% !important; max-width: 100%; height: auto; max-height: 68vh !important; border-radius: 8px !important; }

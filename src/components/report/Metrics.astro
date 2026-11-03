@@ -1,7 +1,11 @@
 ---
-interface Metric { label: string; value: string; }
-const { items = [] } = Astro.props as { items: Metric[] };
+interface Metric { label: string; value: string; detail?: string; }
+const { items = [], dataAsOf } = Astro.props as { items: Metric[]; dataAsOf?: string };
 ---
-<div class="metrics">
-  {items.map((item) => <div class="metric"><div class="metric-value">{item.value}</div><div class="metric-label">{item.label}</div></div>)}
-</div>
+<dl class="metrics" aria-label={dataAsOf ? `指標摘要，資料截至 ${dataAsOf}` : '指標摘要'}>
+  {items.map((item) => <div class:list={['metric', item.value.length > 14 && 'metric--text']}>
+    <dt class="metric-label">{item.label}</dt>
+    <dd class="metric-value">{item.value}</dd>
+    {item.detail && <dd class="metric-detail">{item.detail}</dd>}
+  </div>)}
+</dl>

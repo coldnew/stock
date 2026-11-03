@@ -5,7 +5,11 @@ interface Props { ticker: string; locale?: 'zh-TW'; reportType: string; }
 const { ticker, reportType } = Astro.props as Props;
 const snapshot = marketSnapshots[ticker.toUpperCase()];
 const rows = snapshot?.rows ?? [];
-const closes = rows.map(([, , , , close]) => close);
+const latestDate = rows.at(-1)?.[0];
+const quarterStart = latestDate ? new Date(`${latestDate}T00:00:00Z`) : null;
+quarterStart?.setUTCMonth(quarterStart.getUTCMonth() - 3);
+const quarterRows = quarterStart ? rows.filter(([date]) => date >= quarterStart.toISOString().slice(0, 10)) : [];
+const closes = quarterRows.map(([, , , , close]) => close);
 const latest = closes.at(-1);
 const first = closes[0];
 const high = closes.length ? Math.max(...closes) : undefined;
@@ -30,7 +34,7 @@ const ytdPartial = ytdRows.length > 0 && (ytdRows[0]?.[0] ?? '') > `${year}-01-0
     <thead><tr><th>指標</th><th>數值</th><th>如何解讀</th></tr></thead>
     <tbody>
       <tr><td>最近收盤</td><td>{snapshot.currency} {format(latest)}</td><td>最近完成交易日：{rows.at(-1)?.[0]}</td></tr>
-      <tr><td>年初至今報酬</td><td>{ytdChange === undefined ? '—' : `${ytdChange >= 0 ? '+' : ''}${ytdChange.toFixed(2)}%`}</td><td>{year} 年初至今{ytdPartial ? `（行情起於 ${ytdRows[0]?.[0]}，非完整年）` : ''}，描述路徑，不代表預期報酬。</td></tr>
+      <tr><td>年初至今價格變化</td><td>{ytdChange === undefined ? '—' : `${ytdChange >= 0 ? '+' : ''}${ytdChange.toFixed(2)}%`}</td><td>{year} 年初至今{ytdPartial ? `（行情起於 ${ytdRows[0]?.[0]}，非完整年）` : ''}，不含配息，並非含息總報酬。</td></tr>
       <tr><td>年初至今區間</td><td>{ytdLow === undefined || ytdHigh === undefined ? '—' : `${format(ytdLow)}–${format(ytdHigh)}`}</td><td>當年高低點，用於理解波動與位階，不是估值。</td></tr>
       <tr><td>近三個月變化</td><td>{format(change)}%</td><td>描述路徑，不代表預期報酬。</td></tr>
       <tr><td>近三個月區間</td><td>{format(low)}–{format(high)}</td><td>用於理解波動與支撐／壓力，不是估值。</td></tr>
